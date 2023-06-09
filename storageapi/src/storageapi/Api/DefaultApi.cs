@@ -311,11 +311,6 @@ namespace storageapi.Api
             localVarRequestOptions.Operation = "DefaultApi.DeleteVersion";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (authToken) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Delete<Object>("/storage/{version_id}/delete", localVarRequestOptions, this.Configuration);
@@ -387,11 +382,6 @@ namespace storageapi.Api
             localVarRequestOptions.Operation = "DefaultApi.DeleteVersion";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (authToken) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/storage/{version_id}/delete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -476,11 +466,6 @@ namespace storageapi.Api
             localVarRequestOptions.Operation = "DefaultApi.StorageVersionIdPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (authToken) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/storage/{version_id}", localVarRequestOptions, this.Configuration);
@@ -567,11 +552,6 @@ namespace storageapi.Api
             localVarRequestOptions.Operation = "DefaultApi.StorageVersionIdPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (authToken) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/storage/{version_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

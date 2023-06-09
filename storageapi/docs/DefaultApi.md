@@ -31,11 +31,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://storage-api.azion.com";
-            // Configure API key authorization: authToken
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-
             var apiInstance = new DefaultApi(config);
             var versionId = "versionId_example";  // string | The version identifier
 
@@ -82,7 +77,7 @@ void (empty response body)
 
 ### Authorization
 
-[authToken](../README.md#authToken)
+No authorization required
 
 ### HTTP request headers
 
@@ -121,11 +116,6 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://storage-api.azion.com";
-            // Configure API key authorization: authToken
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-
             var apiInstance = new DefaultApi(config);
             var xAzionStaticPath = "xAzionStaticPath_example";  // string | Required in order to get the path and file name. i.e.: assets/css/main.css
             var versionId = "versionId_example";  // string | 
@@ -180,7 +170,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[authToken](../README.md#authToken)
+No authorization required
 
 ### HTTP request headers
 

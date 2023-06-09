@@ -73,11 +73,6 @@ namespace Example
 
             Configuration config = new Configuration();
             config.BasePath = "https://storage-api.azion.com";
-            // Configure API key authorization: authToken
-            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
-
             var apiInstance = new DefaultApi(config);
             var versionId = "versionId_example";  // string | The version identifier
 

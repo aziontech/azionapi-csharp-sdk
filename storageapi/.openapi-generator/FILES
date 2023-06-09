@@ -1,11 +1,9 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 api/openapi.yaml
 appveyor.yml
 docs/DefaultApi.md
 git_push.sh
-src/storageapi.Test/Api/DefaultApiTests.cs
 src/storageapi.Test/storageapi.Test.csproj
 src/storageapi/Api/DefaultApi.cs
 src/storageapi/Client/ApiClient.cs
