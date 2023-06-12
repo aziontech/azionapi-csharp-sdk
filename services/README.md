@@ -73,8 +73,10 @@ namespace Example
 
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:3002";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
+            // Configure API key authorization: tokenAuth
+            config.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.ApiKeyPrefix.Add("Authorization", "Bearer");
 
             var apiInstance = new DefaultApi(config);
             var serviceId = 789L;  // long | 
@@ -136,8 +138,10 @@ Class | Method | HTTP request | Description
 
 
 Authentication schemes defined for the API:
-<a id="bearerAuth"></a>
-### bearerAuth
+<a id="tokenAuth"></a>
+### tokenAuth
 
-- **Type**: Bearer Authentication
+- **Type**: API key
+- **API key parameter name**: Authorization
+- **Location**: HTTP header
 

@@ -719,11 +719,10 @@ namespace services.Api
             localVarRequestOptions.Operation = "DefaultApi.DeleteResource";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
 
             // make the HTTP request
@@ -793,11 +792,10 @@ namespace services.Api
             localVarRequestOptions.Operation = "DefaultApi.DeleteResource";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
 
             // make the HTTP request
@@ -862,11 +860,10 @@ namespace services.Api
             localVarRequestOptions.Operation = "DefaultApi.DeleteService";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
 
             // make the HTTP request
@@ -933,11 +930,10 @@ namespace services.Api
             localVarRequestOptions.Operation = "DefaultApi.DeleteService";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
 
             // make the HTTP request
@@ -1007,11 +1003,10 @@ namespace services.Api
             localVarRequestOptions.Operation = "DefaultApi.GetResource";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
 
             // make the HTTP request
@@ -1083,11 +1078,10 @@ namespace services.Api
             localVarRequestOptions.Operation = "DefaultApi.GetResource";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
 
             // make the HTTP request
@@ -1184,11 +1178,10 @@ namespace services.Api
             localVarRequestOptions.Operation = "DefaultApi.GetResources";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
 
             // make the HTTP request
@@ -1287,11 +1280,10 @@ namespace services.Api
             localVarRequestOptions.Operation = "DefaultApi.GetResources";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
 
             // make the HTTP request
@@ -1364,11 +1356,10 @@ namespace services.Api
             localVarRequestOptions.Operation = "DefaultApi.GetService";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
 
             // make the HTTP request
@@ -1443,11 +1434,10 @@ namespace services.Api
             localVarRequestOptions.Operation = "DefaultApi.GetService";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
 
             // make the HTTP request
@@ -1541,11 +1531,10 @@ namespace services.Api
             localVarRequestOptions.Operation = "DefaultApi.GetServices";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
 
             // make the HTTP request
@@ -1641,11 +1630,10 @@ namespace services.Api
             localVarRequestOptions.Operation = "DefaultApi.GetServices";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
 
             // make the HTTP request
@@ -1719,11 +1707,10 @@ namespace services.Api
             localVarRequestOptions.Operation = "DefaultApi.NewService";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
 
             // make the HTTP request
@@ -1799,11 +1786,10 @@ namespace services.Api
             localVarRequestOptions.Operation = "DefaultApi.NewService";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
 
             // make the HTTP request
@@ -1880,11 +1866,10 @@ namespace services.Api
             localVarRequestOptions.Operation = "DefaultApi.PatchService";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
 
             // make the HTTP request
@@ -1963,11 +1948,10 @@ namespace services.Api
             localVarRequestOptions.Operation = "DefaultApi.PatchService";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
 
             // make the HTTP request
@@ -2047,11 +2031,10 @@ namespace services.Api
             localVarRequestOptions.Operation = "DefaultApi.PatchServiceResource";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
 
             // make the HTTP request
@@ -2133,11 +2116,10 @@ namespace services.Api
             localVarRequestOptions.Operation = "DefaultApi.PatchServiceResource";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
 
             // make the HTTP request
@@ -2214,11 +2196,10 @@ namespace services.Api
             localVarRequestOptions.Operation = "DefaultApi.PostResource";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
 
             // make the HTTP request
@@ -2297,11 +2278,10 @@ namespace services.Api
             localVarRequestOptions.Operation = "DefaultApi.PostResource";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
 
             // make the HTTP request

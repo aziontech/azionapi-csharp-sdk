@@ -37,8 +37,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:3002";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
+            // Configure API key authorization: tokenAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DefaultApi(config);
             var serviceId = 789L;  // long | 
@@ -90,7 +92,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -132,8 +134,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:3002";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
+            // Configure API key authorization: tokenAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DefaultApi(config);
             var id = 789L;  // long | 
@@ -183,7 +187,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -225,8 +229,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:3002";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
+            // Configure API key authorization: tokenAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DefaultApi(config);
             var serviceId = 789L;  // long | 
@@ -282,7 +288,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -322,8 +328,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:3002";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
+            // Configure API key authorization: tokenAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DefaultApi(config);
             var serviceId = 789L;  // long | 
@@ -387,7 +395,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -427,8 +435,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:3002";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
+            // Configure API key authorization: tokenAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DefaultApi(config);
             var id = 789L;  // long | 
@@ -484,7 +494,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -524,8 +534,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:3002";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
+            // Configure API key authorization: tokenAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DefaultApi(config);
             var page = 789L;  // long? |  (optional) 
@@ -587,7 +599,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -626,8 +638,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:3002";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
+            // Configure API key authorization: tokenAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DefaultApi(config);
             var createServiceRequest = new CreateServiceRequest(); // CreateServiceRequest | 
@@ -681,7 +695,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -722,8 +736,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:3002";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
+            // Configure API key authorization: tokenAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DefaultApi(config);
             var id = 789L;  // long | 
@@ -779,7 +795,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -821,8 +837,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:3002";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
+            // Configure API key authorization: tokenAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DefaultApi(config);
             var serviceId = 789L;  // long | 
@@ -880,7 +898,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -922,8 +940,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:3002";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
+            // Configure API key authorization: tokenAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DefaultApi(config);
             var serviceId = 789L;  // long | 
@@ -979,7 +999,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 

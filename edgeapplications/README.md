@@ -228,7 +228,7 @@ namespace Example
 
             Configuration config = new Configuration();
             config.BasePath = "https://api.azionapi.net";
-            // Configure API key authorization: JWT
+            // Configure API key authorization: tokenAuth
             config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.ApiKeyPrefix.Add("Authorization", "Bearer");
@@ -368,8 +368,8 @@ Class | Method | HTTP request | Description
 
 
 Authentication schemes defined for the API:
-<a id="JWT"></a>
-### JWT
+<a id="tokenAuth"></a>
+### tokenAuth
 
 - **Type**: API key
 - **API key parameter name**: Authorization

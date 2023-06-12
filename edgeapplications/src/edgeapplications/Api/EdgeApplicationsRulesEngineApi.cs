@@ -630,7 +630,7 @@ namespace edgeapplications.Api
             localVarRequestOptions.Operation = "EdgeApplicationsRulesEngineApi.EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (JWT) required
+            // authentication (tokenAuth) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
@@ -747,7 +747,7 @@ namespace edgeapplications.Api
             localVarRequestOptions.Operation = "EdgeApplicationsRulesEngineApi.EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (JWT) required
+            // authentication (tokenAuth) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
@@ -842,7 +842,7 @@ namespace edgeapplications.Api
             localVarRequestOptions.Operation = "EdgeApplicationsRulesEngineApi.EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (JWT) required
+            // authentication (tokenAuth) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
@@ -939,7 +939,7 @@ namespace edgeapplications.Api
             localVarRequestOptions.Operation = "EdgeApplicationsRulesEngineApi.EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (JWT) required
+            // authentication (tokenAuth) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
@@ -1025,7 +1025,7 @@ namespace edgeapplications.Api
             localVarRequestOptions.Operation = "EdgeApplicationsRulesEngineApi.EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (JWT) required
+            // authentication (tokenAuth) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
@@ -1113,7 +1113,7 @@ namespace edgeapplications.Api
             localVarRequestOptions.Operation = "EdgeApplicationsRulesEngineApi.EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (JWT) required
+            // authentication (tokenAuth) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
@@ -1201,7 +1201,7 @@ namespace edgeapplications.Api
             localVarRequestOptions.Operation = "EdgeApplicationsRulesEngineApi.EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (JWT) required
+            // authentication (tokenAuth) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
@@ -1291,7 +1291,7 @@ namespace edgeapplications.Api
             localVarRequestOptions.Operation = "EdgeApplicationsRulesEngineApi.EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGet";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (JWT) required
+            // authentication (tokenAuth) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
@@ -1389,7 +1389,7 @@ namespace edgeapplications.Api
             localVarRequestOptions.Operation = "EdgeApplicationsRulesEngineApi.EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (JWT) required
+            // authentication (tokenAuth) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
@@ -1489,7 +1489,7 @@ namespace edgeapplications.Api
             localVarRequestOptions.Operation = "EdgeApplicationsRulesEngineApi.EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (JWT) required
+            // authentication (tokenAuth) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
@@ -1587,7 +1587,7 @@ namespace edgeapplications.Api
             localVarRequestOptions.Operation = "EdgeApplicationsRulesEngineApi.EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (JWT) required
+            // authentication (tokenAuth) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
@@ -1687,7 +1687,7 @@ namespace edgeapplications.Api
             localVarRequestOptions.Operation = "EdgeApplicationsRulesEngineApi.EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (JWT) required
+            // authentication (tokenAuth) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));

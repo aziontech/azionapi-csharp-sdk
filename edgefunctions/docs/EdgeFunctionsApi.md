@@ -33,7 +33,7 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azionapi.net";
-            // Configure API key authorization: JWT
+            // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
@@ -96,7 +96,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -134,7 +134,7 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azionapi.net";
-            // Configure API key authorization: JWT
+            // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
@@ -187,7 +187,7 @@ void (empty response body)
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -225,7 +225,7 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azionapi.net";
-            // Configure API key authorization: JWT
+            // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
@@ -282,7 +282,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -320,7 +320,7 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azionapi.net";
-            // Configure API key authorization: JWT
+            // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
@@ -379,7 +379,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -418,7 +418,7 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azionapi.net";
-            // Configure API key authorization: JWT
+            // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
@@ -477,7 +477,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -516,7 +516,7 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azionapi.net";
-            // Configure API key authorization: JWT
+            // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
@@ -573,7 +573,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 api/openapi.yaml
 appveyor.yml
@@ -16,17 +15,6 @@ docs/UpdateServiceRequest.md
 docs/Variable.md
 git_push.sh
 services.sln
-src/services.Test/Api/DefaultApiTests.cs
-src/services.Test/Model/CreateResourceRequestTests.cs
-src/services.Test/Model/CreateServiceRequestTests.cs
-src/services.Test/Model/ResourceDetailTests.cs
-src/services.Test/Model/ResourceResponseTests.cs
-src/services.Test/Model/ResourceResponseWithTotalTests.cs
-src/services.Test/Model/ServiceResponseTests.cs
-src/services.Test/Model/ServiceResponseWithTotalsTests.cs
-src/services.Test/Model/UpdateResourceRequestTests.cs
-src/services.Test/Model/UpdateServiceRequestTests.cs
-src/services.Test/Model/VariableTests.cs
 src/services.Test/services.Test.csproj
 src/services/Api/DefaultApi.cs
 src/services/Client/ApiClient.cs

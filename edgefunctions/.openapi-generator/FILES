@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 api/openapi.yaml
 appveyor.yml
@@ -16,17 +15,6 @@ docs/PutEdgeFunctionRequest.md
 docs/Results.md
 edgefunctions.sln
 git_push.sh
-src/edgefunctions.Test/Api/EdgeFunctionsApiTests.cs
-src/edgefunctions.Test/Model/BadRequestResponseTests.cs
-src/edgefunctions.Test/Model/CreateEdgeFunctionRequestTests.cs
-src/edgefunctions.Test/Model/EdgeFunctionResponseTests.cs
-src/edgefunctions.Test/Model/ErrorModelTests.cs
-src/edgefunctions.Test/Model/ErrorResponseTests.cs
-src/edgefunctions.Test/Model/LinksTests.cs
-src/edgefunctions.Test/Model/ListEdgeFunctionResponseTests.cs
-src/edgefunctions.Test/Model/PatchEdgeFunctionRequestTests.cs
-src/edgefunctions.Test/Model/PutEdgeFunctionRequestTests.cs
-src/edgefunctions.Test/Model/ResultsTests.cs
 src/edgefunctions.Test/edgefunctions.Test.csproj
 src/edgefunctions/Api/EdgeFunctionsApi.cs
 src/edgefunctions/Client/ApiClient.cs
