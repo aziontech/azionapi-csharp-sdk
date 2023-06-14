@@ -44,7 +44,7 @@ namespace edgeapplications.Model
         /// <param name="schemaVersion">schemaVersion (required).</param>
         /// <param name="links">links (required).</param>
         /// <param name="results">results (required).</param>
-        public GetApplicationsResponse(long count = default(long), long totalPages = default(long), long schemaVersion = default(long), ApplicationLinks links = default(ApplicationLinks), List<ApplicationResults> results = default(List<ApplicationResults>))
+        public GetApplicationsResponse(long count = default(long), long totalPages = default(long), long schemaVersion = default(long), ApplicationLinks links = default(ApplicationLinks), List<ApplicationsResults> results = default(List<ApplicationsResults>))
         {
             this.Count = count;
             this.TotalPages = totalPages;
@@ -91,7 +91,7 @@ namespace edgeapplications.Model
         /// Gets or Sets Results
         /// </summary>
         [DataMember(Name = "results", IsRequired = true, EmitDefaultValue = true)]
-        public List<ApplicationResults> Results { get; set; }
+        public List<ApplicationsResults> Results { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
