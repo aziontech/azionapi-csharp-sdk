@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 api/openapi.yaml
 appveyor.yml
@@ -13,14 +12,6 @@ docs/PutDomainRequest.md
 docs/UpdateDomainRequest.md
 domains.sln
 git_push.sh
-src/domains.Test/Api/DomainsApiTests.cs
-src/domains.Test/Model/CreateDomainRequestTests.cs
-src/domains.Test/Model/DomainLinksTests.cs
-src/domains.Test/Model/DomainResponseWithResultTests.cs
-src/domains.Test/Model/DomainResponseWithResultsTests.cs
-src/domains.Test/Model/DomainResultsTests.cs
-src/domains.Test/Model/PutDomainRequestTests.cs
-src/domains.Test/Model/UpdateDomainRequestTests.cs
 src/domains.Test/domains.Test.csproj
 src/domains/Api/DomainsApi.cs
 src/domains/Client/ApiClient.cs
