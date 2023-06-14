@@ -41,7 +41,7 @@ namespace edgeapplications.Model
         /// <param name="lastModified">lastModified.</param>
         /// <param name="active">active.</param>
         /// <param name="origins">origins.</param>
-        public ApplicationsResults(long id = default(long), string name = default(string), string debugRules = default(string), string lastEditor = default(string), string lastModified = default(string), bool active = default(bool), List<ApplicationOrigins> origins = default(List<ApplicationOrigins>))
+        public ApplicationsResults(long id = default(long), string name = default(string), bool debugRules = default(bool), string lastEditor = default(string), string lastModified = default(string), bool active = default(bool), List<ApplicationOrigins> origins = default(List<ApplicationOrigins>))
         {
             this.Id = id;
             this.Name = name;
@@ -67,8 +67,8 @@ namespace edgeapplications.Model
         /// <summary>
         /// Gets or Sets DebugRules
         /// </summary>
-        [DataMember(Name = "debug_rules", EmitDefaultValue = false)]
-        public string DebugRules { get; set; }
+        [DataMember(Name = "debug_rules", EmitDefaultValue = true)]
+        public bool DebugRules { get; set; }
 
         /// <summary>
         /// Gets or Sets LastEditor
@@ -155,8 +155,7 @@ namespace edgeapplications.Model
                 ) && 
                 (
                     this.DebugRules == input.DebugRules ||
-                    (this.DebugRules != null &&
-                    this.DebugRules.Equals(input.DebugRules))
+                    this.DebugRules.Equals(input.DebugRules)
                 ) && 
                 (
                     this.LastEditor == input.LastEditor ||
@@ -194,10 +193,7 @@ namespace edgeapplications.Model
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.DebugRules != null)
-                {
-                    hashCode = (hashCode * 59) + this.DebugRules.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.DebugRules.GetHashCode();
                 if (this.LastEditor != null)
                 {
                     hashCode = (hashCode * 59) + this.LastEditor.GetHashCode();

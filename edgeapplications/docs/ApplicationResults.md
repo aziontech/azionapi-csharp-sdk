@@ -6,8 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **long** |  | 
 **Name** | **string** |  | 
-**Next** | **string** |  | [optional] 
 **Active** | **bool** |  | 
+**DebugRules** | **bool** |  | 
+**Http3** | **bool** |  | 
 **DeliveryProtocol** | **string** |  | 
 **HttpPort** | **Object** |  | 
 **HttpsPort** | **Object** |  | 

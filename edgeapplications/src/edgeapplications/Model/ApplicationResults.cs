@@ -41,8 +41,9 @@ namespace edgeapplications.Model
         /// </summary>
         /// <param name="id">id (required).</param>
         /// <param name="name">name (required).</param>
-        /// <param name="next">next.</param>
         /// <param name="active">active (required).</param>
+        /// <param name="debugRules">debugRules (required).</param>
+        /// <param name="http3">http3 (required).</param>
         /// <param name="deliveryProtocol">deliveryProtocol (required).</param>
         /// <param name="httpPort">httpPort (required).</param>
         /// <param name="httpsPort">httpsPort (required).</param>
@@ -57,7 +58,7 @@ namespace edgeapplications.Model
         /// <param name="loadBalancer">loadBalancer (required).</param>
         /// <param name="rawLogs">rawLogs (required).</param>
         /// <param name="webApplicationFirewall">webApplicationFirewall (required).</param>
-        public ApplicationResults(long id = default(long), string name = default(string), string next = default(string), bool active = default(bool), string deliveryProtocol = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), string minimumTlsVersion = default(string), bool applicationAcceleration = default(bool), bool caching = default(bool), bool deviceDetection = default(bool), bool edgeFirewall = default(bool), bool edgeFunctions = default(bool), bool imageOptimization = default(bool), bool l2Caching = default(bool), bool loadBalancer = default(bool), bool rawLogs = default(bool), bool webApplicationFirewall = default(bool))
+        public ApplicationResults(long id = default(long), string name = default(string), bool active = default(bool), bool debugRules = default(bool), bool http3 = default(bool), string deliveryProtocol = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), string minimumTlsVersion = default(string), bool applicationAcceleration = default(bool), bool caching = default(bool), bool deviceDetection = default(bool), bool edgeFirewall = default(bool), bool edgeFunctions = default(bool), bool imageOptimization = default(bool), bool l2Caching = default(bool), bool loadBalancer = default(bool), bool rawLogs = default(bool), bool webApplicationFirewall = default(bool))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -67,6 +68,8 @@ namespace edgeapplications.Model
             }
             this.Name = name;
             this.Active = active;
+            this.DebugRules = debugRules;
+            this.Http3 = http3;
             // to ensure "deliveryProtocol" is required (not null)
             if (deliveryProtocol == null)
             {
@@ -101,7 +104,6 @@ namespace edgeapplications.Model
             this.LoadBalancer = loadBalancer;
             this.RawLogs = rawLogs;
             this.WebApplicationFirewall = webApplicationFirewall;
-            this.Next = next;
         }
 
         /// <summary>
@@ -117,16 +119,22 @@ namespace edgeapplications.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Next
-        /// </summary>
-        [DataMember(Name = "next", EmitDefaultValue = false)]
-        public string Next { get; set; }
-
-        /// <summary>
         /// Gets or Sets Active
         /// </summary>
         [DataMember(Name = "active", IsRequired = true, EmitDefaultValue = true)]
         public bool Active { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DebugRules
+        /// </summary>
+        [DataMember(Name = "debug_rules", IsRequired = true, EmitDefaultValue = true)]
+        public bool DebugRules { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Http3
+        /// </summary>
+        [DataMember(Name = "http3", IsRequired = true, EmitDefaultValue = true)]
+        public bool Http3 { get; set; }
 
         /// <summary>
         /// Gets or Sets DeliveryProtocol
@@ -222,8 +230,9 @@ namespace edgeapplications.Model
             sb.Append("class ApplicationResults {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Next: ").Append(Next).Append("\n");
             sb.Append("  Active: ").Append(Active).Append("\n");
+            sb.Append("  DebugRules: ").Append(DebugRules).Append("\n");
+            sb.Append("  Http3: ").Append(Http3).Append("\n");
             sb.Append("  DeliveryProtocol: ").Append(DeliveryProtocol).Append("\n");
             sb.Append("  HttpPort: ").Append(HttpPort).Append("\n");
             sb.Append("  HttpsPort: ").Append(HttpsPort).Append("\n");
@@ -283,13 +292,16 @@ namespace edgeapplications.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Next == input.Next ||
-                    (this.Next != null &&
-                    this.Next.Equals(input.Next))
-                ) && 
-                (
                     this.Active == input.Active ||
                     this.Active.Equals(input.Active)
+                ) && 
+                (
+                    this.DebugRules == input.DebugRules ||
+                    this.DebugRules.Equals(input.DebugRules)
+                ) && 
+                (
+                    this.Http3 == input.Http3 ||
+                    this.Http3.Equals(input.Http3)
                 ) && 
                 (
                     this.DeliveryProtocol == input.DeliveryProtocol ||
@@ -367,11 +379,9 @@ namespace edgeapplications.Model
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.Next != null)
-                {
-                    hashCode = (hashCode * 59) + this.Next.GetHashCode();
-                }
                 hashCode = (hashCode * 59) + this.Active.GetHashCode();
+                hashCode = (hashCode * 59) + this.DebugRules.GetHashCode();
+                hashCode = (hashCode * 59) + this.Http3.GetHashCode();
                 if (this.DeliveryProtocol != null)
                 {
                     hashCode = (hashCode * 59) + this.DeliveryProtocol.GetHashCode();
