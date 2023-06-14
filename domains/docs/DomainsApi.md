@@ -320,7 +320,7 @@ catch (ApiException e)
 
 <a id="getdomains"></a>
 # **GetDomains**
-> DomainResponseWithResults GetDomains (string accept = null)
+> DomainResponseWithResults GetDomains (long? page = null, long? pageSize = null, string sort = null, string orderBy = null, string accept = null)
 
 /domains
 
@@ -348,12 +348,16 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DomainsApi(config);
+            var page = 789L;  // long? |  (optional) 
+            var pageSize = 789L;  // long? |  (optional) 
+            var sort = "sort_example";  // string |  (optional) 
+            var orderBy = "orderBy_example";  // string |  (optional) 
             var accept = application/json; version=3;  // string |  (optional) 
 
             try
             {
                 // /domains
-                DomainResponseWithResults result = apiInstance.GetDomains(accept);
+                DomainResponseWithResults result = apiInstance.GetDomains(page, pageSize, sort, orderBy, accept);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -374,7 +378,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // /domains
-    ApiResponse<DomainResponseWithResults> response = apiInstance.GetDomainsWithHttpInfo(accept);
+    ApiResponse<DomainResponseWithResults> response = apiInstance.GetDomainsWithHttpInfo(page, pageSize, sort, orderBy, accept);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -391,6 +395,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
+| **page** | **long?** |  | [optional]  |
+| **pageSize** | **long?** |  | [optional]  |
+| **sort** | **string** |  | [optional]  |
+| **orderBy** | **string** |  | [optional]  |
 | **accept** | **string** |  | [optional]  |
 
 ### Return type

@@ -110,10 +110,14 @@ namespace domains.Api
         /// It returns the list of domains of an account.
         /// </remarks>
         /// <exception cref="domains.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DomainResponseWithResults</returns>
-        DomainResponseWithResults GetDomains(string accept = default(string), int operationIndex = 0);
+        DomainResponseWithResults GetDomains(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), string accept = default(string), int operationIndex = 0);
 
         /// <summary>
         /// /domains
@@ -122,10 +126,14 @@ namespace domains.Api
         /// It returns the list of domains of an account.
         /// </remarks>
         /// <exception cref="domains.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DomainResponseWithResults</returns>
-        ApiResponse<DomainResponseWithResults> GetDomainsWithHttpInfo(string accept = default(string), int operationIndex = 0);
+        ApiResponse<DomainResponseWithResults> GetDomainsWithHttpInfo(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), string accept = default(string), int operationIndex = 0);
         /// <summary>
         /// /domains:/:id
         /// </summary>
@@ -283,11 +291,15 @@ namespace domains.Api
         /// It returns the list of domains of an account.
         /// </remarks>
         /// <exception cref="domains.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DomainResponseWithResults</returns>
-        System.Threading.Tasks.Task<DomainResponseWithResults> GetDomainsAsync(string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DomainResponseWithResults> GetDomainsAsync(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /domains
@@ -296,11 +308,15 @@ namespace domains.Api
         /// It returns the list of domains of an account.
         /// </remarks>
         /// <exception cref="domains.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DomainResponseWithResults)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DomainResponseWithResults>> GetDomainsWithHttpInfoAsync(string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DomainResponseWithResults>> GetDomainsWithHttpInfoAsync(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /domains:/:id
         /// </summary>
@@ -983,12 +999,16 @@ namespace domains.Api
         /// /domains It returns the list of domains of an account.
         /// </summary>
         /// <exception cref="domains.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DomainResponseWithResults</returns>
-        public DomainResponseWithResults GetDomains(string accept = default(string), int operationIndex = 0)
+        public DomainResponseWithResults GetDomains(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), string accept = default(string), int operationIndex = 0)
         {
-            domains.Client.ApiResponse<DomainResponseWithResults> localVarResponse = GetDomainsWithHttpInfo(accept);
+            domains.Client.ApiResponse<DomainResponseWithResults> localVarResponse = GetDomainsWithHttpInfo(page, pageSize, sort, orderBy, accept);
             return localVarResponse.Data;
         }
 
@@ -996,10 +1016,14 @@ namespace domains.Api
         /// /domains It returns the list of domains of an account.
         /// </summary>
         /// <exception cref="domains.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DomainResponseWithResults</returns>
-        public domains.Client.ApiResponse<DomainResponseWithResults> GetDomainsWithHttpInfo(string accept = default(string), int operationIndex = 0)
+        public domains.Client.ApiResponse<DomainResponseWithResults> GetDomainsWithHttpInfo(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), string accept = default(string), int operationIndex = 0)
         {
             domains.Client.RequestOptions localVarRequestOptions = new domains.Client.RequestOptions();
 
@@ -1023,6 +1047,22 @@ namespace domains.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(domains.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(domains.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(domains.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(domains.Client.ClientUtils.ParameterToMultiMap("", "order_by", orderBy));
+            }
             if (accept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", domains.Client.ClientUtils.ParameterToString(accept)); // header parameter
@@ -1055,13 +1095,17 @@ namespace domains.Api
         /// /domains It returns the list of domains of an account.
         /// </summary>
         /// <exception cref="domains.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DomainResponseWithResults</returns>
-        public async System.Threading.Tasks.Task<DomainResponseWithResults> GetDomainsAsync(string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DomainResponseWithResults> GetDomainsAsync(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            domains.Client.ApiResponse<DomainResponseWithResults> localVarResponse = await GetDomainsWithHttpInfoAsync(accept, operationIndex, cancellationToken).ConfigureAwait(false);
+            domains.Client.ApiResponse<DomainResponseWithResults> localVarResponse = await GetDomainsWithHttpInfoAsync(page, pageSize, sort, orderBy, accept, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1069,11 +1113,15 @@ namespace domains.Api
         /// /domains It returns the list of domains of an account.
         /// </summary>
         /// <exception cref="domains.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DomainResponseWithResults)</returns>
-        public async System.Threading.Tasks.Task<domains.Client.ApiResponse<DomainResponseWithResults>> GetDomainsWithHttpInfoAsync(string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<domains.Client.ApiResponse<DomainResponseWithResults>> GetDomainsWithHttpInfoAsync(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             domains.Client.RequestOptions localVarRequestOptions = new domains.Client.RequestOptions();
@@ -1098,6 +1146,22 @@ namespace domains.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(domains.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(domains.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(domains.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(domains.Client.ClientUtils.ParameterToMultiMap("", "order_by", orderBy));
+            }
             if (accept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", domains.Client.ClientUtils.ParameterToString(accept)); // header parameter
