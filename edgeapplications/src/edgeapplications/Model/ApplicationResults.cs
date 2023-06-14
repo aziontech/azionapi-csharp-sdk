@@ -57,7 +57,7 @@ namespace edgeapplications.Model
         /// <param name="loadBalancer">loadBalancer (required).</param>
         /// <param name="rawLogs">rawLogs (required).</param>
         /// <param name="webApplicationFirewall">webApplicationFirewall (required).</param>
-        public ApplicationResults(long id = default(long), string name = default(string), string next = default(string), bool active = default(bool), string deliveryProtocol = default(string), Interface httpPort = default(Interface), Interface httpsPort = default(Interface), string minimumTlsVersion = default(string), bool applicationAcceleration = default(bool), bool caching = default(bool), bool deviceDetection = default(bool), bool edgeFirewall = default(bool), bool edgeFunctions = default(bool), bool imageOptimization = default(bool), bool l2Caching = default(bool), bool loadBalancer = default(bool), bool rawLogs = default(bool), bool webApplicationFirewall = default(bool))
+        public ApplicationResults(long id = default(long), string name = default(string), string next = default(string), bool active = default(bool), string deliveryProtocol = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), string minimumTlsVersion = default(string), bool applicationAcceleration = default(bool), bool caching = default(bool), bool deviceDetection = default(bool), bool edgeFirewall = default(bool), bool edgeFunctions = default(bool), bool imageOptimization = default(bool), bool l2Caching = default(bool), bool loadBalancer = default(bool), bool rawLogs = default(bool), bool webApplicationFirewall = default(bool))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -138,13 +138,13 @@ namespace edgeapplications.Model
         /// Gets or Sets HttpPort
         /// </summary>
         [DataMember(Name = "http_port", IsRequired = true, EmitDefaultValue = true)]
-        public Interface HttpPort { get; set; }
+        public Object HttpPort { get; set; }
 
         /// <summary>
         /// Gets or Sets HttpsPort
         /// </summary>
         [DataMember(Name = "https_port", IsRequired = true, EmitDefaultValue = true)]
-        public Interface HttpsPort { get; set; }
+        public Object HttpsPort { get; set; }
 
         /// <summary>
         /// Gets or Sets MinimumTlsVersion

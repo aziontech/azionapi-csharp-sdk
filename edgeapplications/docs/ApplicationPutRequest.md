@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **DeliveryProtocol** | **string** |  | [optional] 
-**HttpPort** | [**Interface**](Interface.md) |  | [optional] 
-**HttpsPort** | [**Interface**](Interface.md) |  | [optional] 
+**HttpPort** | **Object** |  | [optional] 
+**HttpsPort** | **Object** |  | [optional] 
 **MinimumTlsVersion** | **string** |  | [optional] 
 **Active** | **bool** |  | [optional] 
 **ApplicationAcceleration** | **bool** |  | [optional] 

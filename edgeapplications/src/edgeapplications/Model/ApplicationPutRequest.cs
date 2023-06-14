@@ -55,7 +55,7 @@ namespace edgeapplications.Model
         /// <param name="loadBalancer">loadBalancer.</param>
         /// <param name="rawLogs">rawLogs.</param>
         /// <param name="webApplicationFirewall">webApplicationFirewall.</param>
-        public ApplicationPutRequest(string name = default(string), string deliveryProtocol = default(string), Interface httpPort = default(Interface), Interface httpsPort = default(Interface), string minimumTlsVersion = default(string), bool active = default(bool), bool applicationAcceleration = default(bool), bool caching = default(bool), bool deviceDetection = default(bool), bool edgeFirewall = default(bool), bool edgeFunctions = default(bool), bool imageOptimization = default(bool), bool l2Caching = default(bool), bool loadBalancer = default(bool), bool rawLogs = default(bool), bool webApplicationFirewall = default(bool))
+        public ApplicationPutRequest(string name = default(string), string deliveryProtocol = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), string minimumTlsVersion = default(string), bool active = default(bool), bool applicationAcceleration = default(bool), bool caching = default(bool), bool deviceDetection = default(bool), bool edgeFirewall = default(bool), bool edgeFunctions = default(bool), bool imageOptimization = default(bool), bool l2Caching = default(bool), bool loadBalancer = default(bool), bool rawLogs = default(bool), bool webApplicationFirewall = default(bool))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -95,14 +95,14 @@ namespace edgeapplications.Model
         /// <summary>
         /// Gets or Sets HttpPort
         /// </summary>
-        [DataMember(Name = "http_port", EmitDefaultValue = false)]
-        public Interface HttpPort { get; set; }
+        [DataMember(Name = "http_port", EmitDefaultValue = true)]
+        public Object HttpPort { get; set; }
 
         /// <summary>
         /// Gets or Sets HttpsPort
         /// </summary>
-        [DataMember(Name = "https_port", EmitDefaultValue = false)]
-        public Interface HttpsPort { get; set; }
+        [DataMember(Name = "https_port", EmitDefaultValue = true)]
+        public Object HttpsPort { get; set; }
 
         /// <summary>
         /// Gets or Sets MinimumTlsVersion

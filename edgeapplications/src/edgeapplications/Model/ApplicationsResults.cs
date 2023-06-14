@@ -34,26 +34,22 @@ namespace edgeapplications.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplicationsResults" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected ApplicationsResults() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ApplicationsResults" /> class.
-        /// </summary>
         /// <param name="id">id.</param>
-        /// <param name="next">next (required).</param>
+        /// <param name="name">name.</param>
+        /// <param name="debugRules">debugRules.</param>
+        /// <param name="lastEditor">lastEditor.</param>
+        /// <param name="lastModified">lastModified.</param>
         /// <param name="active">active.</param>
-        /// <param name="links">links.</param>
-        public ApplicationsResults(long id = default(long), string next = default(string), bool active = default(bool), ApplicationOrigins links = default(ApplicationOrigins))
+        /// <param name="origins">origins.</param>
+        public ApplicationsResults(long id = default(long), string name = default(string), string debugRules = default(string), string lastEditor = default(string), string lastModified = default(string), bool active = default(bool), List<ApplicationOrigins> origins = default(List<ApplicationOrigins>))
         {
-            // to ensure "next" is required (not null)
-            if (next == null)
-            {
-                throw new ArgumentNullException("next is a required property for ApplicationsResults and cannot be null");
-            }
-            this.Next = next;
             this.Id = id;
+            this.Name = name;
+            this.DebugRules = debugRules;
+            this.LastEditor = lastEditor;
+            this.LastModified = lastModified;
             this.Active = active;
-            this.Links = links;
+            this.Origins = origins;
         }
 
         /// <summary>
@@ -63,10 +59,28 @@ namespace edgeapplications.Model
         public long Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Next
+        /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "next", IsRequired = true, EmitDefaultValue = true)]
-        public string Next { get; set; }
+        [DataMember(Name = "name", EmitDefaultValue = false)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DebugRules
+        /// </summary>
+        [DataMember(Name = "debug_rules", EmitDefaultValue = false)]
+        public string DebugRules { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LastEditor
+        /// </summary>
+        [DataMember(Name = "last_editor", EmitDefaultValue = false)]
+        public string LastEditor { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LastModified
+        /// </summary>
+        [DataMember(Name = "last_modified", EmitDefaultValue = false)]
+        public string LastModified { get; set; }
 
         /// <summary>
         /// Gets or Sets Active
@@ -75,10 +89,10 @@ namespace edgeapplications.Model
         public bool Active { get; set; }
 
         /// <summary>
-        /// Gets or Sets Links
+        /// Gets or Sets Origins
         /// </summary>
-        [DataMember(Name = "links", EmitDefaultValue = false)]
-        public ApplicationOrigins Links { get; set; }
+        [DataMember(Name = "origins", EmitDefaultValue = false)]
+        public List<ApplicationOrigins> Origins { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -89,9 +103,12 @@ namespace edgeapplications.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class ApplicationsResults {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Next: ").Append(Next).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  DebugRules: ").Append(DebugRules).Append("\n");
+            sb.Append("  LastEditor: ").Append(LastEditor).Append("\n");
+            sb.Append("  LastModified: ").Append(LastModified).Append("\n");
             sb.Append("  Active: ").Append(Active).Append("\n");
-            sb.Append("  Links: ").Append(Links).Append("\n");
+            sb.Append("  Origins: ").Append(Origins).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -132,18 +149,34 @@ namespace edgeapplications.Model
                     this.Id.Equals(input.Id)
                 ) && 
                 (
-                    this.Next == input.Next ||
-                    (this.Next != null &&
-                    this.Next.Equals(input.Next))
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.DebugRules == input.DebugRules ||
+                    (this.DebugRules != null &&
+                    this.DebugRules.Equals(input.DebugRules))
+                ) && 
+                (
+                    this.LastEditor == input.LastEditor ||
+                    (this.LastEditor != null &&
+                    this.LastEditor.Equals(input.LastEditor))
+                ) && 
+                (
+                    this.LastModified == input.LastModified ||
+                    (this.LastModified != null &&
+                    this.LastModified.Equals(input.LastModified))
                 ) && 
                 (
                     this.Active == input.Active ||
                     this.Active.Equals(input.Active)
                 ) && 
                 (
-                    this.Links == input.Links ||
-                    (this.Links != null &&
-                    this.Links.Equals(input.Links))
+                    this.Origins == input.Origins ||
+                    this.Origins != null &&
+                    input.Origins != null &&
+                    this.Origins.SequenceEqual(input.Origins)
                 );
         }
 
@@ -157,14 +190,26 @@ namespace edgeapplications.Model
             {
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                if (this.Next != null)
+                if (this.Name != null)
                 {
-                    hashCode = (hashCode * 59) + this.Next.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.DebugRules != null)
+                {
+                    hashCode = (hashCode * 59) + this.DebugRules.GetHashCode();
+                }
+                if (this.LastEditor != null)
+                {
+                    hashCode = (hashCode * 59) + this.LastEditor.GetHashCode();
+                }
+                if (this.LastModified != null)
+                {
+                    hashCode = (hashCode * 59) + this.LastModified.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Active.GetHashCode();
-                if (this.Links != null)
+                if (this.Origins != null)
                 {
-                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Origins.GetHashCode();
                 }
                 return hashCode;
             }
