@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **HttpsPort** | **Object** |  | [optional] 
 **MinimumTlsVersion** | **string** |  | [optional] 
 **Active** | **bool** |  | [optional] 
+**DebugRules** | **bool** |  | [optional] 
 **ApplicationAcceleration** | **bool** |  | [optional] 
 **Caching** | **bool** |  | [optional] 
 **DeviceDetection** | **bool** |  | [optional] 

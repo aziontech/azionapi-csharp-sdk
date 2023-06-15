@@ -7,6 +7,9 @@ Name | Type | Description | Notes
 **Id** | **long** |  | 
 **Name** | **string** |  | 
 **Active** | **bool** |  | 
+**DebugRules** | **bool** |  | 
+**Http3** | **bool** |  | 
+**SupportedCiphers** | **string** |  | 
 **DeliveryProtocol** | **string** |  | 
 **HttpPort** | **Object** |  | 
 **HttpsPort** | **Object** |  | 
