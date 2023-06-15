@@ -11,6 +11,9 @@ Name | Type | Description | Notes
 **HttpsPort** | **Object** |  | 
 **MinimumTlsVersion** | **string** |  | 
 **Active** | **bool** |  | 
+**DebugRules** | **bool** |  | 
+**Http3** | **bool** |  | 
+**SupportedCiphers** | **string** |  | 
 **ApplicationAcceleration** | **bool** |  | 
 **Caching** | **bool** |  | 
 **DeviceDetection** | **bool** |  | 

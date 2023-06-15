@@ -46,6 +46,9 @@ namespace edgeapplications.Model
         /// <param name="httpsPort">httpsPort (required).</param>
         /// <param name="minimumTlsVersion">minimumTlsVersion (required).</param>
         /// <param name="active">active (required).</param>
+        /// <param name="debugRules">debugRules (required).</param>
+        /// <param name="http3">http3 (required).</param>
+        /// <param name="supportedCiphers">supportedCiphers (required).</param>
         /// <param name="applicationAcceleration">applicationAcceleration (required).</param>
         /// <param name="caching">caching (required).</param>
         /// <param name="deviceDetection">deviceDetection (required).</param>
@@ -56,7 +59,7 @@ namespace edgeapplications.Model
         /// <param name="loadBalancer">loadBalancer (required).</param>
         /// <param name="rawLogs">rawLogs (required).</param>
         /// <param name="webApplicationFirewall">webApplicationFirewall (required).</param>
-        public ApplicationUpdateResults(long id = default(long), string name = default(string), string deliveryProtocol = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), string minimumTlsVersion = default(string), bool active = default(bool), bool applicationAcceleration = default(bool), bool caching = default(bool), bool deviceDetection = default(bool), bool edgeFirewall = default(bool), bool edgeFunctions = default(bool), bool imageOptimization = default(bool), bool l2Caching = default(bool), bool loadBalancer = default(bool), bool rawLogs = default(bool), bool webApplicationFirewall = default(bool))
+        public ApplicationUpdateResults(long id = default(long), string name = default(string), string deliveryProtocol = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), string minimumTlsVersion = default(string), bool active = default(bool), bool debugRules = default(bool), bool http3 = default(bool), string supportedCiphers = default(string), bool applicationAcceleration = default(bool), bool caching = default(bool), bool deviceDetection = default(bool), bool edgeFirewall = default(bool), bool edgeFunctions = default(bool), bool imageOptimization = default(bool), bool l2Caching = default(bool), bool loadBalancer = default(bool), bool rawLogs = default(bool), bool webApplicationFirewall = default(bool))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -90,6 +93,14 @@ namespace edgeapplications.Model
             }
             this.MinimumTlsVersion = minimumTlsVersion;
             this.Active = active;
+            this.DebugRules = debugRules;
+            this.Http3 = http3;
+            // to ensure "supportedCiphers" is required (not null)
+            if (supportedCiphers == null)
+            {
+                throw new ArgumentNullException("supportedCiphers is a required property for ApplicationUpdateResults and cannot be null");
+            }
+            this.SupportedCiphers = supportedCiphers;
             this.ApplicationAcceleration = applicationAcceleration;
             this.Caching = caching;
             this.DeviceDetection = deviceDetection;
@@ -143,6 +154,24 @@ namespace edgeapplications.Model
         /// </summary>
         [DataMember(Name = "active", IsRequired = true, EmitDefaultValue = true)]
         public bool Active { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DebugRules
+        /// </summary>
+        [DataMember(Name = "debug_rules", IsRequired = true, EmitDefaultValue = true)]
+        public bool DebugRules { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Http3
+        /// </summary>
+        [DataMember(Name = "http3", IsRequired = true, EmitDefaultValue = true)]
+        public bool Http3 { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SupportedCiphers
+        /// </summary>
+        [DataMember(Name = "supported_ciphers", IsRequired = true, EmitDefaultValue = true)]
+        public string SupportedCiphers { get; set; }
 
         /// <summary>
         /// Gets or Sets ApplicationAcceleration
@@ -219,6 +248,9 @@ namespace edgeapplications.Model
             sb.Append("  HttpsPort: ").Append(HttpsPort).Append("\n");
             sb.Append("  MinimumTlsVersion: ").Append(MinimumTlsVersion).Append("\n");
             sb.Append("  Active: ").Append(Active).Append("\n");
+            sb.Append("  DebugRules: ").Append(DebugRules).Append("\n");
+            sb.Append("  Http3: ").Append(Http3).Append("\n");
+            sb.Append("  SupportedCiphers: ").Append(SupportedCiphers).Append("\n");
             sb.Append("  ApplicationAcceleration: ").Append(ApplicationAcceleration).Append("\n");
             sb.Append("  Caching: ").Append(Caching).Append("\n");
             sb.Append("  DeviceDetection: ").Append(DeviceDetection).Append("\n");
@@ -298,6 +330,19 @@ namespace edgeapplications.Model
                     this.Active.Equals(input.Active)
                 ) && 
                 (
+                    this.DebugRules == input.DebugRules ||
+                    this.DebugRules.Equals(input.DebugRules)
+                ) && 
+                (
+                    this.Http3 == input.Http3 ||
+                    this.Http3.Equals(input.Http3)
+                ) && 
+                (
+                    this.SupportedCiphers == input.SupportedCiphers ||
+                    (this.SupportedCiphers != null &&
+                    this.SupportedCiphers.Equals(input.SupportedCiphers))
+                ) && 
+                (
                     this.ApplicationAcceleration == input.ApplicationAcceleration ||
                     this.ApplicationAcceleration.Equals(input.ApplicationAcceleration)
                 ) && 
@@ -370,6 +415,12 @@ namespace edgeapplications.Model
                     hashCode = (hashCode * 59) + this.MinimumTlsVersion.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Active.GetHashCode();
+                hashCode = (hashCode * 59) + this.DebugRules.GetHashCode();
+                hashCode = (hashCode * 59) + this.Http3.GetHashCode();
+                if (this.SupportedCiphers != null)
+                {
+                    hashCode = (hashCode * 59) + this.SupportedCiphers.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.ApplicationAcceleration.GetHashCode();
                 hashCode = (hashCode * 59) + this.Caching.GetHashCode();
                 hashCode = (hashCode * 59) + this.DeviceDetection.GetHashCode();

@@ -40,6 +40,7 @@ namespace edgeapplications.Model
         /// <param name="httpsPort">httpsPort.</param>
         /// <param name="minimumTlsVersion">minimumTlsVersion.</param>
         /// <param name="active">active.</param>
+        /// <param name="debugRules">debugRules.</param>
         /// <param name="applicationAcceleration">applicationAcceleration.</param>
         /// <param name="caching">caching.</param>
         /// <param name="deviceDetection">deviceDetection.</param>
@@ -50,7 +51,7 @@ namespace edgeapplications.Model
         /// <param name="loadBalancer">loadBalancer.</param>
         /// <param name="rawLogs">rawLogs.</param>
         /// <param name="webApplicationFirewall">webApplicationFirewall.</param>
-        public ApplicationUpdateRequest(string name = default(string), string deliveryProtocol = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), string minimumTlsVersion = default(string), bool active = default(bool), bool applicationAcceleration = default(bool), bool caching = default(bool), bool deviceDetection = default(bool), bool edgeFirewall = default(bool), bool edgeFunctions = default(bool), bool imageOptimization = default(bool), bool l2Caching = default(bool), bool loadBalancer = default(bool), bool rawLogs = default(bool), bool webApplicationFirewall = default(bool))
+        public ApplicationUpdateRequest(string name = default(string), string deliveryProtocol = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), string minimumTlsVersion = default(string), bool active = default(bool), bool debugRules = default(bool), bool applicationAcceleration = default(bool), bool caching = default(bool), bool deviceDetection = default(bool), bool edgeFirewall = default(bool), bool edgeFunctions = default(bool), bool imageOptimization = default(bool), bool l2Caching = default(bool), bool loadBalancer = default(bool), bool rawLogs = default(bool), bool webApplicationFirewall = default(bool))
         {
             this.Name = name;
             this.DeliveryProtocol = deliveryProtocol;
@@ -58,6 +59,7 @@ namespace edgeapplications.Model
             this.HttpsPort = httpsPort;
             this.MinimumTlsVersion = minimumTlsVersion;
             this.Active = active;
+            this.DebugRules = debugRules;
             this.ApplicationAcceleration = applicationAcceleration;
             this.Caching = caching;
             this.DeviceDetection = deviceDetection;
@@ -105,6 +107,12 @@ namespace edgeapplications.Model
         /// </summary>
         [DataMember(Name = "active", EmitDefaultValue = true)]
         public bool Active { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DebugRules
+        /// </summary>
+        [DataMember(Name = "debug_rules", EmitDefaultValue = true)]
+        public bool DebugRules { get; set; }
 
         /// <summary>
         /// Gets or Sets ApplicationAcceleration
@@ -180,6 +188,7 @@ namespace edgeapplications.Model
             sb.Append("  HttpsPort: ").Append(HttpsPort).Append("\n");
             sb.Append("  MinimumTlsVersion: ").Append(MinimumTlsVersion).Append("\n");
             sb.Append("  Active: ").Append(Active).Append("\n");
+            sb.Append("  DebugRules: ").Append(DebugRules).Append("\n");
             sb.Append("  ApplicationAcceleration: ").Append(ApplicationAcceleration).Append("\n");
             sb.Append("  Caching: ").Append(Caching).Append("\n");
             sb.Append("  DeviceDetection: ").Append(DeviceDetection).Append("\n");
@@ -255,6 +264,10 @@ namespace edgeapplications.Model
                     this.Active.Equals(input.Active)
                 ) && 
                 (
+                    this.DebugRules == input.DebugRules ||
+                    this.DebugRules.Equals(input.DebugRules)
+                ) && 
+                (
                     this.ApplicationAcceleration == input.ApplicationAcceleration ||
                     this.ApplicationAcceleration.Equals(input.ApplicationAcceleration)
                 ) && 
@@ -326,6 +339,7 @@ namespace edgeapplications.Model
                     hashCode = (hashCode * 59) + this.MinimumTlsVersion.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Active.GetHashCode();
+                hashCode = (hashCode * 59) + this.DebugRules.GetHashCode();
                 hashCode = (hashCode * 59) + this.ApplicationAcceleration.GetHashCode();
                 hashCode = (hashCode * 59) + this.Caching.GetHashCode();
                 hashCode = (hashCode * 59) + this.DeviceDetection.GetHashCode();
