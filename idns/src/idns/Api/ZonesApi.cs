@@ -691,6 +691,7 @@ namespace idns.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json",
                 "application/json; version=3"
             };
 
@@ -760,6 +761,7 @@ namespace idns.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json",
                 "application/json; version=3"
             };
 
