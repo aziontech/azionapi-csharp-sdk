@@ -79,17 +79,16 @@ namespace Example
             // config.ApiKeyPrefix.Add("Authorization", "Bearer");
 
             var apiInstance = new VariablesApi(config);
-            var format = "json";  // string |  (optional) 
-            var lang = "af";  // string |  (optional) 
+            var variableCreate = new VariableCreate(); // VariableCreate | 
 
             try
             {
-                Dictionary<string, Object> result = apiInstance.ApiSchemaRetrieve(format, lang);
+                VariableGet result = apiInstance.ApiVariablesCreate(variableCreate);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
             {
-                Debug.Print("Exception when calling VariablesApi.ApiSchemaRetrieve: " + e.Message );
+                Debug.Print("Exception when calling VariablesApi.ApiVariablesCreate: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -106,7 +105,6 @@ All URIs are relative to *https://stage-variables.azion.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*VariablesApi* | [**ApiSchemaRetrieve**](docs/VariablesApi.md#apischemaretrieve) | **GET** /api/schema | 
 *VariablesApi* | [**ApiVariablesCreate**](docs/VariablesApi.md#apivariablescreate) | **POST** /api/variables | 
 *VariablesApi* | [**ApiVariablesDestroy**](docs/VariablesApi.md#apivariablesdestroy) | **DELETE** /api/variables/{uuid} | 
 *VariablesApi* | [**ApiVariablesList**](docs/VariablesApi.md#apivariableslist) | **GET** /api/variables | 

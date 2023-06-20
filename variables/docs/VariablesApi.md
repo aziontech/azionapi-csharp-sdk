@@ -4,108 +4,11 @@ All URIs are relative to *https://stage-variables.azion.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ApiSchemaRetrieve**](VariablesApi.md#apischemaretrieve) | **GET** /api/schema |  |
 | [**ApiVariablesCreate**](VariablesApi.md#apivariablescreate) | **POST** /api/variables |  |
 | [**ApiVariablesDestroy**](VariablesApi.md#apivariablesdestroy) | **DELETE** /api/variables/{uuid} |  |
 | [**ApiVariablesList**](VariablesApi.md#apivariableslist) | **GET** /api/variables |  |
 | [**ApiVariablesRetrieve**](VariablesApi.md#apivariablesretrieve) | **GET** /api/variables/{uuid} |  |
 | [**ApiVariablesUpdate**](VariablesApi.md#apivariablesupdate) | **PUT** /api/variables/{uuid} |  |
-
-<a id="apischemaretrieve"></a>
-# **ApiSchemaRetrieve**
-> Dictionary&lt;string, Object&gt; ApiSchemaRetrieve (string format = null, string lang = null)
-
-
-
-OpenApi3 schema for this API. Format can be selected via content negotiation.  - YAML: application/vnd.oai.openapi - JSON: application/vnd.oai.openapi+json
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using variables.Api;
-using variables.Client;
-using variables.Model;
-
-namespace Example
-{
-    public class ApiSchemaRetrieveExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://stage-variables.azion.com";
-            // Configure API key authorization: tokenAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-
-            var apiInstance = new VariablesApi(config);
-            var format = "json";  // string |  (optional) 
-            var lang = "af";  // string |  (optional) 
-
-            try
-            {
-                Dictionary<string, Object> result = apiInstance.ApiSchemaRetrieve(format, lang);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling VariablesApi.ApiSchemaRetrieve: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the ApiSchemaRetrieveWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    ApiResponse<Dictionary<string, Object>> response = apiInstance.ApiSchemaRetrieveWithHttpInfo(format, lang);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling VariablesApi.ApiSchemaRetrieveWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **format** | **string** |  | [optional]  |
-| **lang** | **string** |  | [optional]  |
-
-### Return type
-
-**Dictionary<string, Object>**
-
-### Authorization
-
-[tokenAuth](../README.md#tokenAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/vnd.oai.openapi, application/yaml, application/vnd.oai.openapi+json, application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="apivariablescreate"></a>
 # **ApiVariablesCreate**
@@ -578,7 +481,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** |  |  -  |
+| **200** |  |  -  |
 | **400** | Bad Request |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |

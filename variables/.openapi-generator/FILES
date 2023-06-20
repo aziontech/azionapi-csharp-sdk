@@ -7,7 +7,6 @@ docs/VariableCreate.md
 docs/VariableGet.md
 docs/VariablesApi.md
 git_push.sh
-src/variables.Test/Api/VariablesApiTests.cs
 src/variables.Test/variables.Test.csproj
 src/variables/Api/VariablesApi.cs
 src/variables/Client/ApiClient.cs
