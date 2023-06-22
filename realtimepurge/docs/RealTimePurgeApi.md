@@ -1,6 +1,6 @@
 # realtimepurge.Api.RealTimePurgeApi
 
-All URIs are relative to *http://localhost:3002*
+All URIs are relative to *https://api.azionapi.net*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -14,7 +14,7 @@ All URIs are relative to *http://localhost:3002*
 
 /purge/cachekey
 
-List of Cache Keys you want to remove from the Azion Edge Servers cache.  urls (array): list of up to 50 Cache Keys to be expired from the cache, per request.  method (choice): purge method, use the “delete” value for removal.  Layer (choice): layer where the purge will be done. Use the value “edge_caching” (default value if not informed) to purge on the Edge Caching layer and the value “l2_caching” to purge on L2 Caching.
+List of Cache Keys you want to remove from the Azion Edge Servers cache. urls (array): list of up to 50 Cache Keys to be expired from the cache, per request. method (choice): purge method, use the “delete” value for removal. Layer (choice): layer where the purge will be done. Use the value “edge_caching” (default value if not informed) to purge on the Edge Caching layer and the value “l2_caching” to purge on L2 Caching.
 
 ### Example
 ```csharp
@@ -31,8 +31,8 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3002";
-            // Configure API key authorization: JWT
+            config.BasePath = "https://api.azionapi.net";
+            // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
@@ -89,7 +89,7 @@ void (empty response body)
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -122,7 +122,7 @@ void (empty response body)
 
 /purge/url
 
-List of URLs you want to remove from the Azion Edge Servers cache.  urls (array): list of up to 50 URLs to be expired from the cache, per request.  method (choice): purge method, use the “delete” value for removal.
+List of URLs you want to remove from the Azion Edge Servers cache. urls (array): list of up to 50 URLs to be expired from the cache, per request. method (choice): purge method, use the “delete” value for removal.
 
 ### Example
 ```csharp
@@ -139,8 +139,8 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3002";
-            // Configure API key authorization: JWT
+            config.BasePath = "https://api.azionapi.net";
+            // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
@@ -197,7 +197,7 @@ void (empty response body)
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -230,7 +230,7 @@ void (empty response body)
 
 /purge/wildcard
 
-The Wildcard expression that represents the list of objects that you want to remove from the Azion Edge Servers cache.  urls (array):the Wildcard URL or Wildcard Cache Key that represents the list of objects you want to expire. You can only use one Wildcard expression per request.  method (choice): purge method, use the “delete” value for removal.
+The Wildcard expression that represents the list of objects that you want to remove from the Azion Edge Servers cache. urls (array):the Wildcard URL or Wildcard Cache Key that represents the list of objects you want to expire. You can only use one Wildcard expression per request. method (choice): purge method, use the “delete” value for removal.
 
 ### Example
 ```csharp
@@ -247,8 +247,8 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3002";
-            // Configure API key authorization: JWT
+            config.BasePath = "https://api.azionapi.net";
+            // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
@@ -305,7 +305,7 @@ void (empty response body)
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 

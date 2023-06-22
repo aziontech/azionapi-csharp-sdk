@@ -4,18 +4,18 @@ All URIs are relative to *https://api.azionapi.net*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsDelete**](EdgeApplicationsCacheSettingsApi.md#edgeapplicationsedgeapplicationidcachesettingscachesettingsdelete) | **DELETE** /edge_applications/{edge_application_id}/cache_settings/{cache_settings} | /edge_applications/:edge_application_id:/cache_settings/:cache_settings: |
+| [**EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdDelete**](EdgeApplicationsCacheSettingsApi.md#edgeapplicationsedgeapplicationidcachesettingscachesettingsiddelete) | **DELETE** /edge_applications/{edge_application_id}/cache_settings/{cache_settings_id} | /edge_applications/:edge_application_id:/cache_settings/:cache_settings_id: |
 | [**EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdGet**](EdgeApplicationsCacheSettingsApi.md#edgeapplicationsedgeapplicationidcachesettingscachesettingsidget) | **GET** /edge_applications/{edge_application_id}/cache_settings/{cache_settings_id} | /edge_applications/:edge_application_id:/cache_settings/:cache_settings_id: |
+| [**EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdPatch**](EdgeApplicationsCacheSettingsApi.md#edgeapplicationsedgeapplicationidcachesettingscachesettingsidpatch) | **PATCH** /edge_applications/{edge_application_id}/cache_settings/{cache_settings_id} | /edge_applications/:edge_application_id:/cache_settings/:cache_settings_id: |
 | [**EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdPut**](EdgeApplicationsCacheSettingsApi.md#edgeapplicationsedgeapplicationidcachesettingscachesettingsidput) | **PUT** /edge_applications/{edge_application_id}/cache_settings/{cache_settings_id} | /edge_applications/:edge_application_id:/cache_settings/ca |
-| [**EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsPatch**](EdgeApplicationsCacheSettingsApi.md#edgeapplicationsedgeapplicationidcachesettingscachesettingspatch) | **PATCH** /edge_applications/{edge_application_id}/cache_settings/{cache_settings} | /edge_applications/:edge_application_id:/cache_settings/:cache_settings_id: |
 | [**EdgeApplicationsEdgeApplicationIdCacheSettingsGet**](EdgeApplicationsCacheSettingsApi.md#edgeapplicationsedgeapplicationidcachesettingsget) | **GET** /edge_applications/{edge_application_id}/cache_settings | /edge_applications/{edge_application_id}/cache_settings |
 | [**EdgeApplicationsEdgeApplicationIdCacheSettingsPost**](EdgeApplicationsCacheSettingsApi.md#edgeapplicationsedgeapplicationidcachesettingspost) | **POST** /edge_applications/{edge_application_id}/cache_settings | /edge_applications/:edge_application_id:/cache_settings |
 
-<a id="edgeapplicationsedgeapplicationidcachesettingscachesettingsdelete"></a>
-# **EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsDelete**
-> void EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsDelete (long edgeApplicationId, long cacheSettings, string accept = null, string contentType = null)
+<a id="edgeapplicationsedgeapplicationidcachesettingscachesettingsiddelete"></a>
+# **EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdDelete**
+> void EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdDelete (long edgeApplicationId, long cacheSettingsId, string accept = null, string contentType = null)
 
-/edge_applications/:edge_application_id:/cache_settings/:cache_settings:
+/edge_applications/:edge_application_id:/cache_settings/:cache_settings_id:
 
 ### Example
 ```csharp
@@ -27,7 +27,7 @@ using edgeapplications.Model;
 
 namespace Example
 {
-    public class EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsDeleteExample
+    public class EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdDeleteExample
     {
         public static void Main()
         {
@@ -40,18 +40,18 @@ namespace Example
 
             var apiInstance = new EdgeApplicationsCacheSettingsApi(config);
             var edgeApplicationId = 789L;  // long | 
-            var cacheSettings = 789L;  // long | 
+            var cacheSettingsId = 789L;  // long | 
             var accept = application/json; version=3;  // string |  (optional) 
             var contentType = application/json;  // string | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
 
             try
             {
-                // /edge_applications/:edge_application_id:/cache_settings/:cache_settings:
-                apiInstance.EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsDelete(edgeApplicationId, cacheSettings, accept, contentType);
+                // /edge_applications/:edge_application_id:/cache_settings/:cache_settings_id:
+                apiInstance.EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdDelete(edgeApplicationId, cacheSettingsId, accept, contentType);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling EdgeApplicationsCacheSettingsApi.EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsDelete: " + e.Message);
+                Debug.Print("Exception when calling EdgeApplicationsCacheSettingsApi.EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdDelete: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -60,18 +60,18 @@ namespace Example
 }
 ```
 
-#### Using the EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsDeleteWithHttpInfo variant
+#### Using the EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdDeleteWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // /edge_applications/:edge_application_id:/cache_settings/:cache_settings:
-    apiInstance.EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsDeleteWithHttpInfo(edgeApplicationId, cacheSettings, accept, contentType);
+    // /edge_applications/:edge_application_id:/cache_settings/:cache_settings_id:
+    apiInstance.EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdDeleteWithHttpInfo(edgeApplicationId, cacheSettingsId, accept, contentType);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling EdgeApplicationsCacheSettingsApi.EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling EdgeApplicationsCacheSettingsApi.EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdDeleteWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -82,7 +82,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **edgeApplicationId** | **long** |  |  |
-| **cacheSettings** | **long** |  |  |
+| **cacheSettingsId** | **long** |  |  |
 | **accept** | **string** |  | [optional]  |
 | **contentType** | **string** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
 
@@ -215,6 +215,111 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="edgeapplicationsedgeapplicationidcachesettingscachesettingsidpatch"></a>
+# **EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdPatch**
+> ApplicationCachePatchResponse EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdPatch (long edgeApplicationId, long cacheSettingsId, string accept = null, ApplicationCachePatchRequest applicationCachePatchRequest = null)
+
+/edge_applications/:edge_application_id:/cache_settings/:cache_settings_id:
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using edgeapplications.Api;
+using edgeapplications.Client;
+using edgeapplications.Model;
+
+namespace Example
+{
+    public class EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdPatchExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.azionapi.net";
+            // Configure API key authorization: tokenAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new EdgeApplicationsCacheSettingsApi(config);
+            var edgeApplicationId = 789L;  // long | 
+            var cacheSettingsId = 789L;  // long | 
+            var accept = application/json; version=3;  // string |  (optional) 
+            var applicationCachePatchRequest = new ApplicationCachePatchRequest(); // ApplicationCachePatchRequest |  (optional) 
+
+            try
+            {
+                // /edge_applications/:edge_application_id:/cache_settings/:cache_settings_id:
+                ApplicationCachePatchResponse result = apiInstance.EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdPatch(edgeApplicationId, cacheSettingsId, accept, applicationCachePatchRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling EdgeApplicationsCacheSettingsApi.EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdPatch: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdPatchWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // /edge_applications/:edge_application_id:/cache_settings/:cache_settings_id:
+    ApiResponse<ApplicationCachePatchResponse> response = apiInstance.EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdPatchWithHttpInfo(edgeApplicationId, cacheSettingsId, accept, applicationCachePatchRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling EdgeApplicationsCacheSettingsApi.EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **edgeApplicationId** | **long** |  |  |
+| **cacheSettingsId** | **long** |  |  |
+| **accept** | **string** |  | [optional]  |
+| **applicationCachePatchRequest** | [**ApplicationCachePatchRequest**](ApplicationCachePatchRequest.md) |  | [optional]  |
+
+### Return type
+
+[**ApplicationCachePatchResponse**](ApplicationCachePatchResponse.md)
+
+### Authorization
+
+[tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; version=3
+ - **Accept**: application/json; version=3
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+| **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **422** | Unprocessable Entity |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="edgeapplicationsedgeapplicationidcachesettingscachesettingsidput"></a>
 # **EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdPut**
 > ApplicationCachePutResponse EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdPut (long edgeApplicationId, long cacheSettingsId, string accept = null, string contentType = null, ApplicationCachePutRequest applicationCachePutRequest = null)
@@ -299,111 +404,6 @@ catch (ApiException e)
 ### Return type
 
 [**ApplicationCachePutResponse**](ApplicationCachePutResponse.md)
-
-### Authorization
-
-[tokenAuth](../README.md#tokenAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json; version=3
- - **Accept**: application/json; version=3
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-| **400** | Bad Request |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
-| **422** | Unprocessable Entity |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="edgeapplicationsedgeapplicationidcachesettingscachesettingspatch"></a>
-# **EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsPatch**
-> ApplicationCachePatchResponse EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsPatch (long edgeApplicationId, long cacheSettings, string accept = null, ApplicationCachePatchRequest applicationCachePatchRequest = null)
-
-/edge_applications/:edge_application_id:/cache_settings/:cache_settings_id:
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using edgeapplications.Api;
-using edgeapplications.Client;
-using edgeapplications.Model;
-
-namespace Example
-{
-    public class EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsPatchExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.azionapi.net";
-            // Configure API key authorization: tokenAuth
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-
-            var apiInstance = new EdgeApplicationsCacheSettingsApi(config);
-            var edgeApplicationId = 789L;  // long | 
-            var cacheSettings = 789L;  // long | 
-            var accept = application/json; version=3;  // string |  (optional) 
-            var applicationCachePatchRequest = new ApplicationCachePatchRequest(); // ApplicationCachePatchRequest |  (optional) 
-
-            try
-            {
-                // /edge_applications/:edge_application_id:/cache_settings/:cache_settings_id:
-                ApplicationCachePatchResponse result = apiInstance.EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsPatch(edgeApplicationId, cacheSettings, accept, applicationCachePatchRequest);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling EdgeApplicationsCacheSettingsApi.EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsPatch: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsPatchWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // /edge_applications/:edge_application_id:/cache_settings/:cache_settings_id:
-    ApiResponse<ApplicationCachePatchResponse> response = apiInstance.EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsPatchWithHttpInfo(edgeApplicationId, cacheSettings, accept, applicationCachePatchRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling EdgeApplicationsCacheSettingsApi.EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsPatchWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **edgeApplicationId** | **long** |  |  |
-| **cacheSettings** | **long** |  |  |
-| **accept** | **string** |  | [optional]  |
-| **applicationCachePatchRequest** | [**ApplicationCachePatchRequest**](ApplicationCachePatchRequest.md) |  | [optional]  |
-
-### Return type
-
-[**ApplicationCachePatchResponse**](ApplicationCachePatchResponse.md)
 
 ### Authorization
 

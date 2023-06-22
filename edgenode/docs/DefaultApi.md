@@ -1,6 +1,6 @@
 # edgenode.Api.DefaultApi
 
-All URIs are relative to *http://localhost:3001*
+All URIs are relative to *https://api.azionapi.net*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -37,7 +37,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3001";
+            config.BasePath = "https://api.azionapi.net";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -133,7 +133,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3001";
+            config.BasePath = "https://api.azionapi.net";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -234,7 +234,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3001";
+            config.BasePath = "https://api.azionapi.net";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -328,7 +328,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3001";
+            config.BasePath = "https://api.azionapi.net";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -424,7 +424,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3001";
+            config.BasePath = "https://api.azionapi.net";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -523,7 +523,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3001";
+            config.BasePath = "https://api.azionapi.net";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -613,7 +613,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3001";
+            config.BasePath = "https://api.azionapi.net";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -712,7 +712,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3001";
+            config.BasePath = "https://api.azionapi.net";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -822,7 +822,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3001";
+            config.BasePath = "https://api.azionapi.net";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -926,7 +926,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3001";
+            config.BasePath = "https://api.azionapi.net";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1025,7 +1025,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3001";
+            config.BasePath = "https://api.azionapi.net";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed

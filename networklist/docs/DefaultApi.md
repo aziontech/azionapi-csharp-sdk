@@ -31,6 +31,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azionapi.net";
+            // Configure API key authorization: tokenAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
             var apiInstance = new DefaultApi(config);
             var page = 56;  // int? |  (optional) 
 
@@ -83,7 +88,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -120,6 +125,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azionapi.net";
+            // Configure API key authorization: tokenAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
             var apiInstance = new DefaultApi(config);
             var createNetworkListsRequest = new CreateNetworkListsRequest(); // CreateNetworkListsRequest | 
 
@@ -168,7 +178,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -207,6 +217,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azionapi.net";
+            // Configure API key authorization: tokenAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
             var apiInstance = new DefaultApi(config);
             var uuid = "uuid_example";  // string | 
 
@@ -259,7 +274,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -296,6 +311,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azionapi.net";
+            // Configure API key authorization: tokenAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
             var apiInstance = new DefaultApi(config);
             var uuid = "uuid_example";  // string | 
             var updateNetworkListsRequest = new UpdateNetworkListsRequest(); // UpdateNetworkListsRequest | 
@@ -350,7 +370,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 

@@ -4,17 +4,17 @@ All URIs are relative to *https://stage-variables.azion.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ApiVariablesCreate**](VariablesApi.md#apivariablescreate) | **POST** /api/variables |  |
-| [**ApiVariablesDestroy**](VariablesApi.md#apivariablesdestroy) | **DELETE** /api/variables/{uuid} |  |
-| [**ApiVariablesList**](VariablesApi.md#apivariableslist) | **GET** /api/variables |  |
-| [**ApiVariablesRetrieve**](VariablesApi.md#apivariablesretrieve) | **GET** /api/variables/{uuid} |  |
-| [**ApiVariablesUpdate**](VariablesApi.md#apivariablesupdate) | **PUT** /api/variables/{uuid} |  |
+| [**ApiVariablesCreate**](VariablesApi.md#apivariablescreate) | **POST** /api/variables | /api/variables |
+| [**ApiVariablesDestroy**](VariablesApi.md#apivariablesdestroy) | **DELETE** /api/variables/{uuid} | /api/variables/:uuid |
+| [**ApiVariablesList**](VariablesApi.md#apivariableslist) | **GET** /api/variables | /api/variables |
+| [**ApiVariablesRetrieve**](VariablesApi.md#apivariablesretrieve) | **GET** /api/variables/{uuid} | /api/variables/:uuid |
+| [**ApiVariablesUpdate**](VariablesApi.md#apivariablesupdate) | **PUT** /api/variables/{uuid} | /api/variables/:uuid |
 
 <a id="apivariablescreate"></a>
 # **ApiVariablesCreate**
 > VariableGet ApiVariablesCreate (VariableCreate variableCreate)
 
-
+/api/variables
 
 Create a new Variable. <br><ul><li>If the attribute \"secret\" is informed with value \"true\" in request payload the Variable value will be secret and no longer viewable after creation.</li><li>If the attribute \"secret\" is not informed the Variable value will be considered as not secret by default.</li></ul>
 
@@ -44,6 +44,7 @@ namespace Example
 
             try
             {
+                // /api/variables
                 VariableGet result = apiInstance.ApiVariablesCreate(variableCreate);
                 Debug.WriteLine(result);
             }
@@ -64,6 +65,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // /api/variables
     ApiResponse<VariableGet> response = apiInstance.ApiVariablesCreateWithHttpInfo(variableCreate);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -112,7 +114,7 @@ catch (ApiException e)
 # **ApiVariablesDestroy**
 > void ApiVariablesDestroy (string uuid)
 
-
+/api/variables/:uuid
 
 Delete a Variable by it's UUID
 
@@ -142,6 +144,7 @@ namespace Example
 
             try
             {
+                // /api/variables/:uuid
                 apiInstance.ApiVariablesDestroy(uuid);
             }
             catch (ApiException  e)
@@ -161,6 +164,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // /api/variables/:uuid
     apiInstance.ApiVariablesDestroyWithHttpInfo(uuid);
 }
 catch (ApiException e)
@@ -206,7 +210,7 @@ void (empty response body)
 # **ApiVariablesList**
 > List&lt;Variable&gt; ApiVariablesList ()
 
-
+/api/variables
 
 List all user's Variables.
 
@@ -235,6 +239,7 @@ namespace Example
 
             try
             {
+                // /api/variables
                 List<Variable> result = apiInstance.ApiVariablesList();
                 Debug.WriteLine(result);
             }
@@ -255,6 +260,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // /api/variables
     ApiResponse<List<Variable>> response = apiInstance.ApiVariablesListWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -295,7 +301,7 @@ This endpoint does not need any parameter.
 # **ApiVariablesRetrieve**
 > Variable ApiVariablesRetrieve (string uuid)
 
-
+/api/variables/:uuid
 
 Retrieve all data for a Variable by it's UUID
 
@@ -325,6 +331,7 @@ namespace Example
 
             try
             {
+                // /api/variables/:uuid
                 Variable result = apiInstance.ApiVariablesRetrieve(uuid);
                 Debug.WriteLine(result);
             }
@@ -345,6 +352,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // /api/variables/:uuid
     ApiResponse<Variable> response = apiInstance.ApiVariablesRetrieveWithHttpInfo(uuid);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -393,7 +401,7 @@ catch (ApiException e)
 # **ApiVariablesUpdate**
 > VariableGet ApiVariablesUpdate (string uuid, VariableCreate variableCreate)
 
-
+/api/variables/:uuid
 
 Update variable attributes by it's UUID. Keep the Variable UUID but overwrite all editable attributes.
 
@@ -424,6 +432,7 @@ namespace Example
 
             try
             {
+                // /api/variables/:uuid
                 VariableGet result = apiInstance.ApiVariablesUpdate(uuid, variableCreate);
                 Debug.WriteLine(result);
             }
@@ -444,6 +453,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // /api/variables/:uuid
     ApiResponse<VariableGet> response = apiInstance.ApiVariablesUpdateWithHttpInfo(uuid, variableCreate);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
