@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 api/openapi.yaml
 appveyor.yml
@@ -9,10 +8,6 @@ docs/PurgeWildcardRequest.md
 docs/RealTimePurgeApi.md
 git_push.sh
 realtimepurge.sln
-src/realtimepurge.Test/Api/RealTimePurgeApiTests.cs
-src/realtimepurge.Test/Model/PurgeCacheKeyRequestTests.cs
-src/realtimepurge.Test/Model/PurgeUrlRequestTests.cs
-src/realtimepurge.Test/Model/PurgeWildcardRequestTests.cs
 src/realtimepurge.Test/realtimepurge.Test.csproj
 src/realtimepurge/Api/RealTimePurgeApi.cs
 src/realtimepurge/Client/ApiClient.cs

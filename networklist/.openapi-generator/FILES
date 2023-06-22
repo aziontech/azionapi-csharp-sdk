@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 api/openapi.yaml
 appveyor.yml
@@ -7,7 +6,6 @@ docs/BadRequestResponse.md
 docs/CreateNetworkListsRequest.md
 docs/DefaultApi.md
 docs/ErrorModel.md
-docs/ErrorResponse.md
 docs/Links.md
 docs/ListNetworkListsResponse.md
 docs/NetworkLists.md
@@ -15,16 +13,6 @@ docs/NetworkListsResponse.md
 docs/UpdateNetworkListsRequest.md
 git_push.sh
 networklist.sln
-src/networklist.Test/Api/DefaultApiTests.cs
-src/networklist.Test/Model/BadRequestResponseTests.cs
-src/networklist.Test/Model/CreateNetworkListsRequestTests.cs
-src/networklist.Test/Model/ErrorModelTests.cs
-src/networklist.Test/Model/ErrorResponseTests.cs
-src/networklist.Test/Model/LinksTests.cs
-src/networklist.Test/Model/ListNetworkListsResponseTests.cs
-src/networklist.Test/Model/NetworkListsResponseTests.cs
-src/networklist.Test/Model/NetworkListsTests.cs
-src/networklist.Test/Model/UpdateNetworkListsRequestTests.cs
 src/networklist.Test/networklist.Test.csproj
 src/networklist/Api/DefaultApi.cs
 src/networklist/Client/ApiClient.cs
@@ -47,7 +35,6 @@ src/networklist/Model/AbstractOpenAPISchema.cs
 src/networklist/Model/BadRequestResponse.cs
 src/networklist/Model/CreateNetworkListsRequest.cs
 src/networklist/Model/ErrorModel.cs
-src/networklist/Model/ErrorResponse.cs
 src/networklist/Model/Links.cs
 src/networklist/Model/ListNetworkListsResponse.cs
 src/networklist/Model/NetworkLists.cs

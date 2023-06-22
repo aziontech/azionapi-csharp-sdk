@@ -7,7 +7,6 @@ docs/CreateServiceRequest.md
 docs/DefaultApi.md
 docs/ResourceDetail.md
 docs/ResourceResponse.md
-docs/ResourceResponseWithTotal.md
 docs/ServiceResponse.md
 docs/ServiceResponseWithTotals.md
 docs/UpdateResourceRequest.md
@@ -38,7 +37,6 @@ src/services/Model/CreateResourceRequest.cs
 src/services/Model/CreateServiceRequest.cs
 src/services/Model/ResourceDetail.cs
 src/services/Model/ResourceResponse.cs
-src/services/Model/ResourceResponseWithTotal.cs
 src/services/Model/ServiceResponse.cs
 src/services/Model/ServiceResponseWithTotals.cs
 src/services/Model/UpdateResourceRequest.cs

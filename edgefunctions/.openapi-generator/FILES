@@ -6,7 +6,6 @@ docs/BadRequestResponse.md
 docs/CreateEdgeFunctionRequest.md
 docs/EdgeFunctionResponse.md
 docs/EdgeFunctionsApi.md
-docs/ErrorModel.md
 docs/ErrorResponse.md
 docs/Links.md
 docs/ListEdgeFunctionResponse.md
@@ -37,7 +36,6 @@ src/edgefunctions/Model/AbstractOpenAPISchema.cs
 src/edgefunctions/Model/BadRequestResponse.cs
 src/edgefunctions/Model/CreateEdgeFunctionRequest.cs
 src/edgefunctions/Model/EdgeFunctionResponse.cs
-src/edgefunctions/Model/ErrorModel.cs
 src/edgefunctions/Model/ErrorResponse.cs
 src/edgefunctions/Model/Links.cs
 src/edgefunctions/Model/ListEdgeFunctionResponse.cs

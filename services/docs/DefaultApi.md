@@ -1,6 +1,6 @@
 # services.Api.DefaultApi
 
-All URIs are relative to *http://localhost:3002*
+All URIs are relative to *http://bff.azion.net:3002*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -9,8 +9,8 @@ All URIs are relative to *http://localhost:3002*
 | [**GetResource**](DefaultApi.md#getresource) | **GET** /edge_services/{serviceId}/resources/{resourceId} | Return Service Resource by ID |
 | [**GetResources**](DefaultApi.md#getresources) | **GET** /edge_services/{serviceId}/resources | Return Service Resources by page |
 | [**GetService**](DefaultApi.md#getservice) | **GET** /edge_services/{id} | Return Service by ID |
-| [**GetServices**](DefaultApi.md#getservices) | **GET** /edge_services/ | Return Services by page |
-| [**NewService**](DefaultApi.md#newservice) | **POST** /edge_services/ | Create Service |
+| [**GetServices**](DefaultApi.md#getservices) | **GET** /edge_services | Return Services by page |
+| [**NewService**](DefaultApi.md#newservice) | **POST** /edge_services | Create Service |
 | [**PatchService**](DefaultApi.md#patchservice) | **PATCH** /edge_services/{id} | Update Service by ID |
 | [**PatchServiceResource**](DefaultApi.md#patchserviceresource) | **PATCH** /edge_services/{serviceId}/resources/{resourceId} | Update Service Resource by ID |
 | [**PostResource**](DefaultApi.md#postresource) | **POST** /edge_services/{serviceId}/resources | Create Service Resource |
@@ -36,7 +36,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3002";
+            config.BasePath = "http://bff.azion.net:3002";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -133,7 +133,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3002";
+            config.BasePath = "http://bff.azion.net:3002";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -228,7 +228,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3002";
+            config.BasePath = "http://bff.azion.net:3002";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -308,7 +308,7 @@ catch (ApiException e)
 
 <a id="getresources"></a>
 # **GetResources**
-> ResourceResponseWithTotal GetResources (long serviceId, long? page = null, long? pageSize = null, string filter = null, string orderBy = null, string sort = null)
+> Object GetResources (long serviceId, long? page = null, long? pageSize = null, string filter = null, string orderBy = null, string sort = null)
 
 Return Service Resources by page
 
@@ -327,7 +327,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3002";
+            config.BasePath = "http://bff.azion.net:3002";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -344,7 +344,7 @@ namespace Example
             try
             {
                 // Return Service Resources by page
-                ResourceResponseWithTotal result = apiInstance.GetResources(serviceId, page, pageSize, filter, orderBy, sort);
+                Object result = apiInstance.GetResources(serviceId, page, pageSize, filter, orderBy, sort);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -365,7 +365,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Return Service Resources by page
-    ApiResponse<ResourceResponseWithTotal> response = apiInstance.GetResourcesWithHttpInfo(serviceId, page, pageSize, filter, orderBy, sort);
+    ApiResponse<Object> response = apiInstance.GetResourcesWithHttpInfo(serviceId, page, pageSize, filter, orderBy, sort);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -391,7 +391,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**ResourceResponseWithTotal**](ResourceResponseWithTotal.md)
+**Object**
 
 ### Authorization
 
@@ -434,7 +434,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3002";
+            config.BasePath = "http://bff.azion.net:3002";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -533,7 +533,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3002";
+            config.BasePath = "http://bff.azion.net:3002";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -637,7 +637,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3002";
+            config.BasePath = "http://bff.azion.net:3002";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -735,7 +735,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3002";
+            config.BasePath = "http://bff.azion.net:3002";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -836,7 +836,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3002";
+            config.BasePath = "http://bff.azion.net:3002";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -939,7 +939,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:3002";
+            config.BasePath = "http://bff.azion.net:3002";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed

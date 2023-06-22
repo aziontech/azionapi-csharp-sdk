@@ -4,14 +4,14 @@ All URIs are relative to *https://storage-api.azion.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**DeleteVersion**](DefaultApi.md#deleteversion) | **DELETE** /storage/{version_id}/delete |  |
-| [**StorageVersionIdPost**](DefaultApi.md#storageversionidpost) | **POST** /storage/{version_id} |  |
+| [**DeleteVersion**](DefaultApi.md#deleteversion) | **DELETE** /storage/{version_id}/delete | /domains/:version_id |
+| [**StorageVersionIdPost**](DefaultApi.md#storageversionidpost) | **POST** /storage/{version_id} | /domains/:version_id |
 
 <a id="deleteversion"></a>
 # **DeleteVersion**
 > void DeleteVersion (string versionId)
 
-
+/domains/:version_id
 
 Delete a version. A version is just um path prefix/sub-namespace for a set of files.
 
@@ -31,11 +31,17 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://storage-api.azion.com";
+            // Configure API key authorization: tokenAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
             var apiInstance = new DefaultApi(config);
             var versionId = "versionId_example";  // string | The version identifier
 
             try
             {
+                // /domains/:version_id
                 apiInstance.DeleteVersion(versionId);
             }
             catch (ApiException  e)
@@ -55,6 +61,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // /domains/:version_id
     apiInstance.DeleteVersionWithHttpInfo(versionId);
 }
 catch (ApiException e)
@@ -77,7 +84,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
@@ -96,7 +103,7 @@ No authorization required
 # **StorageVersionIdPost**
 > Object StorageVersionIdPost (string xAzionStaticPath, string versionId, System.IO.Stream body = null)
 
-
+/domains/:version_id
 
 Upload file and transfer to remote storage
 
@@ -116,6 +123,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://storage-api.azion.com";
+            // Configure API key authorization: tokenAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
             var apiInstance = new DefaultApi(config);
             var xAzionStaticPath = "xAzionStaticPath_example";  // string | Required in order to get the path and file name. i.e.: assets/css/main.css
             var versionId = "versionId_example";  // string | 
@@ -123,6 +135,7 @@ namespace Example
 
             try
             {
+                // /domains/:version_id
                 Object result = apiInstance.StorageVersionIdPost(xAzionStaticPath, versionId, body);
                 Debug.WriteLine(result);
             }
@@ -143,6 +156,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // /domains/:version_id
     ApiResponse<Object> response = apiInstance.StorageVersionIdPostWithHttpInfo(xAzionStaticPath, versionId, body);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -170,7 +184,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
