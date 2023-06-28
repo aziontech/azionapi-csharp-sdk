@@ -37,8 +37,8 @@ namespace edgeapplications.Api
         /// <param name="sort"> (optional)</param>
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Object</returns>
-        Object EdgeApplicationsGet(long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0);
+        /// <returns>GetApplicationsResponse</returns>
+        GetApplicationsResponse EdgeApplicationsGet(long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications
@@ -54,8 +54,8 @@ namespace edgeapplications.Api
         /// <param name="sort"> (optional)</param>
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> EdgeApplicationsGetWithHttpInfo(long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0);
+        /// <returns>ApiResponse of GetApplicationsResponse</returns>
+        ApiResponse<GetApplicationsResponse> EdgeApplicationsGetWithHttpInfo(long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0);
         /// <summary>
         /// /edge_applications/:id
         /// </summary>
@@ -200,8 +200,8 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> EdgeApplicationsGetAsync(long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of GetApplicationsResponse</returns>
+        System.Threading.Tasks.Task<GetApplicationsResponse> EdgeApplicationsGetAsync(long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications
@@ -218,8 +218,8 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> EdgeApplicationsGetWithHttpInfoAsync(long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (GetApplicationsResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetApplicationsResponse>> EdgeApplicationsGetWithHttpInfoAsync(long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /edge_applications/:id
         /// </summary>
@@ -496,10 +496,10 @@ namespace edgeapplications.Api
         /// <param name="sort"> (optional)</param>
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Object</returns>
-        public Object EdgeApplicationsGet(long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0)
+        /// <returns>GetApplicationsResponse</returns>
+        public GetApplicationsResponse EdgeApplicationsGet(long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0)
         {
-            edgeapplications.Client.ApiResponse<Object> localVarResponse = EdgeApplicationsGetWithHttpInfo(page, pageSize, filter, orderBy, sort, accept);
+            edgeapplications.Client.ApiResponse<GetApplicationsResponse> localVarResponse = EdgeApplicationsGetWithHttpInfo(page, pageSize, filter, orderBy, sort, accept);
             return localVarResponse.Data;
         }
 
@@ -514,8 +514,8 @@ namespace edgeapplications.Api
         /// <param name="sort"> (optional)</param>
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object</returns>
-        public edgeapplications.Client.ApiResponse<Object> EdgeApplicationsGetWithHttpInfo(long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0)
+        /// <returns>ApiResponse of GetApplicationsResponse</returns>
+        public edgeapplications.Client.ApiResponse<GetApplicationsResponse> EdgeApplicationsGetWithHttpInfo(long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0)
         {
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();
 
@@ -574,7 +574,7 @@ namespace edgeapplications.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/edge_applications", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<GetApplicationsResponse>("/edge_applications", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("EdgeApplicationsGet", localVarResponse);
@@ -599,10 +599,10 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> EdgeApplicationsGetAsync(long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of GetApplicationsResponse</returns>
+        public async System.Threading.Tasks.Task<GetApplicationsResponse> EdgeApplicationsGetAsync(long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            edgeapplications.Client.ApiResponse<Object> localVarResponse = await EdgeApplicationsGetWithHttpInfoAsync(page, pageSize, filter, orderBy, sort, accept, operationIndex, cancellationToken).ConfigureAwait(false);
+            edgeapplications.Client.ApiResponse<GetApplicationsResponse> localVarResponse = await EdgeApplicationsGetWithHttpInfoAsync(page, pageSize, filter, orderBy, sort, accept, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -618,8 +618,8 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<Object>> EdgeApplicationsGetWithHttpInfoAsync(long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (GetApplicationsResponse)</returns>
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<GetApplicationsResponse>> EdgeApplicationsGetWithHttpInfoAsync(long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();
@@ -679,7 +679,7 @@ namespace edgeapplications.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/edge_applications", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetApplicationsResponse>("/edge_applications", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

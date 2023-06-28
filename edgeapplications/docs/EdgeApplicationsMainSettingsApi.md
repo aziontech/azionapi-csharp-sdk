@@ -13,7 +13,7 @@ All URIs are relative to *https://api.azionapi.net*
 
 <a id="edgeapplicationsget"></a>
 # **EdgeApplicationsGet**
-> Object EdgeApplicationsGet (long? page = null, long? pageSize = null, string filter = null, string orderBy = null, string sort = null, string accept = null)
+> GetApplicationsResponse EdgeApplicationsGet (long? page = null, long? pageSize = null, string filter = null, string orderBy = null, string sort = null, string accept = null)
 
 /edge_applications
 
@@ -49,7 +49,7 @@ namespace Example
             try
             {
                 // /edge_applications
-                Object result = apiInstance.EdgeApplicationsGet(page, pageSize, filter, orderBy, sort, accept);
+                GetApplicationsResponse result = apiInstance.EdgeApplicationsGet(page, pageSize, filter, orderBy, sort, accept);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -70,7 +70,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // /edge_applications
-    ApiResponse<Object> response = apiInstance.EdgeApplicationsGetWithHttpInfo(page, pageSize, filter, orderBy, sort, accept);
+    ApiResponse<GetApplicationsResponse> response = apiInstance.EdgeApplicationsGetWithHttpInfo(page, pageSize, filter, orderBy, sort, accept);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -96,7 +96,7 @@ catch (ApiException e)
 
 ### Return type
 
-**Object**
+[**GetApplicationsResponse**](GetApplicationsResponse.md)
 
 ### Authorization
 
