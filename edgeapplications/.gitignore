@@ -362,3 +362,5 @@ MigrationBackup/
 FodyWeavers.xsd
 go.mod
 go.sum
+go.mod
+go.sum
