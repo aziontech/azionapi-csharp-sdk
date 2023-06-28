@@ -360,7 +360,3 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-go.mod
-go.sum
-go.mod
-go.sum
