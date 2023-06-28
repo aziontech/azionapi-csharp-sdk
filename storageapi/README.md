@@ -83,7 +83,7 @@ namespace Example
 
             try
             {
-                // /domains/:version_id
+                // /storage/:version_id/delete
                 apiInstance.DeleteVersion(versionId);
             }
             catch (ApiException e)
@@ -105,8 +105,8 @@ All URIs are relative to *https://storage-api.azion.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**DeleteVersion**](docs/DefaultApi.md#deleteversion) | **DELETE** /storage/{version_id}/delete | /domains/:version_id
-*DefaultApi* | [**StorageVersionIdPost**](docs/DefaultApi.md#storageversionidpost) | **POST** /storage/{version_id} | /domains/:version_id
+*DefaultApi* | [**DeleteVersion**](docs/DefaultApi.md#deleteversion) | **DELETE** /storage/{version_id}/delete | /storage/:version_id/delete
+*DefaultApi* | [**StorageVersionIdPost**](docs/DefaultApi.md#storageversionidpost) | **POST** /storage/{version_id} | /storage/:version_id
 
 
 <a id="documentation-for-models"></a>
