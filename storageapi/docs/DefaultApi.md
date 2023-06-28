@@ -4,14 +4,14 @@ All URIs are relative to *https://storage-api.azion.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**DeleteVersion**](DefaultApi.md#deleteversion) | **DELETE** /storage/{version_id}/delete | /domains/:version_id |
-| [**StorageVersionIdPost**](DefaultApi.md#storageversionidpost) | **POST** /storage/{version_id} | /domains/:version_id |
+| [**DeleteVersion**](DefaultApi.md#deleteversion) | **DELETE** /storage/{version_id}/delete | /storage/:version_id/delete |
+| [**StorageVersionIdPost**](DefaultApi.md#storageversionidpost) | **POST** /storage/{version_id} | /storage/:version_id |
 
 <a id="deleteversion"></a>
 # **DeleteVersion**
 > void DeleteVersion (string versionId)
 
-/domains/:version_id
+/storage/:version_id/delete
 
 Delete a version. A version is just um path prefix/sub-namespace for a set of files.
 
@@ -41,7 +41,7 @@ namespace Example
 
             try
             {
-                // /domains/:version_id
+                // /storage/:version_id/delete
                 apiInstance.DeleteVersion(versionId);
             }
             catch (ApiException  e)
@@ -61,7 +61,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // /domains/:version_id
+    // /storage/:version_id/delete
     apiInstance.DeleteVersionWithHttpInfo(versionId);
 }
 catch (ApiException e)
@@ -101,9 +101,9 @@ void (empty response body)
 
 <a id="storageversionidpost"></a>
 # **StorageVersionIdPost**
-> Object StorageVersionIdPost (string xAzionStaticPath, string versionId, System.IO.Stream body = null)
+> Object StorageVersionIdPost (string xAzionStaticPath, string versionId, string contentType = null, System.IO.Stream body = null)
 
-/domains/:version_id
+/storage/:version_id
 
 Upload file and transfer to remote storage
 
@@ -131,12 +131,13 @@ namespace Example
             var apiInstance = new DefaultApi(config);
             var xAzionStaticPath = "xAzionStaticPath_example";  // string | Required in order to get the path and file name. i.e.: assets/css/main.css
             var versionId = "versionId_example";  // string | 
+            var contentType = "\"b2/x-auto\"";  // string | The content type of the file (Example: text/plain). (optional)  (default to "b2/x-auto")
             var body = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
 
             try
             {
-                // /domains/:version_id
-                Object result = apiInstance.StorageVersionIdPost(xAzionStaticPath, versionId, body);
+                // /storage/:version_id
+                Object result = apiInstance.StorageVersionIdPost(xAzionStaticPath, versionId, contentType, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -156,8 +157,8 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // /domains/:version_id
-    ApiResponse<Object> response = apiInstance.StorageVersionIdPostWithHttpInfo(xAzionStaticPath, versionId, body);
+    // /storage/:version_id
+    ApiResponse<Object> response = apiInstance.StorageVersionIdPostWithHttpInfo(xAzionStaticPath, versionId, contentType, body);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -176,6 +177,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xAzionStaticPath** | **string** | Required in order to get the path and file name. i.e.: assets/css/main.css |  |
 | **versionId** | **string** |  |  |
+| **contentType** | **string** | The content type of the file (Example: text/plain). | [optional] [default to &quot;b2/x-auto&quot;] |
 | **body** | **System.IO.Stream****System.IO.Stream** |  | [optional]  |
 
 ### Return type
@@ -188,7 +190,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: b2/x-auto
+ - **Content-Type**: application/octet-stream
  - **Accept**: application/json
 
 

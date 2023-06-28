@@ -26,7 +26,7 @@ namespace storageapi.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// /domains/:version_id
+        /// /storage/:version_id/delete
         /// </summary>
         /// <remarks>
         /// Delete a version. A version is just um path prefix/sub-namespace for a set of files.
@@ -38,7 +38,7 @@ namespace storageapi.Api
         void DeleteVersion(string versionId, int operationIndex = 0);
 
         /// <summary>
-        /// /domains/:version_id
+        /// /storage/:version_id/delete
         /// </summary>
         /// <remarks>
         /// Delete a version. A version is just um path prefix/sub-namespace for a set of files.
@@ -49,7 +49,7 @@ namespace storageapi.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteVersionWithHttpInfo(string versionId, int operationIndex = 0);
         /// <summary>
-        /// /domains/:version_id
+        /// /storage/:version_id
         /// </summary>
         /// <remarks>
         /// Upload file and transfer to remote storage
@@ -57,13 +57,14 @@ namespace storageapi.Api
         /// <exception cref="storageapi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xAzionStaticPath">Required in order to get the path and file name. i.e.: assets/css/main.css</param>
         /// <param name="versionId"></param>
+        /// <param name="contentType">The content type of the file (Example: text/plain). (optional, default to &quot;b2/x-auto&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        Object StorageVersionIdPost(string xAzionStaticPath, string versionId, System.IO.Stream body = default(System.IO.Stream), int operationIndex = 0);
+        Object StorageVersionIdPost(string xAzionStaticPath, string versionId, string contentType = default(string), System.IO.Stream body = default(System.IO.Stream), int operationIndex = 0);
 
         /// <summary>
-        /// /domains/:version_id
+        /// /storage/:version_id
         /// </summary>
         /// <remarks>
         /// Upload file and transfer to remote storage
@@ -71,10 +72,11 @@ namespace storageapi.Api
         /// <exception cref="storageapi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xAzionStaticPath">Required in order to get the path and file name. i.e.: assets/css/main.css</param>
         /// <param name="versionId"></param>
+        /// <param name="contentType">The content type of the file (Example: text/plain). (optional, default to &quot;b2/x-auto&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> StorageVersionIdPostWithHttpInfo(string xAzionStaticPath, string versionId, System.IO.Stream body = default(System.IO.Stream), int operationIndex = 0);
+        ApiResponse<Object> StorageVersionIdPostWithHttpInfo(string xAzionStaticPath, string versionId, string contentType = default(string), System.IO.Stream body = default(System.IO.Stream), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -85,7 +87,7 @@ namespace storageapi.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// /domains/:version_id
+        /// /storage/:version_id/delete
         /// </summary>
         /// <remarks>
         /// Delete a version. A version is just um path prefix/sub-namespace for a set of files.
@@ -98,7 +100,7 @@ namespace storageapi.Api
         System.Threading.Tasks.Task DeleteVersionAsync(string versionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// /domains/:version_id
+        /// /storage/:version_id/delete
         /// </summary>
         /// <remarks>
         /// Delete a version. A version is just um path prefix/sub-namespace for a set of files.
@@ -110,7 +112,7 @@ namespace storageapi.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteVersionWithHttpInfoAsync(string versionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// /domains/:version_id
+        /// /storage/:version_id
         /// </summary>
         /// <remarks>
         /// Upload file and transfer to remote storage
@@ -118,14 +120,15 @@ namespace storageapi.Api
         /// <exception cref="storageapi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xAzionStaticPath">Required in order to get the path and file name. i.e.: assets/css/main.css</param>
         /// <param name="versionId"></param>
+        /// <param name="contentType">The content type of the file (Example: text/plain). (optional, default to &quot;b2/x-auto&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> StorageVersionIdPostAsync(string xAzionStaticPath, string versionId, System.IO.Stream body = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> StorageVersionIdPostAsync(string xAzionStaticPath, string versionId, string contentType = default(string), System.IO.Stream body = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// /domains/:version_id
+        /// /storage/:version_id
         /// </summary>
         /// <remarks>
         /// Upload file and transfer to remote storage
@@ -133,11 +136,12 @@ namespace storageapi.Api
         /// <exception cref="storageapi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xAzionStaticPath">Required in order to get the path and file name. i.e.: assets/css/main.css</param>
         /// <param name="versionId"></param>
+        /// <param name="contentType">The content type of the file (Example: text/plain). (optional, default to &quot;b2/x-auto&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> StorageVersionIdPostWithHttpInfoAsync(string xAzionStaticPath, string versionId, System.IO.Stream body = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> StorageVersionIdPostWithHttpInfoAsync(string xAzionStaticPath, string versionId, string contentType = default(string), System.IO.Stream body = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -259,7 +263,7 @@ namespace storageapi.Api
         }
 
         /// <summary>
-        /// /domains/:version_id Delete a version. A version is just um path prefix/sub-namespace for a set of files.
+        /// /storage/:version_id/delete Delete a version. A version is just um path prefix/sub-namespace for a set of files.
         /// </summary>
         /// <exception cref="storageapi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="versionId">The version identifier</param>
@@ -271,7 +275,7 @@ namespace storageapi.Api
         }
 
         /// <summary>
-        /// /domains/:version_id Delete a version. A version is just um path prefix/sub-namespace for a set of files.
+        /// /storage/:version_id/delete Delete a version. A version is just um path prefix/sub-namespace for a set of files.
         /// </summary>
         /// <exception cref="storageapi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="versionId">The version identifier</param>
@@ -332,7 +336,7 @@ namespace storageapi.Api
         }
 
         /// <summary>
-        /// /domains/:version_id Delete a version. A version is just um path prefix/sub-namespace for a set of files.
+        /// /storage/:version_id/delete Delete a version. A version is just um path prefix/sub-namespace for a set of files.
         /// </summary>
         /// <exception cref="storageapi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="versionId">The version identifier</param>
@@ -345,7 +349,7 @@ namespace storageapi.Api
         }
 
         /// <summary>
-        /// /domains/:version_id Delete a version. A version is just um path prefix/sub-namespace for a set of files.
+        /// /storage/:version_id/delete Delete a version. A version is just um path prefix/sub-namespace for a set of files.
         /// </summary>
         /// <exception cref="storageapi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="versionId">The version identifier</param>
@@ -409,30 +413,32 @@ namespace storageapi.Api
         }
 
         /// <summary>
-        /// /domains/:version_id Upload file and transfer to remote storage
+        /// /storage/:version_id Upload file and transfer to remote storage
         /// </summary>
         /// <exception cref="storageapi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xAzionStaticPath">Required in order to get the path and file name. i.e.: assets/css/main.css</param>
         /// <param name="versionId"></param>
+        /// <param name="contentType">The content type of the file (Example: text/plain). (optional, default to &quot;b2/x-auto&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        public Object StorageVersionIdPost(string xAzionStaticPath, string versionId, System.IO.Stream body = default(System.IO.Stream), int operationIndex = 0)
+        public Object StorageVersionIdPost(string xAzionStaticPath, string versionId, string contentType = default(string), System.IO.Stream body = default(System.IO.Stream), int operationIndex = 0)
         {
-            storageapi.Client.ApiResponse<Object> localVarResponse = StorageVersionIdPostWithHttpInfo(xAzionStaticPath, versionId, body);
+            storageapi.Client.ApiResponse<Object> localVarResponse = StorageVersionIdPostWithHttpInfo(xAzionStaticPath, versionId, contentType, body);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// /domains/:version_id Upload file and transfer to remote storage
+        /// /storage/:version_id Upload file and transfer to remote storage
         /// </summary>
         /// <exception cref="storageapi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xAzionStaticPath">Required in order to get the path and file name. i.e.: assets/css/main.css</param>
         /// <param name="versionId"></param>
+        /// <param name="contentType">The content type of the file (Example: text/plain). (optional, default to &quot;b2/x-auto&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        public storageapi.Client.ApiResponse<Object> StorageVersionIdPostWithHttpInfo(string xAzionStaticPath, string versionId, System.IO.Stream body = default(System.IO.Stream), int operationIndex = 0)
+        public storageapi.Client.ApiResponse<Object> StorageVersionIdPostWithHttpInfo(string xAzionStaticPath, string versionId, string contentType = default(string), System.IO.Stream body = default(System.IO.Stream), int operationIndex = 0)
         {
             // verify the required parameter 'xAzionStaticPath' is set
             if (xAzionStaticPath == null)
@@ -449,7 +455,7 @@ namespace storageapi.Api
             storageapi.Client.RequestOptions localVarRequestOptions = new storageapi.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "b2/x-auto"
+                "application/octet-stream"
             };
 
             // to determine the Accept header
@@ -470,6 +476,10 @@ namespace storageapi.Api
             }
 
             localVarRequestOptions.PathParameters.Add("version_id", storageapi.Client.ClientUtils.ParameterToString(versionId)); // path parameter
+            if (contentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", storageapi.Client.ClientUtils.ParameterToString(contentType)); // header parameter
+            }
             localVarRequestOptions.HeaderParameters.Add("X-Azion-Static-Path", storageapi.Client.ClientUtils.ParameterToString(xAzionStaticPath)); // header parameter
             localVarRequestOptions.Data = body;
 
@@ -497,32 +507,34 @@ namespace storageapi.Api
         }
 
         /// <summary>
-        /// /domains/:version_id Upload file and transfer to remote storage
+        /// /storage/:version_id Upload file and transfer to remote storage
         /// </summary>
         /// <exception cref="storageapi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xAzionStaticPath">Required in order to get the path and file name. i.e.: assets/css/main.css</param>
         /// <param name="versionId"></param>
+        /// <param name="contentType">The content type of the file (Example: text/plain). (optional, default to &quot;b2/x-auto&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> StorageVersionIdPostAsync(string xAzionStaticPath, string versionId, System.IO.Stream body = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> StorageVersionIdPostAsync(string xAzionStaticPath, string versionId, string contentType = default(string), System.IO.Stream body = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            storageapi.Client.ApiResponse<Object> localVarResponse = await StorageVersionIdPostWithHttpInfoAsync(xAzionStaticPath, versionId, body, operationIndex, cancellationToken).ConfigureAwait(false);
+            storageapi.Client.ApiResponse<Object> localVarResponse = await StorageVersionIdPostWithHttpInfoAsync(xAzionStaticPath, versionId, contentType, body, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// /domains/:version_id Upload file and transfer to remote storage
+        /// /storage/:version_id Upload file and transfer to remote storage
         /// </summary>
         /// <exception cref="storageapi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xAzionStaticPath">Required in order to get the path and file name. i.e.: assets/css/main.css</param>
         /// <param name="versionId"></param>
+        /// <param name="contentType">The content type of the file (Example: text/plain). (optional, default to &quot;b2/x-auto&quot;)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<storageapi.Client.ApiResponse<Object>> StorageVersionIdPostWithHttpInfoAsync(string xAzionStaticPath, string versionId, System.IO.Stream body = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<storageapi.Client.ApiResponse<Object>> StorageVersionIdPostWithHttpInfoAsync(string xAzionStaticPath, string versionId, string contentType = default(string), System.IO.Stream body = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'xAzionStaticPath' is set
             if (xAzionStaticPath == null)
@@ -540,7 +552,7 @@ namespace storageapi.Api
             storageapi.Client.RequestOptions localVarRequestOptions = new storageapi.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "b2/x-auto"
+                "application/octet-stream"
             };
 
             // to determine the Accept header
@@ -561,6 +573,10 @@ namespace storageapi.Api
             }
 
             localVarRequestOptions.PathParameters.Add("version_id", storageapi.Client.ClientUtils.ParameterToString(versionId)); // path parameter
+            if (contentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", storageapi.Client.ClientUtils.ParameterToString(contentType)); // header parameter
+            }
             localVarRequestOptions.HeaderParameters.Add("X-Azion-Static-Path", storageapi.Client.ClientUtils.ParameterToString(xAzionStaticPath)); // header parameter
             localVarRequestOptions.Data = body;
 
