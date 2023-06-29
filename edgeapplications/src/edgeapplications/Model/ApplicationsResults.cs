@@ -34,64 +34,89 @@ namespace edgeapplications.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplicationsResults" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
-        /// <param name="debugRules">debugRules.</param>
-        /// <param name="lastEditor">lastEditor.</param>
-        /// <param name="lastModified">lastModified.</param>
-        /// <param name="active">active.</param>
-        /// <param name="origins">origins.</param>
+        [JsonConstructorAttribute]
+        protected ApplicationsResults() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApplicationsResults" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
+        /// <param name="name">name (required).</param>
+        /// <param name="debugRules">debugRules (required).</param>
+        /// <param name="lastEditor">lastEditor (required).</param>
+        /// <param name="lastModified">lastModified (required).</param>
+        /// <param name="active">active (required).</param>
+        /// <param name="origins">origins (required).</param>
         public ApplicationsResults(long id = default(long), string name = default(string), bool debugRules = default(bool), string lastEditor = default(string), string lastModified = default(string), bool active = default(bool), List<ApplicationOrigins> origins = default(List<ApplicationOrigins>))
         {
             this.Id = id;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for ApplicationsResults and cannot be null");
+            }
             this.Name = name;
             this.DebugRules = debugRules;
+            // to ensure "lastEditor" is required (not null)
+            if (lastEditor == null)
+            {
+                throw new ArgumentNullException("lastEditor is a required property for ApplicationsResults and cannot be null");
+            }
             this.LastEditor = lastEditor;
+            // to ensure "lastModified" is required (not null)
+            if (lastModified == null)
+            {
+                throw new ArgumentNullException("lastModified is a required property for ApplicationsResults and cannot be null");
+            }
             this.LastModified = lastModified;
             this.Active = active;
+            // to ensure "origins" is required (not null)
+            if (origins == null)
+            {
+                throw new ArgumentNullException("origins is a required property for ApplicationsResults and cannot be null");
+            }
             this.Origins = origins;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public long Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets DebugRules
         /// </summary>
-        [DataMember(Name = "debug_rules", EmitDefaultValue = true)]
+        [DataMember(Name = "debug_rules", IsRequired = true, EmitDefaultValue = true)]
         public bool DebugRules { get; set; }
 
         /// <summary>
         /// Gets or Sets LastEditor
         /// </summary>
-        [DataMember(Name = "last_editor", EmitDefaultValue = false)]
+        [DataMember(Name = "last_editor", IsRequired = true, EmitDefaultValue = true)]
         public string LastEditor { get; set; }
 
         /// <summary>
         /// Gets or Sets LastModified
         /// </summary>
-        [DataMember(Name = "last_modified", EmitDefaultValue = false)]
+        [DataMember(Name = "last_modified", IsRequired = true, EmitDefaultValue = true)]
         public string LastModified { get; set; }
 
         /// <summary>
         /// Gets or Sets Active
         /// </summary>
-        [DataMember(Name = "active", EmitDefaultValue = true)]
+        [DataMember(Name = "active", IsRequired = true, EmitDefaultValue = true)]
         public bool Active { get; set; }
 
         /// <summary>
         /// Gets or Sets Origins
         /// </summary>
-        [DataMember(Name = "origins", EmitDefaultValue = false)]
+        [DataMember(Name = "origins", IsRequired = true, EmitDefaultValue = true)]
         public List<ApplicationOrigins> Origins { get; set; }
 
         /// <summary>
