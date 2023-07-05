@@ -522,7 +522,8 @@ namespace networklist.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json"
+                "application/json",
+                "text/html"
             };
 
             var localVarContentType = networklist.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -600,7 +601,8 @@ namespace networklist.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json"
+                "application/json",
+                "text/html"
             };
 
             var localVarContentType = networklist.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -676,7 +678,8 @@ namespace networklist.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json"
+                "application/json",
+                "text/html"
             };
 
             var localVarContentType = networklist.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -754,7 +757,8 @@ namespace networklist.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json"
+                "application/json",
+                "text/html"
             };
 
             var localVarContentType = networklist.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -839,7 +843,8 @@ namespace networklist.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json"
+                "application/json",
+                "text/html"
             };
 
             var localVarContentType = networklist.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -927,7 +932,8 @@ namespace networklist.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json"
+                "application/json",
+                "text/html"
             };
 
             var localVarContentType = networklist.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
