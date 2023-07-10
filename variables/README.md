@@ -72,7 +72,7 @@ namespace Example
         {
 
             Configuration config = new Configuration();
-            config.BasePath = "https://stage-variables.azion.com";
+            config.BasePath = "https://stage-api.azion.net/variables";
             // Configure API key authorization: tokenAuth
             config.ApiKey.Add("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -83,7 +83,7 @@ namespace Example
 
             try
             {
-                // /api/variables
+                // /variables
                 VariableGet result = apiInstance.ApiVariablesCreate(variableCreate);
                 Debug.WriteLine(result);
             }
@@ -102,15 +102,15 @@ namespace Example
 <a id="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://stage-variables.azion.com*
+All URIs are relative to *https://stage-api.azion.net/variables*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*VariablesApi* | [**ApiVariablesCreate**](docs/VariablesApi.md#apivariablescreate) | **POST** /api/variables | /api/variables
-*VariablesApi* | [**ApiVariablesDestroy**](docs/VariablesApi.md#apivariablesdestroy) | **DELETE** /api/variables/{uuid} | /api/variables/:uuid
-*VariablesApi* | [**ApiVariablesList**](docs/VariablesApi.md#apivariableslist) | **GET** /api/variables | /api/variables
-*VariablesApi* | [**ApiVariablesRetrieve**](docs/VariablesApi.md#apivariablesretrieve) | **GET** /api/variables/{uuid} | /api/variables/:uuid
-*VariablesApi* | [**ApiVariablesUpdate**](docs/VariablesApi.md#apivariablesupdate) | **PUT** /api/variables/{uuid} | /api/variables/:uuid
+*VariablesApi* | [**ApiVariablesCreate**](docs/VariablesApi.md#apivariablescreate) | **POST** /variables | /variables
+*VariablesApi* | [**ApiVariablesDestroy**](docs/VariablesApi.md#apivariablesdestroy) | **DELETE** /variables/{uuid} | /variables/:uuid
+*VariablesApi* | [**ApiVariablesList**](docs/VariablesApi.md#apivariableslist) | **GET** /variables | /variables
+*VariablesApi* | [**ApiVariablesRetrieve**](docs/VariablesApi.md#apivariablesretrieve) | **GET** /variables/{uuid} | /variables/:uuid
+*VariablesApi* | [**ApiVariablesUpdate**](docs/VariablesApi.md#apivariablesupdate) | **PUT** /variables/{uuid} | /variables/:uuid
 
 
 <a id="documentation-for-models"></a>

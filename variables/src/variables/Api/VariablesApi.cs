@@ -27,7 +27,7 @@ namespace variables.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// /api/variables
+        /// /variables
         /// </summary>
         /// <remarks>
         /// Create a new Variable. &lt;br&gt;&lt;ul&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is informed with value \&quot;true\&quot; in request payload the Variable value will be secret and no longer viewable after creation.&lt;/li&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is not informed the Variable value will be considered as not secret by default.&lt;/li&gt;&lt;/ul&gt;
@@ -39,7 +39,7 @@ namespace variables.Api
         VariableGet ApiVariablesCreate(VariableCreate variableCreate, int operationIndex = 0);
 
         /// <summary>
-        /// /api/variables
+        /// /variables
         /// </summary>
         /// <remarks>
         /// Create a new Variable. &lt;br&gt;&lt;ul&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is informed with value \&quot;true\&quot; in request payload the Variable value will be secret and no longer viewable after creation.&lt;/li&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is not informed the Variable value will be considered as not secret by default.&lt;/li&gt;&lt;/ul&gt;
@@ -50,7 +50,7 @@ namespace variables.Api
         /// <returns>ApiResponse of VariableGet</returns>
         ApiResponse<VariableGet> ApiVariablesCreateWithHttpInfo(VariableCreate variableCreate, int operationIndex = 0);
         /// <summary>
-        /// /api/variables/:uuid
+        /// /variables/:uuid
         /// </summary>
         /// <remarks>
         /// Delete a Variable by it&#39;s UUID
@@ -62,7 +62,7 @@ namespace variables.Api
         void ApiVariablesDestroy(string uuid, int operationIndex = 0);
 
         /// <summary>
-        /// /api/variables/:uuid
+        /// /variables/:uuid
         /// </summary>
         /// <remarks>
         /// Delete a Variable by it&#39;s UUID
@@ -73,7 +73,7 @@ namespace variables.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ApiVariablesDestroyWithHttpInfo(string uuid, int operationIndex = 0);
         /// <summary>
-        /// /api/variables
+        /// /variables
         /// </summary>
         /// <remarks>
         /// List all user&#39;s Variables.
@@ -84,7 +84,7 @@ namespace variables.Api
         List<Variable> ApiVariablesList(int operationIndex = 0);
 
         /// <summary>
-        /// /api/variables
+        /// /variables
         /// </summary>
         /// <remarks>
         /// List all user&#39;s Variables.
@@ -94,7 +94,7 @@ namespace variables.Api
         /// <returns>ApiResponse of List&lt;Variable&gt;</returns>
         ApiResponse<List<Variable>> ApiVariablesListWithHttpInfo(int operationIndex = 0);
         /// <summary>
-        /// /api/variables/:uuid
+        /// /variables/:uuid
         /// </summary>
         /// <remarks>
         /// Retrieve all data for a Variable by it&#39;s UUID
@@ -106,7 +106,7 @@ namespace variables.Api
         Variable ApiVariablesRetrieve(string uuid, int operationIndex = 0);
 
         /// <summary>
-        /// /api/variables/:uuid
+        /// /variables/:uuid
         /// </summary>
         /// <remarks>
         /// Retrieve all data for a Variable by it&#39;s UUID
@@ -117,7 +117,7 @@ namespace variables.Api
         /// <returns>ApiResponse of Variable</returns>
         ApiResponse<Variable> ApiVariablesRetrieveWithHttpInfo(string uuid, int operationIndex = 0);
         /// <summary>
-        /// /api/variables/:uuid
+        /// /variables/:uuid
         /// </summary>
         /// <remarks>
         /// Update variable attributes by it&#39;s UUID. Keep the Variable UUID but overwrite all editable attributes.
@@ -130,7 +130,7 @@ namespace variables.Api
         VariableGet ApiVariablesUpdate(string uuid, VariableCreate variableCreate, int operationIndex = 0);
 
         /// <summary>
-        /// /api/variables/:uuid
+        /// /variables/:uuid
         /// </summary>
         /// <remarks>
         /// Update variable attributes by it&#39;s UUID. Keep the Variable UUID but overwrite all editable attributes.
@@ -151,7 +151,7 @@ namespace variables.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// /api/variables
+        /// /variables
         /// </summary>
         /// <remarks>
         /// Create a new Variable. &lt;br&gt;&lt;ul&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is informed with value \&quot;true\&quot; in request payload the Variable value will be secret and no longer viewable after creation.&lt;/li&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is not informed the Variable value will be considered as not secret by default.&lt;/li&gt;&lt;/ul&gt;
@@ -164,7 +164,7 @@ namespace variables.Api
         System.Threading.Tasks.Task<VariableGet> ApiVariablesCreateAsync(VariableCreate variableCreate, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// /api/variables
+        /// /variables
         /// </summary>
         /// <remarks>
         /// Create a new Variable. &lt;br&gt;&lt;ul&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is informed with value \&quot;true\&quot; in request payload the Variable value will be secret and no longer viewable after creation.&lt;/li&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is not informed the Variable value will be considered as not secret by default.&lt;/li&gt;&lt;/ul&gt;
@@ -176,7 +176,7 @@ namespace variables.Api
         /// <returns>Task of ApiResponse (VariableGet)</returns>
         System.Threading.Tasks.Task<ApiResponse<VariableGet>> ApiVariablesCreateWithHttpInfoAsync(VariableCreate variableCreate, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// /api/variables/:uuid
+        /// /variables/:uuid
         /// </summary>
         /// <remarks>
         /// Delete a Variable by it&#39;s UUID
@@ -189,7 +189,7 @@ namespace variables.Api
         System.Threading.Tasks.Task ApiVariablesDestroyAsync(string uuid, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// /api/variables/:uuid
+        /// /variables/:uuid
         /// </summary>
         /// <remarks>
         /// Delete a Variable by it&#39;s UUID
@@ -201,7 +201,7 @@ namespace variables.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ApiVariablesDestroyWithHttpInfoAsync(string uuid, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// /api/variables
+        /// /variables
         /// </summary>
         /// <remarks>
         /// List all user&#39;s Variables.
@@ -213,7 +213,7 @@ namespace variables.Api
         System.Threading.Tasks.Task<List<Variable>> ApiVariablesListAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// /api/variables
+        /// /variables
         /// </summary>
         /// <remarks>
         /// List all user&#39;s Variables.
@@ -224,7 +224,7 @@ namespace variables.Api
         /// <returns>Task of ApiResponse (List&lt;Variable&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Variable>>> ApiVariablesListWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// /api/variables/:uuid
+        /// /variables/:uuid
         /// </summary>
         /// <remarks>
         /// Retrieve all data for a Variable by it&#39;s UUID
@@ -237,7 +237,7 @@ namespace variables.Api
         System.Threading.Tasks.Task<Variable> ApiVariablesRetrieveAsync(string uuid, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// /api/variables/:uuid
+        /// /variables/:uuid
         /// </summary>
         /// <remarks>
         /// Retrieve all data for a Variable by it&#39;s UUID
@@ -249,7 +249,7 @@ namespace variables.Api
         /// <returns>Task of ApiResponse (Variable)</returns>
         System.Threading.Tasks.Task<ApiResponse<Variable>> ApiVariablesRetrieveWithHttpInfoAsync(string uuid, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// /api/variables/:uuid
+        /// /variables/:uuid
         /// </summary>
         /// <remarks>
         /// Update variable attributes by it&#39;s UUID. Keep the Variable UUID but overwrite all editable attributes.
@@ -263,7 +263,7 @@ namespace variables.Api
         System.Threading.Tasks.Task<VariableGet> ApiVariablesUpdateAsync(string uuid, VariableCreate variableCreate, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// /api/variables/:uuid
+        /// /variables/:uuid
         /// </summary>
         /// <remarks>
         /// Update variable attributes by it&#39;s UUID. Keep the Variable UUID but overwrite all editable attributes.
@@ -396,7 +396,7 @@ namespace variables.Api
         }
 
         /// <summary>
-        /// /api/variables Create a new Variable. &lt;br&gt;&lt;ul&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is informed with value \&quot;true\&quot; in request payload the Variable value will be secret and no longer viewable after creation.&lt;/li&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is not informed the Variable value will be considered as not secret by default.&lt;/li&gt;&lt;/ul&gt;
+        /// /variables Create a new Variable. &lt;br&gt;&lt;ul&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is informed with value \&quot;true\&quot; in request payload the Variable value will be secret and no longer viewable after creation.&lt;/li&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is not informed the Variable value will be considered as not secret by default.&lt;/li&gt;&lt;/ul&gt;
         /// </summary>
         /// <exception cref="variables.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="variableCreate"></param>
@@ -409,7 +409,7 @@ namespace variables.Api
         }
 
         /// <summary>
-        /// /api/variables Create a new Variable. &lt;br&gt;&lt;ul&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is informed with value \&quot;true\&quot; in request payload the Variable value will be secret and no longer viewable after creation.&lt;/li&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is not informed the Variable value will be considered as not secret by default.&lt;/li&gt;&lt;/ul&gt;
+        /// /variables Create a new Variable. &lt;br&gt;&lt;ul&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is informed with value \&quot;true\&quot; in request payload the Variable value will be secret and no longer viewable after creation.&lt;/li&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is not informed the Variable value will be considered as not secret by default.&lt;/li&gt;&lt;/ul&gt;
         /// </summary>
         /// <exception cref="variables.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="variableCreate"></param>
@@ -458,7 +458,7 @@ namespace variables.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<VariableGet>("/api/variables", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<VariableGet>("/variables", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiVariablesCreate", localVarResponse);
@@ -472,7 +472,7 @@ namespace variables.Api
         }
 
         /// <summary>
-        /// /api/variables Create a new Variable. &lt;br&gt;&lt;ul&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is informed with value \&quot;true\&quot; in request payload the Variable value will be secret and no longer viewable after creation.&lt;/li&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is not informed the Variable value will be considered as not secret by default.&lt;/li&gt;&lt;/ul&gt;
+        /// /variables Create a new Variable. &lt;br&gt;&lt;ul&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is informed with value \&quot;true\&quot; in request payload the Variable value will be secret and no longer viewable after creation.&lt;/li&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is not informed the Variable value will be considered as not secret by default.&lt;/li&gt;&lt;/ul&gt;
         /// </summary>
         /// <exception cref="variables.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="variableCreate"></param>
@@ -486,7 +486,7 @@ namespace variables.Api
         }
 
         /// <summary>
-        /// /api/variables Create a new Variable. &lt;br&gt;&lt;ul&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is informed with value \&quot;true\&quot; in request payload the Variable value will be secret and no longer viewable after creation.&lt;/li&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is not informed the Variable value will be considered as not secret by default.&lt;/li&gt;&lt;/ul&gt;
+        /// /variables Create a new Variable. &lt;br&gt;&lt;ul&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is informed with value \&quot;true\&quot; in request payload the Variable value will be secret and no longer viewable after creation.&lt;/li&gt;&lt;li&gt;If the attribute \&quot;secret\&quot; is not informed the Variable value will be considered as not secret by default.&lt;/li&gt;&lt;/ul&gt;
         /// </summary>
         /// <exception cref="variables.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="variableCreate"></param>
@@ -537,7 +537,7 @@ namespace variables.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<VariableGet>("/api/variables", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<VariableGet>("/variables", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -552,7 +552,7 @@ namespace variables.Api
         }
 
         /// <summary>
-        /// /api/variables/:uuid Delete a Variable by it&#39;s UUID
+        /// /variables/:uuid Delete a Variable by it&#39;s UUID
         /// </summary>
         /// <exception cref="variables.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uuid"></param>
@@ -564,7 +564,7 @@ namespace variables.Api
         }
 
         /// <summary>
-        /// /api/variables/:uuid Delete a Variable by it&#39;s UUID
+        /// /variables/:uuid Delete a Variable by it&#39;s UUID
         /// </summary>
         /// <exception cref="variables.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uuid"></param>
@@ -611,7 +611,7 @@ namespace variables.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<Object>("/api/variables/{uuid}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Object>("/variables/{uuid}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiVariablesDestroy", localVarResponse);
@@ -625,7 +625,7 @@ namespace variables.Api
         }
 
         /// <summary>
-        /// /api/variables/:uuid Delete a Variable by it&#39;s UUID
+        /// /variables/:uuid Delete a Variable by it&#39;s UUID
         /// </summary>
         /// <exception cref="variables.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uuid"></param>
@@ -638,7 +638,7 @@ namespace variables.Api
         }
 
         /// <summary>
-        /// /api/variables/:uuid Delete a Variable by it&#39;s UUID
+        /// /variables/:uuid Delete a Variable by it&#39;s UUID
         /// </summary>
         /// <exception cref="variables.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uuid"></param>
@@ -687,7 +687,7 @@ namespace variables.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/variables/{uuid}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/variables/{uuid}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -702,7 +702,7 @@ namespace variables.Api
         }
 
         /// <summary>
-        /// /api/variables List all user&#39;s Variables.
+        /// /variables List all user&#39;s Variables.
         /// </summary>
         /// <exception cref="variables.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -714,7 +714,7 @@ namespace variables.Api
         }
 
         /// <summary>
-        /// /api/variables List all user&#39;s Variables.
+        /// /variables List all user&#39;s Variables.
         /// </summary>
         /// <exception cref="variables.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -754,7 +754,7 @@ namespace variables.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<Variable>>("/api/variables", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<Variable>>("/variables", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiVariablesList", localVarResponse);
@@ -768,7 +768,7 @@ namespace variables.Api
         }
 
         /// <summary>
-        /// /api/variables List all user&#39;s Variables.
+        /// /variables List all user&#39;s Variables.
         /// </summary>
         /// <exception cref="variables.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -781,7 +781,7 @@ namespace variables.Api
         }
 
         /// <summary>
-        /// /api/variables List all user&#39;s Variables.
+        /// /variables List all user&#39;s Variables.
         /// </summary>
         /// <exception cref="variables.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -823,7 +823,7 @@ namespace variables.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Variable>>("/api/variables", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Variable>>("/variables", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -838,7 +838,7 @@ namespace variables.Api
         }
 
         /// <summary>
-        /// /api/variables/:uuid Retrieve all data for a Variable by it&#39;s UUID
+        /// /variables/:uuid Retrieve all data for a Variable by it&#39;s UUID
         /// </summary>
         /// <exception cref="variables.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uuid"></param>
@@ -851,7 +851,7 @@ namespace variables.Api
         }
 
         /// <summary>
-        /// /api/variables/:uuid Retrieve all data for a Variable by it&#39;s UUID
+        /// /variables/:uuid Retrieve all data for a Variable by it&#39;s UUID
         /// </summary>
         /// <exception cref="variables.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uuid"></param>
@@ -899,7 +899,7 @@ namespace variables.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Variable>("/api/variables/{uuid}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<Variable>("/variables/{uuid}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiVariablesRetrieve", localVarResponse);
@@ -913,7 +913,7 @@ namespace variables.Api
         }
 
         /// <summary>
-        /// /api/variables/:uuid Retrieve all data for a Variable by it&#39;s UUID
+        /// /variables/:uuid Retrieve all data for a Variable by it&#39;s UUID
         /// </summary>
         /// <exception cref="variables.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uuid"></param>
@@ -927,7 +927,7 @@ namespace variables.Api
         }
 
         /// <summary>
-        /// /api/variables/:uuid Retrieve all data for a Variable by it&#39;s UUID
+        /// /variables/:uuid Retrieve all data for a Variable by it&#39;s UUID
         /// </summary>
         /// <exception cref="variables.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uuid"></param>
@@ -977,7 +977,7 @@ namespace variables.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Variable>("/api/variables/{uuid}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Variable>("/variables/{uuid}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -992,7 +992,7 @@ namespace variables.Api
         }
 
         /// <summary>
-        /// /api/variables/:uuid Update variable attributes by it&#39;s UUID. Keep the Variable UUID but overwrite all editable attributes.
+        /// /variables/:uuid Update variable attributes by it&#39;s UUID. Keep the Variable UUID but overwrite all editable attributes.
         /// </summary>
         /// <exception cref="variables.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uuid"></param>
@@ -1006,7 +1006,7 @@ namespace variables.Api
         }
 
         /// <summary>
-        /// /api/variables/:uuid Update variable attributes by it&#39;s UUID. Keep the Variable UUID but overwrite all editable attributes.
+        /// /variables/:uuid Update variable attributes by it&#39;s UUID. Keep the Variable UUID but overwrite all editable attributes.
         /// </summary>
         /// <exception cref="variables.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uuid"></param>
@@ -1065,7 +1065,7 @@ namespace variables.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<VariableGet>("/api/variables/{uuid}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<VariableGet>("/variables/{uuid}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiVariablesUpdate", localVarResponse);
@@ -1079,7 +1079,7 @@ namespace variables.Api
         }
 
         /// <summary>
-        /// /api/variables/:uuid Update variable attributes by it&#39;s UUID. Keep the Variable UUID but overwrite all editable attributes.
+        /// /variables/:uuid Update variable attributes by it&#39;s UUID. Keep the Variable UUID but overwrite all editable attributes.
         /// </summary>
         /// <exception cref="variables.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uuid"></param>
@@ -1094,7 +1094,7 @@ namespace variables.Api
         }
 
         /// <summary>
-        /// /api/variables/:uuid Update variable attributes by it&#39;s UUID. Keep the Variable UUID but overwrite all editable attributes.
+        /// /variables/:uuid Update variable attributes by it&#39;s UUID. Keep the Variable UUID but overwrite all editable attributes.
         /// </summary>
         /// <exception cref="variables.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uuid"></param>
@@ -1155,7 +1155,7 @@ namespace variables.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<VariableGet>("/api/variables/{uuid}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<VariableGet>("/variables/{uuid}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
