@@ -110,7 +110,7 @@ namespace variables.Client
         {
             Proxy = null;
             UserAgent = WebUtility.UrlEncode("OpenAPI-Generator/1.0.0/csharp");
-            BasePath = "https://stage-variables.azion.com";
+            BasePath = "https://stage-api.azion.net/variables";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
@@ -118,7 +118,7 @@ namespace variables.Client
             {
                 {
                     new Dictionary<string, object> {
-                        {"url", "https://stage-variables.azion.com"},
+                        {"url", "https://stage-api.azion.net/variables"},
                         {"description", "Stage"},
                     }
                 }
@@ -139,7 +139,7 @@ namespace variables.Client
             IDictionary<string, string> defaultHeaders,
             IDictionary<string, string> apiKey,
             IDictionary<string, string> apiKeyPrefix,
-            string basePath = "https://stage-variables.azion.com") : this()
+            string basePath = "https://stage-api.azion.net/variables") : this()
         {
             if (string.IsNullOrWhiteSpace(basePath))
                 throw new ArgumentException("The provided basePath is invalid.", "basePath");
