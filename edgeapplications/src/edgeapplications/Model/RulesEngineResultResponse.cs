@@ -41,12 +41,13 @@ namespace edgeapplications.Model
         /// </summary>
         /// <param name="id">id (required).</param>
         /// <param name="name">name (required).</param>
+        /// <param name="description">description.</param>
         /// <param name="phase">phase (required).</param>
         /// <param name="behaviors">behaviors.</param>
         /// <param name="criteria">criteria (required).</param>
         /// <param name="isActive">isActive (required).</param>
         /// <param name="order">order (required).</param>
-        public RulesEngineResultResponse(long id = default(long), string name = default(string), string phase = default(string), List<RulesEngineResultResponseBehaviors> behaviors = default(List<RulesEngineResultResponseBehaviors>), List<List<RulesEngineCriteria>> criteria = default(List<List<RulesEngineCriteria>>), bool isActive = default(bool), long order = default(long))
+        public RulesEngineResultResponse(long id = default(long), string name = default(string), string description = default(string), string phase = default(string), List<RulesEngineResultResponseBehaviors> behaviors = default(List<RulesEngineResultResponseBehaviors>), List<List<RulesEngineCriteria>> criteria = default(List<List<RulesEngineCriteria>>), bool isActive = default(bool), long order = default(long))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -69,6 +70,7 @@ namespace edgeapplications.Model
             this.Criteria = criteria;
             this.IsActive = isActive;
             this.Order = order;
+            this.Description = description;
             this.Behaviors = behaviors;
         }
 
@@ -83,6 +85,12 @@ namespace edgeapplications.Model
         /// </summary>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Description
+        /// </summary>
+        [DataMember(Name = "description", EmitDefaultValue = false)]
+        public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets Phase
@@ -124,6 +132,7 @@ namespace edgeapplications.Model
             sb.Append("class RulesEngineResultResponse {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Phase: ").Append(Phase).Append("\n");
             sb.Append("  Behaviors: ").Append(Behaviors).Append("\n");
             sb.Append("  Criteria: ").Append(Criteria).Append("\n");
@@ -174,6 +183,11 @@ namespace edgeapplications.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
+                ) && 
+                (
                     this.Phase == input.Phase ||
                     (this.Phase != null &&
                     this.Phase.Equals(input.Phase))
@@ -213,6 +227,10 @@ namespace edgeapplications.Model
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.Description != null)
+                {
+                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
                 }
                 if (this.Phase != null)
                 {
