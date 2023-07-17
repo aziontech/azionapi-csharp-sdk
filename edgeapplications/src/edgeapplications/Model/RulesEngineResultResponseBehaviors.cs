@@ -41,7 +41,7 @@ namespace edgeapplications.Model
         /// </summary>
         /// <param name="name">name (required).</param>
         /// <param name="target">target.</param>
-        public RulesEngineResultResponseBehaviors(string name = default(string), Object target = default(Object))
+        public RulesEngineResultResponseBehaviors(string name = default(string), string target = default(string))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -61,8 +61,8 @@ namespace edgeapplications.Model
         /// <summary>
         /// Gets or Sets Target
         /// </summary>
-        [DataMember(Name = "target", EmitDefaultValue = true)]
-        public Object Target { get; set; }
+        [DataMember(Name = "target", EmitDefaultValue = false)]
+        public string Target { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
