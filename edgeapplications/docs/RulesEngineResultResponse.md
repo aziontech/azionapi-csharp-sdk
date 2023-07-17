@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **long** |  | 
 **Name** | **string** |  | 
+**Description** | **string** |  | [optional] 
 **Phase** | **string** |  | 
 **Behaviors** | [**List&lt;RulesEngineResultResponseBehaviors&gt;**](RulesEngineResultResponseBehaviors.md) |  | [optional] 
 **Criteria** | **List&lt;List&lt;RulesEngineCriteria&gt;&gt;** |  | 
