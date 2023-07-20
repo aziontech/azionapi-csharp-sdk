@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 api/openapi.yaml
 appveyor.yml
@@ -11,12 +10,6 @@ docs/PersonalTokenResponseWithResults.md
 docs/PersonalTokenResponseWithResultsLinks.md
 git_push.sh
 personal_tokens.sln
-src/personal_tokens.Test/Api/PersonalTokenApiTests.cs
-src/personal_tokens.Test/Model/CreatePersonalTokenRequestTests.cs
-src/personal_tokens.Test/Model/CreatePersonalTokenResponseTests.cs
-src/personal_tokens.Test/Model/PersonalTokenResponseGetTests.cs
-src/personal_tokens.Test/Model/PersonalTokenResponseWithResultsLinksTests.cs
-src/personal_tokens.Test/Model/PersonalTokenResponseWithResultsTests.cs
 src/personal_tokens.Test/personal_tokens.Test.csproj
 src/personal_tokens/Api/PersonalTokenApi.cs
 src/personal_tokens/Client/ApiClient.cs
