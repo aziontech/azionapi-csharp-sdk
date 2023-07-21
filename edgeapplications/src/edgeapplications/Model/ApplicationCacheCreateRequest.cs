@@ -43,21 +43,15 @@ namespace edgeapplications.Model
         /// <param name="browserCacheSettings">browserCacheSettings.</param>
         /// <param name="browserCacheSettingsMaximumTtl">browserCacheSettingsMaximumTtl.</param>
         /// <param name="cdnCacheSettings">cdnCacheSettings.</param>
-        /// <param name="adaptiveDeliveryAction">adaptiveDeliveryAction.</param>
-        /// <param name="enableCachingForOptions">enableCachingForOptions.</param>
-        /// <param name="enableQueryStringSort">enableQueryStringSort.</param>
         /// <param name="cdnCacheSettingsMaximumTtl">cdnCacheSettingsMaximumTtl.</param>
         /// <param name="cacheByQueryString">cacheByQueryString.</param>
         /// <param name="queryStringFields">queryStringFields.</param>
+        /// <param name="enableQueryStringSort">enableQueryStringSort.</param>
         /// <param name="cacheByCookies">cacheByCookies.</param>
         /// <param name="cookieNames">cookieNames.</param>
-        /// <param name="enableCachingForPost">enableCachingForPost.</param>
+        /// <param name="userEmail">userEmail.</param>
         /// <param name="l2CachingEnabled">l2CachingEnabled.</param>
-        /// <param name="isSliceConfigurationEnabled">isSliceConfigurationEnabled.</param>
-        /// <param name="isSliceEdgeCachingEnabled">isSliceEdgeCachingEnabled.</param>
-        /// <param name="isSliceL2CachingEnabled">isSliceL2CachingEnabled.</param>
-        /// <param name="sliceConfigurationRange">sliceConfigurationRange.</param>
-        public ApplicationCacheCreateRequest(string name = default(string), string browserCacheSettings = default(string), long browserCacheSettingsMaximumTtl = default(long), string cdnCacheSettings = default(string), string adaptiveDeliveryAction = default(string), bool enableCachingForOptions = default(bool), bool enableQueryStringSort = default(bool), long cdnCacheSettingsMaximumTtl = default(long), string cacheByQueryString = default(string), List<string> queryStringFields = default(List<string>), string cacheByCookies = default(string), List<string> cookieNames = default(List<string>), bool enableCachingForPost = default(bool), bool l2CachingEnabled = default(bool), bool isSliceConfigurationEnabled = default(bool), bool isSliceEdgeCachingEnabled = default(bool), bool isSliceL2CachingEnabled = default(bool), long sliceConfigurationRange = default(long))
+        public ApplicationCacheCreateRequest(string name = default(string), string browserCacheSettings = default(string), long browserCacheSettingsMaximumTtl = default(long), string cdnCacheSettings = default(string), long cdnCacheSettingsMaximumTtl = default(long), string cacheByQueryString = default(string), List<string> queryStringFields = default(List<string>), bool enableQueryStringSort = default(bool), string cacheByCookies = default(string), List<string> cookieNames = default(List<string>), string userEmail = default(string), bool l2CachingEnabled = default(bool))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -68,20 +62,14 @@ namespace edgeapplications.Model
             this.BrowserCacheSettings = browserCacheSettings;
             this.BrowserCacheSettingsMaximumTtl = browserCacheSettingsMaximumTtl;
             this.CdnCacheSettings = cdnCacheSettings;
-            this.AdaptiveDeliveryAction = adaptiveDeliveryAction;
-            this.EnableCachingForOptions = enableCachingForOptions;
-            this.EnableQueryStringSort = enableQueryStringSort;
             this.CdnCacheSettingsMaximumTtl = cdnCacheSettingsMaximumTtl;
             this.CacheByQueryString = cacheByQueryString;
             this.QueryStringFields = queryStringFields;
+            this.EnableQueryStringSort = enableQueryStringSort;
             this.CacheByCookies = cacheByCookies;
             this.CookieNames = cookieNames;
-            this.EnableCachingForPost = enableCachingForPost;
+            this.UserEmail = userEmail;
             this.L2CachingEnabled = l2CachingEnabled;
-            this.IsSliceConfigurationEnabled = isSliceConfigurationEnabled;
-            this.IsSliceEdgeCachingEnabled = isSliceEdgeCachingEnabled;
-            this.IsSliceL2CachingEnabled = isSliceL2CachingEnabled;
-            this.SliceConfigurationRange = sliceConfigurationRange;
         }
 
         /// <summary>
@@ -109,24 +97,6 @@ namespace edgeapplications.Model
         public string CdnCacheSettings { get; set; }
 
         /// <summary>
-        /// Gets or Sets AdaptiveDeliveryAction
-        /// </summary>
-        [DataMember(Name = "adaptive_delivery_action", EmitDefaultValue = false)]
-        public string AdaptiveDeliveryAction { get; set; }
-
-        /// <summary>
-        /// Gets or Sets EnableCachingForOptions
-        /// </summary>
-        [DataMember(Name = "enable_caching_for_options", EmitDefaultValue = true)]
-        public bool EnableCachingForOptions { get; set; }
-
-        /// <summary>
-        /// Gets or Sets EnableQueryStringSort
-        /// </summary>
-        [DataMember(Name = "enable_query_string_sort", EmitDefaultValue = true)]
-        public bool EnableQueryStringSort { get; set; }
-
-        /// <summary>
         /// Gets or Sets CdnCacheSettingsMaximumTtl
         /// </summary>
         [DataMember(Name = "cdn_cache_settings_maximum_ttl", EmitDefaultValue = false)]
@@ -141,8 +111,14 @@ namespace edgeapplications.Model
         /// <summary>
         /// Gets or Sets QueryStringFields
         /// </summary>
-        [DataMember(Name = "query_string_fields", EmitDefaultValue = false)]
+        [DataMember(Name = "query_string_fields", EmitDefaultValue = true)]
         public List<string> QueryStringFields { get; set; }
+
+        /// <summary>
+        /// Gets or Sets EnableQueryStringSort
+        /// </summary>
+        [DataMember(Name = "enable_query_string_sort", EmitDefaultValue = true)]
+        public bool EnableQueryStringSort { get; set; }
 
         /// <summary>
         /// Gets or Sets CacheByCookies
@@ -153,44 +129,20 @@ namespace edgeapplications.Model
         /// <summary>
         /// Gets or Sets CookieNames
         /// </summary>
-        [DataMember(Name = "cookie_names", EmitDefaultValue = false)]
+        [DataMember(Name = "cookie_names", EmitDefaultValue = true)]
         public List<string> CookieNames { get; set; }
 
         /// <summary>
-        /// Gets or Sets EnableCachingForPost
+        /// Gets or Sets UserEmail
         /// </summary>
-        [DataMember(Name = "enable_caching_for_post", EmitDefaultValue = true)]
-        public bool EnableCachingForPost { get; set; }
+        [DataMember(Name = "user_email", EmitDefaultValue = false)]
+        public string UserEmail { get; set; }
 
         /// <summary>
         /// Gets or Sets L2CachingEnabled
         /// </summary>
         [DataMember(Name = "l2_caching_enabled", EmitDefaultValue = true)]
         public bool L2CachingEnabled { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsSliceConfigurationEnabled
-        /// </summary>
-        [DataMember(Name = "is_slice_configuration_enabled", EmitDefaultValue = true)]
-        public bool IsSliceConfigurationEnabled { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsSliceEdgeCachingEnabled
-        /// </summary>
-        [DataMember(Name = "is_slice_edge_caching_enabled", EmitDefaultValue = true)]
-        public bool IsSliceEdgeCachingEnabled { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsSliceL2CachingEnabled
-        /// </summary>
-        [DataMember(Name = "is_slice_l2_caching_enabled", EmitDefaultValue = true)]
-        public bool IsSliceL2CachingEnabled { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SliceConfigurationRange
-        /// </summary>
-        [DataMember(Name = "slice_configuration_range", EmitDefaultValue = false)]
-        public long SliceConfigurationRange { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -204,20 +156,14 @@ namespace edgeapplications.Model
             sb.Append("  BrowserCacheSettings: ").Append(BrowserCacheSettings).Append("\n");
             sb.Append("  BrowserCacheSettingsMaximumTtl: ").Append(BrowserCacheSettingsMaximumTtl).Append("\n");
             sb.Append("  CdnCacheSettings: ").Append(CdnCacheSettings).Append("\n");
-            sb.Append("  AdaptiveDeliveryAction: ").Append(AdaptiveDeliveryAction).Append("\n");
-            sb.Append("  EnableCachingForOptions: ").Append(EnableCachingForOptions).Append("\n");
-            sb.Append("  EnableQueryStringSort: ").Append(EnableQueryStringSort).Append("\n");
             sb.Append("  CdnCacheSettingsMaximumTtl: ").Append(CdnCacheSettingsMaximumTtl).Append("\n");
             sb.Append("  CacheByQueryString: ").Append(CacheByQueryString).Append("\n");
             sb.Append("  QueryStringFields: ").Append(QueryStringFields).Append("\n");
+            sb.Append("  EnableQueryStringSort: ").Append(EnableQueryStringSort).Append("\n");
             sb.Append("  CacheByCookies: ").Append(CacheByCookies).Append("\n");
             sb.Append("  CookieNames: ").Append(CookieNames).Append("\n");
-            sb.Append("  EnableCachingForPost: ").Append(EnableCachingForPost).Append("\n");
+            sb.Append("  UserEmail: ").Append(UserEmail).Append("\n");
             sb.Append("  L2CachingEnabled: ").Append(L2CachingEnabled).Append("\n");
-            sb.Append("  IsSliceConfigurationEnabled: ").Append(IsSliceConfigurationEnabled).Append("\n");
-            sb.Append("  IsSliceEdgeCachingEnabled: ").Append(IsSliceEdgeCachingEnabled).Append("\n");
-            sb.Append("  IsSliceL2CachingEnabled: ").Append(IsSliceL2CachingEnabled).Append("\n");
-            sb.Append("  SliceConfigurationRange: ").Append(SliceConfigurationRange).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -273,19 +219,6 @@ namespace edgeapplications.Model
                     this.CdnCacheSettings.Equals(input.CdnCacheSettings))
                 ) && 
                 (
-                    this.AdaptiveDeliveryAction == input.AdaptiveDeliveryAction ||
-                    (this.AdaptiveDeliveryAction != null &&
-                    this.AdaptiveDeliveryAction.Equals(input.AdaptiveDeliveryAction))
-                ) && 
-                (
-                    this.EnableCachingForOptions == input.EnableCachingForOptions ||
-                    this.EnableCachingForOptions.Equals(input.EnableCachingForOptions)
-                ) && 
-                (
-                    this.EnableQueryStringSort == input.EnableQueryStringSort ||
-                    this.EnableQueryStringSort.Equals(input.EnableQueryStringSort)
-                ) && 
-                (
                     this.CdnCacheSettingsMaximumTtl == input.CdnCacheSettingsMaximumTtl ||
                     this.CdnCacheSettingsMaximumTtl.Equals(input.CdnCacheSettingsMaximumTtl)
                 ) && 
@@ -301,6 +234,10 @@ namespace edgeapplications.Model
                     this.QueryStringFields.SequenceEqual(input.QueryStringFields)
                 ) && 
                 (
+                    this.EnableQueryStringSort == input.EnableQueryStringSort ||
+                    this.EnableQueryStringSort.Equals(input.EnableQueryStringSort)
+                ) && 
+                (
                     this.CacheByCookies == input.CacheByCookies ||
                     (this.CacheByCookies != null &&
                     this.CacheByCookies.Equals(input.CacheByCookies))
@@ -312,28 +249,13 @@ namespace edgeapplications.Model
                     this.CookieNames.SequenceEqual(input.CookieNames)
                 ) && 
                 (
-                    this.EnableCachingForPost == input.EnableCachingForPost ||
-                    this.EnableCachingForPost.Equals(input.EnableCachingForPost)
+                    this.UserEmail == input.UserEmail ||
+                    (this.UserEmail != null &&
+                    this.UserEmail.Equals(input.UserEmail))
                 ) && 
                 (
                     this.L2CachingEnabled == input.L2CachingEnabled ||
                     this.L2CachingEnabled.Equals(input.L2CachingEnabled)
-                ) && 
-                (
-                    this.IsSliceConfigurationEnabled == input.IsSliceConfigurationEnabled ||
-                    this.IsSliceConfigurationEnabled.Equals(input.IsSliceConfigurationEnabled)
-                ) && 
-                (
-                    this.IsSliceEdgeCachingEnabled == input.IsSliceEdgeCachingEnabled ||
-                    this.IsSliceEdgeCachingEnabled.Equals(input.IsSliceEdgeCachingEnabled)
-                ) && 
-                (
-                    this.IsSliceL2CachingEnabled == input.IsSliceL2CachingEnabled ||
-                    this.IsSliceL2CachingEnabled.Equals(input.IsSliceL2CachingEnabled)
-                ) && 
-                (
-                    this.SliceConfigurationRange == input.SliceConfigurationRange ||
-                    this.SliceConfigurationRange.Equals(input.SliceConfigurationRange)
                 );
         }
 
@@ -359,12 +281,6 @@ namespace edgeapplications.Model
                 {
                     hashCode = (hashCode * 59) + this.CdnCacheSettings.GetHashCode();
                 }
-                if (this.AdaptiveDeliveryAction != null)
-                {
-                    hashCode = (hashCode * 59) + this.AdaptiveDeliveryAction.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.EnableCachingForOptions.GetHashCode();
-                hashCode = (hashCode * 59) + this.EnableQueryStringSort.GetHashCode();
                 hashCode = (hashCode * 59) + this.CdnCacheSettingsMaximumTtl.GetHashCode();
                 if (this.CacheByQueryString != null)
                 {
@@ -374,6 +290,7 @@ namespace edgeapplications.Model
                 {
                     hashCode = (hashCode * 59) + this.QueryStringFields.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.EnableQueryStringSort.GetHashCode();
                 if (this.CacheByCookies != null)
                 {
                     hashCode = (hashCode * 59) + this.CacheByCookies.GetHashCode();
@@ -382,12 +299,11 @@ namespace edgeapplications.Model
                 {
                     hashCode = (hashCode * 59) + this.CookieNames.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.EnableCachingForPost.GetHashCode();
+                if (this.UserEmail != null)
+                {
+                    hashCode = (hashCode * 59) + this.UserEmail.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.L2CachingEnabled.GetHashCode();
-                hashCode = (hashCode * 59) + this.IsSliceConfigurationEnabled.GetHashCode();
-                hashCode = (hashCode * 59) + this.IsSliceEdgeCachingEnabled.GetHashCode();
-                hashCode = (hashCode * 59) + this.IsSliceL2CachingEnabled.GetHashCode();
-                hashCode = (hashCode * 59) + this.SliceConfigurationRange.GetHashCode();
                 return hashCode;
             }
         }

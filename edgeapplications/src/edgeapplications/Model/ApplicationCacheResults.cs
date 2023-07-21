@@ -54,7 +54,10 @@ namespace edgeapplications.Model
         /// <param name="deviceGroup">deviceGroup (required).</param>
         /// <param name="enableCachingForPost">enableCachingForPost (required).</param>
         /// <param name="l2CachingEnabled">l2CachingEnabled (required).</param>
-        public ApplicationCacheResults(long id = default(long), string name = default(string), string browserCacheSettings = default(string), long browserCacheSettingsMaximumTtl = default(long), string cdnCacheSettings = default(string), long cdnCacheSettingsMaximumTtl = default(long), string cacheByQueryString = default(string), List<string> queryStringFields = default(List<string>), bool enableQueryStringSort = default(bool), string cacheByCookies = default(string), List<string> cookieNames = default(List<string>), string adaptiveDeliveryAction = default(string), List<string> deviceGroup = default(List<string>), bool enableCachingForPost = default(bool), bool l2CachingEnabled = default(bool))
+        /// <param name="enableCachingForOptions">enableCachingForOptions (required).</param>
+        /// <param name="enableStaleCache">enableStaleCache (required).</param>
+        /// <param name="l2Region">l2Region (required).</param>
+        public ApplicationCacheResults(long id = default(long), string name = default(string), string browserCacheSettings = default(string), long browserCacheSettingsMaximumTtl = default(long), string cdnCacheSettings = default(string), long cdnCacheSettingsMaximumTtl = default(long), string cacheByQueryString = default(string), List<string> queryStringFields = default(List<string>), bool enableQueryStringSort = default(bool), string cacheByCookies = default(string), List<string> cookieNames = default(List<string>), string adaptiveDeliveryAction = default(string), List<string> deviceGroup = default(List<string>), bool enableCachingForPost = default(bool), bool l2CachingEnabled = default(bool), bool enableCachingForOptions = default(bool), bool enableStaleCache = default(bool), string l2Region = default(string))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -116,6 +119,14 @@ namespace edgeapplications.Model
             this.DeviceGroup = deviceGroup;
             this.EnableCachingForPost = enableCachingForPost;
             this.L2CachingEnabled = l2CachingEnabled;
+            this.EnableCachingForOptions = enableCachingForOptions;
+            this.EnableStaleCache = enableStaleCache;
+            // to ensure "l2Region" is required (not null)
+            if (l2Region == null)
+            {
+                throw new ArgumentNullException("l2Region is a required property for ApplicationCacheResults and cannot be null");
+            }
+            this.L2Region = l2Region;
         }
 
         /// <summary>
@@ -209,6 +220,24 @@ namespace edgeapplications.Model
         public bool L2CachingEnabled { get; set; }
 
         /// <summary>
+        /// Gets or Sets EnableCachingForOptions
+        /// </summary>
+        [DataMember(Name = "enable_caching_for_options", IsRequired = true, EmitDefaultValue = true)]
+        public bool EnableCachingForOptions { get; set; }
+
+        /// <summary>
+        /// Gets or Sets EnableStaleCache
+        /// </summary>
+        [DataMember(Name = "enable_stale_cache", IsRequired = true, EmitDefaultValue = true)]
+        public bool EnableStaleCache { get; set; }
+
+        /// <summary>
+        /// Gets or Sets L2Region
+        /// </summary>
+        [DataMember(Name = "l2_region", IsRequired = true, EmitDefaultValue = true)]
+        public string L2Region { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -231,6 +260,9 @@ namespace edgeapplications.Model
             sb.Append("  DeviceGroup: ").Append(DeviceGroup).Append("\n");
             sb.Append("  EnableCachingForPost: ").Append(EnableCachingForPost).Append("\n");
             sb.Append("  L2CachingEnabled: ").Append(L2CachingEnabled).Append("\n");
+            sb.Append("  EnableCachingForOptions: ").Append(EnableCachingForOptions).Append("\n");
+            sb.Append("  EnableStaleCache: ").Append(EnableStaleCache).Append("\n");
+            sb.Append("  L2Region: ").Append(L2Region).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -337,6 +369,19 @@ namespace edgeapplications.Model
                 (
                     this.L2CachingEnabled == input.L2CachingEnabled ||
                     this.L2CachingEnabled.Equals(input.L2CachingEnabled)
+                ) && 
+                (
+                    this.EnableCachingForOptions == input.EnableCachingForOptions ||
+                    this.EnableCachingForOptions.Equals(input.EnableCachingForOptions)
+                ) && 
+                (
+                    this.EnableStaleCache == input.EnableStaleCache ||
+                    this.EnableStaleCache.Equals(input.EnableStaleCache)
+                ) && 
+                (
+                    this.L2Region == input.L2Region ||
+                    (this.L2Region != null &&
+                    this.L2Region.Equals(input.L2Region))
                 );
         }
 
@@ -391,6 +436,12 @@ namespace edgeapplications.Model
                 }
                 hashCode = (hashCode * 59) + this.EnableCachingForPost.GetHashCode();
                 hashCode = (hashCode * 59) + this.L2CachingEnabled.GetHashCode();
+                hashCode = (hashCode * 59) + this.EnableCachingForOptions.GetHashCode();
+                hashCode = (hashCode * 59) + this.EnableStaleCache.GetHashCode();
+                if (this.L2Region != null)
+                {
+                    hashCode = (hashCode * 59) + this.L2Region.GetHashCode();
+                }
                 return hashCode;
             }
         }
