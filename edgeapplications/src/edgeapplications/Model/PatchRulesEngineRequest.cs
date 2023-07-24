@@ -35,11 +35,13 @@ namespace edgeapplications.Model
         /// Initializes a new instance of the <see cref="PatchRulesEngineRequest" /> class.
         /// </summary>
         /// <param name="name">name.</param>
+        /// <param name="description">description.</param>
         /// <param name="criteria">criteria.</param>
         /// <param name="behaviors">behaviors.</param>
-        public PatchRulesEngineRequest(string name = default(string), List<List<RulesEngineCriteria>> criteria = default(List<List<RulesEngineCriteria>>), List<RulesEngineBehavior> behaviors = default(List<RulesEngineBehavior>))
+        public PatchRulesEngineRequest(string name = default(string), string description = default(string), List<List<RulesEngineCriteria>> criteria = default(List<List<RulesEngineCriteria>>), List<RulesEngineBehavior> behaviors = default(List<RulesEngineBehavior>))
         {
             this.Name = name;
+            this.Description = description;
             this.Criteria = criteria;
             this.Behaviors = behaviors;
         }
@@ -49,6 +51,12 @@ namespace edgeapplications.Model
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Description
+        /// </summary>
+        [DataMember(Name = "description", EmitDefaultValue = false)]
+        public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets Criteria
@@ -71,6 +79,7 @@ namespace edgeapplications.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class PatchRulesEngineRequest {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Criteria: ").Append(Criteria).Append("\n");
             sb.Append("  Behaviors: ").Append(Behaviors).Append("\n");
             sb.Append("}\n");
@@ -114,6 +123,11 @@ namespace edgeapplications.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
+                ) && 
+                (
                     this.Criteria == input.Criteria ||
                     this.Criteria != null &&
                     input.Criteria != null &&
@@ -140,6 +154,10 @@ namespace edgeapplications.Model
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
+                if (this.Description != null)
+                {
+                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                }
                 if (this.Criteria != null)
                 {
                     hashCode = (hashCode * 59) + this.Criteria.GetHashCode();
@@ -159,6 +177,12 @@ namespace edgeapplications.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Description (string) maxLength
+            if (this.Description != null && this.Description.Length > 1000)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be less than 1000.", new [] { "Description" });
+            }
+
             yield break;
         }
     }
