@@ -19,6 +19,10 @@ Name | Type | Description | Notes
 **DeviceGroup** | **List&lt;string&gt;** |  | 
 **EnableCachingForPost** | **bool** |  | 
 **L2CachingEnabled** | **bool** |  | 
+**IsSliceConfigurationEnabled** | **bool** |  | [optional] 
+**IsSliceEdgeCachingEnabled** | **bool** |  | [optional] 
+**IsSliceL2CachingEnabled** | **bool** |  | [optional] 
+**SliceConfigurationRange** | **bool** |  | [optional] 
 **EnableCachingForOptions** | **bool** |  | 
 **EnableStaleCache** | **bool** |  | 
 **L2Region** | **string** |  | 
