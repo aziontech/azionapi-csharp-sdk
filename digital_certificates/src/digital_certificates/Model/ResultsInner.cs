@@ -67,7 +67,9 @@ namespace digital_certificates.Model
         /// <param name="status">status.</param>
         /// <param name="certificateType">certificateType.</param>
         /// <param name="managed">managed.</param>
-        public ResultsInner(int id = default(int), string name = default(string), List<string> subjectName = default(List<string>), string validity = default(string), string status = default(string), CertificateTypeEnum? certificateType = default(CertificateTypeEnum?), bool managed = default(bool))
+        /// <param name="issuer">issuer.</param>
+        /// <param name="azionInformation">azionInformation.</param>
+        public ResultsInner(int id = default(int), string name = default(string), List<string> subjectName = default(List<string>), string validity = default(string), string status = default(string), CertificateTypeEnum? certificateType = default(CertificateTypeEnum?), bool managed = default(bool), string issuer = default(string), string azionInformation = default(string))
         {
             this.Id = id;
             this.Name = name;
@@ -76,6 +78,8 @@ namespace digital_certificates.Model
             this.Status = status;
             this.CertificateType = certificateType;
             this.Managed = managed;
+            this.Issuer = issuer;
+            this.AzionInformation = azionInformation;
         }
 
         /// <summary>
@@ -99,7 +103,7 @@ namespace digital_certificates.Model
         /// <summary>
         /// Gets or Sets Validity
         /// </summary>
-        [DataMember(Name = "validity", EmitDefaultValue = false)]
+        [DataMember(Name = "validity", EmitDefaultValue = true)]
         public string Validity { get; set; }
 
         /// <summary>
@@ -113,6 +117,18 @@ namespace digital_certificates.Model
         /// </summary>
         [DataMember(Name = "managed", EmitDefaultValue = true)]
         public bool Managed { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Issuer
+        /// </summary>
+        [DataMember(Name = "issuer", EmitDefaultValue = true)]
+        public string Issuer { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AzionInformation
+        /// </summary>
+        [DataMember(Name = "azion_information", EmitDefaultValue = false)]
+        public string AzionInformation { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -129,6 +145,8 @@ namespace digital_certificates.Model
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  CertificateType: ").Append(CertificateType).Append("\n");
             sb.Append("  Managed: ").Append(Managed).Append("\n");
+            sb.Append("  Issuer: ").Append(Issuer).Append("\n");
+            sb.Append("  AzionInformation: ").Append(AzionInformation).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -196,6 +214,16 @@ namespace digital_certificates.Model
                 (
                     this.Managed == input.Managed ||
                     this.Managed.Equals(input.Managed)
+                ) && 
+                (
+                    this.Issuer == input.Issuer ||
+                    (this.Issuer != null &&
+                    this.Issuer.Equals(input.Issuer))
+                ) && 
+                (
+                    this.AzionInformation == input.AzionInformation ||
+                    (this.AzionInformation != null &&
+                    this.AzionInformation.Equals(input.AzionInformation))
                 );
         }
 
@@ -227,6 +255,14 @@ namespace digital_certificates.Model
                 }
                 hashCode = (hashCode * 59) + this.CertificateType.GetHashCode();
                 hashCode = (hashCode * 59) + this.Managed.GetHashCode();
+                if (this.Issuer != null)
+                {
+                    hashCode = (hashCode * 59) + this.Issuer.GetHashCode();
+                }
+                if (this.AzionInformation != null)
+                {
+                    hashCode = (hashCode * 59) + this.AzionInformation.GetHashCode();
+                }
                 return hashCode;
             }
         }

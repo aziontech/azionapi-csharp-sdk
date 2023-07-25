@@ -63,19 +63,27 @@ namespace digital_certificates.Model
         /// <param name="id">id.</param>
         /// <param name="name">name.</param>
         /// <param name="subjectName">subjectName.</param>
+        /// <param name="issuer">issuer.</param>
         /// <param name="validity">validity.</param>
         /// <param name="status">status.</param>
         /// <param name="certificateType">certificateType.</param>
         /// <param name="managed">managed.</param>
-        public SingleResult(int id = default(int), string name = default(string), List<string> subjectName = default(List<string>), string validity = default(string), string status = default(string), CertificateTypeEnum? certificateType = default(CertificateTypeEnum?), bool managed = default(bool))
+        /// <param name="csr">csr.</param>
+        /// <param name="certificateContent">certificateContent.</param>
+        /// <param name="azionInformation">azionInformation.</param>
+        public SingleResult(int id = default(int), string name = default(string), List<string> subjectName = default(List<string>), string issuer = default(string), string validity = default(string), string status = default(string), CertificateTypeEnum? certificateType = default(CertificateTypeEnum?), bool managed = default(bool), string csr = default(string), string certificateContent = default(string), string azionInformation = default(string))
         {
             this.Id = id;
             this.Name = name;
             this.SubjectName = subjectName;
+            this.Issuer = issuer;
             this.Validity = validity;
             this.Status = status;
             this.CertificateType = certificateType;
             this.Managed = managed;
+            this.Csr = csr;
+            this.CertificateContent = certificateContent;
+            this.AzionInformation = azionInformation;
         }
 
         /// <summary>
@@ -97,9 +105,15 @@ namespace digital_certificates.Model
         public List<string> SubjectName { get; set; }
 
         /// <summary>
+        /// Gets or Sets Issuer
+        /// </summary>
+        [DataMember(Name = "issuer", EmitDefaultValue = true)]
+        public string Issuer { get; set; }
+
+        /// <summary>
         /// Gets or Sets Validity
         /// </summary>
-        [DataMember(Name = "validity", EmitDefaultValue = false)]
+        [DataMember(Name = "validity", EmitDefaultValue = true)]
         public string Validity { get; set; }
 
         /// <summary>
@@ -115,6 +129,24 @@ namespace digital_certificates.Model
         public bool Managed { get; set; }
 
         /// <summary>
+        /// Gets or Sets Csr
+        /// </summary>
+        [DataMember(Name = "csr", EmitDefaultValue = true)]
+        public string Csr { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CertificateContent
+        /// </summary>
+        [DataMember(Name = "certificate_content", EmitDefaultValue = true)]
+        public string CertificateContent { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AzionInformation
+        /// </summary>
+        [DataMember(Name = "azion_information", EmitDefaultValue = false)]
+        public string AzionInformation { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -125,10 +157,14 @@ namespace digital_certificates.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  SubjectName: ").Append(SubjectName).Append("\n");
+            sb.Append("  Issuer: ").Append(Issuer).Append("\n");
             sb.Append("  Validity: ").Append(Validity).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  CertificateType: ").Append(CertificateType).Append("\n");
             sb.Append("  Managed: ").Append(Managed).Append("\n");
+            sb.Append("  Csr: ").Append(Csr).Append("\n");
+            sb.Append("  CertificateContent: ").Append(CertificateContent).Append("\n");
+            sb.Append("  AzionInformation: ").Append(AzionInformation).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -180,6 +216,11 @@ namespace digital_certificates.Model
                     this.SubjectName.SequenceEqual(input.SubjectName)
                 ) && 
                 (
+                    this.Issuer == input.Issuer ||
+                    (this.Issuer != null &&
+                    this.Issuer.Equals(input.Issuer))
+                ) && 
+                (
                     this.Validity == input.Validity ||
                     (this.Validity != null &&
                     this.Validity.Equals(input.Validity))
@@ -196,6 +237,21 @@ namespace digital_certificates.Model
                 (
                     this.Managed == input.Managed ||
                     this.Managed.Equals(input.Managed)
+                ) && 
+                (
+                    this.Csr == input.Csr ||
+                    (this.Csr != null &&
+                    this.Csr.Equals(input.Csr))
+                ) && 
+                (
+                    this.CertificateContent == input.CertificateContent ||
+                    (this.CertificateContent != null &&
+                    this.CertificateContent.Equals(input.CertificateContent))
+                ) && 
+                (
+                    this.AzionInformation == input.AzionInformation ||
+                    (this.AzionInformation != null &&
+                    this.AzionInformation.Equals(input.AzionInformation))
                 );
         }
 
@@ -217,6 +273,10 @@ namespace digital_certificates.Model
                 {
                     hashCode = (hashCode * 59) + this.SubjectName.GetHashCode();
                 }
+                if (this.Issuer != null)
+                {
+                    hashCode = (hashCode * 59) + this.Issuer.GetHashCode();
+                }
                 if (this.Validity != null)
                 {
                     hashCode = (hashCode * 59) + this.Validity.GetHashCode();
@@ -227,6 +287,18 @@ namespace digital_certificates.Model
                 }
                 hashCode = (hashCode * 59) + this.CertificateType.GetHashCode();
                 hashCode = (hashCode * 59) + this.Managed.GetHashCode();
+                if (this.Csr != null)
+                {
+                    hashCode = (hashCode * 59) + this.Csr.GetHashCode();
+                }
+                if (this.CertificateContent != null)
+                {
+                    hashCode = (hashCode * 59) + this.CertificateContent.GetHashCode();
+                }
+                if (this.AzionInformation != null)
+                {
+                    hashCode = (hashCode * 59) + this.AzionInformation.GetHashCode();
+                }
                 return hashCode;
             }
         }
