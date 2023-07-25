@@ -39,7 +39,7 @@ namespace digital_certificates.Model
         /// <param name="schemaVersion">schemaVersion.</param>
         /// <param name="links">links.</param>
         /// <param name="results">results.</param>
-        public DC200List(int count = default(int), int totalPages = default(int), int schemaVersion = default(int), DC200ListLinks links = default(DC200ListLinks), List<List> results = default(List<List>))
+        public DC200List(int count = default(int), int totalPages = default(int), int schemaVersion = default(int), DC200ListLinks links = default(DC200ListLinks), List<ResultsInner> results = default(List<ResultsInner>))
         {
             this.Count = count;
             this.TotalPages = totalPages;
@@ -79,7 +79,7 @@ namespace digital_certificates.Model
         /// Gets or Sets Results
         /// </summary>
         [DataMember(Name = "results", EmitDefaultValue = false)]
-        public List<List> Results { get; set; }
+        public List<ResultsInner> Results { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
