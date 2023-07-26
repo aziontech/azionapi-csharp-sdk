@@ -16,13 +16,13 @@ Name | Type | Description | Notes
 **CacheByCookies** | **string** |  | 
 **CookieNames** | **List&lt;string&gt;** |  | 
 **AdaptiveDeliveryAction** | **string** |  | 
-**DeviceGroup** | **List&lt;string&gt;** |  | 
+**DeviceGroup** | **List&lt;int&gt;** |  | 
 **EnableCachingForPost** | **bool** |  | 
 **L2CachingEnabled** | **bool** |  | 
 **IsSliceConfigurationEnabled** | **bool** |  | [optional] 
 **IsSliceEdgeCachingEnabled** | **bool** |  | [optional] 
 **IsSliceL2CachingEnabled** | **bool** |  | [optional] 
-**SliceConfigurationRange** | **bool** |  | [optional] 
+**SliceConfigurationRange** | **long** |  | [optional] 
 **EnableCachingForOptions** | **bool** |  | 
 **EnableStaleCache** | **bool** |  | 
 **L2Region** | **string** |  | 

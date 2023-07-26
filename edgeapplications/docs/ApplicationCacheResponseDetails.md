@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **CacheByCookies** | **string** |  | 
 **CookieNames** | **List&lt;string&gt;** |  | 
 **AdaptiveDeliveryAction** | **string** |  | [optional] 
-**DeviceGroup** | **List&lt;string&gt;** |  | [optional] 
+**DeviceGroup** | **List&lt;int&gt;** |  | [optional] 
 **EnableCachingForPost** | **bool** |  | 
 **EnableCachingForOptions** | **bool** |  | [optional] 
 **L2CachingEnabled** | **bool** |  | 

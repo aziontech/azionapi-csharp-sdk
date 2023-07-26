@@ -61,7 +61,7 @@ namespace edgeapplications.Model
         /// <param name="enableCachingForOptions">enableCachingForOptions.</param>
         /// <param name="enableStaleCache">enableStaleCache.</param>
         /// <param name="l2Region">l2Region.</param>
-        public ApplicationCacheCreateResults(long id = default(long), string name = default(string), string browserCacheSettings = default(string), long browserCacheSettingsMaximumTtl = default(long), string cdnCacheSettings = default(string), long cdnCacheSettingsMaximumTtl = default(long), string cacheByQueryString = default(string), List<string> queryStringFields = default(List<string>), bool enableQueryStringSort = default(bool), string cacheByCookies = default(string), List<string> cookieNames = default(List<string>), string adaptiveDeliveryAction = default(string), List<string> deviceGroup = default(List<string>), bool enableCachingForPost = default(bool), bool l2CachingEnabled = default(bool), bool isSliceConfigurationEnabled = default(bool), bool isSliceEdgeCachingEnabled = default(bool), bool isSliceL2CachingEnabled = default(bool), long sliceConfigurationRange = default(long), bool enableCachingForOptions = default(bool), bool enableStaleCache = default(bool), string l2Region = default(string))
+        public ApplicationCacheCreateResults(long id = default(long), string name = default(string), string browserCacheSettings = default(string), long browserCacheSettingsMaximumTtl = default(long), string cdnCacheSettings = default(string), long cdnCacheSettingsMaximumTtl = default(long), string cacheByQueryString = default(string), List<string> queryStringFields = default(List<string>), bool enableQueryStringSort = default(bool), string cacheByCookies = default(string), List<string> cookieNames = default(List<string>), string adaptiveDeliveryAction = default(string), List<int> deviceGroup = default(List<int>), bool enableCachingForPost = default(bool), bool l2CachingEnabled = default(bool), bool isSliceConfigurationEnabled = default(bool), bool isSliceEdgeCachingEnabled = default(bool), bool isSliceL2CachingEnabled = default(bool), long sliceConfigurationRange = default(long), bool enableCachingForOptions = default(bool), bool enableStaleCache = default(bool), string l2Region = default(string))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -208,7 +208,7 @@ namespace edgeapplications.Model
         /// Gets or Sets DeviceGroup
         /// </summary>
         [DataMember(Name = "device_group", IsRequired = true, EmitDefaultValue = true)]
-        public List<string> DeviceGroup { get; set; }
+        public List<int> DeviceGroup { get; set; }
 
         /// <summary>
         /// Gets or Sets EnableCachingForPost
