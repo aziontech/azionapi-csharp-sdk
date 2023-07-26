@@ -8,7 +8,7 @@ All URIs are relative to *https://api.azionapi.net*
 
 <a id="createcsr"></a>
 # **CreateCSR**
-> DC201 CreateCSR (CreateCSRRequest createCSRRequest)
+> DC200 CreateCSR (CreateCSRRequest createCSRRequest)
 
 Create an encrypted Certificate Request with Azion, which can then be sent for signing to a CA
 
@@ -39,7 +39,7 @@ namespace Example
             try
             {
                 // Create an encrypted Certificate Request with Azion, which can then be sent for signing to a CA
-                DC201 result = apiInstance.CreateCSR(createCSRRequest);
+                DC200 result = apiInstance.CreateCSR(createCSRRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -60,7 +60,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create an encrypted Certificate Request with Azion, which can then be sent for signing to a CA
-    ApiResponse<DC201> response = apiInstance.CreateCSRWithHttpInfo(createCSRRequest);
+    ApiResponse<DC200> response = apiInstance.CreateCSRWithHttpInfo(createCSRRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -81,7 +81,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**DC201**](DC201.md)
+[**DC200**](DC200.md)
 
 ### Authorization
 

@@ -35,11 +35,11 @@ namespace digital_certificates.Model
         /// Initializes a new instance of the <see cref="DC200" /> class.
         /// </summary>
         /// <param name="schemaVersion">schemaVersion.</param>
-        /// <param name="result">result.</param>
-        public DC200(int schemaVersion = default(int), SingleResult result = default(SingleResult))
+        /// <param name="results">results.</param>
+        public DC200(int schemaVersion = default(int), SingleResult results = default(SingleResult))
         {
             this.SchemaVersion = schemaVersion;
-            this.Result = result;
+            this.Results = results;
         }
 
         /// <summary>
@@ -50,10 +50,10 @@ namespace digital_certificates.Model
         public int SchemaVersion { get; set; }
 
         /// <summary>
-        /// Gets or Sets Result
+        /// Gets or Sets Results
         /// </summary>
-        [DataMember(Name = "result", EmitDefaultValue = false)]
-        public SingleResult Result { get; set; }
+        [DataMember(Name = "results", EmitDefaultValue = false)]
+        public SingleResult Results { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -64,7 +64,7 @@ namespace digital_certificates.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class DC200 {\n");
             sb.Append("  SchemaVersion: ").Append(SchemaVersion).Append("\n");
-            sb.Append("  Result: ").Append(Result).Append("\n");
+            sb.Append("  Results: ").Append(Results).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,9 +105,9 @@ namespace digital_certificates.Model
                     this.SchemaVersion.Equals(input.SchemaVersion)
                 ) && 
                 (
-                    this.Result == input.Result ||
-                    (this.Result != null &&
-                    this.Result.Equals(input.Result))
+                    this.Results == input.Results ||
+                    (this.Results != null &&
+                    this.Results.Equals(input.Results))
                 );
         }
 
@@ -121,9 +121,9 @@ namespace digital_certificates.Model
             {
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.SchemaVersion.GetHashCode();
-                if (this.Result != null)
+                if (this.Results != null)
                 {
-                    hashCode = (hashCode * 59) + this.Result.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Results.GetHashCode();
                 }
                 return hashCode;
             }
