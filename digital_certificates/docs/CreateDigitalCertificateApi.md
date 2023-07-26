@@ -8,7 +8,7 @@ All URIs are relative to *https://api.azionapi.net*
 
 <a id="createcertificate"></a>
 # **CreateCertificate**
-> DC201 CreateCertificate (CreateCertificateRequest createCertificateRequest)
+> DC200 CreateCertificate (CreateCertificateRequest createCertificateRequest)
 
 Create a new digital certificate
 
@@ -39,7 +39,7 @@ namespace Example
             try
             {
                 // Create a new digital certificate
-                DC201 result = apiInstance.CreateCertificate(createCertificateRequest);
+                DC200 result = apiInstance.CreateCertificate(createCertificateRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -60,7 +60,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create a new digital certificate
-    ApiResponse<DC201> response = apiInstance.CreateCertificateWithHttpInfo(createCertificateRequest);
+    ApiResponse<DC200> response = apiInstance.CreateCertificateWithHttpInfo(createCertificateRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -81,7 +81,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**DC201**](DC201.md)
+[**DC200**](DC200.md)
 
 ### Authorization
 

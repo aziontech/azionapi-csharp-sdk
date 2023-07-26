@@ -10,7 +10,6 @@ docs/CreateDigitalCertificateApi.md
 docs/DC200.md
 docs/DC200List.md
 docs/DC200ListLinks.md
-docs/DC201.md
 docs/DC400.md
 docs/DC401.md
 docs/DC403.md
@@ -56,7 +55,6 @@ src/digital_certificates/Model/CreateCertificateRequest.cs
 src/digital_certificates/Model/DC200.cs
 src/digital_certificates/Model/DC200List.cs
 src/digital_certificates/Model/DC200ListLinks.cs
-src/digital_certificates/Model/DC201.cs
 src/digital_certificates/Model/DC400.cs
 src/digital_certificates/Model/DC401.cs
 src/digital_certificates/Model/DC403.cs

@@ -84,7 +84,7 @@ namespace Example
             try
             {
                 // Create an encrypted Certificate Request with Azion, which can then be sent for signing to a CA
-                DC201 result = apiInstance.CreateCSR(createCSRRequest);
+                DC200 result = apiInstance.CreateCSR(createCSRRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -123,7 +123,6 @@ Class | Method | HTTP request | Description
  - [Model.DC200](docs/DC200.md)
  - [Model.DC200List](docs/DC200List.md)
  - [Model.DC200ListLinks](docs/DC200ListLinks.md)
- - [Model.DC201](docs/DC201.md)
  - [Model.DC400](docs/DC400.md)
  - [Model.DC401](docs/DC401.md)
  - [Model.DC403](docs/DC403.md)

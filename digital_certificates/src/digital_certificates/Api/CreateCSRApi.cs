@@ -32,8 +32,8 @@ namespace digital_certificates.Api
         /// <exception cref="digital_certificates.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCSRRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>DC201</returns>
-        DC201 CreateCSR(CreateCSRRequest createCSRRequest, int operationIndex = 0);
+        /// <returns>DC200</returns>
+        DC200 CreateCSR(CreateCSRRequest createCSRRequest, int operationIndex = 0);
 
         /// <summary>
         /// Create an encrypted Certificate Request with Azion, which can then be sent for signing to a CA
@@ -44,8 +44,8 @@ namespace digital_certificates.Api
         /// <exception cref="digital_certificates.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCSRRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of DC201</returns>
-        ApiResponse<DC201> CreateCSRWithHttpInfo(CreateCSRRequest createCSRRequest, int operationIndex = 0);
+        /// <returns>ApiResponse of DC200</returns>
+        ApiResponse<DC200> CreateCSRWithHttpInfo(CreateCSRRequest createCSRRequest, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -65,8 +65,8 @@ namespace digital_certificates.Api
         /// <param name="createCSRRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DC201</returns>
-        System.Threading.Tasks.Task<DC201> CreateCSRAsync(CreateCSRRequest createCSRRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of DC200</returns>
+        System.Threading.Tasks.Task<DC200> CreateCSRAsync(CreateCSRRequest createCSRRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create an encrypted Certificate Request with Azion, which can then be sent for signing to a CA
@@ -78,8 +78,8 @@ namespace digital_certificates.Api
         /// <param name="createCSRRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DC201)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DC201>> CreateCSRWithHttpInfoAsync(CreateCSRRequest createCSRRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (DC200)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DC200>> CreateCSRWithHttpInfoAsync(CreateCSRRequest createCSRRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -206,10 +206,10 @@ namespace digital_certificates.Api
         /// <exception cref="digital_certificates.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCSRRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>DC201</returns>
-        public DC201 CreateCSR(CreateCSRRequest createCSRRequest, int operationIndex = 0)
+        /// <returns>DC200</returns>
+        public DC200 CreateCSR(CreateCSRRequest createCSRRequest, int operationIndex = 0)
         {
-            digital_certificates.Client.ApiResponse<DC201> localVarResponse = CreateCSRWithHttpInfo(createCSRRequest);
+            digital_certificates.Client.ApiResponse<DC200> localVarResponse = CreateCSRWithHttpInfo(createCSRRequest);
             return localVarResponse.Data;
         }
 
@@ -219,8 +219,8 @@ namespace digital_certificates.Api
         /// <exception cref="digital_certificates.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCSRRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of DC201</returns>
-        public digital_certificates.Client.ApiResponse<DC201> CreateCSRWithHttpInfo(CreateCSRRequest createCSRRequest, int operationIndex = 0)
+        /// <returns>ApiResponse of DC200</returns>
+        public digital_certificates.Client.ApiResponse<DC200> CreateCSRWithHttpInfo(CreateCSRRequest createCSRRequest, int operationIndex = 0)
         {
             // verify the required parameter 'createCSRRequest' is set
             if (createCSRRequest == null)
@@ -263,7 +263,7 @@ namespace digital_certificates.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<DC201>("/digital_certificates/csr", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<DC200>("/digital_certificates/csr", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateCSR", localVarResponse);
@@ -283,10 +283,10 @@ namespace digital_certificates.Api
         /// <param name="createCSRRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DC201</returns>
-        public async System.Threading.Tasks.Task<DC201> CreateCSRAsync(CreateCSRRequest createCSRRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of DC200</returns>
+        public async System.Threading.Tasks.Task<DC200> CreateCSRAsync(CreateCSRRequest createCSRRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            digital_certificates.Client.ApiResponse<DC201> localVarResponse = await CreateCSRWithHttpInfoAsync(createCSRRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            digital_certificates.Client.ApiResponse<DC200> localVarResponse = await CreateCSRWithHttpInfoAsync(createCSRRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -297,8 +297,8 @@ namespace digital_certificates.Api
         /// <param name="createCSRRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DC201)</returns>
-        public async System.Threading.Tasks.Task<digital_certificates.Client.ApiResponse<DC201>> CreateCSRWithHttpInfoAsync(CreateCSRRequest createCSRRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (DC200)</returns>
+        public async System.Threading.Tasks.Task<digital_certificates.Client.ApiResponse<DC200>> CreateCSRWithHttpInfoAsync(CreateCSRRequest createCSRRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'createCSRRequest' is set
             if (createCSRRequest == null)
@@ -342,7 +342,7 @@ namespace digital_certificates.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<DC201>("/digital_certificates/csr", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<DC200>("/digital_certificates/csr", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
