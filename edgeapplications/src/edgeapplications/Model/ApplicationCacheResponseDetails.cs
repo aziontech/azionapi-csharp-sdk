@@ -55,7 +55,13 @@ namespace edgeapplications.Model
         /// <param name="enableCachingForPost">enableCachingForPost (required).</param>
         /// <param name="enableCachingForOptions">enableCachingForOptions.</param>
         /// <param name="l2CachingEnabled">l2CachingEnabled (required).</param>
-        public ApplicationCacheResponseDetails(long id = default(long), string name = default(string), string browserCacheSettings = default(string), long browserCacheSettingsMaximumTtl = default(long), string cdnCacheSettings = default(string), long cdnCacheSettingsMaximumTtl = default(long), string cacheByQueryString = default(string), List<string> queryStringFields = default(List<string>), bool enableQueryStringSort = default(bool), string cacheByCookies = default(string), List<string> cookieNames = default(List<string>), string adaptiveDeliveryAction = default(string), List<int> deviceGroup = default(List<int>), bool enableCachingForPost = default(bool), bool enableCachingForOptions = default(bool), bool l2CachingEnabled = default(bool))
+        /// <param name="isSliceConfigurationEnabled">isSliceConfigurationEnabled.</param>
+        /// <param name="isSliceEdgeCachingEnabled">isSliceEdgeCachingEnabled.</param>
+        /// <param name="isSliceL2CachingEnabled">isSliceL2CachingEnabled.</param>
+        /// <param name="sliceConfigurationRange">sliceConfigurationRange.</param>
+        /// <param name="enableStaleCache">enableStaleCache.</param>
+        /// <param name="l2Region">l2Region.</param>
+        public ApplicationCacheResponseDetails(long id = default(long), string name = default(string), string browserCacheSettings = default(string), long browserCacheSettingsMaximumTtl = default(long), string cdnCacheSettings = default(string), long cdnCacheSettingsMaximumTtl = default(long), string cacheByQueryString = default(string), List<string> queryStringFields = default(List<string>), bool enableQueryStringSort = default(bool), string cacheByCookies = default(string), List<string> cookieNames = default(List<string>), string adaptiveDeliveryAction = default(string), List<int> deviceGroup = default(List<int>), bool enableCachingForPost = default(bool), bool enableCachingForOptions = default(bool), bool l2CachingEnabled = default(bool), bool isSliceConfigurationEnabled = default(bool), bool isSliceEdgeCachingEnabled = default(bool), bool isSliceL2CachingEnabled = default(bool), long sliceConfigurationRange = default(long), bool enableStaleCache = default(bool), string l2Region = default(string))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -108,6 +114,12 @@ namespace edgeapplications.Model
             this.AdaptiveDeliveryAction = adaptiveDeliveryAction;
             this.DeviceGroup = deviceGroup;
             this.EnableCachingForOptions = enableCachingForOptions;
+            this.IsSliceConfigurationEnabled = isSliceConfigurationEnabled;
+            this.IsSliceEdgeCachingEnabled = isSliceEdgeCachingEnabled;
+            this.IsSliceL2CachingEnabled = isSliceL2CachingEnabled;
+            this.SliceConfigurationRange = sliceConfigurationRange;
+            this.EnableStaleCache = enableStaleCache;
+            this.L2Region = l2Region;
         }
 
         /// <summary>
@@ -207,6 +219,42 @@ namespace edgeapplications.Model
         public bool L2CachingEnabled { get; set; }
 
         /// <summary>
+        /// Gets or Sets IsSliceConfigurationEnabled
+        /// </summary>
+        [DataMember(Name = "is_slice_configuration_enabled", EmitDefaultValue = true)]
+        public bool IsSliceConfigurationEnabled { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsSliceEdgeCachingEnabled
+        /// </summary>
+        [DataMember(Name = "is_slice_edge_caching_enabled", EmitDefaultValue = true)]
+        public bool IsSliceEdgeCachingEnabled { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsSliceL2CachingEnabled
+        /// </summary>
+        [DataMember(Name = "is_slice_l2_caching_enabled", EmitDefaultValue = true)]
+        public bool IsSliceL2CachingEnabled { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SliceConfigurationRange
+        /// </summary>
+        [DataMember(Name = "slice_configuration_range", EmitDefaultValue = false)]
+        public long SliceConfigurationRange { get; set; }
+
+        /// <summary>
+        /// Gets or Sets EnableStaleCache
+        /// </summary>
+        [DataMember(Name = "enable_stale_cache", EmitDefaultValue = true)]
+        public bool EnableStaleCache { get; set; }
+
+        /// <summary>
+        /// Gets or Sets L2Region
+        /// </summary>
+        [DataMember(Name = "l2_region", EmitDefaultValue = false)]
+        public string L2Region { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -230,6 +278,12 @@ namespace edgeapplications.Model
             sb.Append("  EnableCachingForPost: ").Append(EnableCachingForPost).Append("\n");
             sb.Append("  EnableCachingForOptions: ").Append(EnableCachingForOptions).Append("\n");
             sb.Append("  L2CachingEnabled: ").Append(L2CachingEnabled).Append("\n");
+            sb.Append("  IsSliceConfigurationEnabled: ").Append(IsSliceConfigurationEnabled).Append("\n");
+            sb.Append("  IsSliceEdgeCachingEnabled: ").Append(IsSliceEdgeCachingEnabled).Append("\n");
+            sb.Append("  IsSliceL2CachingEnabled: ").Append(IsSliceL2CachingEnabled).Append("\n");
+            sb.Append("  SliceConfigurationRange: ").Append(SliceConfigurationRange).Append("\n");
+            sb.Append("  EnableStaleCache: ").Append(EnableStaleCache).Append("\n");
+            sb.Append("  L2Region: ").Append(L2Region).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -340,6 +394,31 @@ namespace edgeapplications.Model
                 (
                     this.L2CachingEnabled == input.L2CachingEnabled ||
                     this.L2CachingEnabled.Equals(input.L2CachingEnabled)
+                ) && 
+                (
+                    this.IsSliceConfigurationEnabled == input.IsSliceConfigurationEnabled ||
+                    this.IsSliceConfigurationEnabled.Equals(input.IsSliceConfigurationEnabled)
+                ) && 
+                (
+                    this.IsSliceEdgeCachingEnabled == input.IsSliceEdgeCachingEnabled ||
+                    this.IsSliceEdgeCachingEnabled.Equals(input.IsSliceEdgeCachingEnabled)
+                ) && 
+                (
+                    this.IsSliceL2CachingEnabled == input.IsSliceL2CachingEnabled ||
+                    this.IsSliceL2CachingEnabled.Equals(input.IsSliceL2CachingEnabled)
+                ) && 
+                (
+                    this.SliceConfigurationRange == input.SliceConfigurationRange ||
+                    this.SliceConfigurationRange.Equals(input.SliceConfigurationRange)
+                ) && 
+                (
+                    this.EnableStaleCache == input.EnableStaleCache ||
+                    this.EnableStaleCache.Equals(input.EnableStaleCache)
+                ) && 
+                (
+                    this.L2Region == input.L2Region ||
+                    (this.L2Region != null &&
+                    this.L2Region.Equals(input.L2Region))
                 );
         }
 
@@ -395,6 +474,15 @@ namespace edgeapplications.Model
                 hashCode = (hashCode * 59) + this.EnableCachingForPost.GetHashCode();
                 hashCode = (hashCode * 59) + this.EnableCachingForOptions.GetHashCode();
                 hashCode = (hashCode * 59) + this.L2CachingEnabled.GetHashCode();
+                hashCode = (hashCode * 59) + this.IsSliceConfigurationEnabled.GetHashCode();
+                hashCode = (hashCode * 59) + this.IsSliceEdgeCachingEnabled.GetHashCode();
+                hashCode = (hashCode * 59) + this.IsSliceL2CachingEnabled.GetHashCode();
+                hashCode = (hashCode * 59) + this.SliceConfigurationRange.GetHashCode();
+                hashCode = (hashCode * 59) + this.EnableStaleCache.GetHashCode();
+                if (this.L2Region != null)
+                {
+                    hashCode = (hashCode * 59) + this.L2Region.GetHashCode();
+                }
                 return hashCode;
             }
         }
