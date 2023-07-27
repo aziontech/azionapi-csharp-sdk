@@ -198,6 +198,8 @@ Class | Method | HTTP request | Description
  - [Model.PatchOriginsRequest](docs/PatchOriginsRequest.md)
  - [Model.PatchRulesEngineRequest](docs/PatchRulesEngineRequest.md)
  - [Model.RulesEngineBehavior](docs/RulesEngineBehavior.md)
+ - [Model.RulesEngineBehaviorTarget](docs/RulesEngineBehaviorTarget.md)
+ - [Model.RulesEngineBehaviorTargetOneOf](docs/RulesEngineBehaviorTargetOneOf.md)
  - [Model.RulesEngineCriteria](docs/RulesEngineCriteria.md)
  - [Model.RulesEngineIdResponse](docs/RulesEngineIdResponse.md)
  - [Model.RulesEngineResponse](docs/RulesEngineResponse.md)
