@@ -26,43 +26,41 @@ using OpenAPIDateConverter = edgeapplications.Client.OpenAPIDateConverter;
 namespace edgeapplications.Model
 {
     /// <summary>
-    /// RulesEngineBehavior
+    /// RulesEngineBehaviorTargetOneOf
     /// </summary>
-    [DataContract(Name = "RulesEngineBehavior")]
-    public partial class RulesEngineBehavior : IEquatable<RulesEngineBehavior>, IValidatableObject
+    [DataContract(Name = "RulesEngineBehavior_target_oneOf")]
+    public partial class RulesEngineBehaviorTargetOneOf : IEquatable<RulesEngineBehaviorTargetOneOf>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="RulesEngineBehavior" /> class.
+        /// Initializes a new instance of the <see cref="RulesEngineBehaviorTargetOneOf" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected RulesEngineBehavior() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RulesEngineBehavior" /> class.
-        /// </summary>
-        /// <param name="name">name (required).</param>
-        /// <param name="target">target.</param>
-        public RulesEngineBehavior(string name = default(string), RulesEngineBehaviorTarget target = default(RulesEngineBehaviorTarget))
+        /// <param name="capturedArray">capturedArray.</param>
+        /// <param name="subject">subject.</param>
+        /// <param name="regex">regex.</param>
+        public RulesEngineBehaviorTargetOneOf(string capturedArray = default(string), string subject = default(string), string regex = default(string))
         {
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for RulesEngineBehavior and cannot be null");
-            }
-            this.Name = name;
-            this.Target = target;
+            this.CapturedArray = capturedArray;
+            this.Subject = subject;
+            this.Regex = regex;
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or Sets CapturedArray
         /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
-        public string Name { get; set; }
+        [DataMember(Name = "captured_array", EmitDefaultValue = false)]
+        public string CapturedArray { get; set; }
 
         /// <summary>
-        /// Gets or Sets Target
+        /// Gets or Sets Subject
         /// </summary>
-        [DataMember(Name = "target", EmitDefaultValue = false)]
-        public RulesEngineBehaviorTarget Target { get; set; }
+        [DataMember(Name = "subject", EmitDefaultValue = false)]
+        public string Subject { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Regex
+        /// </summary>
+        [DataMember(Name = "regex", EmitDefaultValue = false)]
+        public string Regex { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -71,9 +69,10 @@ namespace edgeapplications.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class RulesEngineBehavior {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Target: ").Append(Target).Append("\n");
+            sb.Append("class RulesEngineBehaviorTargetOneOf {\n");
+            sb.Append("  CapturedArray: ").Append(CapturedArray).Append("\n");
+            sb.Append("  Subject: ").Append(Subject).Append("\n");
+            sb.Append("  Regex: ").Append(Regex).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -94,15 +93,15 @@ namespace edgeapplications.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RulesEngineBehavior);
+            return this.Equals(input as RulesEngineBehaviorTargetOneOf);
         }
 
         /// <summary>
-        /// Returns true if RulesEngineBehavior instances are equal
+        /// Returns true if RulesEngineBehaviorTargetOneOf instances are equal
         /// </summary>
-        /// <param name="input">Instance of RulesEngineBehavior to be compared</param>
+        /// <param name="input">Instance of RulesEngineBehaviorTargetOneOf to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(RulesEngineBehavior input)
+        public bool Equals(RulesEngineBehaviorTargetOneOf input)
         {
             if (input == null)
             {
@@ -110,14 +109,19 @@ namespace edgeapplications.Model
             }
             return 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.CapturedArray == input.CapturedArray ||
+                    (this.CapturedArray != null &&
+                    this.CapturedArray.Equals(input.CapturedArray))
                 ) && 
                 (
-                    this.Target == input.Target ||
-                    (this.Target != null &&
-                    this.Target.Equals(input.Target))
+                    this.Subject == input.Subject ||
+                    (this.Subject != null &&
+                    this.Subject.Equals(input.Subject))
+                ) && 
+                (
+                    this.Regex == input.Regex ||
+                    (this.Regex != null &&
+                    this.Regex.Equals(input.Regex))
                 );
         }
 
@@ -130,13 +134,17 @@ namespace edgeapplications.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Name != null)
+                if (this.CapturedArray != null)
                 {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                    hashCode = (hashCode * 59) + this.CapturedArray.GetHashCode();
                 }
-                if (this.Target != null)
+                if (this.Subject != null)
                 {
-                    hashCode = (hashCode * 59) + this.Target.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Subject.GetHashCode();
+                }
+                if (this.Regex != null)
+                {
+                    hashCode = (hashCode * 59) + this.Regex.GetHashCode();
                 }
                 return hashCode;
             }
