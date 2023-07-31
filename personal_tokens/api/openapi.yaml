@@ -60,7 +60,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CreatePersonalTokenResponse'
-          description: Successful operation
+          description: Created successfully
         "400":
           description: Bad Request
         "401":
