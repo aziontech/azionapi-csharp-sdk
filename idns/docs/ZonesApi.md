@@ -382,6 +382,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **201** | Zone added |  -  |
 | **400** | Error |  -  |
+| **404** | Zone not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

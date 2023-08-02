@@ -99,6 +99,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | DNSSEC status retrieved |  -  |
 | **400** | Error |  -  |
+| **404** | Zone not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

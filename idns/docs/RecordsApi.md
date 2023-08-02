@@ -198,6 +198,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Zones collection retrieved |  -  |
 | **400** | Error |  -  |
+| **404** | Zone not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -295,6 +296,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **201** | Record added |  -  |
 | **400** | Error |  -  |
+| **404** | Zone not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -394,6 +396,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Record updated |  -  |
 | **400** | Record update error |  -  |
+| **404** | Record not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
