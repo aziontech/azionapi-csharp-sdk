@@ -58,7 +58,8 @@ namespace edgeapplications.Model
         /// <param name="loadBalancer">loadBalancer (required).</param>
         /// <param name="rawLogs">rawLogs (required).</param>
         /// <param name="webApplicationFirewall">webApplicationFirewall (required).</param>
-        public ApplicationResultsCreate(long id = default(long), string name = default(string), bool active = default(bool), bool debugRules = default(bool), bool http3 = default(bool), string supportedCiphers = default(string), string deliveryProtocol = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), string minimumTlsVersion = default(string), bool applicationAcceleration = default(bool), bool caching = default(bool), bool deviceDetection = default(bool), bool edgeFirewall = default(bool), bool edgeFunctions = default(bool), bool imageOptimization = default(bool), bool loadBalancer = default(bool), bool rawLogs = default(bool), bool webApplicationFirewall = default(bool))
+        /// <param name="l2Caching">l2Caching.</param>
+        public ApplicationResultsCreate(long id = default(long), string name = default(string), bool active = default(bool), bool debugRules = default(bool), bool http3 = default(bool), string supportedCiphers = default(string), string deliveryProtocol = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), string minimumTlsVersion = default(string), bool applicationAcceleration = default(bool), bool caching = default(bool), bool deviceDetection = default(bool), bool edgeFirewall = default(bool), bool edgeFunctions = default(bool), bool imageOptimization = default(bool), bool loadBalancer = default(bool), bool rawLogs = default(bool), bool webApplicationFirewall = default(bool), bool l2Caching = default(bool))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -109,6 +110,7 @@ namespace edgeapplications.Model
             this.LoadBalancer = loadBalancer;
             this.RawLogs = rawLogs;
             this.WebApplicationFirewall = webApplicationFirewall;
+            this.L2Caching = l2Caching;
         }
 
         /// <summary>
@@ -226,6 +228,12 @@ namespace edgeapplications.Model
         public bool WebApplicationFirewall { get; set; }
 
         /// <summary>
+        /// Gets or Sets L2Caching
+        /// </summary>
+        [DataMember(Name = "l2_caching", EmitDefaultValue = true)]
+        public bool L2Caching { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -252,6 +260,7 @@ namespace edgeapplications.Model
             sb.Append("  LoadBalancer: ").Append(LoadBalancer).Append("\n");
             sb.Append("  RawLogs: ").Append(RawLogs).Append("\n");
             sb.Append("  WebApplicationFirewall: ").Append(WebApplicationFirewall).Append("\n");
+            sb.Append("  L2Caching: ").Append(L2Caching).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -368,6 +377,10 @@ namespace edgeapplications.Model
                 (
                     this.WebApplicationFirewall == input.WebApplicationFirewall ||
                     this.WebApplicationFirewall.Equals(input.WebApplicationFirewall)
+                ) && 
+                (
+                    this.L2Caching == input.L2Caching ||
+                    this.L2Caching.Equals(input.L2Caching)
                 );
         }
 
@@ -417,6 +430,7 @@ namespace edgeapplications.Model
                 hashCode = (hashCode * 59) + this.LoadBalancer.GetHashCode();
                 hashCode = (hashCode * 59) + this.RawLogs.GetHashCode();
                 hashCode = (hashCode * 59) + this.WebApplicationFirewall.GetHashCode();
+                hashCode = (hashCode * 59) + this.L2Caching.GetHashCode();
                 return hashCode;
             }
         }

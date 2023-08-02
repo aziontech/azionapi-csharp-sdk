@@ -50,7 +50,13 @@ namespace edgeapplications.Model
         /// <param name="cdnCacheSettings">cdnCacheSettings.</param>
         /// <param name="browserCacheSettingsMaximumTtl">browserCacheSettingsMaximumTtl.</param>
         /// <param name="cdnCacheSettingsMaximumTtl">cdnCacheSettingsMaximumTtl.</param>
-        public CreateApplicationRequest(string name = default(string), bool applicationAcceleration = default(bool), string deliveryProtocol = default(string), string originType = default(string), string address = default(string), string originProtocolPolicy = default(string), string hostHeader = default(string), string browserCacheSettings = default(string), string cdnCacheSettings = default(string), long browserCacheSettingsMaximumTtl = default(long), long cdnCacheSettingsMaximumTtl = default(long))
+        /// <param name="debugRules">debugRules.</param>
+        /// <param name="supportedCiphers">supportedCiphers.</param>
+        /// <param name="httpPort">httpPort.</param>
+        /// <param name="httpsPort">httpsPort.</param>
+        /// <param name="l2Caching">l2Caching.</param>
+        /// <param name="http3">http3.</param>
+        public CreateApplicationRequest(string name = default(string), bool applicationAcceleration = default(bool), string deliveryProtocol = default(string), string originType = default(string), string address = default(string), string originProtocolPolicy = default(string), string hostHeader = default(string), string browserCacheSettings = default(string), string cdnCacheSettings = default(string), long browserCacheSettingsMaximumTtl = default(long), long cdnCacheSettingsMaximumTtl = default(long), bool debugRules = default(bool), string supportedCiphers = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), bool l2Caching = default(bool), bool http3 = default(bool))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -68,6 +74,12 @@ namespace edgeapplications.Model
             this.CdnCacheSettings = cdnCacheSettings;
             this.BrowserCacheSettingsMaximumTtl = browserCacheSettingsMaximumTtl;
             this.CdnCacheSettingsMaximumTtl = cdnCacheSettingsMaximumTtl;
+            this.DebugRules = debugRules;
+            this.SupportedCiphers = supportedCiphers;
+            this.HttpPort = httpPort;
+            this.HttpsPort = httpsPort;
+            this.L2Caching = l2Caching;
+            this.Http3 = http3;
         }
 
         /// <summary>
@@ -137,6 +149,42 @@ namespace edgeapplications.Model
         public long CdnCacheSettingsMaximumTtl { get; set; }
 
         /// <summary>
+        /// Gets or Sets DebugRules
+        /// </summary>
+        [DataMember(Name = "debug_rules", EmitDefaultValue = true)]
+        public bool DebugRules { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SupportedCiphers
+        /// </summary>
+        [DataMember(Name = "supported_ciphers", EmitDefaultValue = false)]
+        public string SupportedCiphers { get; set; }
+
+        /// <summary>
+        /// Gets or Sets HttpPort
+        /// </summary>
+        [DataMember(Name = "http_port", EmitDefaultValue = true)]
+        public Object HttpPort { get; set; }
+
+        /// <summary>
+        /// Gets or Sets HttpsPort
+        /// </summary>
+        [DataMember(Name = "https_port", EmitDefaultValue = true)]
+        public Object HttpsPort { get; set; }
+
+        /// <summary>
+        /// Gets or Sets L2Caching
+        /// </summary>
+        [DataMember(Name = "l2_caching", EmitDefaultValue = true)]
+        public bool L2Caching { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Http3
+        /// </summary>
+        [DataMember(Name = "http3", EmitDefaultValue = true)]
+        public bool Http3 { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -155,6 +203,12 @@ namespace edgeapplications.Model
             sb.Append("  CdnCacheSettings: ").Append(CdnCacheSettings).Append("\n");
             sb.Append("  BrowserCacheSettingsMaximumTtl: ").Append(BrowserCacheSettingsMaximumTtl).Append("\n");
             sb.Append("  CdnCacheSettingsMaximumTtl: ").Append(CdnCacheSettingsMaximumTtl).Append("\n");
+            sb.Append("  DebugRules: ").Append(DebugRules).Append("\n");
+            sb.Append("  SupportedCiphers: ").Append(SupportedCiphers).Append("\n");
+            sb.Append("  HttpPort: ").Append(HttpPort).Append("\n");
+            sb.Append("  HttpsPort: ").Append(HttpsPort).Append("\n");
+            sb.Append("  L2Caching: ").Append(L2Caching).Append("\n");
+            sb.Append("  Http3: ").Append(Http3).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -241,6 +295,33 @@ namespace edgeapplications.Model
                 (
                     this.CdnCacheSettingsMaximumTtl == input.CdnCacheSettingsMaximumTtl ||
                     this.CdnCacheSettingsMaximumTtl.Equals(input.CdnCacheSettingsMaximumTtl)
+                ) && 
+                (
+                    this.DebugRules == input.DebugRules ||
+                    this.DebugRules.Equals(input.DebugRules)
+                ) && 
+                (
+                    this.SupportedCiphers == input.SupportedCiphers ||
+                    (this.SupportedCiphers != null &&
+                    this.SupportedCiphers.Equals(input.SupportedCiphers))
+                ) && 
+                (
+                    this.HttpPort == input.HttpPort ||
+                    (this.HttpPort != null &&
+                    this.HttpPort.Equals(input.HttpPort))
+                ) && 
+                (
+                    this.HttpsPort == input.HttpsPort ||
+                    (this.HttpsPort != null &&
+                    this.HttpsPort.Equals(input.HttpsPort))
+                ) && 
+                (
+                    this.L2Caching == input.L2Caching ||
+                    this.L2Caching.Equals(input.L2Caching)
+                ) && 
+                (
+                    this.Http3 == input.Http3 ||
+                    this.Http3.Equals(input.Http3)
                 );
         }
 
@@ -288,6 +369,21 @@ namespace edgeapplications.Model
                 }
                 hashCode = (hashCode * 59) + this.BrowserCacheSettingsMaximumTtl.GetHashCode();
                 hashCode = (hashCode * 59) + this.CdnCacheSettingsMaximumTtl.GetHashCode();
+                hashCode = (hashCode * 59) + this.DebugRules.GetHashCode();
+                if (this.SupportedCiphers != null)
+                {
+                    hashCode = (hashCode * 59) + this.SupportedCiphers.GetHashCode();
+                }
+                if (this.HttpPort != null)
+                {
+                    hashCode = (hashCode * 59) + this.HttpPort.GetHashCode();
+                }
+                if (this.HttpsPort != null)
+                {
+                    hashCode = (hashCode * 59) + this.HttpsPort.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.L2Caching.GetHashCode();
+                hashCode = (hashCode * 59) + this.Http3.GetHashCode();
                 return hashCode;
             }
         }

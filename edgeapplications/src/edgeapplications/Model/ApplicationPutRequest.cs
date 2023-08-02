@@ -55,7 +55,10 @@ namespace edgeapplications.Model
         /// <param name="loadBalancer">loadBalancer.</param>
         /// <param name="rawLogs">rawLogs.</param>
         /// <param name="webApplicationFirewall">webApplicationFirewall.</param>
-        public ApplicationPutRequest(string name = default(string), string deliveryProtocol = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), string minimumTlsVersion = default(string), bool active = default(bool), bool applicationAcceleration = default(bool), bool caching = default(bool), bool deviceDetection = default(bool), bool edgeFirewall = default(bool), bool edgeFunctions = default(bool), bool imageOptimization = default(bool), bool l2Caching = default(bool), bool loadBalancer = default(bool), bool rawLogs = default(bool), bool webApplicationFirewall = default(bool))
+        /// <param name="debugRules">debugRules.</param>
+        /// <param name="http3">http3.</param>
+        /// <param name="supportedCiphers">supportedCiphers.</param>
+        public ApplicationPutRequest(string name = default(string), string deliveryProtocol = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), string minimumTlsVersion = default(string), bool active = default(bool), bool applicationAcceleration = default(bool), bool caching = default(bool), bool deviceDetection = default(bool), bool edgeFirewall = default(bool), bool edgeFunctions = default(bool), bool imageOptimization = default(bool), bool l2Caching = default(bool), bool loadBalancer = default(bool), bool rawLogs = default(bool), bool webApplicationFirewall = default(bool), bool debugRules = default(bool), bool http3 = default(bool), string supportedCiphers = default(string))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -78,6 +81,9 @@ namespace edgeapplications.Model
             this.LoadBalancer = loadBalancer;
             this.RawLogs = rawLogs;
             this.WebApplicationFirewall = webApplicationFirewall;
+            this.DebugRules = debugRules;
+            this.Http3 = http3;
+            this.SupportedCiphers = supportedCiphers;
         }
 
         /// <summary>
@@ -177,6 +183,24 @@ namespace edgeapplications.Model
         public bool WebApplicationFirewall { get; set; }
 
         /// <summary>
+        /// Gets or Sets DebugRules
+        /// </summary>
+        [DataMember(Name = "debug_rules", EmitDefaultValue = true)]
+        public bool DebugRules { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Http3
+        /// </summary>
+        [DataMember(Name = "http3", EmitDefaultValue = true)]
+        public bool Http3 { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SupportedCiphers
+        /// </summary>
+        [DataMember(Name = "supported_ciphers", EmitDefaultValue = false)]
+        public string SupportedCiphers { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -200,6 +224,9 @@ namespace edgeapplications.Model
             sb.Append("  LoadBalancer: ").Append(LoadBalancer).Append("\n");
             sb.Append("  RawLogs: ").Append(RawLogs).Append("\n");
             sb.Append("  WebApplicationFirewall: ").Append(WebApplicationFirewall).Append("\n");
+            sb.Append("  DebugRules: ").Append(DebugRules).Append("\n");
+            sb.Append("  Http3: ").Append(Http3).Append("\n");
+            sb.Append("  SupportedCiphers: ").Append(SupportedCiphers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -303,6 +330,19 @@ namespace edgeapplications.Model
                 (
                     this.WebApplicationFirewall == input.WebApplicationFirewall ||
                     this.WebApplicationFirewall.Equals(input.WebApplicationFirewall)
+                ) && 
+                (
+                    this.DebugRules == input.DebugRules ||
+                    this.DebugRules.Equals(input.DebugRules)
+                ) && 
+                (
+                    this.Http3 == input.Http3 ||
+                    this.Http3.Equals(input.Http3)
+                ) && 
+                (
+                    this.SupportedCiphers == input.SupportedCiphers ||
+                    (this.SupportedCiphers != null &&
+                    this.SupportedCiphers.Equals(input.SupportedCiphers))
                 );
         }
 
@@ -346,6 +386,12 @@ namespace edgeapplications.Model
                 hashCode = (hashCode * 59) + this.LoadBalancer.GetHashCode();
                 hashCode = (hashCode * 59) + this.RawLogs.GetHashCode();
                 hashCode = (hashCode * 59) + this.WebApplicationFirewall.GetHashCode();
+                hashCode = (hashCode * 59) + this.DebugRules.GetHashCode();
+                hashCode = (hashCode * 59) + this.Http3.GetHashCode();
+                if (this.SupportedCiphers != null)
+                {
+                    hashCode = (hashCode * 59) + this.SupportedCiphers.GetHashCode();
+                }
                 return hashCode;
             }
         }

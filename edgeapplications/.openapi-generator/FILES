@@ -69,8 +69,6 @@ docs/UpdateOriginsRequest.md
 docs/UpdateRulesEngineRequest.md
 edgeapplications.sln
 git_push.sh
-src/edgeapplications.Test/Model/RulesEngineBehaviorTargetOneOfTests.cs
-src/edgeapplications.Test/Model/RulesEngineBehaviorTargetTests.cs
 src/edgeapplications.Test/edgeapplications.Test.csproj
 src/edgeapplications/Api/EdgeApplicationsCacheSettingsApi.cs
 src/edgeapplications/Api/EdgeApplicationsDeviceGroupsApi.cs

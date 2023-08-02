@@ -20,6 +20,9 @@ Name | Type | Description | Notes
 **LoadBalancer** | **bool** |  | [optional] 
 **RawLogs** | **bool** |  | [optional] 
 **WebApplicationFirewall** | **bool** |  | [optional] 
+**DebugRules** | **bool** |  | [optional] 
+**Http3** | **bool** |  | [optional] 
+**SupportedCiphers** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
