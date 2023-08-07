@@ -56,8 +56,7 @@ namespace edgeapplications.Model
         /// <param name="httpsPort">httpsPort.</param>
         /// <param name="l2Caching">l2Caching.</param>
         /// <param name="http3">http3.</param>
-        /// <param name="minimumTlsVersion">minimumTlsVersion.</param>
-        public CreateApplicationRequest(string name = default(string), bool applicationAcceleration = default(bool), string deliveryProtocol = default(string), string originType = default(string), string address = default(string), string originProtocolPolicy = default(string), string hostHeader = default(string), string browserCacheSettings = default(string), string cdnCacheSettings = default(string), long browserCacheSettingsMaximumTtl = default(long), long cdnCacheSettingsMaximumTtl = default(long), bool debugRules = default(bool), string supportedCiphers = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), bool l2Caching = default(bool), bool http3 = default(bool), string minimumTlsVersion = default(string))
+        public CreateApplicationRequest(string name = default(string), bool applicationAcceleration = default(bool), string deliveryProtocol = default(string), string originType = default(string), string address = default(string), string originProtocolPolicy = default(string), string hostHeader = default(string), string browserCacheSettings = default(string), string cdnCacheSettings = default(string), long browserCacheSettingsMaximumTtl = default(long), long cdnCacheSettingsMaximumTtl = default(long), bool debugRules = default(bool), string supportedCiphers = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), bool l2Caching = default(bool), bool http3 = default(bool))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -81,7 +80,6 @@ namespace edgeapplications.Model
             this.HttpsPort = httpsPort;
             this.L2Caching = l2Caching;
             this.Http3 = http3;
-            this.MinimumTlsVersion = minimumTlsVersion;
         }
 
         /// <summary>
@@ -187,12 +185,6 @@ namespace edgeapplications.Model
         public bool Http3 { get; set; }
 
         /// <summary>
-        /// Gets or Sets MinimumTlsVersion
-        /// </summary>
-        [DataMember(Name = "minimum_tls_version", EmitDefaultValue = false)]
-        public string MinimumTlsVersion { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -217,7 +209,6 @@ namespace edgeapplications.Model
             sb.Append("  HttpsPort: ").Append(HttpsPort).Append("\n");
             sb.Append("  L2Caching: ").Append(L2Caching).Append("\n");
             sb.Append("  Http3: ").Append(Http3).Append("\n");
-            sb.Append("  MinimumTlsVersion: ").Append(MinimumTlsVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -331,11 +322,6 @@ namespace edgeapplications.Model
                 (
                     this.Http3 == input.Http3 ||
                     this.Http3.Equals(input.Http3)
-                ) && 
-                (
-                    this.MinimumTlsVersion == input.MinimumTlsVersion ||
-                    (this.MinimumTlsVersion != null &&
-                    this.MinimumTlsVersion.Equals(input.MinimumTlsVersion))
                 );
         }
 
@@ -398,10 +384,6 @@ namespace edgeapplications.Model
                 }
                 hashCode = (hashCode * 59) + this.L2Caching.GetHashCode();
                 hashCode = (hashCode * 59) + this.Http3.GetHashCode();
-                if (this.MinimumTlsVersion != null)
-                {
-                    hashCode = (hashCode * 59) + this.MinimumTlsVersion.GetHashCode();
-                }
                 return hashCode;
             }
         }
