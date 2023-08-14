@@ -251,7 +251,7 @@ namespace edgeapplications.Model
         /// <summary>
         /// Gets or Sets L2Region
         /// </summary>
-        [DataMember(Name = "l2_region", EmitDefaultValue = false)]
+        [DataMember(Name = "l2_region", EmitDefaultValue = true)]
         public string L2Region { get; set; }
 
         /// <summary>

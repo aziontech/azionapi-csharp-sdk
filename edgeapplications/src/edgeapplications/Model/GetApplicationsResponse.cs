@@ -44,7 +44,9 @@ namespace edgeapplications.Model
         /// <param name="schemaVersion">schemaVersion (required).</param>
         /// <param name="links">links (required).</param>
         /// <param name="results">results (required).</param>
-        public GetApplicationsResponse(long count = default(long), long totalPages = default(long), long schemaVersion = default(long), ApplicationLinks links = default(ApplicationLinks), List<ApplicationsResults> results = default(List<ApplicationsResults>))
+        /// <param name="next">next.</param>
+        /// <param name="previous">previous.</param>
+        public GetApplicationsResponse(long count = default(long), long totalPages = default(long), long schemaVersion = default(long), ApplicationLinks links = default(ApplicationLinks), List<ApplicationsResults> results = default(List<ApplicationsResults>), string next = default(string), string previous = default(string))
         {
             this.Count = count;
             this.TotalPages = totalPages;
@@ -61,6 +63,8 @@ namespace edgeapplications.Model
                 throw new ArgumentNullException("results is a required property for GetApplicationsResponse and cannot be null");
             }
             this.Results = results;
+            this.Next = next;
+            this.Previous = previous;
         }
 
         /// <summary>
@@ -94,6 +98,18 @@ namespace edgeapplications.Model
         public List<ApplicationsResults> Results { get; set; }
 
         /// <summary>
+        /// Gets or Sets Next
+        /// </summary>
+        [DataMember(Name = "next", EmitDefaultValue = true)]
+        public string Next { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Previous
+        /// </summary>
+        [DataMember(Name = "previous", EmitDefaultValue = true)]
+        public string Previous { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -106,6 +122,8 @@ namespace edgeapplications.Model
             sb.Append("  SchemaVersion: ").Append(SchemaVersion).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  Results: ").Append(Results).Append("\n");
+            sb.Append("  Next: ").Append(Next).Append("\n");
+            sb.Append("  Previous: ").Append(Previous).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -163,6 +181,16 @@ namespace edgeapplications.Model
                     this.Results != null &&
                     input.Results != null &&
                     this.Results.SequenceEqual(input.Results)
+                ) && 
+                (
+                    this.Next == input.Next ||
+                    (this.Next != null &&
+                    this.Next.Equals(input.Next))
+                ) && 
+                (
+                    this.Previous == input.Previous ||
+                    (this.Previous != null &&
+                    this.Previous.Equals(input.Previous))
                 );
         }
 
@@ -185,6 +213,14 @@ namespace edgeapplications.Model
                 if (this.Results != null)
                 {
                     hashCode = (hashCode * 59) + this.Results.GetHashCode();
+                }
+                if (this.Next != null)
+                {
+                    hashCode = (hashCode * 59) + this.Next.GetHashCode();
+                }
+                if (this.Previous != null)
+                {
+                    hashCode = (hashCode * 59) + this.Previous.GetHashCode();
                 }
                 return hashCode;
             }
