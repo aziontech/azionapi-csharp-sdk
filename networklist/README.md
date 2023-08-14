@@ -80,11 +80,14 @@ namespace Example
 
             var apiInstance = new DefaultApi(config);
             var page = 56;  // int? |  (optional) 
+            var pageSize = 56;  // int? |  (optional) 
+            var sort = "sort_example";  // string |  (optional) 
+            var orderBy = "orderBy_example";  // string |  (optional) 
 
             try
             {
                 // List all user Network Lists
-                ListNetworkListsResponse result = apiInstance.NetworkListsGet(page);
+                ListNetworkListsResponse result = apiInstance.NetworkListsGet(page, pageSize, sort, orderBy);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -120,9 +123,11 @@ Class | Method | HTTP request | Description
  - [Model.ErrorModel](docs/ErrorModel.md)
  - [Model.Links](docs/Links.md)
  - [Model.ListNetworkListsResponse](docs/ListNetworkListsResponse.md)
+ - [Model.NetworkListResponseEntry](docs/NetworkListResponseEntry.md)
+ - [Model.NetworkListUuidResponse](docs/NetworkListUuidResponse.md)
+ - [Model.NetworkListUuidResponseEntry](docs/NetworkListUuidResponseEntry.md)
  - [Model.NetworkLists](docs/NetworkLists.md)
  - [Model.NetworkListsResponse](docs/NetworkListsResponse.md)
- - [Model.UpdateNetworkListsRequest](docs/UpdateNetworkListsRequest.md)
 
 
 <a id="documentation-for-authorization"></a>

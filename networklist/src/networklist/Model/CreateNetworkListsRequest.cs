@@ -32,12 +32,45 @@ namespace networklist.Model
     public partial class CreateNetworkListsRequest : IEquatable<CreateNetworkListsRequest>, IValidatableObject
     {
         /// <summary>
+        /// Defines ListType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ListTypeEnum
+        {
+            /// <summary>
+            /// Enum IpCidr for value: ip_cidr
+            /// </summary>
+            [EnumMember(Value = "ip_cidr")]
+            IpCidr = 1,
+
+            /// <summary>
+            /// Enum Asn for value: asn
+            /// </summary>
+            [EnumMember(Value = "asn")]
+            Asn = 2,
+
+            /// <summary>
+            /// Enum Countries for value: countries
+            /// </summary>
+            [EnumMember(Value = "countries")]
+            Countries = 3
+
+        }
+
+
+        /// <summary>
+        /// Gets or Sets ListType
+        /// </summary>
+        /// <example>&quot;ip_cidr&quot;</example>
+        [DataMember(Name = "list_type", EmitDefaultValue = false)]
+        public ListTypeEnum? ListType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="CreateNetworkListsRequest" /> class.
         /// </summary>
         /// <param name="name">name.</param>
         /// <param name="itemsValues">itemsValues.</param>
         /// <param name="listType">listType.</param>
-        public CreateNetworkListsRequest(string name = default(string), List<string> itemsValues = default(List<string>), string listType = default(string))
+        public CreateNetworkListsRequest(string name = default(string), List<string> itemsValues = default(List<string>), ListTypeEnum? listType = default(ListTypeEnum?))
         {
             this.Name = name;
             this.ItemsValues = itemsValues;
@@ -56,13 +89,6 @@ namespace networklist.Model
         /// </summary>
         [DataMember(Name = "items_values", EmitDefaultValue = false)]
         public List<string> ItemsValues { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ListType
-        /// </summary>
-        /// <example>&quot;ip_cidr&quot;</example>
-        [DataMember(Name = "list_type", EmitDefaultValue = false)]
-        public string ListType { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -123,8 +149,7 @@ namespace networklist.Model
                 ) && 
                 (
                     this.ListType == input.ListType ||
-                    (this.ListType != null &&
-                    this.ListType.Equals(input.ListType))
+                    this.ListType.Equals(input.ListType)
                 );
         }
 
@@ -145,10 +170,7 @@ namespace networklist.Model
                 {
                     hashCode = (hashCode * 59) + this.ItemsValues.GetHashCode();
                 }
-                if (this.ListType != null)
-                {
-                    hashCode = (hashCode * 59) + this.ListType.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.ListType.GetHashCode();
                 return hashCode;
             }
         }

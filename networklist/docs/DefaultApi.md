@@ -11,7 +11,7 @@ All URIs are relative to *https://api.azionapi.net*
 
 <a id="networklistsget"></a>
 # **NetworkListsGet**
-> ListNetworkListsResponse NetworkListsGet (int? page = null)
+> ListNetworkListsResponse NetworkListsGet (int? page = null, int? pageSize = null, string sort = null, string orderBy = null)
 
 List all user Network Lists
 
@@ -38,11 +38,14 @@ namespace Example
 
             var apiInstance = new DefaultApi(config);
             var page = 56;  // int? |  (optional) 
+            var pageSize = 56;  // int? |  (optional) 
+            var sort = "sort_example";  // string |  (optional) 
+            var orderBy = "orderBy_example";  // string |  (optional) 
 
             try
             {
                 // List all user Network Lists
-                ListNetworkListsResponse result = apiInstance.NetworkListsGet(page);
+                ListNetworkListsResponse result = apiInstance.NetworkListsGet(page, pageSize, sort, orderBy);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -63,7 +66,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List all user Network Lists
-    ApiResponse<ListNetworkListsResponse> response = apiInstance.NetworkListsGetWithHttpInfo(page);
+    ApiResponse<ListNetworkListsResponse> response = apiInstance.NetworkListsGetWithHttpInfo(page, pageSize, sort, orderBy);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -81,6 +84,9 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **page** | **int?** |  | [optional]  |
+| **pageSize** | **int?** |  | [optional]  |
+| **sort** | **string** |  | [optional]  |
+| **orderBy** | **string** |  | [optional]  |
 
 ### Return type
 
@@ -106,7 +112,7 @@ catch (ApiException e)
 
 <a id="networklistspost"></a>
 # **NetworkListsPost**
-> void NetworkListsPost (CreateNetworkListsRequest createNetworkListsRequest)
+> NetworkListsResponse NetworkListsPost (CreateNetworkListsRequest createNetworkListsRequest)
 
 Create a Network Lists
 
@@ -137,7 +143,8 @@ namespace Example
             try
             {
                 // Create a Network Lists
-                apiInstance.NetworkListsPost(createNetworkListsRequest);
+                NetworkListsResponse result = apiInstance.NetworkListsPost(createNetworkListsRequest);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -157,7 +164,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create a Network Lists
-    apiInstance.NetworkListsPostWithHttpInfo(createNetworkListsRequest);
+    ApiResponse<NetworkListsResponse> response = apiInstance.NetworkListsPostWithHttpInfo(createNetworkListsRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -175,7 +185,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**NetworkListsResponse**](NetworkListsResponse.md)
 
 ### Authorization
 
@@ -190,7 +200,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Network Lists created |  -  |
+| **201** | A Network Lists object |  -  |
 | **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
@@ -199,7 +209,7 @@ void (empty response body)
 
 <a id="networklistsuuidget"></a>
 # **NetworkListsUuidGet**
-> NetworkListsResponse NetworkListsUuidGet (string uuid)
+> NetworkListUuidResponse NetworkListsUuidGet (string uuid)
 
 Retrieve a Network Lists set by uuid
 
@@ -230,7 +240,7 @@ namespace Example
             try
             {
                 // Retrieve a Network Lists set by uuid
-                NetworkListsResponse result = apiInstance.NetworkListsUuidGet(uuid);
+                NetworkListUuidResponse result = apiInstance.NetworkListsUuidGet(uuid);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -251,7 +261,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Retrieve a Network Lists set by uuid
-    ApiResponse<NetworkListsResponse> response = apiInstance.NetworkListsUuidGetWithHttpInfo(uuid);
+    ApiResponse<NetworkListUuidResponse> response = apiInstance.NetworkListsUuidGetWithHttpInfo(uuid);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -272,7 +282,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**NetworkListsResponse**](NetworkListsResponse.md)
+[**NetworkListUuidResponse**](NetworkListUuidResponse.md)
 
 ### Authorization
 
@@ -295,7 +305,7 @@ catch (ApiException e)
 
 <a id="networklistsuuidput"></a>
 # **NetworkListsUuidPut**
-> ListNetworkListsResponse NetworkListsUuidPut (string uuid, UpdateNetworkListsRequest updateNetworkListsRequest)
+> NetworkListsResponse NetworkListsUuidPut (string uuid, CreateNetworkListsRequest createNetworkListsRequest)
 
 Overwrite some Network Lists attributes
 
@@ -322,12 +332,12 @@ namespace Example
 
             var apiInstance = new DefaultApi(config);
             var uuid = "uuid_example";  // string | 
-            var updateNetworkListsRequest = new UpdateNetworkListsRequest(); // UpdateNetworkListsRequest | 
+            var createNetworkListsRequest = new CreateNetworkListsRequest(); // CreateNetworkListsRequest | 
 
             try
             {
                 // Overwrite some Network Lists attributes
-                ListNetworkListsResponse result = apiInstance.NetworkListsUuidPut(uuid, updateNetworkListsRequest);
+                NetworkListsResponse result = apiInstance.NetworkListsUuidPut(uuid, createNetworkListsRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -348,7 +358,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Overwrite some Network Lists attributes
-    ApiResponse<ListNetworkListsResponse> response = apiInstance.NetworkListsUuidPutWithHttpInfo(uuid, updateNetworkListsRequest);
+    ApiResponse<NetworkListsResponse> response = apiInstance.NetworkListsUuidPutWithHttpInfo(uuid, createNetworkListsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -366,11 +376,11 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **uuid** | **string** |  |  |
-| **updateNetworkListsRequest** | [**UpdateNetworkListsRequest**](UpdateNetworkListsRequest.md) |  |  |
+| **createNetworkListsRequest** | [**CreateNetworkListsRequest**](CreateNetworkListsRequest.md) |  |  |
 
 ### Return type
 
-[**ListNetworkListsResponse**](ListNetworkListsResponse.md)
+[**NetworkListsResponse**](NetworkListsResponse.md)
 
 ### Authorization
 
