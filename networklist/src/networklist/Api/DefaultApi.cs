@@ -31,9 +31,12 @@ namespace networklist.Api
         /// </summary>
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ListNetworkListsResponse</returns>
-        ListNetworkListsResponse NetworkListsGet(int? page = default(int?), int operationIndex = 0);
+        ListNetworkListsResponse NetworkListsGet(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0);
 
         /// <summary>
         /// List all user Network Lists
@@ -43,37 +46,40 @@ namespace networklist.Api
         /// </remarks>
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ListNetworkListsResponse</returns>
-        ApiResponse<ListNetworkListsResponse> NetworkListsGetWithHttpInfo(int? page = default(int?), int operationIndex = 0);
+        ApiResponse<ListNetworkListsResponse> NetworkListsGetWithHttpInfo(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0);
         /// <summary>
         /// Create a Network Lists
         /// </summary>
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createNetworkListsRequest"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        void NetworkListsPost(CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0);
-
-        /// <summary>
-        /// Create a Network Lists
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createNetworkListsRequest"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> NetworkListsPostWithHttpInfo(CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0);
-        /// <summary>
-        /// Retrieve a Network Lists set by uuid
-        /// </summary>
-        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="uuid"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>NetworkListsResponse</returns>
-        NetworkListsResponse NetworkListsUuidGet(string uuid, int operationIndex = 0);
+        NetworkListsResponse NetworkListsPost(CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0);
+
+        /// <summary>
+        /// Create a Network Lists
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createNetworkListsRequest"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of NetworkListsResponse</returns>
+        ApiResponse<NetworkListsResponse> NetworkListsPostWithHttpInfo(CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0);
+        /// <summary>
+        /// Retrieve a Network Lists set by uuid
+        /// </summary>
+        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="uuid"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>NetworkListUuidResponse</returns>
+        NetworkListUuidResponse NetworkListsUuidGet(string uuid, int operationIndex = 0);
 
         /// <summary>
         /// Retrieve a Network Lists set by uuid
@@ -84,17 +90,17 @@ namespace networklist.Api
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uuid"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of NetworkListsResponse</returns>
-        ApiResponse<NetworkListsResponse> NetworkListsUuidGetWithHttpInfo(string uuid, int operationIndex = 0);
+        /// <returns>ApiResponse of NetworkListUuidResponse</returns>
+        ApiResponse<NetworkListUuidResponse> NetworkListsUuidGetWithHttpInfo(string uuid, int operationIndex = 0);
         /// <summary>
         /// Overwrite some Network Lists attributes
         /// </summary>
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uuid"></param>
-        /// <param name="updateNetworkListsRequest"></param>
+        /// <param name="createNetworkListsRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ListNetworkListsResponse</returns>
-        ListNetworkListsResponse NetworkListsUuidPut(string uuid, UpdateNetworkListsRequest updateNetworkListsRequest, int operationIndex = 0);
+        /// <returns>NetworkListsResponse</returns>
+        NetworkListsResponse NetworkListsUuidPut(string uuid, CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0);
 
         /// <summary>
         /// Overwrite some Network Lists attributes
@@ -104,10 +110,10 @@ namespace networklist.Api
         /// </remarks>
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uuid"></param>
-        /// <param name="updateNetworkListsRequest"></param>
+        /// <param name="createNetworkListsRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ListNetworkListsResponse</returns>
-        ApiResponse<ListNetworkListsResponse> NetworkListsUuidPutWithHttpInfo(string uuid, UpdateNetworkListsRequest updateNetworkListsRequest, int operationIndex = 0);
+        /// <returns>ApiResponse of NetworkListsResponse</returns>
+        ApiResponse<NetworkListsResponse> NetworkListsUuidPutWithHttpInfo(string uuid, CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -125,10 +131,13 @@ namespace networklist.Api
         /// </remarks>
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListNetworkListsResponse</returns>
-        System.Threading.Tasks.Task<ListNetworkListsResponse> NetworkListsGetAsync(int? page = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ListNetworkListsResponse> NetworkListsGetAsync(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List all user Network Lists
@@ -138,10 +147,13 @@ namespace networklist.Api
         /// </remarks>
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListNetworkListsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListNetworkListsResponse>> NetworkListsGetWithHttpInfoAsync(int? page = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ListNetworkListsResponse>> NetworkListsGetWithHttpInfoAsync(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create a Network Lists
         /// </summary>
@@ -150,35 +162,35 @@ namespace networklist.Api
         /// </remarks>
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createNetworkListsRequest"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task NetworkListsPostAsync(CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Create a Network Lists
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createNetworkListsRequest"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> NetworkListsPostWithHttpInfoAsync(CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Retrieve a Network Lists set by uuid
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="uuid"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of NetworkListsResponse</returns>
-        System.Threading.Tasks.Task<NetworkListsResponse> NetworkListsUuidGetAsync(string uuid, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<NetworkListsResponse> NetworkListsPostAsync(CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Create a Network Lists
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createNetworkListsRequest"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (NetworkListsResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<NetworkListsResponse>> NetworkListsPostWithHttpInfoAsync(CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Retrieve a Network Lists set by uuid
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="uuid"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of NetworkListUuidResponse</returns>
+        System.Threading.Tasks.Task<NetworkListUuidResponse> NetworkListsUuidGetAsync(string uuid, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Retrieve a Network Lists set by uuid
@@ -190,8 +202,8 @@ namespace networklist.Api
         /// <param name="uuid"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (NetworkListsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<NetworkListsResponse>> NetworkListsUuidGetWithHttpInfoAsync(string uuid, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (NetworkListUuidResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<NetworkListUuidResponse>> NetworkListsUuidGetWithHttpInfoAsync(string uuid, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Overwrite some Network Lists attributes
         /// </summary>
@@ -200,11 +212,11 @@ namespace networklist.Api
         /// </remarks>
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uuid"></param>
-        /// <param name="updateNetworkListsRequest"></param>
+        /// <param name="createNetworkListsRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ListNetworkListsResponse</returns>
-        System.Threading.Tasks.Task<ListNetworkListsResponse> NetworkListsUuidPutAsync(string uuid, UpdateNetworkListsRequest updateNetworkListsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of NetworkListsResponse</returns>
+        System.Threading.Tasks.Task<NetworkListsResponse> NetworkListsUuidPutAsync(string uuid, CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Overwrite some Network Lists attributes
@@ -214,11 +226,11 @@ namespace networklist.Api
         /// </remarks>
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uuid"></param>
-        /// <param name="updateNetworkListsRequest"></param>
+        /// <param name="createNetworkListsRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ListNetworkListsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListNetworkListsResponse>> NetworkListsUuidPutWithHttpInfoAsync(string uuid, UpdateNetworkListsRequest updateNetworkListsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (NetworkListsResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<NetworkListsResponse>> NetworkListsUuidPutWithHttpInfoAsync(string uuid, CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -344,11 +356,14 @@ namespace networklist.Api
         /// </summary>
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ListNetworkListsResponse</returns>
-        public ListNetworkListsResponse NetworkListsGet(int? page = default(int?), int operationIndex = 0)
+        public ListNetworkListsResponse NetworkListsGet(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0)
         {
-            networklist.Client.ApiResponse<ListNetworkListsResponse> localVarResponse = NetworkListsGetWithHttpInfo(page);
+            networklist.Client.ApiResponse<ListNetworkListsResponse> localVarResponse = NetworkListsGetWithHttpInfo(page, pageSize, sort, orderBy);
             return localVarResponse.Data;
         }
 
@@ -357,9 +372,12 @@ namespace networklist.Api
         /// </summary>
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ListNetworkListsResponse</returns>
-        public networklist.Client.ApiResponse<ListNetworkListsResponse> NetworkListsGetWithHttpInfo(int? page = default(int?), int operationIndex = 0)
+        public networklist.Client.ApiResponse<ListNetworkListsResponse> NetworkListsGetWithHttpInfo(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0)
         {
             networklist.Client.RequestOptions localVarRequestOptions = new networklist.Client.RequestOptions();
 
@@ -386,6 +404,18 @@ namespace networklist.Api
             if (page != null)
             {
                 localVarRequestOptions.QueryParameters.Add(networklist.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(networklist.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(networklist.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(networklist.Client.ClientUtils.ParameterToMultiMap("", "order_by", orderBy));
             }
 
             localVarRequestOptions.Operation = "DefaultApi.NetworkListsGet";
@@ -416,12 +446,15 @@ namespace networklist.Api
         /// </summary>
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListNetworkListsResponse</returns>
-        public async System.Threading.Tasks.Task<ListNetworkListsResponse> NetworkListsGetAsync(int? page = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ListNetworkListsResponse> NetworkListsGetAsync(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            networklist.Client.ApiResponse<ListNetworkListsResponse> localVarResponse = await NetworkListsGetWithHttpInfoAsync(page, operationIndex, cancellationToken).ConfigureAwait(false);
+            networklist.Client.ApiResponse<ListNetworkListsResponse> localVarResponse = await NetworkListsGetWithHttpInfoAsync(page, pageSize, sort, orderBy, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -430,10 +463,13 @@ namespace networklist.Api
         /// </summary>
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListNetworkListsResponse)</returns>
-        public async System.Threading.Tasks.Task<networklist.Client.ApiResponse<ListNetworkListsResponse>> NetworkListsGetWithHttpInfoAsync(int? page = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<networklist.Client.ApiResponse<ListNetworkListsResponse>> NetworkListsGetWithHttpInfoAsync(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             networklist.Client.RequestOptions localVarRequestOptions = new networklist.Client.RequestOptions();
@@ -461,6 +497,18 @@ namespace networklist.Api
             if (page != null)
             {
                 localVarRequestOptions.QueryParameters.Add(networklist.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(networklist.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(networklist.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(networklist.Client.ClientUtils.ParameterToMultiMap("", "order_by", orderBy));
             }
 
             localVarRequestOptions.Operation = "DefaultApi.NetworkListsGet";
@@ -493,187 +541,32 @@ namespace networklist.Api
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createNetworkListsRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void NetworkListsPost(CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0)
-        {
-            NetworkListsPostWithHttpInfo(createNetworkListsRequest);
-        }
-
-        /// <summary>
-        /// Create a Network Lists 
-        /// </summary>
-        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createNetworkListsRequest"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public networklist.Client.ApiResponse<Object> NetworkListsPostWithHttpInfo(CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0)
-        {
-            // verify the required parameter 'createNetworkListsRequest' is set
-            if (createNetworkListsRequest == null)
-            {
-                throw new networklist.Client.ApiException(400, "Missing required parameter 'createNetworkListsRequest' when calling DefaultApi->NetworkListsPost");
-            }
-
-            networklist.Client.RequestOptions localVarRequestOptions = new networklist.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json",
-                "text/html"
-            };
-
-            var localVarContentType = networklist.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = networklist.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.Data = createNetworkListsRequest;
-
-            localVarRequestOptions.Operation = "DefaultApi.NetworkListsPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (tokenAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/network_lists", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("NetworkListsPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Create a Network Lists 
-        /// </summary>
-        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createNetworkListsRequest"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task NetworkListsPostAsync(CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            await NetworkListsPostWithHttpInfoAsync(createNetworkListsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// Create a Network Lists 
-        /// </summary>
-        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="createNetworkListsRequest"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<networklist.Client.ApiResponse<Object>> NetworkListsPostWithHttpInfoAsync(CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'createNetworkListsRequest' is set
-            if (createNetworkListsRequest == null)
-            {
-                throw new networklist.Client.ApiException(400, "Missing required parameter 'createNetworkListsRequest' when calling DefaultApi->NetworkListsPost");
-            }
-
-
-            networklist.Client.RequestOptions localVarRequestOptions = new networklist.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json",
-                "text/html"
-            };
-
-            var localVarContentType = networklist.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = networklist.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.Data = createNetworkListsRequest;
-
-            localVarRequestOptions.Operation = "DefaultApi.NetworkListsPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (tokenAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/network_lists", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("NetworkListsPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Retrieve a Network Lists set by uuid 
-        /// </summary>
-        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="uuid"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>NetworkListsResponse</returns>
-        public NetworkListsResponse NetworkListsUuidGet(string uuid, int operationIndex = 0)
+        public NetworkListsResponse NetworkListsPost(CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0)
         {
-            networklist.Client.ApiResponse<NetworkListsResponse> localVarResponse = NetworkListsUuidGetWithHttpInfo(uuid);
+            networklist.Client.ApiResponse<NetworkListsResponse> localVarResponse = NetworkListsPostWithHttpInfo(createNetworkListsRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Retrieve a Network Lists set by uuid 
+        /// Create a Network Lists 
         /// </summary>
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="uuid"></param>
+        /// <param name="createNetworkListsRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of NetworkListsResponse</returns>
-        public networklist.Client.ApiResponse<NetworkListsResponse> NetworkListsUuidGetWithHttpInfo(string uuid, int operationIndex = 0)
+        public networklist.Client.ApiResponse<NetworkListsResponse> NetworkListsPostWithHttpInfo(CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0)
         {
-            // verify the required parameter 'uuid' is set
-            if (uuid == null)
+            // verify the required parameter 'createNetworkListsRequest' is set
+            if (createNetworkListsRequest == null)
             {
-                throw new networklist.Client.ApiException(400, "Missing required parameter 'uuid' when calling DefaultApi->NetworkListsUuidGet");
+                throw new networklist.Client.ApiException(400, "Missing required parameter 'createNetworkListsRequest' when calling DefaultApi->NetworkListsPost");
             }
 
             networklist.Client.RequestOptions localVarRequestOptions = new networklist.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json"
             };
 
             // to determine the Accept header
@@ -694,9 +587,9 @@ namespace networklist.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("uuid", networklist.Client.ClientUtils.ParameterToString(uuid)); // path parameter
+            localVarRequestOptions.Data = createNetworkListsRequest;
 
-            localVarRequestOptions.Operation = "DefaultApi.NetworkListsUuidGet";
+            localVarRequestOptions.Operation = "DefaultApi.NetworkListsPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (tokenAuth) required
@@ -706,10 +599,10 @@ namespace networklist.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<NetworkListsResponse>("/network_lists/{uuid}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<NetworkListsResponse>("/network_lists", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("NetworkListsUuidGet", localVarResponse);
+                Exception _exception = this.ExceptionFactory("NetworkListsPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -720,16 +613,173 @@ namespace networklist.Api
         }
 
         /// <summary>
-        /// Retrieve a Network Lists set by uuid 
+        /// Create a Network Lists 
         /// </summary>
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="uuid"></param>
+        /// <param name="createNetworkListsRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of NetworkListsResponse</returns>
-        public async System.Threading.Tasks.Task<NetworkListsResponse> NetworkListsUuidGetAsync(string uuid, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<NetworkListsResponse> NetworkListsPostAsync(CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            networklist.Client.ApiResponse<NetworkListsResponse> localVarResponse = await NetworkListsUuidGetWithHttpInfoAsync(uuid, operationIndex, cancellationToken).ConfigureAwait(false);
+            networklist.Client.ApiResponse<NetworkListsResponse> localVarResponse = await NetworkListsPostWithHttpInfoAsync(createNetworkListsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create a Network Lists 
+        /// </summary>
+        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createNetworkListsRequest"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (NetworkListsResponse)</returns>
+        public async System.Threading.Tasks.Task<networklist.Client.ApiResponse<NetworkListsResponse>> NetworkListsPostWithHttpInfoAsync(CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'createNetworkListsRequest' is set
+            if (createNetworkListsRequest == null)
+            {
+                throw new networklist.Client.ApiException(400, "Missing required parameter 'createNetworkListsRequest' when calling DefaultApi->NetworkListsPost");
+            }
+
+
+            networklist.Client.RequestOptions localVarRequestOptions = new networklist.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json",
+                "text/html"
+            };
+
+            var localVarContentType = networklist.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = networklist.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = createNetworkListsRequest;
+
+            localVarRequestOptions.Operation = "DefaultApi.NetworkListsPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<NetworkListsResponse>("/network_lists", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("NetworkListsPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Retrieve a Network Lists set by uuid 
+        /// </summary>
+        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="uuid"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>NetworkListUuidResponse</returns>
+        public NetworkListUuidResponse NetworkListsUuidGet(string uuid, int operationIndex = 0)
+        {
+            networklist.Client.ApiResponse<NetworkListUuidResponse> localVarResponse = NetworkListsUuidGetWithHttpInfo(uuid);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Retrieve a Network Lists set by uuid 
+        /// </summary>
+        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="uuid"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of NetworkListUuidResponse</returns>
+        public networklist.Client.ApiResponse<NetworkListUuidResponse> NetworkListsUuidGetWithHttpInfo(string uuid, int operationIndex = 0)
+        {
+            // verify the required parameter 'uuid' is set
+            if (uuid == null)
+            {
+                throw new networklist.Client.ApiException(400, "Missing required parameter 'uuid' when calling DefaultApi->NetworkListsUuidGet");
+            }
+
+            networklist.Client.RequestOptions localVarRequestOptions = new networklist.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json",
+                "text/html"
+            };
+
+            var localVarContentType = networklist.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = networklist.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("uuid", networklist.Client.ClientUtils.ParameterToString(uuid)); // path parameter
+
+            localVarRequestOptions.Operation = "DefaultApi.NetworkListsUuidGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<NetworkListUuidResponse>("/network_lists/{uuid}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("NetworkListsUuidGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Retrieve a Network Lists set by uuid 
+        /// </summary>
+        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="uuid"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of NetworkListUuidResponse</returns>
+        public async System.Threading.Tasks.Task<NetworkListUuidResponse> NetworkListsUuidGetAsync(string uuid, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            networklist.Client.ApiResponse<NetworkListUuidResponse> localVarResponse = await NetworkListsUuidGetWithHttpInfoAsync(uuid, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -740,8 +790,8 @@ namespace networklist.Api
         /// <param name="uuid"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (NetworkListsResponse)</returns>
-        public async System.Threading.Tasks.Task<networklist.Client.ApiResponse<NetworkListsResponse>> NetworkListsUuidGetWithHttpInfoAsync(string uuid, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (NetworkListUuidResponse)</returns>
+        public async System.Threading.Tasks.Task<networklist.Client.ApiResponse<NetworkListUuidResponse>> NetworkListsUuidGetWithHttpInfoAsync(string uuid, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'uuid' is set
             if (uuid == null)
@@ -785,7 +835,7 @@ namespace networklist.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<NetworkListsResponse>("/network_lists/{uuid}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<NetworkListUuidResponse>("/network_lists/{uuid}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -804,12 +854,12 @@ namespace networklist.Api
         /// </summary>
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uuid"></param>
-        /// <param name="updateNetworkListsRequest"></param>
+        /// <param name="createNetworkListsRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ListNetworkListsResponse</returns>
-        public ListNetworkListsResponse NetworkListsUuidPut(string uuid, UpdateNetworkListsRequest updateNetworkListsRequest, int operationIndex = 0)
+        /// <returns>NetworkListsResponse</returns>
+        public NetworkListsResponse NetworkListsUuidPut(string uuid, CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0)
         {
-            networklist.Client.ApiResponse<ListNetworkListsResponse> localVarResponse = NetworkListsUuidPutWithHttpInfo(uuid, updateNetworkListsRequest);
+            networklist.Client.ApiResponse<NetworkListsResponse> localVarResponse = NetworkListsUuidPutWithHttpInfo(uuid, createNetworkListsRequest);
             return localVarResponse.Data;
         }
 
@@ -818,10 +868,10 @@ namespace networklist.Api
         /// </summary>
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uuid"></param>
-        /// <param name="updateNetworkListsRequest"></param>
+        /// <param name="createNetworkListsRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ListNetworkListsResponse</returns>
-        public networklist.Client.ApiResponse<ListNetworkListsResponse> NetworkListsUuidPutWithHttpInfo(string uuid, UpdateNetworkListsRequest updateNetworkListsRequest, int operationIndex = 0)
+        /// <returns>ApiResponse of NetworkListsResponse</returns>
+        public networklist.Client.ApiResponse<NetworkListsResponse> NetworkListsUuidPutWithHttpInfo(string uuid, CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0)
         {
             // verify the required parameter 'uuid' is set
             if (uuid == null)
@@ -829,10 +879,10 @@ namespace networklist.Api
                 throw new networklist.Client.ApiException(400, "Missing required parameter 'uuid' when calling DefaultApi->NetworkListsUuidPut");
             }
 
-            // verify the required parameter 'updateNetworkListsRequest' is set
-            if (updateNetworkListsRequest == null)
+            // verify the required parameter 'createNetworkListsRequest' is set
+            if (createNetworkListsRequest == null)
             {
-                throw new networklist.Client.ApiException(400, "Missing required parameter 'updateNetworkListsRequest' when calling DefaultApi->NetworkListsUuidPut");
+                throw new networklist.Client.ApiException(400, "Missing required parameter 'createNetworkListsRequest' when calling DefaultApi->NetworkListsUuidPut");
             }
 
             networklist.Client.RequestOptions localVarRequestOptions = new networklist.Client.RequestOptions();
@@ -860,7 +910,7 @@ namespace networklist.Api
             }
 
             localVarRequestOptions.PathParameters.Add("uuid", networklist.Client.ClientUtils.ParameterToString(uuid)); // path parameter
-            localVarRequestOptions.Data = updateNetworkListsRequest;
+            localVarRequestOptions.Data = createNetworkListsRequest;
 
             localVarRequestOptions.Operation = "DefaultApi.NetworkListsUuidPut";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -872,7 +922,7 @@ namespace networklist.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<ListNetworkListsResponse>("/network_lists/{uuid}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<NetworkListsResponse>("/network_lists/{uuid}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("NetworkListsUuidPut", localVarResponse);
@@ -890,13 +940,13 @@ namespace networklist.Api
         /// </summary>
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uuid"></param>
-        /// <param name="updateNetworkListsRequest"></param>
+        /// <param name="createNetworkListsRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ListNetworkListsResponse</returns>
-        public async System.Threading.Tasks.Task<ListNetworkListsResponse> NetworkListsUuidPutAsync(string uuid, UpdateNetworkListsRequest updateNetworkListsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of NetworkListsResponse</returns>
+        public async System.Threading.Tasks.Task<NetworkListsResponse> NetworkListsUuidPutAsync(string uuid, CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            networklist.Client.ApiResponse<ListNetworkListsResponse> localVarResponse = await NetworkListsUuidPutWithHttpInfoAsync(uuid, updateNetworkListsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            networklist.Client.ApiResponse<NetworkListsResponse> localVarResponse = await NetworkListsUuidPutWithHttpInfoAsync(uuid, createNetworkListsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -905,11 +955,11 @@ namespace networklist.Api
         /// </summary>
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="uuid"></param>
-        /// <param name="updateNetworkListsRequest"></param>
+        /// <param name="createNetworkListsRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ListNetworkListsResponse)</returns>
-        public async System.Threading.Tasks.Task<networklist.Client.ApiResponse<ListNetworkListsResponse>> NetworkListsUuidPutWithHttpInfoAsync(string uuid, UpdateNetworkListsRequest updateNetworkListsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (NetworkListsResponse)</returns>
+        public async System.Threading.Tasks.Task<networklist.Client.ApiResponse<NetworkListsResponse>> NetworkListsUuidPutWithHttpInfoAsync(string uuid, CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'uuid' is set
             if (uuid == null)
@@ -917,10 +967,10 @@ namespace networklist.Api
                 throw new networklist.Client.ApiException(400, "Missing required parameter 'uuid' when calling DefaultApi->NetworkListsUuidPut");
             }
 
-            // verify the required parameter 'updateNetworkListsRequest' is set
-            if (updateNetworkListsRequest == null)
+            // verify the required parameter 'createNetworkListsRequest' is set
+            if (createNetworkListsRequest == null)
             {
-                throw new networklist.Client.ApiException(400, "Missing required parameter 'updateNetworkListsRequest' when calling DefaultApi->NetworkListsUuidPut");
+                throw new networklist.Client.ApiException(400, "Missing required parameter 'createNetworkListsRequest' when calling DefaultApi->NetworkListsUuidPut");
             }
 
 
@@ -949,7 +999,7 @@ namespace networklist.Api
             }
 
             localVarRequestOptions.PathParameters.Add("uuid", networklist.Client.ClientUtils.ParameterToString(uuid)); // path parameter
-            localVarRequestOptions.Data = updateNetworkListsRequest;
+            localVarRequestOptions.Data = createNetworkListsRequest;
 
             localVarRequestOptions.Operation = "DefaultApi.NetworkListsUuidPut";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -961,7 +1011,7 @@ namespace networklist.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<ListNetworkListsResponse>("/network_lists/{uuid}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<NetworkListsResponse>("/network_lists/{uuid}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

@@ -26,17 +26,17 @@ using OpenAPIDateConverter = networklist.Client.OpenAPIDateConverter;
 namespace networklist.Model
 {
     /// <summary>
-    /// NetworkListsResponse
+    /// NetworkListUuidResponse
     /// </summary>
-    [DataContract(Name = "NetworkListsResponse")]
-    public partial class NetworkListsResponse : IEquatable<NetworkListsResponse>, IValidatableObject
+    [DataContract(Name = "NetworkListUuidResponse")]
+    public partial class NetworkListUuidResponse : IEquatable<NetworkListUuidResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="NetworkListsResponse" /> class.
+        /// Initializes a new instance of the <see cref="NetworkListUuidResponse" /> class.
         /// </summary>
         /// <param name="results">results.</param>
         /// <param name="schemaVersion">schemaVersion.</param>
-        public NetworkListsResponse(NetworkListResponseEntry results = default(NetworkListResponseEntry), decimal schemaVersion = default(decimal))
+        public NetworkListUuidResponse(NetworkListUuidResponseEntry results = default(NetworkListUuidResponseEntry), long schemaVersion = default(long))
         {
             this.Results = results;
             this.SchemaVersion = schemaVersion;
@@ -46,14 +46,14 @@ namespace networklist.Model
         /// Gets or Sets Results
         /// </summary>
         [DataMember(Name = "results", EmitDefaultValue = false)]
-        public NetworkListResponseEntry Results { get; set; }
+        public NetworkListUuidResponseEntry Results { get; set; }
 
         /// <summary>
         /// Gets or Sets SchemaVersion
         /// </summary>
         /// <example>3</example>
         [DataMember(Name = "schema_version", EmitDefaultValue = false)]
-        public decimal SchemaVersion { get; set; }
+        public long SchemaVersion { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,7 +62,7 @@ namespace networklist.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class NetworkListsResponse {\n");
+            sb.Append("class NetworkListUuidResponse {\n");
             sb.Append("  Results: ").Append(Results).Append("\n");
             sb.Append("  SchemaVersion: ").Append(SchemaVersion).Append("\n");
             sb.Append("}\n");
@@ -85,15 +85,15 @@ namespace networklist.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as NetworkListsResponse);
+            return this.Equals(input as NetworkListUuidResponse);
         }
 
         /// <summary>
-        /// Returns true if NetworkListsResponse instances are equal
+        /// Returns true if NetworkListUuidResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of NetworkListsResponse to be compared</param>
+        /// <param name="input">Instance of NetworkListUuidResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(NetworkListsResponse input)
+        public bool Equals(NetworkListUuidResponse input)
         {
             if (input == null)
             {

@@ -26,38 +26,27 @@ using OpenAPIDateConverter = networklist.Client.OpenAPIDateConverter;
 namespace networklist.Model
 {
     /// <summary>
-    /// NetworkLists
+    /// NetworkListUuidResponseEntry
     /// </summary>
-    [DataContract(Name = "NetworkLists")]
-    public partial class NetworkLists : IEquatable<NetworkLists>, IValidatableObject
+    [DataContract(Name = "NetworkListUuidResponseEntry")]
+    public partial class NetworkListUuidResponseEntry : IEquatable<NetworkListUuidResponseEntry>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="NetworkLists" /> class.
+        /// Initializes a new instance of the <see cref="NetworkListUuidResponseEntry" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
         /// <param name="lastEditor">lastEditor.</param>
         /// <param name="lastModified">lastModified.</param>
         /// <param name="listType">listType.</param>
         /// <param name="name">name.</param>
-        /// <param name="countryList">countryList.</param>
-        /// <param name="ipList">ipList.</param>
-        public NetworkLists(long id = default(long), string lastEditor = default(string), string lastModified = default(string), string listType = default(string), string name = default(string), List<string> countryList = default(List<string>), List<string> ipList = default(List<string>))
+        /// <param name="itemsValues">itemsValues.</param>
+        public NetworkListUuidResponseEntry(string lastEditor = default(string), string lastModified = default(string), string listType = default(string), string name = default(string), List<string> itemsValues = default(List<string>))
         {
-            this.Id = id;
             this.LastEditor = lastEditor;
             this.LastModified = lastModified;
             this.ListType = listType;
             this.Name = name;
-            this.CountryList = countryList;
-            this.IpList = ipList;
+            this.ItemsValues = itemsValues;
         }
-
-        /// <summary>
-        /// Gets or Sets Id
-        /// </summary>
-        /// <example>1614</example>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public long Id { get; set; }
 
         /// <summary>
         /// Gets or Sets LastEditor
@@ -88,16 +77,10 @@ namespace networklist.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets CountryList
+        /// Gets or Sets ItemsValues
         /// </summary>
-        [DataMember(Name = "country_list", EmitDefaultValue = false)]
-        public List<string> CountryList { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IpList
-        /// </summary>
-        [DataMember(Name = "ip_list", EmitDefaultValue = false)]
-        public List<string> IpList { get; set; }
+        [DataMember(Name = "items_values", EmitDefaultValue = false)]
+        public List<string> ItemsValues { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -106,14 +89,12 @@ namespace networklist.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class NetworkLists {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("class NetworkListUuidResponseEntry {\n");
             sb.Append("  LastEditor: ").Append(LastEditor).Append("\n");
             sb.Append("  LastModified: ").Append(LastModified).Append("\n");
             sb.Append("  ListType: ").Append(ListType).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  CountryList: ").Append(CountryList).Append("\n");
-            sb.Append("  IpList: ").Append(IpList).Append("\n");
+            sb.Append("  ItemsValues: ").Append(ItemsValues).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -134,25 +115,21 @@ namespace networklist.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as NetworkLists);
+            return this.Equals(input as NetworkListUuidResponseEntry);
         }
 
         /// <summary>
-        /// Returns true if NetworkLists instances are equal
+        /// Returns true if NetworkListUuidResponseEntry instances are equal
         /// </summary>
-        /// <param name="input">Instance of NetworkLists to be compared</param>
+        /// <param name="input">Instance of NetworkListUuidResponseEntry to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(NetworkLists input)
+        public bool Equals(NetworkListUuidResponseEntry input)
         {
             if (input == null)
             {
                 return false;
             }
             return 
-                (
-                    this.Id == input.Id ||
-                    this.Id.Equals(input.Id)
-                ) && 
                 (
                     this.LastEditor == input.LastEditor ||
                     (this.LastEditor != null &&
@@ -174,16 +151,10 @@ namespace networklist.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.CountryList == input.CountryList ||
-                    this.CountryList != null &&
-                    input.CountryList != null &&
-                    this.CountryList.SequenceEqual(input.CountryList)
-                ) && 
-                (
-                    this.IpList == input.IpList ||
-                    this.IpList != null &&
-                    input.IpList != null &&
-                    this.IpList.SequenceEqual(input.IpList)
+                    this.ItemsValues == input.ItemsValues ||
+                    this.ItemsValues != null &&
+                    input.ItemsValues != null &&
+                    this.ItemsValues.SequenceEqual(input.ItemsValues)
                 );
         }
 
@@ -196,7 +167,6 @@ namespace networklist.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 if (this.LastEditor != null)
                 {
                     hashCode = (hashCode * 59) + this.LastEditor.GetHashCode();
@@ -213,13 +183,9 @@ namespace networklist.Model
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.CountryList != null)
+                if (this.ItemsValues != null)
                 {
-                    hashCode = (hashCode * 59) + this.CountryList.GetHashCode();
-                }
-                if (this.IpList != null)
-                {
-                    hashCode = (hashCode * 59) + this.IpList.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ItemsValues.GetHashCode();
                 }
                 return hashCode;
             }
