@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 api/openapi.yaml
 appveyor.yml
@@ -11,12 +10,6 @@ docs/Links.md
 docs/ListEdgeFunctionsInstancesResponse.md
 edgefunctionsinstance_edgefirewall.sln
 git_push.sh
-src/edgefunctionsinstance_edgefirewall.Test/Api/DefaultApiTests.cs
-src/edgefunctionsinstance_edgefirewall.Test/Model/CreateEdgeFunctionsInstancesRequestTests.cs
-src/edgefunctionsinstance_edgefirewall.Test/Model/EdgeFunctionsInstanceResponseTests.cs
-src/edgefunctionsinstance_edgefirewall.Test/Model/EdgeFunctionsInstanceTests.cs
-src/edgefunctionsinstance_edgefirewall.Test/Model/LinksTests.cs
-src/edgefunctionsinstance_edgefirewall.Test/Model/ListEdgeFunctionsInstancesResponseTests.cs
 src/edgefunctionsinstance_edgefirewall.Test/edgefunctionsinstance_edgefirewall.Test.csproj
 src/edgefunctionsinstance_edgefirewall/Api/DefaultApi.cs
 src/edgefunctionsinstance_edgefirewall/Client/ApiClient.cs
