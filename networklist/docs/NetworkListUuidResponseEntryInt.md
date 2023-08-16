@@ -1,4 +1,4 @@
-# networklist.Model.NetworkListUuidResponseEntry
+# networklist.Model.NetworkListUuidResponseEntryInt
 
 ## Properties
 
