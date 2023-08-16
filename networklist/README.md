@@ -126,6 +126,8 @@ Class | Method | HTTP request | Description
  - [Model.NetworkListResponseEntry](docs/NetworkListResponseEntry.md)
  - [Model.NetworkListUuidResponse](docs/NetworkListUuidResponse.md)
  - [Model.NetworkListUuidResponseEntry](docs/NetworkListUuidResponseEntry.md)
+ - [Model.NetworkListUuidResponseEntryInt](docs/NetworkListUuidResponseEntryInt.md)
+ - [Model.NetworkListUuidResponseEntryString](docs/NetworkListUuidResponseEntryString.md)
  - [Model.NetworkLists](docs/NetworkLists.md)
  - [Model.NetworkListsResponse](docs/NetworkListsResponse.md)
 
