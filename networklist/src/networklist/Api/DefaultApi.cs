@@ -73,6 +73,28 @@ namespace networklist.Api
         /// <returns>ApiResponse of NetworkListsResponse</returns>
         ApiResponse<NetworkListsResponse> NetworkListsPostWithHttpInfo(CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0);
         /// <summary>
+        /// Delete a Network Lists set by uuid
+        /// </summary>
+        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="uuid">The id of the networkList to be deleted. </param>
+        /// <param name="accept"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        void NetworkListsUuidDelete(string uuid, string accept = default(string), int operationIndex = 0);
+
+        /// <summary>
+        /// Delete a Network Lists set by uuid
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="uuid">The id of the networkList to be deleted. </param>
+        /// <param name="accept"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> NetworkListsUuidDeleteWithHttpInfo(string uuid, string accept = default(string), int operationIndex = 0);
+        /// <summary>
         /// Retrieve a Network Lists set by uuid
         /// </summary>
         /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
@@ -179,6 +201,33 @@ namespace networklist.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (NetworkListsResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<NetworkListsResponse>> NetworkListsPostWithHttpInfoAsync(CreateNetworkListsRequest createNetworkListsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Delete a Network Lists set by uuid
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="uuid">The id of the networkList to be deleted. </param>
+        /// <param name="accept"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task NetworkListsUuidDeleteAsync(string uuid, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Delete a Network Lists set by uuid
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="uuid">The id of the networkList to be deleted. </param>
+        /// <param name="accept"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> NetworkListsUuidDeleteWithHttpInfoAsync(string uuid, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Retrieve a Network Lists set by uuid
         /// </summary>
@@ -686,6 +735,168 @@ namespace networklist.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("NetworkListsPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete a Network Lists set by uuid 
+        /// </summary>
+        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="uuid">The id of the networkList to be deleted. </param>
+        /// <param name="accept"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void NetworkListsUuidDelete(string uuid, string accept = default(string), int operationIndex = 0)
+        {
+            NetworkListsUuidDeleteWithHttpInfo(uuid, accept);
+        }
+
+        /// <summary>
+        /// Delete a Network Lists set by uuid 
+        /// </summary>
+        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="uuid">The id of the networkList to be deleted. </param>
+        /// <param name="accept"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public networklist.Client.ApiResponse<Object> NetworkListsUuidDeleteWithHttpInfo(string uuid, string accept = default(string), int operationIndex = 0)
+        {
+            // verify the required parameter 'uuid' is set
+            if (uuid == null)
+            {
+                throw new networklist.Client.ApiException(400, "Missing required parameter 'uuid' when calling DefaultApi->NetworkListsUuidDelete");
+            }
+
+            networklist.Client.RequestOptions localVarRequestOptions = new networklist.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = networklist.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = networklist.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("uuid", networklist.Client.ClientUtils.ParameterToString(uuid)); // path parameter
+            if (accept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", networklist.Client.ClientUtils.ParameterToString(accept)); // header parameter
+            }
+
+            localVarRequestOptions.Operation = "DefaultApi.NetworkListsUuidDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/network_lists/{uuid}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("NetworkListsUuidDelete", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete a Network Lists set by uuid 
+        /// </summary>
+        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="uuid">The id of the networkList to be deleted. </param>
+        /// <param name="accept"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task NetworkListsUuidDeleteAsync(string uuid, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await NetworkListsUuidDeleteWithHttpInfoAsync(uuid, accept, operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Delete a Network Lists set by uuid 
+        /// </summary>
+        /// <exception cref="networklist.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="uuid">The id of the networkList to be deleted. </param>
+        /// <param name="accept"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<networklist.Client.ApiResponse<Object>> NetworkListsUuidDeleteWithHttpInfoAsync(string uuid, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'uuid' is set
+            if (uuid == null)
+            {
+                throw new networklist.Client.ApiException(400, "Missing required parameter 'uuid' when calling DefaultApi->NetworkListsUuidDelete");
+            }
+
+
+            networklist.Client.RequestOptions localVarRequestOptions = new networklist.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = networklist.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = networklist.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("uuid", networklist.Client.ClientUtils.ParameterToString(uuid)); // path parameter
+            if (accept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", networklist.Client.ClientUtils.ParameterToString(accept)); // header parameter
+            }
+
+            localVarRequestOptions.Operation = "DefaultApi.NetworkListsUuidDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/network_lists/{uuid}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("NetworkListsUuidDelete", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

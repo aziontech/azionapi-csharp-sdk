@@ -111,6 +111,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *DefaultApi* | [**NetworkListsGet**](docs/DefaultApi.md#networklistsget) | **GET** /network_lists | List all user Network Lists
 *DefaultApi* | [**NetworkListsPost**](docs/DefaultApi.md#networklistspost) | **POST** /network_lists | Create a Network Lists
+*DefaultApi* | [**NetworkListsUuidDelete**](docs/DefaultApi.md#networklistsuuiddelete) | **DELETE** /network_lists/{uuid} | Delete a Network Lists set by uuid
 *DefaultApi* | [**NetworkListsUuidGet**](docs/DefaultApi.md#networklistsuuidget) | **GET** /network_lists/{uuid} | Retrieve a Network Lists set by uuid
 *DefaultApi* | [**NetworkListsUuidPut**](docs/DefaultApi.md#networklistsuuidput) | **PUT** /network_lists/{uuid} | Overwrite some Network Lists attributes
 

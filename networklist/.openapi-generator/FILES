@@ -17,8 +17,6 @@ docs/NetworkLists.md
 docs/NetworkListsResponse.md
 git_push.sh
 networklist.sln
-src/networklist.Test/Model/NetworkListUuidResponseEntryIntTests.cs
-src/networklist.Test/Model/NetworkListUuidResponseEntryStringTests.cs
 src/networklist.Test/networklist.Test.csproj
 src/networklist/Api/DefaultApi.cs
 src/networklist/Client/ApiClient.cs
