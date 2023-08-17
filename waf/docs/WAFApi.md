@@ -100,6 +100,8 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
+| **400** | Bad request |  -  |
+| **404** | data not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -201,8 +203,9 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 | **400** | Bad request |  -  |
-| **404** | data not found |  -  |
 | **401** | unauthorized operation |  -  |
+| **404** | data not found |  -  |
+| **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
