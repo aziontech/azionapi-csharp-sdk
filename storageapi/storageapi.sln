@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "storageapi", "src\storageapi\storageapi.csproj", "{F7836C94-7513-48AE-8492-3244E01B49CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "storageapi", "src\storageapi\storageapi.csproj", "{52D5541A-8FF5-402E-9D19-3964A9B858CE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "storageapi.Test", "src\storageapi.Test\storageapi.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
 EndProject
@@ -12,10 +12,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F7836C94-7513-48AE-8492-3244E01B49CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F7836C94-7513-48AE-8492-3244E01B49CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F7836C94-7513-48AE-8492-3244E01B49CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F7836C94-7513-48AE-8492-3244E01B49CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52D5541A-8FF5-402E-9D19-3964A9B858CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52D5541A-8FF5-402E-9D19-3964A9B858CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52D5541A-8FF5-402E-9D19-3964A9B858CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52D5541A-8FF5-402E-9D19-3964A9B858CE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU

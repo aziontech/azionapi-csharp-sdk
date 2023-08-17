@@ -296,6 +296,7 @@ namespace storageapi.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json"
             };
 
             var localVarContentType = storageapi.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -372,6 +373,7 @@ namespace storageapi.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json"
             };
 
             var localVarContentType = storageapi.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
