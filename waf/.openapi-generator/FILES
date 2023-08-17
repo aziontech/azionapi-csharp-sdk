@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 api/openapi.yaml
 appveyor.yml
@@ -10,12 +9,6 @@ docs/WAFEvents400.md
 docs/WAFEvents401.md
 docs/WAFEvents404.md
 git_push.sh
-src/waf.Test/Api/WAFApiTests.cs
-src/waf.Test/Model/WAFDomains200Tests.cs
-src/waf.Test/Model/WAFEvents200Tests.cs
-src/waf.Test/Model/WAFEvents400Tests.cs
-src/waf.Test/Model/WAFEvents401Tests.cs
-src/waf.Test/Model/WAFEvents404Tests.cs
 src/waf.Test/waf.Test.csproj
 src/waf/Api/WAFApi.cs
 src/waf/Client/ApiClient.cs
