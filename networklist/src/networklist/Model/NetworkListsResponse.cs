@@ -36,7 +36,7 @@ namespace networklist.Model
         /// </summary>
         /// <param name="results">results.</param>
         /// <param name="schemaVersion">schemaVersion.</param>
-        public NetworkListsResponse(NetworkListResponseEntry results = default(NetworkListResponseEntry), decimal schemaVersion = default(decimal))
+        public NetworkListsResponse(NetworkListResponseEntry results = default(NetworkListResponseEntry), long schemaVersion = default(long))
         {
             this.Results = results;
             this.SchemaVersion = schemaVersion;
@@ -53,7 +53,7 @@ namespace networklist.Model
         /// </summary>
         /// <example>3</example>
         [DataMember(Name = "schema_version", EmitDefaultValue = false)]
-        public decimal SchemaVersion { get; set; }
+        public long SchemaVersion { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
