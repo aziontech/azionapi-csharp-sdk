@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **WebApplicationFirewall** | **bool** |  | [optional] 
 **DebugRules** | **bool** |  | [optional] 
 **Http3** | **bool** |  | [optional] 
+**Websocket** | **bool** |  | [optional] 
 **SupportedCiphers** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

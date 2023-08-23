@@ -56,7 +56,8 @@ namespace edgeapplications.Model
         /// <param name="httpsPort">httpsPort.</param>
         /// <param name="l2Caching">l2Caching.</param>
         /// <param name="http3">http3.</param>
-        public CreateApplicationRequest(string name = default(string), bool applicationAcceleration = default(bool), string deliveryProtocol = default(string), string originType = default(string), string address = default(string), string originProtocolPolicy = default(string), string hostHeader = default(string), string browserCacheSettings = default(string), string cdnCacheSettings = default(string), long browserCacheSettingsMaximumTtl = default(long), long cdnCacheSettingsMaximumTtl = default(long), bool debugRules = default(bool), string supportedCiphers = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), bool l2Caching = default(bool), bool http3 = default(bool))
+        /// <param name="websocket">websocket.</param>
+        public CreateApplicationRequest(string name = default(string), bool applicationAcceleration = default(bool), string deliveryProtocol = default(string), string originType = default(string), string address = default(string), string originProtocolPolicy = default(string), string hostHeader = default(string), string browserCacheSettings = default(string), string cdnCacheSettings = default(string), long browserCacheSettingsMaximumTtl = default(long), long cdnCacheSettingsMaximumTtl = default(long), bool debugRules = default(bool), string supportedCiphers = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), bool l2Caching = default(bool), bool http3 = default(bool), bool websocket = default(bool))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -80,6 +81,7 @@ namespace edgeapplications.Model
             this.HttpsPort = httpsPort;
             this.L2Caching = l2Caching;
             this.Http3 = http3;
+            this.Websocket = websocket;
         }
 
         /// <summary>
@@ -185,6 +187,12 @@ namespace edgeapplications.Model
         public bool Http3 { get; set; }
 
         /// <summary>
+        /// Gets or Sets Websocket
+        /// </summary>
+        [DataMember(Name = "websocket", EmitDefaultValue = true)]
+        public bool Websocket { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -209,6 +217,7 @@ namespace edgeapplications.Model
             sb.Append("  HttpsPort: ").Append(HttpsPort).Append("\n");
             sb.Append("  L2Caching: ").Append(L2Caching).Append("\n");
             sb.Append("  Http3: ").Append(Http3).Append("\n");
+            sb.Append("  Websocket: ").Append(Websocket).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -322,6 +331,10 @@ namespace edgeapplications.Model
                 (
                     this.Http3 == input.Http3 ||
                     this.Http3.Equals(input.Http3)
+                ) && 
+                (
+                    this.Websocket == input.Websocket ||
+                    this.Websocket.Equals(input.Websocket)
                 );
         }
 
@@ -384,6 +397,7 @@ namespace edgeapplications.Model
                 }
                 hashCode = (hashCode * 59) + this.L2Caching.GetHashCode();
                 hashCode = (hashCode * 59) + this.Http3.GetHashCode();
+                hashCode = (hashCode * 59) + this.Websocket.GetHashCode();
                 return hashCode;
             }
         }

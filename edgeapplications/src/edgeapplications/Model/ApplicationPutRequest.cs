@@ -57,8 +57,9 @@ namespace edgeapplications.Model
         /// <param name="webApplicationFirewall">webApplicationFirewall.</param>
         /// <param name="debugRules">debugRules.</param>
         /// <param name="http3">http3.</param>
+        /// <param name="websocket">websocket.</param>
         /// <param name="supportedCiphers">supportedCiphers.</param>
-        public ApplicationPutRequest(string name = default(string), string deliveryProtocol = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), string minimumTlsVersion = default(string), bool active = default(bool), bool applicationAcceleration = default(bool), bool caching = default(bool), bool deviceDetection = default(bool), bool edgeFirewall = default(bool), bool edgeFunctions = default(bool), bool imageOptimization = default(bool), bool l2Caching = default(bool), bool loadBalancer = default(bool), bool rawLogs = default(bool), bool webApplicationFirewall = default(bool), bool debugRules = default(bool), bool http3 = default(bool), string supportedCiphers = default(string))
+        public ApplicationPutRequest(string name = default(string), string deliveryProtocol = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), string minimumTlsVersion = default(string), bool active = default(bool), bool applicationAcceleration = default(bool), bool caching = default(bool), bool deviceDetection = default(bool), bool edgeFirewall = default(bool), bool edgeFunctions = default(bool), bool imageOptimization = default(bool), bool l2Caching = default(bool), bool loadBalancer = default(bool), bool rawLogs = default(bool), bool webApplicationFirewall = default(bool), bool debugRules = default(bool), bool http3 = default(bool), bool websocket = default(bool), string supportedCiphers = default(string))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -83,6 +84,7 @@ namespace edgeapplications.Model
             this.WebApplicationFirewall = webApplicationFirewall;
             this.DebugRules = debugRules;
             this.Http3 = http3;
+            this.Websocket = websocket;
             this.SupportedCiphers = supportedCiphers;
         }
 
@@ -195,6 +197,12 @@ namespace edgeapplications.Model
         public bool Http3 { get; set; }
 
         /// <summary>
+        /// Gets or Sets Websocket
+        /// </summary>
+        [DataMember(Name = "websocket", EmitDefaultValue = true)]
+        public bool Websocket { get; set; }
+
+        /// <summary>
         /// Gets or Sets SupportedCiphers
         /// </summary>
         [DataMember(Name = "supported_ciphers", EmitDefaultValue = false)]
@@ -226,6 +234,7 @@ namespace edgeapplications.Model
             sb.Append("  WebApplicationFirewall: ").Append(WebApplicationFirewall).Append("\n");
             sb.Append("  DebugRules: ").Append(DebugRules).Append("\n");
             sb.Append("  Http3: ").Append(Http3).Append("\n");
+            sb.Append("  Websocket: ").Append(Websocket).Append("\n");
             sb.Append("  SupportedCiphers: ").Append(SupportedCiphers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -340,6 +349,10 @@ namespace edgeapplications.Model
                     this.Http3.Equals(input.Http3)
                 ) && 
                 (
+                    this.Websocket == input.Websocket ||
+                    this.Websocket.Equals(input.Websocket)
+                ) && 
+                (
                     this.SupportedCiphers == input.SupportedCiphers ||
                     (this.SupportedCiphers != null &&
                     this.SupportedCiphers.Equals(input.SupportedCiphers))
@@ -388,6 +401,7 @@ namespace edgeapplications.Model
                 hashCode = (hashCode * 59) + this.WebApplicationFirewall.GetHashCode();
                 hashCode = (hashCode * 59) + this.DebugRules.GetHashCode();
                 hashCode = (hashCode * 59) + this.Http3.GetHashCode();
+                hashCode = (hashCode * 59) + this.Websocket.GetHashCode();
                 if (this.SupportedCiphers != null)
                 {
                     hashCode = (hashCode * 59) + this.SupportedCiphers.GetHashCode();
