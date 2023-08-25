@@ -44,7 +44,7 @@ namespace edgefirewall.Model
         /// <param name="wafEnabled">wafEnabled.</param>
         /// <param name="debugRules">debugRules.</param>
         /// <param name="domains">domains.</param>
-        public EdgeFirewall(long id = default(long), string name = default(string), bool isActive = default(bool), string lastEditor = default(string), string lastModified = default(string), bool edgeFunctionsEnabled = default(bool), bool networkProtectionEnabled = default(bool), bool wafEnabled = default(bool), bool debugRules = default(bool), List<int> domains = default(List<int>))
+        public EdgeFirewall(long id = default(long), string name = default(string), bool isActive = default(bool), string lastEditor = default(string), string lastModified = default(string), bool edgeFunctionsEnabled = default(bool), bool networkProtectionEnabled = default(bool), bool wafEnabled = default(bool), bool debugRules = default(bool), List<long> domains = default(List<long>))
         {
             this.Id = id;
             this.Name = name;
@@ -116,7 +116,7 @@ namespace edgefirewall.Model
         /// Gets or Sets Domains
         /// </summary>
         [DataMember(Name = "domains", EmitDefaultValue = false)]
-        public List<int> Domains { get; set; }
+        public List<long> Domains { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

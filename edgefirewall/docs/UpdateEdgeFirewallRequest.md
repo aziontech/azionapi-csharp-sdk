@@ -1,4 +1,4 @@
-# edgefirewall.Model.CreateEdgeFirewallRequest
+# edgefirewall.Model.UpdateEdgeFirewallRequest
 
 ## Properties
 
