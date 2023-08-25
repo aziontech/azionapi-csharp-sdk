@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 api/openapi.yaml
 appveyor.yml
@@ -9,14 +8,10 @@ docs/EdgeFirewall.md
 docs/EdgeFirewallResponse.md
 docs/Links.md
 docs/ListEdgeFirewallResponse.md
+docs/UpdateEdgeFirewallRequest.md
 edgefirewall.sln
 git_push.sh
-src/edgefirewall.Test/Api/DefaultApiTests.cs
-src/edgefirewall.Test/Model/CreateEdgeFirewallRequestTests.cs
-src/edgefirewall.Test/Model/EdgeFirewallResponseTests.cs
-src/edgefirewall.Test/Model/EdgeFirewallTests.cs
-src/edgefirewall.Test/Model/LinksTests.cs
-src/edgefirewall.Test/Model/ListEdgeFirewallResponseTests.cs
+src/edgefirewall.Test/Model/UpdateEdgeFirewallRequestTests.cs
 src/edgefirewall.Test/edgefirewall.Test.csproj
 src/edgefirewall/Api/DefaultApi.cs
 src/edgefirewall/Client/ApiClient.cs
@@ -41,4 +36,5 @@ src/edgefirewall/Model/EdgeFirewall.cs
 src/edgefirewall/Model/EdgeFirewallResponse.cs
 src/edgefirewall/Model/Links.cs
 src/edgefirewall/Model/ListEdgeFirewallResponse.cs
+src/edgefirewall/Model/UpdateEdgeFirewallRequest.cs
 src/edgefirewall/edgefirewall.csproj

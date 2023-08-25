@@ -13,7 +13,7 @@ All URIs are relative to *https://api.azionapi.net*
 
 <a id="edgefirewallget"></a>
 # **EdgeFirewallGet**
-> ListEdgeFirewallResponse EdgeFirewallGet (int? page = null, int? pageSize = null, string sort = null, string orderBy = null)
+> ListEdgeFirewallResponse EdgeFirewallGet (long? page = null, long? pageSize = null, string sort = null, string orderBy = null)
 
 List all user edge firewall
 
@@ -39,8 +39,8 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DefaultApi(config);
-            var page = 56;  // int? |  (optional) 
-            var pageSize = 56;  // int? |  (optional) 
+            var page = 789L;  // long? |  (optional) 
+            var pageSize = 789L;  // long? |  (optional) 
             var sort = "sort_example";  // string |  (optional) 
             var orderBy = "orderBy_example";  // string |  (optional) 
 
@@ -85,8 +85,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **page** | **int?** |  | [optional]  |
-| **pageSize** | **int?** |  | [optional]  |
+| **page** | **long?** |  | [optional]  |
+| **pageSize** | **long?** |  | [optional]  |
 | **sort** | **string** |  | [optional]  |
 | **orderBy** | **string** |  | [optional]  |
 
@@ -108,12 +108,13 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A list of edge firewalls |  -  |
+| **404** | Not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="edgefirewallpost"></a>
 # **EdgeFirewallPost**
-> void EdgeFirewallPost (CreateEdgeFirewallRequest createEdgeFirewallRequest)
+> EdgeFirewallResponse EdgeFirewallPost (CreateEdgeFirewallRequest createEdgeFirewallRequest)
 
 Create a edge firewall
 
@@ -144,7 +145,8 @@ namespace Example
             try
             {
                 // Create a edge firewall
-                apiInstance.EdgeFirewallPost(createEdgeFirewallRequest);
+                EdgeFirewallResponse result = apiInstance.EdgeFirewallPost(createEdgeFirewallRequest);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -164,7 +166,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create a edge firewall
-    apiInstance.EdgeFirewallPostWithHttpInfo(createEdgeFirewallRequest);
+    ApiResponse<EdgeFirewallResponse> response = apiInstance.EdgeFirewallPostWithHttpInfo(createEdgeFirewallRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -182,7 +187,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**EdgeFirewallResponse**](EdgeFirewallResponse.md)
 
 ### Authorization
 
@@ -191,14 +196,14 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Edge firewall created |  -  |
-| **400** | Internal Server Error |  -  |
+| **400** | Bad Request |  -  |
 | **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -290,6 +295,8 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successfully deleted |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -384,12 +391,14 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | An edge firewall object |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="edgefirewalluuidpatch"></a>
 # **EdgeFirewallUuidPatch**
-> ListEdgeFirewallResponse EdgeFirewallUuidPatch (string uuid, ListEdgeFirewallResponse body)
+> EdgeFirewallResponse EdgeFirewallUuidPatch (string uuid, UpdateEdgeFirewallRequest updateEdgeFirewallRequest)
 
 Update some edge firewall attributes, like \"active\"
 
@@ -416,12 +425,12 @@ namespace Example
 
             var apiInstance = new DefaultApi(config);
             var uuid = "uuid_example";  // string | 
-            var body = new ListEdgeFirewallResponse();  // ListEdgeFirewallResponse | 
+            var updateEdgeFirewallRequest = new UpdateEdgeFirewallRequest(); // UpdateEdgeFirewallRequest | 
 
             try
             {
                 // Update some edge firewall attributes, like \"active\"
-                ListEdgeFirewallResponse result = apiInstance.EdgeFirewallUuidPatch(uuid, body);
+                EdgeFirewallResponse result = apiInstance.EdgeFirewallUuidPatch(uuid, updateEdgeFirewallRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -442,7 +451,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update some edge firewall attributes, like \"active\"
-    ApiResponse<ListEdgeFirewallResponse> response = apiInstance.EdgeFirewallUuidPatchWithHttpInfo(uuid, body);
+    ApiResponse<EdgeFirewallResponse> response = apiInstance.EdgeFirewallUuidPatchWithHttpInfo(uuid, updateEdgeFirewallRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -460,11 +469,11 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **uuid** | **string** |  |  |
-| **body** | **ListEdgeFirewallResponse** |  |  |
+| **updateEdgeFirewallRequest** | [**UpdateEdgeFirewallRequest**](UpdateEdgeFirewallRequest.md) |  |  |
 
 ### Return type
 
-[**ListEdgeFirewallResponse**](ListEdgeFirewallResponse.md)
+[**EdgeFirewallResponse**](EdgeFirewallResponse.md)
 
 ### Authorization
 
@@ -481,13 +490,14 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successfully updated |  -  |
 | **400** | Bad Request |  -  |
+| **404** | Not found |  -  |
 | **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="edgefirewalluuidput"></a>
 # **EdgeFirewallUuidPut**
-> ListEdgeFirewallResponse EdgeFirewallUuidPut (string uuid, ListEdgeFirewallResponse body)
+> EdgeFirewallResponse EdgeFirewallUuidPut (string uuid, UpdateEdgeFirewallRequest updateEdgeFirewallRequest)
 
 Overwrite some edge firewall attributes, like \"active\"
 
@@ -514,12 +524,12 @@ namespace Example
 
             var apiInstance = new DefaultApi(config);
             var uuid = "uuid_example";  // string | 
-            var body = new ListEdgeFirewallResponse();  // ListEdgeFirewallResponse | 
+            var updateEdgeFirewallRequest = new UpdateEdgeFirewallRequest(); // UpdateEdgeFirewallRequest | 
 
             try
             {
                 // Overwrite some edge firewall attributes, like \"active\"
-                ListEdgeFirewallResponse result = apiInstance.EdgeFirewallUuidPut(uuid, body);
+                EdgeFirewallResponse result = apiInstance.EdgeFirewallUuidPut(uuid, updateEdgeFirewallRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -540,7 +550,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Overwrite some edge firewall attributes, like \"active\"
-    ApiResponse<ListEdgeFirewallResponse> response = apiInstance.EdgeFirewallUuidPutWithHttpInfo(uuid, body);
+    ApiResponse<EdgeFirewallResponse> response = apiInstance.EdgeFirewallUuidPutWithHttpInfo(uuid, updateEdgeFirewallRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -558,11 +568,11 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **uuid** | **string** |  |  |
-| **body** | **ListEdgeFirewallResponse** |  |  |
+| **updateEdgeFirewallRequest** | [**UpdateEdgeFirewallRequest**](UpdateEdgeFirewallRequest.md) |  |  |
 
 ### Return type
 
-[**ListEdgeFirewallResponse**](ListEdgeFirewallResponse.md)
+[**EdgeFirewallResponse**](EdgeFirewallResponse.md)
 
 ### Authorization
 
@@ -579,6 +589,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successfully updated |  -  |
 | **400** | Bad Request |  -  |
+| **404** | Not found |  -  |
 | **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

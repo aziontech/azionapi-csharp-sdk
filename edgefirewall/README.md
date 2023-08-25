@@ -79,8 +79,8 @@ namespace Example
             // config.ApiKeyPrefix.Add("Authorization", "Bearer");
 
             var apiInstance = new DefaultApi(config);
-            var page = 56;  // int? |  (optional) 
-            var pageSize = 56;  // int? |  (optional) 
+            var page = 789L;  // long? |  (optional) 
+            var pageSize = 789L;  // long? |  (optional) 
             var sort = "sort_example";  // string |  (optional) 
             var orderBy = "orderBy_example";  // string |  (optional) 
 
@@ -125,6 +125,7 @@ Class | Method | HTTP request | Description
  - [Model.EdgeFirewallResponse](docs/EdgeFirewallResponse.md)
  - [Model.Links](docs/Links.md)
  - [Model.ListEdgeFirewallResponse](docs/ListEdgeFirewallResponse.md)
+ - [Model.UpdateEdgeFirewallRequest](docs/UpdateEdgeFirewallRequest.md)
 
 
 <a id="documentation-for-authorization"></a>

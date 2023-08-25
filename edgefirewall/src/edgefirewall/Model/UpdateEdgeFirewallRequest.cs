@@ -26,13 +26,13 @@ using OpenAPIDateConverter = edgefirewall.Client.OpenAPIDateConverter;
 namespace edgefirewall.Model
 {
     /// <summary>
-    /// CreateEdgeFirewallRequest
+    /// UpdateEdgeFirewallRequest
     /// </summary>
-    [DataContract(Name = "CreateEdgeFirewallRequest")]
-    public partial class CreateEdgeFirewallRequest : IEquatable<CreateEdgeFirewallRequest>, IValidatableObject
+    [DataContract(Name = "UpdateEdgeFirewallRequest")]
+    public partial class UpdateEdgeFirewallRequest : IEquatable<UpdateEdgeFirewallRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateEdgeFirewallRequest" /> class.
+        /// Initializes a new instance of the <see cref="UpdateEdgeFirewallRequest" /> class.
         /// </summary>
         /// <param name="name">name.</param>
         /// <param name="domains">domains.</param>
@@ -40,7 +40,7 @@ namespace edgefirewall.Model
         /// <param name="edgeFunctionsEnabled">edgeFunctionsEnabled.</param>
         /// <param name="networkProtectionEnabled">networkProtectionEnabled.</param>
         /// <param name="wafEnabled">wafEnabled.</param>
-        public CreateEdgeFirewallRequest(string name = default(string), List<long> domains = default(List<long>), bool isActive = default(bool), bool edgeFunctionsEnabled = default(bool), bool networkProtectionEnabled = default(bool), bool wafEnabled = default(bool))
+        public UpdateEdgeFirewallRequest(string name = default(string), List<long> domains = default(List<long>), bool isActive = default(bool), bool edgeFunctionsEnabled = default(bool), bool networkProtectionEnabled = default(bool), bool wafEnabled = default(bool))
         {
             this.Name = name;
             this.Domains = domains;
@@ -93,7 +93,7 @@ namespace edgefirewall.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CreateEdgeFirewallRequest {\n");
+            sb.Append("class UpdateEdgeFirewallRequest {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Domains: ").Append(Domains).Append("\n");
             sb.Append("  IsActive: ").Append(IsActive).Append("\n");
@@ -120,15 +120,15 @@ namespace edgefirewall.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateEdgeFirewallRequest);
+            return this.Equals(input as UpdateEdgeFirewallRequest);
         }
 
         /// <summary>
-        /// Returns true if CreateEdgeFirewallRequest instances are equal
+        /// Returns true if UpdateEdgeFirewallRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of CreateEdgeFirewallRequest to be compared</param>
+        /// <param name="input">Instance of UpdateEdgeFirewallRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateEdgeFirewallRequest input)
+        public bool Equals(UpdateEdgeFirewallRequest input)
         {
             if (input == null)
             {
