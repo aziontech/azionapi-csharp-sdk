@@ -49,7 +49,7 @@ namespace data_streaming.Model
         /// <summary>
         /// Gets or Sets EndpointType
         /// </summary>
-        /// <example>&quot;azure_blob_storage&quot;</example>
+        /// <example>azure_blob_storage</example>
         [DataMember(Name = "endpoint_type", EmitDefaultValue = false)]
         public string EndpointType { get; set; }
 
@@ -176,11 +176,13 @@ namespace data_streaming.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // BlobSasToken (string) pattern
-            Regex regexBlobSasToken = new Regex(@"[a-zA-Z0-9]{15}", RegexOptions.CultureInvariant);
-            if (false == regexBlobSasToken.Match(this.BlobSasToken).Success)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for BlobSasToken, must match a pattern of " + regexBlobSasToken, new [] { "BlobSasToken" });
+            if (this.BlobSasToken != null) {
+                // BlobSasToken (string) pattern
+                Regex regexBlobSasToken = new Regex(@"[a-zA-Z0-9]{15}", RegexOptions.CultureInvariant);
+                if (!regexBlobSasToken.Match(this.BlobSasToken).Success)
+                {
+                    yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for BlobSasToken, must match a pattern of " + regexBlobSasToken, new [] { "BlobSasToken" });
+                }
             }
 
             yield break;

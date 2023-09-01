@@ -29,6 +29,9 @@ namespace data_streaming.Api
         /// <summary>
         /// Create a new data streaming
         /// </summary>
+        /// <remarks>
+        /// Create a new data streaming.
+        /// </remarks>
         /// <exception cref="data_streaming.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createNewDataStreamingRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -39,7 +42,7 @@ namespace data_streaming.Api
         /// Create a new data streaming
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create a new data streaming.
         /// </remarks>
         /// <exception cref="data_streaming.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createNewDataStreamingRequest"></param>
@@ -176,7 +179,7 @@ namespace data_streaming.Api
         /// Create a new data streaming
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create a new data streaming.
         /// </remarks>
         /// <exception cref="data_streaming.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createNewDataStreamingRequest"></param>
@@ -189,7 +192,7 @@ namespace data_streaming.Api
         /// Create a new data streaming
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create a new data streaming.
         /// </remarks>
         /// <exception cref="data_streaming.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createNewDataStreamingRequest"></param>
@@ -445,7 +448,7 @@ namespace data_streaming.Api
         }
 
         /// <summary>
-        /// Create a new data streaming 
+        /// Create a new data streaming Create a new data streaming.
         /// </summary>
         /// <exception cref="data_streaming.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createNewDataStreamingRequest"></param>
@@ -458,7 +461,7 @@ namespace data_streaming.Api
         }
 
         /// <summary>
-        /// Create a new data streaming 
+        /// Create a new data streaming Create a new data streaming.
         /// </summary>
         /// <exception cref="data_streaming.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createNewDataStreamingRequest"></param>
@@ -521,7 +524,7 @@ namespace data_streaming.Api
         }
 
         /// <summary>
-        /// Create a new data streaming 
+        /// Create a new data streaming Create a new data streaming.
         /// </summary>
         /// <exception cref="data_streaming.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createNewDataStreamingRequest"></param>
@@ -535,7 +538,7 @@ namespace data_streaming.Api
         }
 
         /// <summary>
-        /// Create a new data streaming 
+        /// Create a new data streaming Create a new data streaming.
         /// </summary>
         /// <exception cref="data_streaming.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createNewDataStreamingRequest"></param>

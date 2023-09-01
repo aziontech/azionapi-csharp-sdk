@@ -51,7 +51,7 @@ namespace data_streaming.Model
         /// <summary>
         /// Gets or Sets EndpointType
         /// </summary>
-        /// <example>&quot;big_query&quot;</example>
+        /// <example>big_query</example>
         [DataMember(Name = "endpoint_type", EmitDefaultValue = false)]
         public string EndpointType { get; set; }
 

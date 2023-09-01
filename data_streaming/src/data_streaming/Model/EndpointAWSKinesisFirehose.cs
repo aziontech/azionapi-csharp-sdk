@@ -51,7 +51,7 @@ namespace data_streaming.Model
         /// <summary>
         /// Gets or Sets EndpointType
         /// </summary>
-        /// <example>&quot;aws_kinesis_firehose&quot;</example>
+        /// <example>aws_kinesis_firehose</example>
         [DataMember(Name = "endpoint_type", EmitDefaultValue = false)]
         public string EndpointType { get; set; }
 

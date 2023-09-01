@@ -57,7 +57,7 @@ namespace data_streaming.Model
         /// <summary>
         /// Gets or Sets EndpointType
         /// </summary>
-        /// <example>&quot;s3&quot;</example>
+        /// <example>s3</example>
         [DataMember(Name = "endpoint_type", EmitDefaultValue = false)]
         public string EndpointType { get; set; }
 

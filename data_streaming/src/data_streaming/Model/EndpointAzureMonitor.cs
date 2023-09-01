@@ -51,7 +51,7 @@ namespace data_streaming.Model
         /// <summary>
         /// Gets or Sets EndpointType
         /// </summary>
-        /// <example>&quot;azure_monitor&quot;</example>
+        /// <example>azure_monitor</example>
         [DataMember(Name = "endpoint_type", EmitDefaultValue = false)]
         public string EndpointType { get; set; }
 
@@ -194,11 +194,13 @@ namespace data_streaming.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // WorkspaceId (string) pattern
-            Regex regexWorkspaceId = new Regex(@"[a-zA-Z0-9]{5}-[a-zA-Z0-9]{5}-[a-zA-Z0-9]{6}", RegexOptions.CultureInvariant);
-            if (false == regexWorkspaceId.Match(this.WorkspaceId).Success)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for WorkspaceId, must match a pattern of " + regexWorkspaceId, new [] { "WorkspaceId" });
+            if (this.WorkspaceId != null) {
+                // WorkspaceId (string) pattern
+                Regex regexWorkspaceId = new Regex(@"[a-zA-Z0-9]{5}-[a-zA-Z0-9]{5}-[a-zA-Z0-9]{6}", RegexOptions.CultureInvariant);
+                if (!regexWorkspaceId.Match(this.WorkspaceId).Success)
+                {
+                    yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for WorkspaceId, must match a pattern of " + regexWorkspaceId, new [] { "WorkspaceId" });
+                }
             }
 
             yield break;

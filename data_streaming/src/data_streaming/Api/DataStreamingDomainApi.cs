@@ -38,7 +38,7 @@ namespace data_streaming.Api
         /// <param name="selected"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DataStreamingsDomainResponse</returns>
-        DataStreamingsDomainResponse ListDataStreaming(string name = default(string), long? streamingId = default(long?), bool? selected = default(bool?), int operationIndex = 0);
+        DataStreamingsDomainResponse ListDataStreaming(string? name = default(string?), long? streamingId = default(long?), bool? selected = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// List all domains used on data streaming
@@ -52,7 +52,7 @@ namespace data_streaming.Api
         /// <param name="selected"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DataStreamingsDomainResponse</returns>
-        ApiResponse<DataStreamingsDomainResponse> ListDataStreamingWithHttpInfo(string name = default(string), long? streamingId = default(long?), bool? selected = default(bool?), int operationIndex = 0);
+        ApiResponse<DataStreamingsDomainResponse> ListDataStreamingWithHttpInfo(string? name = default(string?), long? streamingId = default(long?), bool? selected = default(bool?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -75,7 +75,7 @@ namespace data_streaming.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataStreamingsDomainResponse</returns>
-        System.Threading.Tasks.Task<DataStreamingsDomainResponse> ListDataStreamingAsync(string name = default(string), long? streamingId = default(long?), bool? selected = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DataStreamingsDomainResponse> ListDataStreamingAsync(string? name = default(string?), long? streamingId = default(long?), bool? selected = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List all domains used on data streaming
@@ -90,7 +90,7 @@ namespace data_streaming.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataStreamingsDomainResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DataStreamingsDomainResponse>> ListDataStreamingWithHttpInfoAsync(string name = default(string), long? streamingId = default(long?), bool? selected = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DataStreamingsDomainResponse>> ListDataStreamingWithHttpInfoAsync(string? name = default(string?), long? streamingId = default(long?), bool? selected = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -220,7 +220,7 @@ namespace data_streaming.Api
         /// <param name="selected"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DataStreamingsDomainResponse</returns>
-        public DataStreamingsDomainResponse ListDataStreaming(string name = default(string), long? streamingId = default(long?), bool? selected = default(bool?), int operationIndex = 0)
+        public DataStreamingsDomainResponse ListDataStreaming(string? name = default(string?), long? streamingId = default(long?), bool? selected = default(bool?), int operationIndex = 0)
         {
             data_streaming.Client.ApiResponse<DataStreamingsDomainResponse> localVarResponse = ListDataStreamingWithHttpInfo(name, streamingId, selected);
             return localVarResponse.Data;
@@ -235,7 +235,7 @@ namespace data_streaming.Api
         /// <param name="selected"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DataStreamingsDomainResponse</returns>
-        public data_streaming.Client.ApiResponse<DataStreamingsDomainResponse> ListDataStreamingWithHttpInfo(string name = default(string), long? streamingId = default(long?), bool? selected = default(bool?), int operationIndex = 0)
+        public data_streaming.Client.ApiResponse<DataStreamingsDomainResponse> ListDataStreamingWithHttpInfo(string? name = default(string?), long? streamingId = default(long?), bool? selected = default(bool?), int operationIndex = 0)
         {
             data_streaming.Client.RequestOptions localVarRequestOptions = new data_streaming.Client.RequestOptions();
 
@@ -305,7 +305,7 @@ namespace data_streaming.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DataStreamingsDomainResponse</returns>
-        public async System.Threading.Tasks.Task<DataStreamingsDomainResponse> ListDataStreamingAsync(string name = default(string), long? streamingId = default(long?), bool? selected = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DataStreamingsDomainResponse> ListDataStreamingAsync(string? name = default(string?), long? streamingId = default(long?), bool? selected = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             data_streaming.Client.ApiResponse<DataStreamingsDomainResponse> localVarResponse = await ListDataStreamingWithHttpInfoAsync(name, streamingId, selected, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -321,7 +321,7 @@ namespace data_streaming.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DataStreamingsDomainResponse)</returns>
-        public async System.Threading.Tasks.Task<data_streaming.Client.ApiResponse<DataStreamingsDomainResponse>> ListDataStreamingWithHttpInfoAsync(string name = default(string), long? streamingId = default(long?), bool? selected = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<data_streaming.Client.ApiResponse<DataStreamingsDomainResponse>> ListDataStreamingWithHttpInfoAsync(string? name = default(string?), long? streamingId = default(long?), bool? selected = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             data_streaming.Client.RequestOptions localVarRequestOptions = new data_streaming.Client.RequestOptions();

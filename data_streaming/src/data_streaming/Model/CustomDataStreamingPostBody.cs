@@ -61,7 +61,6 @@ namespace data_streaming.Model
             /// </summary>
             [EnumMember(Value = "rtm_activity")]
             RtmActivity = 4
-
         }
 
 

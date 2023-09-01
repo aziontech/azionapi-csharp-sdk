@@ -61,7 +61,6 @@ namespace data_streaming.Model
             /// Enum NUMBER_251 for value: 251
             /// </summary>
             NUMBER_251 = 251
-
         }
 
 
@@ -101,7 +100,6 @@ namespace data_streaming.Model
             /// </summary>
             [EnumMember(Value = "rtm_activity")]
             RtmActivity = 4
-
         }
 
 
