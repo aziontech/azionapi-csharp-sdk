@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **DeliveryProtocol** | **string** |  | [optional] 
 **OriginType** | **string** |  | [optional] 
 **Address** | **string** |  | [optional] 
+**MinimumTlsVersion** | **string** |  | [optional] 
 **OriginProtocolPolicy** | **string** |  | [optional] 
 **HostHeader** | **string** |  | [optional] 
 **BrowserCacheSettings** | **string** |  | [optional] 

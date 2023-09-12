@@ -36,7 +36,7 @@ namespace edgeapplications.Api
         /// <param name="contentType">The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdDelete(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), int operationIndex = 0);
+        void EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdDelete(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/:edge_application_id:/functions_instances/:functions_instances_id:
@@ -51,7 +51,7 @@ namespace edgeapplications.Api
         /// <param name="contentType">The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdDeleteWithHttpInfo(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), int operationIndex = 0);
+        ApiResponse<Object> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdDeleteWithHttpInfo(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), int operationIndex = 0);
         /// <summary>
         /// /edge_applications/:edge_application_id:/functions_instances/:functions_instances_id:
         /// </summary>
@@ -61,7 +61,7 @@ namespace edgeapplications.Api
         /// <param name="accept">The id of the edge function instance you plan to query.  (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApplicationInstancesGetOneResponse</returns>
-        ApplicationInstancesGetOneResponse EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdGet(long edgeApplicationId, long functionsInstancesId, string accept = default(string), int operationIndex = 0);
+        ApplicationInstancesGetOneResponse EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdGet(long edgeApplicationId, long functionsInstancesId, string? accept = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/:edge_application_id:/functions_instances/:functions_instances_id:
@@ -75,7 +75,7 @@ namespace edgeapplications.Api
         /// <param name="accept">The id of the edge function instance you plan to query.  (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ApplicationInstancesGetOneResponse</returns>
-        ApiResponse<ApplicationInstancesGetOneResponse> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdGetWithHttpInfo(long edgeApplicationId, long functionsInstancesId, string accept = default(string), int operationIndex = 0);
+        ApiResponse<ApplicationInstancesGetOneResponse> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdGetWithHttpInfo(long edgeApplicationId, long functionsInstancesId, string? accept = default(string?), int operationIndex = 0);
         /// <summary>
         /// /edge_applications/:edge_application_id:/functions_instances/:functions_instances_id:
         /// </summary>
@@ -87,7 +87,7 @@ namespace edgeapplications.Api
         /// <param name="applicationUpdateInstanceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApplicationInstanceResults</returns>
-        ApplicationInstanceResults EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPatch(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), ApplicationUpdateInstanceRequest applicationUpdateInstanceRequest = default(ApplicationUpdateInstanceRequest), int operationIndex = 0);
+        ApplicationInstanceResults EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPatch(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), ApplicationUpdateInstanceRequest? applicationUpdateInstanceRequest = default(ApplicationUpdateInstanceRequest?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/:edge_application_id:/functions_instances/:functions_instances_id:
@@ -103,7 +103,7 @@ namespace edgeapplications.Api
         /// <param name="applicationUpdateInstanceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ApplicationInstanceResults</returns>
-        ApiResponse<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPatchWithHttpInfo(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), ApplicationUpdateInstanceRequest applicationUpdateInstanceRequest = default(ApplicationUpdateInstanceRequest), int operationIndex = 0);
+        ApiResponse<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPatchWithHttpInfo(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), ApplicationUpdateInstanceRequest? applicationUpdateInstanceRequest = default(ApplicationUpdateInstanceRequest?), int operationIndex = 0);
         /// <summary>
         /// /edge_applications/:edge_application_id:/functions_instances/:functions_instances_id:
         /// </summary>
@@ -115,7 +115,7 @@ namespace edgeapplications.Api
         /// <param name="applicationPutInstanceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApplicationInstanceResults</returns>
-        ApplicationInstanceResults EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPut(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), ApplicationPutInstanceRequest applicationPutInstanceRequest = default(ApplicationPutInstanceRequest), int operationIndex = 0);
+        ApplicationInstanceResults EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPut(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), ApplicationPutInstanceRequest? applicationPutInstanceRequest = default(ApplicationPutInstanceRequest?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/:edge_application_id:/functions_instances/:functions_instances_id:
@@ -131,7 +131,7 @@ namespace edgeapplications.Api
         /// <param name="applicationPutInstanceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ApplicationInstanceResults</returns>
-        ApiResponse<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPutWithHttpInfo(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), ApplicationPutInstanceRequest applicationPutInstanceRequest = default(ApplicationPutInstanceRequest), int operationIndex = 0);
+        ApiResponse<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPutWithHttpInfo(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), ApplicationPutInstanceRequest? applicationPutInstanceRequest = default(ApplicationPutInstanceRequest?), int operationIndex = 0);
         /// <summary>
         /// /edge_applications/:edge_application_id:/functions_instances
         /// </summary>
@@ -145,7 +145,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApplicationInstancesGetResponse</returns>
-        ApplicationInstancesGetResponse EdgeApplicationsEdgeApplicationIdFunctionsInstancesGet(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0);
+        ApplicationInstancesGetResponse EdgeApplicationsEdgeApplicationIdFunctionsInstancesGet(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/:edge_application_id:/functions_instances
@@ -163,7 +163,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ApplicationInstancesGetResponse</returns>
-        ApiResponse<ApplicationInstancesGetResponse> EdgeApplicationsEdgeApplicationIdFunctionsInstancesGetWithHttpInfo(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0);
+        ApiResponse<ApplicationInstancesGetResponse> EdgeApplicationsEdgeApplicationIdFunctionsInstancesGetWithHttpInfo(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0);
         /// <summary>
         /// edge_application/:edge_application_id:/functions_instances
         /// </summary>
@@ -174,7 +174,7 @@ namespace edgeapplications.Api
         /// <param name="applicationCreateInstanceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApplicationInstanceResults</returns>
-        ApplicationInstanceResults EdgeApplicationsEdgeApplicationIdFunctionsInstancesPost(long edgeApplicationId, string accept = default(string), string contentType = default(string), ApplicationCreateInstanceRequest applicationCreateInstanceRequest = default(ApplicationCreateInstanceRequest), int operationIndex = 0);
+        ApplicationInstanceResults EdgeApplicationsEdgeApplicationIdFunctionsInstancesPost(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), ApplicationCreateInstanceRequest? applicationCreateInstanceRequest = default(ApplicationCreateInstanceRequest?), int operationIndex = 0);
 
         /// <summary>
         /// edge_application/:edge_application_id:/functions_instances
@@ -189,7 +189,7 @@ namespace edgeapplications.Api
         /// <param name="applicationCreateInstanceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ApplicationInstanceResults</returns>
-        ApiResponse<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesPostWithHttpInfo(long edgeApplicationId, string accept = default(string), string contentType = default(string), ApplicationCreateInstanceRequest applicationCreateInstanceRequest = default(ApplicationCreateInstanceRequest), int operationIndex = 0);
+        ApiResponse<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesPostWithHttpInfo(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), ApplicationCreateInstanceRequest? applicationCreateInstanceRequest = default(ApplicationCreateInstanceRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -213,7 +213,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdDeleteAsync(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdDeleteAsync(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/:edge_application_id:/functions_instances/:functions_instances_id:
@@ -229,7 +229,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdDeleteWithHttpInfoAsync(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdDeleteWithHttpInfoAsync(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /edge_applications/:edge_application_id:/functions_instances/:functions_instances_id:
         /// </summary>
@@ -243,7 +243,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApplicationInstancesGetOneResponse</returns>
-        System.Threading.Tasks.Task<ApplicationInstancesGetOneResponse> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdGetAsync(long edgeApplicationId, long functionsInstancesId, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApplicationInstancesGetOneResponse> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdGetAsync(long edgeApplicationId, long functionsInstancesId, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/:edge_application_id:/functions_instances/:functions_instances_id:
@@ -258,7 +258,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationInstancesGetOneResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApplicationInstancesGetOneResponse>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdGetWithHttpInfoAsync(long edgeApplicationId, long functionsInstancesId, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ApplicationInstancesGetOneResponse>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdGetWithHttpInfoAsync(long edgeApplicationId, long functionsInstancesId, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /edge_applications/:edge_application_id:/functions_instances/:functions_instances_id:
         /// </summary>
@@ -274,7 +274,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApplicationInstanceResults</returns>
-        System.Threading.Tasks.Task<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPatchAsync(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), ApplicationUpdateInstanceRequest applicationUpdateInstanceRequest = default(ApplicationUpdateInstanceRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPatchAsync(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), ApplicationUpdateInstanceRequest? applicationUpdateInstanceRequest = default(ApplicationUpdateInstanceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/:edge_application_id:/functions_instances/:functions_instances_id:
@@ -291,7 +291,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationInstanceResults)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApplicationInstanceResults>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPatchWithHttpInfoAsync(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), ApplicationUpdateInstanceRequest applicationUpdateInstanceRequest = default(ApplicationUpdateInstanceRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ApplicationInstanceResults>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPatchWithHttpInfoAsync(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), ApplicationUpdateInstanceRequest? applicationUpdateInstanceRequest = default(ApplicationUpdateInstanceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /edge_applications/:edge_application_id:/functions_instances/:functions_instances_id:
         /// </summary>
@@ -307,7 +307,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApplicationInstanceResults</returns>
-        System.Threading.Tasks.Task<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPutAsync(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), ApplicationPutInstanceRequest applicationPutInstanceRequest = default(ApplicationPutInstanceRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPutAsync(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), ApplicationPutInstanceRequest? applicationPutInstanceRequest = default(ApplicationPutInstanceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/:edge_application_id:/functions_instances/:functions_instances_id:
@@ -324,7 +324,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationInstanceResults)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApplicationInstanceResults>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPutWithHttpInfoAsync(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), ApplicationPutInstanceRequest applicationPutInstanceRequest = default(ApplicationPutInstanceRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ApplicationInstanceResults>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPutWithHttpInfoAsync(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), ApplicationPutInstanceRequest? applicationPutInstanceRequest = default(ApplicationPutInstanceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /edge_applications/:edge_application_id:/functions_instances
         /// </summary>
@@ -342,7 +342,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApplicationInstancesGetResponse</returns>
-        System.Threading.Tasks.Task<ApplicationInstancesGetResponse> EdgeApplicationsEdgeApplicationIdFunctionsInstancesGetAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApplicationInstancesGetResponse> EdgeApplicationsEdgeApplicationIdFunctionsInstancesGetAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/:edge_application_id:/functions_instances
@@ -361,7 +361,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationInstancesGetResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApplicationInstancesGetResponse>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesGetWithHttpInfoAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ApplicationInstancesGetResponse>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesGetWithHttpInfoAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// edge_application/:edge_application_id:/functions_instances
         /// </summary>
@@ -376,7 +376,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApplicationInstanceResults</returns>
-        System.Threading.Tasks.Task<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesPostAsync(long edgeApplicationId, string accept = default(string), string contentType = default(string), ApplicationCreateInstanceRequest applicationCreateInstanceRequest = default(ApplicationCreateInstanceRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesPostAsync(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), ApplicationCreateInstanceRequest? applicationCreateInstanceRequest = default(ApplicationCreateInstanceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// edge_application/:edge_application_id:/functions_instances
@@ -392,7 +392,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationInstanceResults)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApplicationInstanceResults>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesPostWithHttpInfoAsync(long edgeApplicationId, string accept = default(string), string contentType = default(string), ApplicationCreateInstanceRequest applicationCreateInstanceRequest = default(ApplicationCreateInstanceRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ApplicationInstanceResults>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesPostWithHttpInfoAsync(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), ApplicationCreateInstanceRequest? applicationCreateInstanceRequest = default(ApplicationCreateInstanceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -523,7 +523,7 @@ namespace edgeapplications.Api
         /// <param name="contentType">The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdDelete(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), int operationIndex = 0)
+        public void EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdDelete(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), int operationIndex = 0)
         {
             EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdDeleteWithHttpInfo(edgeApplicationId, functionsInstancesId, accept, contentType);
         }
@@ -538,7 +538,7 @@ namespace edgeapplications.Api
         /// <param name="contentType">The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public edgeapplications.Client.ApiResponse<Object> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdDeleteWithHttpInfo(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<Object> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdDeleteWithHttpInfo(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), int operationIndex = 0)
         {
             // verify the required parameter 'edgeApplicationId' is set
             if (edgeApplicationId == null)
@@ -618,7 +618,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdDeleteAsync(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdDeleteAsync(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             await EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdDeleteWithHttpInfoAsync(edgeApplicationId, functionsInstancesId, accept, contentType, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -634,7 +634,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<Object>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdDeleteWithHttpInfoAsync(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<Object>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdDeleteWithHttpInfoAsync(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'edgeApplicationId' is set
             if (edgeApplicationId == null)
@@ -714,7 +714,7 @@ namespace edgeapplications.Api
         /// <param name="accept">The id of the edge function instance you plan to query.  (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApplicationInstancesGetOneResponse</returns>
-        public ApplicationInstancesGetOneResponse EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdGet(long edgeApplicationId, long functionsInstancesId, string accept = default(string), int operationIndex = 0)
+        public ApplicationInstancesGetOneResponse EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdGet(long edgeApplicationId, long functionsInstancesId, string? accept = default(string?), int operationIndex = 0)
         {
             edgeapplications.Client.ApiResponse<ApplicationInstancesGetOneResponse> localVarResponse = EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdGetWithHttpInfo(edgeApplicationId, functionsInstancesId, accept);
             return localVarResponse.Data;
@@ -729,7 +729,7 @@ namespace edgeapplications.Api
         /// <param name="accept">The id of the edge function instance you plan to query.  (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ApplicationInstancesGetOneResponse</returns>
-        public edgeapplications.Client.ApiResponse<ApplicationInstancesGetOneResponse> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdGetWithHttpInfo(long edgeApplicationId, long functionsInstancesId, string accept = default(string), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<ApplicationInstancesGetOneResponse> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdGetWithHttpInfo(long edgeApplicationId, long functionsInstancesId, string? accept = default(string?), int operationIndex = 0)
         {
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();
 
@@ -793,7 +793,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApplicationInstancesGetOneResponse</returns>
-        public async System.Threading.Tasks.Task<ApplicationInstancesGetOneResponse> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdGetAsync(long edgeApplicationId, long functionsInstancesId, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ApplicationInstancesGetOneResponse> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdGetAsync(long edgeApplicationId, long functionsInstancesId, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgeapplications.Client.ApiResponse<ApplicationInstancesGetOneResponse> localVarResponse = await EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdGetWithHttpInfoAsync(edgeApplicationId, functionsInstancesId, accept, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -809,7 +809,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationInstancesGetOneResponse)</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<ApplicationInstancesGetOneResponse>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdGetWithHttpInfoAsync(long edgeApplicationId, long functionsInstancesId, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<ApplicationInstancesGetOneResponse>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdGetWithHttpInfoAsync(long edgeApplicationId, long functionsInstancesId, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();
@@ -876,7 +876,7 @@ namespace edgeapplications.Api
         /// <param name="applicationUpdateInstanceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApplicationInstanceResults</returns>
-        public ApplicationInstanceResults EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPatch(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), ApplicationUpdateInstanceRequest applicationUpdateInstanceRequest = default(ApplicationUpdateInstanceRequest), int operationIndex = 0)
+        public ApplicationInstanceResults EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPatch(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), ApplicationUpdateInstanceRequest? applicationUpdateInstanceRequest = default(ApplicationUpdateInstanceRequest?), int operationIndex = 0)
         {
             edgeapplications.Client.ApiResponse<ApplicationInstanceResults> localVarResponse = EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPatchWithHttpInfo(edgeApplicationId, functionsInstancesId, accept, contentType, applicationUpdateInstanceRequest);
             return localVarResponse.Data;
@@ -893,7 +893,7 @@ namespace edgeapplications.Api
         /// <param name="applicationUpdateInstanceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ApplicationInstanceResults</returns>
-        public edgeapplications.Client.ApiResponse<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPatchWithHttpInfo(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), ApplicationUpdateInstanceRequest applicationUpdateInstanceRequest = default(ApplicationUpdateInstanceRequest), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPatchWithHttpInfo(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), ApplicationUpdateInstanceRequest? applicationUpdateInstanceRequest = default(ApplicationUpdateInstanceRequest?), int operationIndex = 0)
         {
             // verify the required parameter 'edgeApplicationId' is set
             if (edgeApplicationId == null)
@@ -977,7 +977,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApplicationInstanceResults</returns>
-        public async System.Threading.Tasks.Task<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPatchAsync(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), ApplicationUpdateInstanceRequest applicationUpdateInstanceRequest = default(ApplicationUpdateInstanceRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPatchAsync(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), ApplicationUpdateInstanceRequest? applicationUpdateInstanceRequest = default(ApplicationUpdateInstanceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgeapplications.Client.ApiResponse<ApplicationInstanceResults> localVarResponse = await EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPatchWithHttpInfoAsync(edgeApplicationId, functionsInstancesId, accept, contentType, applicationUpdateInstanceRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -995,7 +995,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationInstanceResults)</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<ApplicationInstanceResults>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPatchWithHttpInfoAsync(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), ApplicationUpdateInstanceRequest applicationUpdateInstanceRequest = default(ApplicationUpdateInstanceRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<ApplicationInstanceResults>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPatchWithHttpInfoAsync(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), ApplicationUpdateInstanceRequest? applicationUpdateInstanceRequest = default(ApplicationUpdateInstanceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'edgeApplicationId' is set
             if (edgeApplicationId == null)
@@ -1080,7 +1080,7 @@ namespace edgeapplications.Api
         /// <param name="applicationPutInstanceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApplicationInstanceResults</returns>
-        public ApplicationInstanceResults EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPut(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), ApplicationPutInstanceRequest applicationPutInstanceRequest = default(ApplicationPutInstanceRequest), int operationIndex = 0)
+        public ApplicationInstanceResults EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPut(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), ApplicationPutInstanceRequest? applicationPutInstanceRequest = default(ApplicationPutInstanceRequest?), int operationIndex = 0)
         {
             edgeapplications.Client.ApiResponse<ApplicationInstanceResults> localVarResponse = EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPutWithHttpInfo(edgeApplicationId, functionsInstancesId, accept, contentType, applicationPutInstanceRequest);
             return localVarResponse.Data;
@@ -1097,7 +1097,7 @@ namespace edgeapplications.Api
         /// <param name="applicationPutInstanceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ApplicationInstanceResults</returns>
-        public edgeapplications.Client.ApiResponse<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPutWithHttpInfo(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), ApplicationPutInstanceRequest applicationPutInstanceRequest = default(ApplicationPutInstanceRequest), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPutWithHttpInfo(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), ApplicationPutInstanceRequest? applicationPutInstanceRequest = default(ApplicationPutInstanceRequest?), int operationIndex = 0)
         {
             // verify the required parameter 'edgeApplicationId' is set
             if (edgeApplicationId == null)
@@ -1181,7 +1181,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApplicationInstanceResults</returns>
-        public async System.Threading.Tasks.Task<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPutAsync(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), ApplicationPutInstanceRequest applicationPutInstanceRequest = default(ApplicationPutInstanceRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPutAsync(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), ApplicationPutInstanceRequest? applicationPutInstanceRequest = default(ApplicationPutInstanceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgeapplications.Client.ApiResponse<ApplicationInstanceResults> localVarResponse = await EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPutWithHttpInfoAsync(edgeApplicationId, functionsInstancesId, accept, contentType, applicationPutInstanceRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1199,7 +1199,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationInstanceResults)</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<ApplicationInstanceResults>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPutWithHttpInfoAsync(string edgeApplicationId, string functionsInstancesId, string accept = default(string), string contentType = default(string), ApplicationPutInstanceRequest applicationPutInstanceRequest = default(ApplicationPutInstanceRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<ApplicationInstanceResults>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesFunctionsInstancesIdPutWithHttpInfoAsync(string edgeApplicationId, string functionsInstancesId, string? accept = default(string?), string? contentType = default(string?), ApplicationPutInstanceRequest? applicationPutInstanceRequest = default(ApplicationPutInstanceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'edgeApplicationId' is set
             if (edgeApplicationId == null)
@@ -1286,7 +1286,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApplicationInstancesGetResponse</returns>
-        public ApplicationInstancesGetResponse EdgeApplicationsEdgeApplicationIdFunctionsInstancesGet(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0)
+        public ApplicationInstancesGetResponse EdgeApplicationsEdgeApplicationIdFunctionsInstancesGet(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0)
         {
             edgeapplications.Client.ApiResponse<ApplicationInstancesGetResponse> localVarResponse = EdgeApplicationsEdgeApplicationIdFunctionsInstancesGetWithHttpInfo(edgeApplicationId, page, pageSize, filter, orderBy, sort, accept);
             return localVarResponse.Data;
@@ -1305,7 +1305,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ApplicationInstancesGetResponse</returns>
-        public edgeapplications.Client.ApiResponse<ApplicationInstancesGetResponse> EdgeApplicationsEdgeApplicationIdFunctionsInstancesGetWithHttpInfo(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<ApplicationInstancesGetResponse> EdgeApplicationsEdgeApplicationIdFunctionsInstancesGetWithHttpInfo(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0)
         {
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();
 
@@ -1392,7 +1392,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApplicationInstancesGetResponse</returns>
-        public async System.Threading.Tasks.Task<ApplicationInstancesGetResponse> EdgeApplicationsEdgeApplicationIdFunctionsInstancesGetAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ApplicationInstancesGetResponse> EdgeApplicationsEdgeApplicationIdFunctionsInstancesGetAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgeapplications.Client.ApiResponse<ApplicationInstancesGetResponse> localVarResponse = await EdgeApplicationsEdgeApplicationIdFunctionsInstancesGetWithHttpInfoAsync(edgeApplicationId, page, pageSize, filter, orderBy, sort, accept, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1412,7 +1412,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationInstancesGetResponse)</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<ApplicationInstancesGetResponse>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesGetWithHttpInfoAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<ApplicationInstancesGetResponse>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesGetWithHttpInfoAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();
@@ -1497,7 +1497,7 @@ namespace edgeapplications.Api
         /// <param name="applicationCreateInstanceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApplicationInstanceResults</returns>
-        public ApplicationInstanceResults EdgeApplicationsEdgeApplicationIdFunctionsInstancesPost(long edgeApplicationId, string accept = default(string), string contentType = default(string), ApplicationCreateInstanceRequest applicationCreateInstanceRequest = default(ApplicationCreateInstanceRequest), int operationIndex = 0)
+        public ApplicationInstanceResults EdgeApplicationsEdgeApplicationIdFunctionsInstancesPost(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), ApplicationCreateInstanceRequest? applicationCreateInstanceRequest = default(ApplicationCreateInstanceRequest?), int operationIndex = 0)
         {
             edgeapplications.Client.ApiResponse<ApplicationInstanceResults> localVarResponse = EdgeApplicationsEdgeApplicationIdFunctionsInstancesPostWithHttpInfo(edgeApplicationId, accept, contentType, applicationCreateInstanceRequest);
             return localVarResponse.Data;
@@ -1513,7 +1513,7 @@ namespace edgeapplications.Api
         /// <param name="applicationCreateInstanceRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ApplicationInstanceResults</returns>
-        public edgeapplications.Client.ApiResponse<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesPostWithHttpInfo(long edgeApplicationId, string accept = default(string), string contentType = default(string), ApplicationCreateInstanceRequest applicationCreateInstanceRequest = default(ApplicationCreateInstanceRequest), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesPostWithHttpInfo(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), ApplicationCreateInstanceRequest? applicationCreateInstanceRequest = default(ApplicationCreateInstanceRequest?), int operationIndex = 0)
         {
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();
 
@@ -1583,7 +1583,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApplicationInstanceResults</returns>
-        public async System.Threading.Tasks.Task<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesPostAsync(long edgeApplicationId, string accept = default(string), string contentType = default(string), ApplicationCreateInstanceRequest applicationCreateInstanceRequest = default(ApplicationCreateInstanceRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ApplicationInstanceResults> EdgeApplicationsEdgeApplicationIdFunctionsInstancesPostAsync(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), ApplicationCreateInstanceRequest? applicationCreateInstanceRequest = default(ApplicationCreateInstanceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgeapplications.Client.ApiResponse<ApplicationInstanceResults> localVarResponse = await EdgeApplicationsEdgeApplicationIdFunctionsInstancesPostWithHttpInfoAsync(edgeApplicationId, accept, contentType, applicationCreateInstanceRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1600,7 +1600,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplicationInstanceResults)</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<ApplicationInstanceResults>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesPostWithHttpInfoAsync(long edgeApplicationId, string accept = default(string), string contentType = default(string), ApplicationCreateInstanceRequest applicationCreateInstanceRequest = default(ApplicationCreateInstanceRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<ApplicationInstanceResults>> EdgeApplicationsEdgeApplicationIdFunctionsInstancesPostWithHttpInfoAsync(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), ApplicationCreateInstanceRequest? applicationCreateInstanceRequest = default(ApplicationCreateInstanceRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();

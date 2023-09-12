@@ -35,7 +35,7 @@ namespace edgeapplications.Api
         /// <param name="accept">The id of the Device Groups that you plan to delete. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdDelete(long edgeApplicationId, long deviceGroupId, string accept = default(string), int operationIndex = 0);
+        void EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdDelete(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/device_groups/{device_group_id}
@@ -49,7 +49,7 @@ namespace edgeapplications.Api
         /// <param name="accept">The id of the Device Groups that you plan to delete. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdDeleteWithHttpInfo(long edgeApplicationId, long deviceGroupId, string accept = default(string), int operationIndex = 0);
+        ApiResponse<Object> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdDeleteWithHttpInfo(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), int operationIndex = 0);
         /// <summary>
         /// /edge_applications/{edge_application_id}/device_groups/{device_group_id}
         /// </summary>
@@ -59,7 +59,7 @@ namespace edgeapplications.Api
         /// <param name="accept">The id of the Device Groups that you plan to query. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DeviceGroupsIdResponse</returns>
-        DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGet(long edgeApplicationId, long deviceGroupId, string accept = default(string), int operationIndex = 0);
+        DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGet(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/device_groups/{device_group_id}
@@ -73,7 +73,7 @@ namespace edgeapplications.Api
         /// <param name="accept">The id of the Device Groups that you plan to query. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DeviceGroupsIdResponse</returns>
-        ApiResponse<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGetWithHttpInfo(long edgeApplicationId, long deviceGroupId, string accept = default(string), int operationIndex = 0);
+        ApiResponse<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGetWithHttpInfo(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), int operationIndex = 0);
         /// <summary>
         /// /edge_applications/{edge_application_id}/device_groups/{device_group_id}
         /// </summary>
@@ -85,7 +85,7 @@ namespace edgeapplications.Api
         /// <param name="patchDeviceGroupsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DeviceGroupsIdResponse</returns>
-        DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatch(long edgeApplicationId, long deviceGroupId, string accept = default(string), string contentType = default(string), PatchDeviceGroupsRequest patchDeviceGroupsRequest = default(PatchDeviceGroupsRequest), int operationIndex = 0);
+        DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatch(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), string? contentType = default(string?), PatchDeviceGroupsRequest? patchDeviceGroupsRequest = default(PatchDeviceGroupsRequest?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/device_groups/{device_group_id}
@@ -101,7 +101,7 @@ namespace edgeapplications.Api
         /// <param name="patchDeviceGroupsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DeviceGroupsIdResponse</returns>
-        ApiResponse<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatchWithHttpInfo(long edgeApplicationId, long deviceGroupId, string accept = default(string), string contentType = default(string), PatchDeviceGroupsRequest patchDeviceGroupsRequest = default(PatchDeviceGroupsRequest), int operationIndex = 0);
+        ApiResponse<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatchWithHttpInfo(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), string? contentType = default(string?), PatchDeviceGroupsRequest? patchDeviceGroupsRequest = default(PatchDeviceGroupsRequest?), int operationIndex = 0);
         /// <summary>
         /// /edge_applications/{edge_application_id}/device_groups/{device_group_id}
         /// </summary>
@@ -113,7 +113,7 @@ namespace edgeapplications.Api
         /// <param name="updateDeviceGroupsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DeviceGroupsIdResponse</returns>
-        DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPut(long edgeApplicationId, long deviceGroupId, string accept = default(string), string contentType = default(string), UpdateDeviceGroupsRequest updateDeviceGroupsRequest = default(UpdateDeviceGroupsRequest), int operationIndex = 0);
+        DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPut(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), string? contentType = default(string?), UpdateDeviceGroupsRequest? updateDeviceGroupsRequest = default(UpdateDeviceGroupsRequest?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/device_groups/{device_group_id}
@@ -129,7 +129,7 @@ namespace edgeapplications.Api
         /// <param name="updateDeviceGroupsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DeviceGroupsIdResponse</returns>
-        ApiResponse<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPutWithHttpInfo(long edgeApplicationId, long deviceGroupId, string accept = default(string), string contentType = default(string), UpdateDeviceGroupsRequest updateDeviceGroupsRequest = default(UpdateDeviceGroupsRequest), int operationIndex = 0);
+        ApiResponse<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPutWithHttpInfo(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), string? contentType = default(string?), UpdateDeviceGroupsRequest? updateDeviceGroupsRequest = default(UpdateDeviceGroupsRequest?), int operationIndex = 0);
         /// <summary>
         /// /edge_applications/{edge_application_id}/device_groups
         /// </summary>
@@ -143,7 +143,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DeviceGroupsResponse</returns>
-        DeviceGroupsResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsGet(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0);
+        DeviceGroupsResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsGet(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/device_groups
@@ -161,7 +161,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DeviceGroupsResponse</returns>
-        ApiResponse<DeviceGroupsResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsGetWithHttpInfo(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0);
+        ApiResponse<DeviceGroupsResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsGetWithHttpInfo(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0);
         /// <summary>
         /// /edge_applications/{edge_application_id}/device_groups
         /// </summary>
@@ -172,7 +172,7 @@ namespace edgeapplications.Api
         /// <param name="createDeviceGroupsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DeviceGroupsIdResponse</returns>
-        DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsPost(long edgeApplicationId, string accept = default(string), string contentType = default(string), CreateDeviceGroupsRequest createDeviceGroupsRequest = default(CreateDeviceGroupsRequest), int operationIndex = 0);
+        DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsPost(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), CreateDeviceGroupsRequest? createDeviceGroupsRequest = default(CreateDeviceGroupsRequest?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/device_groups
@@ -187,7 +187,7 @@ namespace edgeapplications.Api
         /// <param name="createDeviceGroupsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DeviceGroupsIdResponse</returns>
-        ApiResponse<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsPostWithHttpInfo(long edgeApplicationId, string accept = default(string), string contentType = default(string), CreateDeviceGroupsRequest createDeviceGroupsRequest = default(CreateDeviceGroupsRequest), int operationIndex = 0);
+        ApiResponse<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsPostWithHttpInfo(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), CreateDeviceGroupsRequest? createDeviceGroupsRequest = default(CreateDeviceGroupsRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -210,7 +210,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdDeleteAsync(long edgeApplicationId, long deviceGroupId, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdDeleteAsync(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/device_groups/{device_group_id}
@@ -225,7 +225,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdDeleteWithHttpInfoAsync(long edgeApplicationId, long deviceGroupId, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdDeleteWithHttpInfoAsync(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /edge_applications/{edge_application_id}/device_groups/{device_group_id}
         /// </summary>
@@ -239,7 +239,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeviceGroupsIdResponse</returns>
-        System.Threading.Tasks.Task<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGetAsync(long edgeApplicationId, long deviceGroupId, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGetAsync(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/device_groups/{device_group_id}
@@ -254,7 +254,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeviceGroupsIdResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeviceGroupsIdResponse>> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGetWithHttpInfoAsync(long edgeApplicationId, long deviceGroupId, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DeviceGroupsIdResponse>> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGetWithHttpInfoAsync(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /edge_applications/{edge_application_id}/device_groups/{device_group_id}
         /// </summary>
@@ -270,7 +270,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeviceGroupsIdResponse</returns>
-        System.Threading.Tasks.Task<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatchAsync(long edgeApplicationId, long deviceGroupId, string accept = default(string), string contentType = default(string), PatchDeviceGroupsRequest patchDeviceGroupsRequest = default(PatchDeviceGroupsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatchAsync(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), string? contentType = default(string?), PatchDeviceGroupsRequest? patchDeviceGroupsRequest = default(PatchDeviceGroupsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/device_groups/{device_group_id}
@@ -287,7 +287,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeviceGroupsIdResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeviceGroupsIdResponse>> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatchWithHttpInfoAsync(long edgeApplicationId, long deviceGroupId, string accept = default(string), string contentType = default(string), PatchDeviceGroupsRequest patchDeviceGroupsRequest = default(PatchDeviceGroupsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DeviceGroupsIdResponse>> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatchWithHttpInfoAsync(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), string? contentType = default(string?), PatchDeviceGroupsRequest? patchDeviceGroupsRequest = default(PatchDeviceGroupsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /edge_applications/{edge_application_id}/device_groups/{device_group_id}
         /// </summary>
@@ -303,7 +303,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeviceGroupsIdResponse</returns>
-        System.Threading.Tasks.Task<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPutAsync(long edgeApplicationId, long deviceGroupId, string accept = default(string), string contentType = default(string), UpdateDeviceGroupsRequest updateDeviceGroupsRequest = default(UpdateDeviceGroupsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPutAsync(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), string? contentType = default(string?), UpdateDeviceGroupsRequest? updateDeviceGroupsRequest = default(UpdateDeviceGroupsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/device_groups/{device_group_id}
@@ -320,7 +320,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeviceGroupsIdResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeviceGroupsIdResponse>> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPutWithHttpInfoAsync(long edgeApplicationId, long deviceGroupId, string accept = default(string), string contentType = default(string), UpdateDeviceGroupsRequest updateDeviceGroupsRequest = default(UpdateDeviceGroupsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DeviceGroupsIdResponse>> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPutWithHttpInfoAsync(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), string? contentType = default(string?), UpdateDeviceGroupsRequest? updateDeviceGroupsRequest = default(UpdateDeviceGroupsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /edge_applications/{edge_application_id}/device_groups
         /// </summary>
@@ -338,7 +338,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeviceGroupsResponse</returns>
-        System.Threading.Tasks.Task<DeviceGroupsResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsGetAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DeviceGroupsResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsGetAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/device_groups
@@ -357,7 +357,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeviceGroupsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeviceGroupsResponse>> EdgeApplicationsEdgeApplicationIdDeviceGroupsGetWithHttpInfoAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DeviceGroupsResponse>> EdgeApplicationsEdgeApplicationIdDeviceGroupsGetWithHttpInfoAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /edge_applications/{edge_application_id}/device_groups
         /// </summary>
@@ -372,7 +372,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeviceGroupsIdResponse</returns>
-        System.Threading.Tasks.Task<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsPostAsync(long edgeApplicationId, string accept = default(string), string contentType = default(string), CreateDeviceGroupsRequest createDeviceGroupsRequest = default(CreateDeviceGroupsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsPostAsync(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), CreateDeviceGroupsRequest? createDeviceGroupsRequest = default(CreateDeviceGroupsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/device_groups
@@ -388,7 +388,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeviceGroupsIdResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeviceGroupsIdResponse>> EdgeApplicationsEdgeApplicationIdDeviceGroupsPostWithHttpInfoAsync(long edgeApplicationId, string accept = default(string), string contentType = default(string), CreateDeviceGroupsRequest createDeviceGroupsRequest = default(CreateDeviceGroupsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DeviceGroupsIdResponse>> EdgeApplicationsEdgeApplicationIdDeviceGroupsPostWithHttpInfoAsync(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), CreateDeviceGroupsRequest? createDeviceGroupsRequest = default(CreateDeviceGroupsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -518,7 +518,7 @@ namespace edgeapplications.Api
         /// <param name="accept">The id of the Device Groups that you plan to delete. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdDelete(long edgeApplicationId, long deviceGroupId, string accept = default(string), int operationIndex = 0)
+        public void EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdDelete(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), int operationIndex = 0)
         {
             EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdDeleteWithHttpInfo(edgeApplicationId, deviceGroupId, accept);
         }
@@ -532,7 +532,7 @@ namespace edgeapplications.Api
         /// <param name="accept">The id of the Device Groups that you plan to delete. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public edgeapplications.Client.ApiResponse<Object> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdDeleteWithHttpInfo(long edgeApplicationId, long deviceGroupId, string accept = default(string), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<Object> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdDeleteWithHttpInfo(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), int operationIndex = 0)
         {
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();
 
@@ -595,7 +595,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdDeleteAsync(long edgeApplicationId, long deviceGroupId, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdDeleteAsync(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             await EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdDeleteWithHttpInfoAsync(edgeApplicationId, deviceGroupId, accept, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -610,7 +610,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<Object>> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdDeleteWithHttpInfoAsync(long edgeApplicationId, long deviceGroupId, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<Object>> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdDeleteWithHttpInfoAsync(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();
@@ -674,7 +674,7 @@ namespace edgeapplications.Api
         /// <param name="accept">The id of the Device Groups that you plan to query. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DeviceGroupsIdResponse</returns>
-        public DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGet(long edgeApplicationId, long deviceGroupId, string accept = default(string), int operationIndex = 0)
+        public DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGet(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), int operationIndex = 0)
         {
             edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse> localVarResponse = EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGetWithHttpInfo(edgeApplicationId, deviceGroupId, accept);
             return localVarResponse.Data;
@@ -689,7 +689,7 @@ namespace edgeapplications.Api
         /// <param name="accept">The id of the Device Groups that you plan to query. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DeviceGroupsIdResponse</returns>
-        public edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGetWithHttpInfo(long edgeApplicationId, long deviceGroupId, string accept = default(string), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGetWithHttpInfo(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), int operationIndex = 0)
         {
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();
 
@@ -753,7 +753,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeviceGroupsIdResponse</returns>
-        public async System.Threading.Tasks.Task<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGetAsync(long edgeApplicationId, long deviceGroupId, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGetAsync(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse> localVarResponse = await EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGetWithHttpInfoAsync(edgeApplicationId, deviceGroupId, accept, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -769,7 +769,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeviceGroupsIdResponse)</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse>> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGetWithHttpInfoAsync(long edgeApplicationId, long deviceGroupId, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse>> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGetWithHttpInfoAsync(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();
@@ -836,7 +836,7 @@ namespace edgeapplications.Api
         /// <param name="patchDeviceGroupsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DeviceGroupsIdResponse</returns>
-        public DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatch(long edgeApplicationId, long deviceGroupId, string accept = default(string), string contentType = default(string), PatchDeviceGroupsRequest patchDeviceGroupsRequest = default(PatchDeviceGroupsRequest), int operationIndex = 0)
+        public DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatch(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), string? contentType = default(string?), PatchDeviceGroupsRequest? patchDeviceGroupsRequest = default(PatchDeviceGroupsRequest?), int operationIndex = 0)
         {
             edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse> localVarResponse = EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatchWithHttpInfo(edgeApplicationId, deviceGroupId, accept, contentType, patchDeviceGroupsRequest);
             return localVarResponse.Data;
@@ -853,7 +853,7 @@ namespace edgeapplications.Api
         /// <param name="patchDeviceGroupsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DeviceGroupsIdResponse</returns>
-        public edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatchWithHttpInfo(long edgeApplicationId, long deviceGroupId, string accept = default(string), string contentType = default(string), PatchDeviceGroupsRequest patchDeviceGroupsRequest = default(PatchDeviceGroupsRequest), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatchWithHttpInfo(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), string? contentType = default(string?), PatchDeviceGroupsRequest? patchDeviceGroupsRequest = default(PatchDeviceGroupsRequest?), int operationIndex = 0)
         {
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();
 
@@ -925,7 +925,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeviceGroupsIdResponse</returns>
-        public async System.Threading.Tasks.Task<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatchAsync(long edgeApplicationId, long deviceGroupId, string accept = default(string), string contentType = default(string), PatchDeviceGroupsRequest patchDeviceGroupsRequest = default(PatchDeviceGroupsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatchAsync(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), string? contentType = default(string?), PatchDeviceGroupsRequest? patchDeviceGroupsRequest = default(PatchDeviceGroupsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse> localVarResponse = await EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatchWithHttpInfoAsync(edgeApplicationId, deviceGroupId, accept, contentType, patchDeviceGroupsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -943,7 +943,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeviceGroupsIdResponse)</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse>> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatchWithHttpInfoAsync(long edgeApplicationId, long deviceGroupId, string accept = default(string), string contentType = default(string), PatchDeviceGroupsRequest patchDeviceGroupsRequest = default(PatchDeviceGroupsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse>> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatchWithHttpInfoAsync(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), string? contentType = default(string?), PatchDeviceGroupsRequest? patchDeviceGroupsRequest = default(PatchDeviceGroupsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();
@@ -1016,7 +1016,7 @@ namespace edgeapplications.Api
         /// <param name="updateDeviceGroupsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DeviceGroupsIdResponse</returns>
-        public DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPut(long edgeApplicationId, long deviceGroupId, string accept = default(string), string contentType = default(string), UpdateDeviceGroupsRequest updateDeviceGroupsRequest = default(UpdateDeviceGroupsRequest), int operationIndex = 0)
+        public DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPut(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), string? contentType = default(string?), UpdateDeviceGroupsRequest? updateDeviceGroupsRequest = default(UpdateDeviceGroupsRequest?), int operationIndex = 0)
         {
             edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse> localVarResponse = EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPutWithHttpInfo(edgeApplicationId, deviceGroupId, accept, contentType, updateDeviceGroupsRequest);
             return localVarResponse.Data;
@@ -1033,7 +1033,7 @@ namespace edgeapplications.Api
         /// <param name="updateDeviceGroupsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DeviceGroupsIdResponse</returns>
-        public edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPutWithHttpInfo(long edgeApplicationId, long deviceGroupId, string accept = default(string), string contentType = default(string), UpdateDeviceGroupsRequest updateDeviceGroupsRequest = default(UpdateDeviceGroupsRequest), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPutWithHttpInfo(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), string? contentType = default(string?), UpdateDeviceGroupsRequest? updateDeviceGroupsRequest = default(UpdateDeviceGroupsRequest?), int operationIndex = 0)
         {
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();
 
@@ -1105,7 +1105,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeviceGroupsIdResponse</returns>
-        public async System.Threading.Tasks.Task<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPutAsync(long edgeApplicationId, long deviceGroupId, string accept = default(string), string contentType = default(string), UpdateDeviceGroupsRequest updateDeviceGroupsRequest = default(UpdateDeviceGroupsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPutAsync(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), string? contentType = default(string?), UpdateDeviceGroupsRequest? updateDeviceGroupsRequest = default(UpdateDeviceGroupsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse> localVarResponse = await EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPutWithHttpInfoAsync(edgeApplicationId, deviceGroupId, accept, contentType, updateDeviceGroupsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1123,7 +1123,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeviceGroupsIdResponse)</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse>> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPutWithHttpInfoAsync(long edgeApplicationId, long deviceGroupId, string accept = default(string), string contentType = default(string), UpdateDeviceGroupsRequest updateDeviceGroupsRequest = default(UpdateDeviceGroupsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse>> EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPutWithHttpInfoAsync(long edgeApplicationId, long deviceGroupId, string? accept = default(string?), string? contentType = default(string?), UpdateDeviceGroupsRequest? updateDeviceGroupsRequest = default(UpdateDeviceGroupsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();
@@ -1198,7 +1198,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DeviceGroupsResponse</returns>
-        public DeviceGroupsResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsGet(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0)
+        public DeviceGroupsResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsGet(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0)
         {
             edgeapplications.Client.ApiResponse<DeviceGroupsResponse> localVarResponse = EdgeApplicationsEdgeApplicationIdDeviceGroupsGetWithHttpInfo(edgeApplicationId, page, pageSize, filter, orderBy, sort, accept);
             return localVarResponse.Data;
@@ -1217,7 +1217,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DeviceGroupsResponse</returns>
-        public edgeapplications.Client.ApiResponse<DeviceGroupsResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsGetWithHttpInfo(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<DeviceGroupsResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsGetWithHttpInfo(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0)
         {
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();
 
@@ -1304,7 +1304,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeviceGroupsResponse</returns>
-        public async System.Threading.Tasks.Task<DeviceGroupsResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsGetAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DeviceGroupsResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsGetAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgeapplications.Client.ApiResponse<DeviceGroupsResponse> localVarResponse = await EdgeApplicationsEdgeApplicationIdDeviceGroupsGetWithHttpInfoAsync(edgeApplicationId, page, pageSize, filter, orderBy, sort, accept, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1324,7 +1324,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeviceGroupsResponse)</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<DeviceGroupsResponse>> EdgeApplicationsEdgeApplicationIdDeviceGroupsGetWithHttpInfoAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<DeviceGroupsResponse>> EdgeApplicationsEdgeApplicationIdDeviceGroupsGetWithHttpInfoAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();
@@ -1409,7 +1409,7 @@ namespace edgeapplications.Api
         /// <param name="createDeviceGroupsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DeviceGroupsIdResponse</returns>
-        public DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsPost(long edgeApplicationId, string accept = default(string), string contentType = default(string), CreateDeviceGroupsRequest createDeviceGroupsRequest = default(CreateDeviceGroupsRequest), int operationIndex = 0)
+        public DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsPost(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), CreateDeviceGroupsRequest? createDeviceGroupsRequest = default(CreateDeviceGroupsRequest?), int operationIndex = 0)
         {
             edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse> localVarResponse = EdgeApplicationsEdgeApplicationIdDeviceGroupsPostWithHttpInfo(edgeApplicationId, accept, contentType, createDeviceGroupsRequest);
             return localVarResponse.Data;
@@ -1425,7 +1425,7 @@ namespace edgeapplications.Api
         /// <param name="createDeviceGroupsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DeviceGroupsIdResponse</returns>
-        public edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsPostWithHttpInfo(long edgeApplicationId, string accept = default(string), string contentType = default(string), CreateDeviceGroupsRequest createDeviceGroupsRequest = default(CreateDeviceGroupsRequest), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsPostWithHttpInfo(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), CreateDeviceGroupsRequest? createDeviceGroupsRequest = default(CreateDeviceGroupsRequest?), int operationIndex = 0)
         {
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();
 
@@ -1495,7 +1495,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeviceGroupsIdResponse</returns>
-        public async System.Threading.Tasks.Task<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsPostAsync(long edgeApplicationId, string accept = default(string), string contentType = default(string), CreateDeviceGroupsRequest createDeviceGroupsRequest = default(CreateDeviceGroupsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DeviceGroupsIdResponse> EdgeApplicationsEdgeApplicationIdDeviceGroupsPostAsync(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), CreateDeviceGroupsRequest? createDeviceGroupsRequest = default(CreateDeviceGroupsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse> localVarResponse = await EdgeApplicationsEdgeApplicationIdDeviceGroupsPostWithHttpInfoAsync(edgeApplicationId, accept, contentType, createDeviceGroupsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1512,7 +1512,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeviceGroupsIdResponse)</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse>> EdgeApplicationsEdgeApplicationIdDeviceGroupsPostWithHttpInfoAsync(long edgeApplicationId, string accept = default(string), string contentType = default(string), CreateDeviceGroupsRequest createDeviceGroupsRequest = default(CreateDeviceGroupsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<DeviceGroupsIdResponse>> EdgeApplicationsEdgeApplicationIdDeviceGroupsPostWithHttpInfoAsync(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), CreateDeviceGroupsRequest? createDeviceGroupsRequest = default(CreateDeviceGroupsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();

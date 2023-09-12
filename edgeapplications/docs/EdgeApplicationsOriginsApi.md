@@ -13,7 +13,7 @@ All URIs are relative to *https://api.azionapi.net*
 
 <a id="edgeapplicationsedgeapplicationidoriginsget"></a>
 # **EdgeApplicationsEdgeApplicationIdOriginsGet**
-> OriginsResponse EdgeApplicationsEdgeApplicationIdOriginsGet (long edgeApplicationId, long? page = null, long? pageSize = null, string filter = null, string orderBy = null, string sort = null, string accept = null)
+> OriginsResponse EdgeApplicationsEdgeApplicationIdOriginsGet (long edgeApplicationId, long? page = null, long? pageSize = null, string? filter = null, string? orderBy = null, string? sort = null, string? accept = null)
 
 /edge_applications/{edge_application_id}/origins
 
@@ -42,10 +42,10 @@ namespace Example
             var edgeApplicationId = 789L;  // long | 
             var page = 789L;  // long? |  (optional) 
             var pageSize = 789L;  // long? |  (optional) 
-            var filter = "filter_example";  // string |  (optional) 
-            var orderBy = "orderBy_example";  // string |  (optional) 
-            var sort = "sort_example";  // string |  (optional) 
-            var accept = application/json; version=3;  // string |  (optional) 
+            var filter = "filter_example";  // string? |  (optional) 
+            var orderBy = "orderBy_example";  // string? |  (optional) 
+            var sort = "sort_example";  // string? |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
 
             try
             {
@@ -91,10 +91,10 @@ catch (ApiException e)
 | **edgeApplicationId** | **long** |  |  |
 | **page** | **long?** |  | [optional]  |
 | **pageSize** | **long?** |  | [optional]  |
-| **filter** | **string** |  | [optional]  |
-| **orderBy** | **string** |  | [optional]  |
-| **sort** | **string** |  | [optional]  |
-| **accept** | **string** |  | [optional]  |
+| **filter** | **string?** |  | [optional]  |
+| **orderBy** | **string?** |  | [optional]  |
+| **sort** | **string?** |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
 
 ### Return type
 
@@ -124,7 +124,7 @@ catch (ApiException e)
 
 <a id="edgeapplicationsedgeapplicationidoriginsoriginkeydelete"></a>
 # **EdgeApplicationsEdgeApplicationIdOriginsOriginKeyDelete**
-> void EdgeApplicationsEdgeApplicationIdOriginsOriginKeyDelete (long edgeApplicationId, string originKey, string accept = null)
+> void EdgeApplicationsEdgeApplicationIdOriginsOriginKeyDelete (long edgeApplicationId, string originKey, string? accept = null)
 
 /edge_applications/{edge_application_id}/origins/{origin_id}
 
@@ -152,7 +152,7 @@ namespace Example
             var apiInstance = new EdgeApplicationsOriginsApi(config);
             var edgeApplicationId = 789L;  // long | 
             var originKey = "originKey_example";  // string | 
-            var accept = application/json; version=3;  // string | The id of the Origin that you plan to delete. (optional) 
+            var accept = application/json; version=3;  // string? | The id of the Origin that you plan to delete. (optional) 
 
             try
             {
@@ -193,7 +193,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **edgeApplicationId** | **long** |  |  |
 | **originKey** | **string** |  |  |
-| **accept** | **string** | The id of the Origin that you plan to delete. | [optional]  |
+| **accept** | **string?** | The id of the Origin that you plan to delete. | [optional]  |
 
 ### Return type
 
@@ -223,7 +223,7 @@ void (empty response body)
 
 <a id="edgeapplicationsedgeapplicationidoriginsoriginkeyget"></a>
 # **EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGet**
-> OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGet (long edgeApplicationId, string originKey, string accept = null)
+> OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGet (long edgeApplicationId, string originKey, string? accept = null)
 
 /edge_applications/{edge_application_id}/origins/{origin_key}
 
@@ -251,7 +251,7 @@ namespace Example
             var apiInstance = new EdgeApplicationsOriginsApi(config);
             var edgeApplicationId = 789L;  // long | 
             var originKey = "originKey_example";  // string | 
-            var accept = application/json; version=3;  // string | The id of the Origin that you plan to query. (optional) 
+            var accept = application/json; version=3;  // string? | The id of the Origin that you plan to query. (optional) 
 
             try
             {
@@ -296,7 +296,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **edgeApplicationId** | **long** |  |  |
 | **originKey** | **string** |  |  |
-| **accept** | **string** | The id of the Origin that you plan to query. | [optional]  |
+| **accept** | **string?** | The id of the Origin that you plan to query. | [optional]  |
 
 ### Return type
 
@@ -326,7 +326,7 @@ catch (ApiException e)
 
 <a id="edgeapplicationsedgeapplicationidoriginsoriginkeypatch"></a>
 # **EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatch**
-> OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatch (long edgeApplicationId, string originKey, string accept = null, string contentType = null, PatchOriginsRequest patchOriginsRequest = null)
+> OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatch (long edgeApplicationId, string originKey, string? accept = null, string? contentType = null, PatchOriginsRequest? patchOriginsRequest = null)
 
 /edge_applications/:edge_application_id:/origins/:origin_id:
 
@@ -354,9 +354,9 @@ namespace Example
             var apiInstance = new EdgeApplicationsOriginsApi(config);
             var edgeApplicationId = 789L;  // long | 
             var originKey = "originKey_example";  // string | 
-            var accept = application/json; version=3;  // string |  (optional) 
-            var contentType = application/json;  // string | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
-            var patchOriginsRequest = new PatchOriginsRequest(); // PatchOriginsRequest |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
+            var contentType = application/json;  // string? | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
+            var patchOriginsRequest = new PatchOriginsRequest?(); // PatchOriginsRequest? |  (optional) 
 
             try
             {
@@ -401,9 +401,9 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **edgeApplicationId** | **long** |  |  |
 | **originKey** | **string** |  |  |
-| **accept** | **string** |  | [optional]  |
-| **contentType** | **string** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
-| **patchOriginsRequest** | [**PatchOriginsRequest**](PatchOriginsRequest.md) |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
+| **contentType** | **string?** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
+| **patchOriginsRequest** | [**PatchOriginsRequest?**](PatchOriginsRequest?.md) |  | [optional]  |
 
 ### Return type
 
@@ -433,7 +433,7 @@ catch (ApiException e)
 
 <a id="edgeapplicationsedgeapplicationidoriginsoriginkeyput"></a>
 # **EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPut**
-> OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPut (long edgeApplicationId, string originKey, string accept = null, string contentType = null, UpdateOriginsRequest updateOriginsRequest = null)
+> OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPut (long edgeApplicationId, string originKey, string? accept = null, string? contentType = null, UpdateOriginsRequest? updateOriginsRequest = null)
 
 /edge_applications/{edge_application_id}/origins/{origin_id}
 
@@ -461,9 +461,9 @@ namespace Example
             var apiInstance = new EdgeApplicationsOriginsApi(config);
             var edgeApplicationId = 789L;  // long | 
             var originKey = "originKey_example";  // string | 
-            var accept = application/json; version=3;  // string |  (optional) 
-            var contentType = application/json;  // string | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
-            var updateOriginsRequest = new UpdateOriginsRequest(); // UpdateOriginsRequest |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
+            var contentType = application/json;  // string? | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
+            var updateOriginsRequest = new UpdateOriginsRequest?(); // UpdateOriginsRequest? |  (optional) 
 
             try
             {
@@ -508,9 +508,9 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **edgeApplicationId** | **long** |  |  |
 | **originKey** | **string** |  |  |
-| **accept** | **string** |  | [optional]  |
-| **contentType** | **string** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
-| **updateOriginsRequest** | [**UpdateOriginsRequest**](UpdateOriginsRequest.md) |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
+| **contentType** | **string?** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
+| **updateOriginsRequest** | [**UpdateOriginsRequest?**](UpdateOriginsRequest?.md) |  | [optional]  |
 
 ### Return type
 
@@ -540,7 +540,7 @@ catch (ApiException e)
 
 <a id="edgeapplicationsedgeapplicationidoriginspost"></a>
 # **EdgeApplicationsEdgeApplicationIdOriginsPost**
-> OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsPost (long edgeApplicationId, string accept = null, string contentType = null, CreateOriginsRequest createOriginsRequest = null)
+> OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsPost (long edgeApplicationId, string? accept = null, string? contentType = null, CreateOriginsRequest? createOriginsRequest = null)
 
 /edge_applications/{edge_application_id}/origins
 
@@ -567,9 +567,9 @@ namespace Example
 
             var apiInstance = new EdgeApplicationsOriginsApi(config);
             var edgeApplicationId = 789L;  // long | 
-            var accept = application/json; version=3;  // string |  (optional) 
-            var contentType = application/json;  // string | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
-            var createOriginsRequest = new CreateOriginsRequest(); // CreateOriginsRequest |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
+            var contentType = application/json;  // string? | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
+            var createOriginsRequest = new CreateOriginsRequest?(); // CreateOriginsRequest? |  (optional) 
 
             try
             {
@@ -613,9 +613,9 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **edgeApplicationId** | **long** |  |  |
-| **accept** | **string** |  | [optional]  |
-| **contentType** | **string** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
-| **createOriginsRequest** | [**CreateOriginsRequest**](CreateOriginsRequest.md) |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
+| **contentType** | **string?** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
+| **createOriginsRequest** | [**CreateOriginsRequest?**](CreateOriginsRequest?.md) |  | [optional]  |
 
 ### Return type
 

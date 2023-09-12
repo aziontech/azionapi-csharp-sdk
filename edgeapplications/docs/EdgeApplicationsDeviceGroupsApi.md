@@ -13,7 +13,7 @@ All URIs are relative to *https://api.azionapi.net*
 
 <a id="edgeapplicationsedgeapplicationiddevicegroupsdevicegroupiddelete"></a>
 # **EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdDelete**
-> void EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdDelete (long edgeApplicationId, long deviceGroupId, string accept = null)
+> void EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdDelete (long edgeApplicationId, long deviceGroupId, string? accept = null)
 
 /edge_applications/{edge_application_id}/device_groups/{device_group_id}
 
@@ -41,7 +41,7 @@ namespace Example
             var apiInstance = new EdgeApplicationsDeviceGroupsApi(config);
             var edgeApplicationId = 789L;  // long | 
             var deviceGroupId = 789L;  // long | 
-            var accept = application/json; version=3;  // string | The id of the Device Groups that you plan to delete. (optional) 
+            var accept = application/json; version=3;  // string? | The id of the Device Groups that you plan to delete. (optional) 
 
             try
             {
@@ -82,7 +82,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **edgeApplicationId** | **long** |  |  |
 | **deviceGroupId** | **long** |  |  |
-| **accept** | **string** | The id of the Device Groups that you plan to delete. | [optional]  |
+| **accept** | **string?** | The id of the Device Groups that you plan to delete. | [optional]  |
 
 ### Return type
 
@@ -112,7 +112,7 @@ void (empty response body)
 
 <a id="edgeapplicationsedgeapplicationiddevicegroupsdevicegroupidget"></a>
 # **EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGet**
-> DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGet (long edgeApplicationId, long deviceGroupId, string accept = null)
+> DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdGet (long edgeApplicationId, long deviceGroupId, string? accept = null)
 
 /edge_applications/{edge_application_id}/device_groups/{device_group_id}
 
@@ -140,7 +140,7 @@ namespace Example
             var apiInstance = new EdgeApplicationsDeviceGroupsApi(config);
             var edgeApplicationId = 789L;  // long | 
             var deviceGroupId = 789L;  // long | 
-            var accept = application/json; version=3;  // string | The id of the Device Groups that you plan to query. (optional) 
+            var accept = application/json; version=3;  // string? | The id of the Device Groups that you plan to query. (optional) 
 
             try
             {
@@ -185,7 +185,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **edgeApplicationId** | **long** |  |  |
 | **deviceGroupId** | **long** |  |  |
-| **accept** | **string** | The id of the Device Groups that you plan to query. | [optional]  |
+| **accept** | **string?** | The id of the Device Groups that you plan to query. | [optional]  |
 
 ### Return type
 
@@ -215,7 +215,7 @@ catch (ApiException e)
 
 <a id="edgeapplicationsedgeapplicationiddevicegroupsdevicegroupidpatch"></a>
 # **EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatch**
-> DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatch (long edgeApplicationId, long deviceGroupId, string accept = null, string contentType = null, PatchDeviceGroupsRequest patchDeviceGroupsRequest = null)
+> DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPatch (long edgeApplicationId, long deviceGroupId, string? accept = null, string? contentType = null, PatchDeviceGroupsRequest? patchDeviceGroupsRequest = null)
 
 /edge_applications/{edge_application_id}/device_groups/{device_group_id}
 
@@ -243,9 +243,9 @@ namespace Example
             var apiInstance = new EdgeApplicationsDeviceGroupsApi(config);
             var edgeApplicationId = 789L;  // long | 
             var deviceGroupId = 789L;  // long | 
-            var accept = application/json; version=3;  // string |  (optional) 
-            var contentType = application/json;  // string | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
-            var patchDeviceGroupsRequest = new PatchDeviceGroupsRequest(); // PatchDeviceGroupsRequest |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
+            var contentType = application/json;  // string? | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
+            var patchDeviceGroupsRequest = new PatchDeviceGroupsRequest?(); // PatchDeviceGroupsRequest? |  (optional) 
 
             try
             {
@@ -290,9 +290,9 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **edgeApplicationId** | **long** |  |  |
 | **deviceGroupId** | **long** |  |  |
-| **accept** | **string** |  | [optional]  |
-| **contentType** | **string** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
-| **patchDeviceGroupsRequest** | [**PatchDeviceGroupsRequest**](PatchDeviceGroupsRequest.md) |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
+| **contentType** | **string?** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
+| **patchDeviceGroupsRequest** | [**PatchDeviceGroupsRequest?**](PatchDeviceGroupsRequest?.md) |  | [optional]  |
 
 ### Return type
 
@@ -322,7 +322,7 @@ catch (ApiException e)
 
 <a id="edgeapplicationsedgeapplicationiddevicegroupsdevicegroupidput"></a>
 # **EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPut**
-> DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPut (long edgeApplicationId, long deviceGroupId, string accept = null, string contentType = null, UpdateDeviceGroupsRequest updateDeviceGroupsRequest = null)
+> DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsDeviceGroupIdPut (long edgeApplicationId, long deviceGroupId, string? accept = null, string? contentType = null, UpdateDeviceGroupsRequest? updateDeviceGroupsRequest = null)
 
 /edge_applications/{edge_application_id}/device_groups/{device_group_id}
 
@@ -350,9 +350,9 @@ namespace Example
             var apiInstance = new EdgeApplicationsDeviceGroupsApi(config);
             var edgeApplicationId = 789L;  // long | 
             var deviceGroupId = 789L;  // long | 
-            var accept = application/json; version=3;  // string |  (optional) 
-            var contentType = application/json;  // string | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
-            var updateDeviceGroupsRequest = new UpdateDeviceGroupsRequest(); // UpdateDeviceGroupsRequest |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
+            var contentType = application/json;  // string? | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
+            var updateDeviceGroupsRequest = new UpdateDeviceGroupsRequest?(); // UpdateDeviceGroupsRequest? |  (optional) 
 
             try
             {
@@ -397,9 +397,9 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **edgeApplicationId** | **long** |  |  |
 | **deviceGroupId** | **long** |  |  |
-| **accept** | **string** |  | [optional]  |
-| **contentType** | **string** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
-| **updateDeviceGroupsRequest** | [**UpdateDeviceGroupsRequest**](UpdateDeviceGroupsRequest.md) |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
+| **contentType** | **string?** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
+| **updateDeviceGroupsRequest** | [**UpdateDeviceGroupsRequest?**](UpdateDeviceGroupsRequest?.md) |  | [optional]  |
 
 ### Return type
 
@@ -429,7 +429,7 @@ catch (ApiException e)
 
 <a id="edgeapplicationsedgeapplicationiddevicegroupsget"></a>
 # **EdgeApplicationsEdgeApplicationIdDeviceGroupsGet**
-> DeviceGroupsResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsGet (long edgeApplicationId, long? page = null, long? pageSize = null, string filter = null, string orderBy = null, string sort = null, string accept = null)
+> DeviceGroupsResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsGet (long edgeApplicationId, long? page = null, long? pageSize = null, string? filter = null, string? orderBy = null, string? sort = null, string? accept = null)
 
 /edge_applications/{edge_application_id}/device_groups
 
@@ -458,10 +458,10 @@ namespace Example
             var edgeApplicationId = 789L;  // long | 
             var page = 789L;  // long? |  (optional) 
             var pageSize = 789L;  // long? |  (optional) 
-            var filter = "filter_example";  // string |  (optional) 
-            var orderBy = "orderBy_example";  // string |  (optional) 
-            var sort = "sort_example";  // string |  (optional) 
-            var accept = application/json; version=3;  // string |  (optional) 
+            var filter = "filter_example";  // string? |  (optional) 
+            var orderBy = "orderBy_example";  // string? |  (optional) 
+            var sort = "sort_example";  // string? |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
 
             try
             {
@@ -507,10 +507,10 @@ catch (ApiException e)
 | **edgeApplicationId** | **long** |  |  |
 | **page** | **long?** |  | [optional]  |
 | **pageSize** | **long?** |  | [optional]  |
-| **filter** | **string** |  | [optional]  |
-| **orderBy** | **string** |  | [optional]  |
-| **sort** | **string** |  | [optional]  |
-| **accept** | **string** |  | [optional]  |
+| **filter** | **string?** |  | [optional]  |
+| **orderBy** | **string?** |  | [optional]  |
+| **sort** | **string?** |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
 
 ### Return type
 
@@ -540,7 +540,7 @@ catch (ApiException e)
 
 <a id="edgeapplicationsedgeapplicationiddevicegroupspost"></a>
 # **EdgeApplicationsEdgeApplicationIdDeviceGroupsPost**
-> DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsPost (long edgeApplicationId, string accept = null, string contentType = null, CreateDeviceGroupsRequest createDeviceGroupsRequest = null)
+> DeviceGroupsIdResponse EdgeApplicationsEdgeApplicationIdDeviceGroupsPost (long edgeApplicationId, string? accept = null, string? contentType = null, CreateDeviceGroupsRequest? createDeviceGroupsRequest = null)
 
 /edge_applications/{edge_application_id}/device_groups
 
@@ -567,9 +567,9 @@ namespace Example
 
             var apiInstance = new EdgeApplicationsDeviceGroupsApi(config);
             var edgeApplicationId = 789L;  // long | 
-            var accept = application/json; version=3;  // string |  (optional) 
-            var contentType = application/json;  // string | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
-            var createDeviceGroupsRequest = new CreateDeviceGroupsRequest(); // CreateDeviceGroupsRequest |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
+            var contentType = application/json;  // string? | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
+            var createDeviceGroupsRequest = new CreateDeviceGroupsRequest?(); // CreateDeviceGroupsRequest? |  (optional) 
 
             try
             {
@@ -613,9 +613,9 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **edgeApplicationId** | **long** |  |  |
-| **accept** | **string** |  | [optional]  |
-| **contentType** | **string** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
-| **createDeviceGroupsRequest** | [**CreateDeviceGroupsRequest**](CreateDeviceGroupsRequest.md) |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
+| **contentType** | **string?** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
+| **createDeviceGroupsRequest** | [**CreateDeviceGroupsRequest?**](CreateDeviceGroupsRequest?.md) |  | [optional]  |
 
 ### Return type
 

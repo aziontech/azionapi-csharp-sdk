@@ -40,7 +40,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RulesEngineResponse</returns>
-        RulesEngineResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGet(long edgeApplicationId, string phase, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0);
+        RulesEngineResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGet(long edgeApplicationId, string phase, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/rules_engine/{phase}/rules
@@ -59,7 +59,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RulesEngineResponse</returns>
-        ApiResponse<RulesEngineResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGetWithHttpInfo(long edgeApplicationId, string phase, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0);
+        ApiResponse<RulesEngineResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGetWithHttpInfo(long edgeApplicationId, string phase, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0);
         /// <summary>
         /// /edge_applications/{edge_application_id}/rules_engine/{phase}/rules
         /// </summary>
@@ -74,7 +74,7 @@ namespace edgeapplications.Api
         /// <param name="createRulesEngineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RulesEngineIdResponse</returns>
-        RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPost(long edgeApplicationId, string phase, string accept = default(string), string contentType = default(string), CreateRulesEngineRequest createRulesEngineRequest = default(CreateRulesEngineRequest), int operationIndex = 0);
+        RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPost(long edgeApplicationId, string phase, string? accept = default(string?), string? contentType = default(string?), CreateRulesEngineRequest? createRulesEngineRequest = default(CreateRulesEngineRequest?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/rules_engine/{phase}/rules
@@ -90,7 +90,7 @@ namespace edgeapplications.Api
         /// <param name="createRulesEngineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RulesEngineIdResponse</returns>
-        ApiResponse<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPostWithHttpInfo(long edgeApplicationId, string phase, string accept = default(string), string contentType = default(string), CreateRulesEngineRequest createRulesEngineRequest = default(CreateRulesEngineRequest), int operationIndex = 0);
+        ApiResponse<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPostWithHttpInfo(long edgeApplicationId, string phase, string? accept = default(string?), string? contentType = default(string?), CreateRulesEngineRequest? createRulesEngineRequest = default(CreateRulesEngineRequest?), int operationIndex = 0);
         /// <summary>
         /// /edge_applications/{edge_application_id}/rules_engine/{phase}/rules
         /// </summary>
@@ -101,7 +101,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDelete(long edgeApplicationId, string phase, long ruleId, string accept = default(string), int operationIndex = 0);
+        void EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDelete(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/rules_engine/{phase}/rules
@@ -116,7 +116,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDeleteWithHttpInfo(long edgeApplicationId, string phase, long ruleId, string accept = default(string), int operationIndex = 0);
+        ApiResponse<Object> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDeleteWithHttpInfo(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), int operationIndex = 0);
         /// <summary>
         /// /edge_applications/{edge_application_id}/rules_engine/{phase}/rules
         /// </summary>
@@ -127,7 +127,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RulesEngineIdResponse</returns>
-        RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGet(long edgeApplicationId, string phase, long ruleId, string accept = default(string), int operationIndex = 0);
+        RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGet(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/rules_engine/{phase}/rules
@@ -142,7 +142,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RulesEngineIdResponse</returns>
-        ApiResponse<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGetWithHttpInfo(long edgeApplicationId, string phase, long ruleId, string accept = default(string), int operationIndex = 0);
+        ApiResponse<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGetWithHttpInfo(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), int operationIndex = 0);
         /// <summary>
         /// /edge_applications/:edge_application_id:/rules_engine/:phase:/rules/:rule_id:
         /// </summary>
@@ -155,7 +155,7 @@ namespace edgeapplications.Api
         /// <param name="patchRulesEngineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RulesEngineIdResponse</returns>
-        RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatch(long edgeApplicationId, string phase, long ruleId, string accept = default(string), string contentType = default(string), PatchRulesEngineRequest patchRulesEngineRequest = default(PatchRulesEngineRequest), int operationIndex = 0);
+        RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatch(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), string? contentType = default(string?), PatchRulesEngineRequest? patchRulesEngineRequest = default(PatchRulesEngineRequest?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/:edge_application_id:/rules_engine/:phase:/rules/:rule_id:
@@ -172,7 +172,7 @@ namespace edgeapplications.Api
         /// <param name="patchRulesEngineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RulesEngineIdResponse</returns>
-        ApiResponse<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatchWithHttpInfo(long edgeApplicationId, string phase, long ruleId, string accept = default(string), string contentType = default(string), PatchRulesEngineRequest patchRulesEngineRequest = default(PatchRulesEngineRequest), int operationIndex = 0);
+        ApiResponse<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatchWithHttpInfo(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), string? contentType = default(string?), PatchRulesEngineRequest? patchRulesEngineRequest = default(PatchRulesEngineRequest?), int operationIndex = 0);
         /// <summary>
         /// /edge_applications/:edge_application_id:/rules_engine/:phase:/rules/:rule_id:
         /// </summary>
@@ -185,7 +185,7 @@ namespace edgeapplications.Api
         /// <param name="updateRulesEngineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RulesEngineIdResponse</returns>
-        RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPut(long edgeApplicationId, string phase, long ruleId, string accept = default(string), string contentType = default(string), UpdateRulesEngineRequest updateRulesEngineRequest = default(UpdateRulesEngineRequest), int operationIndex = 0);
+        RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPut(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), string? contentType = default(string?), UpdateRulesEngineRequest? updateRulesEngineRequest = default(UpdateRulesEngineRequest?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/:edge_application_id:/rules_engine/:phase:/rules/:rule_id:
@@ -202,7 +202,7 @@ namespace edgeapplications.Api
         /// <param name="updateRulesEngineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RulesEngineIdResponse</returns>
-        ApiResponse<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPutWithHttpInfo(long edgeApplicationId, string phase, long ruleId, string accept = default(string), string contentType = default(string), UpdateRulesEngineRequest updateRulesEngineRequest = default(UpdateRulesEngineRequest), int operationIndex = 0);
+        ApiResponse<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPutWithHttpInfo(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), string? contentType = default(string?), UpdateRulesEngineRequest? updateRulesEngineRequest = default(UpdateRulesEngineRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -230,7 +230,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RulesEngineResponse</returns>
-        System.Threading.Tasks.Task<RulesEngineResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGetAsync(long edgeApplicationId, string phase, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RulesEngineResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGetAsync(long edgeApplicationId, string phase, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/rules_engine/{phase}/rules
@@ -250,7 +250,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RulesEngineResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RulesEngineResponse>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGetWithHttpInfoAsync(long edgeApplicationId, string phase, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RulesEngineResponse>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGetWithHttpInfoAsync(long edgeApplicationId, string phase, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /edge_applications/{edge_application_id}/rules_engine/{phase}/rules
         /// </summary>
@@ -266,7 +266,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RulesEngineIdResponse</returns>
-        System.Threading.Tasks.Task<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPostAsync(long edgeApplicationId, string phase, string accept = default(string), string contentType = default(string), CreateRulesEngineRequest createRulesEngineRequest = default(CreateRulesEngineRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPostAsync(long edgeApplicationId, string phase, string? accept = default(string?), string? contentType = default(string?), CreateRulesEngineRequest? createRulesEngineRequest = default(CreateRulesEngineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/rules_engine/{phase}/rules
@@ -283,7 +283,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RulesEngineIdResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RulesEngineIdResponse>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPostWithHttpInfoAsync(long edgeApplicationId, string phase, string accept = default(string), string contentType = default(string), CreateRulesEngineRequest createRulesEngineRequest = default(CreateRulesEngineRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RulesEngineIdResponse>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPostWithHttpInfoAsync(long edgeApplicationId, string phase, string? accept = default(string?), string? contentType = default(string?), CreateRulesEngineRequest? createRulesEngineRequest = default(CreateRulesEngineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /edge_applications/{edge_application_id}/rules_engine/{phase}/rules
         /// </summary>
@@ -298,7 +298,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDeleteAsync(long edgeApplicationId, string phase, long ruleId, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDeleteAsync(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/rules_engine/{phase}/rules
@@ -314,7 +314,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDeleteWithHttpInfoAsync(long edgeApplicationId, string phase, long ruleId, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDeleteWithHttpInfoAsync(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /edge_applications/{edge_application_id}/rules_engine/{phase}/rules
         /// </summary>
@@ -329,7 +329,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RulesEngineIdResponse</returns>
-        System.Threading.Tasks.Task<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGetAsync(long edgeApplicationId, string phase, long ruleId, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGetAsync(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/rules_engine/{phase}/rules
@@ -345,7 +345,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RulesEngineIdResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RulesEngineIdResponse>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGetWithHttpInfoAsync(long edgeApplicationId, string phase, long ruleId, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RulesEngineIdResponse>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGetWithHttpInfoAsync(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /edge_applications/:edge_application_id:/rules_engine/:phase:/rules/:rule_id:
         /// </summary>
@@ -362,7 +362,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RulesEngineIdResponse</returns>
-        System.Threading.Tasks.Task<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatchAsync(long edgeApplicationId, string phase, long ruleId, string accept = default(string), string contentType = default(string), PatchRulesEngineRequest patchRulesEngineRequest = default(PatchRulesEngineRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatchAsync(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), string? contentType = default(string?), PatchRulesEngineRequest? patchRulesEngineRequest = default(PatchRulesEngineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/:edge_application_id:/rules_engine/:phase:/rules/:rule_id:
@@ -380,7 +380,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RulesEngineIdResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RulesEngineIdResponse>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatchWithHttpInfoAsync(long edgeApplicationId, string phase, long ruleId, string accept = default(string), string contentType = default(string), PatchRulesEngineRequest patchRulesEngineRequest = default(PatchRulesEngineRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RulesEngineIdResponse>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatchWithHttpInfoAsync(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), string? contentType = default(string?), PatchRulesEngineRequest? patchRulesEngineRequest = default(PatchRulesEngineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /edge_applications/:edge_application_id:/rules_engine/:phase:/rules/:rule_id:
         /// </summary>
@@ -397,7 +397,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RulesEngineIdResponse</returns>
-        System.Threading.Tasks.Task<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPutAsync(long edgeApplicationId, string phase, long ruleId, string accept = default(string), string contentType = default(string), UpdateRulesEngineRequest updateRulesEngineRequest = default(UpdateRulesEngineRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPutAsync(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), string? contentType = default(string?), UpdateRulesEngineRequest? updateRulesEngineRequest = default(UpdateRulesEngineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/:edge_application_id:/rules_engine/:phase:/rules/:rule_id:
@@ -415,7 +415,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RulesEngineIdResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RulesEngineIdResponse>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPutWithHttpInfoAsync(long edgeApplicationId, string phase, long ruleId, string accept = default(string), string contentType = default(string), UpdateRulesEngineRequest updateRulesEngineRequest = default(UpdateRulesEngineRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RulesEngineIdResponse>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPutWithHttpInfoAsync(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), string? contentType = default(string?), UpdateRulesEngineRequest? updateRulesEngineRequest = default(UpdateRulesEngineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -550,7 +550,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RulesEngineResponse</returns>
-        public RulesEngineResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGet(long edgeApplicationId, string phase, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0)
+        public RulesEngineResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGet(long edgeApplicationId, string phase, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0)
         {
             edgeapplications.Client.ApiResponse<RulesEngineResponse> localVarResponse = EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGetWithHttpInfo(edgeApplicationId, phase, page, pageSize, filter, orderBy, sort, accept);
             return localVarResponse.Data;
@@ -570,7 +570,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RulesEngineResponse</returns>
-        public edgeapplications.Client.ApiResponse<RulesEngineResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGetWithHttpInfo(long edgeApplicationId, string phase, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<RulesEngineResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGetWithHttpInfo(long edgeApplicationId, string phase, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0)
         {
             // verify the required parameter 'phase' is set
             if (phase == null)
@@ -665,7 +665,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RulesEngineResponse</returns>
-        public async System.Threading.Tasks.Task<RulesEngineResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGetAsync(long edgeApplicationId, string phase, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RulesEngineResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGetAsync(long edgeApplicationId, string phase, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgeapplications.Client.ApiResponse<RulesEngineResponse> localVarResponse = await EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGetWithHttpInfoAsync(edgeApplicationId, phase, page, pageSize, filter, orderBy, sort, accept, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -686,7 +686,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RulesEngineResponse)</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<RulesEngineResponse>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGetWithHttpInfoAsync(long edgeApplicationId, string phase, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<RulesEngineResponse>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGetWithHttpInfoAsync(long edgeApplicationId, string phase, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'phase' is set
             if (phase == null)
@@ -779,7 +779,7 @@ namespace edgeapplications.Api
         /// <param name="createRulesEngineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RulesEngineIdResponse</returns>
-        public RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPost(long edgeApplicationId, string phase, string accept = default(string), string contentType = default(string), CreateRulesEngineRequest createRulesEngineRequest = default(CreateRulesEngineRequest), int operationIndex = 0)
+        public RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPost(long edgeApplicationId, string phase, string? accept = default(string?), string? contentType = default(string?), CreateRulesEngineRequest? createRulesEngineRequest = default(CreateRulesEngineRequest?), int operationIndex = 0)
         {
             edgeapplications.Client.ApiResponse<RulesEngineIdResponse> localVarResponse = EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPostWithHttpInfo(edgeApplicationId, phase, accept, contentType, createRulesEngineRequest);
             return localVarResponse.Data;
@@ -796,7 +796,7 @@ namespace edgeapplications.Api
         /// <param name="createRulesEngineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RulesEngineIdResponse</returns>
-        public edgeapplications.Client.ApiResponse<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPostWithHttpInfo(long edgeApplicationId, string phase, string accept = default(string), string contentType = default(string), CreateRulesEngineRequest createRulesEngineRequest = default(CreateRulesEngineRequest), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPostWithHttpInfo(long edgeApplicationId, string phase, string? accept = default(string?), string? contentType = default(string?), CreateRulesEngineRequest? createRulesEngineRequest = default(CreateRulesEngineRequest?), int operationIndex = 0)
         {
             // verify the required parameter 'phase' is set
             if (phase == null)
@@ -874,7 +874,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RulesEngineIdResponse</returns>
-        public async System.Threading.Tasks.Task<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPostAsync(long edgeApplicationId, string phase, string accept = default(string), string contentType = default(string), CreateRulesEngineRequest createRulesEngineRequest = default(CreateRulesEngineRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPostAsync(long edgeApplicationId, string phase, string? accept = default(string?), string? contentType = default(string?), CreateRulesEngineRequest? createRulesEngineRequest = default(CreateRulesEngineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgeapplications.Client.ApiResponse<RulesEngineIdResponse> localVarResponse = await EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPostWithHttpInfoAsync(edgeApplicationId, phase, accept, contentType, createRulesEngineRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -892,7 +892,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RulesEngineIdResponse)</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<RulesEngineIdResponse>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPostWithHttpInfoAsync(long edgeApplicationId, string phase, string accept = default(string), string contentType = default(string), CreateRulesEngineRequest createRulesEngineRequest = default(CreateRulesEngineRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<RulesEngineIdResponse>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPostWithHttpInfoAsync(long edgeApplicationId, string phase, string? accept = default(string?), string? contentType = default(string?), CreateRulesEngineRequest? createRulesEngineRequest = default(CreateRulesEngineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'phase' is set
             if (phase == null)
@@ -970,7 +970,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDelete(long edgeApplicationId, string phase, long ruleId, string accept = default(string), int operationIndex = 0)
+        public void EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDelete(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), int operationIndex = 0)
         {
             EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDeleteWithHttpInfo(edgeApplicationId, phase, ruleId, accept);
         }
@@ -985,7 +985,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public edgeapplications.Client.ApiResponse<Object> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDeleteWithHttpInfo(long edgeApplicationId, string phase, long ruleId, string accept = default(string), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<Object> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDeleteWithHttpInfo(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), int operationIndex = 0)
         {
             // verify the required parameter 'phase' is set
             if (phase == null)
@@ -1056,7 +1056,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDeleteAsync(long edgeApplicationId, string phase, long ruleId, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDeleteAsync(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             await EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDeleteWithHttpInfoAsync(edgeApplicationId, phase, ruleId, accept, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1072,7 +1072,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<Object>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDeleteWithHttpInfoAsync(long edgeApplicationId, string phase, long ruleId, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<Object>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDeleteWithHttpInfoAsync(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'phase' is set
             if (phase == null)
@@ -1144,7 +1144,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RulesEngineIdResponse</returns>
-        public RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGet(long edgeApplicationId, string phase, long ruleId, string accept = default(string), int operationIndex = 0)
+        public RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGet(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), int operationIndex = 0)
         {
             edgeapplications.Client.ApiResponse<RulesEngineIdResponse> localVarResponse = EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGetWithHttpInfo(edgeApplicationId, phase, ruleId, accept);
             return localVarResponse.Data;
@@ -1160,7 +1160,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RulesEngineIdResponse</returns>
-        public edgeapplications.Client.ApiResponse<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGetWithHttpInfo(long edgeApplicationId, string phase, long ruleId, string accept = default(string), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGetWithHttpInfo(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), int operationIndex = 0)
         {
             // verify the required parameter 'phase' is set
             if (phase == null)
@@ -1232,7 +1232,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RulesEngineIdResponse</returns>
-        public async System.Threading.Tasks.Task<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGetAsync(long edgeApplicationId, string phase, long ruleId, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGetAsync(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgeapplications.Client.ApiResponse<RulesEngineIdResponse> localVarResponse = await EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGetWithHttpInfoAsync(edgeApplicationId, phase, ruleId, accept, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1249,7 +1249,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RulesEngineIdResponse)</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<RulesEngineIdResponse>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGetWithHttpInfoAsync(long edgeApplicationId, string phase, long ruleId, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<RulesEngineIdResponse>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGetWithHttpInfoAsync(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'phase' is set
             if (phase == null)
@@ -1324,7 +1324,7 @@ namespace edgeapplications.Api
         /// <param name="patchRulesEngineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RulesEngineIdResponse</returns>
-        public RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatch(long edgeApplicationId, string phase, long ruleId, string accept = default(string), string contentType = default(string), PatchRulesEngineRequest patchRulesEngineRequest = default(PatchRulesEngineRequest), int operationIndex = 0)
+        public RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatch(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), string? contentType = default(string?), PatchRulesEngineRequest? patchRulesEngineRequest = default(PatchRulesEngineRequest?), int operationIndex = 0)
         {
             edgeapplications.Client.ApiResponse<RulesEngineIdResponse> localVarResponse = EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatchWithHttpInfo(edgeApplicationId, phase, ruleId, accept, contentType, patchRulesEngineRequest);
             return localVarResponse.Data;
@@ -1342,7 +1342,7 @@ namespace edgeapplications.Api
         /// <param name="patchRulesEngineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RulesEngineIdResponse</returns>
-        public edgeapplications.Client.ApiResponse<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatchWithHttpInfo(long edgeApplicationId, string phase, long ruleId, string accept = default(string), string contentType = default(string), PatchRulesEngineRequest patchRulesEngineRequest = default(PatchRulesEngineRequest), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatchWithHttpInfo(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), string? contentType = default(string?), PatchRulesEngineRequest? patchRulesEngineRequest = default(PatchRulesEngineRequest?), int operationIndex = 0)
         {
             // verify the required parameter 'phase' is set
             if (phase == null)
@@ -1422,7 +1422,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RulesEngineIdResponse</returns>
-        public async System.Threading.Tasks.Task<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatchAsync(long edgeApplicationId, string phase, long ruleId, string accept = default(string), string contentType = default(string), PatchRulesEngineRequest patchRulesEngineRequest = default(PatchRulesEngineRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatchAsync(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), string? contentType = default(string?), PatchRulesEngineRequest? patchRulesEngineRequest = default(PatchRulesEngineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgeapplications.Client.ApiResponse<RulesEngineIdResponse> localVarResponse = await EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatchWithHttpInfoAsync(edgeApplicationId, phase, ruleId, accept, contentType, patchRulesEngineRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1441,7 +1441,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RulesEngineIdResponse)</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<RulesEngineIdResponse>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatchWithHttpInfoAsync(long edgeApplicationId, string phase, long ruleId, string accept = default(string), string contentType = default(string), PatchRulesEngineRequest patchRulesEngineRequest = default(PatchRulesEngineRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<RulesEngineIdResponse>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatchWithHttpInfoAsync(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), string? contentType = default(string?), PatchRulesEngineRequest? patchRulesEngineRequest = default(PatchRulesEngineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'phase' is set
             if (phase == null)
@@ -1522,7 +1522,7 @@ namespace edgeapplications.Api
         /// <param name="updateRulesEngineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RulesEngineIdResponse</returns>
-        public RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPut(long edgeApplicationId, string phase, long ruleId, string accept = default(string), string contentType = default(string), UpdateRulesEngineRequest updateRulesEngineRequest = default(UpdateRulesEngineRequest), int operationIndex = 0)
+        public RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPut(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), string? contentType = default(string?), UpdateRulesEngineRequest? updateRulesEngineRequest = default(UpdateRulesEngineRequest?), int operationIndex = 0)
         {
             edgeapplications.Client.ApiResponse<RulesEngineIdResponse> localVarResponse = EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPutWithHttpInfo(edgeApplicationId, phase, ruleId, accept, contentType, updateRulesEngineRequest);
             return localVarResponse.Data;
@@ -1540,7 +1540,7 @@ namespace edgeapplications.Api
         /// <param name="updateRulesEngineRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RulesEngineIdResponse</returns>
-        public edgeapplications.Client.ApiResponse<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPutWithHttpInfo(long edgeApplicationId, string phase, long ruleId, string accept = default(string), string contentType = default(string), UpdateRulesEngineRequest updateRulesEngineRequest = default(UpdateRulesEngineRequest), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPutWithHttpInfo(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), string? contentType = default(string?), UpdateRulesEngineRequest? updateRulesEngineRequest = default(UpdateRulesEngineRequest?), int operationIndex = 0)
         {
             // verify the required parameter 'phase' is set
             if (phase == null)
@@ -1620,7 +1620,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RulesEngineIdResponse</returns>
-        public async System.Threading.Tasks.Task<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPutAsync(long edgeApplicationId, string phase, long ruleId, string accept = default(string), string contentType = default(string), UpdateRulesEngineRequest updateRulesEngineRequest = default(UpdateRulesEngineRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RulesEngineIdResponse> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPutAsync(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), string? contentType = default(string?), UpdateRulesEngineRequest? updateRulesEngineRequest = default(UpdateRulesEngineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgeapplications.Client.ApiResponse<RulesEngineIdResponse> localVarResponse = await EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPutWithHttpInfoAsync(edgeApplicationId, phase, ruleId, accept, contentType, updateRulesEngineRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1639,7 +1639,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RulesEngineIdResponse)</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<RulesEngineIdResponse>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPutWithHttpInfoAsync(long edgeApplicationId, string phase, long ruleId, string accept = default(string), string contentType = default(string), UpdateRulesEngineRequest updateRulesEngineRequest = default(UpdateRulesEngineRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<RulesEngineIdResponse>> EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPutWithHttpInfoAsync(long edgeApplicationId, string phase, long ruleId, string? accept = default(string?), string? contentType = default(string?), UpdateRulesEngineRequest? updateRulesEngineRequest = default(UpdateRulesEngineRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'phase' is set
             if (phase == null)

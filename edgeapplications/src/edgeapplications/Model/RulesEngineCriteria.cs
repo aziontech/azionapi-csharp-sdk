@@ -41,9 +41,9 @@ namespace edgeapplications.Model
         /// </summary>
         /// <param name="conditional">conditional (required).</param>
         /// <param name="variable">variable (required).</param>
-        /// <param name="_operator">_operator (required).</param>
+        /// <param name="varOperator">varOperator (required).</param>
         /// <param name="inputValue">inputValue.</param>
-        public RulesEngineCriteria(string conditional = default(string), string variable = default(string), string _operator = default(string), string inputValue = default(string))
+        public RulesEngineCriteria(string conditional = default(string), string variable = default(string), string varOperator = default(string), string inputValue = default(string))
         {
             // to ensure "conditional" is required (not null)
             if (conditional == null)
@@ -57,12 +57,12 @@ namespace edgeapplications.Model
                 throw new ArgumentNullException("variable is a required property for RulesEngineCriteria and cannot be null");
             }
             this.Variable = variable;
-            // to ensure "_operator" is required (not null)
-            if (_operator == null)
+            // to ensure "varOperator" is required (not null)
+            if (varOperator == null)
             {
-                throw new ArgumentNullException("_operator is a required property for RulesEngineCriteria and cannot be null");
+                throw new ArgumentNullException("varOperator is a required property for RulesEngineCriteria and cannot be null");
             }
-            this.Operator = _operator;
+            this.VarOperator = varOperator;
             this.InputValue = inputValue;
         }
 
@@ -79,10 +79,10 @@ namespace edgeapplications.Model
         public string Variable { get; set; }
 
         /// <summary>
-        /// Gets or Sets Operator
+        /// Gets or Sets VarOperator
         /// </summary>
         [DataMember(Name = "operator", IsRequired = true, EmitDefaultValue = true)]
-        public string Operator { get; set; }
+        public string VarOperator { get; set; }
 
         /// <summary>
         /// Gets or Sets InputValue
@@ -100,7 +100,7 @@ namespace edgeapplications.Model
             sb.Append("class RulesEngineCriteria {\n");
             sb.Append("  Conditional: ").Append(Conditional).Append("\n");
             sb.Append("  Variable: ").Append(Variable).Append("\n");
-            sb.Append("  Operator: ").Append(Operator).Append("\n");
+            sb.Append("  VarOperator: ").Append(VarOperator).Append("\n");
             sb.Append("  InputValue: ").Append(InputValue).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -148,9 +148,9 @@ namespace edgeapplications.Model
                     this.Variable.Equals(input.Variable))
                 ) && 
                 (
-                    this.Operator == input.Operator ||
-                    (this.Operator != null &&
-                    this.Operator.Equals(input.Operator))
+                    this.VarOperator == input.VarOperator ||
+                    (this.VarOperator != null &&
+                    this.VarOperator.Equals(input.VarOperator))
                 ) && 
                 (
                     this.InputValue == input.InputValue ||
@@ -176,9 +176,9 @@ namespace edgeapplications.Model
                 {
                     hashCode = (hashCode * 59) + this.Variable.GetHashCode();
                 }
-                if (this.Operator != null)
+                if (this.VarOperator != null)
                 {
-                    hashCode = (hashCode * 59) + this.Operator.GetHashCode();
+                    hashCode = (hashCode * 59) + this.VarOperator.GetHashCode();
                 }
                 if (this.InputValue != null)
                 {
