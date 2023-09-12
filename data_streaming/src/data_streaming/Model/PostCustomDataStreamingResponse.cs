@@ -61,7 +61,6 @@ namespace data_streaming.Model
             /// </summary>
             [EnumMember(Value = "rtm_activity")]
             RtmActivity = 4
-
         }
 
 
@@ -108,9 +107,9 @@ namespace data_streaming.Model
         /// Note:  * Add all variables and values that will be used to stream according to the data source you choose to use.   
         /// </summary>
         /// <value>Note:  * Add all variables and values that will be used to stream according to the data source you choose to use.   </value>
-        /// <example>&quot;&quot;{\&quot;custom_template_field\&quot;:\&quot;$custom_value\&quot;, \&quot;status\&quot;:\&quot;$status\&quot;}&quot;
+        /// <example>&quot;{\&quot;custom_template_field\&quot;:\&quot;$custom_value\&quot;, \&quot;status\&quot;:\&quot;$status\&quot;}&quot;
  
-&quot;</example>
+</example>
         [DataMember(Name = "template_model", EmitDefaultValue = false)]
         public string TemplateModel { get; set; }
 

@@ -8,7 +8,7 @@ All URIs are relative to *https://api.azionapi.net*
 
 <a id="listdatastreaming"></a>
 # **ListDataStreaming**
-> DataStreamingsDomainResponse ListDataStreaming (string name = null, long? streamingId = null, bool? selected = null)
+> DataStreamingsDomainResponse ListDataStreaming (string? name = null, long? streamingId = null, bool? selected = null)
 
 List all domains used on data streaming
 
@@ -36,7 +36,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DataStreamingDomainApi(config);
-            var name = "name_example";  // string | Domain's name in data streaming (optional) 
+            var name = "name_example";  // string? | Domain's name in data streaming (optional) 
             var streamingId = 789L;  // long? |  (optional) 
             var selected = true;  // bool? |  (optional) 
 
@@ -81,7 +81,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **name** | **string** | Domain&#39;s name in data streaming | [optional]  |
+| **name** | **string?** | Domain&#39;s name in data streaming | [optional]  |
 | **streamingId** | **long?** |  | [optional]  |
 | **selected** | **bool?** |  | [optional]  |
 
