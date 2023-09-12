@@ -13,7 +13,7 @@ All URIs are relative to *https://api.azionapi.net*
 
 <a id="edgeapplicationsedgeapplicationidcachesettingscachesettingsiddelete"></a>
 # **EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdDelete**
-> void EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdDelete (long edgeApplicationId, long cacheSettingsId, string accept = null, string contentType = null)
+> void EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdDelete (long edgeApplicationId, long cacheSettingsId, string? accept = null, string? contentType = null)
 
 /edge_applications/:edge_application_id:/cache_settings/:cache_settings_id:
 
@@ -41,8 +41,8 @@ namespace Example
             var apiInstance = new EdgeApplicationsCacheSettingsApi(config);
             var edgeApplicationId = 789L;  // long | 
             var cacheSettingsId = 789L;  // long | 
-            var accept = application/json; version=3;  // string |  (optional) 
-            var contentType = application/json;  // string | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
+            var contentType = application/json;  // string? | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
 
             try
             {
@@ -83,8 +83,8 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **edgeApplicationId** | **long** |  |  |
 | **cacheSettingsId** | **long** |  |  |
-| **accept** | **string** |  | [optional]  |
-| **contentType** | **string** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
+| **accept** | **string?** |  | [optional]  |
+| **contentType** | **string?** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
 
 ### Return type
 
@@ -114,7 +114,7 @@ void (empty response body)
 
 <a id="edgeapplicationsedgeapplicationidcachesettingscachesettingsidget"></a>
 # **EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdGet**
-> ApplicationCacheGetOneResponse EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdGet (long edgeApplicationId, long cacheSettingsId, string accept = null)
+> ApplicationCacheGetOneResponse EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdGet (long edgeApplicationId, long cacheSettingsId, string? accept = null)
 
 /edge_applications/:edge_application_id:/cache_settings/:cache_settings_id:
 
@@ -142,7 +142,7 @@ namespace Example
             var apiInstance = new EdgeApplicationsCacheSettingsApi(config);
             var edgeApplicationId = 789L;  // long | 
             var cacheSettingsId = 789L;  // long | 
-            var accept = application/json; version=3;  // string |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
 
             try
             {
@@ -187,7 +187,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **edgeApplicationId** | **long** |  |  |
 | **cacheSettingsId** | **long** |  |  |
-| **accept** | **string** |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
 
 ### Return type
 
@@ -217,7 +217,7 @@ catch (ApiException e)
 
 <a id="edgeapplicationsedgeapplicationidcachesettingscachesettingsidpatch"></a>
 # **EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdPatch**
-> ApplicationCachePatchResponse EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdPatch (long edgeApplicationId, long cacheSettingsId, string accept = null, ApplicationCachePatchRequest applicationCachePatchRequest = null)
+> ApplicationCachePatchResponse EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdPatch (long edgeApplicationId, long cacheSettingsId, string? accept = null, ApplicationCachePatchRequest? applicationCachePatchRequest = null)
 
 /edge_applications/:edge_application_id:/cache_settings/:cache_settings_id:
 
@@ -245,8 +245,8 @@ namespace Example
             var apiInstance = new EdgeApplicationsCacheSettingsApi(config);
             var edgeApplicationId = 789L;  // long | 
             var cacheSettingsId = 789L;  // long | 
-            var accept = application/json; version=3;  // string |  (optional) 
-            var applicationCachePatchRequest = new ApplicationCachePatchRequest(); // ApplicationCachePatchRequest |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
+            var applicationCachePatchRequest = new ApplicationCachePatchRequest?(); // ApplicationCachePatchRequest? |  (optional) 
 
             try
             {
@@ -291,8 +291,8 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **edgeApplicationId** | **long** |  |  |
 | **cacheSettingsId** | **long** |  |  |
-| **accept** | **string** |  | [optional]  |
-| **applicationCachePatchRequest** | [**ApplicationCachePatchRequest**](ApplicationCachePatchRequest.md) |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
+| **applicationCachePatchRequest** | [**ApplicationCachePatchRequest?**](ApplicationCachePatchRequest?.md) |  | [optional]  |
 
 ### Return type
 
@@ -322,7 +322,7 @@ catch (ApiException e)
 
 <a id="edgeapplicationsedgeapplicationidcachesettingscachesettingsidput"></a>
 # **EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdPut**
-> ApplicationCachePutResponse EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdPut (long edgeApplicationId, long cacheSettingsId, string accept = null, string contentType = null, ApplicationCachePutRequest applicationCachePutRequest = null)
+> ApplicationCachePutResponse EdgeApplicationsEdgeApplicationIdCacheSettingsCacheSettingsIdPut (long edgeApplicationId, long cacheSettingsId, string? accept = null, string? contentType = null, ApplicationCachePutRequest? applicationCachePutRequest = null)
 
 /edge_applications/:edge_application_id:/cache_settings/ca
 
@@ -350,9 +350,9 @@ namespace Example
             var apiInstance = new EdgeApplicationsCacheSettingsApi(config);
             var edgeApplicationId = 789L;  // long | 
             var cacheSettingsId = 789L;  // long | 
-            var accept = application/json; version=3;  // string |  (optional) 
-            var contentType = application/json;  // string | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
-            var applicationCachePutRequest = new ApplicationCachePutRequest(); // ApplicationCachePutRequest |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
+            var contentType = application/json;  // string? | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
+            var applicationCachePutRequest = new ApplicationCachePutRequest?(); // ApplicationCachePutRequest? |  (optional) 
 
             try
             {
@@ -397,9 +397,9 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **edgeApplicationId** | **long** |  |  |
 | **cacheSettingsId** | **long** |  |  |
-| **accept** | **string** |  | [optional]  |
-| **contentType** | **string** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
-| **applicationCachePutRequest** | [**ApplicationCachePutRequest**](ApplicationCachePutRequest.md) |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
+| **contentType** | **string?** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
+| **applicationCachePutRequest** | [**ApplicationCachePutRequest?**](ApplicationCachePutRequest?.md) |  | [optional]  |
 
 ### Return type
 
@@ -429,7 +429,7 @@ catch (ApiException e)
 
 <a id="edgeapplicationsedgeapplicationidcachesettingsget"></a>
 # **EdgeApplicationsEdgeApplicationIdCacheSettingsGet**
-> ApplicationCacheGetResponse EdgeApplicationsEdgeApplicationIdCacheSettingsGet (long edgeApplicationId, long? page = null, long? pageSize = null, string filter = null, string orderBy = null, string sort = null, string accept = null)
+> ApplicationCacheGetResponse EdgeApplicationsEdgeApplicationIdCacheSettingsGet (long edgeApplicationId, long? page = null, long? pageSize = null, string? filter = null, string? orderBy = null, string? sort = null, string? accept = null)
 
 /edge_applications/{edge_application_id}/cache_settings
 
@@ -458,10 +458,10 @@ namespace Example
             var edgeApplicationId = 789L;  // long | 
             var page = 789L;  // long? |  (optional) 
             var pageSize = 789L;  // long? |  (optional) 
-            var filter = "filter_example";  // string |  (optional) 
-            var orderBy = "orderBy_example";  // string |  (optional) 
-            var sort = "sort_example";  // string |  (optional) 
-            var accept = application/json; version=3;  // string |  (optional) 
+            var filter = "filter_example";  // string? |  (optional) 
+            var orderBy = "orderBy_example";  // string? |  (optional) 
+            var sort = "sort_example";  // string? |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
 
             try
             {
@@ -507,10 +507,10 @@ catch (ApiException e)
 | **edgeApplicationId** | **long** |  |  |
 | **page** | **long?** |  | [optional]  |
 | **pageSize** | **long?** |  | [optional]  |
-| **filter** | **string** |  | [optional]  |
-| **orderBy** | **string** |  | [optional]  |
-| **sort** | **string** |  | [optional]  |
-| **accept** | **string** |  | [optional]  |
+| **filter** | **string?** |  | [optional]  |
+| **orderBy** | **string?** |  | [optional]  |
+| **sort** | **string?** |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
 
 ### Return type
 
@@ -540,7 +540,7 @@ catch (ApiException e)
 
 <a id="edgeapplicationsedgeapplicationidcachesettingspost"></a>
 # **EdgeApplicationsEdgeApplicationIdCacheSettingsPost**
-> ApplicationCacheCreateResponse EdgeApplicationsEdgeApplicationIdCacheSettingsPost (long edgeApplicationId, string accept = null, string contentType = null, ApplicationCacheCreateRequest applicationCacheCreateRequest = null)
+> ApplicationCacheCreateResponse EdgeApplicationsEdgeApplicationIdCacheSettingsPost (long edgeApplicationId, string? accept = null, string? contentType = null, ApplicationCacheCreateRequest? applicationCacheCreateRequest = null)
 
 /edge_applications/:edge_application_id:/cache_settings
 
@@ -567,9 +567,9 @@ namespace Example
 
             var apiInstance = new EdgeApplicationsCacheSettingsApi(config);
             var edgeApplicationId = 789L;  // long | 
-            var accept = application/json; version=3;  // string |  (optional) 
-            var contentType = application/json;  // string | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
-            var applicationCacheCreateRequest = new ApplicationCacheCreateRequest(); // ApplicationCacheCreateRequest |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
+            var contentType = application/json;  // string? | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
+            var applicationCacheCreateRequest = new ApplicationCacheCreateRequest?(); // ApplicationCacheCreateRequest? |  (optional) 
 
             try
             {
@@ -613,9 +613,9 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **edgeApplicationId** | **long** |  |  |
-| **accept** | **string** |  | [optional]  |
-| **contentType** | **string** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
-| **applicationCacheCreateRequest** | [**ApplicationCacheCreateRequest**](ApplicationCacheCreateRequest.md) |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
+| **contentType** | **string?** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
+| **applicationCacheCreateRequest** | [**ApplicationCacheCreateRequest?**](ApplicationCacheCreateRequest?.md) |  | [optional]  |
 
 ### Return type
 

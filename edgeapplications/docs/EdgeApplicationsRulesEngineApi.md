@@ -13,7 +13,7 @@ All URIs are relative to *https://api.azionapi.net*
 
 <a id="edgeapplicationsedgeapplicationidrulesenginephaserulesget"></a>
 # **EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGet**
-> RulesEngineResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGet (long edgeApplicationId, string phase, long? page = null, long? pageSize = null, string filter = null, string orderBy = null, string sort = null, string accept = null)
+> RulesEngineResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesGet (long edgeApplicationId, string phase, long? page = null, long? pageSize = null, string? filter = null, string? orderBy = null, string? sort = null, string? accept = null)
 
 /edge_applications/{edge_application_id}/rules_engine/{phase}/rules
 
@@ -43,10 +43,10 @@ namespace Example
             var phase = "phase_example";  // string | 
             var page = 789L;  // long? |  (optional) 
             var pageSize = 789L;  // long? |  (optional) 
-            var filter = "filter_example";  // string |  (optional) 
-            var orderBy = "orderBy_example";  // string |  (optional) 
-            var sort = "sort_example";  // string |  (optional) 
-            var accept = application/json; version=3;  // string |  (optional) 
+            var filter = "filter_example";  // string? |  (optional) 
+            var orderBy = "orderBy_example";  // string? |  (optional) 
+            var sort = "sort_example";  // string? |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
 
             try
             {
@@ -93,10 +93,10 @@ catch (ApiException e)
 | **phase** | **string** |  |  |
 | **page** | **long?** |  | [optional]  |
 | **pageSize** | **long?** |  | [optional]  |
-| **filter** | **string** |  | [optional]  |
-| **orderBy** | **string** |  | [optional]  |
-| **sort** | **string** |  | [optional]  |
-| **accept** | **string** |  | [optional]  |
+| **filter** | **string?** |  | [optional]  |
+| **orderBy** | **string?** |  | [optional]  |
+| **sort** | **string?** |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
 
 ### Return type
 
@@ -126,7 +126,7 @@ catch (ApiException e)
 
 <a id="edgeapplicationsedgeapplicationidrulesenginephaserulespost"></a>
 # **EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPost**
-> RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPost (long edgeApplicationId, string phase, string accept = null, string contentType = null, CreateRulesEngineRequest createRulesEngineRequest = null)
+> RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesPost (long edgeApplicationId, string phase, string? accept = null, string? contentType = null, CreateRulesEngineRequest? createRulesEngineRequest = null)
 
 /edge_applications/{edge_application_id}/rules_engine/{phase}/rules
 
@@ -156,9 +156,9 @@ namespace Example
             var apiInstance = new EdgeApplicationsRulesEngineApi(config);
             var edgeApplicationId = 789L;  // long | 
             var phase = "phase_example";  // string | 
-            var accept = application/json; version=3;  // string |  (optional) 
-            var contentType = application/json;  // string | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
-            var createRulesEngineRequest = new CreateRulesEngineRequest(); // CreateRulesEngineRequest |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
+            var contentType = application/json;  // string? | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
+            var createRulesEngineRequest = new CreateRulesEngineRequest?(); // CreateRulesEngineRequest? |  (optional) 
 
             try
             {
@@ -203,9 +203,9 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **edgeApplicationId** | **long** |  |  |
 | **phase** | **string** |  |  |
-| **accept** | **string** |  | [optional]  |
-| **contentType** | **string** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
-| **createRulesEngineRequest** | [**CreateRulesEngineRequest**](CreateRulesEngineRequest.md) |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
+| **contentType** | **string?** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
+| **createRulesEngineRequest** | [**CreateRulesEngineRequest?**](CreateRulesEngineRequest?.md) |  | [optional]  |
 
 ### Return type
 
@@ -235,7 +235,7 @@ catch (ApiException e)
 
 <a id="edgeapplicationsedgeapplicationidrulesenginephaserulesruleiddelete"></a>
 # **EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDelete**
-> void EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDelete (long edgeApplicationId, string phase, long ruleId, string accept = null)
+> void EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdDelete (long edgeApplicationId, string phase, long ruleId, string? accept = null)
 
 /edge_applications/{edge_application_id}/rules_engine/{phase}/rules
 
@@ -264,7 +264,7 @@ namespace Example
             var edgeApplicationId = 789L;  // long | The id of the edge application you plan to delete. 
             var phase = "phase_example";  // string | 
             var ruleId = 789L;  // long | The id of the rule you plan to delete. 
-            var accept = application/json; version=3;  // string |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
 
             try
             {
@@ -306,7 +306,7 @@ catch (ApiException e)
 | **edgeApplicationId** | **long** | The id of the edge application you plan to delete.  |  |
 | **phase** | **string** |  |  |
 | **ruleId** | **long** | The id of the rule you plan to delete.  |  |
-| **accept** | **string** |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
 
 ### Return type
 
@@ -336,7 +336,7 @@ void (empty response body)
 
 <a id="edgeapplicationsedgeapplicationidrulesenginephaserulesruleidget"></a>
 # **EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGet**
-> RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGet (long edgeApplicationId, string phase, long ruleId, string accept = null)
+> RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdGet (long edgeApplicationId, string phase, long ruleId, string? accept = null)
 
 /edge_applications/{edge_application_id}/rules_engine/{phase}/rules
 
@@ -365,7 +365,7 @@ namespace Example
             var edgeApplicationId = 789L;  // long | The id of the edge application you want to get. 
             var phase = "phase_example";  // string | 
             var ruleId = 789L;  // long | The id of the rule you plan to delete. 
-            var accept = application/json; version=3;  // string |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
 
             try
             {
@@ -411,7 +411,7 @@ catch (ApiException e)
 | **edgeApplicationId** | **long** | The id of the edge application you want to get.  |  |
 | **phase** | **string** |  |  |
 | **ruleId** | **long** | The id of the rule you plan to delete.  |  |
-| **accept** | **string** |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
 
 ### Return type
 
@@ -441,7 +441,7 @@ catch (ApiException e)
 
 <a id="edgeapplicationsedgeapplicationidrulesenginephaserulesruleidpatch"></a>
 # **EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatch**
-> RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatch (long edgeApplicationId, string phase, long ruleId, string accept = null, string contentType = null, PatchRulesEngineRequest patchRulesEngineRequest = null)
+> RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPatch (long edgeApplicationId, string phase, long ruleId, string? accept = null, string? contentType = null, PatchRulesEngineRequest? patchRulesEngineRequest = null)
 
 /edge_applications/:edge_application_id:/rules_engine/:phase:/rules/:rule_id:
 
@@ -470,9 +470,9 @@ namespace Example
             var edgeApplicationId = 789L;  // long | 
             var phase = "phase_example";  // string | 
             var ruleId = 789L;  // long | 
-            var accept = application/json; version=3;  // string |  (optional) 
-            var contentType = application/json;  // string | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
-            var patchRulesEngineRequest = new PatchRulesEngineRequest(); // PatchRulesEngineRequest |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
+            var contentType = application/json;  // string? | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
+            var patchRulesEngineRequest = new PatchRulesEngineRequest?(); // PatchRulesEngineRequest? |  (optional) 
 
             try
             {
@@ -518,9 +518,9 @@ catch (ApiException e)
 | **edgeApplicationId** | **long** |  |  |
 | **phase** | **string** |  |  |
 | **ruleId** | **long** |  |  |
-| **accept** | **string** |  | [optional]  |
-| **contentType** | **string** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
-| **patchRulesEngineRequest** | [**PatchRulesEngineRequest**](PatchRulesEngineRequest.md) |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
+| **contentType** | **string?** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
+| **patchRulesEngineRequest** | [**PatchRulesEngineRequest?**](PatchRulesEngineRequest?.md) |  | [optional]  |
 
 ### Return type
 
@@ -550,7 +550,7 @@ catch (ApiException e)
 
 <a id="edgeapplicationsedgeapplicationidrulesenginephaserulesruleidput"></a>
 # **EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPut**
-> RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPut (long edgeApplicationId, string phase, long ruleId, string accept = null, string contentType = null, UpdateRulesEngineRequest updateRulesEngineRequest = null)
+> RulesEngineIdResponse EdgeApplicationsEdgeApplicationIdRulesEnginePhaseRulesRuleIdPut (long edgeApplicationId, string phase, long ruleId, string? accept = null, string? contentType = null, UpdateRulesEngineRequest? updateRulesEngineRequest = null)
 
 /edge_applications/:edge_application_id:/rules_engine/:phase:/rules/:rule_id:
 
@@ -579,9 +579,9 @@ namespace Example
             var edgeApplicationId = 789L;  // long | 
             var phase = "phase_example";  // string | 
             var ruleId = 789L;  // long | 
-            var accept = application/json; version=3;  // string |  (optional) 
-            var contentType = application/json;  // string | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
-            var updateRulesEngineRequest = new UpdateRulesEngineRequest(); // UpdateRulesEngineRequest |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
+            var contentType = application/json;  // string? | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
+            var updateRulesEngineRequest = new UpdateRulesEngineRequest?(); // UpdateRulesEngineRequest? |  (optional) 
 
             try
             {
@@ -627,9 +627,9 @@ catch (ApiException e)
 | **edgeApplicationId** | **long** |  |  |
 | **phase** | **string** |  |  |
 | **ruleId** | **long** |  |  |
-| **accept** | **string** |  | [optional]  |
-| **contentType** | **string** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
-| **updateRulesEngineRequest** | [**UpdateRulesEngineRequest**](UpdateRulesEngineRequest.md) |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
+| **contentType** | **string?** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
+| **updateRulesEngineRequest** | [**UpdateRulesEngineRequest?**](UpdateRulesEngineRequest?.md) |  | [optional]  |
 
 ### Return type
 

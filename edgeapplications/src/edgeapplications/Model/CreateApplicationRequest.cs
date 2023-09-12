@@ -44,6 +44,7 @@ namespace edgeapplications.Model
         /// <param name="deliveryProtocol">deliveryProtocol.</param>
         /// <param name="originType">originType.</param>
         /// <param name="address">address.</param>
+        /// <param name="minimumTlsVersion">minimumTlsVersion.</param>
         /// <param name="originProtocolPolicy">originProtocolPolicy.</param>
         /// <param name="hostHeader">hostHeader.</param>
         /// <param name="browserCacheSettings">browserCacheSettings.</param>
@@ -57,7 +58,7 @@ namespace edgeapplications.Model
         /// <param name="l2Caching">l2Caching.</param>
         /// <param name="http3">http3.</param>
         /// <param name="websocket">websocket.</param>
-        public CreateApplicationRequest(string name = default(string), bool applicationAcceleration = default(bool), string deliveryProtocol = default(string), string originType = default(string), string address = default(string), string originProtocolPolicy = default(string), string hostHeader = default(string), string browserCacheSettings = default(string), string cdnCacheSettings = default(string), long browserCacheSettingsMaximumTtl = default(long), long cdnCacheSettingsMaximumTtl = default(long), bool debugRules = default(bool), string supportedCiphers = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), bool l2Caching = default(bool), bool http3 = default(bool), bool websocket = default(bool))
+        public CreateApplicationRequest(string name = default(string), bool applicationAcceleration = default(bool), string deliveryProtocol = default(string), string originType = default(string), string address = default(string), string minimumTlsVersion = default(string), string originProtocolPolicy = default(string), string hostHeader = default(string), string browserCacheSettings = default(string), string cdnCacheSettings = default(string), long browserCacheSettingsMaximumTtl = default(long), long cdnCacheSettingsMaximumTtl = default(long), bool debugRules = default(bool), string supportedCiphers = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), bool l2Caching = default(bool), bool http3 = default(bool), bool websocket = default(bool))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -69,6 +70,7 @@ namespace edgeapplications.Model
             this.DeliveryProtocol = deliveryProtocol;
             this.OriginType = originType;
             this.Address = address;
+            this.MinimumTlsVersion = minimumTlsVersion;
             this.OriginProtocolPolicy = originProtocolPolicy;
             this.HostHeader = hostHeader;
             this.BrowserCacheSettings = browserCacheSettings;
@@ -113,6 +115,12 @@ namespace edgeapplications.Model
         /// </summary>
         [DataMember(Name = "address", EmitDefaultValue = false)]
         public string Address { get; set; }
+
+        /// <summary>
+        /// Gets or Sets MinimumTlsVersion
+        /// </summary>
+        [DataMember(Name = "minimum_tls_version", EmitDefaultValue = false)]
+        public string MinimumTlsVersion { get; set; }
 
         /// <summary>
         /// Gets or Sets OriginProtocolPolicy
@@ -205,6 +213,7 @@ namespace edgeapplications.Model
             sb.Append("  DeliveryProtocol: ").Append(DeliveryProtocol).Append("\n");
             sb.Append("  OriginType: ").Append(OriginType).Append("\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
+            sb.Append("  MinimumTlsVersion: ").Append(MinimumTlsVersion).Append("\n");
             sb.Append("  OriginProtocolPolicy: ").Append(OriginProtocolPolicy).Append("\n");
             sb.Append("  HostHeader: ").Append(HostHeader).Append("\n");
             sb.Append("  BrowserCacheSettings: ").Append(BrowserCacheSettings).Append("\n");
@@ -276,6 +285,11 @@ namespace edgeapplications.Model
                     this.Address == input.Address ||
                     (this.Address != null &&
                     this.Address.Equals(input.Address))
+                ) && 
+                (
+                    this.MinimumTlsVersion == input.MinimumTlsVersion ||
+                    (this.MinimumTlsVersion != null &&
+                    this.MinimumTlsVersion.Equals(input.MinimumTlsVersion))
                 ) && 
                 (
                     this.OriginProtocolPolicy == input.OriginProtocolPolicy ||
@@ -363,6 +377,10 @@ namespace edgeapplications.Model
                 if (this.Address != null)
                 {
                     hashCode = (hashCode * 59) + this.Address.GetHashCode();
+                }
+                if (this.MinimumTlsVersion != null)
+                {
+                    hashCode = (hashCode * 59) + this.MinimumTlsVersion.GetHashCode();
                 }
                 if (this.OriginProtocolPolicy != null)
                 {

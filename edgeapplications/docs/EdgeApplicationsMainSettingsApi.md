@@ -13,7 +13,7 @@ All URIs are relative to *https://api.azionapi.net*
 
 <a id="edgeapplicationsget"></a>
 # **EdgeApplicationsGet**
-> GetApplicationsResponse EdgeApplicationsGet (long? page = null, long? pageSize = null, string filter = null, string orderBy = null, string sort = null, string accept = null)
+> GetApplicationsResponse EdgeApplicationsGet (long? page = null, long? pageSize = null, string? filter = null, string? orderBy = null, string? sort = null, string? accept = null)
 
 /edge_applications
 
@@ -41,10 +41,10 @@ namespace Example
             var apiInstance = new EdgeApplicationsMainSettingsApi(config);
             var page = 789L;  // long? |  (optional) 
             var pageSize = 789L;  // long? |  (optional) 
-            var filter = "filter_example";  // string |  (optional) 
-            var orderBy = "orderBy_example";  // string |  (optional) 
-            var sort = "sort_example";  // string |  (optional) 
-            var accept = application/json; version=3;  // string |  (optional) 
+            var filter = "filter_example";  // string? |  (optional) 
+            var orderBy = "orderBy_example";  // string? |  (optional) 
+            var sort = "sort_example";  // string? |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
 
             try
             {
@@ -89,10 +89,10 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **page** | **long?** |  | [optional]  |
 | **pageSize** | **long?** |  | [optional]  |
-| **filter** | **string** |  | [optional]  |
-| **orderBy** | **string** |  | [optional]  |
-| **sort** | **string** |  | [optional]  |
-| **accept** | **string** |  | [optional]  |
+| **filter** | **string?** |  | [optional]  |
+| **orderBy** | **string?** |  | [optional]  |
+| **sort** | **string?** |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
 
 ### Return type
 
@@ -122,7 +122,7 @@ catch (ApiException e)
 
 <a id="edgeapplicationsiddelete"></a>
 # **EdgeApplicationsIdDelete**
-> void EdgeApplicationsIdDelete (string id, string accept = null)
+> void EdgeApplicationsIdDelete (string id, string? accept = null)
 
 /edge_applications/:id
 
@@ -149,7 +149,7 @@ namespace Example
 
             var apiInstance = new EdgeApplicationsMainSettingsApi(config);
             var id = "id_example";  // string | The id of the edge application that you plan to delete.
-            var accept = application/json; version=3;  // string |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
 
             try
             {
@@ -189,7 +189,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | The id of the edge application that you plan to delete. |  |
-| **accept** | **string** |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
 
 ### Return type
 
@@ -219,7 +219,7 @@ void (empty response body)
 
 <a id="edgeapplicationsidget"></a>
 # **EdgeApplicationsIdGet**
-> GetApplicationResponse EdgeApplicationsIdGet (string id, string accept = null)
+> GetApplicationResponse EdgeApplicationsIdGet (string id, string? accept = null)
 
 /edge_applications/:id
 
@@ -246,7 +246,7 @@ namespace Example
 
             var apiInstance = new EdgeApplicationsMainSettingsApi(config);
             var id = "id_example";  // string | 
-            var accept = application/json; version=3;  // string |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
 
             try
             {
@@ -290,7 +290,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** |  |  |
-| **accept** | **string** |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
 
 ### Return type
 
@@ -320,7 +320,7 @@ catch (ApiException e)
 
 <a id="edgeapplicationsidpatch"></a>
 # **EdgeApplicationsIdPatch**
-> ApplicationUpdateResponse EdgeApplicationsIdPatch (string id, string accept = null, string contentType = null, ApplicationUpdateRequest applicationUpdateRequest = null)
+> ApplicationUpdateResponse EdgeApplicationsIdPatch (string id, string? accept = null, string? contentType = null, ApplicationUpdateRequest? applicationUpdateRequest = null)
 
 /edge_applications/:id
 
@@ -347,9 +347,9 @@ namespace Example
 
             var apiInstance = new EdgeApplicationsMainSettingsApi(config);
             var id = "id_example";  // string | 
-            var accept = application/json; version=3;  // string |  (optional) 
-            var contentType = application/json;  // string | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
-            var applicationUpdateRequest = new ApplicationUpdateRequest(); // ApplicationUpdateRequest |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
+            var contentType = application/json;  // string? | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
+            var applicationUpdateRequest = new ApplicationUpdateRequest?(); // ApplicationUpdateRequest? |  (optional) 
 
             try
             {
@@ -393,9 +393,9 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** |  |  |
-| **accept** | **string** |  | [optional]  |
-| **contentType** | **string** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
-| **applicationUpdateRequest** | [**ApplicationUpdateRequest**](ApplicationUpdateRequest.md) |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
+| **contentType** | **string?** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
+| **applicationUpdateRequest** | [**ApplicationUpdateRequest?**](ApplicationUpdateRequest?.md) |  | [optional]  |
 
 ### Return type
 
@@ -426,7 +426,7 @@ catch (ApiException e)
 
 <a id="edgeapplicationsidput"></a>
 # **EdgeApplicationsIdPut**
-> ApplicationPutResult EdgeApplicationsIdPut (string id, string accept = null, string contentType = null, ApplicationPutRequest applicationPutRequest = null)
+> ApplicationPutResult EdgeApplicationsIdPut (string id, string? accept = null, string? contentType = null, ApplicationPutRequest? applicationPutRequest = null)
 
 /edge_applications/:id
 
@@ -453,9 +453,9 @@ namespace Example
 
             var apiInstance = new EdgeApplicationsMainSettingsApi(config);
             var id = "id_example";  // string | The Id of the edge application to be overwritten. 
-            var accept = application/json; version=3;  // string |  (optional) 
-            var contentType = application/json;  // string | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
-            var applicationPutRequest = new ApplicationPutRequest(); // ApplicationPutRequest |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
+            var contentType = application/json;  // string? | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
+            var applicationPutRequest = new ApplicationPutRequest?(); // ApplicationPutRequest? |  (optional) 
 
             try
             {
@@ -499,9 +499,9 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | The Id of the edge application to be overwritten.  |  |
-| **accept** | **string** |  | [optional]  |
-| **contentType** | **string** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
-| **applicationPutRequest** | [**ApplicationPutRequest**](ApplicationPutRequest.md) |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
+| **contentType** | **string?** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
+| **applicationPutRequest** | [**ApplicationPutRequest?**](ApplicationPutRequest?.md) |  | [optional]  |
 
 ### Return type
 
@@ -532,7 +532,7 @@ catch (ApiException e)
 
 <a id="edgeapplicationspost"></a>
 # **EdgeApplicationsPost**
-> CreateApplicationResult EdgeApplicationsPost (string accept = null, string contentType = null, CreateApplicationRequest createApplicationRequest = null)
+> CreateApplicationResult EdgeApplicationsPost (string? accept = null, string? contentType = null, CreateApplicationRequest? createApplicationRequest = null)
 
 /edge_applications
 
@@ -558,9 +558,9 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new EdgeApplicationsMainSettingsApi(config);
-            var accept = application/json; version=3;  // string |  (optional) 
-            var contentType = application/json;  // string | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
-            var createApplicationRequest = new CreateApplicationRequest(); // CreateApplicationRequest |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
+            var contentType = application/json;  // string? | The type of coding used in the Body (application/json). <br>  Example: Content-Type: application/json (optional) 
+            var createApplicationRequest = new CreateApplicationRequest?(); // CreateApplicationRequest? |  (optional) 
 
             try
             {
@@ -603,9 +603,9 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accept** | **string** |  | [optional]  |
-| **contentType** | **string** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
-| **createApplicationRequest** | [**CreateApplicationRequest**](CreateApplicationRequest.md) |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
+| **contentType** | **string?** | The type of coding used in the Body (application/json). &lt;br&gt;  Example: Content-Type: application/json | [optional]  |
+| **createApplicationRequest** | [**CreateApplicationRequest?**](CreateApplicationRequest?.md) |  | [optional]  |
 
 ### Return type
 

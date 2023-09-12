@@ -39,7 +39,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OriginsResponse</returns>
-        OriginsResponse EdgeApplicationsEdgeApplicationIdOriginsGet(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0);
+        OriginsResponse EdgeApplicationsEdgeApplicationIdOriginsGet(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/origins
@@ -57,7 +57,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OriginsResponse</returns>
-        ApiResponse<OriginsResponse> EdgeApplicationsEdgeApplicationIdOriginsGetWithHttpInfo(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0);
+        ApiResponse<OriginsResponse> EdgeApplicationsEdgeApplicationIdOriginsGetWithHttpInfo(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0);
         /// <summary>
         /// /edge_applications/{edge_application_id}/origins/{origin_id}
         /// </summary>
@@ -67,7 +67,7 @@ namespace edgeapplications.Api
         /// <param name="accept">The id of the Origin that you plan to delete. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void EdgeApplicationsEdgeApplicationIdOriginsOriginKeyDelete(long edgeApplicationId, string originKey, string accept = default(string), int operationIndex = 0);
+        void EdgeApplicationsEdgeApplicationIdOriginsOriginKeyDelete(long edgeApplicationId, string originKey, string? accept = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/origins/{origin_id}
@@ -81,7 +81,7 @@ namespace edgeapplications.Api
         /// <param name="accept">The id of the Origin that you plan to delete. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyDeleteWithHttpInfo(long edgeApplicationId, string originKey, string accept = default(string), int operationIndex = 0);
+        ApiResponse<Object> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyDeleteWithHttpInfo(long edgeApplicationId, string originKey, string? accept = default(string?), int operationIndex = 0);
         /// <summary>
         /// /edge_applications/{edge_application_id}/origins/{origin_key}
         /// </summary>
@@ -91,7 +91,7 @@ namespace edgeapplications.Api
         /// <param name="accept">The id of the Origin that you plan to query. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OriginsIdResponse</returns>
-        OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGet(long edgeApplicationId, string originKey, string accept = default(string), int operationIndex = 0);
+        OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGet(long edgeApplicationId, string originKey, string? accept = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/origins/{origin_key}
@@ -105,7 +105,7 @@ namespace edgeapplications.Api
         /// <param name="accept">The id of the Origin that you plan to query. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OriginsIdResponse</returns>
-        ApiResponse<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGetWithHttpInfo(long edgeApplicationId, string originKey, string accept = default(string), int operationIndex = 0);
+        ApiResponse<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGetWithHttpInfo(long edgeApplicationId, string originKey, string? accept = default(string?), int operationIndex = 0);
         /// <summary>
         /// /edge_applications/:edge_application_id:/origins/:origin_id:
         /// </summary>
@@ -117,7 +117,7 @@ namespace edgeapplications.Api
         /// <param name="patchOriginsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OriginsIdResponse</returns>
-        OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatch(long edgeApplicationId, string originKey, string accept = default(string), string contentType = default(string), PatchOriginsRequest patchOriginsRequest = default(PatchOriginsRequest), int operationIndex = 0);
+        OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatch(long edgeApplicationId, string originKey, string? accept = default(string?), string? contentType = default(string?), PatchOriginsRequest? patchOriginsRequest = default(PatchOriginsRequest?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/:edge_application_id:/origins/:origin_id:
@@ -133,7 +133,7 @@ namespace edgeapplications.Api
         /// <param name="patchOriginsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OriginsIdResponse</returns>
-        ApiResponse<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatchWithHttpInfo(long edgeApplicationId, string originKey, string accept = default(string), string contentType = default(string), PatchOriginsRequest patchOriginsRequest = default(PatchOriginsRequest), int operationIndex = 0);
+        ApiResponse<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatchWithHttpInfo(long edgeApplicationId, string originKey, string? accept = default(string?), string? contentType = default(string?), PatchOriginsRequest? patchOriginsRequest = default(PatchOriginsRequest?), int operationIndex = 0);
         /// <summary>
         /// /edge_applications/{edge_application_id}/origins/{origin_id}
         /// </summary>
@@ -145,7 +145,7 @@ namespace edgeapplications.Api
         /// <param name="updateOriginsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OriginsIdResponse</returns>
-        OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPut(long edgeApplicationId, string originKey, string accept = default(string), string contentType = default(string), UpdateOriginsRequest updateOriginsRequest = default(UpdateOriginsRequest), int operationIndex = 0);
+        OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPut(long edgeApplicationId, string originKey, string? accept = default(string?), string? contentType = default(string?), UpdateOriginsRequest? updateOriginsRequest = default(UpdateOriginsRequest?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/origins/{origin_id}
@@ -161,7 +161,7 @@ namespace edgeapplications.Api
         /// <param name="updateOriginsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OriginsIdResponse</returns>
-        ApiResponse<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPutWithHttpInfo(long edgeApplicationId, string originKey, string accept = default(string), string contentType = default(string), UpdateOriginsRequest updateOriginsRequest = default(UpdateOriginsRequest), int operationIndex = 0);
+        ApiResponse<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPutWithHttpInfo(long edgeApplicationId, string originKey, string? accept = default(string?), string? contentType = default(string?), UpdateOriginsRequest? updateOriginsRequest = default(UpdateOriginsRequest?), int operationIndex = 0);
         /// <summary>
         /// /edge_applications/{edge_application_id}/origins
         /// </summary>
@@ -172,7 +172,7 @@ namespace edgeapplications.Api
         /// <param name="createOriginsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OriginsIdResponse</returns>
-        OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsPost(long edgeApplicationId, string accept = default(string), string contentType = default(string), CreateOriginsRequest createOriginsRequest = default(CreateOriginsRequest), int operationIndex = 0);
+        OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsPost(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), CreateOriginsRequest? createOriginsRequest = default(CreateOriginsRequest?), int operationIndex = 0);
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/origins
@@ -187,7 +187,7 @@ namespace edgeapplications.Api
         /// <param name="createOriginsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OriginsIdResponse</returns>
-        ApiResponse<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsPostWithHttpInfo(long edgeApplicationId, string accept = default(string), string contentType = default(string), CreateOriginsRequest createOriginsRequest = default(CreateOriginsRequest), int operationIndex = 0);
+        ApiResponse<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsPostWithHttpInfo(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), CreateOriginsRequest? createOriginsRequest = default(CreateOriginsRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -214,7 +214,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OriginsResponse</returns>
-        System.Threading.Tasks.Task<OriginsResponse> EdgeApplicationsEdgeApplicationIdOriginsGetAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<OriginsResponse> EdgeApplicationsEdgeApplicationIdOriginsGetAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/origins
@@ -233,7 +233,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OriginsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OriginsResponse>> EdgeApplicationsEdgeApplicationIdOriginsGetWithHttpInfoAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<OriginsResponse>> EdgeApplicationsEdgeApplicationIdOriginsGetWithHttpInfoAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /edge_applications/{edge_application_id}/origins/{origin_id}
         /// </summary>
@@ -247,7 +247,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task EdgeApplicationsEdgeApplicationIdOriginsOriginKeyDeleteAsync(long edgeApplicationId, string originKey, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task EdgeApplicationsEdgeApplicationIdOriginsOriginKeyDeleteAsync(long edgeApplicationId, string originKey, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/origins/{origin_id}
@@ -262,7 +262,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyDeleteWithHttpInfoAsync(long edgeApplicationId, string originKey, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyDeleteWithHttpInfoAsync(long edgeApplicationId, string originKey, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /edge_applications/{edge_application_id}/origins/{origin_key}
         /// </summary>
@@ -276,7 +276,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OriginsIdResponse</returns>
-        System.Threading.Tasks.Task<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGetAsync(long edgeApplicationId, string originKey, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGetAsync(long edgeApplicationId, string originKey, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/origins/{origin_key}
@@ -291,7 +291,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OriginsIdResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OriginsIdResponse>> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGetWithHttpInfoAsync(long edgeApplicationId, string originKey, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<OriginsIdResponse>> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGetWithHttpInfoAsync(long edgeApplicationId, string originKey, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /edge_applications/:edge_application_id:/origins/:origin_id:
         /// </summary>
@@ -307,7 +307,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OriginsIdResponse</returns>
-        System.Threading.Tasks.Task<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatchAsync(long edgeApplicationId, string originKey, string accept = default(string), string contentType = default(string), PatchOriginsRequest patchOriginsRequest = default(PatchOriginsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatchAsync(long edgeApplicationId, string originKey, string? accept = default(string?), string? contentType = default(string?), PatchOriginsRequest? patchOriginsRequest = default(PatchOriginsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/:edge_application_id:/origins/:origin_id:
@@ -324,7 +324,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OriginsIdResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OriginsIdResponse>> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatchWithHttpInfoAsync(long edgeApplicationId, string originKey, string accept = default(string), string contentType = default(string), PatchOriginsRequest patchOriginsRequest = default(PatchOriginsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<OriginsIdResponse>> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatchWithHttpInfoAsync(long edgeApplicationId, string originKey, string? accept = default(string?), string? contentType = default(string?), PatchOriginsRequest? patchOriginsRequest = default(PatchOriginsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /edge_applications/{edge_application_id}/origins/{origin_id}
         /// </summary>
@@ -340,7 +340,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OriginsIdResponse</returns>
-        System.Threading.Tasks.Task<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPutAsync(long edgeApplicationId, string originKey, string accept = default(string), string contentType = default(string), UpdateOriginsRequest updateOriginsRequest = default(UpdateOriginsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPutAsync(long edgeApplicationId, string originKey, string? accept = default(string?), string? contentType = default(string?), UpdateOriginsRequest? updateOriginsRequest = default(UpdateOriginsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/origins/{origin_id}
@@ -357,7 +357,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OriginsIdResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OriginsIdResponse>> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPutWithHttpInfoAsync(long edgeApplicationId, string originKey, string accept = default(string), string contentType = default(string), UpdateOriginsRequest updateOriginsRequest = default(UpdateOriginsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<OriginsIdResponse>> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPutWithHttpInfoAsync(long edgeApplicationId, string originKey, string? accept = default(string?), string? contentType = default(string?), UpdateOriginsRequest? updateOriginsRequest = default(UpdateOriginsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /edge_applications/{edge_application_id}/origins
         /// </summary>
@@ -372,7 +372,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OriginsIdResponse</returns>
-        System.Threading.Tasks.Task<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsPostAsync(long edgeApplicationId, string accept = default(string), string contentType = default(string), CreateOriginsRequest createOriginsRequest = default(CreateOriginsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsPostAsync(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), CreateOriginsRequest? createOriginsRequest = default(CreateOriginsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /edge_applications/{edge_application_id}/origins
@@ -388,7 +388,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OriginsIdResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OriginsIdResponse>> EdgeApplicationsEdgeApplicationIdOriginsPostWithHttpInfoAsync(long edgeApplicationId, string accept = default(string), string contentType = default(string), CreateOriginsRequest createOriginsRequest = default(CreateOriginsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<OriginsIdResponse>> EdgeApplicationsEdgeApplicationIdOriginsPostWithHttpInfoAsync(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), CreateOriginsRequest? createOriginsRequest = default(CreateOriginsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -522,7 +522,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OriginsResponse</returns>
-        public OriginsResponse EdgeApplicationsEdgeApplicationIdOriginsGet(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0)
+        public OriginsResponse EdgeApplicationsEdgeApplicationIdOriginsGet(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0)
         {
             edgeapplications.Client.ApiResponse<OriginsResponse> localVarResponse = EdgeApplicationsEdgeApplicationIdOriginsGetWithHttpInfo(edgeApplicationId, page, pageSize, filter, orderBy, sort, accept);
             return localVarResponse.Data;
@@ -541,7 +541,7 @@ namespace edgeapplications.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OriginsResponse</returns>
-        public edgeapplications.Client.ApiResponse<OriginsResponse> EdgeApplicationsEdgeApplicationIdOriginsGetWithHttpInfo(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<OriginsResponse> EdgeApplicationsEdgeApplicationIdOriginsGetWithHttpInfo(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0)
         {
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();
 
@@ -628,7 +628,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OriginsResponse</returns>
-        public async System.Threading.Tasks.Task<OriginsResponse> EdgeApplicationsEdgeApplicationIdOriginsGetAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OriginsResponse> EdgeApplicationsEdgeApplicationIdOriginsGetAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgeapplications.Client.ApiResponse<OriginsResponse> localVarResponse = await EdgeApplicationsEdgeApplicationIdOriginsGetWithHttpInfoAsync(edgeApplicationId, page, pageSize, filter, orderBy, sort, accept, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -648,7 +648,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OriginsResponse)</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<OriginsResponse>> EdgeApplicationsEdgeApplicationIdOriginsGetWithHttpInfoAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string filter = default(string), string orderBy = default(string), string sort = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<OriginsResponse>> EdgeApplicationsEdgeApplicationIdOriginsGetWithHttpInfoAsync(long edgeApplicationId, long? page = default(long?), long? pageSize = default(long?), string? filter = default(string?), string? orderBy = default(string?), string? sort = default(string?), string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();
@@ -732,7 +732,7 @@ namespace edgeapplications.Api
         /// <param name="accept">The id of the Origin that you plan to delete. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void EdgeApplicationsEdgeApplicationIdOriginsOriginKeyDelete(long edgeApplicationId, string originKey, string accept = default(string), int operationIndex = 0)
+        public void EdgeApplicationsEdgeApplicationIdOriginsOriginKeyDelete(long edgeApplicationId, string originKey, string? accept = default(string?), int operationIndex = 0)
         {
             EdgeApplicationsEdgeApplicationIdOriginsOriginKeyDeleteWithHttpInfo(edgeApplicationId, originKey, accept);
         }
@@ -746,7 +746,7 @@ namespace edgeapplications.Api
         /// <param name="accept">The id of the Origin that you plan to delete. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public edgeapplications.Client.ApiResponse<Object> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyDeleteWithHttpInfo(long edgeApplicationId, string originKey, string accept = default(string), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<Object> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyDeleteWithHttpInfo(long edgeApplicationId, string originKey, string? accept = default(string?), int operationIndex = 0)
         {
             // verify the required parameter 'originKey' is set
             if (originKey == null)
@@ -815,7 +815,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task EdgeApplicationsEdgeApplicationIdOriginsOriginKeyDeleteAsync(long edgeApplicationId, string originKey, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task EdgeApplicationsEdgeApplicationIdOriginsOriginKeyDeleteAsync(long edgeApplicationId, string originKey, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             await EdgeApplicationsEdgeApplicationIdOriginsOriginKeyDeleteWithHttpInfoAsync(edgeApplicationId, originKey, accept, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -830,7 +830,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<Object>> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyDeleteWithHttpInfoAsync(long edgeApplicationId, string originKey, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<Object>> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyDeleteWithHttpInfoAsync(long edgeApplicationId, string originKey, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'originKey' is set
             if (originKey == null)
@@ -900,7 +900,7 @@ namespace edgeapplications.Api
         /// <param name="accept">The id of the Origin that you plan to query. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OriginsIdResponse</returns>
-        public OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGet(long edgeApplicationId, string originKey, string accept = default(string), int operationIndex = 0)
+        public OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGet(long edgeApplicationId, string originKey, string? accept = default(string?), int operationIndex = 0)
         {
             edgeapplications.Client.ApiResponse<OriginsIdResponse> localVarResponse = EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGetWithHttpInfo(edgeApplicationId, originKey, accept);
             return localVarResponse.Data;
@@ -915,7 +915,7 @@ namespace edgeapplications.Api
         /// <param name="accept">The id of the Origin that you plan to query. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OriginsIdResponse</returns>
-        public edgeapplications.Client.ApiResponse<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGetWithHttpInfo(long edgeApplicationId, string originKey, string accept = default(string), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGetWithHttpInfo(long edgeApplicationId, string originKey, string? accept = default(string?), int operationIndex = 0)
         {
             // verify the required parameter 'originKey' is set
             if (originKey == null)
@@ -985,7 +985,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OriginsIdResponse</returns>
-        public async System.Threading.Tasks.Task<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGetAsync(long edgeApplicationId, string originKey, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGetAsync(long edgeApplicationId, string originKey, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgeapplications.Client.ApiResponse<OriginsIdResponse> localVarResponse = await EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGetWithHttpInfoAsync(edgeApplicationId, originKey, accept, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1001,7 +1001,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OriginsIdResponse)</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<OriginsIdResponse>> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGetWithHttpInfoAsync(long edgeApplicationId, string originKey, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<OriginsIdResponse>> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyGetWithHttpInfoAsync(long edgeApplicationId, string originKey, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'originKey' is set
             if (originKey == null)
@@ -1074,7 +1074,7 @@ namespace edgeapplications.Api
         /// <param name="patchOriginsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OriginsIdResponse</returns>
-        public OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatch(long edgeApplicationId, string originKey, string accept = default(string), string contentType = default(string), PatchOriginsRequest patchOriginsRequest = default(PatchOriginsRequest), int operationIndex = 0)
+        public OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatch(long edgeApplicationId, string originKey, string? accept = default(string?), string? contentType = default(string?), PatchOriginsRequest? patchOriginsRequest = default(PatchOriginsRequest?), int operationIndex = 0)
         {
             edgeapplications.Client.ApiResponse<OriginsIdResponse> localVarResponse = EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatchWithHttpInfo(edgeApplicationId, originKey, accept, contentType, patchOriginsRequest);
             return localVarResponse.Data;
@@ -1091,7 +1091,7 @@ namespace edgeapplications.Api
         /// <param name="patchOriginsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OriginsIdResponse</returns>
-        public edgeapplications.Client.ApiResponse<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatchWithHttpInfo(long edgeApplicationId, string originKey, string accept = default(string), string contentType = default(string), PatchOriginsRequest patchOriginsRequest = default(PatchOriginsRequest), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatchWithHttpInfo(long edgeApplicationId, string originKey, string? accept = default(string?), string? contentType = default(string?), PatchOriginsRequest? patchOriginsRequest = default(PatchOriginsRequest?), int operationIndex = 0)
         {
             // verify the required parameter 'originKey' is set
             if (originKey == null)
@@ -1169,7 +1169,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OriginsIdResponse</returns>
-        public async System.Threading.Tasks.Task<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatchAsync(long edgeApplicationId, string originKey, string accept = default(string), string contentType = default(string), PatchOriginsRequest patchOriginsRequest = default(PatchOriginsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatchAsync(long edgeApplicationId, string originKey, string? accept = default(string?), string? contentType = default(string?), PatchOriginsRequest? patchOriginsRequest = default(PatchOriginsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgeapplications.Client.ApiResponse<OriginsIdResponse> localVarResponse = await EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatchWithHttpInfoAsync(edgeApplicationId, originKey, accept, contentType, patchOriginsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1187,7 +1187,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OriginsIdResponse)</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<OriginsIdResponse>> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatchWithHttpInfoAsync(long edgeApplicationId, string originKey, string accept = default(string), string contentType = default(string), PatchOriginsRequest patchOriginsRequest = default(PatchOriginsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<OriginsIdResponse>> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPatchWithHttpInfoAsync(long edgeApplicationId, string originKey, string? accept = default(string?), string? contentType = default(string?), PatchOriginsRequest? patchOriginsRequest = default(PatchOriginsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'originKey' is set
             if (originKey == null)
@@ -1266,7 +1266,7 @@ namespace edgeapplications.Api
         /// <param name="updateOriginsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OriginsIdResponse</returns>
-        public OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPut(long edgeApplicationId, string originKey, string accept = default(string), string contentType = default(string), UpdateOriginsRequest updateOriginsRequest = default(UpdateOriginsRequest), int operationIndex = 0)
+        public OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPut(long edgeApplicationId, string originKey, string? accept = default(string?), string? contentType = default(string?), UpdateOriginsRequest? updateOriginsRequest = default(UpdateOriginsRequest?), int operationIndex = 0)
         {
             edgeapplications.Client.ApiResponse<OriginsIdResponse> localVarResponse = EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPutWithHttpInfo(edgeApplicationId, originKey, accept, contentType, updateOriginsRequest);
             return localVarResponse.Data;
@@ -1283,7 +1283,7 @@ namespace edgeapplications.Api
         /// <param name="updateOriginsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OriginsIdResponse</returns>
-        public edgeapplications.Client.ApiResponse<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPutWithHttpInfo(long edgeApplicationId, string originKey, string accept = default(string), string contentType = default(string), UpdateOriginsRequest updateOriginsRequest = default(UpdateOriginsRequest), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPutWithHttpInfo(long edgeApplicationId, string originKey, string? accept = default(string?), string? contentType = default(string?), UpdateOriginsRequest? updateOriginsRequest = default(UpdateOriginsRequest?), int operationIndex = 0)
         {
             // verify the required parameter 'originKey' is set
             if (originKey == null)
@@ -1361,7 +1361,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OriginsIdResponse</returns>
-        public async System.Threading.Tasks.Task<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPutAsync(long edgeApplicationId, string originKey, string accept = default(string), string contentType = default(string), UpdateOriginsRequest updateOriginsRequest = default(UpdateOriginsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPutAsync(long edgeApplicationId, string originKey, string? accept = default(string?), string? contentType = default(string?), UpdateOriginsRequest? updateOriginsRequest = default(UpdateOriginsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgeapplications.Client.ApiResponse<OriginsIdResponse> localVarResponse = await EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPutWithHttpInfoAsync(edgeApplicationId, originKey, accept, contentType, updateOriginsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1379,7 +1379,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OriginsIdResponse)</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<OriginsIdResponse>> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPutWithHttpInfoAsync(long edgeApplicationId, string originKey, string accept = default(string), string contentType = default(string), UpdateOriginsRequest updateOriginsRequest = default(UpdateOriginsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<OriginsIdResponse>> EdgeApplicationsEdgeApplicationIdOriginsOriginKeyPutWithHttpInfoAsync(long edgeApplicationId, string originKey, string? accept = default(string?), string? contentType = default(string?), UpdateOriginsRequest? updateOriginsRequest = default(UpdateOriginsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'originKey' is set
             if (originKey == null)
@@ -1457,7 +1457,7 @@ namespace edgeapplications.Api
         /// <param name="createOriginsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>OriginsIdResponse</returns>
-        public OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsPost(long edgeApplicationId, string accept = default(string), string contentType = default(string), CreateOriginsRequest createOriginsRequest = default(CreateOriginsRequest), int operationIndex = 0)
+        public OriginsIdResponse EdgeApplicationsEdgeApplicationIdOriginsPost(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), CreateOriginsRequest? createOriginsRequest = default(CreateOriginsRequest?), int operationIndex = 0)
         {
             edgeapplications.Client.ApiResponse<OriginsIdResponse> localVarResponse = EdgeApplicationsEdgeApplicationIdOriginsPostWithHttpInfo(edgeApplicationId, accept, contentType, createOriginsRequest);
             return localVarResponse.Data;
@@ -1473,7 +1473,7 @@ namespace edgeapplications.Api
         /// <param name="createOriginsRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of OriginsIdResponse</returns>
-        public edgeapplications.Client.ApiResponse<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsPostWithHttpInfo(long edgeApplicationId, string accept = default(string), string contentType = default(string), CreateOriginsRequest createOriginsRequest = default(CreateOriginsRequest), int operationIndex = 0)
+        public edgeapplications.Client.ApiResponse<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsPostWithHttpInfo(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), CreateOriginsRequest? createOriginsRequest = default(CreateOriginsRequest?), int operationIndex = 0)
         {
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();
 
@@ -1543,7 +1543,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OriginsIdResponse</returns>
-        public async System.Threading.Tasks.Task<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsPostAsync(long edgeApplicationId, string accept = default(string), string contentType = default(string), CreateOriginsRequest createOriginsRequest = default(CreateOriginsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OriginsIdResponse> EdgeApplicationsEdgeApplicationIdOriginsPostAsync(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), CreateOriginsRequest? createOriginsRequest = default(CreateOriginsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgeapplications.Client.ApiResponse<OriginsIdResponse> localVarResponse = await EdgeApplicationsEdgeApplicationIdOriginsPostWithHttpInfoAsync(edgeApplicationId, accept, contentType, createOriginsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1560,7 +1560,7 @@ namespace edgeapplications.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OriginsIdResponse)</returns>
-        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<OriginsIdResponse>> EdgeApplicationsEdgeApplicationIdOriginsPostWithHttpInfoAsync(long edgeApplicationId, string accept = default(string), string contentType = default(string), CreateOriginsRequest createOriginsRequest = default(CreateOriginsRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgeapplications.Client.ApiResponse<OriginsIdResponse>> EdgeApplicationsEdgeApplicationIdOriginsPostWithHttpInfoAsync(long edgeApplicationId, string? accept = default(string?), string? contentType = default(string?), CreateOriginsRequest? createOriginsRequest = default(CreateOriginsRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             edgeapplications.Client.RequestOptions localVarRequestOptions = new edgeapplications.Client.RequestOptions();
