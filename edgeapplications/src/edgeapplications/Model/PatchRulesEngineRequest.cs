@@ -38,7 +38,7 @@ namespace edgeapplications.Model
         /// <param name="description">description.</param>
         /// <param name="criteria">criteria.</param>
         /// <param name="behaviors">behaviors.</param>
-        public PatchRulesEngineRequest(string name = default(string), string description = default(string), List<List<RulesEngineCriteria>> criteria = default(List<List<RulesEngineCriteria>>), List<RulesEngineBehavior> behaviors = default(List<RulesEngineBehavior>))
+        public PatchRulesEngineRequest(string name = default(string), string description = default(string), List<List<RulesEngineCriteria>> criteria = default(List<List<RulesEngineCriteria>>), List<RulesEngineBehaviorEntry> behaviors = default(List<RulesEngineBehaviorEntry>))
         {
             this.Name = name;
             this.Description = description;
@@ -68,7 +68,7 @@ namespace edgeapplications.Model
         /// Gets or Sets Behaviors
         /// </summary>
         [DataMember(Name = "behaviors", EmitDefaultValue = false)]
-        public List<RulesEngineBehavior> Behaviors { get; set; }
+        public List<RulesEngineBehaviorEntry> Behaviors { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
