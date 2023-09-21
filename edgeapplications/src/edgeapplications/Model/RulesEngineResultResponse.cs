@@ -47,7 +47,7 @@ namespace edgeapplications.Model
         /// <param name="criteria">criteria (required).</param>
         /// <param name="isActive">isActive (required).</param>
         /// <param name="order">order (required).</param>
-        public RulesEngineResultResponse(long id = default(long), string name = default(string), string description = default(string), string phase = default(string), List<RulesEngineResultResponseBehaviors> behaviors = default(List<RulesEngineResultResponseBehaviors>), List<List<RulesEngineCriteria>> criteria = default(List<List<RulesEngineCriteria>>), bool isActive = default(bool), long order = default(long))
+        public RulesEngineResultResponse(long id = default(long), string name = default(string), string description = default(string), string phase = default(string), List<RulesEngineBehaviorEntry> behaviors = default(List<RulesEngineBehaviorEntry>), List<List<RulesEngineCriteria>> criteria = default(List<List<RulesEngineCriteria>>), bool isActive = default(bool), long order = default(long))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -102,7 +102,7 @@ namespace edgeapplications.Model
         /// Gets or Sets Behaviors
         /// </summary>
         [DataMember(Name = "behaviors", EmitDefaultValue = false)]
-        public List<RulesEngineResultResponseBehaviors> Behaviors { get; set; }
+        public List<RulesEngineBehaviorEntry> Behaviors { get; set; }
 
         /// <summary>
         /// Gets or Sets Criteria

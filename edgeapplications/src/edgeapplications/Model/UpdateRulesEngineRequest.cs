@@ -43,7 +43,7 @@ namespace edgeapplications.Model
         /// <param name="description">description.</param>
         /// <param name="criteria">criteria (required).</param>
         /// <param name="behaviors">behaviors (required).</param>
-        public UpdateRulesEngineRequest(string name = default(string), string description = default(string), List<List<RulesEngineCriteria>> criteria = default(List<List<RulesEngineCriteria>>), List<RulesEngineBehavior> behaviors = default(List<RulesEngineBehavior>))
+        public UpdateRulesEngineRequest(string name = default(string), string description = default(string), List<List<RulesEngineCriteria>> criteria = default(List<List<RulesEngineCriteria>>), List<RulesEngineBehaviorEntry> behaviors = default(List<RulesEngineBehaviorEntry>))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -88,7 +88,7 @@ namespace edgeapplications.Model
         /// Gets or Sets Behaviors
         /// </summary>
         [DataMember(Name = "behaviors", IsRequired = true, EmitDefaultValue = true)]
-        public List<RulesEngineBehavior> Behaviors { get; set; }
+        public List<RulesEngineBehaviorEntry> Behaviors { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
