@@ -1,6 +1,6 @@
 # variables.Api.VariablesApi
 
-All URIs are relative to *https://stage-api.azion.net/variables*
+All URIs are relative to *https://api.azionapi.net*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -33,7 +33,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://stage-api.azion.net/variables";
+            config.BasePath = "https://api.azionapi.net";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -133,7 +133,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://stage-api.azion.net/variables";
+            config.BasePath = "https://api.azionapi.net";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -229,7 +229,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://stage-api.azion.net/variables";
+            config.BasePath = "https://api.azionapi.net";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -321,7 +321,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://stage-api.azion.net/variables";
+            config.BasePath = "https://api.azionapi.net";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -421,7 +421,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://stage-api.azion.net/variables";
+            config.BasePath = "https://api.azionapi.net";
             // Configure API key authorization: tokenAuth
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
