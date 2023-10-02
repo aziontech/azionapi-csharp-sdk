@@ -27,17 +27,57 @@ namespace waf.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Find domains attached to a WAF
+        /// Create a new WAF Rule Set in an account.
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createNewWAFRulesetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>SingleWAF</returns>
+        SingleWAF CreateNewWAFRuleset(CreateNewWAFRulesetRequest? createNewWAFRulesetRequest = default(CreateNewWAFRulesetRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// Create a new WAF Rule Set in an account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createNewWAFRulesetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of SingleWAF</returns>
+        ApiResponse<SingleWAF> CreateNewWAFRulesetWithHttpInfo(CreateNewWAFRulesetRequest? createNewWAFRulesetRequest = default(CreateNewWAFRulesetRequest?), int operationIndex = 0);
+        /// <summary>
+        /// Remove an WAF Rule Set from an account. Warning: this action cannot be undone.
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        void DeleteWAFRuleset(string wafRuleSetId, int operationIndex = 0);
+
+        /// <summary>
+        /// Remove an WAF Rule Set from an account. Warning: this action cannot be undone.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteWAFRulesetWithHttpInfo(string wafRuleSetId, int operationIndex = 0);
+        /// <summary>
+        /// List all domains attached to a Web Application Firewall (WAF) in an account.
         /// </summary>
         /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wafId">ID of WAF to return</param>
         /// <param name="name">searches WAF for name (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WAFDomains200</returns>
-        WAFDomains200 GetWAFDomains(long wafId, string name = default(string), int operationIndex = 0);
+        WAFDomains200 GetWAFDomains(long wafId, string? name = default(string?), int operationIndex = 0);
 
         /// <summary>
-        /// Find domains attached to a WAF
+        /// List all domains attached to a Web Application Firewall (WAF) in an account.
         /// </summary>
         /// <remarks>
         /// 
@@ -47,7 +87,7 @@ namespace waf.Api
         /// <param name="name">searches WAF for name (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WAFDomains200</returns>
-        ApiResponse<WAFDomains200> GetWAFDomainsWithHttpInfo(long wafId, string name = default(string), int operationIndex = 0);
+        ApiResponse<WAFDomains200> GetWAFDomainsWithHttpInfo(long wafId, string? name = default(string?), int operationIndex = 0);
         /// <summary>
         /// Find WAF log events
         /// </summary>
@@ -74,6 +114,96 @@ namespace waf.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WAFEvents200</returns>
         ApiResponse<WAFEvents200> GetWAFEventsWithHttpInfo(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), int operationIndex = 0);
+        /// <summary>
+        /// List a specific Rule Set associated to a Web Application Firewall (WAF) in an account.
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId">ID of WAF Ruleset to return</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>WAFSingle200</returns>
+        WAFSingle200 GetWAFRuleset(long wafRuleSetId, int operationIndex = 0);
+
+        /// <summary>
+        /// List a specific Rule Set associated to a Web Application Firewall (WAF) in an account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId">ID of WAF Ruleset to return</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of WAFSingle200</returns>
+        ApiResponse<WAFSingle200> GetWAFRulesetWithHttpInfo(long wafRuleSetId, int operationIndex = 0);
+        /// <summary>
+        /// List all Web Application Firewalls (WAFs) created in an account
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>WAFList200</returns>
+        WAFList200 ListAllWAF(long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0);
+
+        /// <summary>
+        /// List all Web Application Firewalls (WAFs) created in an account
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of WAFList200</returns>
+        ApiResponse<WAFList200> ListAllWAFWithHttpInfo(long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0);
+        /// <summary>
+        /// list all Rule Sets associated to a Web Application Firewall (WAF) in an account.
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderBy">Identifies which property the return should be sorted by. (optional, default to name)</param>
+        /// <param name="sort">Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>WAFList200</returns>
+        WAFList200 ListAllWAFRulesets(string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0);
+
+        /// <summary>
+        /// list all Rule Sets associated to a Web Application Firewall (WAF) in an account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderBy">Identifies which property the return should be sorted by. (optional, default to name)</param>
+        /// <param name="sort">Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of WAFList200</returns>
+        ApiResponse<WAFList200> ListAllWAFRulesetsWithHttpInfo(string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0);
+        /// <summary>
+        /// Change only select settings of a WAF Rule Set
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId"></param>
+        /// <param name="singleWAF"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>SingleWAF</returns>
+        SingleWAF UpdateWAFRuleset(string wafRuleSetId, SingleWAF? singleWAF = default(SingleWAF?), int operationIndex = 0);
+
+        /// <summary>
+        /// Change only select settings of a WAF Rule Set
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId"></param>
+        /// <param name="singleWAF"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of SingleWAF</returns>
+        ApiResponse<SingleWAF> UpdateWAFRulesetWithHttpInfo(string wafRuleSetId, SingleWAF? singleWAF = default(SingleWAF?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -84,7 +214,57 @@ namespace waf.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Find domains attached to a WAF
+        /// Create a new WAF Rule Set in an account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createNewWAFRulesetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SingleWAF</returns>
+        System.Threading.Tasks.Task<SingleWAF> CreateNewWAFRulesetAsync(CreateNewWAFRulesetRequest? createNewWAFRulesetRequest = default(CreateNewWAFRulesetRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Create a new WAF Rule Set in an account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createNewWAFRulesetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SingleWAF)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SingleWAF>> CreateNewWAFRulesetWithHttpInfoAsync(CreateNewWAFRulesetRequest? createNewWAFRulesetRequest = default(CreateNewWAFRulesetRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Remove an WAF Rule Set from an account. Warning: this action cannot be undone.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DeleteWAFRulesetAsync(string wafRuleSetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Remove an WAF Rule Set from an account. Warning: this action cannot be undone.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWAFRulesetWithHttpInfoAsync(string wafRuleSetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// List all domains attached to a Web Application Firewall (WAF) in an account.
         /// </summary>
         /// <remarks>
         /// 
@@ -95,10 +275,10 @@ namespace waf.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WAFDomains200</returns>
-        System.Threading.Tasks.Task<WAFDomains200> GetWAFDomainsAsync(long wafId, string name = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WAFDomains200> GetWAFDomainsAsync(long wafId, string? name = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Find domains attached to a WAF
+        /// List all domains attached to a Web Application Firewall (WAF) in an account.
         /// </summary>
         /// <remarks>
         /// 
@@ -109,7 +289,7 @@ namespace waf.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WAFDomains200)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WAFDomains200>> GetWAFDomainsWithHttpInfoAsync(long wafId, string name = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WAFDomains200>> GetWAFDomainsWithHttpInfoAsync(long wafId, string? name = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Find WAF log events
         /// </summary>
@@ -141,6 +321,116 @@ namespace waf.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WAFEvents200)</returns>
         System.Threading.Tasks.Task<ApiResponse<WAFEvents200>> GetWAFEventsWithHttpInfoAsync(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// List a specific Rule Set associated to a Web Application Firewall (WAF) in an account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId">ID of WAF Ruleset to return</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WAFSingle200</returns>
+        System.Threading.Tasks.Task<WAFSingle200> GetWAFRulesetAsync(long wafRuleSetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// List a specific Rule Set associated to a Web Application Firewall (WAF) in an account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId">ID of WAF Ruleset to return</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WAFSingle200)</returns>
+        System.Threading.Tasks.Task<ApiResponse<WAFSingle200>> GetWAFRulesetWithHttpInfoAsync(long wafRuleSetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// List all Web Application Firewalls (WAFs) created in an account
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WAFList200</returns>
+        System.Threading.Tasks.Task<WAFList200> ListAllWAFAsync(long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// List all Web Application Firewalls (WAFs) created in an account
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WAFList200)</returns>
+        System.Threading.Tasks.Task<ApiResponse<WAFList200>> ListAllWAFWithHttpInfoAsync(long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// list all Rule Sets associated to a Web Application Firewall (WAF) in an account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderBy">Identifies which property the return should be sorted by. (optional, default to name)</param>
+        /// <param name="sort">Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WAFList200</returns>
+        System.Threading.Tasks.Task<WAFList200> ListAllWAFRulesetsAsync(string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// list all Rule Sets associated to a Web Application Firewall (WAF) in an account.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderBy">Identifies which property the return should be sorted by. (optional, default to name)</param>
+        /// <param name="sort">Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WAFList200)</returns>
+        System.Threading.Tasks.Task<ApiResponse<WAFList200>> ListAllWAFRulesetsWithHttpInfoAsync(string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Change only select settings of a WAF Rule Set
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId"></param>
+        /// <param name="singleWAF"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SingleWAF</returns>
+        System.Threading.Tasks.Task<SingleWAF> UpdateWAFRulesetAsync(string wafRuleSetId, SingleWAF? singleWAF = default(SingleWAF?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Change only select settings of a WAF Rule Set
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId"></param>
+        /// <param name="singleWAF"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SingleWAF)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SingleWAF>> UpdateWAFRulesetWithHttpInfoAsync(string wafRuleSetId, SingleWAF? singleWAF = default(SingleWAF?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -262,28 +552,322 @@ namespace waf.Api
         }
 
         /// <summary>
-        /// Find domains attached to a WAF 
+        /// Create a new WAF Rule Set in an account. 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createNewWAFRulesetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>SingleWAF</returns>
+        public SingleWAF CreateNewWAFRuleset(CreateNewWAFRulesetRequest? createNewWAFRulesetRequest = default(CreateNewWAFRulesetRequest?), int operationIndex = 0)
+        {
+            waf.Client.ApiResponse<SingleWAF> localVarResponse = CreateNewWAFRulesetWithHttpInfo(createNewWAFRulesetRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create a new WAF Rule Set in an account. 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createNewWAFRulesetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of SingleWAF</returns>
+        public waf.Client.ApiResponse<SingleWAF> CreateNewWAFRulesetWithHttpInfo(CreateNewWAFRulesetRequest? createNewWAFRulesetRequest = default(CreateNewWAFRulesetRequest?), int operationIndex = 0)
+        {
+            waf.Client.RequestOptions localVarRequestOptions = new waf.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json; version=3"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json; version=3"
+            };
+
+            var localVarContentType = waf.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = waf.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = createNewWAFRulesetRequest;
+
+            localVarRequestOptions.Operation = "WAFApi.CreateNewWAFRuleset";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<SingleWAF>("/waf/rulesets", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateNewWAFRuleset", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create a new WAF Rule Set in an account. 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createNewWAFRulesetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SingleWAF</returns>
+        public async System.Threading.Tasks.Task<SingleWAF> CreateNewWAFRulesetAsync(CreateNewWAFRulesetRequest? createNewWAFRulesetRequest = default(CreateNewWAFRulesetRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            waf.Client.ApiResponse<SingleWAF> localVarResponse = await CreateNewWAFRulesetWithHttpInfoAsync(createNewWAFRulesetRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create a new WAF Rule Set in an account. 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createNewWAFRulesetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SingleWAF)</returns>
+        public async System.Threading.Tasks.Task<waf.Client.ApiResponse<SingleWAF>> CreateNewWAFRulesetWithHttpInfoAsync(CreateNewWAFRulesetRequest? createNewWAFRulesetRequest = default(CreateNewWAFRulesetRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            waf.Client.RequestOptions localVarRequestOptions = new waf.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json; version=3"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json; version=3"
+            };
+
+            var localVarContentType = waf.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = waf.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = createNewWAFRulesetRequest;
+
+            localVarRequestOptions.Operation = "WAFApi.CreateNewWAFRuleset";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<SingleWAF>("/waf/rulesets", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateNewWAFRuleset", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Remove an WAF Rule Set from an account. Warning: this action cannot be undone. 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void DeleteWAFRuleset(string wafRuleSetId, int operationIndex = 0)
+        {
+            DeleteWAFRulesetWithHttpInfo(wafRuleSetId);
+        }
+
+        /// <summary>
+        /// Remove an WAF Rule Set from an account. Warning: this action cannot be undone. 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public waf.Client.ApiResponse<Object> DeleteWAFRulesetWithHttpInfo(string wafRuleSetId, int operationIndex = 0)
+        {
+            // verify the required parameter 'wafRuleSetId' is set
+            if (wafRuleSetId == null)
+            {
+                throw new waf.Client.ApiException(400, "Missing required parameter 'wafRuleSetId' when calling WAFApi->DeleteWAFRuleset");
+            }
+
+            waf.Client.RequestOptions localVarRequestOptions = new waf.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = waf.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = waf.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("waf_rule_set_id", waf.Client.ClientUtils.ParameterToString(wafRuleSetId)); // path parameter
+
+            localVarRequestOptions.Operation = "WAFApi.DeleteWAFRuleset";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/waf/rulesets/{waf_rule_set_id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeleteWAFRuleset", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Remove an WAF Rule Set from an account. Warning: this action cannot be undone. 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteWAFRulesetAsync(string wafRuleSetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await DeleteWAFRulesetWithHttpInfoAsync(wafRuleSetId, operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Remove an WAF Rule Set from an account. Warning: this action cannot be undone. 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<waf.Client.ApiResponse<Object>> DeleteWAFRulesetWithHttpInfoAsync(string wafRuleSetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'wafRuleSetId' is set
+            if (wafRuleSetId == null)
+            {
+                throw new waf.Client.ApiException(400, "Missing required parameter 'wafRuleSetId' when calling WAFApi->DeleteWAFRuleset");
+            }
+
+
+            waf.Client.RequestOptions localVarRequestOptions = new waf.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = waf.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = waf.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("waf_rule_set_id", waf.Client.ClientUtils.ParameterToString(wafRuleSetId)); // path parameter
+
+            localVarRequestOptions.Operation = "WAFApi.DeleteWAFRuleset";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/waf/rulesets/{waf_rule_set_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeleteWAFRuleset", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List all domains attached to a Web Application Firewall (WAF) in an account. 
         /// </summary>
         /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wafId">ID of WAF to return</param>
         /// <param name="name">searches WAF for name (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WAFDomains200</returns>
-        public WAFDomains200 GetWAFDomains(long wafId, string name = default(string), int operationIndex = 0)
+        public WAFDomains200 GetWAFDomains(long wafId, string? name = default(string?), int operationIndex = 0)
         {
             waf.Client.ApiResponse<WAFDomains200> localVarResponse = GetWAFDomainsWithHttpInfo(wafId, name);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Find domains attached to a WAF 
+        /// List all domains attached to a Web Application Firewall (WAF) in an account. 
         /// </summary>
         /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wafId">ID of WAF to return</param>
         /// <param name="name">searches WAF for name (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WAFDomains200</returns>
-        public waf.Client.ApiResponse<WAFDomains200> GetWAFDomainsWithHttpInfo(long wafId, string name = default(string), int operationIndex = 0)
+        public waf.Client.ApiResponse<WAFDomains200> GetWAFDomainsWithHttpInfo(long wafId, string? name = default(string?), int operationIndex = 0)
         {
             waf.Client.RequestOptions localVarRequestOptions = new waf.Client.RequestOptions();
 
@@ -337,7 +921,7 @@ namespace waf.Api
         }
 
         /// <summary>
-        /// Find domains attached to a WAF 
+        /// List all domains attached to a Web Application Firewall (WAF) in an account. 
         /// </summary>
         /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wafId">ID of WAF to return</param>
@@ -345,14 +929,14 @@ namespace waf.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WAFDomains200</returns>
-        public async System.Threading.Tasks.Task<WAFDomains200> GetWAFDomainsAsync(long wafId, string name = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WAFDomains200> GetWAFDomainsAsync(long wafId, string? name = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             waf.Client.ApiResponse<WAFDomains200> localVarResponse = await GetWAFDomainsWithHttpInfoAsync(wafId, name, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Find domains attached to a WAF 
+        /// List all domains attached to a Web Application Firewall (WAF) in an account. 
         /// </summary>
         /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wafId">ID of WAF to return</param>
@@ -360,7 +944,7 @@ namespace waf.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WAFDomains200)</returns>
-        public async System.Threading.Tasks.Task<waf.Client.ApiResponse<WAFDomains200>> GetWAFDomainsWithHttpInfoAsync(long wafId, string name = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<waf.Client.ApiResponse<WAFDomains200>> GetWAFDomainsWithHttpInfoAsync(long wafId, string? name = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             waf.Client.RequestOptions localVarRequestOptions = new waf.Client.RequestOptions();
@@ -584,6 +1168,654 @@ namespace waf.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetWAFEvents", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List a specific Rule Set associated to a Web Application Firewall (WAF) in an account. 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId">ID of WAF Ruleset to return</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>WAFSingle200</returns>
+        public WAFSingle200 GetWAFRuleset(long wafRuleSetId, int operationIndex = 0)
+        {
+            waf.Client.ApiResponse<WAFSingle200> localVarResponse = GetWAFRulesetWithHttpInfo(wafRuleSetId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List a specific Rule Set associated to a Web Application Firewall (WAF) in an account. 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId">ID of WAF Ruleset to return</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of WAFSingle200</returns>
+        public waf.Client.ApiResponse<WAFSingle200> GetWAFRulesetWithHttpInfo(long wafRuleSetId, int operationIndex = 0)
+        {
+            waf.Client.RequestOptions localVarRequestOptions = new waf.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json; version=3"
+            };
+
+            var localVarContentType = waf.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = waf.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("waf_rule_set_id", waf.Client.ClientUtils.ParameterToString(wafRuleSetId)); // path parameter
+
+            localVarRequestOptions.Operation = "WAFApi.GetWAFRuleset";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<WAFSingle200>("/waf/rulesets/{waf_rule_set_id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetWAFRuleset", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List a specific Rule Set associated to a Web Application Firewall (WAF) in an account. 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId">ID of WAF Ruleset to return</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WAFSingle200</returns>
+        public async System.Threading.Tasks.Task<WAFSingle200> GetWAFRulesetAsync(long wafRuleSetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            waf.Client.ApiResponse<WAFSingle200> localVarResponse = await GetWAFRulesetWithHttpInfoAsync(wafRuleSetId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List a specific Rule Set associated to a Web Application Firewall (WAF) in an account. 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId">ID of WAF Ruleset to return</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WAFSingle200)</returns>
+        public async System.Threading.Tasks.Task<waf.Client.ApiResponse<WAFSingle200>> GetWAFRulesetWithHttpInfoAsync(long wafRuleSetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            waf.Client.RequestOptions localVarRequestOptions = new waf.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json; version=3"
+            };
+
+            var localVarContentType = waf.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = waf.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("waf_rule_set_id", waf.Client.ClientUtils.ParameterToString(wafRuleSetId)); // path parameter
+
+            localVarRequestOptions.Operation = "WAFApi.GetWAFRuleset";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<WAFSingle200>("/waf/rulesets/{waf_rule_set_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetWAFRuleset", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List all Web Application Firewalls (WAFs) created in an account 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>WAFList200</returns>
+        public WAFList200 ListAllWAF(long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0)
+        {
+            waf.Client.ApiResponse<WAFList200> localVarResponse = ListAllWAFWithHttpInfo(page, pageSize);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List all Web Application Firewalls (WAFs) created in an account 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of WAFList200</returns>
+        public waf.Client.ApiResponse<WAFList200> ListAllWAFWithHttpInfo(long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0)
+        {
+            waf.Client.RequestOptions localVarRequestOptions = new waf.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json; version=3"
+            };
+
+            var localVarContentType = waf.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = waf.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+
+            localVarRequestOptions.Operation = "WAFApi.ListAllWAF";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<WAFList200>("/waf", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListAllWAF", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List all Web Application Firewalls (WAFs) created in an account 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WAFList200</returns>
+        public async System.Threading.Tasks.Task<WAFList200> ListAllWAFAsync(long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            waf.Client.ApiResponse<WAFList200> localVarResponse = await ListAllWAFWithHttpInfoAsync(page, pageSize, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List all Web Application Firewalls (WAFs) created in an account 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WAFList200)</returns>
+        public async System.Threading.Tasks.Task<waf.Client.ApiResponse<WAFList200>> ListAllWAFWithHttpInfoAsync(long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            waf.Client.RequestOptions localVarRequestOptions = new waf.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json; version=3"
+            };
+
+            var localVarContentType = waf.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = waf.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+
+            localVarRequestOptions.Operation = "WAFApi.ListAllWAF";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<WAFList200>("/waf", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListAllWAF", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// list all Rule Sets associated to a Web Application Firewall (WAF) in an account. 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderBy">Identifies which property the return should be sorted by. (optional, default to name)</param>
+        /// <param name="sort">Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>WAFList200</returns>
+        public WAFList200 ListAllWAFRulesets(string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0)
+        {
+            waf.Client.ApiResponse<WAFList200> localVarResponse = ListAllWAFRulesetsWithHttpInfo(orderBy, sort, page, pageSize);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// list all Rule Sets associated to a Web Application Firewall (WAF) in an account. 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderBy">Identifies which property the return should be sorted by. (optional, default to name)</param>
+        /// <param name="sort">Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of WAFList200</returns>
+        public waf.Client.ApiResponse<WAFList200> ListAllWAFRulesetsWithHttpInfo(string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0)
+        {
+            waf.Client.RequestOptions localVarRequestOptions = new waf.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json; version=3"
+            };
+
+            var localVarContentType = waf.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = waf.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "order_by", orderBy));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+
+            localVarRequestOptions.Operation = "WAFApi.ListAllWAFRulesets";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<WAFList200>("/waf/rulesets", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListAllWAFRulesets", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// list all Rule Sets associated to a Web Application Firewall (WAF) in an account. 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderBy">Identifies which property the return should be sorted by. (optional, default to name)</param>
+        /// <param name="sort">Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WAFList200</returns>
+        public async System.Threading.Tasks.Task<WAFList200> ListAllWAFRulesetsAsync(string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            waf.Client.ApiResponse<WAFList200> localVarResponse = await ListAllWAFRulesetsWithHttpInfoAsync(orderBy, sort, page, pageSize, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// list all Rule Sets associated to a Web Application Firewall (WAF) in an account. 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderBy">Identifies which property the return should be sorted by. (optional, default to name)</param>
+        /// <param name="sort">Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WAFList200)</returns>
+        public async System.Threading.Tasks.Task<waf.Client.ApiResponse<WAFList200>> ListAllWAFRulesetsWithHttpInfoAsync(string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            waf.Client.RequestOptions localVarRequestOptions = new waf.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json; version=3"
+            };
+
+            var localVarContentType = waf.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = waf.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "order_by", orderBy));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+
+            localVarRequestOptions.Operation = "WAFApi.ListAllWAFRulesets";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<WAFList200>("/waf/rulesets", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListAllWAFRulesets", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Change only select settings of a WAF Rule Set 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId"></param>
+        /// <param name="singleWAF"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>SingleWAF</returns>
+        public SingleWAF UpdateWAFRuleset(string wafRuleSetId, SingleWAF? singleWAF = default(SingleWAF?), int operationIndex = 0)
+        {
+            waf.Client.ApiResponse<SingleWAF> localVarResponse = UpdateWAFRulesetWithHttpInfo(wafRuleSetId, singleWAF);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Change only select settings of a WAF Rule Set 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId"></param>
+        /// <param name="singleWAF"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of SingleWAF</returns>
+        public waf.Client.ApiResponse<SingleWAF> UpdateWAFRulesetWithHttpInfo(string wafRuleSetId, SingleWAF? singleWAF = default(SingleWAF?), int operationIndex = 0)
+        {
+            // verify the required parameter 'wafRuleSetId' is set
+            if (wafRuleSetId == null)
+            {
+                throw new waf.Client.ApiException(400, "Missing required parameter 'wafRuleSetId' when calling WAFApi->UpdateWAFRuleset");
+            }
+
+            waf.Client.RequestOptions localVarRequestOptions = new waf.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json; version=3"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json; version=3"
+            };
+
+            var localVarContentType = waf.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = waf.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("waf_rule_set_id", waf.Client.ClientUtils.ParameterToString(wafRuleSetId)); // path parameter
+            localVarRequestOptions.Data = singleWAF;
+
+            localVarRequestOptions.Operation = "WAFApi.UpdateWAFRuleset";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Patch<SingleWAF>("/waf/rulesets/{waf_rule_set_id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateWAFRuleset", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Change only select settings of a WAF Rule Set 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId"></param>
+        /// <param name="singleWAF"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SingleWAF</returns>
+        public async System.Threading.Tasks.Task<SingleWAF> UpdateWAFRulesetAsync(string wafRuleSetId, SingleWAF? singleWAF = default(SingleWAF?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            waf.Client.ApiResponse<SingleWAF> localVarResponse = await UpdateWAFRulesetWithHttpInfoAsync(wafRuleSetId, singleWAF, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Change only select settings of a WAF Rule Set 
+        /// </summary>
+        /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="wafRuleSetId"></param>
+        /// <param name="singleWAF"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SingleWAF)</returns>
+        public async System.Threading.Tasks.Task<waf.Client.ApiResponse<SingleWAF>> UpdateWAFRulesetWithHttpInfoAsync(string wafRuleSetId, SingleWAF? singleWAF = default(SingleWAF?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'wafRuleSetId' is set
+            if (wafRuleSetId == null)
+            {
+                throw new waf.Client.ApiException(400, "Missing required parameter 'wafRuleSetId' when calling WAFApi->UpdateWAFRuleset");
+            }
+
+
+            waf.Client.RequestOptions localVarRequestOptions = new waf.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json; version=3"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json; version=3"
+            };
+
+            var localVarContentType = waf.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = waf.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("waf_rule_set_id", waf.Client.ClientUtils.ParameterToString(wafRuleSetId)); // path parameter
+            localVarRequestOptions.Data = singleWAF;
+
+            localVarRequestOptions.Operation = "WAFApi.UpdateWAFRuleset";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<SingleWAF>("/waf/rulesets/{waf_rule_set_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateWAFRuleset", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
