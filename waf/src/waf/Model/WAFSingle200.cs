@@ -26,17 +26,17 @@ using OpenAPIDateConverter = waf.Client.OpenAPIDateConverter;
 namespace waf.Model
 {
     /// <summary>
-    /// WAFEvents200
+    /// WAFSingle200
     /// </summary>
-    [DataContract(Name = "WAFEvents200")]
-    public partial class WAFEvents200 : IEquatable<WAFEvents200>, IValidatableObject
+    [DataContract(Name = "WAFSingle200")]
+    public partial class WAFSingle200 : IEquatable<WAFSingle200>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WAFEvents200" /> class.
+        /// Initializes a new instance of the <see cref="WAFSingle200" /> class.
         /// </summary>
         /// <param name="results">results.</param>
         /// <param name="schemaVersion">schemaVersion.</param>
-        public WAFEvents200(List<Object> results = default(List<Object>), long schemaVersion = default(long))
+        public WAFSingle200(SingleWAF results = default(SingleWAF), long schemaVersion = default(long))
         {
             this.Results = results;
             this.SchemaVersion = schemaVersion;
@@ -46,7 +46,7 @@ namespace waf.Model
         /// Gets or Sets Results
         /// </summary>
         [DataMember(Name = "results", EmitDefaultValue = false)]
-        public List<Object> Results { get; set; }
+        public SingleWAF Results { get; set; }
 
         /// <summary>
         /// Gets or Sets SchemaVersion
@@ -62,7 +62,7 @@ namespace waf.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WAFEvents200 {\n");
+            sb.Append("class WAFSingle200 {\n");
             sb.Append("  Results: ").Append(Results).Append("\n");
             sb.Append("  SchemaVersion: ").Append(SchemaVersion).Append("\n");
             sb.Append("}\n");
@@ -85,15 +85,15 @@ namespace waf.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as WAFEvents200);
+            return this.Equals(input as WAFSingle200);
         }
 
         /// <summary>
-        /// Returns true if WAFEvents200 instances are equal
+        /// Returns true if WAFSingle200 instances are equal
         /// </summary>
-        /// <param name="input">Instance of WAFEvents200 to be compared</param>
+        /// <param name="input">Instance of WAFSingle200 to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(WAFEvents200 input)
+        public bool Equals(WAFSingle200 input)
         {
             if (input == null)
             {
@@ -102,9 +102,8 @@ namespace waf.Model
             return 
                 (
                     this.Results == input.Results ||
-                    this.Results != null &&
-                    input.Results != null &&
-                    this.Results.SequenceEqual(input.Results)
+                    (this.Results != null &&
+                    this.Results.Equals(input.Results))
                 ) && 
                 (
                     this.SchemaVersion == input.SchemaVersion ||

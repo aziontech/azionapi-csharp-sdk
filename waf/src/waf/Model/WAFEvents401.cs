@@ -43,7 +43,7 @@ namespace waf.Model
         /// <summary>
         /// Gets or Sets Detail
         /// </summary>
-        /// <example>&quot;Authentication credentials were not provided.&quot;</example>
+        /// <example>Authentication credentials were not provided.</example>
         [DataMember(Name = "detail", EmitDefaultValue = false)]
         public string Detail { get; set; }
 

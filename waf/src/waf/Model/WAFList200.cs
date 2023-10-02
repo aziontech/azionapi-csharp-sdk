@@ -26,27 +26,43 @@ using OpenAPIDateConverter = waf.Client.OpenAPIDateConverter;
 namespace waf.Model
 {
     /// <summary>
-    /// WAFEvents200
+    /// WAFList200
     /// </summary>
-    [DataContract(Name = "WAFEvents200")]
-    public partial class WAFEvents200 : IEquatable<WAFEvents200>, IValidatableObject
+    [DataContract(Name = "WAFList200")]
+    public partial class WAFList200 : IEquatable<WAFList200>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WAFEvents200" /> class.
+        /// Initializes a new instance of the <see cref="WAFList200" /> class.
         /// </summary>
-        /// <param name="results">results.</param>
+        /// <param name="count">count.</param>
+        /// <param name="totalPages">totalPages.</param>
+        /// <param name="links">links.</param>
         /// <param name="schemaVersion">schemaVersion.</param>
-        public WAFEvents200(List<Object> results = default(List<Object>), long schemaVersion = default(long))
+        public WAFList200(long count = default(long), long totalPages = default(long), SingleWAF links = default(SingleWAF), long schemaVersion = default(long))
         {
-            this.Results = results;
+            this.Count = count;
+            this.TotalPages = totalPages;
+            this.Links = links;
             this.SchemaVersion = schemaVersion;
         }
 
         /// <summary>
-        /// Gets or Sets Results
+        /// Gets or Sets Count
         /// </summary>
-        [DataMember(Name = "results", EmitDefaultValue = false)]
-        public List<Object> Results { get; set; }
+        [DataMember(Name = "count", EmitDefaultValue = false)]
+        public long Count { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TotalPages
+        /// </summary>
+        [DataMember(Name = "total_pages", EmitDefaultValue = false)]
+        public long TotalPages { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Links
+        /// </summary>
+        [DataMember(Name = "links", EmitDefaultValue = false)]
+        public SingleWAF Links { get; set; }
 
         /// <summary>
         /// Gets or Sets SchemaVersion
@@ -62,8 +78,10 @@ namespace waf.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WAFEvents200 {\n");
-            sb.Append("  Results: ").Append(Results).Append("\n");
+            sb.Append("class WAFList200 {\n");
+            sb.Append("  Count: ").Append(Count).Append("\n");
+            sb.Append("  TotalPages: ").Append(TotalPages).Append("\n");
+            sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  SchemaVersion: ").Append(SchemaVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -85,15 +103,15 @@ namespace waf.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as WAFEvents200);
+            return this.Equals(input as WAFList200);
         }
 
         /// <summary>
-        /// Returns true if WAFEvents200 instances are equal
+        /// Returns true if WAFList200 instances are equal
         /// </summary>
-        /// <param name="input">Instance of WAFEvents200 to be compared</param>
+        /// <param name="input">Instance of WAFList200 to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(WAFEvents200 input)
+        public bool Equals(WAFList200 input)
         {
             if (input == null)
             {
@@ -101,10 +119,17 @@ namespace waf.Model
             }
             return 
                 (
-                    this.Results == input.Results ||
-                    this.Results != null &&
-                    input.Results != null &&
-                    this.Results.SequenceEqual(input.Results)
+                    this.Count == input.Count ||
+                    this.Count.Equals(input.Count)
+                ) && 
+                (
+                    this.TotalPages == input.TotalPages ||
+                    this.TotalPages.Equals(input.TotalPages)
+                ) && 
+                (
+                    this.Links == input.Links ||
+                    (this.Links != null &&
+                    this.Links.Equals(input.Links))
                 ) && 
                 (
                     this.SchemaVersion == input.SchemaVersion ||
@@ -121,9 +146,11 @@ namespace waf.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Results != null)
+                hashCode = (hashCode * 59) + this.Count.GetHashCode();
+                hashCode = (hashCode * 59) + this.TotalPages.GetHashCode();
+                if (this.Links != null)
                 {
-                    hashCode = (hashCode * 59) + this.Results.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.SchemaVersion.GetHashCode();
                 return hashCode;

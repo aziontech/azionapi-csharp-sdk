@@ -36,7 +36,7 @@ namespace waf.Model
         /// </summary>
         /// <param name="results">results.</param>
         /// <param name="schemaVersion">schemaVersion.</param>
-        public WAFDomains200(List<Object> results = default(List<Object>), int schemaVersion = default(int))
+        public WAFDomains200(List<Object> results = default(List<Object>), long schemaVersion = default(long))
         {
             this.Results = results;
             this.SchemaVersion = schemaVersion;
@@ -53,7 +53,7 @@ namespace waf.Model
         /// </summary>
         /// <example>3</example>
         [DataMember(Name = "schema_version", EmitDefaultValue = false)]
-        public int SchemaVersion { get; set; }
+        public long SchemaVersion { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
