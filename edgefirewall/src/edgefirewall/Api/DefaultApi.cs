@@ -27,6 +27,148 @@ namespace edgefirewall.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// List all rule sets.
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>RuleSetResponseAll</returns>
+        RuleSetResponseAll EdgeFirewallEdgeFirewallIdRulesEngineGet(long edgeFirewallId, int operationIndex = 0);
+
+        /// <summary>
+        /// List all rule sets.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of RuleSetResponseAll</returns>
+        ApiResponse<RuleSetResponseAll> EdgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfo(long edgeFirewallId, int operationIndex = 0);
+        /// <summary>
+        /// Create rule set.
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>RuleSetResponse</returns>
+        RuleSetResponse EdgeFirewallEdgeFirewallIdRulesEnginePost(long edgeFirewallId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// Create rule set.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of RuleSetResponse</returns>
+        ApiResponse<RuleSetResponse> EdgeFirewallEdgeFirewallIdRulesEnginePostWithHttpInfo(long edgeFirewallId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0);
+        /// <summary>
+        /// Delete rule set.
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        void EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdDelete(long edgeFirewallId, long ruleSetId, int operationIndex = 0);
+
+        /// <summary>
+        /// Delete rule set.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdDeleteWithHttpInfo(long edgeFirewallId, long ruleSetId, int operationIndex = 0);
+        /// <summary>
+        /// Retrieve rule set by ID.
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="orderBy"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="page"> (optional, default to 1)</param>
+        /// <param name="pageSize"> (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>RuleSetResult</returns>
+        RuleSetResult EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdGet(long edgeFirewallId, long ruleSetId, string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0);
+
+        /// <summary>
+        /// Retrieve rule set by ID.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="orderBy"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="page"> (optional, default to 1)</param>
+        /// <param name="pageSize"> (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of RuleSetResult</returns>
+        ApiResponse<RuleSetResult> EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdGetWithHttpInfo(long edgeFirewallId, long ruleSetId, string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0);
+        /// <summary>
+        /// Edit rule set.
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>RuleSetResult</returns>
+        RuleSetResult EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPatch(long edgeFirewallId, long ruleSetId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// Edit rule set.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of RuleSetResult</returns>
+        ApiResponse<RuleSetResult> EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPatchWithHttpInfo(long edgeFirewallId, long ruleSetId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0);
+        /// <summary>
+        /// Overwrite rule set
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>RuleSetResult</returns>
+        RuleSetResult EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPut(long edgeFirewallId, long ruleSetId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// Overwrite rule set
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of RuleSetResult</returns>
+        ApiResponse<RuleSetResult> EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPutWithHttpInfo(long edgeFirewallId, long ruleSetId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0);
+        /// <summary>
         /// List all user edge firewall
         /// </summary>
         /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
@@ -36,7 +178,7 @@ namespace edgefirewall.Api
         /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ListEdgeFirewallResponse</returns>
-        ListEdgeFirewallResponse EdgeFirewallGet(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), int operationIndex = 0);
+        ListEdgeFirewallResponse EdgeFirewallGet(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// List all user edge firewall
@@ -51,7 +193,7 @@ namespace edgefirewall.Api
         /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ListEdgeFirewallResponse</returns>
-        ApiResponse<ListEdgeFirewallResponse> EdgeFirewallGetWithHttpInfo(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), int operationIndex = 0);
+        ApiResponse<ListEdgeFirewallResponse> EdgeFirewallGetWithHttpInfo(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0);
         /// <summary>
         /// Create a edge firewall
         /// </summary>
@@ -166,6 +308,178 @@ namespace edgefirewall.Api
     {
         #region Asynchronous Operations
         /// <summary>
+        /// List all rule sets.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of RuleSetResponseAll</returns>
+        System.Threading.Tasks.Task<RuleSetResponseAll> EdgeFirewallEdgeFirewallIdRulesEngineGetAsync(long edgeFirewallId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// List all rule sets.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (RuleSetResponseAll)</returns>
+        System.Threading.Tasks.Task<ApiResponse<RuleSetResponseAll>> EdgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfoAsync(long edgeFirewallId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Create rule set.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of RuleSetResponse</returns>
+        System.Threading.Tasks.Task<RuleSetResponse> EdgeFirewallEdgeFirewallIdRulesEnginePostAsync(long edgeFirewallId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Create rule set.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (RuleSetResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<RuleSetResponse>> EdgeFirewallEdgeFirewallIdRulesEnginePostWithHttpInfoAsync(long edgeFirewallId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Delete rule set.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdDeleteAsync(long edgeFirewallId, long ruleSetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Delete rule set.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdDeleteWithHttpInfoAsync(long edgeFirewallId, long ruleSetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Retrieve rule set by ID.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="orderBy"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="page"> (optional, default to 1)</param>
+        /// <param name="pageSize"> (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of RuleSetResult</returns>
+        System.Threading.Tasks.Task<RuleSetResult> EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdGetAsync(long edgeFirewallId, long ruleSetId, string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Retrieve rule set by ID.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="orderBy"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="page"> (optional, default to 1)</param>
+        /// <param name="pageSize"> (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (RuleSetResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<RuleSetResult>> EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdGetWithHttpInfoAsync(long edgeFirewallId, long ruleSetId, string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Edit rule set.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of RuleSetResult</returns>
+        System.Threading.Tasks.Task<RuleSetResult> EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPatchAsync(long edgeFirewallId, long ruleSetId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Edit rule set.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (RuleSetResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<RuleSetResult>> EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPatchWithHttpInfoAsync(long edgeFirewallId, long ruleSetId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Overwrite rule set
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of RuleSetResult</returns>
+        System.Threading.Tasks.Task<RuleSetResult> EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPutAsync(long edgeFirewallId, long ruleSetId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Overwrite rule set
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (RuleSetResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<RuleSetResult>> EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPutWithHttpInfoAsync(long edgeFirewallId, long ruleSetId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// List all user edge firewall
         /// </summary>
         /// <remarks>
@@ -179,7 +493,7 @@ namespace edgefirewall.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListEdgeFirewallResponse</returns>
-        System.Threading.Tasks.Task<ListEdgeFirewallResponse> EdgeFirewallGetAsync(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ListEdgeFirewallResponse> EdgeFirewallGetAsync(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List all user edge firewall
@@ -195,7 +509,7 @@ namespace edgefirewall.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListEdgeFirewallResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListEdgeFirewallResponse>> EdgeFirewallGetWithHttpInfoAsync(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ListEdgeFirewallResponse>> EdgeFirewallGetWithHttpInfoAsync(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create a edge firewall
         /// </summary>
@@ -446,6 +760,950 @@ namespace edgefirewall.Api
         }
 
         /// <summary>
+        /// List all rule sets. 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>RuleSetResponseAll</returns>
+        public RuleSetResponseAll EdgeFirewallEdgeFirewallIdRulesEngineGet(long edgeFirewallId, int operationIndex = 0)
+        {
+            edgefirewall.Client.ApiResponse<RuleSetResponseAll> localVarResponse = EdgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfo(edgeFirewallId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List all rule sets. 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of RuleSetResponseAll</returns>
+        public edgefirewall.Client.ApiResponse<RuleSetResponseAll> EdgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfo(long edgeFirewallId, int operationIndex = 0)
+        {
+            edgefirewall.Client.RequestOptions localVarRequestOptions = new edgefirewall.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json; version=3"
+            };
+
+            var localVarContentType = edgefirewall.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = edgefirewall.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("edge_firewall_id", edgefirewall.Client.ClientUtils.ParameterToString(edgeFirewallId)); // path parameter
+
+            localVarRequestOptions.Operation = "DefaultApi.EdgeFirewallEdgeFirewallIdRulesEngineGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<RuleSetResponseAll>("/edge_firewall/{edge_firewall_id}/rules_engine", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EdgeFirewallEdgeFirewallIdRulesEngineGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List all rule sets. 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of RuleSetResponseAll</returns>
+        public async System.Threading.Tasks.Task<RuleSetResponseAll> EdgeFirewallEdgeFirewallIdRulesEngineGetAsync(long edgeFirewallId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            edgefirewall.Client.ApiResponse<RuleSetResponseAll> localVarResponse = await EdgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfoAsync(edgeFirewallId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List all rule sets. 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (RuleSetResponseAll)</returns>
+        public async System.Threading.Tasks.Task<edgefirewall.Client.ApiResponse<RuleSetResponseAll>> EdgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfoAsync(long edgeFirewallId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            edgefirewall.Client.RequestOptions localVarRequestOptions = new edgefirewall.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json; version=3"
+            };
+
+            var localVarContentType = edgefirewall.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = edgefirewall.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("edge_firewall_id", edgefirewall.Client.ClientUtils.ParameterToString(edgeFirewallId)); // path parameter
+
+            localVarRequestOptions.Operation = "DefaultApi.EdgeFirewallEdgeFirewallIdRulesEngineGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<RuleSetResponseAll>("/edge_firewall/{edge_firewall_id}/rules_engine", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EdgeFirewallEdgeFirewallIdRulesEngineGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create rule set. 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>RuleSetResponse</returns>
+        public RuleSetResponse EdgeFirewallEdgeFirewallIdRulesEnginePost(long edgeFirewallId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0)
+        {
+            edgefirewall.Client.ApiResponse<RuleSetResponse> localVarResponse = EdgeFirewallEdgeFirewallIdRulesEnginePostWithHttpInfo(edgeFirewallId, createRuleSetRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create rule set. 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of RuleSetResponse</returns>
+        public edgefirewall.Client.ApiResponse<RuleSetResponse> EdgeFirewallEdgeFirewallIdRulesEnginePostWithHttpInfo(long edgeFirewallId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0)
+        {
+            edgefirewall.Client.RequestOptions localVarRequestOptions = new edgefirewall.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json; version=3"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json; version=3"
+            };
+
+            var localVarContentType = edgefirewall.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = edgefirewall.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("edge_firewall_id", edgefirewall.Client.ClientUtils.ParameterToString(edgeFirewallId)); // path parameter
+            localVarRequestOptions.Data = createRuleSetRequest;
+
+            localVarRequestOptions.Operation = "DefaultApi.EdgeFirewallEdgeFirewallIdRulesEnginePost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<RuleSetResponse>("/edge_firewall/{edge_firewall_id}/rules_engine", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EdgeFirewallEdgeFirewallIdRulesEnginePost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create rule set. 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of RuleSetResponse</returns>
+        public async System.Threading.Tasks.Task<RuleSetResponse> EdgeFirewallEdgeFirewallIdRulesEnginePostAsync(long edgeFirewallId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            edgefirewall.Client.ApiResponse<RuleSetResponse> localVarResponse = await EdgeFirewallEdgeFirewallIdRulesEnginePostWithHttpInfoAsync(edgeFirewallId, createRuleSetRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create rule set. 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (RuleSetResponse)</returns>
+        public async System.Threading.Tasks.Task<edgefirewall.Client.ApiResponse<RuleSetResponse>> EdgeFirewallEdgeFirewallIdRulesEnginePostWithHttpInfoAsync(long edgeFirewallId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            edgefirewall.Client.RequestOptions localVarRequestOptions = new edgefirewall.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json; version=3"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json; version=3"
+            };
+
+            var localVarContentType = edgefirewall.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = edgefirewall.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("edge_firewall_id", edgefirewall.Client.ClientUtils.ParameterToString(edgeFirewallId)); // path parameter
+            localVarRequestOptions.Data = createRuleSetRequest;
+
+            localVarRequestOptions.Operation = "DefaultApi.EdgeFirewallEdgeFirewallIdRulesEnginePost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<RuleSetResponse>("/edge_firewall/{edge_firewall_id}/rules_engine", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EdgeFirewallEdgeFirewallIdRulesEnginePost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete rule set. 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdDelete(long edgeFirewallId, long ruleSetId, int operationIndex = 0)
+        {
+            EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdDeleteWithHttpInfo(edgeFirewallId, ruleSetId);
+        }
+
+        /// <summary>
+        /// Delete rule set. 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public edgefirewall.Client.ApiResponse<Object> EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdDeleteWithHttpInfo(long edgeFirewallId, long ruleSetId, int operationIndex = 0)
+        {
+            edgefirewall.Client.RequestOptions localVarRequestOptions = new edgefirewall.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = edgefirewall.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = edgefirewall.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("edge_firewall_id", edgefirewall.Client.ClientUtils.ParameterToString(edgeFirewallId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("rule_set_id", edgefirewall.Client.ClientUtils.ParameterToString(ruleSetId)); // path parameter
+
+            localVarRequestOptions.Operation = "DefaultApi.EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/edge_firewall/{edge_firewall_id}/rules_engine/{rule_set_id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdDelete", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete rule set. 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdDeleteAsync(long edgeFirewallId, long ruleSetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdDeleteWithHttpInfoAsync(edgeFirewallId, ruleSetId, operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Delete rule set. 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<edgefirewall.Client.ApiResponse<Object>> EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdDeleteWithHttpInfoAsync(long edgeFirewallId, long ruleSetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            edgefirewall.Client.RequestOptions localVarRequestOptions = new edgefirewall.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = edgefirewall.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = edgefirewall.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("edge_firewall_id", edgefirewall.Client.ClientUtils.ParameterToString(edgeFirewallId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("rule_set_id", edgefirewall.Client.ClientUtils.ParameterToString(ruleSetId)); // path parameter
+
+            localVarRequestOptions.Operation = "DefaultApi.EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/edge_firewall/{edge_firewall_id}/rules_engine/{rule_set_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdDelete", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Retrieve rule set by ID. 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="orderBy"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="page"> (optional, default to 1)</param>
+        /// <param name="pageSize"> (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>RuleSetResult</returns>
+        public RuleSetResult EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdGet(long edgeFirewallId, long ruleSetId, string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0)
+        {
+            edgefirewall.Client.ApiResponse<RuleSetResult> localVarResponse = EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdGetWithHttpInfo(edgeFirewallId, ruleSetId, orderBy, sort, page, pageSize);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Retrieve rule set by ID. 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="orderBy"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="page"> (optional, default to 1)</param>
+        /// <param name="pageSize"> (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of RuleSetResult</returns>
+        public edgefirewall.Client.ApiResponse<RuleSetResult> EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdGetWithHttpInfo(long edgeFirewallId, long ruleSetId, string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0)
+        {
+            edgefirewall.Client.RequestOptions localVarRequestOptions = new edgefirewall.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json; version=3"
+            };
+
+            var localVarContentType = edgefirewall.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = edgefirewall.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("edge_firewall_id", edgefirewall.Client.ClientUtils.ParameterToString(edgeFirewallId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("rule_set_id", edgefirewall.Client.ClientUtils.ParameterToString(ruleSetId)); // path parameter
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(edgefirewall.Client.ClientUtils.ParameterToMultiMap("", "order_by", orderBy));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(edgefirewall.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(edgefirewall.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(edgefirewall.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+
+            localVarRequestOptions.Operation = "DefaultApi.EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<RuleSetResult>("/edge_firewall/{edge_firewall_id}/rules_engine/{rule_set_id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Retrieve rule set by ID. 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="orderBy"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="page"> (optional, default to 1)</param>
+        /// <param name="pageSize"> (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of RuleSetResult</returns>
+        public async System.Threading.Tasks.Task<RuleSetResult> EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdGetAsync(long edgeFirewallId, long ruleSetId, string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            edgefirewall.Client.ApiResponse<RuleSetResult> localVarResponse = await EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdGetWithHttpInfoAsync(edgeFirewallId, ruleSetId, orderBy, sort, page, pageSize, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Retrieve rule set by ID. 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="orderBy"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="page"> (optional, default to 1)</param>
+        /// <param name="pageSize"> (optional, default to 10)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (RuleSetResult)</returns>
+        public async System.Threading.Tasks.Task<edgefirewall.Client.ApiResponse<RuleSetResult>> EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdGetWithHttpInfoAsync(long edgeFirewallId, long ruleSetId, string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            edgefirewall.Client.RequestOptions localVarRequestOptions = new edgefirewall.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json; version=3"
+            };
+
+            var localVarContentType = edgefirewall.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = edgefirewall.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("edge_firewall_id", edgefirewall.Client.ClientUtils.ParameterToString(edgeFirewallId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("rule_set_id", edgefirewall.Client.ClientUtils.ParameterToString(ruleSetId)); // path parameter
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(edgefirewall.Client.ClientUtils.ParameterToMultiMap("", "order_by", orderBy));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(edgefirewall.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(edgefirewall.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(edgefirewall.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+
+            localVarRequestOptions.Operation = "DefaultApi.EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdGet";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<RuleSetResult>("/edge_firewall/{edge_firewall_id}/rules_engine/{rule_set_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdGet", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Edit rule set. 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>RuleSetResult</returns>
+        public RuleSetResult EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPatch(long edgeFirewallId, long ruleSetId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0)
+        {
+            edgefirewall.Client.ApiResponse<RuleSetResult> localVarResponse = EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPatchWithHttpInfo(edgeFirewallId, ruleSetId, createRuleSetRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Edit rule set. 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of RuleSetResult</returns>
+        public edgefirewall.Client.ApiResponse<RuleSetResult> EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPatchWithHttpInfo(long edgeFirewallId, long ruleSetId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0)
+        {
+            edgefirewall.Client.RequestOptions localVarRequestOptions = new edgefirewall.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json; version=3"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json; version=3"
+            };
+
+            var localVarContentType = edgefirewall.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = edgefirewall.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("edge_firewall_id", edgefirewall.Client.ClientUtils.ParameterToString(edgeFirewallId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("rule_set_id", edgefirewall.Client.ClientUtils.ParameterToString(ruleSetId)); // path parameter
+            localVarRequestOptions.Data = createRuleSetRequest;
+
+            localVarRequestOptions.Operation = "DefaultApi.EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPatch";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Patch<RuleSetResult>("/edge_firewall/{edge_firewall_id}/rules_engine/{rule_set_id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPatch", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Edit rule set. 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of RuleSetResult</returns>
+        public async System.Threading.Tasks.Task<RuleSetResult> EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPatchAsync(long edgeFirewallId, long ruleSetId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            edgefirewall.Client.ApiResponse<RuleSetResult> localVarResponse = await EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPatchWithHttpInfoAsync(edgeFirewallId, ruleSetId, createRuleSetRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Edit rule set. 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (RuleSetResult)</returns>
+        public async System.Threading.Tasks.Task<edgefirewall.Client.ApiResponse<RuleSetResult>> EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPatchWithHttpInfoAsync(long edgeFirewallId, long ruleSetId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            edgefirewall.Client.RequestOptions localVarRequestOptions = new edgefirewall.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json; version=3"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json; version=3"
+            };
+
+            var localVarContentType = edgefirewall.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = edgefirewall.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("edge_firewall_id", edgefirewall.Client.ClientUtils.ParameterToString(edgeFirewallId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("rule_set_id", edgefirewall.Client.ClientUtils.ParameterToString(ruleSetId)); // path parameter
+            localVarRequestOptions.Data = createRuleSetRequest;
+
+            localVarRequestOptions.Operation = "DefaultApi.EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPatch";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<RuleSetResult>("/edge_firewall/{edge_firewall_id}/rules_engine/{rule_set_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPatch", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Overwrite rule set 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>RuleSetResult</returns>
+        public RuleSetResult EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPut(long edgeFirewallId, long ruleSetId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0)
+        {
+            edgefirewall.Client.ApiResponse<RuleSetResult> localVarResponse = EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPutWithHttpInfo(edgeFirewallId, ruleSetId, createRuleSetRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Overwrite rule set 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of RuleSetResult</returns>
+        public edgefirewall.Client.ApiResponse<RuleSetResult> EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPutWithHttpInfo(long edgeFirewallId, long ruleSetId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0)
+        {
+            edgefirewall.Client.RequestOptions localVarRequestOptions = new edgefirewall.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json; version=3"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json; version=3"
+            };
+
+            var localVarContentType = edgefirewall.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = edgefirewall.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("edge_firewall_id", edgefirewall.Client.ClientUtils.ParameterToString(edgeFirewallId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("rule_set_id", edgefirewall.Client.ClientUtils.ParameterToString(ruleSetId)); // path parameter
+            localVarRequestOptions.Data = createRuleSetRequest;
+
+            localVarRequestOptions.Operation = "DefaultApi.EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put<RuleSetResult>("/edge_firewall/{edge_firewall_id}/rules_engine/{rule_set_id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPut", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Overwrite rule set 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of RuleSetResult</returns>
+        public async System.Threading.Tasks.Task<RuleSetResult> EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPutAsync(long edgeFirewallId, long ruleSetId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            edgefirewall.Client.ApiResponse<RuleSetResult> localVarResponse = await EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPutWithHttpInfoAsync(edgeFirewallId, ruleSetId, createRuleSetRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Overwrite rule set 
+        /// </summary>
+        /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="edgeFirewallId"></param>
+        /// <param name="ruleSetId"></param>
+        /// <param name="createRuleSetRequest"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (RuleSetResult)</returns>
+        public async System.Threading.Tasks.Task<edgefirewall.Client.ApiResponse<RuleSetResult>> EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPutWithHttpInfoAsync(long edgeFirewallId, long ruleSetId, CreateRuleSetRequest? createRuleSetRequest = default(CreateRuleSetRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            edgefirewall.Client.RequestOptions localVarRequestOptions = new edgefirewall.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json; version=3"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json; version=3"
+            };
+
+            var localVarContentType = edgefirewall.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = edgefirewall.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("edge_firewall_id", edgefirewall.Client.ClientUtils.ParameterToString(edgeFirewallId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("rule_set_id", edgefirewall.Client.ClientUtils.ParameterToString(ruleSetId)); // path parameter
+            localVarRequestOptions.Data = createRuleSetRequest;
+
+            localVarRequestOptions.Operation = "DefaultApi.EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PutAsync<RuleSetResult>("/edge_firewall/{edge_firewall_id}/rules_engine/{rule_set_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EdgeFirewallEdgeFirewallIdRulesEngineRuleSetIdPut", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// List all user edge firewall 
         /// </summary>
         /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
@@ -455,7 +1713,7 @@ namespace edgefirewall.Api
         /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ListEdgeFirewallResponse</returns>
-        public ListEdgeFirewallResponse EdgeFirewallGet(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), int operationIndex = 0)
+        public ListEdgeFirewallResponse EdgeFirewallGet(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0)
         {
             edgefirewall.Client.ApiResponse<ListEdgeFirewallResponse> localVarResponse = EdgeFirewallGetWithHttpInfo(page, pageSize, sort, orderBy);
             return localVarResponse.Data;
@@ -471,7 +1729,7 @@ namespace edgefirewall.Api
         /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ListEdgeFirewallResponse</returns>
-        public edgefirewall.Client.ApiResponse<ListEdgeFirewallResponse> EdgeFirewallGetWithHttpInfo(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), int operationIndex = 0)
+        public edgefirewall.Client.ApiResponse<ListEdgeFirewallResponse> EdgeFirewallGetWithHttpInfo(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0)
         {
             edgefirewall.Client.RequestOptions localVarRequestOptions = new edgefirewall.Client.RequestOptions();
 
@@ -546,7 +1804,7 @@ namespace edgefirewall.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListEdgeFirewallResponse</returns>
-        public async System.Threading.Tasks.Task<ListEdgeFirewallResponse> EdgeFirewallGetAsync(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ListEdgeFirewallResponse> EdgeFirewallGetAsync(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgefirewall.Client.ApiResponse<ListEdgeFirewallResponse> localVarResponse = await EdgeFirewallGetWithHttpInfoAsync(page, pageSize, sort, orderBy, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -563,7 +1821,7 @@ namespace edgefirewall.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListEdgeFirewallResponse)</returns>
-        public async System.Threading.Tasks.Task<edgefirewall.Client.ApiResponse<ListEdgeFirewallResponse>> EdgeFirewallGetWithHttpInfoAsync(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgefirewall.Client.ApiResponse<ListEdgeFirewallResponse>> EdgeFirewallGetWithHttpInfoAsync(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             edgefirewall.Client.RequestOptions localVarRequestOptions = new edgefirewall.Client.RequestOptions();
