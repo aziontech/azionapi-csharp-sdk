@@ -37,12 +37,14 @@ namespace waf.Model
         /// <param name="count">count.</param>
         /// <param name="totalPages">totalPages.</param>
         /// <param name="links">links.</param>
+        /// <param name="results">results.</param>
         /// <param name="schemaVersion">schemaVersion.</param>
-        public WAFList200(long count = default(long), long totalPages = default(long), SingleWAF links = default(SingleWAF), long schemaVersion = default(long))
+        public WAFList200(long count = default(long), long totalPages = default(long), Links links = default(Links), List<SingleWAF> results = default(List<SingleWAF>), long schemaVersion = default(long))
         {
             this.Count = count;
             this.TotalPages = totalPages;
             this.Links = links;
+            this.Results = results;
             this.SchemaVersion = schemaVersion;
         }
 
@@ -62,7 +64,13 @@ namespace waf.Model
         /// Gets or Sets Links
         /// </summary>
         [DataMember(Name = "links", EmitDefaultValue = false)]
-        public SingleWAF Links { get; set; }
+        public Links Links { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Results
+        /// </summary>
+        [DataMember(Name = "results", EmitDefaultValue = false)]
+        public List<SingleWAF> Results { get; set; }
 
         /// <summary>
         /// Gets or Sets SchemaVersion
@@ -82,6 +90,7 @@ namespace waf.Model
             sb.Append("  Count: ").Append(Count).Append("\n");
             sb.Append("  TotalPages: ").Append(TotalPages).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
+            sb.Append("  Results: ").Append(Results).Append("\n");
             sb.Append("  SchemaVersion: ").Append(SchemaVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -132,6 +141,12 @@ namespace waf.Model
                     this.Links.Equals(input.Links))
                 ) && 
                 (
+                    this.Results == input.Results ||
+                    this.Results != null &&
+                    input.Results != null &&
+                    this.Results.SequenceEqual(input.Results)
+                ) && 
+                (
                     this.SchemaVersion == input.SchemaVersion ||
                     this.SchemaVersion.Equals(input.SchemaVersion)
                 );
@@ -151,6 +166,10 @@ namespace waf.Model
                 if (this.Links != null)
                 {
                     hashCode = (hashCode * 59) + this.Links.GetHashCode();
+                }
+                if (this.Results != null)
+                {
+                    hashCode = (hashCode * 59) + this.Results.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.SchemaVersion.GetHashCode();
                 return hashCode;

@@ -1,14 +1,11 @@
-# waf.Model.WAFList200
+# waf.Model.Links
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Count** | **long** |  | [optional] 
-**TotalPages** | **long** |  | [optional] 
-**Links** | [**Links**](Links.md) |  | [optional] 
-**Results** | [**List&lt;SingleWAF&gt;**](SingleWAF.md) |  | [optional] 
-**SchemaVersion** | **long** |  | [optional] 
+**Previous** | **string** |  | [optional] 
+**Next** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
