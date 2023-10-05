@@ -76,7 +76,7 @@ namespace idns.Api
         /// <param name="recordPostOrPut"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PostOrPutRecordResponse</returns>
-        PostOrPutRecordResponse PostZoneRecord(int zoneId, RecordPostOrPut recordPostOrPut = default(RecordPostOrPut), int operationIndex = 0);
+        PostOrPutRecordResponse PostZoneRecord(int zoneId, RecordPostOrPut? recordPostOrPut = default(RecordPostOrPut?), int operationIndex = 0);
 
         /// <summary>
         /// Create a new Intelligent DNS zone record
@@ -89,7 +89,7 @@ namespace idns.Api
         /// <param name="recordPostOrPut"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PostOrPutRecordResponse</returns>
-        ApiResponse<PostOrPutRecordResponse> PostZoneRecordWithHttpInfo(int zoneId, RecordPostOrPut recordPostOrPut = default(RecordPostOrPut), int operationIndex = 0);
+        ApiResponse<PostOrPutRecordResponse> PostZoneRecordWithHttpInfo(int zoneId, RecordPostOrPut? recordPostOrPut = default(RecordPostOrPut?), int operationIndex = 0);
         /// <summary>
         /// Update an Intelligent DNS zone record
         /// </summary>
@@ -99,7 +99,7 @@ namespace idns.Api
         /// <param name="recordPostOrPut"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PostOrPutRecordResponse</returns>
-        PostOrPutRecordResponse PutZoneRecord(int zoneId, int recordId, RecordPostOrPut recordPostOrPut = default(RecordPostOrPut), int operationIndex = 0);
+        PostOrPutRecordResponse PutZoneRecord(int zoneId, int recordId, RecordPostOrPut? recordPostOrPut = default(RecordPostOrPut?), int operationIndex = 0);
 
         /// <summary>
         /// Update an Intelligent DNS zone record
@@ -113,7 +113,7 @@ namespace idns.Api
         /// <param name="recordPostOrPut"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PostOrPutRecordResponse</returns>
-        ApiResponse<PostOrPutRecordResponse> PutZoneRecordWithHttpInfo(int zoneId, int recordId, RecordPostOrPut recordPostOrPut = default(RecordPostOrPut), int operationIndex = 0);
+        ApiResponse<PostOrPutRecordResponse> PutZoneRecordWithHttpInfo(int zoneId, int recordId, RecordPostOrPut? recordPostOrPut = default(RecordPostOrPut?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -187,7 +187,7 @@ namespace idns.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PostOrPutRecordResponse</returns>
-        System.Threading.Tasks.Task<PostOrPutRecordResponse> PostZoneRecordAsync(int zoneId, RecordPostOrPut recordPostOrPut = default(RecordPostOrPut), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PostOrPutRecordResponse> PostZoneRecordAsync(int zoneId, RecordPostOrPut? recordPostOrPut = default(RecordPostOrPut?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create a new Intelligent DNS zone record
@@ -201,7 +201,7 @@ namespace idns.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PostOrPutRecordResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PostOrPutRecordResponse>> PostZoneRecordWithHttpInfoAsync(int zoneId, RecordPostOrPut recordPostOrPut = default(RecordPostOrPut), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PostOrPutRecordResponse>> PostZoneRecordWithHttpInfoAsync(int zoneId, RecordPostOrPut? recordPostOrPut = default(RecordPostOrPut?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update an Intelligent DNS zone record
         /// </summary>
@@ -215,7 +215,7 @@ namespace idns.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PostOrPutRecordResponse</returns>
-        System.Threading.Tasks.Task<PostOrPutRecordResponse> PutZoneRecordAsync(int zoneId, int recordId, RecordPostOrPut recordPostOrPut = default(RecordPostOrPut), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PostOrPutRecordResponse> PutZoneRecordAsync(int zoneId, int recordId, RecordPostOrPut? recordPostOrPut = default(RecordPostOrPut?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update an Intelligent DNS zone record
@@ -230,7 +230,7 @@ namespace idns.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PostOrPutRecordResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PostOrPutRecordResponse>> PutZoneRecordWithHttpInfoAsync(int zoneId, int recordId, RecordPostOrPut recordPostOrPut = default(RecordPostOrPut), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PostOrPutRecordResponse>> PutZoneRecordWithHttpInfoAsync(int zoneId, int recordId, RecordPostOrPut? recordPostOrPut = default(RecordPostOrPut?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -649,7 +649,7 @@ namespace idns.Api
         /// <param name="recordPostOrPut"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PostOrPutRecordResponse</returns>
-        public PostOrPutRecordResponse PostZoneRecord(int zoneId, RecordPostOrPut recordPostOrPut = default(RecordPostOrPut), int operationIndex = 0)
+        public PostOrPutRecordResponse PostZoneRecord(int zoneId, RecordPostOrPut? recordPostOrPut = default(RecordPostOrPut?), int operationIndex = 0)
         {
             idns.Client.ApiResponse<PostOrPutRecordResponse> localVarResponse = PostZoneRecordWithHttpInfo(zoneId, recordPostOrPut);
             return localVarResponse.Data;
@@ -663,7 +663,7 @@ namespace idns.Api
         /// <param name="recordPostOrPut"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PostOrPutRecordResponse</returns>
-        public idns.Client.ApiResponse<PostOrPutRecordResponse> PostZoneRecordWithHttpInfo(int zoneId, RecordPostOrPut recordPostOrPut = default(RecordPostOrPut), int operationIndex = 0)
+        public idns.Client.ApiResponse<PostOrPutRecordResponse> PostZoneRecordWithHttpInfo(int zoneId, RecordPostOrPut? recordPostOrPut = default(RecordPostOrPut?), int operationIndex = 0)
         {
             idns.Client.RequestOptions localVarRequestOptions = new idns.Client.RequestOptions();
 
@@ -723,7 +723,7 @@ namespace idns.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PostOrPutRecordResponse</returns>
-        public async System.Threading.Tasks.Task<PostOrPutRecordResponse> PostZoneRecordAsync(int zoneId, RecordPostOrPut recordPostOrPut = default(RecordPostOrPut), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PostOrPutRecordResponse> PostZoneRecordAsync(int zoneId, RecordPostOrPut? recordPostOrPut = default(RecordPostOrPut?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             idns.Client.ApiResponse<PostOrPutRecordResponse> localVarResponse = await PostZoneRecordWithHttpInfoAsync(zoneId, recordPostOrPut, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -738,7 +738,7 @@ namespace idns.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PostOrPutRecordResponse)</returns>
-        public async System.Threading.Tasks.Task<idns.Client.ApiResponse<PostOrPutRecordResponse>> PostZoneRecordWithHttpInfoAsync(int zoneId, RecordPostOrPut recordPostOrPut = default(RecordPostOrPut), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<idns.Client.ApiResponse<PostOrPutRecordResponse>> PostZoneRecordWithHttpInfoAsync(int zoneId, RecordPostOrPut? recordPostOrPut = default(RecordPostOrPut?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             idns.Client.RequestOptions localVarRequestOptions = new idns.Client.RequestOptions();
@@ -800,7 +800,7 @@ namespace idns.Api
         /// <param name="recordPostOrPut"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PostOrPutRecordResponse</returns>
-        public PostOrPutRecordResponse PutZoneRecord(int zoneId, int recordId, RecordPostOrPut recordPostOrPut = default(RecordPostOrPut), int operationIndex = 0)
+        public PostOrPutRecordResponse PutZoneRecord(int zoneId, int recordId, RecordPostOrPut? recordPostOrPut = default(RecordPostOrPut?), int operationIndex = 0)
         {
             idns.Client.ApiResponse<PostOrPutRecordResponse> localVarResponse = PutZoneRecordWithHttpInfo(zoneId, recordId, recordPostOrPut);
             return localVarResponse.Data;
@@ -815,7 +815,7 @@ namespace idns.Api
         /// <param name="recordPostOrPut"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PostOrPutRecordResponse</returns>
-        public idns.Client.ApiResponse<PostOrPutRecordResponse> PutZoneRecordWithHttpInfo(int zoneId, int recordId, RecordPostOrPut recordPostOrPut = default(RecordPostOrPut), int operationIndex = 0)
+        public idns.Client.ApiResponse<PostOrPutRecordResponse> PutZoneRecordWithHttpInfo(int zoneId, int recordId, RecordPostOrPut? recordPostOrPut = default(RecordPostOrPut?), int operationIndex = 0)
         {
             idns.Client.RequestOptions localVarRequestOptions = new idns.Client.RequestOptions();
 
@@ -877,7 +877,7 @@ namespace idns.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PostOrPutRecordResponse</returns>
-        public async System.Threading.Tasks.Task<PostOrPutRecordResponse> PutZoneRecordAsync(int zoneId, int recordId, RecordPostOrPut recordPostOrPut = default(RecordPostOrPut), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PostOrPutRecordResponse> PutZoneRecordAsync(int zoneId, int recordId, RecordPostOrPut? recordPostOrPut = default(RecordPostOrPut?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             idns.Client.ApiResponse<PostOrPutRecordResponse> localVarResponse = await PutZoneRecordWithHttpInfoAsync(zoneId, recordId, recordPostOrPut, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -893,7 +893,7 @@ namespace idns.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PostOrPutRecordResponse)</returns>
-        public async System.Threading.Tasks.Task<idns.Client.ApiResponse<PostOrPutRecordResponse>> PutZoneRecordWithHttpInfoAsync(int zoneId, int recordId, RecordPostOrPut recordPostOrPut = default(RecordPostOrPut), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<idns.Client.ApiResponse<PostOrPutRecordResponse>> PutZoneRecordWithHttpInfoAsync(int zoneId, int recordId, RecordPostOrPut? recordPostOrPut = default(RecordPostOrPut?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             idns.Client.RequestOptions localVarRequestOptions = new idns.Client.RequestOptions();

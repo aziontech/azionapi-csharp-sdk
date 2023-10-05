@@ -70,9 +70,13 @@ namespace idns.Api
         /// Get a collection of Intelligent DNS zones
         /// </summary>
         /// <exception cref="idns.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderBy">Identifies which property the return should be sorted by. (optional, default to name)</param>
+        /// <param name="sort">Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetZonesResponse</returns>
-        GetZonesResponse GetZones(int operationIndex = 0);
+        GetZonesResponse GetZones(string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0);
 
         /// <summary>
         /// Get a collection of Intelligent DNS zones
@@ -81,9 +85,13 @@ namespace idns.Api
         /// 
         /// </remarks>
         /// <exception cref="idns.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderBy">Identifies which property the return should be sorted by. (optional, default to name)</param>
+        /// <param name="sort">Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetZonesResponse</returns>
-        ApiResponse<GetZonesResponse> GetZonesWithHttpInfo(int operationIndex = 0);
+        ApiResponse<GetZonesResponse> GetZonesWithHttpInfo(string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0);
         /// <summary>
         /// Add a new Intelligent DNS zone
         /// </summary>
@@ -91,7 +99,7 @@ namespace idns.Api
         /// <param name="zone"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PostOrPutZoneResponse</returns>
-        PostOrPutZoneResponse PostZone(Zone zone = default(Zone), int operationIndex = 0);
+        PostOrPutZoneResponse PostZone(Zone? zone = default(Zone?), int operationIndex = 0);
 
         /// <summary>
         /// Add a new Intelligent DNS zone
@@ -103,7 +111,7 @@ namespace idns.Api
         /// <param name="zone"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PostOrPutZoneResponse</returns>
-        ApiResponse<PostOrPutZoneResponse> PostZoneWithHttpInfo(Zone zone = default(Zone), int operationIndex = 0);
+        ApiResponse<PostOrPutZoneResponse> PostZoneWithHttpInfo(Zone? zone = default(Zone?), int operationIndex = 0);
         /// <summary>
         /// Update an Intelligent DNS hosted zone
         /// </summary>
@@ -112,7 +120,7 @@ namespace idns.Api
         /// <param name="zone"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PostOrPutZoneResponse</returns>
-        PostOrPutZoneResponse PutZone(int zoneId, Zone zone = default(Zone), int operationIndex = 0);
+        PostOrPutZoneResponse PutZone(int zoneId, Zone? zone = default(Zone?), int operationIndex = 0);
 
         /// <summary>
         /// Update an Intelligent DNS hosted zone
@@ -125,7 +133,7 @@ namespace idns.Api
         /// <param name="zone"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PostOrPutZoneResponse</returns>
-        ApiResponse<PostOrPutZoneResponse> PutZoneWithHttpInfo(int zoneId, Zone zone = default(Zone), int operationIndex = 0);
+        ApiResponse<PostOrPutZoneResponse> PutZoneWithHttpInfo(int zoneId, Zone? zone = default(Zone?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -192,10 +200,14 @@ namespace idns.Api
         /// 
         /// </remarks>
         /// <exception cref="idns.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderBy">Identifies which property the return should be sorted by. (optional, default to name)</param>
+        /// <param name="sort">Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetZonesResponse</returns>
-        System.Threading.Tasks.Task<GetZonesResponse> GetZonesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetZonesResponse> GetZonesAsync(string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get a collection of Intelligent DNS zones
@@ -204,10 +216,14 @@ namespace idns.Api
         /// 
         /// </remarks>
         /// <exception cref="idns.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderBy">Identifies which property the return should be sorted by. (optional, default to name)</param>
+        /// <param name="sort">Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetZonesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetZonesResponse>> GetZonesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetZonesResponse>> GetZonesWithHttpInfoAsync(string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Add a new Intelligent DNS zone
         /// </summary>
@@ -219,7 +235,7 @@ namespace idns.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PostOrPutZoneResponse</returns>
-        System.Threading.Tasks.Task<PostOrPutZoneResponse> PostZoneAsync(Zone zone = default(Zone), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PostOrPutZoneResponse> PostZoneAsync(Zone? zone = default(Zone?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Add a new Intelligent DNS zone
@@ -232,7 +248,7 @@ namespace idns.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PostOrPutZoneResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PostOrPutZoneResponse>> PostZoneWithHttpInfoAsync(Zone zone = default(Zone), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PostOrPutZoneResponse>> PostZoneWithHttpInfoAsync(Zone? zone = default(Zone?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update an Intelligent DNS hosted zone
         /// </summary>
@@ -245,7 +261,7 @@ namespace idns.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PostOrPutZoneResponse</returns>
-        System.Threading.Tasks.Task<PostOrPutZoneResponse> PutZoneAsync(int zoneId, Zone zone = default(Zone), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PostOrPutZoneResponse> PutZoneAsync(int zoneId, Zone? zone = default(Zone?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update an Intelligent DNS hosted zone
@@ -259,7 +275,7 @@ namespace idns.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PostOrPutZoneResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PostOrPutZoneResponse>> PutZoneWithHttpInfoAsync(int zoneId, Zone zone = default(Zone), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PostOrPutZoneResponse>> PutZoneWithHttpInfoAsync(int zoneId, Zone? zone = default(Zone?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -668,11 +684,15 @@ namespace idns.Api
         /// Get a collection of Intelligent DNS zones 
         /// </summary>
         /// <exception cref="idns.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderBy">Identifies which property the return should be sorted by. (optional, default to name)</param>
+        /// <param name="sort">Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetZonesResponse</returns>
-        public GetZonesResponse GetZones(int operationIndex = 0)
+        public GetZonesResponse GetZones(string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0)
         {
-            idns.Client.ApiResponse<GetZonesResponse> localVarResponse = GetZonesWithHttpInfo();
+            idns.Client.ApiResponse<GetZonesResponse> localVarResponse = GetZonesWithHttpInfo(orderBy, sort, page, pageSize);
             return localVarResponse.Data;
         }
 
@@ -680,9 +700,13 @@ namespace idns.Api
         /// Get a collection of Intelligent DNS zones 
         /// </summary>
         /// <exception cref="idns.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderBy">Identifies which property the return should be sorted by. (optional, default to name)</param>
+        /// <param name="sort">Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetZonesResponse</returns>
-        public idns.Client.ApiResponse<GetZonesResponse> GetZonesWithHttpInfo(int operationIndex = 0)
+        public idns.Client.ApiResponse<GetZonesResponse> GetZonesWithHttpInfo(string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0)
         {
             idns.Client.RequestOptions localVarRequestOptions = new idns.Client.RequestOptions();
 
@@ -707,6 +731,22 @@ namespace idns.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(idns.Client.ClientUtils.ParameterToMultiMap("", "order_by", orderBy));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(idns.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(idns.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(idns.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
 
             localVarRequestOptions.Operation = "ZonesApi.GetZones";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -735,12 +775,16 @@ namespace idns.Api
         /// Get a collection of Intelligent DNS zones 
         /// </summary>
         /// <exception cref="idns.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderBy">Identifies which property the return should be sorted by. (optional, default to name)</param>
+        /// <param name="sort">Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetZonesResponse</returns>
-        public async System.Threading.Tasks.Task<GetZonesResponse> GetZonesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetZonesResponse> GetZonesAsync(string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            idns.Client.ApiResponse<GetZonesResponse> localVarResponse = await GetZonesWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            idns.Client.ApiResponse<GetZonesResponse> localVarResponse = await GetZonesWithHttpInfoAsync(orderBy, sort, page, pageSize, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -748,10 +792,14 @@ namespace idns.Api
         /// Get a collection of Intelligent DNS zones 
         /// </summary>
         /// <exception cref="idns.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="orderBy">Identifies which property the return should be sorted by. (optional, default to name)</param>
+        /// <param name="sort">Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional, default to asc)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetZonesResponse)</returns>
-        public async System.Threading.Tasks.Task<idns.Client.ApiResponse<GetZonesResponse>> GetZonesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<idns.Client.ApiResponse<GetZonesResponse>> GetZonesWithHttpInfoAsync(string? orderBy = default(string?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             idns.Client.RequestOptions localVarRequestOptions = new idns.Client.RequestOptions();
@@ -777,6 +825,22 @@ namespace idns.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(idns.Client.ClientUtils.ParameterToMultiMap("", "order_by", orderBy));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(idns.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(idns.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(idns.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
 
             localVarRequestOptions.Operation = "ZonesApi.GetZones";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -809,7 +873,7 @@ namespace idns.Api
         /// <param name="zone"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PostOrPutZoneResponse</returns>
-        public PostOrPutZoneResponse PostZone(Zone zone = default(Zone), int operationIndex = 0)
+        public PostOrPutZoneResponse PostZone(Zone? zone = default(Zone?), int operationIndex = 0)
         {
             idns.Client.ApiResponse<PostOrPutZoneResponse> localVarResponse = PostZoneWithHttpInfo(zone);
             return localVarResponse.Data;
@@ -822,7 +886,7 @@ namespace idns.Api
         /// <param name="zone"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PostOrPutZoneResponse</returns>
-        public idns.Client.ApiResponse<PostOrPutZoneResponse> PostZoneWithHttpInfo(Zone zone = default(Zone), int operationIndex = 0)
+        public idns.Client.ApiResponse<PostOrPutZoneResponse> PostZoneWithHttpInfo(Zone? zone = default(Zone?), int operationIndex = 0)
         {
             idns.Client.RequestOptions localVarRequestOptions = new idns.Client.RequestOptions();
 
@@ -880,7 +944,7 @@ namespace idns.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PostOrPutZoneResponse</returns>
-        public async System.Threading.Tasks.Task<PostOrPutZoneResponse> PostZoneAsync(Zone zone = default(Zone), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PostOrPutZoneResponse> PostZoneAsync(Zone? zone = default(Zone?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             idns.Client.ApiResponse<PostOrPutZoneResponse> localVarResponse = await PostZoneWithHttpInfoAsync(zone, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -894,7 +958,7 @@ namespace idns.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PostOrPutZoneResponse)</returns>
-        public async System.Threading.Tasks.Task<idns.Client.ApiResponse<PostOrPutZoneResponse>> PostZoneWithHttpInfoAsync(Zone zone = default(Zone), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<idns.Client.ApiResponse<PostOrPutZoneResponse>> PostZoneWithHttpInfoAsync(Zone? zone = default(Zone?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             idns.Client.RequestOptions localVarRequestOptions = new idns.Client.RequestOptions();
@@ -954,7 +1018,7 @@ namespace idns.Api
         /// <param name="zone"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PostOrPutZoneResponse</returns>
-        public PostOrPutZoneResponse PutZone(int zoneId, Zone zone = default(Zone), int operationIndex = 0)
+        public PostOrPutZoneResponse PutZone(int zoneId, Zone? zone = default(Zone?), int operationIndex = 0)
         {
             idns.Client.ApiResponse<PostOrPutZoneResponse> localVarResponse = PutZoneWithHttpInfo(zoneId, zone);
             return localVarResponse.Data;
@@ -968,7 +1032,7 @@ namespace idns.Api
         /// <param name="zone"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PostOrPutZoneResponse</returns>
-        public idns.Client.ApiResponse<PostOrPutZoneResponse> PutZoneWithHttpInfo(int zoneId, Zone zone = default(Zone), int operationIndex = 0)
+        public idns.Client.ApiResponse<PostOrPutZoneResponse> PutZoneWithHttpInfo(int zoneId, Zone? zone = default(Zone?), int operationIndex = 0)
         {
             idns.Client.RequestOptions localVarRequestOptions = new idns.Client.RequestOptions();
 
@@ -1028,7 +1092,7 @@ namespace idns.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PostOrPutZoneResponse</returns>
-        public async System.Threading.Tasks.Task<PostOrPutZoneResponse> PutZoneAsync(int zoneId, Zone zone = default(Zone), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PostOrPutZoneResponse> PutZoneAsync(int zoneId, Zone? zone = default(Zone?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             idns.Client.ApiResponse<PostOrPutZoneResponse> localVarResponse = await PutZoneWithHttpInfoAsync(zoneId, zone, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1043,7 +1107,7 @@ namespace idns.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PostOrPutZoneResponse)</returns>
-        public async System.Threading.Tasks.Task<idns.Client.ApiResponse<PostOrPutZoneResponse>> PutZoneWithHttpInfoAsync(int zoneId, Zone zone = default(Zone), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<idns.Client.ApiResponse<PostOrPutZoneResponse>> PutZoneWithHttpInfoAsync(int zoneId, Zone? zone = default(Zone?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             idns.Client.RequestOptions localVarRequestOptions = new idns.Client.RequestOptions();
