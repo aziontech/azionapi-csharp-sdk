@@ -202,7 +202,7 @@ catch (ApiException e)
 
 <a id="getzones"></a>
 # **GetZones**
-> GetZonesResponse GetZones ()
+> GetZonesResponse GetZones (string? orderBy = null, string? sort = null, long? page = null, long? pageSize = null)
 
 Get a collection of Intelligent DNS zones
 
@@ -228,11 +228,15 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ZonesApi(config);
+            var orderBy = "id";  // string? | Identifies which property the return should be sorted by. (optional)  (default to name)
+            var sort = "asc";  // string? | Defines whether objects are shown in ascending or descending order depending on the value set in order_by. (optional)  (default to asc)
+            var page = 1L;  // long? | Identifies which page should be returned, if the return is paginated. (optional)  (default to 1)
+            var pageSize = 10L;  // long? | Identifies how many items should be returned per page. (optional)  (default to 10)
 
             try
             {
                 // Get a collection of Intelligent DNS zones
-                GetZonesResponse result = apiInstance.GetZones();
+                GetZonesResponse result = apiInstance.GetZones(orderBy, sort, page, pageSize);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -253,7 +257,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get a collection of Intelligent DNS zones
-    ApiResponse<GetZonesResponse> response = apiInstance.GetZonesWithHttpInfo();
+    ApiResponse<GetZonesResponse> response = apiInstance.GetZonesWithHttpInfo(orderBy, sort, page, pageSize);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -267,7 +271,14 @@ catch (ApiException e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **orderBy** | **string?** | Identifies which property the return should be sorted by. | [optional] [default to name] |
+| **sort** | **string?** | Defines whether objects are shown in ascending or descending order depending on the value set in order_by. | [optional] [default to asc] |
+| **page** | **long?** | Identifies which page should be returned, if the return is paginated. | [optional] [default to 1] |
+| **pageSize** | **long?** | Identifies how many items should be returned per page. | [optional] [default to 10] |
+
 ### Return type
 
 [**GetZonesResponse**](GetZonesResponse.md)
@@ -292,7 +303,7 @@ This endpoint does not need any parameter.
 
 <a id="postzone"></a>
 # **PostZone**
-> PostOrPutZoneResponse PostZone (Zone zone = null)
+> PostOrPutZoneResponse PostZone (Zone? zone = null)
 
 Add a new Intelligent DNS zone
 
@@ -318,7 +329,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ZonesApi(config);
-            var zone = new Zone(); // Zone |  (optional) 
+            var zone = new Zone?(); // Zone? |  (optional) 
 
             try
             {
@@ -361,7 +372,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **zone** | [**Zone**](Zone.md) |  | [optional]  |
+| **zone** | [**Zone?**](Zone?.md) |  | [optional]  |
 
 ### Return type
 
@@ -388,7 +399,7 @@ catch (ApiException e)
 
 <a id="putzone"></a>
 # **PutZone**
-> PostOrPutZoneResponse PutZone (int zoneId, Zone zone = null)
+> PostOrPutZoneResponse PutZone (int zoneId, Zone? zone = null)
 
 Update an Intelligent DNS hosted zone
 
@@ -415,7 +426,7 @@ namespace Example
 
             var apiInstance = new ZonesApi(config);
             var zoneId = 56;  // int | The hosted zone id
-            var zone = new Zone(); // Zone |  (optional) 
+            var zone = new Zone?(); // Zone? |  (optional) 
 
             try
             {
@@ -459,7 +470,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **zoneId** | **int** | The hosted zone id |  |
-| **zone** | [**Zone**](Zone.md) |  | [optional]  |
+| **zone** | [**Zone?**](Zone?.md) |  | [optional]  |
 
 ### Return type
 

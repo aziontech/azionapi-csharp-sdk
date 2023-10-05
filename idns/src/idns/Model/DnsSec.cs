@@ -54,7 +54,6 @@ namespace idns.Model
             /// </summary>
             [EnumMember(Value = "ready")]
             Ready = 3
-
         }
 
 

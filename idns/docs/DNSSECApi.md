@@ -106,7 +106,7 @@ catch (ApiException e)
 
 <a id="putzonednssec"></a>
 # **PutZoneDnsSec**
-> GetOrPatchDnsSecResponse PutZoneDnsSec (int zoneId, DnsSec dnsSec = null)
+> GetOrPatchDnsSecResponse PutZoneDnsSec (int zoneId, DnsSec? dnsSec = null)
 
 Update the DNSSEC zone
 
@@ -133,7 +133,7 @@ namespace Example
 
             var apiInstance = new DNSSECApi(config);
             var zoneId = 56;  // int | The hosted zone id
-            var dnsSec = new DnsSec(); // DnsSec |  (optional) 
+            var dnsSec = new DnsSec?(); // DnsSec? |  (optional) 
 
             try
             {
@@ -177,7 +177,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **zoneId** | **int** | The hosted zone id |  |
-| **dnsSec** | [**DnsSec**](DnsSec.md) |  | [optional]  |
+| **dnsSec** | [**DnsSec?**](DnsSec?.md) |  | [optional]  |
 
 ### Return type
 

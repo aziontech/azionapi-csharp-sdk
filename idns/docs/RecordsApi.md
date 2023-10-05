@@ -204,7 +204,7 @@ catch (ApiException e)
 
 <a id="postzonerecord"></a>
 # **PostZoneRecord**
-> PostOrPutRecordResponse PostZoneRecord (int zoneId, RecordPostOrPut recordPostOrPut = null)
+> PostOrPutRecordResponse PostZoneRecord (int zoneId, RecordPostOrPut? recordPostOrPut = null)
 
 Create a new Intelligent DNS zone record
 
@@ -231,7 +231,7 @@ namespace Example
 
             var apiInstance = new RecordsApi(config);
             var zoneId = 56;  // int | The hosted zone id
-            var recordPostOrPut = new RecordPostOrPut(); // RecordPostOrPut |  (optional) 
+            var recordPostOrPut = new RecordPostOrPut?(); // RecordPostOrPut? |  (optional) 
 
             try
             {
@@ -275,7 +275,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **zoneId** | **int** | The hosted zone id |  |
-| **recordPostOrPut** | [**RecordPostOrPut**](RecordPostOrPut.md) |  | [optional]  |
+| **recordPostOrPut** | [**RecordPostOrPut?**](RecordPostOrPut?.md) |  | [optional]  |
 
 ### Return type
 
@@ -302,7 +302,7 @@ catch (ApiException e)
 
 <a id="putzonerecord"></a>
 # **PutZoneRecord**
-> PostOrPutRecordResponse PutZoneRecord (int zoneId, int recordId, RecordPostOrPut recordPostOrPut = null)
+> PostOrPutRecordResponse PutZoneRecord (int zoneId, int recordId, RecordPostOrPut? recordPostOrPut = null)
 
 Update an Intelligent DNS zone record
 
@@ -330,7 +330,7 @@ namespace Example
             var apiInstance = new RecordsApi(config);
             var zoneId = 56;  // int | The hosted zone id
             var recordId = 56;  // int | The zone record id
-            var recordPostOrPut = new RecordPostOrPut(); // RecordPostOrPut |  (optional) 
+            var recordPostOrPut = new RecordPostOrPut?(); // RecordPostOrPut? |  (optional) 
 
             try
             {
@@ -375,7 +375,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **zoneId** | **int** | The hosted zone id |  |
 | **recordId** | **int** | The zone record id |  |
-| **recordPostOrPut** | [**RecordPostOrPut**](RecordPostOrPut.md) |  | [optional]  |
+| **recordPostOrPut** | [**RecordPostOrPut?**](RecordPostOrPut?.md) |  | [optional]  |
 
 ### Return type
 

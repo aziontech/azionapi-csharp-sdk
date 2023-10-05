@@ -54,7 +54,7 @@ namespace idns.Api
         /// <param name="dnsSec"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetOrPatchDnsSecResponse</returns>
-        GetOrPatchDnsSecResponse PutZoneDnsSec(int zoneId, DnsSec dnsSec = default(DnsSec), int operationIndex = 0);
+        GetOrPatchDnsSecResponse PutZoneDnsSec(int zoneId, DnsSec? dnsSec = default(DnsSec?), int operationIndex = 0);
 
         /// <summary>
         /// Update the DNSSEC zone
@@ -67,7 +67,7 @@ namespace idns.Api
         /// <param name="dnsSec"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetOrPatchDnsSecResponse</returns>
-        ApiResponse<GetOrPatchDnsSecResponse> PutZoneDnsSecWithHttpInfo(int zoneId, DnsSec dnsSec = default(DnsSec), int operationIndex = 0);
+        ApiResponse<GetOrPatchDnsSecResponse> PutZoneDnsSecWithHttpInfo(int zoneId, DnsSec? dnsSec = default(DnsSec?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -114,7 +114,7 @@ namespace idns.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetOrPatchDnsSecResponse</returns>
-        System.Threading.Tasks.Task<GetOrPatchDnsSecResponse> PutZoneDnsSecAsync(int zoneId, DnsSec dnsSec = default(DnsSec), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetOrPatchDnsSecResponse> PutZoneDnsSecAsync(int zoneId, DnsSec? dnsSec = default(DnsSec?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update the DNSSEC zone
@@ -128,7 +128,7 @@ namespace idns.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetOrPatchDnsSecResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetOrPatchDnsSecResponse>> PutZoneDnsSecWithHttpInfoAsync(int zoneId, DnsSec dnsSec = default(DnsSec), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetOrPatchDnsSecResponse>> PutZoneDnsSecWithHttpInfoAsync(int zoneId, DnsSec? dnsSec = default(DnsSec?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -399,7 +399,7 @@ namespace idns.Api
         /// <param name="dnsSec"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetOrPatchDnsSecResponse</returns>
-        public GetOrPatchDnsSecResponse PutZoneDnsSec(int zoneId, DnsSec dnsSec = default(DnsSec), int operationIndex = 0)
+        public GetOrPatchDnsSecResponse PutZoneDnsSec(int zoneId, DnsSec? dnsSec = default(DnsSec?), int operationIndex = 0)
         {
             idns.Client.ApiResponse<GetOrPatchDnsSecResponse> localVarResponse = PutZoneDnsSecWithHttpInfo(zoneId, dnsSec);
             return localVarResponse.Data;
@@ -413,7 +413,7 @@ namespace idns.Api
         /// <param name="dnsSec"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetOrPatchDnsSecResponse</returns>
-        public idns.Client.ApiResponse<GetOrPatchDnsSecResponse> PutZoneDnsSecWithHttpInfo(int zoneId, DnsSec dnsSec = default(DnsSec), int operationIndex = 0)
+        public idns.Client.ApiResponse<GetOrPatchDnsSecResponse> PutZoneDnsSecWithHttpInfo(int zoneId, DnsSec? dnsSec = default(DnsSec?), int operationIndex = 0)
         {
             idns.Client.RequestOptions localVarRequestOptions = new idns.Client.RequestOptions();
 
@@ -473,7 +473,7 @@ namespace idns.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetOrPatchDnsSecResponse</returns>
-        public async System.Threading.Tasks.Task<GetOrPatchDnsSecResponse> PutZoneDnsSecAsync(int zoneId, DnsSec dnsSec = default(DnsSec), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetOrPatchDnsSecResponse> PutZoneDnsSecAsync(int zoneId, DnsSec? dnsSec = default(DnsSec?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             idns.Client.ApiResponse<GetOrPatchDnsSecResponse> localVarResponse = await PutZoneDnsSecWithHttpInfoAsync(zoneId, dnsSec, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -488,7 +488,7 @@ namespace idns.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetOrPatchDnsSecResponse)</returns>
-        public async System.Threading.Tasks.Task<idns.Client.ApiResponse<GetOrPatchDnsSecResponse>> PutZoneDnsSecWithHttpInfoAsync(int zoneId, DnsSec dnsSec = default(DnsSec), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<idns.Client.ApiResponse<GetOrPatchDnsSecResponse>> PutZoneDnsSecWithHttpInfoAsync(int zoneId, DnsSec? dnsSec = default(DnsSec?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             idns.Client.RequestOptions localVarRequestOptions = new idns.Client.RequestOptions();
