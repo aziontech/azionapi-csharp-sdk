@@ -53,9 +53,11 @@ namespace idns.Api
         /// </summary>
         /// <exception cref="idns.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="zoneId">The hosted zone id</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetRecordsResponse</returns>
-        GetRecordsResponse GetZoneRecords(int zoneId, int operationIndex = 0);
+        GetRecordsResponse GetZoneRecords(int zoneId, long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0);
 
         /// <summary>
         /// Get a collection of Intelligent DNS zone records
@@ -65,9 +67,11 @@ namespace idns.Api
         /// </remarks>
         /// <exception cref="idns.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="zoneId">The hosted zone id</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetRecordsResponse</returns>
-        ApiResponse<GetRecordsResponse> GetZoneRecordsWithHttpInfo(int zoneId, int operationIndex = 0);
+        ApiResponse<GetRecordsResponse> GetZoneRecordsWithHttpInfo(int zoneId, long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0);
         /// <summary>
         /// Create a new Intelligent DNS zone record
         /// </summary>
@@ -158,10 +162,12 @@ namespace idns.Api
         /// </remarks>
         /// <exception cref="idns.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="zoneId">The hosted zone id</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetRecordsResponse</returns>
-        System.Threading.Tasks.Task<GetRecordsResponse> GetZoneRecordsAsync(int zoneId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetRecordsResponse> GetZoneRecordsAsync(int zoneId, long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get a collection of Intelligent DNS zone records
@@ -171,10 +177,12 @@ namespace idns.Api
         /// </remarks>
         /// <exception cref="idns.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="zoneId">The hosted zone id</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetRecordsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetRecordsResponse>> GetZoneRecordsWithHttpInfoAsync(int zoneId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetRecordsResponse>> GetZoneRecordsWithHttpInfoAsync(int zoneId, long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create a new Intelligent DNS zone record
         /// </summary>
@@ -504,11 +512,13 @@ namespace idns.Api
         /// </summary>
         /// <exception cref="idns.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="zoneId">The hosted zone id</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetRecordsResponse</returns>
-        public GetRecordsResponse GetZoneRecords(int zoneId, int operationIndex = 0)
+        public GetRecordsResponse GetZoneRecords(int zoneId, long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0)
         {
-            idns.Client.ApiResponse<GetRecordsResponse> localVarResponse = GetZoneRecordsWithHttpInfo(zoneId);
+            idns.Client.ApiResponse<GetRecordsResponse> localVarResponse = GetZoneRecordsWithHttpInfo(zoneId, page, pageSize);
             return localVarResponse.Data;
         }
 
@@ -517,9 +527,11 @@ namespace idns.Api
         /// </summary>
         /// <exception cref="idns.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="zoneId">The hosted zone id</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetRecordsResponse</returns>
-        public idns.Client.ApiResponse<GetRecordsResponse> GetZoneRecordsWithHttpInfo(int zoneId, int operationIndex = 0)
+        public idns.Client.ApiResponse<GetRecordsResponse> GetZoneRecordsWithHttpInfo(int zoneId, long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0)
         {
             idns.Client.RequestOptions localVarRequestOptions = new idns.Client.RequestOptions();
 
@@ -544,6 +556,14 @@ namespace idns.Api
             }
 
             localVarRequestOptions.PathParameters.Add("zone_id", idns.Client.ClientUtils.ParameterToString(zoneId)); // path parameter
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(idns.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(idns.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
 
             localVarRequestOptions.Operation = "RecordsApi.GetZoneRecords";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -573,12 +593,14 @@ namespace idns.Api
         /// </summary>
         /// <exception cref="idns.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="zoneId">The hosted zone id</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetRecordsResponse</returns>
-        public async System.Threading.Tasks.Task<GetRecordsResponse> GetZoneRecordsAsync(int zoneId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetRecordsResponse> GetZoneRecordsAsync(int zoneId, long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            idns.Client.ApiResponse<GetRecordsResponse> localVarResponse = await GetZoneRecordsWithHttpInfoAsync(zoneId, operationIndex, cancellationToken).ConfigureAwait(false);
+            idns.Client.ApiResponse<GetRecordsResponse> localVarResponse = await GetZoneRecordsWithHttpInfoAsync(zoneId, page, pageSize, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -587,10 +609,12 @@ namespace idns.Api
         /// </summary>
         /// <exception cref="idns.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="zoneId">The hosted zone id</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetRecordsResponse)</returns>
-        public async System.Threading.Tasks.Task<idns.Client.ApiResponse<GetRecordsResponse>> GetZoneRecordsWithHttpInfoAsync(int zoneId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<idns.Client.ApiResponse<GetRecordsResponse>> GetZoneRecordsWithHttpInfoAsync(int zoneId, long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             idns.Client.RequestOptions localVarRequestOptions = new idns.Client.RequestOptions();
@@ -616,6 +640,14 @@ namespace idns.Api
             }
 
             localVarRequestOptions.PathParameters.Add("zone_id", idns.Client.ClientUtils.ParameterToString(zoneId)); // path parameter
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(idns.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(idns.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
 
             localVarRequestOptions.Operation = "RecordsApi.GetZoneRecords";
             localVarRequestOptions.OperationIndex = operationIndex;

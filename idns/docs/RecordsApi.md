@@ -108,7 +108,7 @@ catch (ApiException e)
 
 <a id="getzonerecords"></a>
 # **GetZoneRecords**
-> GetRecordsResponse GetZoneRecords (int zoneId)
+> GetRecordsResponse GetZoneRecords (int zoneId, long? page = null, long? pageSize = null)
 
 Get a collection of Intelligent DNS zone records
 
@@ -135,11 +135,13 @@ namespace Example
 
             var apiInstance = new RecordsApi(config);
             var zoneId = 56;  // int | The hosted zone id
+            var page = 1L;  // long? | Identifies which page should be returned, if the return is paginated. (optional)  (default to 1)
+            var pageSize = 10L;  // long? | Identifies how many items should be returned per page. (optional)  (default to 10)
 
             try
             {
                 // Get a collection of Intelligent DNS zone records
-                GetRecordsResponse result = apiInstance.GetZoneRecords(zoneId);
+                GetRecordsResponse result = apiInstance.GetZoneRecords(zoneId, page, pageSize);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -160,7 +162,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get a collection of Intelligent DNS zone records
-    ApiResponse<GetRecordsResponse> response = apiInstance.GetZoneRecordsWithHttpInfo(zoneId);
+    ApiResponse<GetRecordsResponse> response = apiInstance.GetZoneRecordsWithHttpInfo(zoneId, page, pageSize);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -178,6 +180,8 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **zoneId** | **int** | The hosted zone id |  |
+| **page** | **long?** | Identifies which page should be returned, if the return is paginated. | [optional] [default to 1] |
+| **pageSize** | **long?** | Identifies how many items should be returned per page. | [optional] [default to 10] |
 
 ### Return type
 
