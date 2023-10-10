@@ -36,12 +36,16 @@ namespace edgefunctionsinstance_edgefirewall.Model
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="name">name.</param>
+        /// <param name="lastEditor">lastEditor.</param>
+        /// <param name="lastModified">lastModified.</param>
         /// <param name="jsonArgs">jsonArgs.</param>
         /// <param name="edgeFunction">edgeFunction.</param>
-        public EdgeFunctionsInstance(int id = default(int), string name = default(string), Object jsonArgs = default(Object), int edgeFunction = default(int))
+        public EdgeFunctionsInstance(long id = default(long), string name = default(string), string lastEditor = default(string), string lastModified = default(string), Object jsonArgs = default(Object), long edgeFunction = default(long))
         {
             this.Id = id;
             this.Name = name;
+            this.LastEditor = lastEditor;
+            this.LastModified = lastModified;
             this.JsonArgs = jsonArgs;
             this.EdgeFunction = edgeFunction;
         }
@@ -49,29 +53,38 @@ namespace edgefunctionsinstance_edgefirewall.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>1614</example>
         [DataMember(Name = "id", EmitDefaultValue = false)]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>&quot;asdasdsad&quot;</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or Sets LastEditor
+        /// </summary>
+        [DataMember(Name = "last_editor", EmitDefaultValue = false)]
+        public string LastEditor { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LastModified
+        /// </summary>
+        [DataMember(Name = "last_modified", EmitDefaultValue = false)]
+        public string LastModified { get; set; }
+
+        /// <summary>
         /// Gets or Sets JsonArgs
         /// </summary>
-        [DataMember(Name = "json_args", EmitDefaultValue = false)]
+        [DataMember(Name = "json_args", EmitDefaultValue = true)]
         public Object JsonArgs { get; set; }
 
         /// <summary>
         /// Gets or Sets EdgeFunction
         /// </summary>
-        /// <example>3254</example>
         [DataMember(Name = "edge_function", EmitDefaultValue = false)]
-        public int EdgeFunction { get; set; }
+        public long EdgeFunction { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -83,6 +96,8 @@ namespace edgefunctionsinstance_edgefirewall.Model
             sb.Append("class EdgeFunctionsInstance {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  LastEditor: ").Append(LastEditor).Append("\n");
+            sb.Append("  LastModified: ").Append(LastModified).Append("\n");
             sb.Append("  JsonArgs: ").Append(JsonArgs).Append("\n");
             sb.Append("  EdgeFunction: ").Append(EdgeFunction).Append("\n");
             sb.Append("}\n");
@@ -130,6 +145,16 @@ namespace edgefunctionsinstance_edgefirewall.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.LastEditor == input.LastEditor ||
+                    (this.LastEditor != null &&
+                    this.LastEditor.Equals(input.LastEditor))
+                ) && 
+                (
+                    this.LastModified == input.LastModified ||
+                    (this.LastModified != null &&
+                    this.LastModified.Equals(input.LastModified))
+                ) && 
+                (
                     this.JsonArgs == input.JsonArgs ||
                     (this.JsonArgs != null &&
                     this.JsonArgs.Equals(input.JsonArgs))
@@ -153,6 +178,14 @@ namespace edgefunctionsinstance_edgefirewall.Model
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.LastEditor != null)
+                {
+                    hashCode = (hashCode * 59) + this.LastEditor.GetHashCode();
+                }
+                if (this.LastModified != null)
+                {
+                    hashCode = (hashCode * 59) + this.LastModified.GetHashCode();
                 }
                 if (this.JsonArgs != null)
                 {

@@ -36,7 +36,7 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ListEdgeFunctionsInstancesResponse</returns>
-        ListEdgeFunctionsInstancesResponse EdgeFirewallEdgeFirewallIdFunctionsInstancesGet(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0);
+        ListEdgeFunctionsInstancesResponse EdgeFirewallEdgeFirewallIdFunctionsInstancesGet(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// List all user Edge Functions Instances
@@ -51,15 +51,15 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ListEdgeFunctionsInstancesResponse</returns>
-        ApiResponse<ListEdgeFunctionsInstancesResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesGetWithHttpInfo(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0);
+        ApiResponse<ListEdgeFunctionsInstancesResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesGetWithHttpInfo(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0);
         /// <summary>
         /// Create an Edge Functions Instance
         /// </summary>
         /// <exception cref="edgefunctionsinstance_edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createEdgeFunctionsInstancesRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        void EdgeFirewallEdgeFirewallIdFunctionsInstancesPost(CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest, int operationIndex = 0);
+        /// <returns>EdgeFunctionsInstanceResponse</returns>
+        EdgeFunctionsInstanceResponse EdgeFirewallEdgeFirewallIdFunctionsInstancesPost(CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest, int operationIndex = 0);
 
         /// <summary>
         /// Create an Edge Functions Instance
@@ -70,8 +70,8 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <exception cref="edgefunctionsinstance_edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createEdgeFunctionsInstancesRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> EdgeFirewallEdgeFirewallIdFunctionsInstancesPostWithHttpInfo(CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest, int operationIndex = 0);
+        /// <returns>ApiResponse of EdgeFunctionsInstanceResponse</returns>
+        ApiResponse<EdgeFunctionsInstanceResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesPostWithHttpInfo(CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest, int operationIndex = 0);
         /// <summary>
         /// Delete an Edge Functions Instance by uuid
         /// </summary>
@@ -119,8 +119,8 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="uuid"></param>
         /// <param name="body"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ListEdgeFunctionsInstancesResponse</returns>
-        ListEdgeFunctionsInstancesResponse EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0);
+        /// <returns>EdgeFunctionsInstanceResponse</returns>
+        EdgeFunctionsInstanceResponse EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0);
 
         /// <summary>
         /// Update some Edge Functions Instance attributes
@@ -132,8 +132,8 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="uuid"></param>
         /// <param name="body"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ListEdgeFunctionsInstancesResponse</returns>
-        ApiResponse<ListEdgeFunctionsInstancesResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchWithHttpInfo(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0);
+        /// <returns>ApiResponse of EdgeFunctionsInstanceResponse</returns>
+        ApiResponse<EdgeFunctionsInstanceResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchWithHttpInfo(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0);
         /// <summary>
         /// Overwrite some Edge Functions Instance attributes
         /// </summary>
@@ -141,8 +141,8 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="uuid"></param>
         /// <param name="body"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ListEdgeFunctionsInstancesResponse</returns>
-        ListEdgeFunctionsInstancesResponse EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPut(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0);
+        /// <returns>EdgeFunctionsInstanceResponse</returns>
+        EdgeFunctionsInstanceResponse EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPut(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0);
 
         /// <summary>
         /// Overwrite some Edge Functions Instance attributes
@@ -154,8 +154,8 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="uuid"></param>
         /// <param name="body"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ListEdgeFunctionsInstancesResponse</returns>
-        ApiResponse<ListEdgeFunctionsInstancesResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutWithHttpInfo(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0);
+        /// <returns>ApiResponse of EdgeFunctionsInstanceResponse</returns>
+        ApiResponse<EdgeFunctionsInstanceResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutWithHttpInfo(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -179,7 +179,7 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListEdgeFunctionsInstancesResponse</returns>
-        System.Threading.Tasks.Task<ListEdgeFunctionsInstancesResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesGetAsync(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ListEdgeFunctionsInstancesResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesGetAsync(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List all user Edge Functions Instances
@@ -195,7 +195,7 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListEdgeFunctionsInstancesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListEdgeFunctionsInstancesResponse>> EdgeFirewallEdgeFirewallIdFunctionsInstancesGetWithHttpInfoAsync(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ListEdgeFunctionsInstancesResponse>> EdgeFirewallEdgeFirewallIdFunctionsInstancesGetWithHttpInfoAsync(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create an Edge Functions Instance
         /// </summary>
@@ -206,8 +206,8 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="createEdgeFunctionsInstancesRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task EdgeFirewallEdgeFirewallIdFunctionsInstancesPostAsync(CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of EdgeFunctionsInstanceResponse</returns>
+        System.Threading.Tasks.Task<EdgeFunctionsInstanceResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesPostAsync(CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create an Edge Functions Instance
@@ -219,8 +219,8 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="createEdgeFunctionsInstancesRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> EdgeFirewallEdgeFirewallIdFunctionsInstancesPostWithHttpInfoAsync(CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (EdgeFunctionsInstanceResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EdgeFunctionsInstanceResponse>> EdgeFirewallEdgeFirewallIdFunctionsInstancesPostWithHttpInfoAsync(CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete an Edge Functions Instance by uuid
         /// </summary>
@@ -282,8 +282,8 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="body"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ListEdgeFunctionsInstancesResponse</returns>
-        System.Threading.Tasks.Task<ListEdgeFunctionsInstancesResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchAsync(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of EdgeFunctionsInstanceResponse</returns>
+        System.Threading.Tasks.Task<EdgeFunctionsInstanceResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchAsync(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update some Edge Functions Instance attributes
@@ -296,8 +296,8 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="body"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ListEdgeFunctionsInstancesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListEdgeFunctionsInstancesResponse>> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchWithHttpInfoAsync(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (EdgeFunctionsInstanceResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EdgeFunctionsInstanceResponse>> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchWithHttpInfoAsync(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Overwrite some Edge Functions Instance attributes
         /// </summary>
@@ -309,8 +309,8 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="body"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ListEdgeFunctionsInstancesResponse</returns>
-        System.Threading.Tasks.Task<ListEdgeFunctionsInstancesResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutAsync(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of EdgeFunctionsInstanceResponse</returns>
+        System.Threading.Tasks.Task<EdgeFunctionsInstanceResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutAsync(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Overwrite some Edge Functions Instance attributes
@@ -323,8 +323,8 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="body"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ListEdgeFunctionsInstancesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListEdgeFunctionsInstancesResponse>> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutWithHttpInfoAsync(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (EdgeFunctionsInstanceResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EdgeFunctionsInstanceResponse>> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutWithHttpInfoAsync(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -455,7 +455,7 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ListEdgeFunctionsInstancesResponse</returns>
-        public ListEdgeFunctionsInstancesResponse EdgeFirewallEdgeFirewallIdFunctionsInstancesGet(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0)
+        public ListEdgeFunctionsInstancesResponse EdgeFirewallEdgeFirewallIdFunctionsInstancesGet(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0)
         {
             edgefunctionsinstance_edgefirewall.Client.ApiResponse<ListEdgeFunctionsInstancesResponse> localVarResponse = EdgeFirewallEdgeFirewallIdFunctionsInstancesGetWithHttpInfo(page, pageSize, sort, orderBy);
             return localVarResponse.Data;
@@ -471,7 +471,7 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ListEdgeFunctionsInstancesResponse</returns>
-        public edgefunctionsinstance_edgefirewall.Client.ApiResponse<ListEdgeFunctionsInstancesResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesGetWithHttpInfo(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0)
+        public edgefunctionsinstance_edgefirewall.Client.ApiResponse<ListEdgeFunctionsInstancesResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesGetWithHttpInfo(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0)
         {
             edgefunctionsinstance_edgefirewall.Client.RequestOptions localVarRequestOptions = new edgefunctionsinstance_edgefirewall.Client.RequestOptions();
 
@@ -546,7 +546,7 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListEdgeFunctionsInstancesResponse</returns>
-        public async System.Threading.Tasks.Task<ListEdgeFunctionsInstancesResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesGetAsync(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ListEdgeFunctionsInstancesResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesGetAsync(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgefunctionsinstance_edgefirewall.Client.ApiResponse<ListEdgeFunctionsInstancesResponse> localVarResponse = await EdgeFirewallEdgeFirewallIdFunctionsInstancesGetWithHttpInfoAsync(page, pageSize, sort, orderBy, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -563,7 +563,7 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListEdgeFunctionsInstancesResponse)</returns>
-        public async System.Threading.Tasks.Task<edgefunctionsinstance_edgefirewall.Client.ApiResponse<ListEdgeFunctionsInstancesResponse>> EdgeFirewallEdgeFirewallIdFunctionsInstancesGetWithHttpInfoAsync(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgefunctionsinstance_edgefirewall.Client.ApiResponse<ListEdgeFunctionsInstancesResponse>> EdgeFirewallEdgeFirewallIdFunctionsInstancesGetWithHttpInfoAsync(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             edgefunctionsinstance_edgefirewall.Client.RequestOptions localVarRequestOptions = new edgefunctionsinstance_edgefirewall.Client.RequestOptions();
@@ -635,10 +635,11 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <exception cref="edgefunctionsinstance_edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createEdgeFunctionsInstancesRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void EdgeFirewallEdgeFirewallIdFunctionsInstancesPost(CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest, int operationIndex = 0)
+        /// <returns>EdgeFunctionsInstanceResponse</returns>
+        public EdgeFunctionsInstanceResponse EdgeFirewallEdgeFirewallIdFunctionsInstancesPost(CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest, int operationIndex = 0)
         {
-            EdgeFirewallEdgeFirewallIdFunctionsInstancesPostWithHttpInfo(createEdgeFunctionsInstancesRequest);
+            edgefunctionsinstance_edgefirewall.Client.ApiResponse<EdgeFunctionsInstanceResponse> localVarResponse = EdgeFirewallEdgeFirewallIdFunctionsInstancesPostWithHttpInfo(createEdgeFunctionsInstancesRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -647,8 +648,8 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <exception cref="edgefunctionsinstance_edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createEdgeFunctionsInstancesRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public edgefunctionsinstance_edgefirewall.Client.ApiResponse<Object> EdgeFirewallEdgeFirewallIdFunctionsInstancesPostWithHttpInfo(CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest, int operationIndex = 0)
+        /// <returns>ApiResponse of EdgeFunctionsInstanceResponse</returns>
+        public edgefunctionsinstance_edgefirewall.Client.ApiResponse<EdgeFunctionsInstanceResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesPostWithHttpInfo(CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest, int operationIndex = 0)
         {
             // verify the required parameter 'createEdgeFunctionsInstancesRequest' is set
             if (createEdgeFunctionsInstancesRequest == null)
@@ -664,6 +665,7 @@ namespace edgefunctionsinstance_edgefirewall.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json"
             };
 
             var localVarContentType = edgefunctionsinstance_edgefirewall.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -690,7 +692,7 @@ namespace edgefunctionsinstance_edgefirewall.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/edge_firewall/:edge_firewall_id:/functions_instances", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<EdgeFunctionsInstanceResponse>("/edge_firewall/:edge_firewall_id:/functions_instances", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("EdgeFirewallEdgeFirewallIdFunctionsInstancesPost", localVarResponse);
@@ -710,10 +712,11 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="createEdgeFunctionsInstancesRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task EdgeFirewallEdgeFirewallIdFunctionsInstancesPostAsync(CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of EdgeFunctionsInstanceResponse</returns>
+        public async System.Threading.Tasks.Task<EdgeFunctionsInstanceResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesPostAsync(CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await EdgeFirewallEdgeFirewallIdFunctionsInstancesPostWithHttpInfoAsync(createEdgeFunctionsInstancesRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            edgefunctionsinstance_edgefirewall.Client.ApiResponse<EdgeFunctionsInstanceResponse> localVarResponse = await EdgeFirewallEdgeFirewallIdFunctionsInstancesPostWithHttpInfoAsync(createEdgeFunctionsInstancesRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -723,8 +726,8 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="createEdgeFunctionsInstancesRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<edgefunctionsinstance_edgefirewall.Client.ApiResponse<Object>> EdgeFirewallEdgeFirewallIdFunctionsInstancesPostWithHttpInfoAsync(CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (EdgeFunctionsInstanceResponse)</returns>
+        public async System.Threading.Tasks.Task<edgefunctionsinstance_edgefirewall.Client.ApiResponse<EdgeFunctionsInstanceResponse>> EdgeFirewallEdgeFirewallIdFunctionsInstancesPostWithHttpInfoAsync(CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'createEdgeFunctionsInstancesRequest' is set
             if (createEdgeFunctionsInstancesRequest == null)
@@ -741,6 +744,7 @@ namespace edgefunctionsinstance_edgefirewall.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json"
             };
 
             var localVarContentType = edgefunctionsinstance_edgefirewall.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -767,7 +771,7 @@ namespace edgefunctionsinstance_edgefirewall.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/edge_firewall/:edge_firewall_id:/functions_instances", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<EdgeFunctionsInstanceResponse>("/edge_firewall/:edge_firewall_id:/functions_instances", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1092,10 +1096,10 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="uuid"></param>
         /// <param name="body"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ListEdgeFunctionsInstancesResponse</returns>
-        public ListEdgeFunctionsInstancesResponse EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0)
+        /// <returns>EdgeFunctionsInstanceResponse</returns>
+        public EdgeFunctionsInstanceResponse EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0)
         {
-            edgefunctionsinstance_edgefirewall.Client.ApiResponse<ListEdgeFunctionsInstancesResponse> localVarResponse = EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchWithHttpInfo(uuid, body);
+            edgefunctionsinstance_edgefirewall.Client.ApiResponse<EdgeFunctionsInstanceResponse> localVarResponse = EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchWithHttpInfo(uuid, body);
             return localVarResponse.Data;
         }
 
@@ -1106,8 +1110,8 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="uuid"></param>
         /// <param name="body"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ListEdgeFunctionsInstancesResponse</returns>
-        public edgefunctionsinstance_edgefirewall.Client.ApiResponse<ListEdgeFunctionsInstancesResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchWithHttpInfo(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0)
+        /// <returns>ApiResponse of EdgeFunctionsInstanceResponse</returns>
+        public edgefunctionsinstance_edgefirewall.Client.ApiResponse<EdgeFunctionsInstanceResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchWithHttpInfo(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0)
         {
             // verify the required parameter 'uuid' is set
             if (uuid == null)
@@ -1157,7 +1161,7 @@ namespace edgefunctionsinstance_edgefirewall.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<ListEdgeFunctionsInstancesResponse>("/edge_firewall/:edge_firewall_id:/functions_instances/{uuid}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<EdgeFunctionsInstanceResponse>("/edge_firewall/:edge_firewall_id:/functions_instances/{uuid}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch", localVarResponse);
@@ -1178,10 +1182,10 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="body"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ListEdgeFunctionsInstancesResponse</returns>
-        public async System.Threading.Tasks.Task<ListEdgeFunctionsInstancesResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchAsync(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of EdgeFunctionsInstanceResponse</returns>
+        public async System.Threading.Tasks.Task<EdgeFunctionsInstanceResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchAsync(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            edgefunctionsinstance_edgefirewall.Client.ApiResponse<ListEdgeFunctionsInstancesResponse> localVarResponse = await EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchWithHttpInfoAsync(uuid, body, operationIndex, cancellationToken).ConfigureAwait(false);
+            edgefunctionsinstance_edgefirewall.Client.ApiResponse<EdgeFunctionsInstanceResponse> localVarResponse = await EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchWithHttpInfoAsync(uuid, body, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1193,8 +1197,8 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="body"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ListEdgeFunctionsInstancesResponse)</returns>
-        public async System.Threading.Tasks.Task<edgefunctionsinstance_edgefirewall.Client.ApiResponse<ListEdgeFunctionsInstancesResponse>> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchWithHttpInfoAsync(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (EdgeFunctionsInstanceResponse)</returns>
+        public async System.Threading.Tasks.Task<edgefunctionsinstance_edgefirewall.Client.ApiResponse<EdgeFunctionsInstanceResponse>> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchWithHttpInfoAsync(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'uuid' is set
             if (uuid == null)
@@ -1245,7 +1249,7 @@ namespace edgefunctionsinstance_edgefirewall.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<ListEdgeFunctionsInstancesResponse>("/edge_firewall/:edge_firewall_id:/functions_instances/{uuid}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<EdgeFunctionsInstanceResponse>("/edge_firewall/:edge_firewall_id:/functions_instances/{uuid}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1266,10 +1270,10 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="uuid"></param>
         /// <param name="body"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ListEdgeFunctionsInstancesResponse</returns>
-        public ListEdgeFunctionsInstancesResponse EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPut(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0)
+        /// <returns>EdgeFunctionsInstanceResponse</returns>
+        public EdgeFunctionsInstanceResponse EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPut(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0)
         {
-            edgefunctionsinstance_edgefirewall.Client.ApiResponse<ListEdgeFunctionsInstancesResponse> localVarResponse = EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutWithHttpInfo(uuid, body);
+            edgefunctionsinstance_edgefirewall.Client.ApiResponse<EdgeFunctionsInstanceResponse> localVarResponse = EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutWithHttpInfo(uuid, body);
             return localVarResponse.Data;
         }
 
@@ -1280,8 +1284,8 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="uuid"></param>
         /// <param name="body"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ListEdgeFunctionsInstancesResponse</returns>
-        public edgefunctionsinstance_edgefirewall.Client.ApiResponse<ListEdgeFunctionsInstancesResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutWithHttpInfo(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0)
+        /// <returns>ApiResponse of EdgeFunctionsInstanceResponse</returns>
+        public edgefunctionsinstance_edgefirewall.Client.ApiResponse<EdgeFunctionsInstanceResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutWithHttpInfo(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0)
         {
             // verify the required parameter 'uuid' is set
             if (uuid == null)
@@ -1331,7 +1335,7 @@ namespace edgefunctionsinstance_edgefirewall.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<ListEdgeFunctionsInstancesResponse>("/edge_firewall/:edge_firewall_id:/functions_instances/{uuid}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<EdgeFunctionsInstanceResponse>("/edge_firewall/:edge_firewall_id:/functions_instances/{uuid}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPut", localVarResponse);
@@ -1352,10 +1356,10 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="body"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ListEdgeFunctionsInstancesResponse</returns>
-        public async System.Threading.Tasks.Task<ListEdgeFunctionsInstancesResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutAsync(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of EdgeFunctionsInstanceResponse</returns>
+        public async System.Threading.Tasks.Task<EdgeFunctionsInstanceResponse> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutAsync(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            edgefunctionsinstance_edgefirewall.Client.ApiResponse<ListEdgeFunctionsInstancesResponse> localVarResponse = await EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutWithHttpInfoAsync(uuid, body, operationIndex, cancellationToken).ConfigureAwait(false);
+            edgefunctionsinstance_edgefirewall.Client.ApiResponse<EdgeFunctionsInstanceResponse> localVarResponse = await EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutWithHttpInfoAsync(uuid, body, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1367,8 +1371,8 @@ namespace edgefunctionsinstance_edgefirewall.Api
         /// <param name="body"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ListEdgeFunctionsInstancesResponse)</returns>
-        public async System.Threading.Tasks.Task<edgefunctionsinstance_edgefirewall.Client.ApiResponse<ListEdgeFunctionsInstancesResponse>> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutWithHttpInfoAsync(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (EdgeFunctionsInstanceResponse)</returns>
+        public async System.Threading.Tasks.Task<edgefunctionsinstance_edgefirewall.Client.ApiResponse<EdgeFunctionsInstanceResponse>> EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutWithHttpInfoAsync(string uuid, CreateEdgeFunctionsInstancesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'uuid' is set
             if (uuid == null)
@@ -1419,7 +1423,7 @@ namespace edgefunctionsinstance_edgefirewall.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<ListEdgeFunctionsInstancesResponse>("/edge_firewall/:edge_firewall_id:/functions_instances/{uuid}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<EdgeFunctionsInstanceResponse>("/edge_firewall/:edge_firewall_id:/functions_instances/{uuid}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
