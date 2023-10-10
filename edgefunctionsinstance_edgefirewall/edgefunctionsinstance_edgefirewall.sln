@@ -1,8 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "edgefunctionsinstance_edgefirewall", "src\edgefunctionsinstance_edgefirewall\edgefunctionsinstance_edgefirewall.csproj", "{6BCFFE8C-FD7A-4D70-BD64-85AF8AAD9381}"
+# Visual Studio 2012
+VisualStudioVersion = 12.0.0.0
+MinimumVisualStudioVersion = 10.0.0.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "edgefunctionsinstance_edgefirewall", "src\edgefunctionsinstance_edgefirewall\edgefunctionsinstance_edgefirewall.csproj", "{7F2573D4-4926-410C-AAA2-9A885F1CF55D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "edgefunctionsinstance_edgefirewall.Test", "src\edgefunctionsinstance_edgefirewall.Test\edgefunctionsinstance_edgefirewall.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
 EndProject
@@ -12,10 +12,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6BCFFE8C-FD7A-4D70-BD64-85AF8AAD9381}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6BCFFE8C-FD7A-4D70-BD64-85AF8AAD9381}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6BCFFE8C-FD7A-4D70-BD64-85AF8AAD9381}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6BCFFE8C-FD7A-4D70-BD64-85AF8AAD9381}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F2573D4-4926-410C-AAA2-9A885F1CF55D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F2573D4-4926-410C-AAA2-9A885F1CF55D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F2573D4-4926-410C-AAA2-9A885F1CF55D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F2573D4-4926-410C-AAA2-9A885F1CF55D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -13,7 +13,7 @@ All URIs are relative to *https://api.azionapi.net*
 
 <a id="edgefirewalledgefirewallidfunctionsinstancesget"></a>
 # **EdgeFirewallEdgeFirewallIdFunctionsInstancesGet**
-> ListEdgeFunctionsInstancesResponse EdgeFirewallEdgeFirewallIdFunctionsInstancesGet (int? page = null, int? pageSize = null, string sort = null, string orderBy = null)
+> ListEdgeFunctionsInstancesResponse EdgeFirewallEdgeFirewallIdFunctionsInstancesGet (long? page = null, long? pageSize = null, string? sort = null, string? orderBy = null)
 
 List all user Edge Functions Instances
 
@@ -39,10 +39,10 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DefaultApi(config);
-            var page = 56;  // int? |  (optional) 
-            var pageSize = 56;  // int? |  (optional) 
-            var sort = "sort_example";  // string |  (optional) 
-            var orderBy = "orderBy_example";  // string |  (optional) 
+            var page = 789L;  // long? |  (optional) 
+            var pageSize = 789L;  // long? |  (optional) 
+            var sort = "sort_example";  // string? |  (optional) 
+            var orderBy = "orderBy_example";  // string? |  (optional) 
 
             try
             {
@@ -85,10 +85,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **page** | **int?** |  | [optional]  |
-| **pageSize** | **int?** |  | [optional]  |
-| **sort** | **string** |  | [optional]  |
-| **orderBy** | **string** |  | [optional]  |
+| **page** | **long?** |  | [optional]  |
+| **pageSize** | **long?** |  | [optional]  |
+| **sort** | **string?** |  | [optional]  |
+| **orderBy** | **string?** |  | [optional]  |
 
 ### Return type
 
@@ -108,13 +108,14 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A list of Edge Functions Instances |  -  |
+| **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="edgefirewalledgefirewallidfunctionsinstancespost"></a>
 # **EdgeFirewallEdgeFirewallIdFunctionsInstancesPost**
-> void EdgeFirewallEdgeFirewallIdFunctionsInstancesPost (CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest)
+> EdgeFunctionsInstanceResponse EdgeFirewallEdgeFirewallIdFunctionsInstancesPost (CreateEdgeFunctionsInstancesRequest createEdgeFunctionsInstancesRequest)
 
 Create an Edge Functions Instance
 
@@ -145,7 +146,8 @@ namespace Example
             try
             {
                 // Create an Edge Functions Instance
-                apiInstance.EdgeFirewallEdgeFirewallIdFunctionsInstancesPost(createEdgeFunctionsInstancesRequest);
+                EdgeFunctionsInstanceResponse result = apiInstance.EdgeFirewallEdgeFirewallIdFunctionsInstancesPost(createEdgeFunctionsInstancesRequest);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -165,7 +167,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create an Edge Functions Instance
-    apiInstance.EdgeFirewallEdgeFirewallIdFunctionsInstancesPostWithHttpInfo(createEdgeFunctionsInstancesRequest);
+    ApiResponse<EdgeFunctionsInstanceResponse> response = apiInstance.EdgeFirewallEdgeFirewallIdFunctionsInstancesPostWithHttpInfo(createEdgeFunctionsInstancesRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -183,7 +188,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**EdgeFunctionsInstanceResponse**](EdgeFunctionsInstanceResponse.md)
 
 ### Authorization
 
@@ -192,7 +197,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -395,7 +400,7 @@ catch (ApiException e)
 
 <a id="edgefirewalledgefirewallidfunctionsinstancesuuidpatch"></a>
 # **EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch**
-> ListEdgeFunctionsInstancesResponse EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch (string uuid, CreateEdgeFunctionsInstancesRequest body)
+> EdgeFunctionsInstanceResponse EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch (string uuid, CreateEdgeFunctionsInstancesRequest body)
 
 Update some Edge Functions Instance attributes
 
@@ -427,7 +432,7 @@ namespace Example
             try
             {
                 // Update some Edge Functions Instance attributes
-                ListEdgeFunctionsInstancesResponse result = apiInstance.EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch(uuid, body);
+                EdgeFunctionsInstanceResponse result = apiInstance.EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatch(uuid, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -448,7 +453,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update some Edge Functions Instance attributes
-    ApiResponse<ListEdgeFunctionsInstancesResponse> response = apiInstance.EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchWithHttpInfo(uuid, body);
+    ApiResponse<EdgeFunctionsInstanceResponse> response = apiInstance.EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPatchWithHttpInfo(uuid, body);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -470,7 +475,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**ListEdgeFunctionsInstancesResponse**](ListEdgeFunctionsInstancesResponse.md)
+[**EdgeFunctionsInstanceResponse**](EdgeFunctionsInstanceResponse.md)
 
 ### Authorization
 
@@ -494,7 +499,7 @@ catch (ApiException e)
 
 <a id="edgefirewalledgefirewallidfunctionsinstancesuuidput"></a>
 # **EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPut**
-> ListEdgeFunctionsInstancesResponse EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPut (string uuid, CreateEdgeFunctionsInstancesRequest body)
+> EdgeFunctionsInstanceResponse EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPut (string uuid, CreateEdgeFunctionsInstancesRequest body)
 
 Overwrite some Edge Functions Instance attributes
 
@@ -526,7 +531,7 @@ namespace Example
             try
             {
                 // Overwrite some Edge Functions Instance attributes
-                ListEdgeFunctionsInstancesResponse result = apiInstance.EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPut(uuid, body);
+                EdgeFunctionsInstanceResponse result = apiInstance.EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPut(uuid, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -547,7 +552,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Overwrite some Edge Functions Instance attributes
-    ApiResponse<ListEdgeFunctionsInstancesResponse> response = apiInstance.EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutWithHttpInfo(uuid, body);
+    ApiResponse<EdgeFunctionsInstanceResponse> response = apiInstance.EdgeFirewallEdgeFirewallIdFunctionsInstancesUuidPutWithHttpInfo(uuid, body);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -569,7 +574,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**ListEdgeFunctionsInstancesResponse**](ListEdgeFunctionsInstancesResponse.md)
+[**EdgeFunctionsInstanceResponse**](EdgeFunctionsInstanceResponse.md)
 
 ### Authorization
 

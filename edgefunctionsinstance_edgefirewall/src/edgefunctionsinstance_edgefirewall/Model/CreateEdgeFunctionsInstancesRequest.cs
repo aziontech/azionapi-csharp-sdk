@@ -37,7 +37,7 @@ namespace edgefunctionsinstance_edgefirewall.Model
         /// <param name="name">name.</param>
         /// <param name="edgeFunction">edgeFunction.</param>
         /// <param name="jsonArgs">jsonArgs.</param>
-        public CreateEdgeFunctionsInstancesRequest(string name = default(string), int edgeFunction = default(int), Object jsonArgs = default(Object))
+        public CreateEdgeFunctionsInstancesRequest(string name = default(string), long edgeFunction = default(long), Object jsonArgs = default(Object))
         {
             this.Name = name;
             this.EdgeFunction = edgeFunction;
@@ -47,21 +47,20 @@ namespace edgefunctionsinstance_edgefirewall.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>&quot;Edge Functions Instance&quot;</example>
+        /// <example>Edge Functions Instance</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets EdgeFunction
         /// </summary>
-        /// <example>13</example>
         [DataMember(Name = "edge_function", EmitDefaultValue = false)]
-        public int EdgeFunction { get; set; }
+        public long EdgeFunction { get; set; }
 
         /// <summary>
         /// Gets or Sets JsonArgs
         /// </summary>
-        [DataMember(Name = "json_args", EmitDefaultValue = false)]
+        [DataMember(Name = "json_args", EmitDefaultValue = true)]
         public Object JsonArgs { get; set; }
 
         /// <summary>
