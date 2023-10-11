@@ -120,8 +120,8 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *WAFApi* | [**CreateNewWAFRuleset**](docs/WAFApi.md#createnewwafruleset) | **POST** /waf/rulesets | Create a new WAF Rule Set in an account.
 *WAFApi* | [**DeleteWAFRuleset**](docs/WAFApi.md#deletewafruleset) | **DELETE** /waf/rulesets/{waf_rule_set_id} | Remove an WAF Rule Set from an account. Warning: this action cannot be undone.
-*WAFApi* | [**GetWAFDomains**](docs/WAFApi.md#getwafdomains) | **GET** /waf/{wafId}/domains | List all domains attached to a Web Application Firewall (WAF) in an account.
-*WAFApi* | [**GetWAFEvents**](docs/WAFApi.md#getwafevents) | **GET** /waf/{wafId}/waf_events | Find WAF log events
+*WAFApi* | [**GetWAFDomains**](docs/WAFApi.md#getwafdomains) | **GET** /waf/{waf_id}/domains | List all domains attached to a Web Application Firewall (WAF) in an account.
+*WAFApi* | [**GetWAFEvents**](docs/WAFApi.md#getwafevents) | **GET** /waf/{waf_id}/waf_events | Find WAF log events
 *WAFApi* | [**GetWAFRuleset**](docs/WAFApi.md#getwafruleset) | **GET** /waf/rulesets/{waf_rule_set_id} | List a specific Rule Set associated to a Web Application Firewall (WAF) in an account.
 *WAFApi* | [**ListAllWAF**](docs/WAFApi.md#listallwaf) | **GET** /waf | List all Web Application Firewalls (WAFs) created in an account
 *WAFApi* | [**ListAllWAFRulesets**](docs/WAFApi.md#listallwafrulesets) | **GET** /waf/rulesets | list all Rule Sets associated to a Web Application Firewall (WAF) in an account.
@@ -134,8 +134,10 @@ Class | Method | HTTP request | Description
  - [Model.CreateNewWAFRulesetRequest](docs/CreateNewWAFRulesetRequest.md)
  - [Model.Links](docs/Links.md)
  - [Model.SingleWAF](docs/SingleWAF.md)
+ - [Model.WAFDomainList200](docs/WAFDomainList200.md)
  - [Model.WAFDomains200](docs/WAFDomains200.md)
  - [Model.WAFEvents200](docs/WAFEvents200.md)
+ - [Model.WAFEvents200ResultsInner](docs/WAFEvents200ResultsInner.md)
  - [Model.WAFEvents400](docs/WAFEvents400.md)
  - [Model.WAFEvents401](docs/WAFEvents401.md)
  - [Model.WAFEvents404](docs/WAFEvents404.md)

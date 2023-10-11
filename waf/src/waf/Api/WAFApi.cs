@@ -96,9 +96,12 @@ namespace waf.Api
         /// <param name="hourRange">Last log hours since now (it must be a integer number ranging between 1 and 72)</param>
         /// <param name="domainsIds">Multiple domain&#39;s id (they must be separated by comma like 1233,1234)</param>
         /// <param name="networkListId">Id of a network list (optional)</param>
+        /// <param name="sort"> (optional, default to asc)</param>
+        /// <param name="page"> (optional, default to 1)</param>
+        /// <param name="pageSize"> (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WAFEvents200</returns>
-        WAFEvents200 GetWAFEvents(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), int operationIndex = 0);
+        WAFEvents200 GetWAFEvents(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0);
 
         /// <summary>
         /// Find WAF log events
@@ -111,9 +114,12 @@ namespace waf.Api
         /// <param name="hourRange">Last log hours since now (it must be a integer number ranging between 1 and 72)</param>
         /// <param name="domainsIds">Multiple domain&#39;s id (they must be separated by comma like 1233,1234)</param>
         /// <param name="networkListId">Id of a network list (optional)</param>
+        /// <param name="sort"> (optional, default to asc)</param>
+        /// <param name="page"> (optional, default to 1)</param>
+        /// <param name="pageSize"> (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WAFEvents200</returns>
-        ApiResponse<WAFEvents200> GetWAFEventsWithHttpInfo(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), int operationIndex = 0);
+        ApiResponse<WAFEvents200> GetWAFEventsWithHttpInfo(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0);
         /// <summary>
         /// List a specific Rule Set associated to a Web Application Firewall (WAF) in an account.
         /// </summary>
@@ -301,10 +307,13 @@ namespace waf.Api
         /// <param name="hourRange">Last log hours since now (it must be a integer number ranging between 1 and 72)</param>
         /// <param name="domainsIds">Multiple domain&#39;s id (they must be separated by comma like 1233,1234)</param>
         /// <param name="networkListId">Id of a network list (optional)</param>
+        /// <param name="sort"> (optional, default to asc)</param>
+        /// <param name="page"> (optional, default to 1)</param>
+        /// <param name="pageSize"> (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WAFEvents200</returns>
-        System.Threading.Tasks.Task<WAFEvents200> GetWAFEventsAsync(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WAFEvents200> GetWAFEventsAsync(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Find WAF log events
@@ -317,10 +326,13 @@ namespace waf.Api
         /// <param name="hourRange">Last log hours since now (it must be a integer number ranging between 1 and 72)</param>
         /// <param name="domainsIds">Multiple domain&#39;s id (they must be separated by comma like 1233,1234)</param>
         /// <param name="networkListId">Id of a network list (optional)</param>
+        /// <param name="sort"> (optional, default to asc)</param>
+        /// <param name="page"> (optional, default to 1)</param>
+        /// <param name="pageSize"> (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WAFEvents200)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WAFEvents200>> GetWAFEventsWithHttpInfoAsync(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WAFEvents200>> GetWAFEventsWithHttpInfoAsync(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List a specific Rule Set associated to a Web Application Firewall (WAF) in an account.
         /// </summary>
@@ -891,7 +903,7 @@ namespace waf.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("wafId", waf.Client.ClientUtils.ParameterToString(wafId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("waf_id", waf.Client.ClientUtils.ParameterToString(wafId)); // path parameter
             if (name != null)
             {
                 localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "name", name));
@@ -907,7 +919,7 @@ namespace waf.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<WAFDomains200>("/waf/{wafId}/domains", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<WAFDomains200>("/waf/{waf_id}/domains", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetWAFDomains", localVarResponse);
@@ -969,7 +981,7 @@ namespace waf.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("wafId", waf.Client.ClientUtils.ParameterToString(wafId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("waf_id", waf.Client.ClientUtils.ParameterToString(wafId)); // path parameter
             if (name != null)
             {
                 localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "name", name));
@@ -985,7 +997,7 @@ namespace waf.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<WAFDomains200>("/waf/{wafId}/domains", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<WAFDomains200>("/waf/{waf_id}/domains", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1007,11 +1019,14 @@ namespace waf.Api
         /// <param name="hourRange">Last log hours since now (it must be a integer number ranging between 1 and 72)</param>
         /// <param name="domainsIds">Multiple domain&#39;s id (they must be separated by comma like 1233,1234)</param>
         /// <param name="networkListId">Id of a network list (optional)</param>
+        /// <param name="sort"> (optional, default to asc)</param>
+        /// <param name="page"> (optional, default to 1)</param>
+        /// <param name="pageSize"> (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WAFEvents200</returns>
-        public WAFEvents200 GetWAFEvents(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), int operationIndex = 0)
+        public WAFEvents200 GetWAFEvents(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0)
         {
-            waf.Client.ApiResponse<WAFEvents200> localVarResponse = GetWAFEventsWithHttpInfo(wafId, hourRange, domainsIds, networkListId);
+            waf.Client.ApiResponse<WAFEvents200> localVarResponse = GetWAFEventsWithHttpInfo(wafId, hourRange, domainsIds, networkListId, sort, page, pageSize);
             return localVarResponse.Data;
         }
 
@@ -1023,9 +1038,12 @@ namespace waf.Api
         /// <param name="hourRange">Last log hours since now (it must be a integer number ranging between 1 and 72)</param>
         /// <param name="domainsIds">Multiple domain&#39;s id (they must be separated by comma like 1233,1234)</param>
         /// <param name="networkListId">Id of a network list (optional)</param>
+        /// <param name="sort"> (optional, default to asc)</param>
+        /// <param name="page"> (optional, default to 1)</param>
+        /// <param name="pageSize"> (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WAFEvents200</returns>
-        public waf.Client.ApiResponse<WAFEvents200> GetWAFEventsWithHttpInfo(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), int operationIndex = 0)
+        public waf.Client.ApiResponse<WAFEvents200> GetWAFEventsWithHttpInfo(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0)
         {
             // verify the required parameter 'domainsIds' is set
             if (domainsIds == null)
@@ -1055,13 +1073,25 @@ namespace waf.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("wafId", waf.Client.ClientUtils.ParameterToString(wafId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("waf_id", waf.Client.ClientUtils.ParameterToString(wafId)); // path parameter
             localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "hour_range", hourRange));
             if (networkListId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "network_list_id", networkListId));
             }
             localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "domains_ids", domainsIds));
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
 
             localVarRequestOptions.Operation = "WAFApi.GetWAFEvents";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1073,7 +1103,7 @@ namespace waf.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<WAFEvents200>("/waf/{wafId}/waf_events", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<WAFEvents200>("/waf/{waf_id}/waf_events", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetWAFEvents", localVarResponse);
@@ -1094,12 +1124,15 @@ namespace waf.Api
         /// <param name="hourRange">Last log hours since now (it must be a integer number ranging between 1 and 72)</param>
         /// <param name="domainsIds">Multiple domain&#39;s id (they must be separated by comma like 1233,1234)</param>
         /// <param name="networkListId">Id of a network list (optional)</param>
+        /// <param name="sort"> (optional, default to asc)</param>
+        /// <param name="page"> (optional, default to 1)</param>
+        /// <param name="pageSize"> (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WAFEvents200</returns>
-        public async System.Threading.Tasks.Task<WAFEvents200> GetWAFEventsAsync(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WAFEvents200> GetWAFEventsAsync(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            waf.Client.ApiResponse<WAFEvents200> localVarResponse = await GetWAFEventsWithHttpInfoAsync(wafId, hourRange, domainsIds, networkListId, operationIndex, cancellationToken).ConfigureAwait(false);
+            waf.Client.ApiResponse<WAFEvents200> localVarResponse = await GetWAFEventsWithHttpInfoAsync(wafId, hourRange, domainsIds, networkListId, sort, page, pageSize, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1111,10 +1144,13 @@ namespace waf.Api
         /// <param name="hourRange">Last log hours since now (it must be a integer number ranging between 1 and 72)</param>
         /// <param name="domainsIds">Multiple domain&#39;s id (they must be separated by comma like 1233,1234)</param>
         /// <param name="networkListId">Id of a network list (optional)</param>
+        /// <param name="sort"> (optional, default to asc)</param>
+        /// <param name="page"> (optional, default to 1)</param>
+        /// <param name="pageSize"> (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WAFEvents200)</returns>
-        public async System.Threading.Tasks.Task<waf.Client.ApiResponse<WAFEvents200>> GetWAFEventsWithHttpInfoAsync(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<waf.Client.ApiResponse<WAFEvents200>> GetWAFEventsWithHttpInfoAsync(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'domainsIds' is set
             if (domainsIds == null)
@@ -1145,13 +1181,25 @@ namespace waf.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("wafId", waf.Client.ClientUtils.ParameterToString(wafId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("waf_id", waf.Client.ClientUtils.ParameterToString(wafId)); // path parameter
             localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "hour_range", hourRange));
             if (networkListId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "network_list_id", networkListId));
             }
             localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "domains_ids", domainsIds));
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
 
             localVarRequestOptions.Operation = "WAFApi.GetWAFEvents";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1163,7 +1211,7 @@ namespace waf.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<WAFEvents200>("/waf/{wafId}/waf_events", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<WAFEvents200>("/waf/{waf_id}/waf_events", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

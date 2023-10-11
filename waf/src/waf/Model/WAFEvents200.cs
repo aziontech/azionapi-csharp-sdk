@@ -36,7 +36,7 @@ namespace waf.Model
         /// </summary>
         /// <param name="results">results.</param>
         /// <param name="schemaVersion">schemaVersion.</param>
-        public WAFEvents200(List<Object> results = default(List<Object>), long schemaVersion = default(long))
+        public WAFEvents200(List<WAFEvents200ResultsInner> results = default(List<WAFEvents200ResultsInner>), long schemaVersion = default(long))
         {
             this.Results = results;
             this.SchemaVersion = schemaVersion;
@@ -46,7 +46,7 @@ namespace waf.Model
         /// Gets or Sets Results
         /// </summary>
         [DataMember(Name = "results", EmitDefaultValue = false)]
-        public List<Object> Results { get; set; }
+        public List<WAFEvents200ResultsInner> Results { get; set; }
 
         /// <summary>
         /// Gets or Sets SchemaVersion

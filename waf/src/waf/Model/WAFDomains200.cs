@@ -34,19 +34,43 @@ namespace waf.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WAFDomains200" /> class.
         /// </summary>
+        /// <param name="count">count.</param>
+        /// <param name="totalPages">totalPages.</param>
+        /// <param name="links">links.</param>
         /// <param name="results">results.</param>
         /// <param name="schemaVersion">schemaVersion.</param>
-        public WAFDomains200(List<Object> results = default(List<Object>), long schemaVersion = default(long))
+        public WAFDomains200(long count = default(long), long totalPages = default(long), Links links = default(Links), List<WAFDomainList200> results = default(List<WAFDomainList200>), long schemaVersion = default(long))
         {
+            this.Count = count;
+            this.TotalPages = totalPages;
+            this.Links = links;
             this.Results = results;
             this.SchemaVersion = schemaVersion;
         }
 
         /// <summary>
+        /// Gets or Sets Count
+        /// </summary>
+        [DataMember(Name = "count", EmitDefaultValue = false)]
+        public long Count { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TotalPages
+        /// </summary>
+        [DataMember(Name = "total_pages", EmitDefaultValue = false)]
+        public long TotalPages { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Links
+        /// </summary>
+        [DataMember(Name = "links", EmitDefaultValue = false)]
+        public Links Links { get; set; }
+
+        /// <summary>
         /// Gets or Sets Results
         /// </summary>
         [DataMember(Name = "results", EmitDefaultValue = false)]
-        public List<Object> Results { get; set; }
+        public List<WAFDomainList200> Results { get; set; }
 
         /// <summary>
         /// Gets or Sets SchemaVersion
@@ -63,6 +87,9 @@ namespace waf.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class WAFDomains200 {\n");
+            sb.Append("  Count: ").Append(Count).Append("\n");
+            sb.Append("  TotalPages: ").Append(TotalPages).Append("\n");
+            sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  Results: ").Append(Results).Append("\n");
             sb.Append("  SchemaVersion: ").Append(SchemaVersion).Append("\n");
             sb.Append("}\n");
@@ -101,6 +128,19 @@ namespace waf.Model
             }
             return 
                 (
+                    this.Count == input.Count ||
+                    this.Count.Equals(input.Count)
+                ) && 
+                (
+                    this.TotalPages == input.TotalPages ||
+                    this.TotalPages.Equals(input.TotalPages)
+                ) && 
+                (
+                    this.Links == input.Links ||
+                    (this.Links != null &&
+                    this.Links.Equals(input.Links))
+                ) && 
+                (
                     this.Results == input.Results ||
                     this.Results != null &&
                     input.Results != null &&
@@ -121,6 +161,12 @@ namespace waf.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                hashCode = (hashCode * 59) + this.Count.GetHashCode();
+                hashCode = (hashCode * 59) + this.TotalPages.GetHashCode();
+                if (this.Links != null)
+                {
+                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
+                }
                 if (this.Results != null)
                 {
                     hashCode = (hashCode * 59) + this.Results.GetHashCode();

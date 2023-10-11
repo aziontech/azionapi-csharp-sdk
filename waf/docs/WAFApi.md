@@ -6,8 +6,8 @@ All URIs are relative to *https://api.azionapi.net*
 |--------|--------------|-------------|
 | [**CreateNewWAFRuleset**](WAFApi.md#createnewwafruleset) | **POST** /waf/rulesets | Create a new WAF Rule Set in an account. |
 | [**DeleteWAFRuleset**](WAFApi.md#deletewafruleset) | **DELETE** /waf/rulesets/{waf_rule_set_id} | Remove an WAF Rule Set from an account. Warning: this action cannot be undone. |
-| [**GetWAFDomains**](WAFApi.md#getwafdomains) | **GET** /waf/{wafId}/domains | List all domains attached to a Web Application Firewall (WAF) in an account. |
-| [**GetWAFEvents**](WAFApi.md#getwafevents) | **GET** /waf/{wafId}/waf_events | Find WAF log events |
+| [**GetWAFDomains**](WAFApi.md#getwafdomains) | **GET** /waf/{waf_id}/domains | List all domains attached to a Web Application Firewall (WAF) in an account. |
+| [**GetWAFEvents**](WAFApi.md#getwafevents) | **GET** /waf/{waf_id}/waf_events | Find WAF log events |
 | [**GetWAFRuleset**](WAFApi.md#getwafruleset) | **GET** /waf/rulesets/{waf_rule_set_id} | List a specific Rule Set associated to a Web Application Firewall (WAF) in an account. |
 | [**ListAllWAF**](WAFApi.md#listallwaf) | **GET** /waf | List all Web Application Firewalls (WAFs) created in an account |
 | [**ListAllWAFRulesets**](WAFApi.md#listallwafrulesets) | **GET** /waf/rulesets | list all Rule Sets associated to a Web Application Firewall (WAF) in an account. |
@@ -310,7 +310,7 @@ catch (ApiException e)
 
 <a id="getwafevents"></a>
 # **GetWAFEvents**
-> WAFEvents200 GetWAFEvents (long wafId, long hourRange, string domainsIds, long? networkListId = null)
+> WAFEvents200 GetWAFEvents (long wafId, long hourRange, string domainsIds, long? networkListId = null, string? sort = null, long? page = null, long? pageSize = null)
 
 Find WAF log events
 
@@ -340,11 +340,14 @@ namespace Example
             var hourRange = 789L;  // long | Last log hours since now (it must be a integer number ranging between 1 and 72)
             var domainsIds = "domainsIds_example";  // string | Multiple domain's id (they must be separated by comma like 1233,1234)
             var networkListId = 789L;  // long? | Id of a network list (optional) 
+            var sort = "asc";  // string? |  (optional)  (default to asc)
+            var page = 1L;  // long? |  (optional)  (default to 1)
+            var pageSize = 10L;  // long? |  (optional)  (default to 10)
 
             try
             {
                 // Find WAF log events
-                WAFEvents200 result = apiInstance.GetWAFEvents(wafId, hourRange, domainsIds, networkListId);
+                WAFEvents200 result = apiInstance.GetWAFEvents(wafId, hourRange, domainsIds, networkListId, sort, page, pageSize);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -365,7 +368,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Find WAF log events
-    ApiResponse<WAFEvents200> response = apiInstance.GetWAFEventsWithHttpInfo(wafId, hourRange, domainsIds, networkListId);
+    ApiResponse<WAFEvents200> response = apiInstance.GetWAFEventsWithHttpInfo(wafId, hourRange, domainsIds, networkListId, sort, page, pageSize);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -386,6 +389,9 @@ catch (ApiException e)
 | **hourRange** | **long** | Last log hours since now (it must be a integer number ranging between 1 and 72) |  |
 | **domainsIds** | **string** | Multiple domain&#39;s id (they must be separated by comma like 1233,1234) |  |
 | **networkListId** | **long?** | Id of a network list | [optional]  |
+| **sort** | **string?** |  | [optional] [default to asc] |
+| **page** | **long?** |  | [optional] [default to 1] |
+| **pageSize** | **long?** |  | [optional] [default to 10] |
 
 ### Return type
 

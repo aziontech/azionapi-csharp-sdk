@@ -6,8 +6,10 @@ docs/CreateNewWAFRulesetRequest.md
 docs/Links.md
 docs/SingleWAF.md
 docs/WAFApi.md
+docs/WAFDomainList200.md
 docs/WAFDomains200.md
 docs/WAFEvents200.md
+docs/WAFEvents200ResultsInner.md
 docs/WAFEvents400.md
 docs/WAFEvents401.md
 docs/WAFEvents404.md
@@ -15,7 +17,8 @@ docs/WAFList200.md
 docs/WAFSensitivityChoices.md
 docs/WAFSingle200.md
 git_push.sh
-src/waf.Test/Model/LinksTests.cs
+src/waf.Test/Model/WAFDomainList200Tests.cs
+src/waf.Test/Model/WAFEvents200ResultsInnerTests.cs
 src/waf.Test/waf.Test.csproj
 src/waf/Api/WAFApi.cs
 src/waf/Client/ApiClient.cs
@@ -38,8 +41,10 @@ src/waf/Model/AbstractOpenAPISchema.cs
 src/waf/Model/CreateNewWAFRulesetRequest.cs
 src/waf/Model/Links.cs
 src/waf/Model/SingleWAF.cs
+src/waf/Model/WAFDomainList200.cs
 src/waf/Model/WAFDomains200.cs
 src/waf/Model/WAFEvents200.cs
+src/waf/Model/WAFEvents200ResultsInner.cs
 src/waf/Model/WAFEvents400.cs
 src/waf/Model/WAFEvents401.cs
 src/waf/Model/WAFEvents404.cs
