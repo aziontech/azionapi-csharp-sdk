@@ -124,7 +124,7 @@ namespace waf.Model
         /// <param name="pathCount">pathCount.</param>
         /// <param name="matchesOn">matchesOn.</param>
         /// <param name="ruleDescription">ruleDescription.</param>
-        public WAFEvents200ResultsInner(long countryCount = default(long), List<string> top10Countries = default(List<string>), List<string> top10Ips = default(List<string>), long hitCount = default(long), long ruleId = default(long), long ipCount = default(long), MatchZoneEnum? matchZone = default(MatchZoneEnum?), long pathCount = default(long), MatchesOnEnum? matchesOn = default(MatchesOnEnum?), string ruleDescription = default(string))
+        public WAFEvents200ResultsInner(long countryCount = default(long), List<WAFEvents200ResultsInnerTop10CountriesInner> top10Countries = default(List<WAFEvents200ResultsInnerTop10CountriesInner>), List<WAFEvents200ResultsInnerTop10CountriesInner> top10Ips = default(List<WAFEvents200ResultsInnerTop10CountriesInner>), long hitCount = default(long), long ruleId = default(long), long ipCount = default(long), MatchZoneEnum? matchZone = default(MatchZoneEnum?), long pathCount = default(long), MatchesOnEnum? matchesOn = default(MatchesOnEnum?), string ruleDescription = default(string))
         {
             this.CountryCount = countryCount;
             this.Top10Countries = top10Countries;
@@ -148,13 +148,13 @@ namespace waf.Model
         /// Gets or Sets Top10Countries
         /// </summary>
         [DataMember(Name = "top_10_countries", EmitDefaultValue = false)]
-        public List<string> Top10Countries { get; set; }
+        public List<WAFEvents200ResultsInnerTop10CountriesInner> Top10Countries { get; set; }
 
         /// <summary>
         /// Gets or Sets Top10Ips
         /// </summary>
         [DataMember(Name = "top_10_ips", EmitDefaultValue = false)]
-        public List<string> Top10Ips { get; set; }
+        public List<WAFEvents200ResultsInnerTop10CountriesInner> Top10Ips { get; set; }
 
         /// <summary>
         /// Gets or Sets HitCount

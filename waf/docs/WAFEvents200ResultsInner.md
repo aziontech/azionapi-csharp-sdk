@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CountryCount** | **long** |  | [optional] 
-**Top10Countries** | **List&lt;string&gt;** |  | [optional] 
-**Top10Ips** | **List&lt;string&gt;** |  | [optional] 
+**Top10Countries** | [**List&lt;WAFEvents200ResultsInnerTop10CountriesInner&gt;**](WAFEvents200ResultsInnerTop10CountriesInner.md) |  | [optional] 
+**Top10Ips** | [**List&lt;WAFEvents200ResultsInnerTop10CountriesInner&gt;**](WAFEvents200ResultsInnerTop10CountriesInner.md) |  | [optional] 
 **HitCount** | **long** |  | [optional] 
 **RuleId** | **long** |  | [optional] 
 **IpCount** | **long** |  | [optional] 
