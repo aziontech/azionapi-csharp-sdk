@@ -72,9 +72,11 @@ namespace waf.Api
         /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wafId">ID of WAF to return</param>
         /// <param name="name">searches WAF for name (optional)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WAFDomains200</returns>
-        WAFDomains200 GetWAFDomains(long wafId, string? name = default(string?), int operationIndex = 0);
+        WAFDomains200 GetWAFDomains(long wafId, string? name = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0);
 
         /// <summary>
         /// List all domains attached to a Web Application Firewall (WAF) in an account.
@@ -85,9 +87,11 @@ namespace waf.Api
         /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wafId">ID of WAF to return</param>
         /// <param name="name">searches WAF for name (optional)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WAFDomains200</returns>
-        ApiResponse<WAFDomains200> GetWAFDomainsWithHttpInfo(long wafId, string? name = default(string?), int operationIndex = 0);
+        ApiResponse<WAFDomains200> GetWAFDomainsWithHttpInfo(long wafId, string? name = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0);
         /// <summary>
         /// Find WAF log events
         /// </summary>
@@ -97,11 +101,9 @@ namespace waf.Api
         /// <param name="domainsIds">Multiple domain&#39;s id (they must be separated by comma like 1233,1234)</param>
         /// <param name="networkListId">Id of a network list (optional)</param>
         /// <param name="sort"> (optional, default to asc)</param>
-        /// <param name="page"> (optional, default to 1)</param>
-        /// <param name="pageSize"> (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WAFEvents200</returns>
-        WAFEvents200 GetWAFEvents(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0);
+        WAFEvents200 GetWAFEvents(long wafId, long hourRange, List<long> domainsIds, long? networkListId = default(long?), string? sort = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// Find WAF log events
@@ -115,11 +117,9 @@ namespace waf.Api
         /// <param name="domainsIds">Multiple domain&#39;s id (they must be separated by comma like 1233,1234)</param>
         /// <param name="networkListId">Id of a network list (optional)</param>
         /// <param name="sort"> (optional, default to asc)</param>
-        /// <param name="page"> (optional, default to 1)</param>
-        /// <param name="pageSize"> (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WAFEvents200</returns>
-        ApiResponse<WAFEvents200> GetWAFEventsWithHttpInfo(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0);
+        ApiResponse<WAFEvents200> GetWAFEventsWithHttpInfo(long wafId, long hourRange, List<long> domainsIds, long? networkListId = default(long?), string? sort = default(string?), int operationIndex = 0);
         /// <summary>
         /// List a specific Rule Set associated to a Web Application Firewall (WAF) in an account.
         /// </summary>
@@ -278,10 +278,12 @@ namespace waf.Api
         /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wafId">ID of WAF to return</param>
         /// <param name="name">searches WAF for name (optional)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WAFDomains200</returns>
-        System.Threading.Tasks.Task<WAFDomains200> GetWAFDomainsAsync(long wafId, string? name = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WAFDomains200> GetWAFDomainsAsync(long wafId, string? name = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List all domains attached to a Web Application Firewall (WAF) in an account.
@@ -292,10 +294,12 @@ namespace waf.Api
         /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wafId">ID of WAF to return</param>
         /// <param name="name">searches WAF for name (optional)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WAFDomains200)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WAFDomains200>> GetWAFDomainsWithHttpInfoAsync(long wafId, string? name = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WAFDomains200>> GetWAFDomainsWithHttpInfoAsync(long wafId, string? name = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Find WAF log events
         /// </summary>
@@ -308,12 +312,10 @@ namespace waf.Api
         /// <param name="domainsIds">Multiple domain&#39;s id (they must be separated by comma like 1233,1234)</param>
         /// <param name="networkListId">Id of a network list (optional)</param>
         /// <param name="sort"> (optional, default to asc)</param>
-        /// <param name="page"> (optional, default to 1)</param>
-        /// <param name="pageSize"> (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WAFEvents200</returns>
-        System.Threading.Tasks.Task<WAFEvents200> GetWAFEventsAsync(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WAFEvents200> GetWAFEventsAsync(long wafId, long hourRange, List<long> domainsIds, long? networkListId = default(long?), string? sort = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Find WAF log events
@@ -327,12 +329,10 @@ namespace waf.Api
         /// <param name="domainsIds">Multiple domain&#39;s id (they must be separated by comma like 1233,1234)</param>
         /// <param name="networkListId">Id of a network list (optional)</param>
         /// <param name="sort"> (optional, default to asc)</param>
-        /// <param name="page"> (optional, default to 1)</param>
-        /// <param name="pageSize"> (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WAFEvents200)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WAFEvents200>> GetWAFEventsWithHttpInfoAsync(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WAFEvents200>> GetWAFEventsWithHttpInfoAsync(long wafId, long hourRange, List<long> domainsIds, long? networkListId = default(long?), string? sort = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List a specific Rule Set associated to a Web Application Firewall (WAF) in an account.
         /// </summary>
@@ -863,11 +863,13 @@ namespace waf.Api
         /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wafId">ID of WAF to return</param>
         /// <param name="name">searches WAF for name (optional)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WAFDomains200</returns>
-        public WAFDomains200 GetWAFDomains(long wafId, string? name = default(string?), int operationIndex = 0)
+        public WAFDomains200 GetWAFDomains(long wafId, string? name = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0)
         {
-            waf.Client.ApiResponse<WAFDomains200> localVarResponse = GetWAFDomainsWithHttpInfo(wafId, name);
+            waf.Client.ApiResponse<WAFDomains200> localVarResponse = GetWAFDomainsWithHttpInfo(wafId, name, page, pageSize);
             return localVarResponse.Data;
         }
 
@@ -877,9 +879,11 @@ namespace waf.Api
         /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wafId">ID of WAF to return</param>
         /// <param name="name">searches WAF for name (optional)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WAFDomains200</returns>
-        public waf.Client.ApiResponse<WAFDomains200> GetWAFDomainsWithHttpInfo(long wafId, string? name = default(string?), int operationIndex = 0)
+        public waf.Client.ApiResponse<WAFDomains200> GetWAFDomainsWithHttpInfo(long wafId, string? name = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0)
         {
             waf.Client.RequestOptions localVarRequestOptions = new waf.Client.RequestOptions();
 
@@ -907,6 +911,14 @@ namespace waf.Api
             if (name != null)
             {
                 localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "name", name));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
             }
 
             localVarRequestOptions.Operation = "WAFApi.GetWAFDomains";
@@ -938,12 +950,14 @@ namespace waf.Api
         /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wafId">ID of WAF to return</param>
         /// <param name="name">searches WAF for name (optional)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WAFDomains200</returns>
-        public async System.Threading.Tasks.Task<WAFDomains200> GetWAFDomainsAsync(long wafId, string? name = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WAFDomains200> GetWAFDomainsAsync(long wafId, string? name = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            waf.Client.ApiResponse<WAFDomains200> localVarResponse = await GetWAFDomainsWithHttpInfoAsync(wafId, name, operationIndex, cancellationToken).ConfigureAwait(false);
+            waf.Client.ApiResponse<WAFDomains200> localVarResponse = await GetWAFDomainsWithHttpInfoAsync(wafId, name, page, pageSize, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -953,10 +967,12 @@ namespace waf.Api
         /// <exception cref="waf.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="wafId">ID of WAF to return</param>
         /// <param name="name">searches WAF for name (optional)</param>
+        /// <param name="page">Identifies which page should be returned, if the return is paginated. (optional, default to 1)</param>
+        /// <param name="pageSize">Identifies how many items should be returned per page. (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WAFDomains200)</returns>
-        public async System.Threading.Tasks.Task<waf.Client.ApiResponse<WAFDomains200>> GetWAFDomainsWithHttpInfoAsync(long wafId, string? name = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<waf.Client.ApiResponse<WAFDomains200>> GetWAFDomainsWithHttpInfoAsync(long wafId, string? name = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             waf.Client.RequestOptions localVarRequestOptions = new waf.Client.RequestOptions();
@@ -985,6 +1001,14 @@ namespace waf.Api
             if (name != null)
             {
                 localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "name", name));
+            }
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
             }
 
             localVarRequestOptions.Operation = "WAFApi.GetWAFDomains";
@@ -1020,13 +1044,11 @@ namespace waf.Api
         /// <param name="domainsIds">Multiple domain&#39;s id (they must be separated by comma like 1233,1234)</param>
         /// <param name="networkListId">Id of a network list (optional)</param>
         /// <param name="sort"> (optional, default to asc)</param>
-        /// <param name="page"> (optional, default to 1)</param>
-        /// <param name="pageSize"> (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>WAFEvents200</returns>
-        public WAFEvents200 GetWAFEvents(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0)
+        public WAFEvents200 GetWAFEvents(long wafId, long hourRange, List<long> domainsIds, long? networkListId = default(long?), string? sort = default(string?), int operationIndex = 0)
         {
-            waf.Client.ApiResponse<WAFEvents200> localVarResponse = GetWAFEventsWithHttpInfo(wafId, hourRange, domainsIds, networkListId, sort, page, pageSize);
+            waf.Client.ApiResponse<WAFEvents200> localVarResponse = GetWAFEventsWithHttpInfo(wafId, hourRange, domainsIds, networkListId, sort);
             return localVarResponse.Data;
         }
 
@@ -1039,11 +1061,9 @@ namespace waf.Api
         /// <param name="domainsIds">Multiple domain&#39;s id (they must be separated by comma like 1233,1234)</param>
         /// <param name="networkListId">Id of a network list (optional)</param>
         /// <param name="sort"> (optional, default to asc)</param>
-        /// <param name="page"> (optional, default to 1)</param>
-        /// <param name="pageSize"> (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of WAFEvents200</returns>
-        public waf.Client.ApiResponse<WAFEvents200> GetWAFEventsWithHttpInfo(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0)
+        public waf.Client.ApiResponse<WAFEvents200> GetWAFEventsWithHttpInfo(long wafId, long hourRange, List<long> domainsIds, long? networkListId = default(long?), string? sort = default(string?), int operationIndex = 0)
         {
             // verify the required parameter 'domainsIds' is set
             if (domainsIds == null)
@@ -1079,18 +1099,10 @@ namespace waf.Api
             {
                 localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "network_list_id", networkListId));
             }
-            localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "domains_ids", domainsIds));
+            localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("multi", "domains_ids", domainsIds));
             if (sort != null)
             {
                 localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
-            }
-            if (page != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "page", page));
-            }
-            if (pageSize != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
             }
 
             localVarRequestOptions.Operation = "WAFApi.GetWAFEvents";
@@ -1125,14 +1137,12 @@ namespace waf.Api
         /// <param name="domainsIds">Multiple domain&#39;s id (they must be separated by comma like 1233,1234)</param>
         /// <param name="networkListId">Id of a network list (optional)</param>
         /// <param name="sort"> (optional, default to asc)</param>
-        /// <param name="page"> (optional, default to 1)</param>
-        /// <param name="pageSize"> (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WAFEvents200</returns>
-        public async System.Threading.Tasks.Task<WAFEvents200> GetWAFEventsAsync(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WAFEvents200> GetWAFEventsAsync(long wafId, long hourRange, List<long> domainsIds, long? networkListId = default(long?), string? sort = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            waf.Client.ApiResponse<WAFEvents200> localVarResponse = await GetWAFEventsWithHttpInfoAsync(wafId, hourRange, domainsIds, networkListId, sort, page, pageSize, operationIndex, cancellationToken).ConfigureAwait(false);
+            waf.Client.ApiResponse<WAFEvents200> localVarResponse = await GetWAFEventsWithHttpInfoAsync(wafId, hourRange, domainsIds, networkListId, sort, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1145,12 +1155,10 @@ namespace waf.Api
         /// <param name="domainsIds">Multiple domain&#39;s id (they must be separated by comma like 1233,1234)</param>
         /// <param name="networkListId">Id of a network list (optional)</param>
         /// <param name="sort"> (optional, default to asc)</param>
-        /// <param name="page"> (optional, default to 1)</param>
-        /// <param name="pageSize"> (optional, default to 10)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WAFEvents200)</returns>
-        public async System.Threading.Tasks.Task<waf.Client.ApiResponse<WAFEvents200>> GetWAFEventsWithHttpInfoAsync(long wafId, long hourRange, string domainsIds, long? networkListId = default(long?), string? sort = default(string?), long? page = default(long?), long? pageSize = default(long?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<waf.Client.ApiResponse<WAFEvents200>> GetWAFEventsWithHttpInfoAsync(long wafId, long hourRange, List<long> domainsIds, long? networkListId = default(long?), string? sort = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'domainsIds' is set
             if (domainsIds == null)
@@ -1187,18 +1195,10 @@ namespace waf.Api
             {
                 localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "network_list_id", networkListId));
             }
-            localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "domains_ids", domainsIds));
+            localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("multi", "domains_ids", domainsIds));
             if (sort != null)
             {
                 localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
-            }
-            if (page != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "page", page));
-            }
-            if (pageSize != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(waf.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
             }
 
             localVarRequestOptions.Operation = "WAFApi.GetWAFEvents";

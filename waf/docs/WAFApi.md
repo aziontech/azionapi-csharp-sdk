@@ -212,7 +212,7 @@ void (empty response body)
 
 <a id="getwafdomains"></a>
 # **GetWAFDomains**
-> WAFDomains200 GetWAFDomains (long wafId, string? name = null)
+> WAFDomains200 GetWAFDomains (long wafId, string? name = null, long? page = null, long? pageSize = null)
 
 List all domains attached to a Web Application Firewall (WAF) in an account.
 
@@ -240,11 +240,13 @@ namespace Example
             var apiInstance = new WAFApi(config);
             var wafId = 789L;  // long | ID of WAF to return
             var name = "name_example";  // string? | searches WAF for name (optional) 
+            var page = 1L;  // long? | Identifies which page should be returned, if the return is paginated. (optional)  (default to 1)
+            var pageSize = 10L;  // long? | Identifies how many items should be returned per page. (optional)  (default to 10)
 
             try
             {
                 // List all domains attached to a Web Application Firewall (WAF) in an account.
-                WAFDomains200 result = apiInstance.GetWAFDomains(wafId, name);
+                WAFDomains200 result = apiInstance.GetWAFDomains(wafId, name, page, pageSize);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -265,7 +267,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List all domains attached to a Web Application Firewall (WAF) in an account.
-    ApiResponse<WAFDomains200> response = apiInstance.GetWAFDomainsWithHttpInfo(wafId, name);
+    ApiResponse<WAFDomains200> response = apiInstance.GetWAFDomainsWithHttpInfo(wafId, name, page, pageSize);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -284,6 +286,8 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **wafId** | **long** | ID of WAF to return |  |
 | **name** | **string?** | searches WAF for name | [optional]  |
+| **page** | **long?** | Identifies which page should be returned, if the return is paginated. | [optional] [default to 1] |
+| **pageSize** | **long?** | Identifies how many items should be returned per page. | [optional] [default to 10] |
 
 ### Return type
 
@@ -304,13 +308,14 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 | **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | data not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="getwafevents"></a>
 # **GetWAFEvents**
-> WAFEvents200 GetWAFEvents (long wafId, long hourRange, string domainsIds, long? networkListId = null, string? sort = null, long? page = null, long? pageSize = null)
+> WAFEvents200 GetWAFEvents (long wafId, long hourRange, List<long> domainsIds, long? networkListId = null, string? sort = null)
 
 Find WAF log events
 
@@ -338,16 +343,14 @@ namespace Example
             var apiInstance = new WAFApi(config);
             var wafId = 789L;  // long | ID of WAF to return
             var hourRange = 789L;  // long | Last log hours since now (it must be a integer number ranging between 1 and 72)
-            var domainsIds = "domainsIds_example";  // string | Multiple domain's id (they must be separated by comma like 1233,1234)
+            var domainsIds = new List<long>(); // List<long> | Multiple domain's id (they must be separated by comma like 1233,1234)
             var networkListId = 789L;  // long? | Id of a network list (optional) 
             var sort = "asc";  // string? |  (optional)  (default to asc)
-            var page = 1L;  // long? |  (optional)  (default to 1)
-            var pageSize = 10L;  // long? |  (optional)  (default to 10)
 
             try
             {
                 // Find WAF log events
-                WAFEvents200 result = apiInstance.GetWAFEvents(wafId, hourRange, domainsIds, networkListId, sort, page, pageSize);
+                WAFEvents200 result = apiInstance.GetWAFEvents(wafId, hourRange, domainsIds, networkListId, sort);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -368,7 +371,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Find WAF log events
-    ApiResponse<WAFEvents200> response = apiInstance.GetWAFEventsWithHttpInfo(wafId, hourRange, domainsIds, networkListId, sort, page, pageSize);
+    ApiResponse<WAFEvents200> response = apiInstance.GetWAFEventsWithHttpInfo(wafId, hourRange, domainsIds, networkListId, sort);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -387,11 +390,9 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **wafId** | **long** | ID of WAF to return |  |
 | **hourRange** | **long** | Last log hours since now (it must be a integer number ranging between 1 and 72) |  |
-| **domainsIds** | **string** | Multiple domain&#39;s id (they must be separated by comma like 1233,1234) |  |
+| **domainsIds** | [**List&lt;long&gt;**](long.md) | Multiple domain&#39;s id (they must be separated by comma like 1233,1234) |  |
 | **networkListId** | **long?** | Id of a network list | [optional]  |
 | **sort** | **string?** |  | [optional] [default to asc] |
-| **page** | **long?** |  | [optional] [default to 1] |
-| **pageSize** | **long?** |  | [optional] [default to 10] |
 
 ### Return type
 
@@ -413,6 +414,7 @@ catch (ApiException e)
 | **200** | successful operation |  -  |
 | **400** | Bad request |  -  |
 | **401** | unauthorized operation |  -  |
+| **403** | Forbidden |  -  |
 | **404** | data not found |  -  |
 | **500** | Internal server error |  -  |
 
@@ -510,6 +512,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 | **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | data not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -608,6 +611,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 | **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | data not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -710,6 +714,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 | **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | data not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
