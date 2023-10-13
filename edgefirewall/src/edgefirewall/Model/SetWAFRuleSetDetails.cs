@@ -26,76 +26,52 @@ using OpenAPIDateConverter = edgefirewall.Client.OpenAPIDateConverter;
 namespace edgefirewall.Model
 {
     /// <summary>
-    /// Behaviors
+    /// SetWAFRuleSetDetails
     /// </summary>
-    [DataContract(Name = "Behaviors")]
-    public partial class Behaviors : IEquatable<Behaviors>, IValidatableObject
+    [DataContract(Name = "SetWAFRuleSetDetails")]
+    public partial class SetWAFRuleSetDetails : IEquatable<SetWAFRuleSetDetails>, IValidatableObject
     {
         /// <summary>
-        /// Defines Name
+        /// Defines Mode
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum NameEnum
+        public enum ModeEnum
         {
             /// <summary>
-            /// Enum Deny for value: deny
+            /// Enum Learning for value: Learning
             /// </summary>
-            [EnumMember(Value = "deny")]
-            Deny = 1,
+            [EnumMember(Value = "Learning")]
+            Learning = 1,
 
             /// <summary>
-            /// Enum Drop for value: drop
+            /// Enum Blocking for value: Blocking
             /// </summary>
-            [EnumMember(Value = "drop")]
-            Drop = 2,
-
-            /// <summary>
-            /// Enum SetRateLimit for value: set_rate_limit
-            /// </summary>
-            [EnumMember(Value = "set_rate_limit")]
-            SetRateLimit = 3,
-
-            /// <summary>
-            /// Enum SetWafRuleset for value: set_waf_ruleset
-            /// </summary>
-            [EnumMember(Value = "set_waf_ruleset")]
-            SetWafRuleset = 4,
-
-            /// <summary>
-            /// Enum RunFunction for value: run_function
-            /// </summary>
-            [EnumMember(Value = "run_function")]
-            RunFunction = 5,
-
-            /// <summary>
-            /// Enum TagEvent for value: tag_event
-            /// </summary>
-            [EnumMember(Value = "tag_event")]
-            TagEvent = 6
+            [EnumMember(Value = "Blocking")]
+            Blocking = 2
         }
 
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or Sets Mode
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
-        public NameEnum? Name { get; set; }
+        [DataMember(Name = "mode", EmitDefaultValue = false)]
+        public ModeEnum? Mode { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="Behaviors" /> class.
+        /// Initializes a new instance of the <see cref="SetWAFRuleSetDetails" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="argument">argument.</param>
-        public Behaviors(NameEnum? name = default(NameEnum?), BehaviorsArgument argument = default(BehaviorsArgument))
+        /// <param name="wafId">wafId.</param>
+        /// <param name="mode">mode.</param>
+        public SetWAFRuleSetDetails(int wafId = default(int), ModeEnum? mode = default(ModeEnum?))
         {
-            this.Name = name;
-            this.Argument = argument;
+            this.WafId = wafId;
+            this.Mode = mode;
         }
 
         /// <summary>
-        /// Gets or Sets Argument
+        /// Gets or Sets WafId
         /// </summary>
-        [DataMember(Name = "argument", EmitDefaultValue = false)]
-        public BehaviorsArgument Argument { get; set; }
+        [DataMember(Name = "waf_id", EmitDefaultValue = false)]
+        public int WafId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -104,9 +80,9 @@ namespace edgefirewall.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class Behaviors {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Argument: ").Append(Argument).Append("\n");
+            sb.Append("class SetWAFRuleSetDetails {\n");
+            sb.Append("  WafId: ").Append(WafId).Append("\n");
+            sb.Append("  Mode: ").Append(Mode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -127,15 +103,15 @@ namespace edgefirewall.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Behaviors);
+            return this.Equals(input as SetWAFRuleSetDetails);
         }
 
         /// <summary>
-        /// Returns true if Behaviors instances are equal
+        /// Returns true if SetWAFRuleSetDetails instances are equal
         /// </summary>
-        /// <param name="input">Instance of Behaviors to be compared</param>
+        /// <param name="input">Instance of SetWAFRuleSetDetails to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Behaviors input)
+        public bool Equals(SetWAFRuleSetDetails input)
         {
             if (input == null)
             {
@@ -143,13 +119,12 @@ namespace edgefirewall.Model
             }
             return 
                 (
-                    this.Name == input.Name ||
-                    this.Name.Equals(input.Name)
+                    this.WafId == input.WafId ||
+                    this.WafId.Equals(input.WafId)
                 ) && 
                 (
-                    this.Argument == input.Argument ||
-                    (this.Argument != null &&
-                    this.Argument.Equals(input.Argument))
+                    this.Mode == input.Mode ||
+                    this.Mode.Equals(input.Mode)
                 );
         }
 
@@ -162,11 +137,8 @@ namespace edgefirewall.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                if (this.Argument != null)
-                {
-                    hashCode = (hashCode * 59) + this.Argument.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.WafId.GetHashCode();
+                hashCode = (hashCode * 59) + this.Mode.GetHashCode();
                 return hashCode;
             }
         }
@@ -178,6 +150,12 @@ namespace edgefirewall.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // WafId (int) minimum
+            if (this.WafId < (int)1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for WafId, must be a value greater than or equal to 1.", new [] { "WafId" });
+            }
+
             yield break;
         }
     }

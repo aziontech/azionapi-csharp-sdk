@@ -19,7 +19,7 @@ All URIs are relative to *https://api.azionapi.net*
 
 <a id="edgefirewalledgefirewallidrulesengineget"></a>
 # **EdgeFirewallEdgeFirewallIdRulesEngineGet**
-> RuleSetResponseAll EdgeFirewallEdgeFirewallIdRulesEngineGet (long edgeFirewallId)
+> RuleSetResponseAll EdgeFirewallEdgeFirewallIdRulesEngineGet (long edgeFirewallId, long? page = null, long? pageSize = null, string? sort = null, string? orderBy = null)
 
 List all rule sets.
 
@@ -46,11 +46,15 @@ namespace Example
 
             var apiInstance = new DefaultApi(config);
             var edgeFirewallId = 789L;  // long | 
+            var page = 789L;  // long? |  (optional) 
+            var pageSize = 789L;  // long? |  (optional) 
+            var sort = "sort_example";  // string? |  (optional) 
+            var orderBy = "orderBy_example";  // string? |  (optional) 
 
             try
             {
                 // List all rule sets.
-                RuleSetResponseAll result = apiInstance.EdgeFirewallEdgeFirewallIdRulesEngineGet(edgeFirewallId);
+                RuleSetResponseAll result = apiInstance.EdgeFirewallEdgeFirewallIdRulesEngineGet(edgeFirewallId, page, pageSize, sort, orderBy);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -71,7 +75,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List all rule sets.
-    ApiResponse<RuleSetResponseAll> response = apiInstance.EdgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfo(edgeFirewallId);
+    ApiResponse<RuleSetResponseAll> response = apiInstance.EdgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfo(edgeFirewallId, page, pageSize, sort, orderBy);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -89,6 +93,10 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **edgeFirewallId** | **long** |  |  |
+| **page** | **long?** |  | [optional]  |
+| **pageSize** | **long?** |  | [optional]  |
+| **sort** | **string?** |  | [optional]  |
+| **orderBy** | **string?** |  | [optional]  |
 
 ### Return type
 

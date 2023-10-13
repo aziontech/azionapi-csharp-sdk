@@ -1,11 +1,10 @@
-# edgefirewall.Model.Behaviors
+# edgefirewall.Model.GenericBehaviorDetails
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | [optional] 
-**Argument** | [**BehaviorsArgument**](BehaviorsArgument.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
