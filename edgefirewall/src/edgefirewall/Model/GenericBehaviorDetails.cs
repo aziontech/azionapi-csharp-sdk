@@ -26,76 +26,25 @@ using OpenAPIDateConverter = edgefirewall.Client.OpenAPIDateConverter;
 namespace edgefirewall.Model
 {
     /// <summary>
-    /// Behaviors
+    /// GenericBehaviorDetails
     /// </summary>
-    [DataContract(Name = "Behaviors")]
-    public partial class Behaviors : IEquatable<Behaviors>, IValidatableObject
+    [DataContract(Name = "GenericBehaviorDetails")]
+    public partial class GenericBehaviorDetails : IEquatable<GenericBehaviorDetails>, IValidatableObject
     {
         /// <summary>
-        /// Defines Name
+        /// Initializes a new instance of the <see cref="GenericBehaviorDetails" /> class.
         /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum NameEnum
+        /// <param name="name">name.</param>
+        public GenericBehaviorDetails(string name = default(string))
         {
-            /// <summary>
-            /// Enum Deny for value: deny
-            /// </summary>
-            [EnumMember(Value = "deny")]
-            Deny = 1,
-
-            /// <summary>
-            /// Enum Drop for value: drop
-            /// </summary>
-            [EnumMember(Value = "drop")]
-            Drop = 2,
-
-            /// <summary>
-            /// Enum SetRateLimit for value: set_rate_limit
-            /// </summary>
-            [EnumMember(Value = "set_rate_limit")]
-            SetRateLimit = 3,
-
-            /// <summary>
-            /// Enum SetWafRuleset for value: set_waf_ruleset
-            /// </summary>
-            [EnumMember(Value = "set_waf_ruleset")]
-            SetWafRuleset = 4,
-
-            /// <summary>
-            /// Enum RunFunction for value: run_function
-            /// </summary>
-            [EnumMember(Value = "run_function")]
-            RunFunction = 5,
-
-            /// <summary>
-            /// Enum TagEvent for value: tag_event
-            /// </summary>
-            [EnumMember(Value = "tag_event")]
-            TagEvent = 6
+            this.Name = name;
         }
-
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
-        public NameEnum? Name { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Behaviors" /> class.
-        /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="argument">argument.</param>
-        public Behaviors(NameEnum? name = default(NameEnum?), BehaviorsArgument argument = default(BehaviorsArgument))
-        {
-            this.Name = name;
-            this.Argument = argument;
-        }
-
-        /// <summary>
-        /// Gets or Sets Argument
-        /// </summary>
-        [DataMember(Name = "argument", EmitDefaultValue = false)]
-        public BehaviorsArgument Argument { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -104,9 +53,8 @@ namespace edgefirewall.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class Behaviors {\n");
+            sb.Append("class GenericBehaviorDetails {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Argument: ").Append(Argument).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -127,15 +75,15 @@ namespace edgefirewall.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Behaviors);
+            return this.Equals(input as GenericBehaviorDetails);
         }
 
         /// <summary>
-        /// Returns true if Behaviors instances are equal
+        /// Returns true if GenericBehaviorDetails instances are equal
         /// </summary>
-        /// <param name="input">Instance of Behaviors to be compared</param>
+        /// <param name="input">Instance of GenericBehaviorDetails to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Behaviors input)
+        public bool Equals(GenericBehaviorDetails input)
         {
             if (input == null)
             {
@@ -144,12 +92,8 @@ namespace edgefirewall.Model
             return 
                 (
                     this.Name == input.Name ||
-                    this.Name.Equals(input.Name)
-                ) && 
-                (
-                    this.Argument == input.Argument ||
-                    (this.Argument != null &&
-                    this.Argument.Equals(input.Argument))
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 );
         }
 
@@ -162,10 +106,9 @@ namespace edgefirewall.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                if (this.Argument != null)
+                if (this.Name != null)
                 {
-                    hashCode = (hashCode * 59) + this.Argument.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
                 return hashCode;
             }

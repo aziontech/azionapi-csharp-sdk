@@ -31,9 +31,13 @@ namespace edgefirewall.Api
         /// </summary>
         /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="edgeFirewallId"></param>
+        /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RuleSetResponseAll</returns>
-        RuleSetResponseAll EdgeFirewallEdgeFirewallIdRulesEngineGet(long edgeFirewallId, int operationIndex = 0);
+        RuleSetResponseAll EdgeFirewallEdgeFirewallIdRulesEngineGet(long edgeFirewallId, long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// List all rule sets.
@@ -43,9 +47,13 @@ namespace edgefirewall.Api
         /// </remarks>
         /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="edgeFirewallId"></param>
+        /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RuleSetResponseAll</returns>
-        ApiResponse<RuleSetResponseAll> EdgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfo(long edgeFirewallId, int operationIndex = 0);
+        ApiResponse<RuleSetResponseAll> EdgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfo(long edgeFirewallId, long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0);
         /// <summary>
         /// Create rule set.
         /// </summary>
@@ -315,10 +323,14 @@ namespace edgefirewall.Api
         /// </remarks>
         /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="edgeFirewallId"></param>
+        /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RuleSetResponseAll</returns>
-        System.Threading.Tasks.Task<RuleSetResponseAll> EdgeFirewallEdgeFirewallIdRulesEngineGetAsync(long edgeFirewallId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RuleSetResponseAll> EdgeFirewallEdgeFirewallIdRulesEngineGetAsync(long edgeFirewallId, long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List all rule sets.
@@ -328,10 +340,14 @@ namespace edgefirewall.Api
         /// </remarks>
         /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="edgeFirewallId"></param>
+        /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RuleSetResponseAll)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RuleSetResponseAll>> EdgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfoAsync(long edgeFirewallId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RuleSetResponseAll>> EdgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfoAsync(long edgeFirewallId, long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create rule set.
         /// </summary>
@@ -764,11 +780,15 @@ namespace edgefirewall.Api
         /// </summary>
         /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="edgeFirewallId"></param>
+        /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RuleSetResponseAll</returns>
-        public RuleSetResponseAll EdgeFirewallEdgeFirewallIdRulesEngineGet(long edgeFirewallId, int operationIndex = 0)
+        public RuleSetResponseAll EdgeFirewallEdgeFirewallIdRulesEngineGet(long edgeFirewallId, long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0)
         {
-            edgefirewall.Client.ApiResponse<RuleSetResponseAll> localVarResponse = EdgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfo(edgeFirewallId);
+            edgefirewall.Client.ApiResponse<RuleSetResponseAll> localVarResponse = EdgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfo(edgeFirewallId, page, pageSize, sort, orderBy);
             return localVarResponse.Data;
         }
 
@@ -777,9 +797,13 @@ namespace edgefirewall.Api
         /// </summary>
         /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="edgeFirewallId"></param>
+        /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RuleSetResponseAll</returns>
-        public edgefirewall.Client.ApiResponse<RuleSetResponseAll> EdgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfo(long edgeFirewallId, int operationIndex = 0)
+        public edgefirewall.Client.ApiResponse<RuleSetResponseAll> EdgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfo(long edgeFirewallId, long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0)
         {
             edgefirewall.Client.RequestOptions localVarRequestOptions = new edgefirewall.Client.RequestOptions();
 
@@ -804,6 +828,22 @@ namespace edgefirewall.Api
             }
 
             localVarRequestOptions.PathParameters.Add("edge_firewall_id", edgefirewall.Client.ClientUtils.ParameterToString(edgeFirewallId)); // path parameter
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(edgefirewall.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(edgefirewall.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(edgefirewall.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(edgefirewall.Client.ClientUtils.ParameterToMultiMap("", "order_by", orderBy));
+            }
 
             localVarRequestOptions.Operation = "DefaultApi.EdgeFirewallEdgeFirewallIdRulesEngineGet";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -833,12 +873,16 @@ namespace edgefirewall.Api
         /// </summary>
         /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="edgeFirewallId"></param>
+        /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RuleSetResponseAll</returns>
-        public async System.Threading.Tasks.Task<RuleSetResponseAll> EdgeFirewallEdgeFirewallIdRulesEngineGetAsync(long edgeFirewallId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RuleSetResponseAll> EdgeFirewallEdgeFirewallIdRulesEngineGetAsync(long edgeFirewallId, long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            edgefirewall.Client.ApiResponse<RuleSetResponseAll> localVarResponse = await EdgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfoAsync(edgeFirewallId, operationIndex, cancellationToken).ConfigureAwait(false);
+            edgefirewall.Client.ApiResponse<RuleSetResponseAll> localVarResponse = await EdgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfoAsync(edgeFirewallId, page, pageSize, sort, orderBy, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -847,10 +891,14 @@ namespace edgefirewall.Api
         /// </summary>
         /// <exception cref="edgefirewall.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="edgeFirewallId"></param>
+        /// <param name="page"> (optional)</param>
+        /// <param name="pageSize"> (optional)</param>
+        /// <param name="sort"> (optional)</param>
+        /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RuleSetResponseAll)</returns>
-        public async System.Threading.Tasks.Task<edgefirewall.Client.ApiResponse<RuleSetResponseAll>> EdgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfoAsync(long edgeFirewallId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgefirewall.Client.ApiResponse<RuleSetResponseAll>> EdgeFirewallEdgeFirewallIdRulesEngineGetWithHttpInfoAsync(long edgeFirewallId, long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             edgefirewall.Client.RequestOptions localVarRequestOptions = new edgefirewall.Client.RequestOptions();
@@ -876,6 +924,22 @@ namespace edgefirewall.Api
             }
 
             localVarRequestOptions.PathParameters.Add("edge_firewall_id", edgefirewall.Client.ClientUtils.ParameterToString(edgeFirewallId)); // path parameter
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(edgefirewall.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(edgefirewall.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(edgefirewall.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (orderBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(edgefirewall.Client.ClientUtils.ParameterToMultiMap("", "order_by", orderBy));
+            }
 
             localVarRequestOptions.Operation = "DefaultApi.EdgeFirewallEdgeFirewallIdRulesEngineGet";
             localVarRequestOptions.OperationIndex = operationIndex;
