@@ -92,11 +92,15 @@ namespace Example
 
             var apiInstance = new DefaultApi(config);
             var edgeFirewallId = 789L;  // long | 
+            var page = 789L;  // long? |  (optional) 
+            var pageSize = 789L;  // long? |  (optional) 
+            var sort = "sort_example";  // string? |  (optional) 
+            var orderBy = "orderBy_example";  // string? |  (optional) 
 
             try
             {
                 // List all rule sets.
-                RuleSetResponseAll result = apiInstance.EdgeFirewallEdgeFirewallIdRulesEngineGet(edgeFirewallId);
+                RuleSetResponseAll result = apiInstance.EdgeFirewallEdgeFirewallIdRulesEngineGet(edgeFirewallId, page, pageSize, sort, orderBy);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -136,11 +140,13 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [Model.Behaviors](docs/Behaviors.md)
+ - [Model.BehaviorsArgument](docs/BehaviorsArgument.md)
  - [Model.Conditionals](docs/Conditionals.md)
  - [Model.CreateEdgeFirewallRequest](docs/CreateEdgeFirewallRequest.md)
  - [Model.CreateRuleSetRequest](docs/CreateRuleSetRequest.md)
  - [Model.EdgeFirewall](docs/EdgeFirewall.md)
  - [Model.EdgeFirewallResponse](docs/EdgeFirewallResponse.md)
+ - [Model.GenericBehaviorDetails](docs/GenericBehaviorDetails.md)
  - [Model.Links](docs/Links.md)
  - [Model.ListEdgeFirewallResponse](docs/ListEdgeFirewallResponse.md)
  - [Model.RuleSetResponse](docs/RuleSetResponse.md)
@@ -151,6 +157,8 @@ Class | Method | HTTP request | Description
  - [Model.SSLVerificationStatusArguments](docs/SSLVerificationStatusArguments.md)
  - [Model.SSLVerificationStatusCriteria](docs/SSLVerificationStatusCriteria.md)
  - [Model.SSLVerificationStatusOperators](docs/SSLVerificationStatusOperators.md)
+ - [Model.SetRateLimitDetails](docs/SetRateLimitDetails.md)
+ - [Model.SetWAFRuleSetDetails](docs/SetWAFRuleSetDetails.md)
  - [Model.UpdateEdgeFirewallRequest](docs/UpdateEdgeFirewallRequest.md)
  - [Model.Variables](docs/Variables.md)
 

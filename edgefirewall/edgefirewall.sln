@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 VisualStudioVersion = 12.0.0.0
 MinimumVisualStudioVersion = 10.0.0.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "edgefirewall", "src\edgefirewall\edgefirewall.csproj", "{1D32F58E-C96A-494B-B63B-6DAE1C4C8150}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "edgefirewall", "src\edgefirewall\edgefirewall.csproj", "{FBAAB30B-19B2-4F04-89E6-FCFCE12A20CD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "edgefirewall.Test", "src\edgefirewall.Test\edgefirewall.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
 EndProject
@@ -12,10 +12,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1D32F58E-C96A-494B-B63B-6DAE1C4C8150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1D32F58E-C96A-494B-B63B-6DAE1C4C8150}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1D32F58E-C96A-494B-B63B-6DAE1C4C8150}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1D32F58E-C96A-494B-B63B-6DAE1C4C8150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBAAB30B-19B2-4F04-89E6-FCFCE12A20CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBAAB30B-19B2-4F04-89E6-FCFCE12A20CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBAAB30B-19B2-4F04-89E6-FCFCE12A20CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBAAB30B-19B2-4F04-89E6-FCFCE12A20CD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU
