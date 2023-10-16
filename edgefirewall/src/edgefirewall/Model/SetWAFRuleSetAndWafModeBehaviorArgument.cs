@@ -26,16 +26,16 @@ using OpenAPIDateConverter = edgefirewall.Client.OpenAPIDateConverter;
 namespace edgefirewall.Model
 {
     /// <summary>
-    /// SetWAFRuleSetBehaviorArgument
+    /// SetWAFRuleSetAndWafModeBehaviorArgument
     /// </summary>
-    [DataContract(Name = "SetWAFRuleSetBehavior_argument")]
-    public partial class SetWAFRuleSetBehaviorArgument : IEquatable<SetWAFRuleSetBehaviorArgument>, IValidatableObject
+    [DataContract(Name = "SetWAFRuleSetAndWafModeBehavior_argument")]
+    public partial class SetWAFRuleSetAndWafModeBehaviorArgument : IEquatable<SetWAFRuleSetAndWafModeBehaviorArgument>, IValidatableObject
     {
         /// <summary>
-        /// Defines Mode
+        /// Defines WafMode
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum ModeEnum
+        public enum WafModeEnum
         {
             /// <summary>
             /// Enum Learning for value: learning
@@ -52,26 +52,31 @@ namespace edgefirewall.Model
 
 
         /// <summary>
-        /// Gets or Sets Mode
+        /// Gets or Sets WafMode
         /// </summary>
-        [DataMember(Name = "mode", EmitDefaultValue = false)]
-        public ModeEnum? Mode { get; set; }
+        [DataMember(Name = "waf_mode", IsRequired = true, EmitDefaultValue = true)]
+        public WafModeEnum WafMode { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="SetWAFRuleSetBehaviorArgument" /> class.
+        /// Initializes a new instance of the <see cref="SetWAFRuleSetAndWafModeBehaviorArgument" /> class.
         /// </summary>
-        /// <param name="wafId">wafId.</param>
-        /// <param name="mode">mode.</param>
-        public SetWAFRuleSetBehaviorArgument(int wafId = default(int), ModeEnum? mode = default(ModeEnum?))
+        [JsonConstructorAttribute]
+        protected SetWAFRuleSetAndWafModeBehaviorArgument() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SetWAFRuleSetAndWafModeBehaviorArgument" /> class.
+        /// </summary>
+        /// <param name="setWafRulesetAndWafMode">setWafRulesetAndWafMode (required).</param>
+        /// <param name="wafMode">wafMode (required).</param>
+        public SetWAFRuleSetAndWafModeBehaviorArgument(int setWafRulesetAndWafMode = default(int), WafModeEnum wafMode = default(WafModeEnum))
         {
-            this.WafId = wafId;
-            this.Mode = mode;
+            this.SetWafRulesetAndWafMode = setWafRulesetAndWafMode;
+            this.WafMode = wafMode;
         }
 
         /// <summary>
-        /// Gets or Sets WafId
+        /// Gets or Sets SetWafRulesetAndWafMode
         /// </summary>
-        [DataMember(Name = "waf_id", EmitDefaultValue = false)]
-        public int WafId { get; set; }
+        [DataMember(Name = "set_waf_ruleset_and_waf_mode", IsRequired = true, EmitDefaultValue = true)]
+        public int SetWafRulesetAndWafMode { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -80,9 +85,9 @@ namespace edgefirewall.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class SetWAFRuleSetBehaviorArgument {\n");
-            sb.Append("  WafId: ").Append(WafId).Append("\n");
-            sb.Append("  Mode: ").Append(Mode).Append("\n");
+            sb.Append("class SetWAFRuleSetAndWafModeBehaviorArgument {\n");
+            sb.Append("  SetWafRulesetAndWafMode: ").Append(SetWafRulesetAndWafMode).Append("\n");
+            sb.Append("  WafMode: ").Append(WafMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -103,15 +108,15 @@ namespace edgefirewall.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SetWAFRuleSetBehaviorArgument);
+            return this.Equals(input as SetWAFRuleSetAndWafModeBehaviorArgument);
         }
 
         /// <summary>
-        /// Returns true if SetWAFRuleSetBehaviorArgument instances are equal
+        /// Returns true if SetWAFRuleSetAndWafModeBehaviorArgument instances are equal
         /// </summary>
-        /// <param name="input">Instance of SetWAFRuleSetBehaviorArgument to be compared</param>
+        /// <param name="input">Instance of SetWAFRuleSetAndWafModeBehaviorArgument to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(SetWAFRuleSetBehaviorArgument input)
+        public bool Equals(SetWAFRuleSetAndWafModeBehaviorArgument input)
         {
             if (input == null)
             {
@@ -119,12 +124,12 @@ namespace edgefirewall.Model
             }
             return 
                 (
-                    this.WafId == input.WafId ||
-                    this.WafId.Equals(input.WafId)
+                    this.SetWafRulesetAndWafMode == input.SetWafRulesetAndWafMode ||
+                    this.SetWafRulesetAndWafMode.Equals(input.SetWafRulesetAndWafMode)
                 ) && 
                 (
-                    this.Mode == input.Mode ||
-                    this.Mode.Equals(input.Mode)
+                    this.WafMode == input.WafMode ||
+                    this.WafMode.Equals(input.WafMode)
                 );
         }
 
@@ -137,8 +142,8 @@ namespace edgefirewall.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.WafId.GetHashCode();
-                hashCode = (hashCode * 59) + this.Mode.GetHashCode();
+                hashCode = (hashCode * 59) + this.SetWafRulesetAndWafMode.GetHashCode();
+                hashCode = (hashCode * 59) + this.WafMode.GetHashCode();
                 return hashCode;
             }
         }
@@ -150,10 +155,10 @@ namespace edgefirewall.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // WafId (int) minimum
-            if (this.WafId < (int)1)
+            // SetWafRulesetAndWafMode (int) minimum
+            if (this.SetWafRulesetAndWafMode < (int)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for WafId, must be a value greater than or equal to 1.", new [] { "WafId" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SetWafRulesetAndWafMode, must be a value greater than or equal to 1.", new [] { "SetWafRulesetAndWafMode" });
             }
 
             yield break;

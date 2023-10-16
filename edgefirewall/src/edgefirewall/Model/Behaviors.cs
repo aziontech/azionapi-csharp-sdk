@@ -81,6 +81,30 @@ namespace edgefirewall.Model
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Behaviors" /> class
+        /// with the <see cref="SetWAFRuleSetAndWafModeBehavior" /> class
+        /// </summary>
+        /// <param name="actualInstance">An instance of SetWAFRuleSetAndWafModeBehavior.</param>
+        public Behaviors(SetWAFRuleSetAndWafModeBehavior actualInstance)
+        {
+            this.IsNullable = false;
+            this.SchemaType= "oneOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Behaviors" /> class
+        /// with the <see cref="SetCustomResponse" /> class
+        /// </summary>
+        /// <param name="actualInstance">An instance of SetCustomResponse.</param>
+        public Behaviors(SetCustomResponse actualInstance)
+        {
+            this.IsNullable = false;
+            this.SchemaType= "oneOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
 
         private Object _actualInstance;
 
@@ -99,7 +123,15 @@ namespace edgefirewall.Model
                 {
                     this._actualInstance = value;
                 }
+                else if (value.GetType() == typeof(SetCustomResponse))
+                {
+                    this._actualInstance = value;
+                }
                 else if (value.GetType() == typeof(SetRateLimitBehavior))
+                {
+                    this._actualInstance = value;
+                }
+                else if (value.GetType() == typeof(SetWAFRuleSetAndWafModeBehavior))
                 {
                     this._actualInstance = value;
                 }
@@ -113,7 +145,7 @@ namespace edgefirewall.Model
                 }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: NullArgumentBehavior, SetRateLimitBehavior, SetWAFRuleSetBehavior, SimpleArgumentBehavior");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: NullArgumentBehavior, SetCustomResponse, SetRateLimitBehavior, SetWAFRuleSetAndWafModeBehavior, SetWAFRuleSetBehavior, SimpleArgumentBehavior");
                 }
             }
         }
@@ -156,6 +188,26 @@ namespace edgefirewall.Model
         public SetWAFRuleSetBehavior GetSetWAFRuleSetBehavior()
         {
             return (SetWAFRuleSetBehavior)this.ActualInstance;
+        }
+
+        /// <summary>
+        /// Get the actual instance of `SetWAFRuleSetAndWafModeBehavior`. If the actual instance is not `SetWAFRuleSetAndWafModeBehavior`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of SetWAFRuleSetAndWafModeBehavior</returns>
+        public SetWAFRuleSetAndWafModeBehavior GetSetWAFRuleSetAndWafModeBehavior()
+        {
+            return (SetWAFRuleSetAndWafModeBehavior)this.ActualInstance;
+        }
+
+        /// <summary>
+        /// Get the actual instance of `SetCustomResponse`. If the actual instance is not `SetCustomResponse`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of SetCustomResponse</returns>
+        public SetCustomResponse GetSetCustomResponse()
+        {
+            return (SetCustomResponse)this.ActualInstance;
         }
 
         /// <summary>
@@ -219,6 +271,26 @@ namespace edgefirewall.Model
             try
             {
                 // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(SetCustomResponse).GetProperty("AdditionalProperties") == null)
+                {
+                    newBehaviors = new Behaviors(JsonConvert.DeserializeObject<SetCustomResponse>(jsonString, Behaviors.SerializerSettings));
+                }
+                else
+                {
+                    newBehaviors = new Behaviors(JsonConvert.DeserializeObject<SetCustomResponse>(jsonString, Behaviors.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("SetCustomResponse");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into SetCustomResponse: {1}", jsonString, exception.ToString()));
+            }
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
                 if (typeof(SetRateLimitBehavior).GetProperty("AdditionalProperties") == null)
                 {
                     newBehaviors = new Behaviors(JsonConvert.DeserializeObject<SetRateLimitBehavior>(jsonString, Behaviors.SerializerSettings));
@@ -234,6 +306,26 @@ namespace edgefirewall.Model
             {
                 // deserialization failed, try the next one
                 System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into SetRateLimitBehavior: {1}", jsonString, exception.ToString()));
+            }
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(SetWAFRuleSetAndWafModeBehavior).GetProperty("AdditionalProperties") == null)
+                {
+                    newBehaviors = new Behaviors(JsonConvert.DeserializeObject<SetWAFRuleSetAndWafModeBehavior>(jsonString, Behaviors.SerializerSettings));
+                }
+                else
+                {
+                    newBehaviors = new Behaviors(JsonConvert.DeserializeObject<SetWAFRuleSetAndWafModeBehavior>(jsonString, Behaviors.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("SetWAFRuleSetAndWafModeBehavior");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into SetWAFRuleSetAndWafModeBehavior: {1}", jsonString, exception.ToString()));
             }
 
             try

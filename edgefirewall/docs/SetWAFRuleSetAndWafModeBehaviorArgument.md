@@ -1,11 +1,11 @@
-# edgefirewall.Model.Behaviors
+# edgefirewall.Model.SetWAFRuleSetAndWafModeBehaviorArgument
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | [optional] 
-**Argument** | [**SetCustomResponseArgument**](SetCustomResponseArgument.md) |  | [optional] 
+**SetWafRulesetAndWafMode** | **int** |  | 
+**WafMode** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
