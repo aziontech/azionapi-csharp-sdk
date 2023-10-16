@@ -22,80 +22,141 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = edgefirewall.Client.OpenAPIDateConverter;
+using System.Reflection;
 
 namespace edgefirewall.Model
 {
     /// <summary>
     /// Behaviors
     /// </summary>
+    [JsonConverter(typeof(BehaviorsJsonConverter))]
     [DataContract(Name = "Behaviors")]
-    public partial class Behaviors : IEquatable<Behaviors>, IValidatableObject
+    public partial class Behaviors : AbstractOpenAPISchema, IEquatable<Behaviors>, IValidatableObject
     {
         /// <summary>
-        /// Defines Name
+        /// Initializes a new instance of the <see cref="Behaviors" /> class
+        /// with the <see cref="NullArgumentBehavior" /> class
         /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum NameEnum
+        /// <param name="actualInstance">An instance of NullArgumentBehavior.</param>
+        public Behaviors(NullArgumentBehavior actualInstance)
         {
-            /// <summary>
-            /// Enum Deny for value: deny
-            /// </summary>
-            [EnumMember(Value = "deny")]
-            Deny = 1,
-
-            /// <summary>
-            /// Enum Drop for value: drop
-            /// </summary>
-            [EnumMember(Value = "drop")]
-            Drop = 2,
-
-            /// <summary>
-            /// Enum SetRateLimit for value: set_rate_limit
-            /// </summary>
-            [EnumMember(Value = "set_rate_limit")]
-            SetRateLimit = 3,
-
-            /// <summary>
-            /// Enum SetWafRuleset for value: set_waf_ruleset
-            /// </summary>
-            [EnumMember(Value = "set_waf_ruleset")]
-            SetWafRuleset = 4,
-
-            /// <summary>
-            /// Enum RunFunction for value: run_function
-            /// </summary>
-            [EnumMember(Value = "run_function")]
-            RunFunction = 5,
-
-            /// <summary>
-            /// Enum TagEvent for value: tag_event
-            /// </summary>
-            [EnumMember(Value = "tag_event")]
-            TagEvent = 6
-        }
-
-
-        /// <summary>
-        /// Gets or Sets Name
-        /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
-        public NameEnum? Name { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Behaviors" /> class.
-        /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="argument">argument.</param>
-        public Behaviors(NameEnum? name = default(NameEnum?), BehaviorsArgument argument = default(BehaviorsArgument))
-        {
-            this.Name = name;
-            this.Argument = argument;
+            this.IsNullable = false;
+            this.SchemaType= "oneOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
         /// <summary>
-        /// Gets or Sets Argument
+        /// Initializes a new instance of the <see cref="Behaviors" /> class
+        /// with the <see cref="SimpleArgumentBehavior" /> class
         /// </summary>
-        [DataMember(Name = "argument", EmitDefaultValue = false)]
-        public BehaviorsArgument Argument { get; set; }
+        /// <param name="actualInstance">An instance of SimpleArgumentBehavior.</param>
+        public Behaviors(SimpleArgumentBehavior actualInstance)
+        {
+            this.IsNullable = false;
+            this.SchemaType= "oneOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Behaviors" /> class
+        /// with the <see cref="SetRateLimitBehavior" /> class
+        /// </summary>
+        /// <param name="actualInstance">An instance of SetRateLimitBehavior.</param>
+        public Behaviors(SetRateLimitBehavior actualInstance)
+        {
+            this.IsNullable = false;
+            this.SchemaType= "oneOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Behaviors" /> class
+        /// with the <see cref="SetWAFRuleSetBehavior" /> class
+        /// </summary>
+        /// <param name="actualInstance">An instance of SetWAFRuleSetBehavior.</param>
+        public Behaviors(SetWAFRuleSetBehavior actualInstance)
+        {
+            this.IsNullable = false;
+            this.SchemaType= "oneOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
+
+        private Object _actualInstance;
+
+        /// <summary>
+        /// Gets or Sets ActualInstance
+        /// </summary>
+        public override Object ActualInstance
+        {
+            get
+            {
+                return _actualInstance;
+            }
+            set
+            {
+                if (value.GetType() == typeof(NullArgumentBehavior))
+                {
+                    this._actualInstance = value;
+                }
+                else if (value.GetType() == typeof(SetRateLimitBehavior))
+                {
+                    this._actualInstance = value;
+                }
+                else if (value.GetType() == typeof(SetWAFRuleSetBehavior))
+                {
+                    this._actualInstance = value;
+                }
+                else if (value.GetType() == typeof(SimpleArgumentBehavior))
+                {
+                    this._actualInstance = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Invalid instance found. Must be the following types: NullArgumentBehavior, SetRateLimitBehavior, SetWAFRuleSetBehavior, SimpleArgumentBehavior");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Get the actual instance of `NullArgumentBehavior`. If the actual instance is not `NullArgumentBehavior`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of NullArgumentBehavior</returns>
+        public NullArgumentBehavior GetNullArgumentBehavior()
+        {
+            return (NullArgumentBehavior)this.ActualInstance;
+        }
+
+        /// <summary>
+        /// Get the actual instance of `SimpleArgumentBehavior`. If the actual instance is not `SimpleArgumentBehavior`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of SimpleArgumentBehavior</returns>
+        public SimpleArgumentBehavior GetSimpleArgumentBehavior()
+        {
+            return (SimpleArgumentBehavior)this.ActualInstance;
+        }
+
+        /// <summary>
+        /// Get the actual instance of `SetRateLimitBehavior`. If the actual instance is not `SetRateLimitBehavior`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of SetRateLimitBehavior</returns>
+        public SetRateLimitBehavior GetSetRateLimitBehavior()
+        {
+            return (SetRateLimitBehavior)this.ActualInstance;
+        }
+
+        /// <summary>
+        /// Get the actual instance of `SetWAFRuleSetBehavior`. If the actual instance is not `SetWAFRuleSetBehavior`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of SetWAFRuleSetBehavior</returns>
+        public SetWAFRuleSetBehavior GetSetWAFRuleSetBehavior()
+        {
+            return (SetWAFRuleSetBehavior)this.ActualInstance;
+        }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -103,10 +164,9 @@ namespace edgefirewall.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             sb.Append("class Behaviors {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Argument: ").Append(Argument).Append("\n");
+            sb.Append("  ActualInstance: ").Append(this.ActualInstance).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,9 +175,118 @@ namespace edgefirewall.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public virtual string ToJson()
+        public override string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return JsonConvert.SerializeObject(this.ActualInstance, Behaviors.SerializerSettings);
+        }
+
+        /// <summary>
+        /// Converts the JSON string into an instance of Behaviors
+        /// </summary>
+        /// <param name="jsonString">JSON string</param>
+        /// <returns>An instance of Behaviors</returns>
+        public static Behaviors FromJson(string jsonString)
+        {
+            Behaviors newBehaviors = null;
+
+            if (string.IsNullOrEmpty(jsonString))
+            {
+                return newBehaviors;
+            }
+            int match = 0;
+            List<string> matchedTypes = new List<string>();
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(NullArgumentBehavior).GetProperty("AdditionalProperties") == null)
+                {
+                    newBehaviors = new Behaviors(JsonConvert.DeserializeObject<NullArgumentBehavior>(jsonString, Behaviors.SerializerSettings));
+                }
+                else
+                {
+                    newBehaviors = new Behaviors(JsonConvert.DeserializeObject<NullArgumentBehavior>(jsonString, Behaviors.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("NullArgumentBehavior");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into NullArgumentBehavior: {1}", jsonString, exception.ToString()));
+            }
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(SetRateLimitBehavior).GetProperty("AdditionalProperties") == null)
+                {
+                    newBehaviors = new Behaviors(JsonConvert.DeserializeObject<SetRateLimitBehavior>(jsonString, Behaviors.SerializerSettings));
+                }
+                else
+                {
+                    newBehaviors = new Behaviors(JsonConvert.DeserializeObject<SetRateLimitBehavior>(jsonString, Behaviors.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("SetRateLimitBehavior");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into SetRateLimitBehavior: {1}", jsonString, exception.ToString()));
+            }
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(SetWAFRuleSetBehavior).GetProperty("AdditionalProperties") == null)
+                {
+                    newBehaviors = new Behaviors(JsonConvert.DeserializeObject<SetWAFRuleSetBehavior>(jsonString, Behaviors.SerializerSettings));
+                }
+                else
+                {
+                    newBehaviors = new Behaviors(JsonConvert.DeserializeObject<SetWAFRuleSetBehavior>(jsonString, Behaviors.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("SetWAFRuleSetBehavior");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into SetWAFRuleSetBehavior: {1}", jsonString, exception.ToString()));
+            }
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(SimpleArgumentBehavior).GetProperty("AdditionalProperties") == null)
+                {
+                    newBehaviors = new Behaviors(JsonConvert.DeserializeObject<SimpleArgumentBehavior>(jsonString, Behaviors.SerializerSettings));
+                }
+                else
+                {
+                    newBehaviors = new Behaviors(JsonConvert.DeserializeObject<SimpleArgumentBehavior>(jsonString, Behaviors.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("SimpleArgumentBehavior");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into SimpleArgumentBehavior: {1}", jsonString, exception.ToString()));
+            }
+
+            if (match == 0)
+            {
+                throw new InvalidDataException("The JSON string `" + jsonString + "` cannot be deserialized into any schema defined.");
+            }
+            else if (match > 1)
+            {
+                throw new InvalidDataException("The JSON string `" + jsonString + "` incorrectly matches more than one schema (should be exactly one match): " + matchedTypes);
+            }
+
+            // deserialization is considered successful at this point if no exception has been thrown.
+            return newBehaviors;
         }
 
         /// <summary>
@@ -138,19 +307,9 @@ namespace edgefirewall.Model
         public bool Equals(Behaviors input)
         {
             if (input == null)
-            {
                 return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    this.Name.Equals(input.Name)
-                ) && 
-                (
-                    this.Argument == input.Argument ||
-                    (this.Argument != null &&
-                    this.Argument.Equals(input.Argument))
-                );
+
+            return this.ActualInstance.Equals(input.ActualInstance);
         }
 
         /// <summary>
@@ -162,11 +321,8 @@ namespace edgefirewall.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                if (this.Argument != null)
-                {
-                    hashCode = (hashCode * 59) + this.Argument.GetHashCode();
-                }
+                if (this.ActualInstance != null)
+                    hashCode = hashCode * 59 + this.ActualInstance.GetHashCode();
                 return hashCode;
             }
         }
@@ -179,6 +335,50 @@ namespace edgefirewall.Model
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
+        }
+    }
+
+    /// <summary>
+    /// Custom JSON converter for Behaviors
+    /// </summary>
+    public class BehaviorsJsonConverter : JsonConverter
+    {
+        /// <summary>
+        /// To write the JSON string
+        /// </summary>
+        /// <param name="writer">JSON writer</param>
+        /// <param name="value">Object to be converted into a JSON string</param>
+        /// <param name="serializer">JSON Serializer</param>
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        {
+            writer.WriteRawValue((string)(typeof(Behaviors).GetMethod("ToJson").Invoke(value, null)));
+        }
+
+        /// <summary>
+        /// To convert a JSON string into an object
+        /// </summary>
+        /// <param name="reader">JSON reader</param>
+        /// <param name="objectType">Object type</param>
+        /// <param name="existingValue">Existing value</param>
+        /// <param name="serializer">JSON Serializer</param>
+        /// <returns>The object converted from the JSON string</returns>
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        {
+            if(reader.TokenType != JsonToken.Null)
+            {
+                return Behaviors.FromJson(JObject.Load(reader).ToString(Formatting.None));
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Check if the object can be converted
+        /// </summary>
+        /// <param name="objectType">Object type</param>
+        /// <returns>True if the object can be converted</returns>
+        public override bool CanConvert(Type objectType)
+        {
+            return false;
         }
     }
 

@@ -1,4 +1,4 @@
-# edgefirewall.Model.Behaviors
+# edgefirewall.Model.SetWAFRuleSetBehavior
 
 ## Properties
 
