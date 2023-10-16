@@ -694,6 +694,8 @@ components:
       - $ref: '#/components/schemas/SimpleArgumentBehavior'
       - $ref: '#/components/schemas/SetRateLimitBehavior'
       - $ref: '#/components/schemas/SetWAFRuleSetBehavior'
+      - $ref: '#/components/schemas/SetWAFRuleSetAndWafModeBehavior'
+      - $ref: '#/components/schemas/SetCustomResponse'
     NullArgumentBehavior:
       properties:
         name:
@@ -722,6 +724,24 @@ components:
           type: string
         argument:
           $ref: '#/components/schemas/SetWAFRuleSetBehavior_argument'
+      type: object
+    SetWAFRuleSetAndWafModeBehavior:
+      properties:
+        name:
+          enum:
+          - set_waf_ruleset_and_waf_mode
+          type: string
+        argument:
+          $ref: '#/components/schemas/SetWAFRuleSetAndWafModeBehavior_argument'
+      type: object
+    SetCustomResponse:
+      properties:
+        name:
+          enum:
+          - set_custom_response
+          type: string
+        argument:
+          $ref: '#/components/schemas/SetCustomResponse_argument'
       type: object
     SimpleArgumentBehavior:
       properties:
@@ -1092,16 +1112,56 @@ components:
     SetWAFRuleSetBehavior_argument:
       example:
         waf_id: 1
-        mode: Blocking
+        mode: blocking
       properties:
         waf_id:
           minimum: 1
           type: integer
         mode:
           enum:
-          - Learning
-          - Blocking
+          - learning
+          - blocking
           type: string
+      type: object
+    SetWAFRuleSetAndWafModeBehavior_argument:
+      example:
+        set_waf_ruleset_and_waf_mode: 1
+        waf_mode: blocking
+      properties:
+        set_waf_ruleset_and_waf_mode:
+          minimum: 1
+          type: integer
+        waf_mode:
+          enum:
+          - learning
+          - blocking
+          type: string
+      required:
+      - set_waf_ruleset_and_waf_mode
+      - waf_mode
+      type: object
+    SetCustomResponse_argument_status_code:
+      oneOf:
+      - type: string
+      - maximum: 499
+        minimum: 200
+        type: integer
+    SetCustomResponse_argument:
+      example:
+        status_code: 200
+        content_type: application/json
+        content_body: "{}"
+      properties:
+        status_code:
+          $ref: '#/components/schemas/SetCustomResponse_argument_status_code'
+        content_type:
+          type: string
+        content_body:
+          type: string
+      required:
+      - content_body
+      - content_type
+      - status_code
       type: object
     SimpleArgumentBehavior_argument:
       oneOf:
