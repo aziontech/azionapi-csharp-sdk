@@ -36,7 +36,7 @@ namespace edgefunctions.Api
         /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ListEdgeFunctionResponse</returns>
-        ListEdgeFunctionResponse EdgeFunctionsGet(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), int operationIndex = 0);
+        ListEdgeFunctionResponse EdgeFunctionsGet(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// edge_functions
@@ -51,7 +51,7 @@ namespace edgefunctions.Api
         /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ListEdgeFunctionResponse</returns>
-        ApiResponse<ListEdgeFunctionResponse> EdgeFunctionsGetWithHttpInfo(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), int operationIndex = 0);
+        ApiResponse<ListEdgeFunctionResponse> EdgeFunctionsGetWithHttpInfo(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0);
         /// <summary>
         /// edge_functions
         /// </summary>
@@ -179,7 +179,7 @@ namespace edgefunctions.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListEdgeFunctionResponse</returns>
-        System.Threading.Tasks.Task<ListEdgeFunctionResponse> EdgeFunctionsGetAsync(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ListEdgeFunctionResponse> EdgeFunctionsGetAsync(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// edge_functions
@@ -195,7 +195,7 @@ namespace edgefunctions.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListEdgeFunctionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListEdgeFunctionResponse>> EdgeFunctionsGetWithHttpInfoAsync(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ListEdgeFunctionResponse>> EdgeFunctionsGetWithHttpInfoAsync(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// edge_functions
         /// </summary>
@@ -455,7 +455,7 @@ namespace edgefunctions.Api
         /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ListEdgeFunctionResponse</returns>
-        public ListEdgeFunctionResponse EdgeFunctionsGet(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), int operationIndex = 0)
+        public ListEdgeFunctionResponse EdgeFunctionsGet(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0)
         {
             edgefunctions.Client.ApiResponse<ListEdgeFunctionResponse> localVarResponse = EdgeFunctionsGetWithHttpInfo(page, pageSize, sort, orderBy);
             return localVarResponse.Data;
@@ -471,7 +471,7 @@ namespace edgefunctions.Api
         /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ListEdgeFunctionResponse</returns>
-        public edgefunctions.Client.ApiResponse<ListEdgeFunctionResponse> EdgeFunctionsGetWithHttpInfo(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), int operationIndex = 0)
+        public edgefunctions.Client.ApiResponse<ListEdgeFunctionResponse> EdgeFunctionsGetWithHttpInfo(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0)
         {
             edgefunctions.Client.RequestOptions localVarRequestOptions = new edgefunctions.Client.RequestOptions();
 
@@ -547,7 +547,7 @@ namespace edgefunctions.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListEdgeFunctionResponse</returns>
-        public async System.Threading.Tasks.Task<ListEdgeFunctionResponse> EdgeFunctionsGetAsync(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ListEdgeFunctionResponse> EdgeFunctionsGetAsync(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             edgefunctions.Client.ApiResponse<ListEdgeFunctionResponse> localVarResponse = await EdgeFunctionsGetWithHttpInfoAsync(page, pageSize, sort, orderBy, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -564,7 +564,7 @@ namespace edgefunctions.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListEdgeFunctionResponse)</returns>
-        public async System.Threading.Tasks.Task<edgefunctions.Client.ApiResponse<ListEdgeFunctionResponse>> EdgeFunctionsGetWithHttpInfoAsync(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<edgefunctions.Client.ApiResponse<ListEdgeFunctionResponse>> EdgeFunctionsGetWithHttpInfoAsync(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             edgefunctions.Client.RequestOptions localVarRequestOptions = new edgefunctions.Client.RequestOptions();

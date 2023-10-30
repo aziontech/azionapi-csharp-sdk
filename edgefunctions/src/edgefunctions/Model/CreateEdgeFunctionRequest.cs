@@ -32,20 +32,47 @@ namespace edgefunctions.Model
     public partial class CreateEdgeFunctionRequest : IEquatable<CreateEdgeFunctionRequest>, IValidatableObject
     {
         /// <summary>
+        /// Defines InitiatorType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum InitiatorTypeEnum
+        {
+            /// <summary>
+            /// Enum Application for value: edge_application
+            /// </summary>
+            [EnumMember(Value = "edge_application")]
+            Application = 1,
+
+            /// <summary>
+            /// Enum Firewall for value: edge_firewall
+            /// </summary>
+            [EnumMember(Value = "edge_firewall")]
+            Firewall = 2
+        }
+
+
+        /// <summary>
+        /// Gets or Sets InitiatorType
+        /// </summary>
+        [DataMember(Name = "initiator_type", EmitDefaultValue = false)]
+        public InitiatorTypeEnum? InitiatorType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="CreateEdgeFunctionRequest" /> class.
         /// </summary>
         /// <param name="name">name.</param>
         /// <param name="language">language.</param>
         /// <param name="code">code.</param>
         /// <param name="jsonArgs">jsonArgs.</param>
+        /// <param name="initiatorType">initiatorType.</param>
         /// <param name="active">active.</param>
         /// <param name="isProprietaryCode">isProprietaryCode.</param>
-        public CreateEdgeFunctionRequest(string name = default(string), string language = default(string), string code = default(string), Object jsonArgs = default(Object), bool active = default(bool), bool isProprietaryCode = default(bool))
+        public CreateEdgeFunctionRequest(string name = default(string), string language = default(string), string code = default(string), Object jsonArgs = default(Object), InitiatorTypeEnum? initiatorType = default(InitiatorTypeEnum?), bool active = default(bool), bool isProprietaryCode = default(bool))
         {
             this.Name = name;
             this.Language = language;
             this.Code = code;
             this.JsonArgs = jsonArgs;
+            this.InitiatorType = initiatorType;
             this.Active = active;
             this.IsProprietaryCode = isProprietaryCode;
         }
@@ -98,6 +125,7 @@ namespace edgefunctions.Model
             sb.Append("  Language: ").Append(Language).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  JsonArgs: ").Append(JsonArgs).Append("\n");
+            sb.Append("  InitiatorType: ").Append(InitiatorType).Append("\n");
             sb.Append("  Active: ").Append(Active).Append("\n");
             sb.Append("  IsProprietaryCode: ").Append(IsProprietaryCode).Append("\n");
             sb.Append("}\n");
@@ -156,6 +184,10 @@ namespace edgefunctions.Model
                     this.JsonArgs.Equals(input.JsonArgs))
                 ) && 
                 (
+                    this.InitiatorType == input.InitiatorType ||
+                    this.InitiatorType.Equals(input.InitiatorType)
+                ) && 
+                (
                     this.Active == input.Active ||
                     this.Active.Equals(input.Active)
                 ) && 
@@ -190,6 +222,7 @@ namespace edgefunctions.Model
                 {
                     hashCode = (hashCode * 59) + this.JsonArgs.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.InitiatorType.GetHashCode();
                 hashCode = (hashCode * 59) + this.Active.GetHashCode();
                 hashCode = (hashCode * 59) + this.IsProprietaryCode.GetHashCode();
                 return hashCode;

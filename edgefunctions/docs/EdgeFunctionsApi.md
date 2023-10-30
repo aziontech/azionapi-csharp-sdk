@@ -13,7 +13,7 @@ All URIs are relative to *https://api.azionapi.net*
 
 <a id="edgefunctionsget"></a>
 # **EdgeFunctionsGet**
-> ListEdgeFunctionResponse EdgeFunctionsGet (long? page = null, long? pageSize = null, string sort = null, string orderBy = null)
+> ListEdgeFunctionResponse EdgeFunctionsGet (long? page = null, long? pageSize = null, string? sort = null, string? orderBy = null)
 
 edge_functions
 
@@ -41,8 +41,8 @@ namespace Example
             var apiInstance = new EdgeFunctionsApi(config);
             var page = 789L;  // long? |  (optional) 
             var pageSize = 789L;  // long? |  (optional) 
-            var sort = "sort_example";  // string |  (optional) 
-            var orderBy = "orderBy_example";  // string |  (optional) 
+            var sort = "sort_example";  // string? |  (optional) 
+            var orderBy = "orderBy_example";  // string? |  (optional) 
 
             try
             {
@@ -87,8 +87,8 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **page** | **long?** |  | [optional]  |
 | **pageSize** | **long?** |  | [optional]  |
-| **sort** | **string** |  | [optional]  |
-| **orderBy** | **string** |  | [optional]  |
+| **sort** | **string?** |  | [optional]  |
+| **orderBy** | **string?** |  | [optional]  |
 
 ### Return type
 
