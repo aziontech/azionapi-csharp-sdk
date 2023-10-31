@@ -12,7 +12,7 @@ All URIs are relative to *https://api.azionapi.net*
 
 <a id="networklistsget"></a>
 # **NetworkListsGet**
-> ListNetworkListsResponse NetworkListsGet (int? page = null, int? pageSize = null, string sort = null, string orderBy = null)
+> ListNetworkListsResponse NetworkListsGet (int? page = null, int? pageSize = null, string? sort = null, string? orderBy = null)
 
 List all user Network Lists
 
@@ -40,8 +40,8 @@ namespace Example
             var apiInstance = new DefaultApi(config);
             var page = 56;  // int? |  (optional) 
             var pageSize = 56;  // int? |  (optional) 
-            var sort = "sort_example";  // string |  (optional) 
-            var orderBy = "orderBy_example";  // string |  (optional) 
+            var sort = "sort_example";  // string? |  (optional) 
+            var orderBy = "orderBy_example";  // string? |  (optional) 
 
             try
             {
@@ -86,8 +86,8 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **page** | **int?** |  | [optional]  |
 | **pageSize** | **int?** |  | [optional]  |
-| **sort** | **string** |  | [optional]  |
-| **orderBy** | **string** |  | [optional]  |
+| **sort** | **string?** |  | [optional]  |
+| **orderBy** | **string?** |  | [optional]  |
 
 ### Return type
 
@@ -108,6 +108,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | A list of Network Lists |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -204,6 +205,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **201** | A Network Lists object |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
@@ -211,7 +213,7 @@ catch (ApiException e)
 
 <a id="networklistsuuiddelete"></a>
 # **NetworkListsUuidDelete**
-> void NetworkListsUuidDelete (string uuid, string accept = null)
+> void NetworkListsUuidDelete (string uuid, string? accept = null)
 
 Delete a Network Lists set by uuid
 
@@ -238,7 +240,7 @@ namespace Example
 
             var apiInstance = new DefaultApi(config);
             var uuid = "uuid_example";  // string | The id of the networkList to be deleted. 
-            var accept = application/json; version=3;  // string |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
 
             try
             {
@@ -278,7 +280,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **uuid** | **string** | The id of the networkList to be deleted.  |  |
-| **accept** | **string** |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
 
 ### Return type
 
@@ -398,6 +400,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | A Network Lists object |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -496,6 +499,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successfully updated |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 

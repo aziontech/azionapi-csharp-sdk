@@ -60,34 +60,35 @@ namespace networklist.Model
         /// <summary>
         /// Gets or Sets LastEditor
         /// </summary>
-        /// <example>&quot;Azion&quot;</example>
+        /// <example>Azion</example>
         [DataMember(Name = "last_editor", EmitDefaultValue = false)]
         public string LastEditor { get; set; }
 
         /// <summary>
         /// Gets or Sets LastModified
         /// </summary>
-        /// <example>&quot;2023-08-10T05:00:07.893747Z&quot;</example>
+        /// <example>2023-08-10T05:00:07.893747Z</example>
         [DataMember(Name = "last_modified", EmitDefaultValue = false)]
         public string LastModified { get; set; }
 
         /// <summary>
         /// Gets or Sets ListType
         /// </summary>
-        /// <example>&quot;ip_cidr&quot;</example>
+        /// <example>ip_cidr</example>
         [DataMember(Name = "list_type", EmitDefaultValue = false)]
         public string ListType { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>&quot;Network List created using the API&quot;</example>
+        /// <example>Network List created using the API</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets ItemsValues
         /// </summary>
+        /// <example>[&quot;192.168.0.1&quot;]</example>
         [DataMember(Name = "items_values", EmitDefaultValue = false)]
         public List<string> ItemsValues { get; set; }
 
