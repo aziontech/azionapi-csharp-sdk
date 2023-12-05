@@ -36,7 +36,7 @@ namespace networklist.Api
         /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ListNetworkListsResponse</returns>
-        ListNetworkListsResponse NetworkListsGet(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0);
+        ListNetworkListsResponse NetworkListsGet(int? page = default(int?), int? pageSize = default(int?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// List all user Network Lists
@@ -51,7 +51,7 @@ namespace networklist.Api
         /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ListNetworkListsResponse</returns>
-        ApiResponse<ListNetworkListsResponse> NetworkListsGetWithHttpInfo(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0);
+        ApiResponse<ListNetworkListsResponse> NetworkListsGetWithHttpInfo(int? page = default(int?), int? pageSize = default(int?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0);
         /// <summary>
         /// Create a Network Lists
         /// </summary>
@@ -80,7 +80,7 @@ namespace networklist.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void NetworkListsUuidDelete(string uuid, string accept = default(string), int operationIndex = 0);
+        void NetworkListsUuidDelete(string uuid, string? accept = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// Delete a Network Lists set by uuid
@@ -93,7 +93,7 @@ namespace networklist.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> NetworkListsUuidDeleteWithHttpInfo(string uuid, string accept = default(string), int operationIndex = 0);
+        ApiResponse<Object> NetworkListsUuidDeleteWithHttpInfo(string uuid, string? accept = default(string?), int operationIndex = 0);
         /// <summary>
         /// Retrieve a Network Lists set by uuid
         /// </summary>
@@ -159,7 +159,7 @@ namespace networklist.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListNetworkListsResponse</returns>
-        System.Threading.Tasks.Task<ListNetworkListsResponse> NetworkListsGetAsync(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ListNetworkListsResponse> NetworkListsGetAsync(int? page = default(int?), int? pageSize = default(int?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List all user Network Lists
@@ -175,7 +175,7 @@ namespace networklist.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListNetworkListsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListNetworkListsResponse>> NetworkListsGetWithHttpInfoAsync(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ListNetworkListsResponse>> NetworkListsGetWithHttpInfoAsync(int? page = default(int?), int? pageSize = default(int?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create a Network Lists
         /// </summary>
@@ -213,7 +213,7 @@ namespace networklist.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task NetworkListsUuidDeleteAsync(string uuid, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task NetworkListsUuidDeleteAsync(string uuid, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete a Network Lists set by uuid
@@ -227,7 +227,7 @@ namespace networklist.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> NetworkListsUuidDeleteWithHttpInfoAsync(string uuid, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> NetworkListsUuidDeleteWithHttpInfoAsync(string uuid, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Retrieve a Network Lists set by uuid
         /// </summary>
@@ -410,7 +410,7 @@ namespace networklist.Api
         /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ListNetworkListsResponse</returns>
-        public ListNetworkListsResponse NetworkListsGet(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0)
+        public ListNetworkListsResponse NetworkListsGet(int? page = default(int?), int? pageSize = default(int?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0)
         {
             networklist.Client.ApiResponse<ListNetworkListsResponse> localVarResponse = NetworkListsGetWithHttpInfo(page, pageSize, sort, orderBy);
             return localVarResponse.Data;
@@ -426,7 +426,7 @@ namespace networklist.Api
         /// <param name="orderBy"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ListNetworkListsResponse</returns>
-        public networklist.Client.ApiResponse<ListNetworkListsResponse> NetworkListsGetWithHttpInfo(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0)
+        public networklist.Client.ApiResponse<ListNetworkListsResponse> NetworkListsGetWithHttpInfo(int? page = default(int?), int? pageSize = default(int?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0)
         {
             networklist.Client.RequestOptions localVarRequestOptions = new networklist.Client.RequestOptions();
 
@@ -502,7 +502,7 @@ namespace networklist.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListNetworkListsResponse</returns>
-        public async System.Threading.Tasks.Task<ListNetworkListsResponse> NetworkListsGetAsync(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ListNetworkListsResponse> NetworkListsGetAsync(int? page = default(int?), int? pageSize = default(int?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             networklist.Client.ApiResponse<ListNetworkListsResponse> localVarResponse = await NetworkListsGetWithHttpInfoAsync(page, pageSize, sort, orderBy, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -519,7 +519,7 @@ namespace networklist.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListNetworkListsResponse)</returns>
-        public async System.Threading.Tasks.Task<networklist.Client.ApiResponse<ListNetworkListsResponse>> NetworkListsGetWithHttpInfoAsync(int? page = default(int?), int? pageSize = default(int?), string sort = default(string), string orderBy = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<networklist.Client.ApiResponse<ListNetworkListsResponse>> NetworkListsGetWithHttpInfoAsync(int? page = default(int?), int? pageSize = default(int?), string? sort = default(string?), string? orderBy = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             networklist.Client.RequestOptions localVarRequestOptions = new networklist.Client.RequestOptions();
@@ -752,7 +752,7 @@ namespace networklist.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void NetworkListsUuidDelete(string uuid, string accept = default(string), int operationIndex = 0)
+        public void NetworkListsUuidDelete(string uuid, string? accept = default(string?), int operationIndex = 0)
         {
             NetworkListsUuidDeleteWithHttpInfo(uuid, accept);
         }
@@ -765,7 +765,7 @@ namespace networklist.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public networklist.Client.ApiResponse<Object> NetworkListsUuidDeleteWithHttpInfo(string uuid, string accept = default(string), int operationIndex = 0)
+        public networklist.Client.ApiResponse<Object> NetworkListsUuidDeleteWithHttpInfo(string uuid, string? accept = default(string?), int operationIndex = 0)
         {
             // verify the required parameter 'uuid' is set
             if (uuid == null)
@@ -832,7 +832,7 @@ namespace networklist.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task NetworkListsUuidDeleteAsync(string uuid, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task NetworkListsUuidDeleteAsync(string uuid, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             await NetworkListsUuidDeleteWithHttpInfoAsync(uuid, accept, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -846,7 +846,7 @@ namespace networklist.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<networklist.Client.ApiResponse<Object>> NetworkListsUuidDeleteWithHttpInfoAsync(string uuid, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<networklist.Client.ApiResponse<Object>> NetworkListsUuidDeleteWithHttpInfoAsync(string uuid, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'uuid' is set
             if (uuid == null)

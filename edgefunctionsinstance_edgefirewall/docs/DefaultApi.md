@@ -101,6 +101,7 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | Successfully deleted |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -199,6 +200,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | An Edge Functions Instance object |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -299,6 +301,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successfully updated |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
@@ -400,6 +403,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successfully updated |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
@@ -505,6 +509,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | A list of Edge Functions Instances |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -603,6 +608,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **201** | Edge Functions Instance created |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 

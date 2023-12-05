@@ -54,14 +54,13 @@ namespace networklist.Model
             /// </summary>
             [EnumMember(Value = "countries")]
             Countries = 3
-
         }
 
 
         /// <summary>
         /// Gets or Sets ListType
         /// </summary>
-        /// <example>&quot;ip_cidr&quot;</example>
+        /// <example>ip_cidr</example>
         [DataMember(Name = "list_type", EmitDefaultValue = false)]
         public ListTypeEnum? ListType { get; set; }
         /// <summary>
@@ -80,13 +79,14 @@ namespace networklist.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        /// <example>&quot;Network List created using the API&quot;</example>
+        /// <example>Network List created using the API</example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets ItemsValues
         /// </summary>
+        /// <example>[&quot;192.168.0.1&quot;]</example>
         [DataMember(Name = "items_values", EmitDefaultValue = false)]
         public List<string> ItemsValues { get; set; }
 

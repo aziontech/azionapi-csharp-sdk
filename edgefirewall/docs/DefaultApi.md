@@ -727,6 +727,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A list of edge firewalls |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -823,6 +824,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **201** | Edge firewall created |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -915,6 +917,7 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | Successfully deleted |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1011,6 +1014,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | An edge firewall object |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1109,6 +1113,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successfully updated |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not found |  -  |
 | **500** | Internal Server Error |  -  |
 
@@ -1208,6 +1213,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successfully updated |  -  |
 | **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not found |  -  |
 | **500** | Internal Server Error |  -  |
 
