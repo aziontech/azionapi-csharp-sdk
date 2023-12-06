@@ -55,7 +55,9 @@ namespace edgeapplications.Model
         /// <param name="hmacRegionName">hmacRegionName (required).</param>
         /// <param name="hmacAccessKey">hmacAccessKey (required).</param>
         /// <param name="hmacSecretKey">hmacSecretKey (required).</param>
-        public OriginsResultResponse(long originId = default(long), string originKey = default(string), string name = default(string), string originType = default(string), List<OriginsResultResponseAddresses> addresses = default(List<OriginsResultResponseAddresses>), string originProtocolPolicy = default(string), bool isOriginRedirectionEnabled = default(bool), string hostHeader = default(string), string method = default(string), string originPath = default(string), long connectionTimeout = default(long), long timeoutBetweenBytes = default(long), bool hmacAuthentication = default(bool), string hmacRegionName = default(string), string hmacAccessKey = default(string), string hmacSecretKey = default(string))
+        /// <param name="bucket">bucket.</param>
+        /// <param name="prefix">prefix.</param>
+        public OriginsResultResponse(long originId = default(long), string originKey = default(string), string name = default(string), string originType = default(string), List<OriginsResultResponseAddresses> addresses = default(List<OriginsResultResponseAddresses>), string originProtocolPolicy = default(string), bool isOriginRedirectionEnabled = default(bool), string hostHeader = default(string), string method = default(string), string originPath = default(string), long connectionTimeout = default(long), long timeoutBetweenBytes = default(long), bool hmacAuthentication = default(bool), string hmacRegionName = default(string), string hmacAccessKey = default(string), string hmacSecretKey = default(string), string bucket = default(string), string prefix = default(string))
         {
             this.OriginId = originId;
             // to ensure "originKey" is required (not null)
@@ -128,6 +130,8 @@ namespace edgeapplications.Model
                 throw new ArgumentNullException("hmacSecretKey is a required property for OriginsResultResponse and cannot be null");
             }
             this.HmacSecretKey = hmacSecretKey;
+            this.Bucket = bucket;
+            this.Prefix = prefix;
         }
 
         /// <summary>
@@ -227,6 +231,18 @@ namespace edgeapplications.Model
         public string HmacSecretKey { get; set; }
 
         /// <summary>
+        /// Gets or Sets Bucket
+        /// </summary>
+        [DataMember(Name = "bucket", EmitDefaultValue = false)]
+        public string Bucket { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Prefix
+        /// </summary>
+        [DataMember(Name = "prefix", EmitDefaultValue = false)]
+        public string Prefix { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -250,6 +266,8 @@ namespace edgeapplications.Model
             sb.Append("  HmacRegionName: ").Append(HmacRegionName).Append("\n");
             sb.Append("  HmacAccessKey: ").Append(HmacAccessKey).Append("\n");
             sb.Append("  HmacSecretKey: ").Append(HmacSecretKey).Append("\n");
+            sb.Append("  Bucket: ").Append(Bucket).Append("\n");
+            sb.Append("  Prefix: ").Append(Prefix).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -360,6 +378,16 @@ namespace edgeapplications.Model
                     this.HmacSecretKey == input.HmacSecretKey ||
                     (this.HmacSecretKey != null &&
                     this.HmacSecretKey.Equals(input.HmacSecretKey))
+                ) && 
+                (
+                    this.Bucket == input.Bucket ||
+                    (this.Bucket != null &&
+                    this.Bucket.Equals(input.Bucket))
+                ) && 
+                (
+                    this.Prefix == input.Prefix ||
+                    (this.Prefix != null &&
+                    this.Prefix.Equals(input.Prefix))
                 );
         }
 
@@ -420,6 +448,14 @@ namespace edgeapplications.Model
                 if (this.HmacSecretKey != null)
                 {
                     hashCode = (hashCode * 59) + this.HmacSecretKey.GetHashCode();
+                }
+                if (this.Bucket != null)
+                {
+                    hashCode = (hashCode * 59) + this.Bucket.GetHashCode();
+                }
+                if (this.Prefix != null)
+                {
+                    hashCode = (hashCode * 59) + this.Prefix.GetHashCode();
                 }
                 return hashCode;
             }

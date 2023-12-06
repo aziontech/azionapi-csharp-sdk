@@ -49,7 +49,9 @@ namespace edgeapplications.Model
         /// <param name="hmacRegionName">hmacRegionName.</param>
         /// <param name="hmacAccessKey">hmacAccessKey.</param>
         /// <param name="hmacSecretKey">hmacSecretKey.</param>
-        public CreateOriginsRequest(string name = default(string), string originType = default(string), List<CreateOriginsRequestAddresses> addresses = default(List<CreateOriginsRequestAddresses>), string originProtocolPolicy = default(string), string hostHeader = default(string), string originPath = default(string), bool hmacAuthentication = default(bool), string hmacRegionName = default(string), string hmacAccessKey = default(string), string hmacSecretKey = default(string))
+        /// <param name="bucket">bucket.</param>
+        /// <param name="prefix">prefix.</param>
+        public CreateOriginsRequest(string name = default(string), string originType = default(string), List<CreateOriginsRequestAddresses> addresses = default(List<CreateOriginsRequestAddresses>), string originProtocolPolicy = default(string), string hostHeader = default(string), string originPath = default(string), bool hmacAuthentication = default(bool), string hmacRegionName = default(string), string hmacAccessKey = default(string), string hmacSecretKey = default(string), string bucket = default(string), string prefix = default(string))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -76,6 +78,8 @@ namespace edgeapplications.Model
             this.HmacRegionName = hmacRegionName;
             this.HmacAccessKey = hmacAccessKey;
             this.HmacSecretKey = hmacSecretKey;
+            this.Bucket = bucket;
+            this.Prefix = prefix;
         }
 
         /// <summary>
@@ -139,6 +143,18 @@ namespace edgeapplications.Model
         public string HmacSecretKey { get; set; }
 
         /// <summary>
+        /// Gets or Sets Bucket
+        /// </summary>
+        [DataMember(Name = "bucket", EmitDefaultValue = false)]
+        public string Bucket { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Prefix
+        /// </summary>
+        [DataMember(Name = "prefix", EmitDefaultValue = false)]
+        public string Prefix { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -156,6 +172,8 @@ namespace edgeapplications.Model
             sb.Append("  HmacRegionName: ").Append(HmacRegionName).Append("\n");
             sb.Append("  HmacAccessKey: ").Append(HmacAccessKey).Append("\n");
             sb.Append("  HmacSecretKey: ").Append(HmacSecretKey).Append("\n");
+            sb.Append("  Bucket: ").Append(Bucket).Append("\n");
+            sb.Append("  Prefix: ").Append(Prefix).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -240,6 +258,16 @@ namespace edgeapplications.Model
                     this.HmacSecretKey == input.HmacSecretKey ||
                     (this.HmacSecretKey != null &&
                     this.HmacSecretKey.Equals(input.HmacSecretKey))
+                ) && 
+                (
+                    this.Bucket == input.Bucket ||
+                    (this.Bucket != null &&
+                    this.Bucket.Equals(input.Bucket))
+                ) && 
+                (
+                    this.Prefix == input.Prefix ||
+                    (this.Prefix != null &&
+                    this.Prefix.Equals(input.Prefix))
                 );
         }
 
@@ -288,6 +316,14 @@ namespace edgeapplications.Model
                 if (this.HmacSecretKey != null)
                 {
                     hashCode = (hashCode * 59) + this.HmacSecretKey.GetHashCode();
+                }
+                if (this.Bucket != null)
+                {
+                    hashCode = (hashCode * 59) + this.Bucket.GetHashCode();
+                }
+                if (this.Prefix != null)
+                {
+                    hashCode = (hashCode * 59) + this.Prefix.GetHashCode();
                 }
                 return hashCode;
             }
