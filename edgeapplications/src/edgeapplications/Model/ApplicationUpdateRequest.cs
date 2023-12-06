@@ -42,7 +42,6 @@ namespace edgeapplications.Model
         /// <param name="active">active.</param>
         /// <param name="debugRules">debugRules.</param>
         /// <param name="applicationAcceleration">applicationAcceleration.</param>
-        /// <param name="caching">caching.</param>
         /// <param name="deviceDetection">deviceDetection.</param>
         /// <param name="edgeFirewall">edgeFirewall.</param>
         /// <param name="edgeFunctions">edgeFunctions.</param>
@@ -52,7 +51,7 @@ namespace edgeapplications.Model
         /// <param name="rawLogs">rawLogs.</param>
         /// <param name="webApplicationFirewall">webApplicationFirewall.</param>
         /// <param name="websocket">websocket.</param>
-        public ApplicationUpdateRequest(string name = default(string), string deliveryProtocol = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), string minimumTlsVersion = default(string), bool active = default(bool), bool debugRules = default(bool), bool applicationAcceleration = default(bool), bool caching = default(bool), bool deviceDetection = default(bool), bool edgeFirewall = default(bool), bool edgeFunctions = default(bool), bool imageOptimization = default(bool), bool l2Caching = default(bool), bool loadBalancer = default(bool), bool rawLogs = default(bool), bool webApplicationFirewall = default(bool), bool websocket = default(bool))
+        public ApplicationUpdateRequest(string name = default(string), string deliveryProtocol = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), string minimumTlsVersion = default(string), bool active = default(bool), bool debugRules = default(bool), bool applicationAcceleration = default(bool), bool deviceDetection = default(bool), bool edgeFirewall = default(bool), bool edgeFunctions = default(bool), bool imageOptimization = default(bool), bool l2Caching = default(bool), bool loadBalancer = default(bool), bool rawLogs = default(bool), bool webApplicationFirewall = default(bool), bool websocket = default(bool))
         {
             this.Name = name;
             this.DeliveryProtocol = deliveryProtocol;
@@ -62,7 +61,6 @@ namespace edgeapplications.Model
             this.Active = active;
             this.DebugRules = debugRules;
             this.ApplicationAcceleration = applicationAcceleration;
-            this.Caching = caching;
             this.DeviceDetection = deviceDetection;
             this.EdgeFirewall = edgeFirewall;
             this.EdgeFunctions = edgeFunctions;
@@ -121,12 +119,6 @@ namespace edgeapplications.Model
         /// </summary>
         [DataMember(Name = "application_acceleration", EmitDefaultValue = true)]
         public bool ApplicationAcceleration { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Caching
-        /// </summary>
-        [DataMember(Name = "caching", EmitDefaultValue = true)]
-        public bool Caching { get; set; }
 
         /// <summary>
         /// Gets or Sets DeviceDetection
@@ -198,7 +190,6 @@ namespace edgeapplications.Model
             sb.Append("  Active: ").Append(Active).Append("\n");
             sb.Append("  DebugRules: ").Append(DebugRules).Append("\n");
             sb.Append("  ApplicationAcceleration: ").Append(ApplicationAcceleration).Append("\n");
-            sb.Append("  Caching: ").Append(Caching).Append("\n");
             sb.Append("  DeviceDetection: ").Append(DeviceDetection).Append("\n");
             sb.Append("  EdgeFirewall: ").Append(EdgeFirewall).Append("\n");
             sb.Append("  EdgeFunctions: ").Append(EdgeFunctions).Append("\n");
@@ -281,10 +272,6 @@ namespace edgeapplications.Model
                     this.ApplicationAcceleration.Equals(input.ApplicationAcceleration)
                 ) && 
                 (
-                    this.Caching == input.Caching ||
-                    this.Caching.Equals(input.Caching)
-                ) && 
-                (
                     this.DeviceDetection == input.DeviceDetection ||
                     this.DeviceDetection.Equals(input.DeviceDetection)
                 ) && 
@@ -354,7 +341,6 @@ namespace edgeapplications.Model
                 hashCode = (hashCode * 59) + this.Active.GetHashCode();
                 hashCode = (hashCode * 59) + this.DebugRules.GetHashCode();
                 hashCode = (hashCode * 59) + this.ApplicationAcceleration.GetHashCode();
-                hashCode = (hashCode * 59) + this.Caching.GetHashCode();
                 hashCode = (hashCode * 59) + this.DeviceDetection.GetHashCode();
                 hashCode = (hashCode * 59) + this.EdgeFirewall.GetHashCode();
                 hashCode = (hashCode * 59) + this.EdgeFunctions.GetHashCode();
