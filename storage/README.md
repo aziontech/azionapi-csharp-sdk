@@ -90,18 +90,18 @@ namespace Example
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.ApiKeyPrefix.Add("Authorization", "Bearer");
 
-            var apiInstance = new BucketsApi(config);
+            var apiInstance = new StorageApi(config);
             var bucketCreate = new BucketCreate(); // BucketCreate | 
 
             try
             {
-                // /v4/storage/buckets
-                ResponseBucket result = apiInstance.ApiV1StorageBucketsCreate(bucketCreate);
+                // Create a new bucket
+                ResponseBucket result = apiInstance.StorageApiBucketsCreate(bucketCreate);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
             {
-                Debug.Print("Exception when calling BucketsApi.ApiV1StorageBucketsCreate: " + e.Message );
+                Debug.Print("Exception when calling StorageApi.StorageApiBucketsCreate: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -118,10 +118,15 @@ All URIs are relative to *https://api.azion.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*BucketsApi* | [**ApiV1StorageBucketsCreate**](docs/BucketsApi.md#apiv1storagebucketscreate) | **POST** /v4/storage/buckets | /v4/storage/buckets
-*BucketsApi* | [**ApiV1StorageBucketsDestroy**](docs/BucketsApi.md#apiv1storagebucketsdestroy) | **DELETE** /v4/storage/buckets/{name} | /v4/storage/buckets/:name
-*BucketsApi* | [**ApiV1StorageBucketsList**](docs/BucketsApi.md#apiv1storagebucketslist) | **GET** /v4/storage/buckets | /v4/storage/buckets
-*BucketsApi* | [**ApiV1StorageBucketsPartialUpdate**](docs/BucketsApi.md#apiv1storagebucketspartialupdate) | **PATCH** /v4/storage/buckets/{name} | /v4/storage/buckets/:name
+*StorageApi* | [**StorageApiBucketsCreate**](docs/StorageApi.md#storageapibucketscreate) | **POST** /v4/storage/buckets | Create a new bucket
+*StorageApi* | [**StorageApiBucketsDestroy**](docs/StorageApi.md#storageapibucketsdestroy) | **DELETE** /v4/storage/buckets/{name} | Delete a bucket
+*StorageApi* | [**StorageApiBucketsList**](docs/StorageApi.md#storageapibucketslist) | **GET** /v4/storage/buckets | List buckets
+*StorageApi* | [**StorageApiBucketsObjectsCreate**](docs/StorageApi.md#storageapibucketsobjectscreate) | **POST** /v4/storage/buckets/{bucket_name}/objects/{object_key} | Create new object key
+*StorageApi* | [**StorageApiBucketsObjectsDestroy**](docs/StorageApi.md#storageapibucketsobjectsdestroy) | **DELETE** /v4/storage/buckets/{bucket_name}/objects/{object_key} | Delete object key
+*StorageApi* | [**StorageApiBucketsObjectsList**](docs/StorageApi.md#storageapibucketsobjectslist) | **GET** /v4/storage/buckets/{bucket_name}/objects | List buckets objects
+*StorageApi* | [**StorageApiBucketsObjectsRetrieve**](docs/StorageApi.md#storageapibucketsobjectsretrieve) | **GET** /v4/storage/buckets/{bucket_name}/objects/{object_key} | Download object
+*StorageApi* | [**StorageApiBucketsObjectsUpdate**](docs/StorageApi.md#storageapibucketsobjectsupdate) | **PUT** /v4/storage/buckets/{bucket_name}/objects/{object_key} | Update the object key
+*StorageApi* | [**StorageApiBucketsPartialUpdate**](docs/StorageApi.md#storageapibucketspartialupdate) | **PATCH** /v4/storage/buckets/{name} | Update bucket info
 
 
 <a id="documentation-for-models"></a>
@@ -129,13 +134,15 @@ Class | Method | HTTP request | Description
 
  - [Model.Bucket](docs/Bucket.md)
  - [Model.BucketCreate](docs/BucketCreate.md)
+ - [Model.BucketObject](docs/BucketObject.md)
  - [Model.EdgeAccessEnum](docs/EdgeAccessEnum.md)
+ - [Model.ObjectResponseData](docs/ObjectResponseData.md)
  - [Model.PaginatedBucketList](docs/PaginatedBucketList.md)
- - [Model.PatchedBucket](docs/PatchedBucket.md)
+ - [Model.PaginatedBucketObjectList](docs/PaginatedBucketObjectList.md)
  - [Model.ResponseBucket](docs/ResponseBucket.md)
- - [Model.ResponseDeleteBucket](docs/ResponseDeleteBucket.md)
- - [Model.ResponseDeleteBucketData](docs/ResponseDeleteBucketData.md)
  - [Model.StateEnum](docs/StateEnum.md)
+ - [Model.SuccessBucketOperation](docs/SuccessBucketOperation.md)
+ - [Model.SuccessObjectOperation](docs/SuccessObjectOperation.md)
 
 
 <a id="documentation-for-authorization"></a>
