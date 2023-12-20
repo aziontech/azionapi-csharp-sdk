@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **OriginType** | **string** |  | [optional] 
-**Addresses** | [**List&lt;CreateOriginsRequestAddresses&gt;**](CreateOriginsRequestAddresses.md) |  | 
+**Addresses** | [**List&lt;CreateOriginsRequestAddresses&gt;**](CreateOriginsRequestAddresses.md) |  | [optional] 
 **OriginProtocolPolicy** | **string** |  | [optional] 
-**HostHeader** | **string** |  | 
+**HostHeader** | **string** |  | [optional] 
 **OriginPath** | **string** |  | [optional] 
 **HmacAuthentication** | **bool** |  | [optional] 
 **HmacRegionName** | **string** |  | [optional] 

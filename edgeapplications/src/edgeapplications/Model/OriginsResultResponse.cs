@@ -39,96 +39,46 @@ namespace edgeapplications.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OriginsResultResponse" /> class.
         /// </summary>
-        /// <param name="originId">originId (required).</param>
-        /// <param name="originKey">originKey (required).</param>
+        /// <param name="originId">originId.</param>
+        /// <param name="originKey">originKey.</param>
         /// <param name="name">name (required).</param>
-        /// <param name="originType">originType (required).</param>
-        /// <param name="addresses">addresses (required).</param>
-        /// <param name="originProtocolPolicy">originProtocolPolicy (required).</param>
-        /// <param name="isOriginRedirectionEnabled">isOriginRedirectionEnabled (required).</param>
-        /// <param name="hostHeader">hostHeader (required).</param>
-        /// <param name="method">method (required).</param>
-        /// <param name="originPath">originPath (required).</param>
-        /// <param name="connectionTimeout">connectionTimeout (required).</param>
-        /// <param name="timeoutBetweenBytes">timeoutBetweenBytes (required).</param>
-        /// <param name="hmacAuthentication">hmacAuthentication (required).</param>
-        /// <param name="hmacRegionName">hmacRegionName (required).</param>
-        /// <param name="hmacAccessKey">hmacAccessKey (required).</param>
-        /// <param name="hmacSecretKey">hmacSecretKey (required).</param>
+        /// <param name="originType">originType.</param>
+        /// <param name="addresses">addresses.</param>
+        /// <param name="originProtocolPolicy">originProtocolPolicy.</param>
+        /// <param name="isOriginRedirectionEnabled">isOriginRedirectionEnabled.</param>
+        /// <param name="hostHeader">hostHeader.</param>
+        /// <param name="method">method.</param>
+        /// <param name="originPath">originPath.</param>
+        /// <param name="connectionTimeout">connectionTimeout.</param>
+        /// <param name="timeoutBetweenBytes">timeoutBetweenBytes.</param>
+        /// <param name="hmacAuthentication">hmacAuthentication.</param>
+        /// <param name="hmacRegionName">hmacRegionName.</param>
+        /// <param name="hmacAccessKey">hmacAccessKey.</param>
+        /// <param name="hmacSecretKey">hmacSecretKey.</param>
         /// <param name="bucket">bucket.</param>
         /// <param name="prefix">prefix.</param>
         public OriginsResultResponse(long originId = default(long), string originKey = default(string), string name = default(string), string originType = default(string), List<OriginsResultResponseAddresses> addresses = default(List<OriginsResultResponseAddresses>), string originProtocolPolicy = default(string), bool isOriginRedirectionEnabled = default(bool), string hostHeader = default(string), string method = default(string), string originPath = default(string), long connectionTimeout = default(long), long timeoutBetweenBytes = default(long), bool hmacAuthentication = default(bool), string hmacRegionName = default(string), string hmacAccessKey = default(string), string hmacSecretKey = default(string), string bucket = default(string), string prefix = default(string))
         {
-            this.OriginId = originId;
-            // to ensure "originKey" is required (not null)
-            if (originKey == null)
-            {
-                throw new ArgumentNullException("originKey is a required property for OriginsResultResponse and cannot be null");
-            }
-            this.OriginKey = originKey;
             // to ensure "name" is required (not null)
             if (name == null)
             {
                 throw new ArgumentNullException("name is a required property for OriginsResultResponse and cannot be null");
             }
             this.Name = name;
-            // to ensure "originType" is required (not null)
-            if (originType == null)
-            {
-                throw new ArgumentNullException("originType is a required property for OriginsResultResponse and cannot be null");
-            }
+            this.OriginId = originId;
+            this.OriginKey = originKey;
             this.OriginType = originType;
-            // to ensure "addresses" is required (not null)
-            if (addresses == null)
-            {
-                throw new ArgumentNullException("addresses is a required property for OriginsResultResponse and cannot be null");
-            }
             this.Addresses = addresses;
-            // to ensure "originProtocolPolicy" is required (not null)
-            if (originProtocolPolicy == null)
-            {
-                throw new ArgumentNullException("originProtocolPolicy is a required property for OriginsResultResponse and cannot be null");
-            }
             this.OriginProtocolPolicy = originProtocolPolicy;
             this.IsOriginRedirectionEnabled = isOriginRedirectionEnabled;
-            // to ensure "hostHeader" is required (not null)
-            if (hostHeader == null)
-            {
-                throw new ArgumentNullException("hostHeader is a required property for OriginsResultResponse and cannot be null");
-            }
             this.HostHeader = hostHeader;
-            // to ensure "method" is required (not null)
-            if (method == null)
-            {
-                throw new ArgumentNullException("method is a required property for OriginsResultResponse and cannot be null");
-            }
             this.Method = method;
-            // to ensure "originPath" is required (not null)
-            if (originPath == null)
-            {
-                throw new ArgumentNullException("originPath is a required property for OriginsResultResponse and cannot be null");
-            }
             this.OriginPath = originPath;
             this.ConnectionTimeout = connectionTimeout;
             this.TimeoutBetweenBytes = timeoutBetweenBytes;
             this.HmacAuthentication = hmacAuthentication;
-            // to ensure "hmacRegionName" is required (not null)
-            if (hmacRegionName == null)
-            {
-                throw new ArgumentNullException("hmacRegionName is a required property for OriginsResultResponse and cannot be null");
-            }
             this.HmacRegionName = hmacRegionName;
-            // to ensure "hmacAccessKey" is required (not null)
-            if (hmacAccessKey == null)
-            {
-                throw new ArgumentNullException("hmacAccessKey is a required property for OriginsResultResponse and cannot be null");
-            }
             this.HmacAccessKey = hmacAccessKey;
-            // to ensure "hmacSecretKey" is required (not null)
-            if (hmacSecretKey == null)
-            {
-                throw new ArgumentNullException("hmacSecretKey is a required property for OriginsResultResponse and cannot be null");
-            }
             this.HmacSecretKey = hmacSecretKey;
             this.Bucket = bucket;
             this.Prefix = prefix;
@@ -137,13 +87,13 @@ namespace edgeapplications.Model
         /// <summary>
         /// Gets or Sets OriginId
         /// </summary>
-        [DataMember(Name = "origin_id", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "origin_id", EmitDefaultValue = false)]
         public long OriginId { get; set; }
 
         /// <summary>
         /// Gets or Sets OriginKey
         /// </summary>
-        [DataMember(Name = "origin_key", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "origin_key", EmitDefaultValue = false)]
         public string OriginKey { get; set; }
 
         /// <summary>
@@ -155,79 +105,79 @@ namespace edgeapplications.Model
         /// <summary>
         /// Gets or Sets OriginType
         /// </summary>
-        [DataMember(Name = "origin_type", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "origin_type", EmitDefaultValue = false)]
         public string OriginType { get; set; }
 
         /// <summary>
         /// Gets or Sets Addresses
         /// </summary>
-        [DataMember(Name = "addresses", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "addresses", EmitDefaultValue = false)]
         public List<OriginsResultResponseAddresses> Addresses { get; set; }
 
         /// <summary>
         /// Gets or Sets OriginProtocolPolicy
         /// </summary>
-        [DataMember(Name = "origin_protocol_policy", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "origin_protocol_policy", EmitDefaultValue = false)]
         public string OriginProtocolPolicy { get; set; }
 
         /// <summary>
         /// Gets or Sets IsOriginRedirectionEnabled
         /// </summary>
-        [DataMember(Name = "is_origin_redirection_enabled", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "is_origin_redirection_enabled", EmitDefaultValue = true)]
         public bool IsOriginRedirectionEnabled { get; set; }
 
         /// <summary>
         /// Gets or Sets HostHeader
         /// </summary>
-        [DataMember(Name = "host_header", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "host_header", EmitDefaultValue = false)]
         public string HostHeader { get; set; }
 
         /// <summary>
         /// Gets or Sets Method
         /// </summary>
-        [DataMember(Name = "method", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "method", EmitDefaultValue = false)]
         public string Method { get; set; }
 
         /// <summary>
         /// Gets or Sets OriginPath
         /// </summary>
-        [DataMember(Name = "origin_path", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "origin_path", EmitDefaultValue = false)]
         public string OriginPath { get; set; }
 
         /// <summary>
         /// Gets or Sets ConnectionTimeout
         /// </summary>
-        [DataMember(Name = "connection_timeout", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "connection_timeout", EmitDefaultValue = false)]
         public long ConnectionTimeout { get; set; }
 
         /// <summary>
         /// Gets or Sets TimeoutBetweenBytes
         /// </summary>
-        [DataMember(Name = "timeout_between_bytes", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "timeout_between_bytes", EmitDefaultValue = false)]
         public long TimeoutBetweenBytes { get; set; }
 
         /// <summary>
         /// Gets or Sets HmacAuthentication
         /// </summary>
-        [DataMember(Name = "hmac_authentication", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "hmac_authentication", EmitDefaultValue = true)]
         public bool HmacAuthentication { get; set; }
 
         /// <summary>
         /// Gets or Sets HmacRegionName
         /// </summary>
-        [DataMember(Name = "hmac_region_name", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "hmac_region_name", EmitDefaultValue = false)]
         public string HmacRegionName { get; set; }
 
         /// <summary>
         /// Gets or Sets HmacAccessKey
         /// </summary>
-        [DataMember(Name = "hmac_access_key", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "hmac_access_key", EmitDefaultValue = false)]
         public string HmacAccessKey { get; set; }
 
         /// <summary>
         /// Gets or Sets HmacSecretKey
         /// </summary>
-        [DataMember(Name = "hmac_secret_key", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "hmac_secret_key", EmitDefaultValue = false)]
         public string HmacSecretKey { get; set; }
 
         /// <summary>
