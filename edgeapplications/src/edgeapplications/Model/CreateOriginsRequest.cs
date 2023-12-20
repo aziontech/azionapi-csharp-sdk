@@ -41,9 +41,9 @@ namespace edgeapplications.Model
         /// </summary>
         /// <param name="name">name (required).</param>
         /// <param name="originType">originType.</param>
-        /// <param name="addresses">addresses (required).</param>
+        /// <param name="addresses">addresses.</param>
         /// <param name="originProtocolPolicy">originProtocolPolicy.</param>
-        /// <param name="hostHeader">hostHeader (required).</param>
+        /// <param name="hostHeader">hostHeader.</param>
         /// <param name="originPath">originPath.</param>
         /// <param name="hmacAuthentication">hmacAuthentication.</param>
         /// <param name="hmacRegionName">hmacRegionName.</param>
@@ -59,20 +59,10 @@ namespace edgeapplications.Model
                 throw new ArgumentNullException("name is a required property for CreateOriginsRequest and cannot be null");
             }
             this.Name = name;
-            // to ensure "addresses" is required (not null)
-            if (addresses == null)
-            {
-                throw new ArgumentNullException("addresses is a required property for CreateOriginsRequest and cannot be null");
-            }
-            this.Addresses = addresses;
-            // to ensure "hostHeader" is required (not null)
-            if (hostHeader == null)
-            {
-                throw new ArgumentNullException("hostHeader is a required property for CreateOriginsRequest and cannot be null");
-            }
-            this.HostHeader = hostHeader;
             this.OriginType = originType;
+            this.Addresses = addresses;
             this.OriginProtocolPolicy = originProtocolPolicy;
+            this.HostHeader = hostHeader;
             this.OriginPath = originPath;
             this.HmacAuthentication = hmacAuthentication;
             this.HmacRegionName = hmacRegionName;
@@ -97,7 +87,7 @@ namespace edgeapplications.Model
         /// <summary>
         /// Gets or Sets Addresses
         /// </summary>
-        [DataMember(Name = "addresses", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "addresses", EmitDefaultValue = false)]
         public List<CreateOriginsRequestAddresses> Addresses { get; set; }
 
         /// <summary>
@@ -109,7 +99,7 @@ namespace edgeapplications.Model
         /// <summary>
         /// Gets or Sets HostHeader
         /// </summary>
-        [DataMember(Name = "host_header", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "host_header", EmitDefaultValue = false)]
         public string HostHeader { get; set; }
 
         /// <summary>
