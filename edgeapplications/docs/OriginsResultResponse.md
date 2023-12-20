@@ -4,22 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**OriginId** | **long** |  | 
-**OriginKey** | **string** |  | 
+**OriginId** | **long** |  | [optional] 
+**OriginKey** | **string** |  | [optional] 
 **Name** | **string** |  | 
-**OriginType** | **string** |  | 
-**Addresses** | [**List&lt;OriginsResultResponseAddresses&gt;**](OriginsResultResponseAddresses.md) |  | 
-**OriginProtocolPolicy** | **string** |  | 
-**IsOriginRedirectionEnabled** | **bool** |  | 
-**HostHeader** | **string** |  | 
-**Method** | **string** |  | 
-**OriginPath** | **string** |  | 
-**ConnectionTimeout** | **long** |  | 
-**TimeoutBetweenBytes** | **long** |  | 
-**HmacAuthentication** | **bool** |  | 
-**HmacRegionName** | **string** |  | 
-**HmacAccessKey** | **string** |  | 
-**HmacSecretKey** | **string** |  | 
+**OriginType** | **string** |  | [optional] 
+**Addresses** | [**List&lt;OriginsResultResponseAddresses&gt;**](OriginsResultResponseAddresses.md) |  | [optional] 
+**OriginProtocolPolicy** | **string** |  | [optional] 
+**IsOriginRedirectionEnabled** | **bool** |  | [optional] 
+**HostHeader** | **string** |  | [optional] 
+**Method** | **string** |  | [optional] 
+**OriginPath** | **string** |  | [optional] 
+**ConnectionTimeout** | **long** |  | [optional] 
+**TimeoutBetweenBytes** | **long** |  | [optional] 
+**HmacAuthentication** | **bool** |  | [optional] 
+**HmacRegionName** | **string** |  | [optional] 
+**HmacAccessKey** | **string** |  | [optional] 
+**HmacSecretKey** | **string** |  | [optional] 
 **Bucket** | **string** |  | [optional] 
 **Prefix** | **string** |  | [optional] 
 
