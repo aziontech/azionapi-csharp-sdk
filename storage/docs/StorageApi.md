@@ -319,7 +319,7 @@ catch (ApiException e)
 
 <a id="storageapibucketsobjectscreate"></a>
 # **StorageApiBucketsObjectsCreate**
-> SuccessObjectOperation StorageApiBucketsObjectsCreate (string bucketName, string objectKey, System.IO.Stream? body = null)
+> SuccessObjectOperation StorageApiBucketsObjectsCreate (string bucketName, string objectKey, string? contentType = null, System.IO.Stream? body = null)
 
 Create new object key
 
@@ -349,12 +349,13 @@ namespace Example
             var apiInstance = new StorageApi(config);
             var bucketName = "bucketName_example";  // string | 
             var objectKey = "objectKey_example";  // string | 
+            var contentType = "contentType_example";  // string? | The content type of the file (Example: text/plain). (optional) 
             var body = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream? |  (optional) 
 
             try
             {
                 // Create new object key
-                SuccessObjectOperation result = apiInstance.StorageApiBucketsObjectsCreate(bucketName, objectKey, body);
+                SuccessObjectOperation result = apiInstance.StorageApiBucketsObjectsCreate(bucketName, objectKey, contentType, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -375,7 +376,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create new object key
-    ApiResponse<SuccessObjectOperation> response = apiInstance.StorageApiBucketsObjectsCreateWithHttpInfo(bucketName, objectKey, body);
+    ApiResponse<SuccessObjectOperation> response = apiInstance.StorageApiBucketsObjectsCreateWithHttpInfo(bucketName, objectKey, contentType, body);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -394,6 +395,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **bucketName** | **string** |  |  |
 | **objectKey** | **string** |  |  |
+| **contentType** | **string?** | The content type of the file (Example: text/plain). | [optional]  |
 | **body** | **System.IO.Stream?****System.IO.Stream?** |  | [optional]  |
 
 ### Return type
@@ -738,7 +740,7 @@ catch (ApiException e)
 
 <a id="storageapibucketsobjectsupdate"></a>
 # **StorageApiBucketsObjectsUpdate**
-> SuccessObjectOperation StorageApiBucketsObjectsUpdate (string bucketName, string objectKey, System.IO.Stream? body = null)
+> SuccessObjectOperation StorageApiBucketsObjectsUpdate (string bucketName, string objectKey, string? contentType = null, System.IO.Stream? body = null)
 
 Update the object key
 
@@ -768,12 +770,13 @@ namespace Example
             var apiInstance = new StorageApi(config);
             var bucketName = "bucketName_example";  // string | 
             var objectKey = "objectKey_example";  // string | 
+            var contentType = "contentType_example";  // string? | The content type of the file (Example: text/plain). (optional) 
             var body = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream? |  (optional) 
 
             try
             {
                 // Update the object key
-                SuccessObjectOperation result = apiInstance.StorageApiBucketsObjectsUpdate(bucketName, objectKey, body);
+                SuccessObjectOperation result = apiInstance.StorageApiBucketsObjectsUpdate(bucketName, objectKey, contentType, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -794,7 +797,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update the object key
-    ApiResponse<SuccessObjectOperation> response = apiInstance.StorageApiBucketsObjectsUpdateWithHttpInfo(bucketName, objectKey, body);
+    ApiResponse<SuccessObjectOperation> response = apiInstance.StorageApiBucketsObjectsUpdateWithHttpInfo(bucketName, objectKey, contentType, body);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -813,6 +816,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **bucketName** | **string** |  |  |
 | **objectKey** | **string** |  |  |
+| **contentType** | **string?** | The content type of the file (Example: text/plain). | [optional]  |
 | **body** | **System.IO.Stream?****System.IO.Stream?** |  | [optional]  |
 
 ### Return type
