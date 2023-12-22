@@ -97,10 +97,10 @@ namespace storage.Api
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
         /// <param name="objectKey"></param>
-        /// <param name="requestBody"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SuccessObjectOperation</returns>
-        SuccessObjectOperation StorageApiBucketsObjectsCreate(string bucketName, string objectKey, Dictionary<string, Object>? requestBody = default(Dictionary<string, Object>?), int operationIndex = 0);
+        SuccessObjectOperation StorageApiBucketsObjectsCreate(string bucketName, string objectKey, System.IO.Stream? body = default(System.IO.Stream?), int operationIndex = 0);
 
         /// <summary>
         /// Create new object key
@@ -111,10 +111,10 @@ namespace storage.Api
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
         /// <param name="objectKey"></param>
-        /// <param name="requestBody"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SuccessObjectOperation</returns>
-        ApiResponse<SuccessObjectOperation> StorageApiBucketsObjectsCreateWithHttpInfo(string bucketName, string objectKey, Dictionary<string, Object>? requestBody = default(Dictionary<string, Object>?), int operationIndex = 0);
+        ApiResponse<SuccessObjectOperation> StorageApiBucketsObjectsCreateWithHttpInfo(string bucketName, string objectKey, System.IO.Stream? body = default(System.IO.Stream?), int operationIndex = 0);
         /// <summary>
         /// Delete object key
         /// </summary>
@@ -198,10 +198,10 @@ namespace storage.Api
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
         /// <param name="objectKey"></param>
-        /// <param name="requestBody"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SuccessObjectOperation</returns>
-        SuccessObjectOperation StorageApiBucketsObjectsUpdate(string bucketName, string objectKey, Dictionary<string, Object>? requestBody = default(Dictionary<string, Object>?), int operationIndex = 0);
+        SuccessObjectOperation StorageApiBucketsObjectsUpdate(string bucketName, string objectKey, System.IO.Stream? body = default(System.IO.Stream?), int operationIndex = 0);
 
         /// <summary>
         /// Update the object key
@@ -212,10 +212,10 @@ namespace storage.Api
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
         /// <param name="objectKey"></param>
-        /// <param name="requestBody"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SuccessObjectOperation</returns>
-        ApiResponse<SuccessObjectOperation> StorageApiBucketsObjectsUpdateWithHttpInfo(string bucketName, string objectKey, Dictionary<string, Object>? requestBody = default(Dictionary<string, Object>?), int operationIndex = 0);
+        ApiResponse<SuccessObjectOperation> StorageApiBucketsObjectsUpdateWithHttpInfo(string bucketName, string objectKey, System.IO.Stream? body = default(System.IO.Stream?), int operationIndex = 0);
         /// <summary>
         /// Update bucket info
         /// </summary>
@@ -331,11 +331,11 @@ namespace storage.Api
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
         /// <param name="objectKey"></param>
-        /// <param name="requestBody"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SuccessObjectOperation</returns>
-        System.Threading.Tasks.Task<SuccessObjectOperation> StorageApiBucketsObjectsCreateAsync(string bucketName, string objectKey, Dictionary<string, Object>? requestBody = default(Dictionary<string, Object>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SuccessObjectOperation> StorageApiBucketsObjectsCreateAsync(string bucketName, string objectKey, System.IO.Stream? body = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create new object key
@@ -346,11 +346,11 @@ namespace storage.Api
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
         /// <param name="objectKey"></param>
-        /// <param name="requestBody"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SuccessObjectOperation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SuccessObjectOperation>> StorageApiBucketsObjectsCreateWithHttpInfoAsync(string bucketName, string objectKey, Dictionary<string, Object>? requestBody = default(Dictionary<string, Object>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SuccessObjectOperation>> StorageApiBucketsObjectsCreateWithHttpInfoAsync(string bucketName, string objectKey, System.IO.Stream? body = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete object key
         /// </summary>
@@ -443,11 +443,11 @@ namespace storage.Api
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
         /// <param name="objectKey"></param>
-        /// <param name="requestBody"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SuccessObjectOperation</returns>
-        System.Threading.Tasks.Task<SuccessObjectOperation> StorageApiBucketsObjectsUpdateAsync(string bucketName, string objectKey, Dictionary<string, Object>? requestBody = default(Dictionary<string, Object>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SuccessObjectOperation> StorageApiBucketsObjectsUpdateAsync(string bucketName, string objectKey, System.IO.Stream? body = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update the object key
@@ -458,11 +458,11 @@ namespace storage.Api
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
         /// <param name="objectKey"></param>
-        /// <param name="requestBody"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SuccessObjectOperation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SuccessObjectOperation>> StorageApiBucketsObjectsUpdateWithHttpInfoAsync(string bucketName, string objectKey, Dictionary<string, Object>? requestBody = default(Dictionary<string, Object>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SuccessObjectOperation>> StorageApiBucketsObjectsUpdateWithHttpInfoAsync(string bucketName, string objectKey, System.IO.Stream? body = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update bucket info
         /// </summary>
@@ -1088,12 +1088,12 @@ namespace storage.Api
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
         /// <param name="objectKey"></param>
-        /// <param name="requestBody"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SuccessObjectOperation</returns>
-        public SuccessObjectOperation StorageApiBucketsObjectsCreate(string bucketName, string objectKey, Dictionary<string, Object>? requestBody = default(Dictionary<string, Object>?), int operationIndex = 0)
+        public SuccessObjectOperation StorageApiBucketsObjectsCreate(string bucketName, string objectKey, System.IO.Stream? body = default(System.IO.Stream?), int operationIndex = 0)
         {
-            storage.Client.ApiResponse<SuccessObjectOperation> localVarResponse = StorageApiBucketsObjectsCreateWithHttpInfo(bucketName, objectKey, requestBody);
+            storage.Client.ApiResponse<SuccessObjectOperation> localVarResponse = StorageApiBucketsObjectsCreateWithHttpInfo(bucketName, objectKey, body);
             return localVarResponse.Data;
         }
 
@@ -1103,10 +1103,10 @@ namespace storage.Api
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
         /// <param name="objectKey"></param>
-        /// <param name="requestBody"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SuccessObjectOperation</returns>
-        public storage.Client.ApiResponse<SuccessObjectOperation> StorageApiBucketsObjectsCreateWithHttpInfo(string bucketName, string objectKey, Dictionary<string, Object>? requestBody = default(Dictionary<string, Object>?), int operationIndex = 0)
+        public storage.Client.ApiResponse<SuccessObjectOperation> StorageApiBucketsObjectsCreateWithHttpInfo(string bucketName, string objectKey, System.IO.Stream? body = default(System.IO.Stream?), int operationIndex = 0)
         {
             // verify the required parameter 'bucketName' is set
             if (bucketName == null)
@@ -1145,7 +1145,7 @@ namespace storage.Api
 
             localVarRequestOptions.PathParameters.Add("bucket_name", storage.Client.ClientUtils.ParameterToString(bucketName)); // path parameter
             localVarRequestOptions.PathParameters.Add("object_key", storage.Client.ClientUtils.ParameterToString(objectKey)); // path parameter
-            localVarRequestOptions.Data = requestBody;
+            localVarRequestOptions.Data = body;
 
             localVarRequestOptions.Operation = "StorageApi.StorageApiBucketsObjectsCreate";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1176,13 +1176,13 @@ namespace storage.Api
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
         /// <param name="objectKey"></param>
-        /// <param name="requestBody"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SuccessObjectOperation</returns>
-        public async System.Threading.Tasks.Task<SuccessObjectOperation> StorageApiBucketsObjectsCreateAsync(string bucketName, string objectKey, Dictionary<string, Object>? requestBody = default(Dictionary<string, Object>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SuccessObjectOperation> StorageApiBucketsObjectsCreateAsync(string bucketName, string objectKey, System.IO.Stream? body = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            storage.Client.ApiResponse<SuccessObjectOperation> localVarResponse = await StorageApiBucketsObjectsCreateWithHttpInfoAsync(bucketName, objectKey, requestBody, operationIndex, cancellationToken).ConfigureAwait(false);
+            storage.Client.ApiResponse<SuccessObjectOperation> localVarResponse = await StorageApiBucketsObjectsCreateWithHttpInfoAsync(bucketName, objectKey, body, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1192,11 +1192,11 @@ namespace storage.Api
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
         /// <param name="objectKey"></param>
-        /// <param name="requestBody"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SuccessObjectOperation)</returns>
-        public async System.Threading.Tasks.Task<storage.Client.ApiResponse<SuccessObjectOperation>> StorageApiBucketsObjectsCreateWithHttpInfoAsync(string bucketName, string objectKey, Dictionary<string, Object>? requestBody = default(Dictionary<string, Object>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<storage.Client.ApiResponse<SuccessObjectOperation>> StorageApiBucketsObjectsCreateWithHttpInfoAsync(string bucketName, string objectKey, System.IO.Stream? body = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'bucketName' is set
             if (bucketName == null)
@@ -1236,7 +1236,7 @@ namespace storage.Api
 
             localVarRequestOptions.PathParameters.Add("bucket_name", storage.Client.ClientUtils.ParameterToString(bucketName)); // path parameter
             localVarRequestOptions.PathParameters.Add("object_key", storage.Client.ClientUtils.ParameterToString(objectKey)); // path parameter
-            localVarRequestOptions.Data = requestBody;
+            localVarRequestOptions.Data = body;
 
             localVarRequestOptions.Operation = "StorageApi.StorageApiBucketsObjectsCreate";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1790,12 +1790,12 @@ namespace storage.Api
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
         /// <param name="objectKey"></param>
-        /// <param name="requestBody"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SuccessObjectOperation</returns>
-        public SuccessObjectOperation StorageApiBucketsObjectsUpdate(string bucketName, string objectKey, Dictionary<string, Object>? requestBody = default(Dictionary<string, Object>?), int operationIndex = 0)
+        public SuccessObjectOperation StorageApiBucketsObjectsUpdate(string bucketName, string objectKey, System.IO.Stream? body = default(System.IO.Stream?), int operationIndex = 0)
         {
-            storage.Client.ApiResponse<SuccessObjectOperation> localVarResponse = StorageApiBucketsObjectsUpdateWithHttpInfo(bucketName, objectKey, requestBody);
+            storage.Client.ApiResponse<SuccessObjectOperation> localVarResponse = StorageApiBucketsObjectsUpdateWithHttpInfo(bucketName, objectKey, body);
             return localVarResponse.Data;
         }
 
@@ -1805,10 +1805,10 @@ namespace storage.Api
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
         /// <param name="objectKey"></param>
-        /// <param name="requestBody"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SuccessObjectOperation</returns>
-        public storage.Client.ApiResponse<SuccessObjectOperation> StorageApiBucketsObjectsUpdateWithHttpInfo(string bucketName, string objectKey, Dictionary<string, Object>? requestBody = default(Dictionary<string, Object>?), int operationIndex = 0)
+        public storage.Client.ApiResponse<SuccessObjectOperation> StorageApiBucketsObjectsUpdateWithHttpInfo(string bucketName, string objectKey, System.IO.Stream? body = default(System.IO.Stream?), int operationIndex = 0)
         {
             // verify the required parameter 'bucketName' is set
             if (bucketName == null)
@@ -1847,7 +1847,7 @@ namespace storage.Api
 
             localVarRequestOptions.PathParameters.Add("bucket_name", storage.Client.ClientUtils.ParameterToString(bucketName)); // path parameter
             localVarRequestOptions.PathParameters.Add("object_key", storage.Client.ClientUtils.ParameterToString(objectKey)); // path parameter
-            localVarRequestOptions.Data = requestBody;
+            localVarRequestOptions.Data = body;
 
             localVarRequestOptions.Operation = "StorageApi.StorageApiBucketsObjectsUpdate";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1878,13 +1878,13 @@ namespace storage.Api
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
         /// <param name="objectKey"></param>
-        /// <param name="requestBody"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SuccessObjectOperation</returns>
-        public async System.Threading.Tasks.Task<SuccessObjectOperation> StorageApiBucketsObjectsUpdateAsync(string bucketName, string objectKey, Dictionary<string, Object>? requestBody = default(Dictionary<string, Object>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SuccessObjectOperation> StorageApiBucketsObjectsUpdateAsync(string bucketName, string objectKey, System.IO.Stream? body = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            storage.Client.ApiResponse<SuccessObjectOperation> localVarResponse = await StorageApiBucketsObjectsUpdateWithHttpInfoAsync(bucketName, objectKey, requestBody, operationIndex, cancellationToken).ConfigureAwait(false);
+            storage.Client.ApiResponse<SuccessObjectOperation> localVarResponse = await StorageApiBucketsObjectsUpdateWithHttpInfoAsync(bucketName, objectKey, body, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1894,11 +1894,11 @@ namespace storage.Api
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
         /// <param name="objectKey"></param>
-        /// <param name="requestBody"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SuccessObjectOperation)</returns>
-        public async System.Threading.Tasks.Task<storage.Client.ApiResponse<SuccessObjectOperation>> StorageApiBucketsObjectsUpdateWithHttpInfoAsync(string bucketName, string objectKey, Dictionary<string, Object>? requestBody = default(Dictionary<string, Object>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<storage.Client.ApiResponse<SuccessObjectOperation>> StorageApiBucketsObjectsUpdateWithHttpInfoAsync(string bucketName, string objectKey, System.IO.Stream? body = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'bucketName' is set
             if (bucketName == null)
@@ -1938,7 +1938,7 @@ namespace storage.Api
 
             localVarRequestOptions.PathParameters.Add("bucket_name", storage.Client.ClientUtils.ParameterToString(bucketName)); // path parameter
             localVarRequestOptions.PathParameters.Add("object_key", storage.Client.ClientUtils.ParameterToString(objectKey)); // path parameter
-            localVarRequestOptions.Data = requestBody;
+            localVarRequestOptions.Data = body;
 
             localVarRequestOptions.Operation = "StorageApi.StorageApiBucketsObjectsUpdate";
             localVarRequestOptions.OperationIndex = operationIndex;

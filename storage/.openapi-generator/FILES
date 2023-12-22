@@ -15,12 +15,6 @@ docs/StorageApi.md
 docs/SuccessBucketOperation.md
 docs/SuccessObjectOperation.md
 git_push.sh
-src/storage.Test/Api/StorageApiTests.cs
-src/storage.Test/Model/BucketObjectTests.cs
-src/storage.Test/Model/ObjectResponseDataTests.cs
-src/storage.Test/Model/PaginatedBucketObjectListTests.cs
-src/storage.Test/Model/SuccessBucketOperationTests.cs
-src/storage.Test/Model/SuccessObjectOperationTests.cs
 src/storage.Test/storage.Test.csproj
 src/storage/Api/StorageApi.cs
 src/storage/Client/ApiClient.cs

@@ -29,7 +29,7 @@ namespace storage.Model
     /// SuccessBucketOperation
     /// </summary>
     [DataContract(Name = "SuccessBucketOperation")]
-    public partial class SuccessBucketOperation : IEquatable<SuccessBucketOperation>, IValidatableObject
+    public partial class SuccessBucketOperation : IValidatableObject
     {
 
         /// <summary>
@@ -85,57 +85,6 @@ namespace storage.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as SuccessBucketOperation);
-        }
-
-        /// <summary>
-        /// Returns true if SuccessBucketOperation instances are equal
-        /// </summary>
-        /// <param name="input">Instance of SuccessBucketOperation to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SuccessBucketOperation input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.State == input.State ||
-                    this.State.Equals(input.State)
-                ) && 
-                (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.State.GetHashCode();
-                if (this.Data != null)
-                {
-                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>
