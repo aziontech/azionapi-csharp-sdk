@@ -29,7 +29,7 @@ namespace storage.Model
     /// BucketCreate
     /// </summary>
     [DataContract(Name = "BucketCreate")]
-    public partial class BucketCreate : IEquatable<BucketCreate>, IValidatableObject
+    public partial class BucketCreate : IValidatableObject
     {
 
         /// <summary>
@@ -85,57 +85,6 @@ namespace storage.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as BucketCreate);
-        }
-
-        /// <summary>
-        /// Returns true if BucketCreate instances are equal
-        /// </summary>
-        /// <param name="input">Instance of BucketCreate to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(BucketCreate input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.EdgeAccess == input.EdgeAccess ||
-                    this.EdgeAccess.Equals(input.EdgeAccess)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.EdgeAccess.GetHashCode();
-                return hashCode;
-            }
         }
 
         /// <summary>

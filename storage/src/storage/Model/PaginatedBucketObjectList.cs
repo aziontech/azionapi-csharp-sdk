@@ -29,7 +29,7 @@ namespace storage.Model
     /// PaginatedBucketObjectList
     /// </summary>
     [DataContract(Name = "PaginatedBucketObjectList")]
-    public partial class PaginatedBucketObjectList : IEquatable<PaginatedBucketObjectList>, IValidatableObject
+    public partial class PaginatedBucketObjectList : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PaginatedBucketObjectList" /> class.
@@ -96,76 +96,6 @@ namespace storage.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as PaginatedBucketObjectList);
-        }
-
-        /// <summary>
-        /// Returns true if PaginatedBucketObjectList instances are equal
-        /// </summary>
-        /// <param name="input">Instance of PaginatedBucketObjectList to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PaginatedBucketObjectList input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Count == input.Count ||
-                    this.Count.Equals(input.Count)
-                ) && 
-                (
-                    this.Next == input.Next ||
-                    (this.Next != null &&
-                    this.Next.Equals(input.Next))
-                ) && 
-                (
-                    this.Previous == input.Previous ||
-                    (this.Previous != null &&
-                    this.Previous.Equals(input.Previous))
-                ) && 
-                (
-                    this.Results == input.Results ||
-                    this.Results != null &&
-                    input.Results != null &&
-                    this.Results.SequenceEqual(input.Results)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Count.GetHashCode();
-                if (this.Next != null)
-                {
-                    hashCode = (hashCode * 59) + this.Next.GetHashCode();
-                }
-                if (this.Previous != null)
-                {
-                    hashCode = (hashCode * 59) + this.Previous.GetHashCode();
-                }
-                if (this.Results != null)
-                {
-                    hashCode = (hashCode * 59) + this.Results.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>
