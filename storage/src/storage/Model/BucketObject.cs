@@ -84,7 +84,7 @@ namespace storage.Model
         /// <summary>
         /// Gets or Sets Etag
         /// </summary>
-        [DataMember(Name = "etag", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "etag", EmitDefaultValue = false)]
         public string Etag { get; private set; }
 
         /// <summary>
