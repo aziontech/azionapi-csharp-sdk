@@ -147,11 +147,11 @@ namespace storage.Api
         /// </summary>
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
-        /// <param name="page">A page number within the paginated result set. (optional)</param>
-        /// <param name="pageSize">Number of results to return per page. (optional)</param>
+        /// <param name="continuationToken">Token for next page. (optional)</param>
+        /// <param name="maxObjectCount">Number of results to return per page. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PaginatedBucketObjectList</returns>
-        PaginatedBucketObjectList StorageApiBucketsObjectsList(string bucketName, int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0);
+        PaginatedBucketObjectList StorageApiBucketsObjectsList(string bucketName, string? continuationToken = default(string?), int? maxObjectCount = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// List buckets objects
@@ -161,11 +161,11 @@ namespace storage.Api
         /// </remarks>
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
-        /// <param name="page">A page number within the paginated result set. (optional)</param>
-        /// <param name="pageSize">Number of results to return per page. (optional)</param>
+        /// <param name="continuationToken">Token for next page. (optional)</param>
+        /// <param name="maxObjectCount">Number of results to return per page. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PaginatedBucketObjectList</returns>
-        ApiResponse<PaginatedBucketObjectList> StorageApiBucketsObjectsListWithHttpInfo(string bucketName, int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0);
+        ApiResponse<PaginatedBucketObjectList> StorageApiBucketsObjectsListWithHttpInfo(string bucketName, string? continuationToken = default(string?), int? maxObjectCount = default(int?), int operationIndex = 0);
         /// <summary>
         /// Download object
         /// </summary>
@@ -176,8 +176,8 @@ namespace storage.Api
         /// <param name="bucketName"></param>
         /// <param name="objectKey"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>System.IO.Stream</returns>
-        System.IO.Stream StorageApiBucketsObjectsRetrieve(string bucketName, string objectKey, int operationIndex = 0);
+        /// <returns></returns>
+        void StorageApiBucketsObjectsRetrieve(string bucketName, string objectKey, int operationIndex = 0);
 
         /// <summary>
         /// Download object
@@ -189,8 +189,8 @@ namespace storage.Api
         /// <param name="bucketName"></param>
         /// <param name="objectKey"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of System.IO.Stream</returns>
-        ApiResponse<System.IO.Stream> StorageApiBucketsObjectsRetrieveWithHttpInfo(string bucketName, string objectKey, int operationIndex = 0);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> StorageApiBucketsObjectsRetrieveWithHttpInfo(string bucketName, string objectKey, int operationIndex = 0);
         /// <summary>
         /// Update the object key
         /// </summary>
@@ -225,9 +225,10 @@ namespace storage.Api
         /// </summary>
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
+        /// <param name="bucketUpdate"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ResponseBucket</returns>
-        ResponseBucket StorageApiBucketsPartialUpdate(string name, int operationIndex = 0);
+        ResponseBucket StorageApiBucketsPartialUpdate(string name, BucketUpdate? bucketUpdate = default(BucketUpdate?), int operationIndex = 0);
 
         /// <summary>
         /// Update bucket info
@@ -237,9 +238,10 @@ namespace storage.Api
         /// </remarks>
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
+        /// <param name="bucketUpdate"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ResponseBucket</returns>
-        ApiResponse<ResponseBucket> StorageApiBucketsPartialUpdateWithHttpInfo(string name, int operationIndex = 0);
+        ApiResponse<ResponseBucket> StorageApiBucketsPartialUpdateWithHttpInfo(string name, BucketUpdate? bucketUpdate = default(BucketUpdate?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -392,12 +394,12 @@ namespace storage.Api
         /// </remarks>
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
-        /// <param name="page">A page number within the paginated result set. (optional)</param>
-        /// <param name="pageSize">Number of results to return per page. (optional)</param>
+        /// <param name="continuationToken">Token for next page. (optional)</param>
+        /// <param name="maxObjectCount">Number of results to return per page. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PaginatedBucketObjectList</returns>
-        System.Threading.Tasks.Task<PaginatedBucketObjectList> StorageApiBucketsObjectsListAsync(string bucketName, int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PaginatedBucketObjectList> StorageApiBucketsObjectsListAsync(string bucketName, string? continuationToken = default(string?), int? maxObjectCount = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List buckets objects
@@ -407,12 +409,12 @@ namespace storage.Api
         /// </remarks>
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
-        /// <param name="page">A page number within the paginated result set. (optional)</param>
-        /// <param name="pageSize">Number of results to return per page. (optional)</param>
+        /// <param name="continuationToken">Token for next page. (optional)</param>
+        /// <param name="maxObjectCount">Number of results to return per page. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PaginatedBucketObjectList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PaginatedBucketObjectList>> StorageApiBucketsObjectsListWithHttpInfoAsync(string bucketName, int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PaginatedBucketObjectList>> StorageApiBucketsObjectsListWithHttpInfoAsync(string bucketName, string? continuationToken = default(string?), int? maxObjectCount = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Download object
         /// </summary>
@@ -424,8 +426,8 @@ namespace storage.Api
         /// <param name="objectKey"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> StorageApiBucketsObjectsRetrieveAsync(string bucketName, string objectKey, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task StorageApiBucketsObjectsRetrieveAsync(string bucketName, string objectKey, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Download object
@@ -438,8 +440,8 @@ namespace storage.Api
         /// <param name="objectKey"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> StorageApiBucketsObjectsRetrieveWithHttpInfoAsync(string bucketName, string objectKey, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> StorageApiBucketsObjectsRetrieveWithHttpInfoAsync(string bucketName, string objectKey, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update the object key
         /// </summary>
@@ -479,10 +481,11 @@ namespace storage.Api
         /// </remarks>
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
+        /// <param name="bucketUpdate"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ResponseBucket</returns>
-        System.Threading.Tasks.Task<ResponseBucket> StorageApiBucketsPartialUpdateAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ResponseBucket> StorageApiBucketsPartialUpdateAsync(string name, BucketUpdate? bucketUpdate = default(BucketUpdate?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update bucket info
@@ -492,10 +495,11 @@ namespace storage.Api
         /// </remarks>
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
+        /// <param name="bucketUpdate"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ResponseBucket)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ResponseBucket>> StorageApiBucketsPartialUpdateWithHttpInfoAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ResponseBucket>> StorageApiBucketsPartialUpdateWithHttpInfoAsync(string name, BucketUpdate? bucketUpdate = default(BucketUpdate?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1459,13 +1463,13 @@ namespace storage.Api
         /// </summary>
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
-        /// <param name="page">A page number within the paginated result set. (optional)</param>
-        /// <param name="pageSize">Number of results to return per page. (optional)</param>
+        /// <param name="continuationToken">Token for next page. (optional)</param>
+        /// <param name="maxObjectCount">Number of results to return per page. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PaginatedBucketObjectList</returns>
-        public PaginatedBucketObjectList StorageApiBucketsObjectsList(string bucketName, int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0)
+        public PaginatedBucketObjectList StorageApiBucketsObjectsList(string bucketName, string? continuationToken = default(string?), int? maxObjectCount = default(int?), int operationIndex = 0)
         {
-            storage.Client.ApiResponse<PaginatedBucketObjectList> localVarResponse = StorageApiBucketsObjectsListWithHttpInfo(bucketName, page, pageSize);
+            storage.Client.ApiResponse<PaginatedBucketObjectList> localVarResponse = StorageApiBucketsObjectsListWithHttpInfo(bucketName, continuationToken, maxObjectCount);
             return localVarResponse.Data;
         }
 
@@ -1474,11 +1478,11 @@ namespace storage.Api
         /// </summary>
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
-        /// <param name="page">A page number within the paginated result set. (optional)</param>
-        /// <param name="pageSize">Number of results to return per page. (optional)</param>
+        /// <param name="continuationToken">Token for next page. (optional)</param>
+        /// <param name="maxObjectCount">Number of results to return per page. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PaginatedBucketObjectList</returns>
-        public storage.Client.ApiResponse<PaginatedBucketObjectList> StorageApiBucketsObjectsListWithHttpInfo(string bucketName, int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0)
+        public storage.Client.ApiResponse<PaginatedBucketObjectList> StorageApiBucketsObjectsListWithHttpInfo(string bucketName, string? continuationToken = default(string?), int? maxObjectCount = default(int?), int operationIndex = 0)
         {
             // verify the required parameter 'bucketName' is set
             if (bucketName == null)
@@ -1509,13 +1513,13 @@ namespace storage.Api
             }
 
             localVarRequestOptions.PathParameters.Add("bucket_name", storage.Client.ClientUtils.ParameterToString(bucketName)); // path parameter
-            if (page != null)
+            if (continuationToken != null)
             {
-                localVarRequestOptions.QueryParameters.Add(storage.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+                localVarRequestOptions.QueryParameters.Add(storage.Client.ClientUtils.ParameterToMultiMap("", "continuation_token", continuationToken));
             }
-            if (pageSize != null)
+            if (maxObjectCount != null)
             {
-                localVarRequestOptions.QueryParameters.Add(storage.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+                localVarRequestOptions.QueryParameters.Add(storage.Client.ClientUtils.ParameterToMultiMap("", "max_object_count", maxObjectCount));
             }
 
             localVarRequestOptions.Operation = "StorageApi.StorageApiBucketsObjectsList";
@@ -1546,14 +1550,14 @@ namespace storage.Api
         /// </summary>
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
-        /// <param name="page">A page number within the paginated result set. (optional)</param>
-        /// <param name="pageSize">Number of results to return per page. (optional)</param>
+        /// <param name="continuationToken">Token for next page. (optional)</param>
+        /// <param name="maxObjectCount">Number of results to return per page. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PaginatedBucketObjectList</returns>
-        public async System.Threading.Tasks.Task<PaginatedBucketObjectList> StorageApiBucketsObjectsListAsync(string bucketName, int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PaginatedBucketObjectList> StorageApiBucketsObjectsListAsync(string bucketName, string? continuationToken = default(string?), int? maxObjectCount = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            storage.Client.ApiResponse<PaginatedBucketObjectList> localVarResponse = await StorageApiBucketsObjectsListWithHttpInfoAsync(bucketName, page, pageSize, operationIndex, cancellationToken).ConfigureAwait(false);
+            storage.Client.ApiResponse<PaginatedBucketObjectList> localVarResponse = await StorageApiBucketsObjectsListWithHttpInfoAsync(bucketName, continuationToken, maxObjectCount, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1562,12 +1566,12 @@ namespace storage.Api
         /// </summary>
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bucketName"></param>
-        /// <param name="page">A page number within the paginated result set. (optional)</param>
-        /// <param name="pageSize">Number of results to return per page. (optional)</param>
+        /// <param name="continuationToken">Token for next page. (optional)</param>
+        /// <param name="maxObjectCount">Number of results to return per page. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PaginatedBucketObjectList)</returns>
-        public async System.Threading.Tasks.Task<storage.Client.ApiResponse<PaginatedBucketObjectList>> StorageApiBucketsObjectsListWithHttpInfoAsync(string bucketName, int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<storage.Client.ApiResponse<PaginatedBucketObjectList>> StorageApiBucketsObjectsListWithHttpInfoAsync(string bucketName, string? continuationToken = default(string?), int? maxObjectCount = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'bucketName' is set
             if (bucketName == null)
@@ -1599,13 +1603,13 @@ namespace storage.Api
             }
 
             localVarRequestOptions.PathParameters.Add("bucket_name", storage.Client.ClientUtils.ParameterToString(bucketName)); // path parameter
-            if (page != null)
+            if (continuationToken != null)
             {
-                localVarRequestOptions.QueryParameters.Add(storage.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+                localVarRequestOptions.QueryParameters.Add(storage.Client.ClientUtils.ParameterToMultiMap("", "continuation_token", continuationToken));
             }
-            if (pageSize != null)
+            if (maxObjectCount != null)
             {
-                localVarRequestOptions.QueryParameters.Add(storage.Client.ClientUtils.ParameterToMultiMap("", "page_size", pageSize));
+                localVarRequestOptions.QueryParameters.Add(storage.Client.ClientUtils.ParameterToMultiMap("", "max_object_count", maxObjectCount));
             }
 
             localVarRequestOptions.Operation = "StorageApi.StorageApiBucketsObjectsList";
@@ -1639,11 +1643,10 @@ namespace storage.Api
         /// <param name="bucketName"></param>
         /// <param name="objectKey"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream StorageApiBucketsObjectsRetrieve(string bucketName, string objectKey, int operationIndex = 0)
+        /// <returns></returns>
+        public void StorageApiBucketsObjectsRetrieve(string bucketName, string objectKey, int operationIndex = 0)
         {
-            storage.Client.ApiResponse<System.IO.Stream> localVarResponse = StorageApiBucketsObjectsRetrieveWithHttpInfo(bucketName, objectKey);
-            return localVarResponse.Data;
+            StorageApiBucketsObjectsRetrieveWithHttpInfo(bucketName, objectKey);
         }
 
         /// <summary>
@@ -1653,8 +1656,8 @@ namespace storage.Api
         /// <param name="bucketName"></param>
         /// <param name="objectKey"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of System.IO.Stream</returns>
-        public storage.Client.ApiResponse<System.IO.Stream> StorageApiBucketsObjectsRetrieveWithHttpInfo(string bucketName, string objectKey, int operationIndex = 0)
+        /// <returns>ApiResponse of Object(void)</returns>
+        public storage.Client.ApiResponse<Object> StorageApiBucketsObjectsRetrieveWithHttpInfo(string bucketName, string objectKey, int operationIndex = 0)
         {
             // verify the required parameter 'bucketName' is set
             if (bucketName == null)
@@ -1675,6 +1678,18 @@ namespace storage.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "text/html",
+                "application/json",
+                "application/xml",
+                "text/plain",
+                "image/jpeg",
+                "image/png",
+                "image/gif",
+                "video/mp4",
+                "audio/mpeg",
+                "application/pdf",
+                "application/javascript",
+                "text/css",
                 "application/octet-stream"
             };
 
@@ -1703,7 +1718,7 @@ namespace storage.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<System.IO.Stream>("/v4/storage/buckets/{bucket_name}/objects/{object_key}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<Object>("/v4/storage/buckets/{bucket_name}/objects/{object_key}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("StorageApiBucketsObjectsRetrieve", localVarResponse);
@@ -1724,11 +1739,10 @@ namespace storage.Api
         /// <param name="objectKey"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> StorageApiBucketsObjectsRetrieveAsync(string bucketName, string objectKey, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task StorageApiBucketsObjectsRetrieveAsync(string bucketName, string objectKey, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            storage.Client.ApiResponse<System.IO.Stream> localVarResponse = await StorageApiBucketsObjectsRetrieveWithHttpInfoAsync(bucketName, objectKey, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await StorageApiBucketsObjectsRetrieveWithHttpInfoAsync(bucketName, objectKey, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1739,8 +1753,8 @@ namespace storage.Api
         /// <param name="objectKey"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<storage.Client.ApiResponse<System.IO.Stream>> StorageApiBucketsObjectsRetrieveWithHttpInfoAsync(string bucketName, string objectKey, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<storage.Client.ApiResponse<Object>> StorageApiBucketsObjectsRetrieveWithHttpInfoAsync(string bucketName, string objectKey, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'bucketName' is set
             if (bucketName == null)
@@ -1762,6 +1776,18 @@ namespace storage.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "text/html",
+                "application/json",
+                "application/xml",
+                "text/plain",
+                "image/jpeg",
+                "image/png",
+                "image/gif",
+                "video/mp4",
+                "audio/mpeg",
+                "application/pdf",
+                "application/javascript",
+                "text/css",
                 "application/octet-stream"
             };
 
@@ -1790,7 +1816,7 @@ namespace storage.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<System.IO.Stream>("/v4/storage/buckets/{bucket_name}/objects/{object_key}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v4/storage/buckets/{bucket_name}/objects/{object_key}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2001,11 +2027,12 @@ namespace storage.Api
         /// </summary>
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
+        /// <param name="bucketUpdate"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ResponseBucket</returns>
-        public ResponseBucket StorageApiBucketsPartialUpdate(string name, int operationIndex = 0)
+        public ResponseBucket StorageApiBucketsPartialUpdate(string name, BucketUpdate? bucketUpdate = default(BucketUpdate?), int operationIndex = 0)
         {
-            storage.Client.ApiResponse<ResponseBucket> localVarResponse = StorageApiBucketsPartialUpdateWithHttpInfo(name);
+            storage.Client.ApiResponse<ResponseBucket> localVarResponse = StorageApiBucketsPartialUpdateWithHttpInfo(name, bucketUpdate);
             return localVarResponse.Data;
         }
 
@@ -2014,9 +2041,10 @@ namespace storage.Api
         /// </summary>
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
+        /// <param name="bucketUpdate"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ResponseBucket</returns>
-        public storage.Client.ApiResponse<ResponseBucket> StorageApiBucketsPartialUpdateWithHttpInfo(string name, int operationIndex = 0)
+        public storage.Client.ApiResponse<ResponseBucket> StorageApiBucketsPartialUpdateWithHttpInfo(string name, BucketUpdate? bucketUpdate = default(BucketUpdate?), int operationIndex = 0)
         {
             // verify the required parameter 'name' is set
             if (name == null)
@@ -2027,6 +2055,7 @@ namespace storage.Api
             storage.Client.RequestOptions localVarRequestOptions = new storage.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json"
             };
 
             // to determine the Accept header
@@ -2047,6 +2076,7 @@ namespace storage.Api
             }
 
             localVarRequestOptions.PathParameters.Add("name", storage.Client.ClientUtils.ParameterToString(name)); // path parameter
+            localVarRequestOptions.Data = bucketUpdate;
 
             localVarRequestOptions.Operation = "StorageApi.StorageApiBucketsPartialUpdate";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -2076,12 +2106,13 @@ namespace storage.Api
         /// </summary>
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
+        /// <param name="bucketUpdate"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ResponseBucket</returns>
-        public async System.Threading.Tasks.Task<ResponseBucket> StorageApiBucketsPartialUpdateAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ResponseBucket> StorageApiBucketsPartialUpdateAsync(string name, BucketUpdate? bucketUpdate = default(BucketUpdate?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            storage.Client.ApiResponse<ResponseBucket> localVarResponse = await StorageApiBucketsPartialUpdateWithHttpInfoAsync(name, operationIndex, cancellationToken).ConfigureAwait(false);
+            storage.Client.ApiResponse<ResponseBucket> localVarResponse = await StorageApiBucketsPartialUpdateWithHttpInfoAsync(name, bucketUpdate, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2090,10 +2121,11 @@ namespace storage.Api
         /// </summary>
         /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
+        /// <param name="bucketUpdate"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ResponseBucket)</returns>
-        public async System.Threading.Tasks.Task<storage.Client.ApiResponse<ResponseBucket>> StorageApiBucketsPartialUpdateWithHttpInfoAsync(string name, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<storage.Client.ApiResponse<ResponseBucket>> StorageApiBucketsPartialUpdateWithHttpInfoAsync(string name, BucketUpdate? bucketUpdate = default(BucketUpdate?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'name' is set
             if (name == null)
@@ -2105,6 +2137,7 @@ namespace storage.Api
             storage.Client.RequestOptions localVarRequestOptions = new storage.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json"
             };
 
             // to determine the Accept header
@@ -2125,6 +2158,7 @@ namespace storage.Api
             }
 
             localVarRequestOptions.PathParameters.Add("name", storage.Client.ClientUtils.ParameterToString(name)); // path parameter
+            localVarRequestOptions.Data = bucketUpdate;
 
             localVarRequestOptions.Operation = "StorageApi.StorageApiBucketsPartialUpdate";
             localVarRequestOptions.OperationIndex = operationIndex;

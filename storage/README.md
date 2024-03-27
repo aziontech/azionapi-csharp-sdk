@@ -136,6 +136,7 @@ Class | Method | HTTP request | Description
  - [Model.Bucket](docs/Bucket.md)
  - [Model.BucketCreate](docs/BucketCreate.md)
  - [Model.BucketObject](docs/BucketObject.md)
+ - [Model.BucketUpdate](docs/BucketUpdate.md)
  - [Model.EdgeAccessEnum](docs/EdgeAccessEnum.md)
  - [Model.ObjectResponseData](docs/ObjectResponseData.md)
  - [Model.PaginatedBucketList](docs/PaginatedBucketList.md)

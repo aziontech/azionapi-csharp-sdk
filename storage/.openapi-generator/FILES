@@ -5,6 +5,7 @@ appveyor.yml
 docs/Bucket.md
 docs/BucketCreate.md
 docs/BucketObject.md
+docs/BucketUpdate.md
 docs/EdgeAccessEnum.md
 docs/ObjectResponseData.md
 docs/PaginatedBucketList.md
@@ -15,6 +16,7 @@ docs/StorageApi.md
 docs/SuccessBucketOperation.md
 docs/SuccessObjectOperation.md
 git_push.sh
+src/storage.Test/Model/BucketUpdateTests.cs
 src/storage.Test/storage.Test.csproj
 src/storage/Api/StorageApi.cs
 src/storage/Client/ApiClient.cs
@@ -37,6 +39,7 @@ src/storage/Model/AbstractOpenAPISchema.cs
 src/storage/Model/Bucket.cs
 src/storage/Model/BucketCreate.cs
 src/storage/Model/BucketObject.cs
+src/storage/Model/BucketUpdate.cs
 src/storage/Model/EdgeAccessEnum.cs
 src/storage/Model/ObjectResponseData.cs
 src/storage/Model/PaginatedBucketList.cs

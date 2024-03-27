@@ -37,12 +37,14 @@ namespace storage.Model
         /// <param name="count">count.</param>
         /// <param name="next">next.</param>
         /// <param name="previous">previous.</param>
+        /// <param name="continuationToken">continuationToken.</param>
         /// <param name="results">results.</param>
-        public PaginatedBucketObjectList(int count = default(int), string next = default(string), string previous = default(string), List<BucketObject> results = default(List<BucketObject>))
+        public PaginatedBucketObjectList(int count = default(int), string next = default(string), string previous = default(string), string continuationToken = default(string), List<BucketObject> results = default(List<BucketObject>))
         {
             this.Count = count;
             this.Next = next;
             this.Previous = previous;
+            this.ContinuationToken = continuationToken;
             this.Results = results;
         }
 
@@ -68,6 +70,12 @@ namespace storage.Model
         public string Previous { get; set; }
 
         /// <summary>
+        /// Gets or Sets ContinuationToken
+        /// </summary>
+        [DataMember(Name = "continuation_token", EmitDefaultValue = true)]
+        public string ContinuationToken { get; set; }
+
+        /// <summary>
         /// Gets or Sets Results
         /// </summary>
         [DataMember(Name = "results", EmitDefaultValue = false)]
@@ -84,6 +92,7 @@ namespace storage.Model
             sb.Append("  Count: ").Append(Count).Append("\n");
             sb.Append("  Next: ").Append(Next).Append("\n");
             sb.Append("  Previous: ").Append(Previous).Append("\n");
+            sb.Append("  ContinuationToken: ").Append(ContinuationToken).Append("\n");
             sb.Append("  Results: ").Append(Results).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -105,6 +114,27 @@ namespace storage.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // ContinuationToken (string) maxLength
+            if (this.ContinuationToken != null && this.ContinuationToken.Length > 200)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ContinuationToken, length must be less than 200.", new [] { "ContinuationToken" });
+            }
+
+            // ContinuationToken (string) minLength
+            if (this.ContinuationToken != null && this.ContinuationToken.Length < 10)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ContinuationToken, length must be greater than 10.", new [] { "ContinuationToken" });
+            }
+
+            if (this.ContinuationToken != null) {
+                // ContinuationToken (string) pattern
+                Regex regexContinuationToken = new Regex(@".*", RegexOptions.CultureInvariant);
+                if (!regexContinuationToken.Match(this.ContinuationToken).Success)
+                {
+                    yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ContinuationToken, must match a pattern of " + regexContinuationToken, new [] { "ContinuationToken" });
+                }
+            }
+
             yield break;
         }
     }
