@@ -532,7 +532,7 @@ catch (ApiException e)
 
 <a id="storageapibucketsobjectslist"></a>
 # **StorageApiBucketsObjectsList**
-> PaginatedBucketObjectList StorageApiBucketsObjectsList (string bucketName, int? page = null, int? pageSize = null)
+> PaginatedBucketObjectList StorageApiBucketsObjectsList (string bucketName, string? continuationToken = null, int? maxObjectCount = null)
 
 List buckets objects
 
@@ -559,13 +559,13 @@ namespace Example
 
             var apiInstance = new StorageApi(config);
             var bucketName = "bucketName_example";  // string | 
-            var page = 56;  // int? | A page number within the paginated result set. (optional) 
-            var pageSize = 56;  // int? | Number of results to return per page. (optional) 
+            var continuationToken = "continuationToken_example";  // string? | Token for next page. (optional) 
+            var maxObjectCount = 56;  // int? | Number of results to return per page. (optional) 
 
             try
             {
                 // List buckets objects
-                PaginatedBucketObjectList result = apiInstance.StorageApiBucketsObjectsList(bucketName, page, pageSize);
+                PaginatedBucketObjectList result = apiInstance.StorageApiBucketsObjectsList(bucketName, continuationToken, maxObjectCount);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -586,7 +586,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List buckets objects
-    ApiResponse<PaginatedBucketObjectList> response = apiInstance.StorageApiBucketsObjectsListWithHttpInfo(bucketName, page, pageSize);
+    ApiResponse<PaginatedBucketObjectList> response = apiInstance.StorageApiBucketsObjectsListWithHttpInfo(bucketName, continuationToken, maxObjectCount);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -604,8 +604,8 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **bucketName** | **string** |  |  |
-| **page** | **int?** | A page number within the paginated result set. | [optional]  |
-| **pageSize** | **int?** | Number of results to return per page. | [optional]  |
+| **continuationToken** | **string?** | Token for next page. | [optional]  |
+| **maxObjectCount** | **int?** | Number of results to return per page. | [optional]  |
 
 ### Return type
 
@@ -636,7 +636,7 @@ catch (ApiException e)
 
 <a id="storageapibucketsobjectsretrieve"></a>
 # **StorageApiBucketsObjectsRetrieve**
-> System.IO.Stream StorageApiBucketsObjectsRetrieve (string bucketName, string objectKey)
+> void StorageApiBucketsObjectsRetrieve (string bucketName, string objectKey)
 
 Download object
 
@@ -670,8 +670,7 @@ namespace Example
             try
             {
                 // Download object
-                System.IO.Stream result = apiInstance.StorageApiBucketsObjectsRetrieve(bucketName, objectKey);
-                Debug.WriteLine(result);
+                apiInstance.StorageApiBucketsObjectsRetrieve(bucketName, objectKey);
             }
             catch (ApiException  e)
             {
@@ -691,10 +690,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Download object
-    ApiResponse<System.IO.Stream> response = apiInstance.StorageApiBucketsObjectsRetrieveWithHttpInfo(bucketName, objectKey);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.StorageApiBucketsObjectsRetrieveWithHttpInfo(bucketName, objectKey);
 }
 catch (ApiException e)
 {
@@ -713,7 +709,7 @@ catch (ApiException e)
 
 ### Return type
 
-**System.IO.Stream**
+void (empty response body)
 
 ### Authorization
 
@@ -722,7 +718,7 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream
+ - **Accept**: text/html, application/json, application/xml, text/plain, image/jpeg, image/png, image/gif, video/mp4, audio/mpeg, application/pdf, application/javascript, text/css, application/octet-stream
 
 
 ### HTTP response details
@@ -848,7 +844,7 @@ catch (ApiException e)
 
 <a id="storageapibucketspartialupdate"></a>
 # **StorageApiBucketsPartialUpdate**
-> ResponseBucket StorageApiBucketsPartialUpdate (string name)
+> ResponseBucket StorageApiBucketsPartialUpdate (string name, BucketUpdate? bucketUpdate = null)
 
 Update bucket info
 
@@ -875,11 +871,12 @@ namespace Example
 
             var apiInstance = new StorageApi(config);
             var name = "name_example";  // string | 
+            var bucketUpdate = new BucketUpdate?(); // BucketUpdate? |  (optional) 
 
             try
             {
                 // Update bucket info
-                ResponseBucket result = apiInstance.StorageApiBucketsPartialUpdate(name);
+                ResponseBucket result = apiInstance.StorageApiBucketsPartialUpdate(name, bucketUpdate);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -900,7 +897,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update bucket info
-    ApiResponse<ResponseBucket> response = apiInstance.StorageApiBucketsPartialUpdateWithHttpInfo(name);
+    ApiResponse<ResponseBucket> response = apiInstance.StorageApiBucketsPartialUpdateWithHttpInfo(name, bucketUpdate);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -918,6 +915,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **name** | **string** |  |  |
+| **bucketUpdate** | [**BucketUpdate?**](BucketUpdate?.md) |  | [optional]  |
 
 ### Return type
 
@@ -929,7 +927,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
