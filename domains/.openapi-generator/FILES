@@ -13,8 +13,6 @@ docs/PutDomainRequest.md
 docs/UpdateDomainRequest.md
 domains.sln
 git_push.sh
-src/domains.Test/Model/DomainDataTests.cs
-src/domains.Test/Model/DomainEntityTests.cs
 src/domains.Test/domains.Test.csproj
 src/domains/Api/DomainsApi.cs
 src/domains/Client/ApiClient.cs
