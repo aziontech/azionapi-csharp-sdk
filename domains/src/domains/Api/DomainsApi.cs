@@ -38,7 +38,7 @@ namespace domains.Api
         /// <param name="createDomainRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DomainResponseWithResult</returns>
-        DomainResponseWithResult CreateDomain(string accept = default(string), string contentType = default(string), CreateDomainRequest createDomainRequest = default(CreateDomainRequest), int operationIndex = 0);
+        DomainResponseWithResult CreateDomain(string? accept = default(string?), string? contentType = default(string?), CreateDomainRequest? createDomainRequest = default(CreateDomainRequest?), int operationIndex = 0);
 
         /// <summary>
         /// /domains
@@ -52,7 +52,7 @@ namespace domains.Api
         /// <param name="createDomainRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DomainResponseWithResult</returns>
-        ApiResponse<DomainResponseWithResult> CreateDomainWithHttpInfo(string accept = default(string), string contentType = default(string), CreateDomainRequest createDomainRequest = default(CreateDomainRequest), int operationIndex = 0);
+        ApiResponse<DomainResponseWithResult> CreateDomainWithHttpInfo(string? accept = default(string?), string? contentType = default(string?), CreateDomainRequest? createDomainRequest = default(CreateDomainRequest?), int operationIndex = 0);
         /// <summary>
         /// /domains/:id
         /// </summary>
@@ -64,7 +64,7 @@ namespace domains.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void DelDomain(string id, string accept = default(string), int operationIndex = 0);
+        void DelDomain(string id, string? accept = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// /domains/:id
@@ -77,7 +77,7 @@ namespace domains.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DelDomainWithHttpInfo(string id, string accept = default(string), int operationIndex = 0);
+        ApiResponse<Object> DelDomainWithHttpInfo(string id, string? accept = default(string?), int operationIndex = 0);
         /// <summary>
         /// /domains/:id
         /// </summary>
@@ -89,7 +89,7 @@ namespace domains.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DomainResponseWithResult</returns>
-        DomainResponseWithResult GetDomain(string id, string accept = default(string), int operationIndex = 0);
+        DomainResponseWithResult GetDomain(string id, string? accept = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// /domains/:id
@@ -102,7 +102,7 @@ namespace domains.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DomainResponseWithResult</returns>
-        ApiResponse<DomainResponseWithResult> GetDomainWithHttpInfo(string id, string accept = default(string), int operationIndex = 0);
+        ApiResponse<DomainResponseWithResult> GetDomainWithHttpInfo(string id, string? accept = default(string?), int operationIndex = 0);
         /// <summary>
         /// /domains
         /// </summary>
@@ -117,7 +117,7 @@ namespace domains.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DomainResponseWithResults</returns>
-        DomainResponseWithResults GetDomains(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), string accept = default(string), int operationIndex = 0);
+        DomainResponseWithResults GetDomains(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), string? accept = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// /domains
@@ -133,7 +133,7 @@ namespace domains.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DomainResponseWithResults</returns>
-        ApiResponse<DomainResponseWithResults> GetDomainsWithHttpInfo(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), string accept = default(string), int operationIndex = 0);
+        ApiResponse<DomainResponseWithResults> GetDomainsWithHttpInfo(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), string? accept = default(string?), int operationIndex = 0);
         /// <summary>
         /// /domains:/:id
         /// </summary>
@@ -147,7 +147,7 @@ namespace domains.Api
         /// <param name="putDomainRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DomainResponseWithResult</returns>
-        DomainResponseWithResult PutDomain(string id, string accept = default(string), string contentType = default(string), PutDomainRequest putDomainRequest = default(PutDomainRequest), int operationIndex = 0);
+        DomainResponseWithResult PutDomain(string id, string? accept = default(string?), string? contentType = default(string?), PutDomainRequest? putDomainRequest = default(PutDomainRequest?), int operationIndex = 0);
 
         /// <summary>
         /// /domains:/:id
@@ -162,7 +162,7 @@ namespace domains.Api
         /// <param name="putDomainRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DomainResponseWithResult</returns>
-        ApiResponse<DomainResponseWithResult> PutDomainWithHttpInfo(string id, string accept = default(string), string contentType = default(string), PutDomainRequest putDomainRequest = default(PutDomainRequest), int operationIndex = 0);
+        ApiResponse<DomainResponseWithResult> PutDomainWithHttpInfo(string id, string? accept = default(string?), string? contentType = default(string?), PutDomainRequest? putDomainRequest = default(PutDomainRequest?), int operationIndex = 0);
         /// <summary>
         /// /domains/:id
         /// </summary>
@@ -176,7 +176,7 @@ namespace domains.Api
         /// <param name="updateDomainRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DomainResponseWithResult</returns>
-        DomainResponseWithResult UpdateDomain(string id, string accept = default(string), string contentType = default(string), UpdateDomainRequest updateDomainRequest = default(UpdateDomainRequest), int operationIndex = 0);
+        DomainResponseWithResult UpdateDomain(string id, string? accept = default(string?), string? contentType = default(string?), UpdateDomainRequest? updateDomainRequest = default(UpdateDomainRequest?), int operationIndex = 0);
 
         /// <summary>
         /// /domains/:id
@@ -191,7 +191,7 @@ namespace domains.Api
         /// <param name="updateDomainRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DomainResponseWithResult</returns>
-        ApiResponse<DomainResponseWithResult> UpdateDomainWithHttpInfo(string id, string accept = default(string), string contentType = default(string), UpdateDomainRequest updateDomainRequest = default(UpdateDomainRequest), int operationIndex = 0);
+        ApiResponse<DomainResponseWithResult> UpdateDomainWithHttpInfo(string id, string? accept = default(string?), string? contentType = default(string?), UpdateDomainRequest? updateDomainRequest = default(UpdateDomainRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -214,7 +214,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DomainResponseWithResult</returns>
-        System.Threading.Tasks.Task<DomainResponseWithResult> CreateDomainAsync(string accept = default(string), string contentType = default(string), CreateDomainRequest createDomainRequest = default(CreateDomainRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DomainResponseWithResult> CreateDomainAsync(string? accept = default(string?), string? contentType = default(string?), CreateDomainRequest? createDomainRequest = default(CreateDomainRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /domains
@@ -229,7 +229,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DomainResponseWithResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DomainResponseWithResult>> CreateDomainWithHttpInfoAsync(string accept = default(string), string contentType = default(string), CreateDomainRequest createDomainRequest = default(CreateDomainRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DomainResponseWithResult>> CreateDomainWithHttpInfoAsync(string? accept = default(string?), string? contentType = default(string?), CreateDomainRequest? createDomainRequest = default(CreateDomainRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /domains/:id
         /// </summary>
@@ -242,7 +242,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DelDomainAsync(string id, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DelDomainAsync(string id, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /domains/:id
@@ -256,7 +256,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DelDomainWithHttpInfoAsync(string id, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DelDomainWithHttpInfoAsync(string id, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /domains/:id
         /// </summary>
@@ -269,7 +269,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DomainResponseWithResult</returns>
-        System.Threading.Tasks.Task<DomainResponseWithResult> GetDomainAsync(string id, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DomainResponseWithResult> GetDomainAsync(string id, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /domains/:id
@@ -283,7 +283,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DomainResponseWithResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DomainResponseWithResult>> GetDomainWithHttpInfoAsync(string id, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DomainResponseWithResult>> GetDomainWithHttpInfoAsync(string id, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /domains
         /// </summary>
@@ -299,7 +299,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DomainResponseWithResults</returns>
-        System.Threading.Tasks.Task<DomainResponseWithResults> GetDomainsAsync(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DomainResponseWithResults> GetDomainsAsync(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /domains
@@ -316,7 +316,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DomainResponseWithResults)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DomainResponseWithResults>> GetDomainsWithHttpInfoAsync(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DomainResponseWithResults>> GetDomainsWithHttpInfoAsync(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /domains:/:id
         /// </summary>
@@ -331,7 +331,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DomainResponseWithResult</returns>
-        System.Threading.Tasks.Task<DomainResponseWithResult> PutDomainAsync(string id, string accept = default(string), string contentType = default(string), PutDomainRequest putDomainRequest = default(PutDomainRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DomainResponseWithResult> PutDomainAsync(string id, string? accept = default(string?), string? contentType = default(string?), PutDomainRequest? putDomainRequest = default(PutDomainRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /domains:/:id
@@ -347,7 +347,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DomainResponseWithResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DomainResponseWithResult>> PutDomainWithHttpInfoAsync(string id, string accept = default(string), string contentType = default(string), PutDomainRequest putDomainRequest = default(PutDomainRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DomainResponseWithResult>> PutDomainWithHttpInfoAsync(string id, string? accept = default(string?), string? contentType = default(string?), PutDomainRequest? putDomainRequest = default(PutDomainRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// /domains/:id
         /// </summary>
@@ -362,7 +362,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DomainResponseWithResult</returns>
-        System.Threading.Tasks.Task<DomainResponseWithResult> UpdateDomainAsync(string id, string accept = default(string), string contentType = default(string), UpdateDomainRequest updateDomainRequest = default(UpdateDomainRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DomainResponseWithResult> UpdateDomainAsync(string id, string? accept = default(string?), string? contentType = default(string?), UpdateDomainRequest? updateDomainRequest = default(UpdateDomainRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// /domains/:id
@@ -378,7 +378,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DomainResponseWithResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DomainResponseWithResult>> UpdateDomainWithHttpInfoAsync(string id, string accept = default(string), string contentType = default(string), UpdateDomainRequest updateDomainRequest = default(UpdateDomainRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DomainResponseWithResult>> UpdateDomainWithHttpInfoAsync(string id, string? accept = default(string?), string? contentType = default(string?), UpdateDomainRequest? updateDomainRequest = default(UpdateDomainRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -508,7 +508,7 @@ namespace domains.Api
         /// <param name="createDomainRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DomainResponseWithResult</returns>
-        public DomainResponseWithResult CreateDomain(string accept = default(string), string contentType = default(string), CreateDomainRequest createDomainRequest = default(CreateDomainRequest), int operationIndex = 0)
+        public DomainResponseWithResult CreateDomain(string? accept = default(string?), string? contentType = default(string?), CreateDomainRequest? createDomainRequest = default(CreateDomainRequest?), int operationIndex = 0)
         {
             domains.Client.ApiResponse<DomainResponseWithResult> localVarResponse = CreateDomainWithHttpInfo(accept, contentType, createDomainRequest);
             return localVarResponse.Data;
@@ -523,7 +523,7 @@ namespace domains.Api
         /// <param name="createDomainRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DomainResponseWithResult</returns>
-        public domains.Client.ApiResponse<DomainResponseWithResult> CreateDomainWithHttpInfo(string accept = default(string), string contentType = default(string), CreateDomainRequest createDomainRequest = default(CreateDomainRequest), int operationIndex = 0)
+        public domains.Client.ApiResponse<DomainResponseWithResult> CreateDomainWithHttpInfo(string? accept = default(string?), string? contentType = default(string?), CreateDomainRequest? createDomainRequest = default(CreateDomainRequest?), int operationIndex = 0)
         {
             domains.Client.RequestOptions localVarRequestOptions = new domains.Client.RequestOptions();
 
@@ -591,7 +591,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DomainResponseWithResult</returns>
-        public async System.Threading.Tasks.Task<DomainResponseWithResult> CreateDomainAsync(string accept = default(string), string contentType = default(string), CreateDomainRequest createDomainRequest = default(CreateDomainRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DomainResponseWithResult> CreateDomainAsync(string? accept = default(string?), string? contentType = default(string?), CreateDomainRequest? createDomainRequest = default(CreateDomainRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             domains.Client.ApiResponse<DomainResponseWithResult> localVarResponse = await CreateDomainWithHttpInfoAsync(accept, contentType, createDomainRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -607,7 +607,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DomainResponseWithResult)</returns>
-        public async System.Threading.Tasks.Task<domains.Client.ApiResponse<DomainResponseWithResult>> CreateDomainWithHttpInfoAsync(string accept = default(string), string contentType = default(string), CreateDomainRequest createDomainRequest = default(CreateDomainRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<domains.Client.ApiResponse<DomainResponseWithResult>> CreateDomainWithHttpInfoAsync(string? accept = default(string?), string? contentType = default(string?), CreateDomainRequest? createDomainRequest = default(CreateDomainRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             domains.Client.RequestOptions localVarRequestOptions = new domains.Client.RequestOptions();
@@ -675,7 +675,7 @@ namespace domains.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void DelDomain(string id, string accept = default(string), int operationIndex = 0)
+        public void DelDomain(string id, string? accept = default(string?), int operationIndex = 0)
         {
             DelDomainWithHttpInfo(id, accept);
         }
@@ -688,7 +688,7 @@ namespace domains.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public domains.Client.ApiResponse<Object> DelDomainWithHttpInfo(string id, string accept = default(string), int operationIndex = 0)
+        public domains.Client.ApiResponse<Object> DelDomainWithHttpInfo(string id, string? accept = default(string?), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -755,7 +755,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DelDomainAsync(string id, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DelDomainAsync(string id, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             await DelDomainWithHttpInfoAsync(id, accept, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -769,7 +769,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<domains.Client.ApiResponse<Object>> DelDomainWithHttpInfoAsync(string id, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<domains.Client.ApiResponse<Object>> DelDomainWithHttpInfoAsync(string id, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -837,7 +837,7 @@ namespace domains.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DomainResponseWithResult</returns>
-        public DomainResponseWithResult GetDomain(string id, string accept = default(string), int operationIndex = 0)
+        public DomainResponseWithResult GetDomain(string id, string? accept = default(string?), int operationIndex = 0)
         {
             domains.Client.ApiResponse<DomainResponseWithResult> localVarResponse = GetDomainWithHttpInfo(id, accept);
             return localVarResponse.Data;
@@ -851,7 +851,7 @@ namespace domains.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DomainResponseWithResult</returns>
-        public domains.Client.ApiResponse<DomainResponseWithResult> GetDomainWithHttpInfo(string id, string accept = default(string), int operationIndex = 0)
+        public domains.Client.ApiResponse<DomainResponseWithResult> GetDomainWithHttpInfo(string id, string? accept = default(string?), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -919,7 +919,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DomainResponseWithResult</returns>
-        public async System.Threading.Tasks.Task<DomainResponseWithResult> GetDomainAsync(string id, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DomainResponseWithResult> GetDomainAsync(string id, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             domains.Client.ApiResponse<DomainResponseWithResult> localVarResponse = await GetDomainWithHttpInfoAsync(id, accept, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -934,7 +934,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DomainResponseWithResult)</returns>
-        public async System.Threading.Tasks.Task<domains.Client.ApiResponse<DomainResponseWithResult>> GetDomainWithHttpInfoAsync(string id, string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<domains.Client.ApiResponse<DomainResponseWithResult>> GetDomainWithHttpInfoAsync(string id, string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1006,7 +1006,7 @@ namespace domains.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DomainResponseWithResults</returns>
-        public DomainResponseWithResults GetDomains(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), string accept = default(string), int operationIndex = 0)
+        public DomainResponseWithResults GetDomains(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), string? accept = default(string?), int operationIndex = 0)
         {
             domains.Client.ApiResponse<DomainResponseWithResults> localVarResponse = GetDomainsWithHttpInfo(page, pageSize, sort, orderBy, accept);
             return localVarResponse.Data;
@@ -1023,7 +1023,7 @@ namespace domains.Api
         /// <param name="accept"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DomainResponseWithResults</returns>
-        public domains.Client.ApiResponse<DomainResponseWithResults> GetDomainsWithHttpInfo(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), string accept = default(string), int operationIndex = 0)
+        public domains.Client.ApiResponse<DomainResponseWithResults> GetDomainsWithHttpInfo(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), string? accept = default(string?), int operationIndex = 0)
         {
             domains.Client.RequestOptions localVarRequestOptions = new domains.Client.RequestOptions();
 
@@ -1103,7 +1103,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DomainResponseWithResults</returns>
-        public async System.Threading.Tasks.Task<DomainResponseWithResults> GetDomainsAsync(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DomainResponseWithResults> GetDomainsAsync(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             domains.Client.ApiResponse<DomainResponseWithResults> localVarResponse = await GetDomainsWithHttpInfoAsync(page, pageSize, sort, orderBy, accept, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1121,7 +1121,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DomainResponseWithResults)</returns>
-        public async System.Threading.Tasks.Task<domains.Client.ApiResponse<DomainResponseWithResults>> GetDomainsWithHttpInfoAsync(long? page = default(long?), long? pageSize = default(long?), string sort = default(string), string orderBy = default(string), string accept = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<domains.Client.ApiResponse<DomainResponseWithResults>> GetDomainsWithHttpInfoAsync(long? page = default(long?), long? pageSize = default(long?), string? sort = default(string?), string? orderBy = default(string?), string? accept = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             domains.Client.RequestOptions localVarRequestOptions = new domains.Client.RequestOptions();
@@ -1201,7 +1201,7 @@ namespace domains.Api
         /// <param name="putDomainRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DomainResponseWithResult</returns>
-        public DomainResponseWithResult PutDomain(string id, string accept = default(string), string contentType = default(string), PutDomainRequest putDomainRequest = default(PutDomainRequest), int operationIndex = 0)
+        public DomainResponseWithResult PutDomain(string id, string? accept = default(string?), string? contentType = default(string?), PutDomainRequest? putDomainRequest = default(PutDomainRequest?), int operationIndex = 0)
         {
             domains.Client.ApiResponse<DomainResponseWithResult> localVarResponse = PutDomainWithHttpInfo(id, accept, contentType, putDomainRequest);
             return localVarResponse.Data;
@@ -1217,7 +1217,7 @@ namespace domains.Api
         /// <param name="putDomainRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DomainResponseWithResult</returns>
-        public domains.Client.ApiResponse<DomainResponseWithResult> PutDomainWithHttpInfo(string id, string accept = default(string), string contentType = default(string), PutDomainRequest putDomainRequest = default(PutDomainRequest), int operationIndex = 0)
+        public domains.Client.ApiResponse<DomainResponseWithResult> PutDomainWithHttpInfo(string id, string? accept = default(string?), string? contentType = default(string?), PutDomainRequest? putDomainRequest = default(PutDomainRequest?), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1293,7 +1293,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DomainResponseWithResult</returns>
-        public async System.Threading.Tasks.Task<DomainResponseWithResult> PutDomainAsync(string id, string accept = default(string), string contentType = default(string), PutDomainRequest putDomainRequest = default(PutDomainRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DomainResponseWithResult> PutDomainAsync(string id, string? accept = default(string?), string? contentType = default(string?), PutDomainRequest? putDomainRequest = default(PutDomainRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             domains.Client.ApiResponse<DomainResponseWithResult> localVarResponse = await PutDomainWithHttpInfoAsync(id, accept, contentType, putDomainRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1310,7 +1310,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DomainResponseWithResult)</returns>
-        public async System.Threading.Tasks.Task<domains.Client.ApiResponse<DomainResponseWithResult>> PutDomainWithHttpInfoAsync(string id, string accept = default(string), string contentType = default(string), PutDomainRequest putDomainRequest = default(PutDomainRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<domains.Client.ApiResponse<DomainResponseWithResult>> PutDomainWithHttpInfoAsync(string id, string? accept = default(string?), string? contentType = default(string?), PutDomainRequest? putDomainRequest = default(PutDomainRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1387,7 +1387,7 @@ namespace domains.Api
         /// <param name="updateDomainRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DomainResponseWithResult</returns>
-        public DomainResponseWithResult UpdateDomain(string id, string accept = default(string), string contentType = default(string), UpdateDomainRequest updateDomainRequest = default(UpdateDomainRequest), int operationIndex = 0)
+        public DomainResponseWithResult UpdateDomain(string id, string? accept = default(string?), string? contentType = default(string?), UpdateDomainRequest? updateDomainRequest = default(UpdateDomainRequest?), int operationIndex = 0)
         {
             domains.Client.ApiResponse<DomainResponseWithResult> localVarResponse = UpdateDomainWithHttpInfo(id, accept, contentType, updateDomainRequest);
             return localVarResponse.Data;
@@ -1403,7 +1403,7 @@ namespace domains.Api
         /// <param name="updateDomainRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DomainResponseWithResult</returns>
-        public domains.Client.ApiResponse<DomainResponseWithResult> UpdateDomainWithHttpInfo(string id, string accept = default(string), string contentType = default(string), UpdateDomainRequest updateDomainRequest = default(UpdateDomainRequest), int operationIndex = 0)
+        public domains.Client.ApiResponse<DomainResponseWithResult> UpdateDomainWithHttpInfo(string id, string? accept = default(string?), string? contentType = default(string?), UpdateDomainRequest? updateDomainRequest = default(UpdateDomainRequest?), int operationIndex = 0)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1479,7 +1479,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DomainResponseWithResult</returns>
-        public async System.Threading.Tasks.Task<DomainResponseWithResult> UpdateDomainAsync(string id, string accept = default(string), string contentType = default(string), UpdateDomainRequest updateDomainRequest = default(UpdateDomainRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DomainResponseWithResult> UpdateDomainAsync(string id, string? accept = default(string?), string? contentType = default(string?), UpdateDomainRequest? updateDomainRequest = default(UpdateDomainRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             domains.Client.ApiResponse<DomainResponseWithResult> localVarResponse = await UpdateDomainWithHttpInfoAsync(id, accept, contentType, updateDomainRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1496,7 +1496,7 @@ namespace domains.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DomainResponseWithResult)</returns>
-        public async System.Threading.Tasks.Task<domains.Client.ApiResponse<DomainResponseWithResult>> UpdateDomainWithHttpInfoAsync(string id, string accept = default(string), string contentType = default(string), UpdateDomainRequest updateDomainRequest = default(UpdateDomainRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<domains.Client.ApiResponse<DomainResponseWithResult>> UpdateDomainWithHttpInfoAsync(string id, string? accept = default(string?), string? contentType = default(string?), UpdateDomainRequest? updateDomainRequest = default(UpdateDomainRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)

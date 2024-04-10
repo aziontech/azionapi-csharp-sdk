@@ -13,7 +13,7 @@ All URIs are relative to *https://api.azionapi.net*
 
 <a id="createdomain"></a>
 # **CreateDomain**
-> DomainResponseWithResult CreateDomain (string accept = null, string contentType = null, CreateDomainRequest createDomainRequest = null)
+> DomainResponseWithResult CreateDomain (string? accept = null, string? contentType = null, CreateDomainRequest? createDomainRequest = null)
 
 /domains
 
@@ -41,9 +41,9 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DomainsApi(config);
-            var accept = application/json; version=3;  // string |  (optional) 
-            var contentType = application/json;  // string |  (optional) 
-            var createDomainRequest = new CreateDomainRequest(); // CreateDomainRequest |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
+            var contentType = application/json;  // string? |  (optional) 
+            var createDomainRequest = new CreateDomainRequest?(); // CreateDomainRequest? |  (optional) 
 
             try
             {
@@ -86,9 +86,9 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accept** | **string** |  | [optional]  |
-| **contentType** | **string** |  | [optional]  |
-| **createDomainRequest** | [**CreateDomainRequest**](CreateDomainRequest.md) |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
+| **contentType** | **string?** |  | [optional]  |
+| **createDomainRequest** | [**CreateDomainRequest?**](CreateDomainRequest?.md) |  | [optional]  |
 
 ### Return type
 
@@ -111,6 +111,7 @@ catch (ApiException e)
 | **400** | Bad Request |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
 | **500** | Internal Server Error |  -  |
 
@@ -118,7 +119,7 @@ catch (ApiException e)
 
 <a id="deldomain"></a>
 # **DelDomain**
-> void DelDomain (string id, string accept = null)
+> void DelDomain (string id, string? accept = null)
 
 /domains/:id
 
@@ -147,7 +148,7 @@ namespace Example
 
             var apiInstance = new DomainsApi(config);
             var id = "id_example";  // string | The id of the domain to be deleted. 
-            var accept = application/json; version=3;  // string |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
 
             try
             {
@@ -187,7 +188,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | The id of the domain to be deleted.  |  |
-| **accept** | **string** |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
 
 ### Return type
 
@@ -217,7 +218,7 @@ void (empty response body)
 
 <a id="getdomain"></a>
 # **GetDomain**
-> DomainResponseWithResult GetDomain (string id, string accept = null)
+> DomainResponseWithResult GetDomain (string id, string? accept = null)
 
 /domains/:id
 
@@ -246,7 +247,7 @@ namespace Example
 
             var apiInstance = new DomainsApi(config);
             var id = "id_example";  // string | The id of the domain to be consulted. 
-            var accept = application/json; version=3;  // string |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
 
             try
             {
@@ -290,7 +291,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** | The id of the domain to be consulted.  |  |
-| **accept** | **string** |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
 
 ### Return type
 
@@ -320,7 +321,7 @@ catch (ApiException e)
 
 <a id="getdomains"></a>
 # **GetDomains**
-> DomainResponseWithResults GetDomains (long? page = null, long? pageSize = null, string sort = null, string orderBy = null, string accept = null)
+> DomainResponseWithResults GetDomains (long? page = null, long? pageSize = null, string? sort = null, string? orderBy = null, string? accept = null)
 
 /domains
 
@@ -350,9 +351,9 @@ namespace Example
             var apiInstance = new DomainsApi(config);
             var page = 789L;  // long? |  (optional) 
             var pageSize = 789L;  // long? |  (optional) 
-            var sort = "sort_example";  // string |  (optional) 
-            var orderBy = "orderBy_example";  // string |  (optional) 
-            var accept = application/json; version=3;  // string |  (optional) 
+            var sort = "sort_example";  // string? |  (optional) 
+            var orderBy = "orderBy_example";  // string? |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
 
             try
             {
@@ -397,9 +398,9 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **page** | **long?** |  | [optional]  |
 | **pageSize** | **long?** |  | [optional]  |
-| **sort** | **string** |  | [optional]  |
-| **orderBy** | **string** |  | [optional]  |
-| **accept** | **string** |  | [optional]  |
+| **sort** | **string?** |  | [optional]  |
+| **orderBy** | **string?** |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
 
 ### Return type
 
@@ -429,7 +430,7 @@ catch (ApiException e)
 
 <a id="putdomain"></a>
 # **PutDomain**
-> DomainResponseWithResult PutDomain (string id, string accept = null, string contentType = null, PutDomainRequest putDomainRequest = null)
+> DomainResponseWithResult PutDomain (string id, string? accept = null, string? contentType = null, PutDomainRequest? putDomainRequest = null)
 
 /domains:/:id
 
@@ -458,9 +459,9 @@ namespace Example
 
             var apiInstance = new DomainsApi(config);
             var id = "id_example";  // string | 
-            var accept = application/json; version=3;  // string |  (optional) 
-            var contentType = application/json;  // string |  (optional) 
-            var putDomainRequest = new PutDomainRequest(); // PutDomainRequest |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
+            var contentType = application/json;  // string? |  (optional) 
+            var putDomainRequest = new PutDomainRequest?(); // PutDomainRequest? |  (optional) 
 
             try
             {
@@ -504,9 +505,9 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** |  |  |
-| **accept** | **string** |  | [optional]  |
-| **contentType** | **string** |  | [optional]  |
-| **putDomainRequest** | [**PutDomainRequest**](PutDomainRequest.md) |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
+| **contentType** | **string?** |  | [optional]  |
+| **putDomainRequest** | [**PutDomainRequest?**](PutDomainRequest?.md) |  | [optional]  |
 
 ### Return type
 
@@ -529,6 +530,7 @@ catch (ApiException e)
 | **400** | Bad Request |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
+| **405** | Method Not Allowed |  -  |
 | **422** | Unprocessable Entity |  -  |
 | **500** | Internal Server Error |  -  |
 
@@ -536,7 +538,7 @@ catch (ApiException e)
 
 <a id="updatedomain"></a>
 # **UpdateDomain**
-> DomainResponseWithResult UpdateDomain (string id, string accept = null, string contentType = null, UpdateDomainRequest updateDomainRequest = null)
+> DomainResponseWithResult UpdateDomain (string id, string? accept = null, string? contentType = null, UpdateDomainRequest? updateDomainRequest = null)
 
 /domains/:id
 
@@ -565,9 +567,9 @@ namespace Example
 
             var apiInstance = new DomainsApi(config);
             var id = "id_example";  // string | 
-            var accept = application/json; version=3;  // string |  (optional) 
-            var contentType = application/json;  // string |  (optional) 
-            var updateDomainRequest = new UpdateDomainRequest(); // UpdateDomainRequest |  (optional) 
+            var accept = application/json; version=3;  // string? |  (optional) 
+            var contentType = application/json;  // string? |  (optional) 
+            var updateDomainRequest = new UpdateDomainRequest?(); // UpdateDomainRequest? |  (optional) 
 
             try
             {
@@ -611,9 +613,9 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **id** | **string** |  |  |
-| **accept** | **string** |  | [optional]  |
-| **contentType** | **string** |  | [optional]  |
-| **updateDomainRequest** | [**UpdateDomainRequest**](UpdateDomainRequest.md) |  | [optional]  |
+| **accept** | **string?** |  | [optional]  |
+| **contentType** | **string?** |  | [optional]  |
+| **updateDomainRequest** | [**UpdateDomainRequest?**](UpdateDomainRequest?.md) |  | [optional]  |
 
 ### Return type
 
@@ -636,6 +638,7 @@ catch (ApiException e)
 | **400** | Bad Request |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
+| **405** | Method Not Allowed |  -  |
 | **422** | Unprocessable Entity |  -  |
 | **500** | Internal Server Error |  -  |
 

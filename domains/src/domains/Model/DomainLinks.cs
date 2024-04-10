@@ -29,7 +29,7 @@ namespace domains.Model
     /// DomainLinks
     /// </summary>
     [DataContract(Name = "DomainLinks")]
-    public partial class DomainLinks : IEquatable<DomainLinks>, IValidatableObject
+    public partial class DomainLinks : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DomainLinks" /> class.
@@ -90,61 +90,6 @@ namespace domains.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as DomainLinks);
-        }
-
-        /// <summary>
-        /// Returns true if DomainLinks instances are equal
-        /// </summary>
-        /// <param name="input">Instance of DomainLinks to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(DomainLinks input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Previous == input.Previous ||
-                    (this.Previous != null &&
-                    this.Previous.Equals(input.Previous))
-                ) && 
-                (
-                    this.Next == input.Next ||
-                    (this.Next != null &&
-                    this.Next.Equals(input.Next))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Previous != null)
-                {
-                    hashCode = (hashCode * 59) + this.Previous.GetHashCode();
-                }
-                if (this.Next != null)
-                {
-                    hashCode = (hashCode * 59) + this.Next.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

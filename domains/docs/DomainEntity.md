@@ -1,20 +1,22 @@
-# domains.Model.CreateDomainRequest
+# domains.Model.DomainEntity
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
-**Cnames** | **List&lt;string&gt;** |  | 
+**Name** | **string** |  | [optional] 
+**Cnames** | **List&lt;string&gt;** |  | [optional] 
 **CnameAccessOnly** | **bool** |  | [optional] 
 **IsActive** | **bool** |  | [optional] 
-**EdgeApplicationId** | **long** |  | 
+**EdgeApplicationId** | **long** |  | [optional] 
 **DigitalCertificateId** | **long?** |  | [optional] 
 **VarEnvironment** | **string** |  | [optional] 
 **IsMtlsEnabled** | **bool** |  | [optional] 
 **MtlsTrustedCaCertificateId** | **long?** |  | [optional] 
 **MtlsVerification** | **string** |  | [optional] 
 **CrlList** | **List&lt;long&gt;** |  | [optional] 
+**Id** | **long** |  | [optional] 
+**DomainName** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

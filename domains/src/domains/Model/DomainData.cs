@@ -26,10 +26,10 @@ using OpenAPIDateConverter = domains.Client.OpenAPIDateConverter;
 namespace domains.Model
 {
     /// <summary>
-    /// UpdateDomainRequest
+    /// DomainData
     /// </summary>
-    [DataContract(Name = "UpdateDomainRequest")]
-    public partial class UpdateDomainRequest : IValidatableObject
+    [DataContract(Name = "DomainData")]
+    public partial class DomainData : IValidatableObject
     {
         /// <summary>
         /// Defines VarEnvironment
@@ -82,7 +82,7 @@ namespace domains.Model
         [DataMember(Name = "mtls_verification", EmitDefaultValue = false)]
         public MtlsVerificationEnum? MtlsVerification { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateDomainRequest" /> class.
+        /// Initializes a new instance of the <see cref="DomainData" /> class.
         /// </summary>
         /// <param name="name">name.</param>
         /// <param name="cnames">cnames.</param>
@@ -95,7 +95,7 @@ namespace domains.Model
         /// <param name="mtlsTrustedCaCertificateId">mtlsTrustedCaCertificateId.</param>
         /// <param name="mtlsVerification">mtlsVerification.</param>
         /// <param name="crlList">crlList.</param>
-        public UpdateDomainRequest(string name = default(string), List<string> cnames = default(List<string>), bool cnameAccessOnly = default(bool), bool isActive = default(bool), long edgeApplicationId = default(long), long? digitalCertificateId = default(long?), VarEnvironmentEnum? varEnvironment = default(VarEnvironmentEnum?), bool isMtlsEnabled = default(bool), long? mtlsTrustedCaCertificateId = default(long?), MtlsVerificationEnum? mtlsVerification = default(MtlsVerificationEnum?), List<long> crlList = default(List<long>))
+        public DomainData(string name = default(string), List<string> cnames = default(List<string>), bool cnameAccessOnly = default(bool), bool isActive = default(bool), long edgeApplicationId = default(long), long? digitalCertificateId = default(long?), VarEnvironmentEnum? varEnvironment = default(VarEnvironmentEnum?), bool isMtlsEnabled = default(bool), long? mtlsTrustedCaCertificateId = default(long?), MtlsVerificationEnum? mtlsVerification = default(MtlsVerificationEnum?), List<long> crlList = default(List<long>))
         {
             this.Name = name;
             this.Cnames = cnames;
@@ -171,7 +171,7 @@ namespace domains.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UpdateDomainRequest {\n");
+            sb.Append("class DomainData {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Cnames: ").Append(Cnames).Append("\n");
             sb.Append("  CnameAccessOnly: ").Append(CnameAccessOnly).Append("\n");

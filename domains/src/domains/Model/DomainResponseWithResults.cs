@@ -29,7 +29,7 @@ namespace domains.Model
     /// DomainResponseWithResults
     /// </summary>
     [DataContract(Name = "DomainResponseWithResults")]
-    public partial class DomainResponseWithResults : IEquatable<DomainResponseWithResults>, IValidatableObject
+    public partial class DomainResponseWithResults : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DomainResponseWithResults" /> class.
@@ -44,7 +44,7 @@ namespace domains.Model
         /// <param name="schemaVersion">schemaVersion (required).</param>
         /// <param name="links">links (required).</param>
         /// <param name="results">results (required).</param>
-        public DomainResponseWithResults(long count = default(long), long totalPages = default(long), long schemaVersion = default(long), DomainLinks links = default(DomainLinks), List<DomainResults> results = default(List<DomainResults>))
+        public DomainResponseWithResults(long count = default(long), long totalPages = default(long), long schemaVersion = default(long), DomainLinks links = default(DomainLinks), List<DomainEntity> results = default(List<DomainEntity>))
         {
             this.Count = count;
             this.TotalPages = totalPages;
@@ -91,7 +91,7 @@ namespace domains.Model
         /// Gets or Sets Results
         /// </summary>
         [DataMember(Name = "results", IsRequired = true, EmitDefaultValue = true)]
-        public List<DomainResults> Results { get; set; }
+        public List<DomainEntity> Results { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -117,77 +117,6 @@ namespace domains.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as DomainResponseWithResults);
-        }
-
-        /// <summary>
-        /// Returns true if DomainResponseWithResults instances are equal
-        /// </summary>
-        /// <param name="input">Instance of DomainResponseWithResults to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(DomainResponseWithResults input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Count == input.Count ||
-                    this.Count.Equals(input.Count)
-                ) && 
-                (
-                    this.TotalPages == input.TotalPages ||
-                    this.TotalPages.Equals(input.TotalPages)
-                ) && 
-                (
-                    this.SchemaVersion == input.SchemaVersion ||
-                    this.SchemaVersion.Equals(input.SchemaVersion)
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    (this.Links != null &&
-                    this.Links.Equals(input.Links))
-                ) && 
-                (
-                    this.Results == input.Results ||
-                    this.Results != null &&
-                    input.Results != null &&
-                    this.Results.SequenceEqual(input.Results)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Count.GetHashCode();
-                hashCode = (hashCode * 59) + this.TotalPages.GetHashCode();
-                hashCode = (hashCode * 59) + this.SchemaVersion.GetHashCode();
-                if (this.Links != null)
-                {
-                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
-                }
-                if (this.Results != null)
-                {
-                    hashCode = (hashCode * 59) + this.Results.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>
