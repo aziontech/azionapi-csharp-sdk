@@ -26,10 +26,10 @@ using OpenAPIDateConverter = domains.Client.OpenAPIDateConverter;
 namespace domains.Model
 {
     /// <summary>
-    /// UpdateDomainRequest
+    /// DomainEntity
     /// </summary>
-    [DataContract(Name = "UpdateDomainRequest")]
-    public partial class UpdateDomainRequest : IValidatableObject
+    [DataContract(Name = "DomainEntity")]
+    public partial class DomainEntity : IValidatableObject
     {
         /// <summary>
         /// Defines VarEnvironment
@@ -82,7 +82,7 @@ namespace domains.Model
         [DataMember(Name = "mtls_verification", EmitDefaultValue = false)]
         public MtlsVerificationEnum? MtlsVerification { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateDomainRequest" /> class.
+        /// Initializes a new instance of the <see cref="DomainEntity" /> class.
         /// </summary>
         /// <param name="name">name.</param>
         /// <param name="cnames">cnames.</param>
@@ -95,7 +95,9 @@ namespace domains.Model
         /// <param name="mtlsTrustedCaCertificateId">mtlsTrustedCaCertificateId.</param>
         /// <param name="mtlsVerification">mtlsVerification.</param>
         /// <param name="crlList">crlList.</param>
-        public UpdateDomainRequest(string name = default(string), List<string> cnames = default(List<string>), bool cnameAccessOnly = default(bool), bool isActive = default(bool), long edgeApplicationId = default(long), long? digitalCertificateId = default(long?), VarEnvironmentEnum? varEnvironment = default(VarEnvironmentEnum?), bool isMtlsEnabled = default(bool), long? mtlsTrustedCaCertificateId = default(long?), MtlsVerificationEnum? mtlsVerification = default(MtlsVerificationEnum?), List<long> crlList = default(List<long>))
+        /// <param name="id">id.</param>
+        /// <param name="domainName">domainName.</param>
+        public DomainEntity(string name = default(string), List<string> cnames = default(List<string>), bool cnameAccessOnly = default(bool), bool isActive = default(bool), long edgeApplicationId = default(long), long? digitalCertificateId = default(long?), VarEnvironmentEnum? varEnvironment = default(VarEnvironmentEnum?), bool isMtlsEnabled = default(bool), long? mtlsTrustedCaCertificateId = default(long?), MtlsVerificationEnum? mtlsVerification = default(MtlsVerificationEnum?), List<long> crlList = default(List<long>), long id = default(long), string domainName = default(string))
         {
             this.Name = name;
             this.Cnames = cnames;
@@ -108,6 +110,8 @@ namespace domains.Model
             this.MtlsTrustedCaCertificateId = mtlsTrustedCaCertificateId;
             this.MtlsVerification = mtlsVerification;
             this.CrlList = crlList;
+            this.Id = id;
+            this.DomainName = domainName;
         }
 
         /// <summary>
@@ -165,13 +169,25 @@ namespace domains.Model
         public List<long> CrlList { get; set; }
 
         /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public long Id { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DomainName
+        /// </summary>
+        [DataMember(Name = "domain_name", EmitDefaultValue = false)]
+        public string DomainName { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UpdateDomainRequest {\n");
+            sb.Append("class DomainEntity {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Cnames: ").Append(Cnames).Append("\n");
             sb.Append("  CnameAccessOnly: ").Append(CnameAccessOnly).Append("\n");
@@ -183,6 +199,8 @@ namespace domains.Model
             sb.Append("  MtlsTrustedCaCertificateId: ").Append(MtlsTrustedCaCertificateId).Append("\n");
             sb.Append("  MtlsVerification: ").Append(MtlsVerification).Append("\n");
             sb.Append("  CrlList: ").Append(CrlList).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  DomainName: ").Append(DomainName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

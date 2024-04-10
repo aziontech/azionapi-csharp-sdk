@@ -29,8 +29,58 @@ namespace domains.Model
     /// PutDomainRequest
     /// </summary>
     [DataContract(Name = "PutDomainRequest")]
-    public partial class PutDomainRequest : IEquatable<PutDomainRequest>, IValidatableObject
+    public partial class PutDomainRequest : IValidatableObject
     {
+        /// <summary>
+        /// Defines VarEnvironment
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum VarEnvironmentEnum
+        {
+            /// <summary>
+            /// Enum Production for value: production
+            /// </summary>
+            [EnumMember(Value = "production")]
+            Production = 1,
+
+            /// <summary>
+            /// Enum Preview for value: preview
+            /// </summary>
+            [EnumMember(Value = "preview")]
+            Preview = 2
+        }
+
+
+        /// <summary>
+        /// Gets or Sets VarEnvironment
+        /// </summary>
+        [DataMember(Name = "environment", EmitDefaultValue = false)]
+        public VarEnvironmentEnum? VarEnvironment { get; set; }
+        /// <summary>
+        /// Defines MtlsVerification
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum MtlsVerificationEnum
+        {
+            /// <summary>
+            /// Enum Enforce for value: enforce
+            /// </summary>
+            [EnumMember(Value = "enforce")]
+            Enforce = 1,
+
+            /// <summary>
+            /// Enum Permissive for value: permissive
+            /// </summary>
+            [EnumMember(Value = "permissive")]
+            Permissive = 2
+        }
+
+
+        /// <summary>
+        /// Gets or Sets MtlsVerification
+        /// </summary>
+        [DataMember(Name = "mtls_verification", EmitDefaultValue = false)]
+        public MtlsVerificationEnum? MtlsVerification { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PutDomainRequest" /> class.
         /// </summary>
@@ -39,36 +89,47 @@ namespace domains.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PutDomainRequest" /> class.
         /// </summary>
-        /// <param name="cnames">cnames (required).</param>
-        /// <param name="cnameAccessOnly">cnameAccessOnly (required).</param>
         /// <param name="name">name (required).</param>
-        /// <param name="isActive">isActive (required).</param>
+        /// <param name="cnames">cnames (required).</param>
+        /// <param name="cnameAccessOnly">cnameAccessOnly.</param>
+        /// <param name="isActive">isActive.</param>
         /// <param name="edgeApplicationId">edgeApplicationId (required).</param>
-        /// <param name="digitalCertificateId">digitalCertificateId (required).</param>
-        public PutDomainRequest(List<string> cnames = default(List<string>), bool cnameAccessOnly = default(bool), string name = default(string), bool isActive = default(bool), long edgeApplicationId = default(long), long? digitalCertificateId = default(long?))
+        /// <param name="digitalCertificateId">digitalCertificateId.</param>
+        /// <param name="varEnvironment">varEnvironment.</param>
+        /// <param name="isMtlsEnabled">isMtlsEnabled.</param>
+        /// <param name="mtlsTrustedCaCertificateId">mtlsTrustedCaCertificateId.</param>
+        /// <param name="mtlsVerification">mtlsVerification.</param>
+        /// <param name="crlList">crlList.</param>
+        public PutDomainRequest(string name = default(string), List<string> cnames = default(List<string>), bool cnameAccessOnly = default(bool), bool isActive = default(bool), long edgeApplicationId = default(long), long? digitalCertificateId = default(long?), VarEnvironmentEnum? varEnvironment = default(VarEnvironmentEnum?), bool isMtlsEnabled = default(bool), long? mtlsTrustedCaCertificateId = default(long?), MtlsVerificationEnum? mtlsVerification = default(MtlsVerificationEnum?), List<long> crlList = default(List<long>))
         {
-            // to ensure "cnames" is required (not null)
-            if (cnames == null)
-            {
-                throw new ArgumentNullException("cnames is a required property for PutDomainRequest and cannot be null");
-            }
-            this.Cnames = cnames;
-            this.CnameAccessOnly = cnameAccessOnly;
             // to ensure "name" is required (not null)
             if (name == null)
             {
                 throw new ArgumentNullException("name is a required property for PutDomainRequest and cannot be null");
             }
             this.Name = name;
-            this.IsActive = isActive;
-            this.EdgeApplicationId = edgeApplicationId;
-            // to ensure "digitalCertificateId" is required (not null)
-            if (digitalCertificateId == null)
+            // to ensure "cnames" is required (not null)
+            if (cnames == null)
             {
-                throw new ArgumentNullException("digitalCertificateId is a required property for PutDomainRequest and cannot be null");
+                throw new ArgumentNullException("cnames is a required property for PutDomainRequest and cannot be null");
             }
+            this.Cnames = cnames;
+            this.EdgeApplicationId = edgeApplicationId;
+            this.CnameAccessOnly = cnameAccessOnly;
+            this.IsActive = isActive;
             this.DigitalCertificateId = digitalCertificateId;
+            this.VarEnvironment = varEnvironment;
+            this.IsMtlsEnabled = isMtlsEnabled;
+            this.MtlsTrustedCaCertificateId = mtlsTrustedCaCertificateId;
+            this.MtlsVerification = mtlsVerification;
+            this.CrlList = crlList;
         }
+
+        /// <summary>
+        /// Gets or Sets Name
+        /// </summary>
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Cnames
@@ -79,19 +140,13 @@ namespace domains.Model
         /// <summary>
         /// Gets or Sets CnameAccessOnly
         /// </summary>
-        [DataMember(Name = "cname_access_only", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "cname_access_only", EmitDefaultValue = true)]
         public bool CnameAccessOnly { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Name
-        /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
-        public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets IsActive
         /// </summary>
-        [DataMember(Name = "is_active", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "is_active", EmitDefaultValue = true)]
         public bool IsActive { get; set; }
 
         /// <summary>
@@ -103,8 +158,26 @@ namespace domains.Model
         /// <summary>
         /// Gets or Sets DigitalCertificateId
         /// </summary>
-        [DataMember(Name = "digital_certificate_id", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "digital_certificate_id", EmitDefaultValue = true)]
         public long? DigitalCertificateId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsMtlsEnabled
+        /// </summary>
+        [DataMember(Name = "is_mtls_enabled", EmitDefaultValue = true)]
+        public bool IsMtlsEnabled { get; set; }
+
+        /// <summary>
+        /// Gets or Sets MtlsTrustedCaCertificateId
+        /// </summary>
+        [DataMember(Name = "mtls_trusted_ca_certificate_id", EmitDefaultValue = true)]
+        public long? MtlsTrustedCaCertificateId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CrlList
+        /// </summary>
+        [DataMember(Name = "crl_list", EmitDefaultValue = true)]
+        public List<long> CrlList { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -114,12 +187,17 @@ namespace domains.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class PutDomainRequest {\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Cnames: ").Append(Cnames).Append("\n");
             sb.Append("  CnameAccessOnly: ").Append(CnameAccessOnly).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  IsActive: ").Append(IsActive).Append("\n");
             sb.Append("  EdgeApplicationId: ").Append(EdgeApplicationId).Append("\n");
             sb.Append("  DigitalCertificateId: ").Append(DigitalCertificateId).Append("\n");
+            sb.Append("  VarEnvironment: ").Append(VarEnvironment).Append("\n");
+            sb.Append("  IsMtlsEnabled: ").Append(IsMtlsEnabled).Append("\n");
+            sb.Append("  MtlsTrustedCaCertificateId: ").Append(MtlsTrustedCaCertificateId).Append("\n");
+            sb.Append("  MtlsVerification: ").Append(MtlsVerification).Append("\n");
+            sb.Append("  CrlList: ").Append(CrlList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -134,92 +212,45 @@ namespace domains.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as PutDomainRequest);
-        }
-
-        /// <summary>
-        /// Returns true if PutDomainRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of PutDomainRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PutDomainRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Cnames == input.Cnames ||
-                    this.Cnames != null &&
-                    input.Cnames != null &&
-                    this.Cnames.SequenceEqual(input.Cnames)
-                ) && 
-                (
-                    this.CnameAccessOnly == input.CnameAccessOnly ||
-                    this.CnameAccessOnly.Equals(input.CnameAccessOnly)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.IsActive == input.IsActive ||
-                    this.IsActive.Equals(input.IsActive)
-                ) && 
-                (
-                    this.EdgeApplicationId == input.EdgeApplicationId ||
-                    this.EdgeApplicationId.Equals(input.EdgeApplicationId)
-                ) && 
-                (
-                    this.DigitalCertificateId == input.DigitalCertificateId ||
-                    (this.DigitalCertificateId != null &&
-                    this.DigitalCertificateId.Equals(input.DigitalCertificateId))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Cnames != null)
-                {
-                    hashCode = (hashCode * 59) + this.Cnames.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.CnameAccessOnly.GetHashCode();
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsActive.GetHashCode();
-                hashCode = (hashCode * 59) + this.EdgeApplicationId.GetHashCode();
-                if (this.DigitalCertificateId != null)
-                {
-                    hashCode = (hashCode * 59) + this.DigitalCertificateId.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Name (string) maxLength
+            if (this.Name != null && this.Name.Length > 100)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 100.", new [] { "Name" });
+            }
+
+            // Name (string) minLength
+            if (this.Name != null && this.Name.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+            }
+
+            if (this.Name != null) {
+                // Name (string) pattern
+                Regex regexName = new Regex(@"[a-zA-Z0-9$%^&*()-+=\[\]{};:?><,|/]+", RegexOptions.CultureInvariant);
+                if (!regexName.Match(this.Name).Success)
+                {
+                    yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, must match a pattern of " + regexName, new [] { "Name" });
+                }
+            }
+
+            // EdgeApplicationId (long) maximum
+            if (this.EdgeApplicationId > (long)-8446744073709551616)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EdgeApplicationId, must be a value less than or equal to -8446744073709551616.", new [] { "EdgeApplicationId" });
+            }
+
+            // EdgeApplicationId (long) minimum
+            if (this.EdgeApplicationId < (long)1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EdgeApplicationId, must be a value greater than or equal to 1.", new [] { "EdgeApplicationId" });
+            }
+
             yield break;
         }
     }

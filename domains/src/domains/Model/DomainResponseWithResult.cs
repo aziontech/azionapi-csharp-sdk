@@ -29,7 +29,7 @@ namespace domains.Model
     /// DomainResponseWithResult
     /// </summary>
     [DataContract(Name = "DomainResponseWithResult")]
-    public partial class DomainResponseWithResult : IEquatable<DomainResponseWithResult>, IValidatableObject
+    public partial class DomainResponseWithResult : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DomainResponseWithResult" /> class.
@@ -39,30 +39,54 @@ namespace domains.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DomainResponseWithResult" /> class.
         /// </summary>
-        /// <param name="schemaVersion">schemaVersion (required).</param>
+        /// <param name="count">count.</param>
+        /// <param name="links">links.</param>
         /// <param name="results">results (required).</param>
-        public DomainResponseWithResult(long schemaVersion = default(long), DomainResults results = default(DomainResults))
+        /// <param name="totalPages">totalPages.</param>
+        /// <param name="schemaVersion">schemaVersion (required).</param>
+        public DomainResponseWithResult(long count = default(long), DomainLinks links = default(DomainLinks), DomainEntity results = default(DomainEntity), long totalPages = default(long), long schemaVersion = default(long))
         {
-            this.SchemaVersion = schemaVersion;
             // to ensure "results" is required (not null)
             if (results == null)
             {
                 throw new ArgumentNullException("results is a required property for DomainResponseWithResult and cannot be null");
             }
             this.Results = results;
+            this.SchemaVersion = schemaVersion;
+            this.Count = count;
+            this.Links = links;
+            this.TotalPages = totalPages;
         }
+
+        /// <summary>
+        /// Gets or Sets Count
+        /// </summary>
+        [DataMember(Name = "count", EmitDefaultValue = false)]
+        public long Count { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Links
+        /// </summary>
+        [DataMember(Name = "links", EmitDefaultValue = false)]
+        public DomainLinks Links { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Results
+        /// </summary>
+        [DataMember(Name = "results", IsRequired = true, EmitDefaultValue = true)]
+        public DomainEntity Results { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TotalPages
+        /// </summary>
+        [DataMember(Name = "total_pages", EmitDefaultValue = false)]
+        public long TotalPages { get; set; }
 
         /// <summary>
         /// Gets or Sets SchemaVersion
         /// </summary>
         [DataMember(Name = "schema_version", IsRequired = true, EmitDefaultValue = true)]
         public long SchemaVersion { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Results
-        /// </summary>
-        [DataMember(Name = "results", IsRequired = true, EmitDefaultValue = true)]
-        public DomainResults Results { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -72,8 +96,11 @@ namespace domains.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class DomainResponseWithResult {\n");
-            sb.Append("  SchemaVersion: ").Append(SchemaVersion).Append("\n");
+            sb.Append("  Count: ").Append(Count).Append("\n");
+            sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  Results: ").Append(Results).Append("\n");
+            sb.Append("  TotalPages: ").Append(TotalPages).Append("\n");
+            sb.Append("  SchemaVersion: ").Append(SchemaVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -85,57 +112,6 @@ namespace domains.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as DomainResponseWithResult);
-        }
-
-        /// <summary>
-        /// Returns true if DomainResponseWithResult instances are equal
-        /// </summary>
-        /// <param name="input">Instance of DomainResponseWithResult to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(DomainResponseWithResult input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.SchemaVersion == input.SchemaVersion ||
-                    this.SchemaVersion.Equals(input.SchemaVersion)
-                ) && 
-                (
-                    this.Results == input.Results ||
-                    (this.Results != null &&
-                    this.Results.Equals(input.Results))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.SchemaVersion.GetHashCode();
-                if (this.Results != null)
-                {
-                    hashCode = (hashCode * 59) + this.Results.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

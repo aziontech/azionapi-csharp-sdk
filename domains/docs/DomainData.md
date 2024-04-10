@@ -1,14 +1,14 @@
-# domains.Model.CreateDomainRequest
+# domains.Model.DomainData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
-**Cnames** | **List&lt;string&gt;** |  | 
+**Name** | **string** |  | [optional] 
+**Cnames** | **List&lt;string&gt;** |  | [optional] 
 **CnameAccessOnly** | **bool** |  | [optional] 
 **IsActive** | **bool** |  | [optional] 
-**EdgeApplicationId** | **long** |  | 
+**EdgeApplicationId** | **long** |  | [optional] 
 **DigitalCertificateId** | **long?** |  | [optional] 
 **VarEnvironment** | **string** |  | [optional] 
 **IsMtlsEnabled** | **bool** |  | [optional] 
