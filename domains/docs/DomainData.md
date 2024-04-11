@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **VarEnvironment** | **string** |  | [optional] 
 **IsMtlsEnabled** | **bool** |  | [optional] 
 **MtlsTrustedCaCertificateId** | **long?** |  | [optional] 
+**EdgeFirewallId** | **long?** |  | [optional] 
 **MtlsVerification** | **string** |  | [optional] 
 **CrlList** | **List&lt;long&gt;** |  | [optional] 
 

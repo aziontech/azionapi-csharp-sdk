@@ -93,11 +93,12 @@ namespace domains.Model
         /// <param name="varEnvironment">varEnvironment.</param>
         /// <param name="isMtlsEnabled">isMtlsEnabled.</param>
         /// <param name="mtlsTrustedCaCertificateId">mtlsTrustedCaCertificateId.</param>
+        /// <param name="edgeFirewallId">edgeFirewallId.</param>
         /// <param name="mtlsVerification">mtlsVerification.</param>
         /// <param name="crlList">crlList.</param>
         /// <param name="id">id.</param>
         /// <param name="domainName">domainName.</param>
-        public DomainEntity(string name = default(string), List<string> cnames = default(List<string>), bool cnameAccessOnly = default(bool), bool isActive = default(bool), long edgeApplicationId = default(long), long? digitalCertificateId = default(long?), VarEnvironmentEnum? varEnvironment = default(VarEnvironmentEnum?), bool isMtlsEnabled = default(bool), long? mtlsTrustedCaCertificateId = default(long?), MtlsVerificationEnum? mtlsVerification = default(MtlsVerificationEnum?), List<long> crlList = default(List<long>), long id = default(long), string domainName = default(string))
+        public DomainEntity(string name = default(string), List<string> cnames = default(List<string>), bool cnameAccessOnly = default(bool), bool isActive = default(bool), long edgeApplicationId = default(long), long? digitalCertificateId = default(long?), VarEnvironmentEnum? varEnvironment = default(VarEnvironmentEnum?), bool isMtlsEnabled = default(bool), long? mtlsTrustedCaCertificateId = default(long?), long? edgeFirewallId = default(long?), MtlsVerificationEnum? mtlsVerification = default(MtlsVerificationEnum?), List<long> crlList = default(List<long>), long id = default(long), string domainName = default(string))
         {
             this.Name = name;
             this.Cnames = cnames;
@@ -108,6 +109,7 @@ namespace domains.Model
             this.VarEnvironment = varEnvironment;
             this.IsMtlsEnabled = isMtlsEnabled;
             this.MtlsTrustedCaCertificateId = mtlsTrustedCaCertificateId;
+            this.EdgeFirewallId = edgeFirewallId;
             this.MtlsVerification = mtlsVerification;
             this.CrlList = crlList;
             this.Id = id;
@@ -163,6 +165,12 @@ namespace domains.Model
         public long? MtlsTrustedCaCertificateId { get; set; }
 
         /// <summary>
+        /// Gets or Sets EdgeFirewallId
+        /// </summary>
+        [DataMember(Name = "edge_firewall_id", EmitDefaultValue = true)]
+        public long? EdgeFirewallId { get; set; }
+
+        /// <summary>
         /// Gets or Sets CrlList
         /// </summary>
         [DataMember(Name = "crl_list", EmitDefaultValue = true)]
@@ -197,6 +205,7 @@ namespace domains.Model
             sb.Append("  VarEnvironment: ").Append(VarEnvironment).Append("\n");
             sb.Append("  IsMtlsEnabled: ").Append(IsMtlsEnabled).Append("\n");
             sb.Append("  MtlsTrustedCaCertificateId: ").Append(MtlsTrustedCaCertificateId).Append("\n");
+            sb.Append("  EdgeFirewallId: ").Append(EdgeFirewallId).Append("\n");
             sb.Append("  MtlsVerification: ").Append(MtlsVerification).Append("\n");
             sb.Append("  CrlList: ").Append(CrlList).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
