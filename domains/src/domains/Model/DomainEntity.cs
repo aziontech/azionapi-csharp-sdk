@@ -98,7 +98,7 @@ namespace domains.Model
         /// <param name="crlList">crlList.</param>
         /// <param name="id">id.</param>
         /// <param name="domainName">domainName.</param>
-        public DomainEntity(string name = default(string), List<string> cnames = default(List<string>), bool cnameAccessOnly = default(bool), bool isActive = default(bool), long edgeApplicationId = default(long), long? digitalCertificateId = default(long?), VarEnvironmentEnum? varEnvironment = default(VarEnvironmentEnum?), bool isMtlsEnabled = default(bool), long? mtlsTrustedCaCertificateId = default(long?), long? edgeFirewallId = default(long?), MtlsVerificationEnum? mtlsVerification = default(MtlsVerificationEnum?), List<long> crlList = default(List<long>), long id = default(long), string domainName = default(string))
+        public DomainEntity(string name = default(string), List<string> cnames = default(List<string>), bool cnameAccessOnly = default(bool), bool isActive = default(bool), long edgeApplicationId = default(long), DomainDataDigitalCertificateId digitalCertificateId = default(DomainDataDigitalCertificateId), VarEnvironmentEnum? varEnvironment = default(VarEnvironmentEnum?), bool isMtlsEnabled = default(bool), long? mtlsTrustedCaCertificateId = default(long?), long? edgeFirewallId = default(long?), MtlsVerificationEnum? mtlsVerification = default(MtlsVerificationEnum?), List<long> crlList = default(List<long>), long id = default(long), string domainName = default(string))
         {
             this.Name = name;
             this.Cnames = cnames;
@@ -149,8 +149,8 @@ namespace domains.Model
         /// <summary>
         /// Gets or Sets DigitalCertificateId
         /// </summary>
-        [DataMember(Name = "digital_certificate_id", EmitDefaultValue = true)]
-        public long? DigitalCertificateId { get; set; }
+        [DataMember(Name = "digital_certificate_id", EmitDefaultValue = false)]
+        public DomainDataDigitalCertificateId DigitalCertificateId { get; set; }
 
         /// <summary>
         /// Gets or Sets IsMtlsEnabled

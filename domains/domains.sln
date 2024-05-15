@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 VisualStudioVersion = 12.0.0.0
 MinimumVisualStudioVersion = 10.0.0.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "domains", "src\domains\domains.csproj", "{FCC6557E-CBCA-4811-8A75-9469BE3E83ED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "domains", "src\domains\domains.csproj", "{31646C84-EF0B-4EE3-951E-9F673E580C5E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "domains.Test", "src\domains.Test\domains.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
 EndProject
@@ -12,10 +12,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FCC6557E-CBCA-4811-8A75-9469BE3E83ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FCC6557E-CBCA-4811-8A75-9469BE3E83ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FCC6557E-CBCA-4811-8A75-9469BE3E83ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FCC6557E-CBCA-4811-8A75-9469BE3E83ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31646C84-EF0B-4EE3-951E-9F673E580C5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31646C84-EF0B-4EE3-951E-9F673E580C5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31646C84-EF0B-4EE3-951E-9F673E580C5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31646C84-EF0B-4EE3-951E-9F673E580C5E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU
