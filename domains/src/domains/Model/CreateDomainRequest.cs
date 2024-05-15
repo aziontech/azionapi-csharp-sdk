@@ -101,7 +101,7 @@ namespace domains.Model
         /// <param name="edgeFirewallId">edgeFirewallId.</param>
         /// <param name="mtlsVerification">mtlsVerification.</param>
         /// <param name="crlList">crlList.</param>
-        public CreateDomainRequest(string name = default(string), List<string> cnames = default(List<string>), bool cnameAccessOnly = default(bool), bool isActive = default(bool), long edgeApplicationId = default(long), long? digitalCertificateId = default(long?), VarEnvironmentEnum? varEnvironment = default(VarEnvironmentEnum?), bool isMtlsEnabled = default(bool), long? mtlsTrustedCaCertificateId = default(long?), long? edgeFirewallId = default(long?), MtlsVerificationEnum? mtlsVerification = default(MtlsVerificationEnum?), List<long> crlList = default(List<long>))
+        public CreateDomainRequest(string name = default(string), List<string> cnames = default(List<string>), bool cnameAccessOnly = default(bool), bool isActive = default(bool), long edgeApplicationId = default(long), DomainDataDigitalCertificateId digitalCertificateId = default(DomainDataDigitalCertificateId), VarEnvironmentEnum? varEnvironment = default(VarEnvironmentEnum?), bool isMtlsEnabled = default(bool), long? mtlsTrustedCaCertificateId = default(long?), long? edgeFirewallId = default(long?), MtlsVerificationEnum? mtlsVerification = default(MtlsVerificationEnum?), List<long> crlList = default(List<long>))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -160,8 +160,8 @@ namespace domains.Model
         /// <summary>
         /// Gets or Sets DigitalCertificateId
         /// </summary>
-        [DataMember(Name = "digital_certificate_id", EmitDefaultValue = true)]
-        public long? DigitalCertificateId { get; set; }
+        [DataMember(Name = "digital_certificate_id", EmitDefaultValue = false)]
+        public DomainDataDigitalCertificateId DigitalCertificateId { get; set; }
 
         /// <summary>
         /// Gets or Sets IsMtlsEnabled
