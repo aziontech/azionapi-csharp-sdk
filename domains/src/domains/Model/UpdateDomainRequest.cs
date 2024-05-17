@@ -96,7 +96,7 @@ namespace domains.Model
         /// <param name="edgeFirewallId">edgeFirewallId.</param>
         /// <param name="mtlsVerification">mtlsVerification.</param>
         /// <param name="crlList">crlList.</param>
-        public UpdateDomainRequest(string name = default(string), List<string> cnames = default(List<string>), bool cnameAccessOnly = default(bool), bool isActive = default(bool), long edgeApplicationId = default(long), DomainDataDigitalCertificateId digitalCertificateId = default(DomainDataDigitalCertificateId), VarEnvironmentEnum? varEnvironment = default(VarEnvironmentEnum?), bool isMtlsEnabled = default(bool), long? mtlsTrustedCaCertificateId = default(long?), long? edgeFirewallId = default(long?), MtlsVerificationEnum? mtlsVerification = default(MtlsVerificationEnum?), List<long> crlList = default(List<long>))
+        public UpdateDomainRequest(string name = default(string), List<string> cnames = default(List<string>), bool cnameAccessOnly = default(bool), bool isActive = default(bool), long edgeApplicationId = default(long), string digitalCertificateId = default(string), VarEnvironmentEnum? varEnvironment = default(VarEnvironmentEnum?), bool isMtlsEnabled = default(bool), long? mtlsTrustedCaCertificateId = default(long?), long? edgeFirewallId = default(long?), MtlsVerificationEnum? mtlsVerification = default(MtlsVerificationEnum?), List<long> crlList = default(List<long>))
         {
             this.Name = name;
             this.Cnames = cnames;
@@ -146,7 +146,7 @@ namespace domains.Model
         /// Gets or Sets DigitalCertificateId
         /// </summary>
         [DataMember(Name = "digital_certificate_id", EmitDefaultValue = false)]
-        public DomainDataDigitalCertificateId DigitalCertificateId { get; set; }
+        public string DigitalCertificateId { get; set; }
 
         /// <summary>
         /// Gets or Sets IsMtlsEnabled
@@ -243,6 +243,27 @@ namespace domains.Model
             if (this.EdgeApplicationId < (long)1)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EdgeApplicationId, must be a value greater than or equal to 1.", new [] { "EdgeApplicationId" });
+            }
+
+            // DigitalCertificateId (string) maxLength
+            if (this.DigitalCertificateId != null && this.DigitalCertificateId.Length > 100)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DigitalCertificateId, length must be less than 100.", new [] { "DigitalCertificateId" });
+            }
+
+            // DigitalCertificateId (string) minLength
+            if (this.DigitalCertificateId != null && this.DigitalCertificateId.Length < 1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DigitalCertificateId, length must be greater than 1.", new [] { "DigitalCertificateId" });
+            }
+
+            if (this.DigitalCertificateId != null) {
+                // DigitalCertificateId (string) pattern
+                Regex regexDigitalCertificateId = new Regex(@"[a-zA-Z0-9$%^&*()-+=\[\]{};:?><,|/]+", RegexOptions.CultureInvariant);
+                if (!regexDigitalCertificateId.Match(this.DigitalCertificateId).Success)
+                {
+                    yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DigitalCertificateId, must match a pattern of " + regexDigitalCertificateId, new [] { "DigitalCertificateId" });
+                }
             }
 
             yield break;
