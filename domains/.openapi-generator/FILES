@@ -4,7 +4,6 @@ api/openapi.yaml
 appveyor.yml
 docs/CreateDomainRequest.md
 docs/DomainData.md
-docs/DomainDataDigitalCertificateId.md
 docs/DomainEntity.md
 docs/DomainLinks.md
 docs/DomainResponseWithResult.md
@@ -14,7 +13,6 @@ docs/PutDomainRequest.md
 docs/UpdateDomainRequest.md
 domains.sln
 git_push.sh
-src/domains.Test/Model/DomainDataDigitalCertificateIdTests.cs
 src/domains.Test/domains.Test.csproj
 src/domains/Api/DomainsApi.cs
 src/domains/Client/ApiClient.cs
@@ -36,7 +34,6 @@ src/domains/Client/RetryConfiguration.cs
 src/domains/Model/AbstractOpenAPISchema.cs
 src/domains/Model/CreateDomainRequest.cs
 src/domains/Model/DomainData.cs
-src/domains/Model/DomainDataDigitalCertificateId.cs
 src/domains/Model/DomainEntity.cs
 src/domains/Model/DomainLinks.cs
 src/domains/Model/DomainResponseWithResult.cs

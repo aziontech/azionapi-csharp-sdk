@@ -134,7 +134,6 @@ Class | Method | HTTP request | Description
 
  - [Model.CreateDomainRequest](docs/CreateDomainRequest.md)
  - [Model.DomainData](docs/DomainData.md)
- - [Model.DomainDataDigitalCertificateId](docs/DomainDataDigitalCertificateId.md)
  - [Model.DomainEntity](docs/DomainEntity.md)
  - [Model.DomainLinks](docs/DomainLinks.md)
  - [Model.DomainResponseWithResult](docs/DomainResponseWithResult.md)
