@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Count** | **long** |  | [optional] 
 **Links** | [**DomainLinks**](DomainLinks.md) |  | [optional] 
-**Results** | [**DomainEntity**](DomainEntity.md) |  | 
+**Results** | [**DomainEntityResponse**](DomainEntityResponse.md) |  | 
 **TotalPages** | **long** |  | [optional] 
 **SchemaVersion** | **long** |  | 
 

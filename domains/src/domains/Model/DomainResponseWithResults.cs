@@ -44,7 +44,7 @@ namespace domains.Model
         /// <param name="schemaVersion">schemaVersion (required).</param>
         /// <param name="links">links (required).</param>
         /// <param name="results">results (required).</param>
-        public DomainResponseWithResults(long count = default(long), long totalPages = default(long), long schemaVersion = default(long), DomainLinks links = default(DomainLinks), List<DomainEntity> results = default(List<DomainEntity>))
+        public DomainResponseWithResults(long count = default(long), long totalPages = default(long), long schemaVersion = default(long), DomainLinks links = default(DomainLinks), List<DomainEntityResponse> results = default(List<DomainEntityResponse>))
         {
             this.Count = count;
             this.TotalPages = totalPages;
@@ -91,7 +91,7 @@ namespace domains.Model
         /// Gets or Sets Results
         /// </summary>
         [DataMember(Name = "results", IsRequired = true, EmitDefaultValue = true)]
-        public List<DomainEntity> Results { get; set; }
+        public List<DomainEntityResponse> Results { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
