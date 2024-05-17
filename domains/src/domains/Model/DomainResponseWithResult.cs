@@ -44,7 +44,7 @@ namespace domains.Model
         /// <param name="results">results (required).</param>
         /// <param name="totalPages">totalPages.</param>
         /// <param name="schemaVersion">schemaVersion (required).</param>
-        public DomainResponseWithResult(long count = default(long), DomainLinks links = default(DomainLinks), DomainEntity results = default(DomainEntity), long totalPages = default(long), long schemaVersion = default(long))
+        public DomainResponseWithResult(long count = default(long), DomainLinks links = default(DomainLinks), DomainEntityResponse results = default(DomainEntityResponse), long totalPages = default(long), long schemaVersion = default(long))
         {
             // to ensure "results" is required (not null)
             if (results == null)
@@ -74,7 +74,7 @@ namespace domains.Model
         /// Gets or Sets Results
         /// </summary>
         [DataMember(Name = "results", IsRequired = true, EmitDefaultValue = true)]
-        public DomainEntity Results { get; set; }
+        public DomainEntityResponse Results { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalPages

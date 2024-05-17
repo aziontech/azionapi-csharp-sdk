@@ -134,7 +134,9 @@ Class | Method | HTTP request | Description
 
  - [Model.CreateDomainRequest](docs/CreateDomainRequest.md)
  - [Model.DomainData](docs/DomainData.md)
+ - [Model.DomainDataResponse](docs/DomainDataResponse.md)
  - [Model.DomainEntity](docs/DomainEntity.md)
+ - [Model.DomainEntityResponse](docs/DomainEntityResponse.md)
  - [Model.DomainLinks](docs/DomainLinks.md)
  - [Model.DomainResponseWithResult](docs/DomainResponseWithResult.md)
  - [Model.DomainResponseWithResults](docs/DomainResponseWithResults.md)
