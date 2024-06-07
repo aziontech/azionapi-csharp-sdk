@@ -13,6 +13,10 @@ All URIs are relative to *https://api.azion.com*
 | [**StorageApiBucketsObjectsRetrieve**](StorageApi.md#storageapibucketsobjectsretrieve) | **GET** /v4/storage/buckets/{bucket_name}/objects/{object_key} | Download object |
 | [**StorageApiBucketsObjectsUpdate**](StorageApi.md#storageapibucketsobjectsupdate) | **PUT** /v4/storage/buckets/{bucket_name}/objects/{object_key} | Update the object key |
 | [**StorageApiBucketsPartialUpdate**](StorageApi.md#storageapibucketspartialupdate) | **PATCH** /v4/storage/buckets/{name} | Update bucket info |
+| [**StorageApiS3CredentialsByAccessKey**](StorageApi.md#storageapis3credentialsbyaccesskey) | **GET** /v4/storage/s3-credentials/{s3_credential_access_key} | get by s3 credentials by access key |
+| [**StorageApiS3CredentialsCreate**](StorageApi.md#storageapis3credentialscreate) | **POST** /v4/storage/s3-credentials | create s3 credentials |
+| [**StorageApiS3CredentialsDelete**](StorageApi.md#storageapis3credentialsdelete) | **DELETE** /v4/storage/s3-credentials/{s3_credential_access_key} | delete by s3 credentials |
+| [**StorageApiS3CredentialsList**](StorageApi.md#storageapis3credentialslist) | **GET** /v4/storage/s3-credentials | List s3 credentials |
 
 <a id="storageapibucketscreate"></a>
 # **StorageApiBucketsCreate**
@@ -718,7 +722,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/html, application/json, application/xml, text/plain, image/jpeg, image/png, image/gif, video/mp4, audio/mpeg, application/pdf, application/javascript, text/css, application/octet-stream
+ - **Accept**: text/html, application/json, application/xml, text/plain, image/jpeg, image/png, image/gif, video/mp4, audio/mpeg, application/pdf, application/javascript, text/css, application/octet-stream, multipart/form-data, application/x-www-form-urlencoded
 
 
 ### HTTP response details
@@ -942,6 +946,412 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
 | **202** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="storageapis3credentialsbyaccesskey"></a>
+# **StorageApiS3CredentialsByAccessKey**
+> ResponseS3Credential StorageApiS3CredentialsByAccessKey (string s3CredentialAccessKey)
+
+get by s3 credentials by access key
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using storage.Api;
+using storage.Client;
+using storage.Model;
+
+namespace Example
+{
+    public class StorageApiS3CredentialsByAccessKeyExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.azion.com";
+            // Configure API key authorization: tokenAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new StorageApi(config);
+            var s3CredentialAccessKey = "s3CredentialAccessKey_example";  // string | 
+
+            try
+            {
+                // get by s3 credentials by access key
+                ResponseS3Credential result = apiInstance.StorageApiS3CredentialsByAccessKey(s3CredentialAccessKey);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling StorageApi.StorageApiS3CredentialsByAccessKey: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the StorageApiS3CredentialsByAccessKeyWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // get by s3 credentials by access key
+    ApiResponse<ResponseS3Credential> response = apiInstance.StorageApiS3CredentialsByAccessKeyWithHttpInfo(s3CredentialAccessKey);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling StorageApi.StorageApiS3CredentialsByAccessKeyWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **s3CredentialAccessKey** | **string** |  |  |
+
+### Return type
+
+[**ResponseS3Credential**](ResponseS3Credential.md)
+
+### Authorization
+
+[tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="storageapis3credentialscreate"></a>
+# **StorageApiS3CredentialsCreate**
+> ResponseS3Credential StorageApiS3CredentialsCreate (S3CredentialCreate s3CredentialCreate)
+
+create s3 credentials
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using storage.Api;
+using storage.Client;
+using storage.Model;
+
+namespace Example
+{
+    public class StorageApiS3CredentialsCreateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.azion.com";
+            // Configure API key authorization: tokenAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new StorageApi(config);
+            var s3CredentialCreate = new S3CredentialCreate(); // S3CredentialCreate | 
+
+            try
+            {
+                // create s3 credentials
+                ResponseS3Credential result = apiInstance.StorageApiS3CredentialsCreate(s3CredentialCreate);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling StorageApi.StorageApiS3CredentialsCreate: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the StorageApiS3CredentialsCreateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // create s3 credentials
+    ApiResponse<ResponseS3Credential> response = apiInstance.StorageApiS3CredentialsCreateWithHttpInfo(s3CredentialCreate);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling StorageApi.StorageApiS3CredentialsCreateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **s3CredentialCreate** | [**S3CredentialCreate**](S3CredentialCreate.md) |  |  |
+
+### Return type
+
+[**ResponseS3Credential**](ResponseS3Credential.md)
+
+### Authorization
+
+[tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** |  |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="storageapis3credentialsdelete"></a>
+# **StorageApiS3CredentialsDelete**
+> ResponseS3Credential StorageApiS3CredentialsDelete (string s3CredentialAccessKey)
+
+delete by s3 credentials
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using storage.Api;
+using storage.Client;
+using storage.Model;
+
+namespace Example
+{
+    public class StorageApiS3CredentialsDeleteExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.azion.com";
+            // Configure API key authorization: tokenAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new StorageApi(config);
+            var s3CredentialAccessKey = "s3CredentialAccessKey_example";  // string | 
+
+            try
+            {
+                // delete by s3 credentials
+                ResponseS3Credential result = apiInstance.StorageApiS3CredentialsDelete(s3CredentialAccessKey);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling StorageApi.StorageApiS3CredentialsDelete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the StorageApiS3CredentialsDeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // delete by s3 credentials
+    ApiResponse<ResponseS3Credential> response = apiInstance.StorageApiS3CredentialsDeleteWithHttpInfo(s3CredentialAccessKey);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling StorageApi.StorageApiS3CredentialsDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **s3CredentialAccessKey** | **string** |  |  |
+
+### Return type
+
+[**ResponseS3Credential**](ResponseS3Credential.md)
+
+### Authorization
+
+[tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="storageapis3credentialslist"></a>
+# **StorageApiS3CredentialsList**
+> PaginatedS3CredentialList StorageApiS3CredentialsList (string? key = null, string? lastModified = null, int? size = null, string? continuationToken = null)
+
+List s3 credentials
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using storage.Api;
+using storage.Client;
+using storage.Model;
+
+namespace Example
+{
+    public class StorageApiS3CredentialsListExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.azion.com";
+            // Configure API key authorization: tokenAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new StorageApi(config);
+            var key = "key_example";  // string? | Object key. Used to identify the object for requests. Sent in POST requests as a path variable. (optional) 
+            var lastModified = "lastModified_example";  // string? | Timestamp of the last modification to the object. (optional) 
+            var size = 56;  // int? | Size of file in bytes. (optional) 
+            var continuationToken = "continuationToken_example";  // string? | Hash that can be added to the continuation_token query to skip list to the next page. (optional) 
+
+            try
+            {
+                // List s3 credentials
+                PaginatedS3CredentialList result = apiInstance.StorageApiS3CredentialsList(key, lastModified, size, continuationToken);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling StorageApi.StorageApiS3CredentialsList: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the StorageApiS3CredentialsListWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List s3 credentials
+    ApiResponse<PaginatedS3CredentialList> response = apiInstance.StorageApiS3CredentialsListWithHttpInfo(key, lastModified, size, continuationToken);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling StorageApi.StorageApiS3CredentialsListWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **key** | **string?** | Object key. Used to identify the object for requests. Sent in POST requests as a path variable. | [optional]  |
+| **lastModified** | **string?** | Timestamp of the last modification to the object. | [optional]  |
+| **size** | **int?** | Size of file in bytes. | [optional]  |
+| **continuationToken** | **string?** | Hash that can be added to the continuation_token query to skip list to the next page. | [optional]  |
+
+### Return type
+
+[**PaginatedS3CredentialList**](PaginatedS3CredentialList.md)
+
+### Authorization
+
+[tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
