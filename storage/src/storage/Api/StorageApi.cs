@@ -242,6 +242,92 @@ namespace storage.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ResponseBucket</returns>
         ApiResponse<ResponseBucket> StorageApiBucketsPartialUpdateWithHttpInfo(string name, BucketUpdate? bucketUpdate = default(BucketUpdate?), int operationIndex = 0);
+        /// <summary>
+        /// get by s3 credentials by access key
+        /// </summary>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialAccessKey"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ResponseS3Credential</returns>
+        ResponseS3Credential StorageApiS3CredentialsByAccessKey(string s3CredentialAccessKey, int operationIndex = 0);
+
+        /// <summary>
+        /// get by s3 credentials by access key
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialAccessKey"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ResponseS3Credential</returns>
+        ApiResponse<ResponseS3Credential> StorageApiS3CredentialsByAccessKeyWithHttpInfo(string s3CredentialAccessKey, int operationIndex = 0);
+        /// <summary>
+        /// create s3 credentials
+        /// </summary>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialCreate"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ResponseS3Credential</returns>
+        ResponseS3Credential StorageApiS3CredentialsCreate(S3CredentialCreate s3CredentialCreate, int operationIndex = 0);
+
+        /// <summary>
+        /// create s3 credentials
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialCreate"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ResponseS3Credential</returns>
+        ApiResponse<ResponseS3Credential> StorageApiS3CredentialsCreateWithHttpInfo(S3CredentialCreate s3CredentialCreate, int operationIndex = 0);
+        /// <summary>
+        /// delete by s3 credentials
+        /// </summary>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialAccessKey"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ResponseS3Credential</returns>
+        ResponseS3Credential StorageApiS3CredentialsDelete(string s3CredentialAccessKey, int operationIndex = 0);
+
+        /// <summary>
+        /// delete by s3 credentials
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialAccessKey"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ResponseS3Credential</returns>
+        ApiResponse<ResponseS3Credential> StorageApiS3CredentialsDeleteWithHttpInfo(string s3CredentialAccessKey, int operationIndex = 0);
+        /// <summary>
+        /// List s3 credentials
+        /// </summary>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="key">Object key. Used to identify the object for requests. Sent in POST requests as a path variable. (optional)</param>
+        /// <param name="lastModified">Timestamp of the last modification to the object. (optional)</param>
+        /// <param name="size">Size of file in bytes. (optional)</param>
+        /// <param name="continuationToken">Hash that can be added to the continuation_token query to skip list to the next page. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>PaginatedS3CredentialList</returns>
+        PaginatedS3CredentialList StorageApiS3CredentialsList(string? key = default(string?), string? lastModified = default(string?), int? size = default(int?), string? continuationToken = default(string?), int operationIndex = 0);
+
+        /// <summary>
+        /// List s3 credentials
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="key">Object key. Used to identify the object for requests. Sent in POST requests as a path variable. (optional)</param>
+        /// <param name="lastModified">Timestamp of the last modification to the object. (optional)</param>
+        /// <param name="size">Size of file in bytes. (optional)</param>
+        /// <param name="continuationToken">Hash that can be added to the continuation_token query to skip list to the next page. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of PaginatedS3CredentialList</returns>
+        ApiResponse<PaginatedS3CredentialList> StorageApiS3CredentialsListWithHttpInfo(string? key = default(string?), string? lastModified = default(string?), int? size = default(int?), string? continuationToken = default(string?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -500,6 +586,112 @@ namespace storage.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ResponseBucket)</returns>
         System.Threading.Tasks.Task<ApiResponse<ResponseBucket>> StorageApiBucketsPartialUpdateWithHttpInfoAsync(string name, BucketUpdate? bucketUpdate = default(BucketUpdate?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// get by s3 credentials by access key
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialAccessKey"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ResponseS3Credential</returns>
+        System.Threading.Tasks.Task<ResponseS3Credential> StorageApiS3CredentialsByAccessKeyAsync(string s3CredentialAccessKey, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// get by s3 credentials by access key
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialAccessKey"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ResponseS3Credential)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ResponseS3Credential>> StorageApiS3CredentialsByAccessKeyWithHttpInfoAsync(string s3CredentialAccessKey, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// create s3 credentials
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialCreate"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ResponseS3Credential</returns>
+        System.Threading.Tasks.Task<ResponseS3Credential> StorageApiS3CredentialsCreateAsync(S3CredentialCreate s3CredentialCreate, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// create s3 credentials
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialCreate"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ResponseS3Credential)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ResponseS3Credential>> StorageApiS3CredentialsCreateWithHttpInfoAsync(S3CredentialCreate s3CredentialCreate, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// delete by s3 credentials
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialAccessKey"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ResponseS3Credential</returns>
+        System.Threading.Tasks.Task<ResponseS3Credential> StorageApiS3CredentialsDeleteAsync(string s3CredentialAccessKey, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// delete by s3 credentials
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialAccessKey"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ResponseS3Credential)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ResponseS3Credential>> StorageApiS3CredentialsDeleteWithHttpInfoAsync(string s3CredentialAccessKey, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// List s3 credentials
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="key">Object key. Used to identify the object for requests. Sent in POST requests as a path variable. (optional)</param>
+        /// <param name="lastModified">Timestamp of the last modification to the object. (optional)</param>
+        /// <param name="size">Size of file in bytes. (optional)</param>
+        /// <param name="continuationToken">Hash that can be added to the continuation_token query to skip list to the next page. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PaginatedS3CredentialList</returns>
+        System.Threading.Tasks.Task<PaginatedS3CredentialList> StorageApiS3CredentialsListAsync(string? key = default(string?), string? lastModified = default(string?), int? size = default(int?), string? continuationToken = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// List s3 credentials
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="key">Object key. Used to identify the object for requests. Sent in POST requests as a path variable. (optional)</param>
+        /// <param name="lastModified">Timestamp of the last modification to the object. (optional)</param>
+        /// <param name="size">Size of file in bytes. (optional)</param>
+        /// <param name="continuationToken">Hash that can be added to the continuation_token query to skip list to the next page. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PaginatedS3CredentialList)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PaginatedS3CredentialList>> StorageApiS3CredentialsListWithHttpInfoAsync(string? key = default(string?), string? lastModified = default(string?), int? size = default(int?), string? continuationToken = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1690,7 +1882,9 @@ namespace storage.Api
                 "application/pdf",
                 "application/javascript",
                 "text/css",
-                "application/octet-stream"
+                "application/octet-stream",
+                "multipart/form-data",
+                "application/x-www-form-urlencoded"
             };
 
             var localVarContentType = storage.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1788,7 +1982,9 @@ namespace storage.Api
                 "application/pdf",
                 "application/javascript",
                 "text/css",
-                "application/octet-stream"
+                "application/octet-stream",
+                "multipart/form-data",
+                "application/x-www-form-urlencoded"
             };
 
             var localVarContentType = storage.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2175,6 +2371,654 @@ namespace storage.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("StorageApiBucketsPartialUpdate", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// get by s3 credentials by access key 
+        /// </summary>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialAccessKey"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ResponseS3Credential</returns>
+        public ResponseS3Credential StorageApiS3CredentialsByAccessKey(string s3CredentialAccessKey, int operationIndex = 0)
+        {
+            storage.Client.ApiResponse<ResponseS3Credential> localVarResponse = StorageApiS3CredentialsByAccessKeyWithHttpInfo(s3CredentialAccessKey);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// get by s3 credentials by access key 
+        /// </summary>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialAccessKey"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ResponseS3Credential</returns>
+        public storage.Client.ApiResponse<ResponseS3Credential> StorageApiS3CredentialsByAccessKeyWithHttpInfo(string s3CredentialAccessKey, int operationIndex = 0)
+        {
+            // verify the required parameter 's3CredentialAccessKey' is set
+            if (s3CredentialAccessKey == null)
+            {
+                throw new storage.Client.ApiException(400, "Missing required parameter 's3CredentialAccessKey' when calling StorageApi->StorageApiS3CredentialsByAccessKey");
+            }
+
+            storage.Client.RequestOptions localVarRequestOptions = new storage.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = storage.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = storage.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("s3_credential_access_key", storage.Client.ClientUtils.ParameterToString(s3CredentialAccessKey)); // path parameter
+
+            localVarRequestOptions.Operation = "StorageApi.StorageApiS3CredentialsByAccessKey";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<ResponseS3Credential>("/v4/storage/s3-credentials/{s3_credential_access_key}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StorageApiS3CredentialsByAccessKey", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// get by s3 credentials by access key 
+        /// </summary>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialAccessKey"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ResponseS3Credential</returns>
+        public async System.Threading.Tasks.Task<ResponseS3Credential> StorageApiS3CredentialsByAccessKeyAsync(string s3CredentialAccessKey, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            storage.Client.ApiResponse<ResponseS3Credential> localVarResponse = await StorageApiS3CredentialsByAccessKeyWithHttpInfoAsync(s3CredentialAccessKey, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// get by s3 credentials by access key 
+        /// </summary>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialAccessKey"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ResponseS3Credential)</returns>
+        public async System.Threading.Tasks.Task<storage.Client.ApiResponse<ResponseS3Credential>> StorageApiS3CredentialsByAccessKeyWithHttpInfoAsync(string s3CredentialAccessKey, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 's3CredentialAccessKey' is set
+            if (s3CredentialAccessKey == null)
+            {
+                throw new storage.Client.ApiException(400, "Missing required parameter 's3CredentialAccessKey' when calling StorageApi->StorageApiS3CredentialsByAccessKey");
+            }
+
+
+            storage.Client.RequestOptions localVarRequestOptions = new storage.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = storage.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = storage.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("s3_credential_access_key", storage.Client.ClientUtils.ParameterToString(s3CredentialAccessKey)); // path parameter
+
+            localVarRequestOptions.Operation = "StorageApi.StorageApiS3CredentialsByAccessKey";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ResponseS3Credential>("/v4/storage/s3-credentials/{s3_credential_access_key}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StorageApiS3CredentialsByAccessKey", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// create s3 credentials 
+        /// </summary>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialCreate"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ResponseS3Credential</returns>
+        public ResponseS3Credential StorageApiS3CredentialsCreate(S3CredentialCreate s3CredentialCreate, int operationIndex = 0)
+        {
+            storage.Client.ApiResponse<ResponseS3Credential> localVarResponse = StorageApiS3CredentialsCreateWithHttpInfo(s3CredentialCreate);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// create s3 credentials 
+        /// </summary>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialCreate"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ResponseS3Credential</returns>
+        public storage.Client.ApiResponse<ResponseS3Credential> StorageApiS3CredentialsCreateWithHttpInfo(S3CredentialCreate s3CredentialCreate, int operationIndex = 0)
+        {
+            // verify the required parameter 's3CredentialCreate' is set
+            if (s3CredentialCreate == null)
+            {
+                throw new storage.Client.ApiException(400, "Missing required parameter 's3CredentialCreate' when calling StorageApi->StorageApiS3CredentialsCreate");
+            }
+
+            storage.Client.RequestOptions localVarRequestOptions = new storage.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = storage.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = storage.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = s3CredentialCreate;
+
+            localVarRequestOptions.Operation = "StorageApi.StorageApiS3CredentialsCreate";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<ResponseS3Credential>("/v4/storage/s3-credentials", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StorageApiS3CredentialsCreate", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// create s3 credentials 
+        /// </summary>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialCreate"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ResponseS3Credential</returns>
+        public async System.Threading.Tasks.Task<ResponseS3Credential> StorageApiS3CredentialsCreateAsync(S3CredentialCreate s3CredentialCreate, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            storage.Client.ApiResponse<ResponseS3Credential> localVarResponse = await StorageApiS3CredentialsCreateWithHttpInfoAsync(s3CredentialCreate, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// create s3 credentials 
+        /// </summary>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialCreate"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ResponseS3Credential)</returns>
+        public async System.Threading.Tasks.Task<storage.Client.ApiResponse<ResponseS3Credential>> StorageApiS3CredentialsCreateWithHttpInfoAsync(S3CredentialCreate s3CredentialCreate, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 's3CredentialCreate' is set
+            if (s3CredentialCreate == null)
+            {
+                throw new storage.Client.ApiException(400, "Missing required parameter 's3CredentialCreate' when calling StorageApi->StorageApiS3CredentialsCreate");
+            }
+
+
+            storage.Client.RequestOptions localVarRequestOptions = new storage.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = storage.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = storage.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = s3CredentialCreate;
+
+            localVarRequestOptions.Operation = "StorageApi.StorageApiS3CredentialsCreate";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ResponseS3Credential>("/v4/storage/s3-credentials", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StorageApiS3CredentialsCreate", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// delete by s3 credentials 
+        /// </summary>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialAccessKey"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ResponseS3Credential</returns>
+        public ResponseS3Credential StorageApiS3CredentialsDelete(string s3CredentialAccessKey, int operationIndex = 0)
+        {
+            storage.Client.ApiResponse<ResponseS3Credential> localVarResponse = StorageApiS3CredentialsDeleteWithHttpInfo(s3CredentialAccessKey);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// delete by s3 credentials 
+        /// </summary>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialAccessKey"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ResponseS3Credential</returns>
+        public storage.Client.ApiResponse<ResponseS3Credential> StorageApiS3CredentialsDeleteWithHttpInfo(string s3CredentialAccessKey, int operationIndex = 0)
+        {
+            // verify the required parameter 's3CredentialAccessKey' is set
+            if (s3CredentialAccessKey == null)
+            {
+                throw new storage.Client.ApiException(400, "Missing required parameter 's3CredentialAccessKey' when calling StorageApi->StorageApiS3CredentialsDelete");
+            }
+
+            storage.Client.RequestOptions localVarRequestOptions = new storage.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = storage.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = storage.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("s3_credential_access_key", storage.Client.ClientUtils.ParameterToString(s3CredentialAccessKey)); // path parameter
+
+            localVarRequestOptions.Operation = "StorageApi.StorageApiS3CredentialsDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<ResponseS3Credential>("/v4/storage/s3-credentials/{s3_credential_access_key}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StorageApiS3CredentialsDelete", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// delete by s3 credentials 
+        /// </summary>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialAccessKey"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ResponseS3Credential</returns>
+        public async System.Threading.Tasks.Task<ResponseS3Credential> StorageApiS3CredentialsDeleteAsync(string s3CredentialAccessKey, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            storage.Client.ApiResponse<ResponseS3Credential> localVarResponse = await StorageApiS3CredentialsDeleteWithHttpInfoAsync(s3CredentialAccessKey, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// delete by s3 credentials 
+        /// </summary>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="s3CredentialAccessKey"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ResponseS3Credential)</returns>
+        public async System.Threading.Tasks.Task<storage.Client.ApiResponse<ResponseS3Credential>> StorageApiS3CredentialsDeleteWithHttpInfoAsync(string s3CredentialAccessKey, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 's3CredentialAccessKey' is set
+            if (s3CredentialAccessKey == null)
+            {
+                throw new storage.Client.ApiException(400, "Missing required parameter 's3CredentialAccessKey' when calling StorageApi->StorageApiS3CredentialsDelete");
+            }
+
+
+            storage.Client.RequestOptions localVarRequestOptions = new storage.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = storage.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = storage.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("s3_credential_access_key", storage.Client.ClientUtils.ParameterToString(s3CredentialAccessKey)); // path parameter
+
+            localVarRequestOptions.Operation = "StorageApi.StorageApiS3CredentialsDelete";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<ResponseS3Credential>("/v4/storage/s3-credentials/{s3_credential_access_key}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StorageApiS3CredentialsDelete", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List s3 credentials 
+        /// </summary>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="key">Object key. Used to identify the object for requests. Sent in POST requests as a path variable. (optional)</param>
+        /// <param name="lastModified">Timestamp of the last modification to the object. (optional)</param>
+        /// <param name="size">Size of file in bytes. (optional)</param>
+        /// <param name="continuationToken">Hash that can be added to the continuation_token query to skip list to the next page. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>PaginatedS3CredentialList</returns>
+        public PaginatedS3CredentialList StorageApiS3CredentialsList(string? key = default(string?), string? lastModified = default(string?), int? size = default(int?), string? continuationToken = default(string?), int operationIndex = 0)
+        {
+            storage.Client.ApiResponse<PaginatedS3CredentialList> localVarResponse = StorageApiS3CredentialsListWithHttpInfo(key, lastModified, size, continuationToken);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List s3 credentials 
+        /// </summary>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="key">Object key. Used to identify the object for requests. Sent in POST requests as a path variable. (optional)</param>
+        /// <param name="lastModified">Timestamp of the last modification to the object. (optional)</param>
+        /// <param name="size">Size of file in bytes. (optional)</param>
+        /// <param name="continuationToken">Hash that can be added to the continuation_token query to skip list to the next page. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of PaginatedS3CredentialList</returns>
+        public storage.Client.ApiResponse<PaginatedS3CredentialList> StorageApiS3CredentialsListWithHttpInfo(string? key = default(string?), string? lastModified = default(string?), int? size = default(int?), string? continuationToken = default(string?), int operationIndex = 0)
+        {
+            storage.Client.RequestOptions localVarRequestOptions = new storage.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = storage.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = storage.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (key != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(storage.Client.ClientUtils.ParameterToMultiMap("", "key", key));
+            }
+            if (lastModified != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(storage.Client.ClientUtils.ParameterToMultiMap("", "last_modified", lastModified));
+            }
+            if (size != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(storage.Client.ClientUtils.ParameterToMultiMap("", "size", size));
+            }
+            if (continuationToken != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(storage.Client.ClientUtils.ParameterToMultiMap("", "continuation_token", continuationToken));
+            }
+
+            localVarRequestOptions.Operation = "StorageApi.StorageApiS3CredentialsList";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<PaginatedS3CredentialList>("/v4/storage/s3-credentials", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StorageApiS3CredentialsList", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List s3 credentials 
+        /// </summary>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="key">Object key. Used to identify the object for requests. Sent in POST requests as a path variable. (optional)</param>
+        /// <param name="lastModified">Timestamp of the last modification to the object. (optional)</param>
+        /// <param name="size">Size of file in bytes. (optional)</param>
+        /// <param name="continuationToken">Hash that can be added to the continuation_token query to skip list to the next page. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PaginatedS3CredentialList</returns>
+        public async System.Threading.Tasks.Task<PaginatedS3CredentialList> StorageApiS3CredentialsListAsync(string? key = default(string?), string? lastModified = default(string?), int? size = default(int?), string? continuationToken = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            storage.Client.ApiResponse<PaginatedS3CredentialList> localVarResponse = await StorageApiS3CredentialsListWithHttpInfoAsync(key, lastModified, size, continuationToken, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List s3 credentials 
+        /// </summary>
+        /// <exception cref="storage.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="key">Object key. Used to identify the object for requests. Sent in POST requests as a path variable. (optional)</param>
+        /// <param name="lastModified">Timestamp of the last modification to the object. (optional)</param>
+        /// <param name="size">Size of file in bytes. (optional)</param>
+        /// <param name="continuationToken">Hash that can be added to the continuation_token query to skip list to the next page. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PaginatedS3CredentialList)</returns>
+        public async System.Threading.Tasks.Task<storage.Client.ApiResponse<PaginatedS3CredentialList>> StorageApiS3CredentialsListWithHttpInfoAsync(string? key = default(string?), string? lastModified = default(string?), int? size = default(int?), string? continuationToken = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            storage.Client.RequestOptions localVarRequestOptions = new storage.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = storage.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = storage.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (key != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(storage.Client.ClientUtils.ParameterToMultiMap("", "key", key));
+            }
+            if (lastModified != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(storage.Client.ClientUtils.ParameterToMultiMap("", "last_modified", lastModified));
+            }
+            if (size != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(storage.Client.ClientUtils.ParameterToMultiMap("", "size", size));
+            }
+            if (continuationToken != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(storage.Client.ClientUtils.ParameterToMultiMap("", "continuation_token", continuationToken));
+            }
+
+            localVarRequestOptions.Operation = "StorageApi.StorageApiS3CredentialsList";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (tokenAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<PaginatedS3CredentialList>("/v4/storage/s3-credentials", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StorageApiS3CredentialsList", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
