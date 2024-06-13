@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | [optional] 
+**Order** | **long** |  | [optional] 
+**IsActive** | **bool** |  | [optional] 
 **Description** | **string** |  | [optional] 
 **Criteria** | **List&lt;List&lt;RulesEngineCriteria&gt;&gt;** |  | [optional] 
 **Behaviors** | [**List&lt;RulesEngineBehaviorEntry&gt;**](RulesEngineBehaviorEntry.md) |  | [optional] 

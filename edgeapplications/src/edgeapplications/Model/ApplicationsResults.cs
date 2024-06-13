@@ -29,7 +29,7 @@ namespace edgeapplications.Model
     /// ApplicationsResults
     /// </summary>
     [DataContract(Name = "ApplicationsResults")]
-    public partial class ApplicationsResults : IEquatable<ApplicationsResults>, IValidatableObject
+    public partial class ApplicationsResults : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplicationsResults" /> class.
@@ -145,95 +145,6 @@ namespace edgeapplications.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ApplicationsResults);
-        }
-
-        /// <summary>
-        /// Returns true if ApplicationsResults instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ApplicationsResults to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ApplicationsResults input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Id == input.Id ||
-                    this.Id.Equals(input.Id)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.DebugRules == input.DebugRules ||
-                    this.DebugRules.Equals(input.DebugRules)
-                ) && 
-                (
-                    this.LastEditor == input.LastEditor ||
-                    (this.LastEditor != null &&
-                    this.LastEditor.Equals(input.LastEditor))
-                ) && 
-                (
-                    this.LastModified == input.LastModified ||
-                    (this.LastModified != null &&
-                    this.LastModified.Equals(input.LastModified))
-                ) && 
-                (
-                    this.Active == input.Active ||
-                    this.Active.Equals(input.Active)
-                ) && 
-                (
-                    this.Origins == input.Origins ||
-                    this.Origins != null &&
-                    input.Origins != null &&
-                    this.Origins.SequenceEqual(input.Origins)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.DebugRules.GetHashCode();
-                if (this.LastEditor != null)
-                {
-                    hashCode = (hashCode * 59) + this.LastEditor.GetHashCode();
-                }
-                if (this.LastModified != null)
-                {
-                    hashCode = (hashCode * 59) + this.LastModified.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Active.GetHashCode();
-                if (this.Origins != null)
-                {
-                    hashCode = (hashCode * 59) + this.Origins.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

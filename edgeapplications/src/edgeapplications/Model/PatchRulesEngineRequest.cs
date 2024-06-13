@@ -29,18 +29,22 @@ namespace edgeapplications.Model
     /// PatchRulesEngineRequest
     /// </summary>
     [DataContract(Name = "PatchRulesEngineRequest")]
-    public partial class PatchRulesEngineRequest : IEquatable<PatchRulesEngineRequest>, IValidatableObject
+    public partial class PatchRulesEngineRequest : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PatchRulesEngineRequest" /> class.
         /// </summary>
         /// <param name="name">name.</param>
+        /// <param name="order">order.</param>
+        /// <param name="isActive">isActive.</param>
         /// <param name="description">description.</param>
         /// <param name="criteria">criteria.</param>
         /// <param name="behaviors">behaviors.</param>
-        public PatchRulesEngineRequest(string name = default(string), string description = default(string), List<List<RulesEngineCriteria>> criteria = default(List<List<RulesEngineCriteria>>), List<RulesEngineBehaviorEntry> behaviors = default(List<RulesEngineBehaviorEntry>))
+        public PatchRulesEngineRequest(string name = default(string), long order = default(long), bool isActive = default(bool), string description = default(string), List<List<RulesEngineCriteria>> criteria = default(List<List<RulesEngineCriteria>>), List<RulesEngineBehaviorEntry> behaviors = default(List<RulesEngineBehaviorEntry>))
         {
             this.Name = name;
+            this.Order = order;
+            this.IsActive = isActive;
             this.Description = description;
             this.Criteria = criteria;
             this.Behaviors = behaviors;
@@ -51,6 +55,18 @@ namespace edgeapplications.Model
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Order
+        /// </summary>
+        [DataMember(Name = "order", EmitDefaultValue = false)]
+        public long Order { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsActive
+        /// </summary>
+        [DataMember(Name = "is_active", EmitDefaultValue = true)]
+        public bool IsActive { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
@@ -79,6 +95,8 @@ namespace edgeapplications.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class PatchRulesEngineRequest {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Order: ").Append(Order).Append("\n");
+            sb.Append("  IsActive: ").Append(IsActive).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Criteria: ").Append(Criteria).Append("\n");
             sb.Append("  Behaviors: ").Append(Behaviors).Append("\n");
@@ -96,87 +114,24 @@ namespace edgeapplications.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as PatchRulesEngineRequest);
-        }
-
-        /// <summary>
-        /// Returns true if PatchRulesEngineRequest instances are equal
-        /// </summary>
-        /// <param name="input">Instance of PatchRulesEngineRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PatchRulesEngineRequest input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Criteria == input.Criteria ||
-                    this.Criteria != null &&
-                    input.Criteria != null &&
-                    this.Criteria.SequenceEqual(input.Criteria)
-                ) && 
-                (
-                    this.Behaviors == input.Behaviors ||
-                    this.Behaviors != null &&
-                    input.Behaviors != null &&
-                    this.Behaviors.SequenceEqual(input.Behaviors)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Criteria != null)
-                {
-                    hashCode = (hashCode * 59) + this.Criteria.GetHashCode();
-                }
-                if (this.Behaviors != null)
-                {
-                    hashCode = (hashCode * 59) + this.Behaviors.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Order (long) maximum
+            if (this.Order > (long)10000)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Order, must be a value less than or equal to 10000.", new [] { "Order" });
+            }
+
+            // Order (long) minimum
+            if (this.Order < (long)1)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Order, must be a value greater than or equal to 1.", new [] { "Order" });
+            }
+
             // Description (string) maxLength
             if (this.Description != null && this.Description.Length > 1000)
             {

@@ -29,7 +29,7 @@ namespace edgeapplications.Model
     /// ApplicationInstancesGetOneResponse
     /// </summary>
     [DataContract(Name = "ApplicationInstancesGetOneResponse")]
-    public partial class ApplicationInstancesGetOneResponse : IEquatable<ApplicationInstancesGetOneResponse>, IValidatableObject
+    public partial class ApplicationInstancesGetOneResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplicationInstancesGetOneResponse" /> class.
@@ -85,57 +85,6 @@ namespace edgeapplications.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as ApplicationInstancesGetOneResponse);
-        }
-
-        /// <summary>
-        /// Returns true if ApplicationInstancesGetOneResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of ApplicationInstancesGetOneResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(ApplicationInstancesGetOneResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Results == input.Results ||
-                    (this.Results != null &&
-                    this.Results.Equals(input.Results))
-                ) && 
-                (
-                    this.SchemaVersion == input.SchemaVersion ||
-                    this.SchemaVersion.Equals(input.SchemaVersion)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Results != null)
-                {
-                    hashCode = (hashCode * 59) + this.Results.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.SchemaVersion.GetHashCode();
-                return hashCode;
-            }
         }
 
         /// <summary>

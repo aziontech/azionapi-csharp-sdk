@@ -29,7 +29,7 @@ namespace edgeapplications.Model
     /// DeviceGroupsResponseLinks
     /// </summary>
     [DataContract(Name = "DeviceGroupsResponse_links")]
-    public partial class DeviceGroupsResponseLinks : IEquatable<DeviceGroupsResponseLinks>, IValidatableObject
+    public partial class DeviceGroupsResponseLinks : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeviceGroupsResponseLinks" /> class.
@@ -75,61 +75,6 @@ namespace edgeapplications.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as DeviceGroupsResponseLinks);
-        }
-
-        /// <summary>
-        /// Returns true if DeviceGroupsResponseLinks instances are equal
-        /// </summary>
-        /// <param name="input">Instance of DeviceGroupsResponseLinks to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(DeviceGroupsResponseLinks input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Previous == input.Previous ||
-                    (this.Previous != null &&
-                    this.Previous.Equals(input.Previous))
-                ) && 
-                (
-                    this.Next == input.Next ||
-                    (this.Next != null &&
-                    this.Next.Equals(input.Next))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Previous != null)
-                {
-                    hashCode = (hashCode * 59) + this.Previous.GetHashCode();
-                }
-                if (this.Next != null)
-                {
-                    hashCode = (hashCode * 59) + this.Next.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

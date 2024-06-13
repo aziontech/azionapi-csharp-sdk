@@ -29,7 +29,7 @@ namespace edgeapplications.Model
     /// RulesEngineCriteria
     /// </summary>
     [DataContract(Name = "RulesEngineCriteria")]
-    public partial class RulesEngineCriteria : IEquatable<RulesEngineCriteria>, IValidatableObject
+    public partial class RulesEngineCriteria : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RulesEngineCriteria" /> class.
@@ -62,7 +62,7 @@ namespace edgeapplications.Model
             {
                 throw new ArgumentNullException("varOperator is a required property for RulesEngineCriteria and cannot be null");
             }
-            this.VarOperator = varOperator;
+            this.Operator = varOperator;
             this.InputValue = inputValue;
         }
 
@@ -79,10 +79,10 @@ namespace edgeapplications.Model
         public string Variable { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarOperator
+        /// Gets or Sets Operator
         /// </summary>
         [DataMember(Name = "operator", IsRequired = true, EmitDefaultValue = true)]
-        public string VarOperator { get; set; }
+        public string Operator { get; set; }
 
         /// <summary>
         /// Gets or Sets InputValue
@@ -100,7 +100,7 @@ namespace edgeapplications.Model
             sb.Append("class RulesEngineCriteria {\n");
             sb.Append("  Conditional: ").Append(Conditional).Append("\n");
             sb.Append("  Variable: ").Append(Variable).Append("\n");
-            sb.Append("  VarOperator: ").Append(VarOperator).Append("\n");
+            sb.Append("  Operator: ").Append(Operator).Append("\n");
             sb.Append("  InputValue: ").Append(InputValue).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -113,79 +113,6 @@ namespace edgeapplications.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as RulesEngineCriteria);
-        }
-
-        /// <summary>
-        /// Returns true if RulesEngineCriteria instances are equal
-        /// </summary>
-        /// <param name="input">Instance of RulesEngineCriteria to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(RulesEngineCriteria input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Conditional == input.Conditional ||
-                    (this.Conditional != null &&
-                    this.Conditional.Equals(input.Conditional))
-                ) && 
-                (
-                    this.Variable == input.Variable ||
-                    (this.Variable != null &&
-                    this.Variable.Equals(input.Variable))
-                ) && 
-                (
-                    this.VarOperator == input.VarOperator ||
-                    (this.VarOperator != null &&
-                    this.VarOperator.Equals(input.VarOperator))
-                ) && 
-                (
-                    this.InputValue == input.InputValue ||
-                    (this.InputValue != null &&
-                    this.InputValue.Equals(input.InputValue))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Conditional != null)
-                {
-                    hashCode = (hashCode * 59) + this.Conditional.GetHashCode();
-                }
-                if (this.Variable != null)
-                {
-                    hashCode = (hashCode * 59) + this.Variable.GetHashCode();
-                }
-                if (this.VarOperator != null)
-                {
-                    hashCode = (hashCode * 59) + this.VarOperator.GetHashCode();
-                }
-                if (this.InputValue != null)
-                {
-                    hashCode = (hashCode * 59) + this.InputValue.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

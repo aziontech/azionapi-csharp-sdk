@@ -29,7 +29,7 @@ namespace edgeapplications.Model
     /// OriginsResponse
     /// </summary>
     [DataContract(Name = "OriginsResponse")]
-    public partial class OriginsResponse : IEquatable<OriginsResponse>, IValidatableObject
+    public partial class OriginsResponse : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OriginsResponse" /> class.
@@ -117,77 +117,6 @@ namespace edgeapplications.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as OriginsResponse);
-        }
-
-        /// <summary>
-        /// Returns true if OriginsResponse instances are equal
-        /// </summary>
-        /// <param name="input">Instance of OriginsResponse to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(OriginsResponse input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Count == input.Count ||
-                    this.Count.Equals(input.Count)
-                ) && 
-                (
-                    this.TotalPages == input.TotalPages ||
-                    this.TotalPages.Equals(input.TotalPages)
-                ) && 
-                (
-                    this.SchemaVersion == input.SchemaVersion ||
-                    this.SchemaVersion.Equals(input.SchemaVersion)
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    (this.Links != null &&
-                    this.Links.Equals(input.Links))
-                ) && 
-                (
-                    this.Results == input.Results ||
-                    this.Results != null &&
-                    input.Results != null &&
-                    this.Results.SequenceEqual(input.Results)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Count.GetHashCode();
-                hashCode = (hashCode * 59) + this.TotalPages.GetHashCode();
-                hashCode = (hashCode * 59) + this.SchemaVersion.GetHashCode();
-                if (this.Links != null)
-                {
-                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
-                }
-                if (this.Results != null)
-                {
-                    hashCode = (hashCode * 59) + this.Results.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

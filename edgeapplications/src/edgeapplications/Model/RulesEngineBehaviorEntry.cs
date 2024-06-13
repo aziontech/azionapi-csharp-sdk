@@ -31,7 +31,7 @@ namespace edgeapplications.Model
     /// </summary>
     [JsonConverter(typeof(RulesEngineBehaviorEntryJsonConverter))]
     [DataContract(Name = "RulesEngineBehaviorEntry")]
-    public partial class RulesEngineBehaviorEntry : AbstractOpenAPISchema, IEquatable<RulesEngineBehaviorEntry>, IValidatableObject
+    public partial class RulesEngineBehaviorEntry : AbstractOpenAPISchema, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RulesEngineBehaviorEntry" /> class
@@ -171,44 +171,6 @@ namespace edgeapplications.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as RulesEngineBehaviorEntry);
-        }
-
-        /// <summary>
-        /// Returns true if RulesEngineBehaviorEntry instances are equal
-        /// </summary>
-        /// <param name="input">Instance of RulesEngineBehaviorEntry to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(RulesEngineBehaviorEntry input)
-        {
-            if (input == null)
-                return false;
-
-            return this.ActualInstance.Equals(input.ActualInstance);
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.ActualInstance != null)
-                    hashCode = hashCode * 59 + this.ActualInstance.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
@@ -245,11 +207,15 @@ namespace edgeapplications.Model
         /// <returns>The object converted from the JSON string</returns>
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            if(reader.TokenType != JsonToken.Null)
+            switch(reader.TokenType) 
             {
-                return RulesEngineBehaviorEntry.FromJson(JObject.Load(reader).ToString(Formatting.None));
+                case JsonToken.StartObject:
+                    return RulesEngineBehaviorEntry.FromJson(JObject.Load(reader).ToString(Formatting.None));
+                case JsonToken.StartArray:
+                    return RulesEngineBehaviorEntry.FromJson(JArray.Load(reader).ToString(Formatting.None));
+                default:
+                    return null;
             }
-            return null;
         }
 
         /// <summary>
