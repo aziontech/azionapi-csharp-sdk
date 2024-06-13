@@ -29,7 +29,7 @@ namespace edgeapplications.Model
     /// RulesEngineBehaviorObjectTarget
     /// </summary>
     [DataContract(Name = "RulesEngineBehaviorObject_target")]
-    public partial class RulesEngineBehaviorObjectTarget : IEquatable<RulesEngineBehaviorObjectTarget>, IValidatableObject
+    public partial class RulesEngineBehaviorObjectTarget : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RulesEngineBehaviorObjectTarget" /> class.
@@ -84,70 +84,6 @@ namespace edgeapplications.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as RulesEngineBehaviorObjectTarget);
-        }
-
-        /// <summary>
-        /// Returns true if RulesEngineBehaviorObjectTarget instances are equal
-        /// </summary>
-        /// <param name="input">Instance of RulesEngineBehaviorObjectTarget to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(RulesEngineBehaviorObjectTarget input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.CapturedArray == input.CapturedArray ||
-                    (this.CapturedArray != null &&
-                    this.CapturedArray.Equals(input.CapturedArray))
-                ) && 
-                (
-                    this.Subject == input.Subject ||
-                    (this.Subject != null &&
-                    this.Subject.Equals(input.Subject))
-                ) && 
-                (
-                    this.Regex == input.Regex ||
-                    (this.Regex != null &&
-                    this.Regex.Equals(input.Regex))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.CapturedArray != null)
-                {
-                    hashCode = (hashCode * 59) + this.CapturedArray.GetHashCode();
-                }
-                if (this.Subject != null)
-                {
-                    hashCode = (hashCode * 59) + this.Subject.GetHashCode();
-                }
-                if (this.Regex != null)
-                {
-                    hashCode = (hashCode * 59) + this.Regex.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>

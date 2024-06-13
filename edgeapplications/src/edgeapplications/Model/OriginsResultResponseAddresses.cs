@@ -29,7 +29,7 @@ namespace edgeapplications.Model
     /// OriginsResultResponseAddresses
     /// </summary>
     [DataContract(Name = "OriginsResultResponse_addresses")]
-    public partial class OriginsResultResponseAddresses : IEquatable<OriginsResultResponseAddresses>, IValidatableObject
+    public partial class OriginsResultResponseAddresses : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OriginsResultResponseAddresses" /> class.
@@ -113,75 +113,6 @@ namespace edgeapplications.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as OriginsResultResponseAddresses);
-        }
-
-        /// <summary>
-        /// Returns true if OriginsResultResponseAddresses instances are equal
-        /// </summary>
-        /// <param name="input">Instance of OriginsResultResponseAddresses to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(OriginsResultResponseAddresses input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
-                ) && 
-                (
-                    this.Weight == input.Weight ||
-                    (this.Weight != null &&
-                    this.Weight.Equals(input.Weight))
-                ) && 
-                (
-                    this.ServerRole == input.ServerRole ||
-                    (this.ServerRole != null &&
-                    this.ServerRole.Equals(input.ServerRole))
-                ) && 
-                (
-                    this.IsActive == input.IsActive ||
-                    this.IsActive.Equals(input.IsActive)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Address != null)
-                {
-                    hashCode = (hashCode * 59) + this.Address.GetHashCode();
-                }
-                if (this.Weight != null)
-                {
-                    hashCode = (hashCode * 59) + this.Weight.GetHashCode();
-                }
-                if (this.ServerRole != null)
-                {
-                    hashCode = (hashCode * 59) + this.ServerRole.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.IsActive.GetHashCode();
-                return hashCode;
-            }
         }
 
         /// <summary>

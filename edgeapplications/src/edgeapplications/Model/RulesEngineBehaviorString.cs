@@ -29,7 +29,7 @@ namespace edgeapplications.Model
     /// RulesEngineBehaviorString
     /// </summary>
     [DataContract(Name = "RulesEngineBehaviorString")]
-    public partial class RulesEngineBehaviorString : IEquatable<RulesEngineBehaviorString>, IValidatableObject
+    public partial class RulesEngineBehaviorString : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RulesEngineBehaviorString" /> class.
@@ -90,61 +90,6 @@ namespace edgeapplications.Model
         public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as RulesEngineBehaviorString);
-        }
-
-        /// <summary>
-        /// Returns true if RulesEngineBehaviorString instances are equal
-        /// </summary>
-        /// <param name="input">Instance of RulesEngineBehaviorString to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(RulesEngineBehaviorString input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Target == input.Target ||
-                    (this.Target != null &&
-                    this.Target.Equals(input.Target))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Target != null)
-                {
-                    hashCode = (hashCode * 59) + this.Target.GetHashCode();
-                }
-                return hashCode;
-            }
         }
 
         /// <summary>
