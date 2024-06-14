@@ -59,7 +59,8 @@ namespace edgeapplications.Model
         /// <param name="loadBalancer">loadBalancer (required).</param>
         /// <param name="rawLogs">rawLogs (required).</param>
         /// <param name="webApplicationFirewall">webApplicationFirewall (required).</param>
-        public ApplicationResults(long id = default(long), string name = default(string), bool active = default(bool), bool debugRules = default(bool), bool http3 = default(bool), string supportedCiphers = default(string), string deliveryProtocol = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), string minimumTlsVersion = default(string), bool applicationAcceleration = default(bool), bool caching = default(bool), bool deviceDetection = default(bool), bool edgeFirewall = default(bool), bool edgeFunctions = default(bool), bool imageOptimization = default(bool), bool l2Caching = default(bool), bool loadBalancer = default(bool), bool rawLogs = default(bool), bool webApplicationFirewall = default(bool))
+        /// <param name="websocket">websocket.</param>
+        public ApplicationResults(long id = default(long), string name = default(string), bool active = default(bool), bool debugRules = default(bool), bool http3 = default(bool), string supportedCiphers = default(string), string deliveryProtocol = default(string), Object httpPort = default(Object), Object httpsPort = default(Object), string minimumTlsVersion = default(string), bool applicationAcceleration = default(bool), bool caching = default(bool), bool deviceDetection = default(bool), bool edgeFirewall = default(bool), bool edgeFunctions = default(bool), bool imageOptimization = default(bool), bool l2Caching = default(bool), bool loadBalancer = default(bool), bool rawLogs = default(bool), bool webApplicationFirewall = default(bool), bool websocket = default(bool))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -111,6 +112,7 @@ namespace edgeapplications.Model
             this.LoadBalancer = loadBalancer;
             this.RawLogs = rawLogs;
             this.WebApplicationFirewall = webApplicationFirewall;
+            this.Websocket = websocket;
         }
 
         /// <summary>
@@ -234,6 +236,12 @@ namespace edgeapplications.Model
         public bool WebApplicationFirewall { get; set; }
 
         /// <summary>
+        /// Gets or Sets Websocket
+        /// </summary>
+        [DataMember(Name = "websocket", EmitDefaultValue = true)]
+        public bool Websocket { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -261,6 +269,7 @@ namespace edgeapplications.Model
             sb.Append("  LoadBalancer: ").Append(LoadBalancer).Append("\n");
             sb.Append("  RawLogs: ").Append(RawLogs).Append("\n");
             sb.Append("  WebApplicationFirewall: ").Append(WebApplicationFirewall).Append("\n");
+            sb.Append("  Websocket: ").Append(Websocket).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
