@@ -118,24 +118,24 @@ namespace edgeapplications.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Order (long) maximum
             if (this.Order > (long)10000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Order, must be a value less than or equal to 10000.", new [] { "Order" });
+                yield return new ValidationResult("Invalid value for Order, must be a value less than or equal to 10000.", new [] { "Order" });
             }
 
             // Order (long) minimum
             if (this.Order < (long)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Order, must be a value greater than or equal to 1.", new [] { "Order" });
+                yield return new ValidationResult("Invalid value for Order, must be a value greater than or equal to 1.", new [] { "Order" });
             }
 
             // Description (string) maxLength
             if (this.Description != null && this.Description.Length > 1000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be less than 1000.", new [] { "Description" });
+                yield return new ValidationResult("Invalid value for Description, length must be less than 1000.", new [] { "Description" });
             }
 
             yield break;

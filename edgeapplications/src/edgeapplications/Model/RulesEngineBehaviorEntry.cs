@@ -40,9 +40,9 @@ namespace edgeapplications.Model
         /// <param name="actualInstance">An instance of RulesEngineBehaviorString.</param>
         public RulesEngineBehaviorEntry(RulesEngineBehaviorString actualInstance)
         {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+            IsNullable = false;
+            SchemaType= "anyOf";
+            ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
         /// <summary>
@@ -52,9 +52,9 @@ namespace edgeapplications.Model
         /// <param name="actualInstance">An instance of RulesEngineBehaviorObject.</param>
         public RulesEngineBehaviorEntry(RulesEngineBehaviorObject actualInstance)
         {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+            IsNullable = false;
+            SchemaType= "anyOf";
+            ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
 
@@ -73,11 +73,11 @@ namespace edgeapplications.Model
             {
                 if (value.GetType() == typeof(RulesEngineBehaviorObject))
                 {
-                    this._actualInstance = value;
+                    _actualInstance = value;
                 }
                 else if (value.GetType() == typeof(RulesEngineBehaviorString))
                 {
-                    this._actualInstance = value;
+                    _actualInstance = value;
                 }
                 else
                 {
@@ -93,7 +93,7 @@ namespace edgeapplications.Model
         /// <returns>An instance of RulesEngineBehaviorString</returns>
         public RulesEngineBehaviorString GetRulesEngineBehaviorString()
         {
-            return (RulesEngineBehaviorString)this.ActualInstance;
+            return (RulesEngineBehaviorString)ActualInstance;
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace edgeapplications.Model
         /// <returns>An instance of RulesEngineBehaviorObject</returns>
         public RulesEngineBehaviorObject GetRulesEngineBehaviorObject()
         {
-            return (RulesEngineBehaviorObject)this.ActualInstance;
+            return (RulesEngineBehaviorObject)ActualInstance;
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace edgeapplications.Model
         {
             var sb = new StringBuilder();
             sb.Append("class RulesEngineBehaviorEntry {\n");
-            sb.Append("  ActualInstance: ").Append(this.ActualInstance).Append("\n");
+            sb.Append("  ActualInstance: ").Append(ActualInstance).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -125,7 +125,7 @@ namespace edgeapplications.Model
         /// <returns>JSON string presentation of the object</returns>
         public override string ToJson()
         {
-            return JsonConvert.SerializeObject(this.ActualInstance, RulesEngineBehaviorEntry.SerializerSettings);
+            return JsonConvert.SerializeObject(ActualInstance, RulesEngineBehaviorEntry.SerializerSettings);
         }
 
         /// <summary>
