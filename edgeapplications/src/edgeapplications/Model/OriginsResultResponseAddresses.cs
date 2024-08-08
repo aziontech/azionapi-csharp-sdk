@@ -43,7 +43,7 @@ namespace edgeapplications.Model
         /// <param name="weight">weight (required).</param>
         /// <param name="serverRole">serverRole (required).</param>
         /// <param name="isActive">isActive (required).</param>
-        public OriginsResultResponseAddresses(string address = default(string), string weight = default(string), string serverRole = default(string), bool isActive = default(bool))
+        public OriginsResultResponseAddresses(string address = default(string), long? weight = default(long?), string serverRole = default(string), bool isActive = default(bool))
         {
             // to ensure "address" is required (not null)
             if (address == null)
@@ -76,7 +76,7 @@ namespace edgeapplications.Model
         /// Gets or Sets Weight
         /// </summary>
         [DataMember(Name = "weight", IsRequired = true, EmitDefaultValue = true)]
-        public string Weight { get; set; }
+        public long? Weight { get; set; }
 
         /// <summary>
         /// Gets or Sets ServerRole
@@ -120,7 +120,7 @@ namespace edgeapplications.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -40,7 +40,10 @@ namespace edgeapplications.Model
         /// Initializes a new instance of the <see cref="CreateOriginsRequestAddresses" /> class.
         /// </summary>
         /// <param name="address">address (required).</param>
-        public CreateOriginsRequestAddresses(string address = default(string))
+        /// <param name="isActive">isActive.</param>
+        /// <param name="weight">weight.</param>
+        /// <param name="serverRole">serverRole.</param>
+        public CreateOriginsRequestAddresses(string address = default(string), bool isActive = default(bool), long? weight = default(long?), string serverRole = default(string))
         {
             // to ensure "address" is required (not null)
             if (address == null)
@@ -48,6 +51,9 @@ namespace edgeapplications.Model
                 throw new ArgumentNullException("address is a required property for CreateOriginsRequestAddresses and cannot be null");
             }
             this.Address = address;
+            this.IsActive = isActive;
+            this.Weight = weight;
+            this.ServerRole = serverRole;
         }
 
         /// <summary>
@@ -55,6 +61,24 @@ namespace edgeapplications.Model
         /// </summary>
         [DataMember(Name = "address", IsRequired = true, EmitDefaultValue = true)]
         public string Address { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsActive
+        /// </summary>
+        [DataMember(Name = "is_active", EmitDefaultValue = true)]
+        public bool IsActive { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Weight
+        /// </summary>
+        [DataMember(Name = "weight", EmitDefaultValue = true)]
+        public long? Weight { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ServerRole
+        /// </summary>
+        [DataMember(Name = "server_role", EmitDefaultValue = false)]
+        public string ServerRole { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -65,6 +89,9 @@ namespace edgeapplications.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class CreateOriginsRequestAddresses {\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
+            sb.Append("  IsActive: ").Append(IsActive).Append("\n");
+            sb.Append("  Weight: ").Append(Weight).Append("\n");
+            sb.Append("  ServerRole: ").Append(ServerRole).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,8 +110,29 @@ namespace edgeapplications.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // ServerRole (string) maxLength
+            if (this.ServerRole != null && this.ServerRole.Length > 10)
+            {
+                yield return new ValidationResult("Invalid value for ServerRole, length must be less than 10.", new [] { "ServerRole" });
+            }
+
+            // ServerRole (string) minLength
+            if (this.ServerRole != null && this.ServerRole.Length < 1)
+            {
+                yield return new ValidationResult("Invalid value for ServerRole, length must be greater than 1.", new [] { "ServerRole" });
+            }
+
+            if (this.ServerRole != null) {
+                // ServerRole (string) pattern
+                Regex regexServerRole = new Regex(@"^(primary|backup)$", RegexOptions.CultureInvariant);
+                if (!regexServerRole.Match(this.ServerRole).Success)
+                {
+                    yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ServerRole, must match a pattern of " + regexServerRole, new [] { "ServerRole" });
+                }
+            }
+
             yield break;
         }
     }
