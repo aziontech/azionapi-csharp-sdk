@@ -43,7 +43,7 @@ namespace edgeapplications.Model
         /// <param name="weight">weight (required).</param>
         /// <param name="serverRole">serverRole (required).</param>
         /// <param name="isActive">isActive (required).</param>
-        public OriginsResultResponseAddresses(string address = default(string), long? weight = default(long?), string serverRole = default(string), bool isActive = default(bool))
+        public OriginsResultResponseAddresses(string address = default(string), long weight = default(long), string serverRole = default(string), bool isActive = default(bool))
         {
             // to ensure "address" is required (not null)
             if (address == null)
@@ -51,11 +51,6 @@ namespace edgeapplications.Model
                 throw new ArgumentNullException("address is a required property for OriginsResultResponseAddresses and cannot be null");
             }
             this.Address = address;
-            // to ensure "weight" is required (not null)
-            if (weight == null)
-            {
-                throw new ArgumentNullException("weight is a required property for OriginsResultResponseAddresses and cannot be null");
-            }
             this.Weight = weight;
             // to ensure "serverRole" is required (not null)
             if (serverRole == null)
@@ -76,7 +71,7 @@ namespace edgeapplications.Model
         /// Gets or Sets Weight
         /// </summary>
         [DataMember(Name = "weight", IsRequired = true, EmitDefaultValue = true)]
-        public long? Weight { get; set; }
+        public long Weight { get; set; }
 
         /// <summary>
         /// Gets or Sets ServerRole
@@ -122,6 +117,18 @@ namespace edgeapplications.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Weight (long) maximum
+            if (this.Weight > (long)100)
+            {
+                yield return new ValidationResult("Invalid value for Weight, must be a value less than or equal to 100.", new [] { "Weight" });
+            }
+
+            // Weight (long) minimum
+            if (this.Weight < (long)1)
+            {
+                yield return new ValidationResult("Invalid value for Weight, must be a value greater than or equal to 1.", new [] { "Weight" });
+            }
+
             yield break;
         }
     }
