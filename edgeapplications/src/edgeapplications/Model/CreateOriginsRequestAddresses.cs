@@ -43,7 +43,7 @@ namespace edgeapplications.Model
         /// <param name="isActive">isActive.</param>
         /// <param name="weight">weight.</param>
         /// <param name="serverRole">serverRole.</param>
-        public CreateOriginsRequestAddresses(string address = default(string), bool isActive = default(bool), long? weight = default(long?), string serverRole = default(string))
+        public CreateOriginsRequestAddresses(string address = default(string), bool isActive = default(bool), long weight = default(long), string serverRole = default(string))
         {
             // to ensure "address" is required (not null)
             if (address == null)
@@ -71,8 +71,8 @@ namespace edgeapplications.Model
         /// <summary>
         /// Gets or Sets Weight
         /// </summary>
-        [DataMember(Name = "weight", EmitDefaultValue = true)]
-        public long? Weight { get; set; }
+        [DataMember(Name = "weight", EmitDefaultValue = false)]
+        public long Weight { get; set; }
 
         /// <summary>
         /// Gets or Sets ServerRole
@@ -112,6 +112,18 @@ namespace edgeapplications.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Weight (long) maximum
+            if (this.Weight > (long)100)
+            {
+                yield return new ValidationResult("Invalid value for Weight, must be a value less than or equal to 100.", new [] { "Weight" });
+            }
+
+            // Weight (long) minimum
+            if (this.Weight < (long)1)
+            {
+                yield return new ValidationResult("Invalid value for Weight, must be a value greater than or equal to 1.", new [] { "Weight" });
+            }
+
             // ServerRole (string) maxLength
             if (this.ServerRole != null && this.ServerRole.Length > 10)
             {

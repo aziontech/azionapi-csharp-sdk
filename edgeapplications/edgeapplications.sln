@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 VisualStudioVersion = 12.0.0.0
 MinimumVisualStudioVersion = 10.0.0.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "edgeapplications", "src\edgeapplications\edgeapplications.csproj", "{940E595F-61CA-46BA-A7FF-53A256705D8C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "edgeapplications", "src\edgeapplications\edgeapplications.csproj", "{5B1FEFE6-305B-497A-A189-4FECBEF7133C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "edgeapplications.Test", "src\edgeapplications.Test\edgeapplications.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
 EndProject
@@ -12,10 +12,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{940E595F-61CA-46BA-A7FF-53A256705D8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{940E595F-61CA-46BA-A7FF-53A256705D8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{940E595F-61CA-46BA-A7FF-53A256705D8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{940E595F-61CA-46BA-A7FF-53A256705D8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B1FEFE6-305B-497A-A189-4FECBEF7133C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B1FEFE6-305B-497A-A189-4FECBEF7133C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B1FEFE6-305B-497A-A189-4FECBEF7133C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B1FEFE6-305B-497A-A189-4FECBEF7133C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU
