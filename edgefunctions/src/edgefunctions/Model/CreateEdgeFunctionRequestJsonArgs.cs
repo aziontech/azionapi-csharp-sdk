@@ -26,50 +26,41 @@ using edgefunctions.Client;
 namespace edgefunctions.Model
 {
     /// <summary>
-    /// Links
+    /// CreateEdgeFunctionRequestJsonArgs
     /// </summary>
-    public partial class Links : IValidatableObject
+    public partial class CreateEdgeFunctionRequestJsonArgs : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Links" /> class.
+        /// Initializes a new instance of the <see cref="CreateEdgeFunctionRequestJsonArgs" /> class.
         /// </summary>
-        /// <param name="previous">previous</param>
-        /// <param name="next">next</param>
-        [JsonConstructor]
-        public Links(Option<string?> previous = default, Option<string?> next = default)
+        /// <param name="object"></param>
+        internal CreateEdgeFunctionRequestJsonArgs(Object @object)
         {
-            PreviousOption = previous;
-            NextOption = next;
+            Object = @object;
+            OnCreated();
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateEdgeFunctionRequestJsonArgs" /> class.
+        /// </summary>
+        /// <param name="list"></param>
+        internal CreateEdgeFunctionRequestJsonArgs(List<Object> list)
+        {
+            List = list;
             OnCreated();
         }
 
         partial void OnCreated();
 
         /// <summary>
-        /// Used to track the state of Previous
+        /// Gets or Sets Object
         /// </summary>
-        [JsonIgnore]
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<string?> PreviousOption { get; private set; }
+        public Object? Object { get; set; }
 
         /// <summary>
-        /// Gets or Sets Previous
+        /// Gets or Sets List
         /// </summary>
-        [JsonPropertyName("previous")]
-        public string? Previous { get { return this.PreviousOption; } set { this.PreviousOption = new(value); } }
-
-        /// <summary>
-        /// Used to track the state of Next
-        /// </summary>
-        [JsonIgnore]
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<string?> NextOption { get; private set; }
-
-        /// <summary>
-        /// Gets or Sets Next
-        /// </summary>
-        [JsonPropertyName("next")]
-        public string? Next { get { return this.NextOption; } set { this.NextOption = new(value); } }
+        public List<Object>? List { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -78,9 +69,7 @@ namespace edgefunctions.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class Links {\n");
-            sb.Append("  Previous: ").Append(Previous).Append("\n");
-            sb.Append("  Next: ").Append(Next).Append("\n");
+            sb.Append("class CreateEdgeFunctionRequestJsonArgs {\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -97,19 +86,19 @@ namespace edgefunctions.Model
     }
 
     /// <summary>
-    /// A Json converter for type <see cref="Links" />
+    /// A Json converter for type <see cref="CreateEdgeFunctionRequestJsonArgs" />
     /// </summary>
-    public class LinksJsonConverter : JsonConverter<Links>
+    public class CreateEdgeFunctionRequestJsonArgsJsonConverter : JsonConverter<CreateEdgeFunctionRequestJsonArgs>
     {
         /// <summary>
-        /// Deserializes json to <see cref="Links" />
+        /// Deserializes json to <see cref="CreateEdgeFunctionRequestJsonArgs" />
         /// </summary>
         /// <param name="utf8JsonReader"></param>
         /// <param name="typeToConvert"></param>
         /// <param name="jsonSerializerOptions"></param>
         /// <returns></returns>
         /// <exception cref="JsonException"></exception>
-        public override Links Read(ref Utf8JsonReader utf8JsonReader, Type typeToConvert, JsonSerializerOptions jsonSerializerOptions)
+        public override CreateEdgeFunctionRequestJsonArgs Read(ref Utf8JsonReader utf8JsonReader, Type typeToConvert, JsonSerializerOptions jsonSerializerOptions)
         {
             int currentDepth = utf8JsonReader.CurrentDepth;
 
@@ -118,8 +107,27 @@ namespace edgefunctions.Model
 
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
-            Option<string?> previous = default;
-            Option<string?> next = default;
+            Object? varObject = default;
+            List<Object>? list = default;
+
+            Utf8JsonReader utf8JsonReaderOneOf = utf8JsonReader;
+            while (utf8JsonReaderOneOf.Read())
+            {
+                if (startingTokenType == JsonTokenType.StartObject && utf8JsonReaderOneOf.TokenType == JsonTokenType.EndObject && currentDepth == utf8JsonReaderOneOf.CurrentDepth)
+                    break;
+
+                if (startingTokenType == JsonTokenType.StartArray && utf8JsonReaderOneOf.TokenType == JsonTokenType.EndArray && currentDepth == utf8JsonReaderOneOf.CurrentDepth)
+                    break;
+
+                if (utf8JsonReaderOneOf.TokenType == JsonTokenType.PropertyName && currentDepth == utf8JsonReaderOneOf.CurrentDepth - 1)
+                {
+                    Utf8JsonReader utf8JsonReaderObject = utf8JsonReader;
+                    ClientUtils.TryDeserialize<Object?>(ref utf8JsonReaderObject, jsonSerializerOptions, out varObject);
+
+                    Utf8JsonReader utf8JsonReaderList = utf8JsonReader;
+                    ClientUtils.TryDeserialize<List<Object>?>(ref utf8JsonReaderList, jsonSerializerOptions, out list);
+                }
+            }
 
             while (utf8JsonReader.Read())
             {
@@ -136,56 +144,46 @@ namespace edgefunctions.Model
 
                     switch (localVarJsonPropertyName)
                     {
-                        case "previous":
-                            previous = new Option<string?>(utf8JsonReader.GetString());
-                            break;
-                        case "next":
-                            next = new Option<string?>(utf8JsonReader.GetString());
-                            break;
                         default:
                             break;
                     }
                 }
             }
 
-            return new Links(previous, next);
+            if (varObject != null)
+                return new CreateEdgeFunctionRequestJsonArgs(varObject);
+
+            if (list != null)
+                return new CreateEdgeFunctionRequestJsonArgs(list);
+
+            throw new JsonException();
         }
 
         /// <summary>
-        /// Serializes a <see cref="Links" />
+        /// Serializes a <see cref="CreateEdgeFunctionRequestJsonArgs" />
         /// </summary>
         /// <param name="writer"></param>
-        /// <param name="links"></param>
+        /// <param name="createEdgeFunctionRequestJsonArgs"></param>
         /// <param name="jsonSerializerOptions"></param>
         /// <exception cref="NotImplementedException"></exception>
-        public override void Write(Utf8JsonWriter writer, Links links, JsonSerializerOptions jsonSerializerOptions)
+        public override void Write(Utf8JsonWriter writer, CreateEdgeFunctionRequestJsonArgs createEdgeFunctionRequestJsonArgs, JsonSerializerOptions jsonSerializerOptions)
         {
             writer.WriteStartObject();
 
-            WriteProperties(writer, links, jsonSerializerOptions);
+            WriteProperties(writer, createEdgeFunctionRequestJsonArgs, jsonSerializerOptions);
             writer.WriteEndObject();
         }
 
         /// <summary>
-        /// Serializes the properties of <see cref="Links" />
+        /// Serializes the properties of <see cref="CreateEdgeFunctionRequestJsonArgs" />
         /// </summary>
         /// <param name="writer"></param>
-        /// <param name="links"></param>
+        /// <param name="createEdgeFunctionRequestJsonArgs"></param>
         /// <param name="jsonSerializerOptions"></param>
         /// <exception cref="NotImplementedException"></exception>
-        public void WriteProperties(Utf8JsonWriter writer, Links links, JsonSerializerOptions jsonSerializerOptions)
+        public void WriteProperties(Utf8JsonWriter writer, CreateEdgeFunctionRequestJsonArgs createEdgeFunctionRequestJsonArgs, JsonSerializerOptions jsonSerializerOptions)
         {
-            if (links.PreviousOption.IsSet)
-                if (links.PreviousOption.Value != null)
-                    writer.WriteString("previous", links.Previous);
-                else
-                    writer.WriteNull("previous");
 
-            if (links.NextOption.IsSet)
-                if (links.NextOption.Value != null)
-                    writer.WriteString("next", links.Next);
-                else
-                    writer.WriteNull("next");
         }
     }
 }
