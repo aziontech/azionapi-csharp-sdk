@@ -5,7 +5,6 @@ appveyor.yml
 docs/apis/EdgeFunctionsApi.md
 docs/models/BadRequestResponse.md
 docs/models/CreateEdgeFunctionRequest.md
-docs/models/CreateEdgeFunctionRequestJsonArgs.md
 docs/models/EdgeFunctionResponse.md
 docs/models/ErrorResponse.md
 docs/models/Links.md
@@ -16,9 +15,7 @@ docs/models/Results.md
 docs/scripts/git_push.ps1
 docs/scripts/git_push.sh
 edgefunctions.sln
-src/edgefunctions.Test/Api/ApiTestsBase.cs
 src/edgefunctions.Test/Api/DependencyInjectionTests.cs
-src/edgefunctions.Test/Model/CreateEdgeFunctionRequestJsonArgsTests.cs
 src/edgefunctions.Test/README.md
 src/edgefunctions.Test/edgefunctions.Test.csproj
 src/edgefunctions/Api/EdgeFunctionsApi.cs
@@ -47,7 +44,6 @@ src/edgefunctions/Extensions/IHttpClientBuilderExtensions.cs
 src/edgefunctions/Extensions/IServiceCollectionExtensions.cs
 src/edgefunctions/Model/BadRequestResponse.cs
 src/edgefunctions/Model/CreateEdgeFunctionRequest.cs
-src/edgefunctions/Model/CreateEdgeFunctionRequestJsonArgs.cs
 src/edgefunctions/Model/EdgeFunctionResponse.cs
 src/edgefunctions/Model/ErrorResponse.cs
 src/edgefunctions/Model/Links.cs

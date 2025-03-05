@@ -41,7 +41,7 @@ namespace edgefunctions.Model
         /// <param name="active">active</param>
         /// <param name="isProprietaryCode">isProprietaryCode</param>
         [JsonConstructor]
-        public CreateEdgeFunctionRequest(Option<string?> name = default, Option<string?> language = default, Option<string?> code = default, Option<CreateEdgeFunctionRequestJsonArgs?> jsonArgs = default, Option<InitiatorTypeEnum?> initiatorType = default, Option<bool?> active = default, Option<bool?> isProprietaryCode = default)
+        public CreateEdgeFunctionRequest(Option<string?> name = default, Option<string?> language = default, Option<string?> code = default, Option<Object?> jsonArgs = default, Option<InitiatorTypeEnum?> initiatorType = default, Option<bool?> active = default, Option<bool?> isProprietaryCode = default)
         {
             NameOption = name;
             LanguageOption = language;
@@ -178,13 +178,13 @@ namespace edgefunctions.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<CreateEdgeFunctionRequestJsonArgs?> JsonArgsOption { get; private set; }
+        public Option<Object?> JsonArgsOption { get; private set; }
 
         /// <summary>
         /// Gets or Sets JsonArgs
         /// </summary>
         [JsonPropertyName("json_args")]
-        public CreateEdgeFunctionRequestJsonArgs? JsonArgs { get { return this.JsonArgsOption; } set { this.JsonArgsOption = new(value); } }
+        public Object? JsonArgs { get { return this.JsonArgsOption; } set { this.JsonArgsOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Active
@@ -267,7 +267,7 @@ namespace edgefunctions.Model
             Option<string?> name = default;
             Option<string?> language = default;
             Option<string?> code = default;
-            Option<CreateEdgeFunctionRequestJsonArgs?> jsonArgs = default;
+            Option<Object?> jsonArgs = default;
             Option<CreateEdgeFunctionRequest.InitiatorTypeEnum?> initiatorType = default;
             Option<bool?> active = default;
             Option<bool?> isProprietaryCode = default;
@@ -298,7 +298,7 @@ namespace edgefunctions.Model
                             break;
                         case "json_args":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                jsonArgs = new Option<CreateEdgeFunctionRequestJsonArgs?>(JsonSerializer.Deserialize<CreateEdgeFunctionRequestJsonArgs>(ref utf8JsonReader, jsonSerializerOptions)!);
+                                jsonArgs = new Option<Object?>(JsonSerializer.Deserialize<Object>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "initiator_type":
                             string? initiatorTypeRawValue = utf8JsonReader.GetString();
@@ -327,9 +327,6 @@ namespace edgefunctions.Model
 
             if (code.IsSet && code.Value == null)
                 throw new ArgumentNullException(nameof(code), "Property is not nullable for class CreateEdgeFunctionRequest.");
-
-            if (jsonArgs.IsSet && jsonArgs.Value == null)
-                throw new ArgumentNullException(nameof(jsonArgs), "Property is not nullable for class CreateEdgeFunctionRequest.");
 
             if (initiatorType.IsSet && initiatorType.Value == null)
                 throw new ArgumentNullException(nameof(initiatorType), "Property is not nullable for class CreateEdgeFunctionRequest.");
@@ -376,9 +373,6 @@ namespace edgefunctions.Model
             if (createEdgeFunctionRequest.CodeOption.IsSet && createEdgeFunctionRequest.Code == null)
                 throw new ArgumentNullException(nameof(createEdgeFunctionRequest.Code), "Property is required for class CreateEdgeFunctionRequest.");
 
-            if (createEdgeFunctionRequest.JsonArgsOption.IsSet && createEdgeFunctionRequest.JsonArgs == null)
-                throw new ArgumentNullException(nameof(createEdgeFunctionRequest.JsonArgs), "Property is required for class CreateEdgeFunctionRequest.");
-
             if (createEdgeFunctionRequest.NameOption.IsSet)
                 writer.WriteString("name", createEdgeFunctionRequest.Name);
 
@@ -389,10 +383,13 @@ namespace edgefunctions.Model
                 writer.WriteString("code", createEdgeFunctionRequest.Code);
 
             if (createEdgeFunctionRequest.JsonArgsOption.IsSet)
-            {
-                writer.WritePropertyName("json_args");
-                JsonSerializer.Serialize(writer, createEdgeFunctionRequest.JsonArgs, jsonSerializerOptions);
-            }
+                if (createEdgeFunctionRequest.JsonArgsOption.Value != null)
+                {
+                    writer.WritePropertyName("json_args");
+                    JsonSerializer.Serialize(writer, createEdgeFunctionRequest.JsonArgs, jsonSerializerOptions);
+                }
+                else
+                    writer.WriteNull("json_args");
             var initiatorTypeRawValue = CreateEdgeFunctionRequest.InitiatorTypeEnumToJsonValue(createEdgeFunctionRequest.InitiatorTypeOption.Value!.Value);
             writer.WriteString("initiator_type", initiatorTypeRawValue);
             if (createEdgeFunctionRequest.ActiveOption.IsSet)

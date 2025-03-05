@@ -45,7 +45,6 @@ namespace edgefunctions.Client
             _jsonOptions.Converters.Add(new DateOnlyNullableJsonConverter());
             _jsonOptions.Converters.Add(new BadRequestResponseJsonConverter());
             _jsonOptions.Converters.Add(new CreateEdgeFunctionRequestJsonConverter());
-            _jsonOptions.Converters.Add(new CreateEdgeFunctionRequestJsonArgsJsonConverter());
             _jsonOptions.Converters.Add(new EdgeFunctionResponseJsonConverter());
             _jsonOptions.Converters.Add(new ErrorResponseJsonConverter());
             _jsonOptions.Converters.Add(new LinksJsonConverter());

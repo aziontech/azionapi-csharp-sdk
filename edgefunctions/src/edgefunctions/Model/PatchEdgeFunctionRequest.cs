@@ -39,7 +39,7 @@ namespace edgefunctions.Model
         /// <param name="active">active</param>
         /// <param name="isProprietaryCode">isProprietaryCode</param>
         [JsonConstructor]
-        public PatchEdgeFunctionRequest(Option<string?> name = default, Option<string?> code = default, Option<CreateEdgeFunctionRequestJsonArgs?> jsonArgs = default, Option<bool?> active = default, Option<bool?> isProprietaryCode = default)
+        public PatchEdgeFunctionRequest(Option<string?> name = default, Option<string?> code = default, Option<Object?> jsonArgs = default, Option<bool?> active = default, Option<bool?> isProprietaryCode = default)
         {
             NameOption = name;
             CodeOption = code;
@@ -82,13 +82,13 @@ namespace edgefunctions.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<CreateEdgeFunctionRequestJsonArgs?> JsonArgsOption { get; private set; }
+        public Option<Object?> JsonArgsOption { get; private set; }
 
         /// <summary>
         /// Gets or Sets JsonArgs
         /// </summary>
         [JsonPropertyName("json_args")]
-        public CreateEdgeFunctionRequestJsonArgs? JsonArgs { get { return this.JsonArgsOption; } set { this.JsonArgsOption = new(value); } }
+        public Object? JsonArgs { get { return this.JsonArgsOption; } set { this.JsonArgsOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Active
@@ -168,7 +168,7 @@ namespace edgefunctions.Model
 
             Option<string?> name = default;
             Option<string?> code = default;
-            Option<CreateEdgeFunctionRequestJsonArgs?> jsonArgs = default;
+            Option<Object?> jsonArgs = default;
             Option<bool?> active = default;
             Option<bool?> isProprietaryCode = default;
 
@@ -195,7 +195,7 @@ namespace edgefunctions.Model
                             break;
                         case "json_args":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                jsonArgs = new Option<CreateEdgeFunctionRequestJsonArgs?>(JsonSerializer.Deserialize<CreateEdgeFunctionRequestJsonArgs>(ref utf8JsonReader, jsonSerializerOptions)!);
+                                jsonArgs = new Option<Object?>(JsonSerializer.Deserialize<Object>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "active":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -216,9 +216,6 @@ namespace edgefunctions.Model
 
             if (code.IsSet && code.Value == null)
                 throw new ArgumentNullException(nameof(code), "Property is not nullable for class PatchEdgeFunctionRequest.");
-
-            if (jsonArgs.IsSet && jsonArgs.Value == null)
-                throw new ArgumentNullException(nameof(jsonArgs), "Property is not nullable for class PatchEdgeFunctionRequest.");
 
             if (active.IsSet && active.Value == null)
                 throw new ArgumentNullException(nameof(active), "Property is not nullable for class PatchEdgeFunctionRequest.");
@@ -259,9 +256,6 @@ namespace edgefunctions.Model
             if (patchEdgeFunctionRequest.CodeOption.IsSet && patchEdgeFunctionRequest.Code == null)
                 throw new ArgumentNullException(nameof(patchEdgeFunctionRequest.Code), "Property is required for class PatchEdgeFunctionRequest.");
 
-            if (patchEdgeFunctionRequest.JsonArgsOption.IsSet && patchEdgeFunctionRequest.JsonArgs == null)
-                throw new ArgumentNullException(nameof(patchEdgeFunctionRequest.JsonArgs), "Property is required for class PatchEdgeFunctionRequest.");
-
             if (patchEdgeFunctionRequest.NameOption.IsSet)
                 writer.WriteString("name", patchEdgeFunctionRequest.Name);
 
@@ -269,10 +263,13 @@ namespace edgefunctions.Model
                 writer.WriteString("code", patchEdgeFunctionRequest.Code);
 
             if (patchEdgeFunctionRequest.JsonArgsOption.IsSet)
-            {
-                writer.WritePropertyName("json_args");
-                JsonSerializer.Serialize(writer, patchEdgeFunctionRequest.JsonArgs, jsonSerializerOptions);
-            }
+                if (patchEdgeFunctionRequest.JsonArgsOption.Value != null)
+                {
+                    writer.WritePropertyName("json_args");
+                    JsonSerializer.Serialize(writer, patchEdgeFunctionRequest.JsonArgs, jsonSerializerOptions);
+                }
+                else
+                    writer.WriteNull("json_args");
             if (patchEdgeFunctionRequest.ActiveOption.IsSet)
                 writer.WriteBoolean("active", patchEdgeFunctionRequest.ActiveOption.Value!.Value);
 
