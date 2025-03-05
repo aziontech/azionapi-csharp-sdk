@@ -172,7 +172,7 @@ Authentication schemes defined for the API:
 - packageCompany: OpenAPI
 - packageCopyright: No Copyright
 - packageDescription: A library generated from a OpenAPI doc
-- packageGuid: {59F40D4B-99C8-4952-BB84-F643565096B7}
+- packageGuid: {7F7B86F0-BE25-46BE-8491-4558C78A1165}
 - packageName: edgefunctions
 - packageTags: 
 - packageTitle: OpenAPI Library
